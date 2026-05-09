@@ -96,7 +96,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     const featuresByOwner = new Map<string, ProvinceFeature[]>();
     for (const f of state.provinces.features) {
       const o = f.properties.owner;
-      if (!o) continue;
+      if (!o || o === 'Unclaimed') continue;
       let arr = featuresByOwner.get(o);
       if (!arr) {
         arr = [];

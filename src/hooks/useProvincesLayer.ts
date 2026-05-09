@@ -45,6 +45,12 @@ export function useProvincesLayer({
         ...STYLE_DEFAULT_BORDER,
         fillColor: '#888',
         fillOpacity: state.provinceFillOpacity,
+        // smoothFactor=0 disables Leaflet's per-zoom path simplification.
+        // Adjacent provinces share exact border vertices in the source data;
+        // any simplification can drop different vertices on each side and
+        // produce hairline gaps when zoomed in. Pay the extra render cost
+        // to keep borders meeting cleanly.
+        smoothFactor: 0,
       }),
       onEachFeature: (feature, lyr) => {
         const f = feature as ProvinceFeature;

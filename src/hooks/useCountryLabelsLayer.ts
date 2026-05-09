@@ -52,13 +52,16 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
 
   // Group features by current owner. Province ownership is mutated in place
   // (provinces ref is stable), so depend on provincesVersion to recompute
-  // after SET_OWNER and RENAME_COUNTRY.
+  // after SET_OWNER and RENAME_COUNTRY. "Unclaimed" is a real owner used
+  // for the gray fill but never gets a label — those regions are skipped
+  // both for visual clutter at world extent and for the connected-
+  // components compute cost (642 features removed from the pass).
   const featuresByOwner = useMemo(() => {
     const map = new Map<string, ProvinceFeature[]>();
     if (!provinces) return map;
     for (const f of provinces.features) {
       const o = f.properties.owner;
-      if (!o) continue;
+      if (!o || o === 'Unclaimed') continue;
       let arr = map.get(o);
       if (!arr) {
         arr = [];
