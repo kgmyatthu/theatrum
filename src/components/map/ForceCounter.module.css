@@ -1,0 +1,110 @@
+:global(.force-counter) {
+  position: relative;
+  border: 2px solid #000;
+  width: 50px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  cursor: move;
+}
+
+:global(.force-counter.army)::before,
+:global(.force-counter.army)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+:global(.force-counter.army)::before {
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    #000 calc(50% - 1px),
+    #000 calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+:global(.force-counter.army)::after {
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    #000 calc(50% - 1px),
+    #000 calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+:global(.force-counter.navy)::before {
+  content: '⚓';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #000;
+  pointer-events: none;
+  line-height: 1;
+}
+
+:global(.force-nation-above) {
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 9px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+:global(.force-name-below) {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: Arial, sans-serif;
+}
+
+:global(.force-strength-below) {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 9px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: Arial, sans-serif;
+}
+
+:global(.force-drag-distance) {
+  background: rgba(255, 235, 59, 0.92);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 1px solid #aa8800;
+}

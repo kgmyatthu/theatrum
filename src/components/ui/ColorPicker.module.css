@@ -1,0 +1,26 @@
+.row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.colorInput {
+  width: 42px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  cursor: pointer;
+}
+
+.hexInput {
+  flex: 1;
+  font-family: var(--font-mono);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 5px;
+  margin: 2px 0;
+  font-size: 12px;
+  border-radius: 3px;
+}

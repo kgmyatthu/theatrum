@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--text-primary);
+  font-size: 14px;
+}

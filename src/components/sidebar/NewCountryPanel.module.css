@@ -1,0 +1,23 @@
+.label {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 6px;
+}
+
+.input {
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 5px;
+  width: 100%;
+  margin: 2px 0;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.helper {
+  font-size: 10px;
+  color: #678;
+  margin-top: 6px;
+}

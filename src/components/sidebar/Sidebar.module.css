@@ -1,0 +1,17 @@
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  color: var(--text-primary);
+  padding: 12px;
+  overflow-y: auto;
+  border-right: 1px solid #000;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 8px 0 4px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
