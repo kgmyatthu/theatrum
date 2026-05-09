@@ -8,7 +8,7 @@ import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
 import type { AppSnapshot, ProvinceFeature } from '@/types';
 
-const STORAGE_KEY = 'napoleonic_map_1795';
+const STORAGE_KEY = 'theatrum';
 
 interface PersistencePanelProps {
   onStatus: (msg: string) => void;
@@ -28,9 +28,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       nextForceId: state.nextForceId,
       palette: state.palette,
       owners: state.owners,
-      builtinOwners: state.builtinOwners,
-      originalPalette: state.originalPalette,
-      removedBuiltins: state.removedBuiltins,
       provinceFillOpacity: state.provinceFillOpacity,
     });
   };
@@ -69,7 +66,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `napoleonic_map_${new Date().toISOString().slice(0, 10)}.${ext}`;
+    a.download = `theatrum_${new Date().toISOString().slice(0, 10)}.${ext}`;
     a.click();
     URL.revokeObjectURL(url);
   };

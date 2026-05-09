@@ -3,7 +3,7 @@ import type { AppSnapshot, Force, Palette, ProvinceCollection } from '@/types';
 /** SVG canvas size in pixels. */
 const SVG_WIDTH = 2000;
 const SVG_HEIGHT = 1000;
-const APP_TAG = 'napoleonic-map-1795';
+const APP_TAG = 'theatrum';
 
 /**
  * Project (lon, lat) → SVG (x, y) using the Mercator projection.
@@ -74,7 +74,7 @@ export function exportToSvg(inputs: ExportSvgInputs): string {
       `viewBox="0 0 ${SVG_WIDTH} ${SVG_HEIGHT}" width="${SVG_WIDTH}" height="${SVG_HEIGHT}">`,
   );
 
-  // Embedded snapshot — re-importable by detecting data-app="napoleonic-map-1795"
+  // Embedded snapshot — re-importable by detecting data-app="theatrum"
   lines.push(`<metadata data-app="${APP_TAG}">`);
   lines.push(`<![CDATA[${JSON.stringify(snapshot)}]]>`);
   lines.push(`</metadata>`);
@@ -159,7 +159,7 @@ export function exportToSvg(inputs: ExportSvgInputs): string {
 
 /**
  * Try to extract an embedded AppSnapshot from an SVG string.
- * Returns null if no `<metadata data-app="napoleonic-map-1795">` is found
+ * Returns null if no `<metadata data-app="theatrum">` is found
  * or if its CDATA isn't parseable JSON.
  */
 export function importSnapshotFromSvg(svgText: string): AppSnapshot | null {

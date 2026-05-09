@@ -1,4 +1,4 @@
-# Napoleonic Era Map (1795) — React + TypeScript
+# Theatrum — React + TypeScript
 
 Interactive historical mapping app. React 18 + strict TypeScript + Vite + Leaflet.
 Feature-complete port of the original single-file HTML version.

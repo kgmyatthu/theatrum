@@ -1,28 +1,27 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '@/state/AppContext';
-import type { City, Force, Palette, ProvinceCollection } from '@/types';
+import type { AppSnapshot, City, ProvinceCollection } from '@/types';
 
 interface Manifest {
   provinces: ProvinceCollection;
   cities: City[];
-  palette: Palette;
-  owners: string[];
-  forces: Force[];
+  snapshot: AppSnapshot;
 }
 
 async function fetchManifest(): Promise<Manifest> {
-  const [provinces, cities, palette, owners, seedForces] = await Promise.all([
+  const [provinces, cities, snapshot] = await Promise.all([
     fetch('/data/provinces.geojson').then((r) => r.json() as Promise<ProvinceCollection>),
     fetch('/data/cities.json').then((r) => r.json() as Promise<City[]>),
-    fetch('/data/palette.json').then((r) => r.json() as Promise<Palette>),
-    fetch('/data/owners.json').then((r) => r.json() as Promise<string[]>),
-    fetch('/data/seed_forces.json').then((r) => r.json() as Promise<Force[]>),
+    fetch('/data/state.json').then((r) => r.json() as Promise<AppSnapshot>),
   ]);
-  return { provinces, cities, palette, owners, forces: seedForces };
+  return { provinces, cities, snapshot };
 }
 
 /**
- * Loads the static data on mount and dispatches BOOTSTRAP_DATA.
+ * Loads the static data on mount and dispatches BOOTSTRAP_DATA. state.json
+ * is the single source of truth for game state — country list, ownership,
+ * forces. The geojson contributes geometry only. Whatever the user later
+ * exports as JSON drops back in here as a 1:1 replacement for state.json.
  */
 export function useDataBootstrap(): void {
   const dispatch = useAppDispatch();
@@ -32,11 +31,7 @@ export function useDataBootstrap(): void {
     fetchManifest()
       .then((m) => {
         if (cancelled) return;
-        const nextForceId = Math.max(0, ...m.forces.map((f) => f.id)) + 1;
-        dispatch({
-          type: 'BOOTSTRAP_DATA',
-          payload: { ...m, nextForceId },
-        });
+        dispatch({ type: 'BOOTSTRAP_DATA', payload: m });
       })
       .catch((err) => {
         // eslint-disable-next-line no-console

@@ -1,6 +1,6 @@
 import type {
   AppSnapshot,
-  CountrySnapshot,
+  Country,
   Force,
   Palette,
   ProvinceCollection,
@@ -12,43 +12,28 @@ export interface SnapshotInputs {
   nextForceId: number;
   palette: Palette;
   owners: string[];
-  builtinOwners: ReadonlySet<string>;
-  originalPalette: Readonly<Record<string, string>>;
-  removedBuiltins: ReadonlySet<string>;
   provinceFillOpacity: number;
 }
 
-/**
- * Compute the "custom countries" portion of a snapshot — anything diverging
- * from the original load.
- */
-export function computeCustomCountries(inputs: SnapshotInputs): CountrySnapshot[] {
-  const { owners, palette, builtinOwners, originalPalette } = inputs;
-  const out: CountrySnapshot[] = [];
-  for (const owner of owners) {
-    const color = palette[owner];
+function buildCountries(owners: string[], palette: Palette): Country[] {
+  const out: Country[] = [];
+  for (const name of owners) {
+    const color = palette[name];
     if (!color) continue;
-    if (!builtinOwners.has(owner)) {
-      // Newly added country
-      out.push({ name: owner, color });
-    } else if (palette[owner] !== originalPalette[owner]) {
-      // Built-in country whose color was overridden
-      out.push({ name: owner, color });
-    }
+    out.push({ name, color });
   }
   return out;
 }
 
 export function buildSnapshot(inputs: SnapshotInputs): AppSnapshot {
   return {
-    appVersion: 'napoleonic-map-1795/v3',
+    appVersion: 'theatrum/v4',
     ownerships: inputs.provinces.features.map(
       (f) => [f.properties._fid, f.properties.owner] as [number, string],
     ),
     forces: inputs.forces,
     nextForceId: inputs.nextForceId,
-    customCountries: computeCustomCountries(inputs),
-    removedBuiltins: Array.from(inputs.removedBuiltins),
+    countries: buildCountries(inputs.owners, inputs.palette),
     provinceFillOpacity: inputs.provinceFillOpacity,
     exportedAt: new Date().toISOString(),
   };

@@ -1,5 +1,5 @@
 /**
- * Core domain types for the Napoleonic Map app.
+ * Core domain types for the Theatrum app.
  * Everything that crosses module boundaries is typed here.
  */
 
@@ -57,10 +57,10 @@ export interface Force {
 // Palette / countries
 // ------------------------------------------------------------------
 
-/** Mapping from country name to hex color (e.g. "#1F4E9C"). */
+/** Mapping from country name to hex color (e.g. "#1F4E9C"). Derived view of `countries` for fast O(1) lookup at render time. */
 export type Palette = Readonly<Record<string, string>>;
 
-export interface CountrySnapshot {
+export interface Country {
   name: string;
   color: string;
 }
@@ -74,10 +74,8 @@ export interface AppSnapshot {
   ownerships: Array<[number, string]>;
   forces: Force[];
   nextForceId: number;
-  /** Custom-added countries plus built-in countries with overridden colors. */
-  customCountries: CountrySnapshot[];
-  /** Built-in country names that were renamed away (so they don't reappear after reload). */
-  removedBuiltins: string[];
+  /** Full country list — name + color. No built-in / custom split. */
+  countries: Country[];
   provinceFillOpacity: number;
   exportedAt?: string;
   appVersion?: string;

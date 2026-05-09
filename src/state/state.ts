@@ -15,15 +15,10 @@ export interface AppState {
   provinces: ProvinceCollection | null;
   cities: City[];
 
-  /** Current owner list — sorted alphabetically. */
+  /** Current owner list — sorted alphabetically. Derived from `countries`. */
   owners: string[];
-  /** Current colors. */
+  /** Current colors. Derived from `countries`. */
   palette: Palette;
-
-  /** Built-in baseline — set ONCE on bootstrap. */
-  builtinOwners: ReadonlySet<string>;
-  originalPalette: Readonly<Record<string, string>>;
-  removedBuiltins: ReadonlySet<string>;
 
   forces: Force[];
   nextForceId: number;
@@ -51,9 +46,6 @@ export const initialState: AppState = {
   cities: [],
   owners: [],
   palette: {},
-  builtinOwners: new Set(),
-  originalPalette: {},
-  removedBuiltins: new Set(),
   forces: [],
   nextForceId: 1,
   selectedFids: new Set(),

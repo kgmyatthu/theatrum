@@ -1,4 +1,4 @@
-import type { AppSnapshot, City, Force, Palette, ProvinceCollection } from '@/types';
+import type { AppSnapshot, City, Force, ProvinceCollection } from '@/types';
 
 export type Action =
   | {
@@ -6,10 +6,7 @@ export type Action =
       payload: {
         provinces: ProvinceCollection;
         cities: City[];
-        palette: Palette;
-        owners: string[];
-        forces: Force[];
-        nextForceId: number;
+        snapshot: AppSnapshot;
       };
     }
   | { type: 'SET_OWNER'; payload: { fids: number[]; owner: string } }

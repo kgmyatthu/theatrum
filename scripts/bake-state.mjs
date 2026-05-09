@@ -1,0 +1,65 @@
+// One-shot baker for public/data/state.json.
+//
+// state.json is the single runtime source of truth: country list,
+// ownership map, forces. This script assembles the *initial* state.json
+// from the factory inputs:
+//   - provinces.geojson  → ownership (each feature's properties.owner)
+//   - owners.json        → country names
+//   - palette.json       → country colors
+//   - seed_forces.json   → starting army/navy positions
+//
+// The output matches the AppSnapshot v4 shape that the app's
+// "Export JSON" button produces — so any export can drop in here as a
+// 1:1 replacement.
+//
+// Run with: node scripts/bake-state.mjs
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA = path.resolve(__dirname, '../public/data');
+const GEOJSON = path.join(DATA, 'provinces.geojson');
+const SEED_FORCES = path.join(DATA, 'seed_forces.json');
+const OWNERS = path.join(DATA, 'owners.json');
+const PALETTE = path.join(DATA, 'palette.json');
+const OUT = path.join(DATA, 'state.json');
+
+const provinces = JSON.parse(fs.readFileSync(GEOJSON, 'utf-8'));
+const forces = JSON.parse(fs.readFileSync(SEED_FORCES, 'utf-8'));
+const ownerNames = JSON.parse(fs.readFileSync(OWNERS, 'utf-8'));
+const palette = JSON.parse(fs.readFileSync(PALETTE, 'utf-8'));
+
+// _fid is the feature's array index (assigned at runtime in BOOTSTRAP_DATA).
+const ownerships = provinces.features.map((f, i) => [i, f.properties.owner]);
+
+const nextForceId = Math.max(0, ...forces.map((f) => f.id)) + 1;
+
+const countries = ownerNames
+  .filter((name) => typeof palette[name] === 'string')
+  .map((name) => ({ name, color: palette[name] }));
+
+const missing = ownerNames.filter((n) => typeof palette[n] !== 'string');
+if (missing.length > 0) {
+  console.warn(`WARN: missing palette entries for: ${missing.join(', ')}`);
+}
+
+const snapshot = {
+  appVersion: 'theatrum/v4',
+  ownerships,
+  forces,
+  nextForceId,
+  countries,
+  // Matches initialState.provinceFillOpacity in src/state/state.ts.
+  provinceFillOpacity: 0.5,
+  exportedAt: new Date().toISOString(),
+};
+
+fs.writeFileSync(OUT, JSON.stringify(snapshot));
+
+console.log(`Wrote ${OUT}`);
+console.log(`  ownerships:  ${ownerships.length}`);
+console.log(`  countries:   ${countries.length}`);
+console.log(`  forces:      ${forces.length}`);
+console.log(`  nextForceId: ${nextForceId}`);

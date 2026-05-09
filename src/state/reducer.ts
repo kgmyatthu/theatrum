@@ -1,26 +1,52 @@
 import type { Action } from './actions';
 import type { AppState } from './state';
 import { initialState } from './state';
+import type { Country } from '@/types';
+
+function countriesToOwnersAndPalette(countries: Country[]): {
+  owners: string[];
+  palette: Record<string, string>;
+} {
+  const palette: Record<string, string> = {};
+  const owners: string[] = [];
+  for (const c of countries) {
+    palette[c.name] = c.color;
+    owners.push(c.name);
+  }
+  owners.sort();
+  return { owners, palette };
+}
 
 export function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case 'BOOTSTRAP_DATA': {
-      const { provinces, cities, palette, owners, forces, nextForceId } = action.payload;
+      const { provinces, cities, snapshot } = action.payload;
       // Tag features with stable _fid (mutates feature objects — they're never compared by ref later)
       provinces.features.forEach((f, i) => {
         f.properties._fid = i;
       });
+
+      // Apply ownership overrides — by _fid (== array index after the tag pass above).
+      for (const [fid, owner] of snapshot.ownerships) {
+        const feat = provinces.features[fid];
+        if (feat) feat.properties.owner = owner;
+      }
+
+      const { owners, palette } = countriesToOwnersAndPalette(snapshot.countries);
+
       return {
         ...state,
         loaded: true,
         provinces,
         cities,
+        owners,
         palette,
-        owners: [...owners].sort(),
-        builtinOwners: new Set(owners),
-        originalPalette: { ...palette },
-        forces,
-        nextForceId,
+        forces: snapshot.forces ?? [],
+        nextForceId: snapshot.nextForceId ?? 1,
+        provinceFillOpacity:
+          typeof snapshot.provinceFillOpacity === 'number'
+            ? snapshot.provinceFillOpacity
+            : state.provinceFillOpacity,
         provincesVersion: state.provincesVersion + 1,
       };
     }
@@ -73,22 +99,11 @@ export function reducer(state: AppState, action: Action): AppState {
         .filter((o) => o !== oldName)
         .concat(newName)
         .sort();
-      // Track built-in removal
-      const wasBuiltin = state.builtinOwners.has(oldName);
-      const newBuiltins = new Set(state.builtinOwners);
-      const newRemoved = new Set(state.removedBuiltins);
-      if (wasBuiltin) {
-        newBuiltins.delete(oldName);
-        newBuiltins.add(newName);
-        newRemoved.add(oldName);
-      }
       return {
         ...state,
         owners,
         palette: newPalette,
         forces,
-        builtinOwners: newBuiltins,
-        removedBuiltins: newRemoved,
         provincesVersion: state.provincesVersion + 1,
       };
     }
@@ -181,35 +196,22 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'APPLY_SNAPSHOT': {
       if (!state.provinces) return state;
       const { snapshot } = action.payload;
-      // Apply removed builtins
-      const newRemoved = new Set(state.removedBuiltins);
-      const newBuiltins = new Set(state.builtinOwners);
-      let owners = [...state.owners];
-      let palette: Record<string, string> = { ...state.palette };
-
-      for (const removedName of snapshot.removedBuiltins ?? []) {
-        newRemoved.add(removedName);
-        newBuiltins.delete(removedName);
-        owners = owners.filter((o) => o !== removedName);
-        delete palette[removedName];
-      }
-      // Apply custom countries
-      for (const cc of snapshot.customCountries ?? []) {
-        if (!owners.includes(cc.name)) owners.push(cc.name);
-        palette[cc.name] = cc.color;
-      }
-      owners.sort();
       // Apply ownerships
       for (const [fid, owner] of snapshot.ownerships) {
         const feat = state.provinces.features[fid];
         if (feat) feat.properties.owner = owner;
       }
+      // Pre-v4 snapshots stored only diffs (customCountries / removedBuiltins)
+      // against a built-in baseline that no longer exists. Fall back to the
+      // current state's country list rather than crash; the user can still
+      // recover ownership, forces, and opacity from the snapshot.
+      const { owners, palette } = Array.isArray(snapshot.countries)
+        ? countriesToOwnersAndPalette(snapshot.countries)
+        : { owners: state.owners, palette: { ...state.palette } };
       return {
         ...state,
         owners,
         palette,
-        builtinOwners: newBuiltins,
-        removedBuiltins: newRemoved,
         forces: snapshot.forces ?? [],
         nextForceId: snapshot.nextForceId ?? 1,
         provinceFillOpacity:

@@ -14,7 +14,7 @@ export function Sidebar() {
 
   return (
     <div className={styles.sidebar}>
-      <h2 className={styles.title}>Napoleonic Map 1795</h2>
+      <h2 className={styles.title}>Theatrum</h2>
       <ModePanel status={status} />
       <AddForcePanel onStatus={setStatus} />
       <NewCountryPanel onStatus={setStatus} />
