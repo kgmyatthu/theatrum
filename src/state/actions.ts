@@ -17,6 +17,7 @@ export type Action =
   | { type: 'RENAME_COUNTRY'; payload: { oldName: string; newName: string } }
   | { type: 'CHANGE_COUNTRY_COLOR'; payload: { name: string; color: string } }
   | { type: 'SET_OPACITY'; payload: { opacity: number } }
+  | { type: 'SET_ICON_SCALE'; payload: { scale: number } }
   | { type: 'ADD_FORCE'; payload: { force: Force } }
   | { type: 'UPDATE_FORCE'; payload: { force: Force } }
   | { type: 'DELETE_FORCE'; payload: { id: number } }

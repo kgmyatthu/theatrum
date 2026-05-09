@@ -28,9 +28,22 @@ function formatStrength(s: number, branch: Force['branch']): string {
   return String(s);
 }
 
-function makeForceIcon(force: Force, color: string): L.DivIcon {
+/**
+ * Auto-shrink scale based on zoom: full size at zoom 4 and above, shrinks
+ * down to 50% at the minimum zoom of 2 so counters don't crowd at low zoom.
+ */
+function zoomScaleFactor(zoom: number): number {
+  return Math.min(1.0, Math.max(0.5, zoom / 4));
+}
+
+function counterTransform(scale: number): string {
+  return `translate(-50%, -50%) scale(${scale})`;
+}
+
+function makeForceIcon(force: Force, color: string, scale: number): L.DivIcon {
   const branchClass = force.branch === 'navy' ? 'navy' : 'army';
-  const html = `<div class="force-counter ${branchClass}" style="background:${color}">
+  const style = `background:${color};transform:${counterTransform(scale)}`;
+  const html = `<div class="force-counter ${branchClass}" style="${style}">
     <div class="force-nation-above">${force.nation}</div>
     <div class="force-name-below">${force.name}</div>
     <div class="force-strength-below">${formatStrength(force.strength, force.branch)}</div>
@@ -49,8 +62,9 @@ export function useForcesLayer({
   onForceContextMenu,
   onForceDragEnd,
 }: UseForcesLayerOptions): void {
-  const { forces, palette, layerVisibility } = useAppState();
+  const { forces, palette, layerVisibility, iconScale } = useAppState();
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const markersRef = useRef<L.Marker[]>([]);
 
   // Rebuild markers when forces or palette changes
   useEffect(() => {
@@ -59,14 +73,16 @@ export function useForcesLayer({
     const old = layerRef.current;
     if (old) map.removeLayer(old);
     const group = L.layerGroup();
+    const markers: L.Marker[] = [];
 
     // Per-marker drag artifacts (line + distance label)
     const artifacts = new Map<number, DragArtifacts>();
+    const initialScale = iconScale * zoomScaleFactor(map.getZoom());
 
     for (const force of forces) {
       const color = palette[force.nation] ?? '#888';
       const marker = L.marker([force.lat, force.lon], {
-        icon: makeForceIcon(force, color),
+        icon: makeForceIcon(force, color, initialScale),
         draggable: true,
         title: `${force.name} (${force.nation})`,
       });
@@ -135,10 +151,35 @@ export function useForcesLayer({
       });
 
       marker.addTo(group);
+      markers.push(marker);
     }
     layerRef.current = group;
+    markersRef.current = markers;
     if (layerVisibility.forces) group.addTo(map);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mapRef, forces, palette, layerVisibility.forces, onForceContextMenu, onForceDragEnd]);
+
+  // Apply scale on zoom change or when iconScale slider moves. Updates the
+  // existing DOM directly to avoid rebuilding markers (which would tear down
+  // drag handlers).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const apply = (): void => {
+      const scale = iconScale * zoomScaleFactor(map.getZoom());
+      const transform = counterTransform(scale);
+      for (const marker of markersRef.current) {
+        const icon = (marker as unknown as { _icon?: HTMLElement })._icon;
+        const counter = icon?.querySelector<HTMLElement>('.force-counter');
+        if (counter) counter.style.transform = transform;
+      }
+    };
+    apply();
+    map.on('zoomend', apply);
+    return () => {
+      map.off('zoomend', apply);
+    };
+  }, [mapRef, iconScale]);
 
   // Honor toggle
   useEffect(() => {

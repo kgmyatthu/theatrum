@@ -13,22 +13,38 @@
    into its own marker layer outside React's DOM. CSS modules can still reference
    global class names via :global(). */
 :global(.country-label) {
-  color: white;
-  font-weight: bold;
+  color: #f3e7c8;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   text-shadow:
     -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
     -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
   pointer-events: none;
   white-space: nowrap;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Cinzel', 'Trajan Pro', Georgia, serif;
 }
 
 :global(.city-label) {
   color: white;
+  font-style: italic;
+  font-weight: 500;
+  /* Uniform font size at zoom >= 10 — the cities hook updates --city-font
+     once on the marker pane on zoom change. Per-rank sizes at zoom < 10
+     are set via .cities-low-zoom rules below, also driven by a single
+     class swap (no per-marker DOM mutation). */
+  font-size: var(--city-font, 11px);
   text-shadow:
     -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   pointer-events: none;
   white-space: nowrap;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'EB Garamond', Garamond, 'Hoefler Text', 'Times New Roman', serif;
 }
+
+:global(.cities-low-zoom .city-label.city-rank-0),
+:global(.cities-low-zoom .city-label.city-rank-1) { font-size: 14px; }
+:global(.cities-low-zoom .city-label.city-rank-2),
+:global(.cities-low-zoom .city-label.city-rank-3) { font-size: 13px; }
+:global(.cities-low-zoom .city-label.city-rank-4),
+:global(.cities-low-zoom .city-label.city-rank-5) { font-size: 12px; }
+:global(.cities-low-zoom .city-label.city-rank-6) { font-size: 11px; }

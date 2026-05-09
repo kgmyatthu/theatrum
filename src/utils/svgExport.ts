@@ -96,8 +96,12 @@ export function exportToSvg(inputs: ExportSvgInputs): string {
   }
   lines.push(`</g>`);
 
-  // Country labels
-  lines.push(`<g id="country-labels" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" fill="white">`);
+  // Country labels — classical engraved serif (Cinzel) with parchment fill.
+  // Letter-spacing widens the imperial / map-engraving feel.
+  lines.push(
+    `<g id="country-labels" font-family="'Cinzel', 'Trajan Pro', Georgia, serif" ` +
+      `font-weight="700" fill="#f3e7c8" letter-spacing="1">`,
+  );
   for (const label of countryLabels) {
     const [x, y] = projectMercator(label.lon, label.lat);
     const fs = label.fontSize.toFixed(1);
@@ -131,16 +135,18 @@ export function exportToSvg(inputs: ExportSvgInputs): string {
         `<text x="${cx}" y="${cy + 7}" font-size="20" fill="black" text-anchor="middle">⚓</text>`,
       );
     }
-    // Nation above
+    // Nation above — condensed military sans (Oswald)
     lines.push(
       `<text x="${cx}" y="${y - 4}" font-size="9" fill="white" stroke="black" stroke-width="2" ` +
-        `paint-order="stroke" text-anchor="middle" font-weight="bold" font-family="Arial">` +
+        `paint-order="stroke" text-anchor="middle" font-weight="700" letter-spacing="0.6" ` +
+        `font-family="'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif">` +
         `${escapeXml(force.nation.toUpperCase())}</text>`,
     );
-    // Name below
+    // Name below — same family, slightly lighter
     lines.push(
       `<text x="${cx}" y="${y + 32 + 12}" font-size="10" fill="white" stroke="black" stroke-width="2" ` +
-        `paint-order="stroke" text-anchor="middle" font-weight="bold" font-family="Arial">` +
+        `paint-order="stroke" text-anchor="middle" font-weight="500" letter-spacing="0.3" ` +
+        `font-family="'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif">` +
         `${escapeXml(force.name)}</text>`,
     );
     lines.push(`</g>`);

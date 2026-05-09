@@ -33,6 +33,16 @@ export interface AppState {
   layerVisibility: LayerVisibility;
   mode: AppMode;
   provinceFillOpacity: number;
+  /** User-adjustable size multiplier for country labels and force counters. Range 0.5–1.5. */
+  iconScale: number;
+
+  /**
+   * Bumps whenever province ownership changes (SET_OWNER, RENAME_COUNTRY,
+   * APPLY_SNAPSHOT). Province features are mutated in place for performance,
+   * so the GeoJSON reference is stable; consumers that need to recompute
+   * derived state (e.g. country labels) depend on this counter.
+   */
+  provincesVersion: number;
 }
 
 export const initialState: AppState = {
@@ -55,4 +65,6 @@ export const initialState: AppState = {
   },
   mode: 'view',
   provinceFillOpacity: 0.5,
+  iconScale: 1.0,
+  provincesVersion: 0,
 };

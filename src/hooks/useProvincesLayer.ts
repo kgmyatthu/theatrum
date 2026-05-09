@@ -29,6 +29,12 @@ export function useProvincesLayer({
   const layerRef = useRef<L.GeoJSON | null>(null);
   const layersByFid = useRef<Map<number, L.Layer>>(new Map());
 
+  // Hold the latest handlers in a ref so the bound listeners always read
+  // current state — the layer is only built once, so capturing the props
+  // by closure would freeze them at first bind.
+  const handlersRef = useRef({ onProvinceClick, onProvinceContextMenu, onProvinceHover, onProvinceMouseOut });
+  handlersRef.current = { onProvinceClick, onProvinceContextMenu, onProvinceHover, onProvinceMouseOut };
+
   // Build the layer once on bootstrap
   useEffect(() => {
     const map = mapRef.current;
@@ -43,10 +49,10 @@ export function useProvincesLayer({
       onEachFeature: (feature, lyr) => {
         const f = feature as ProvinceFeature;
         layersByFid.current.set(f.properties._fid, lyr);
-        lyr.on('click', (e) => onProvinceClick(f, e as L.LeafletMouseEvent));
-        lyr.on('contextmenu', (e) => onProvinceContextMenu(f, e as L.LeafletMouseEvent));
-        lyr.on('mouseover', () => onProvinceHover(f));
-        lyr.on('mouseout', () => onProvinceMouseOut());
+        lyr.on('click', (e) => handlersRef.current.onProvinceClick(f, e as L.LeafletMouseEvent));
+        lyr.on('contextmenu', (e) => handlersRef.current.onProvinceContextMenu(f, e as L.LeafletMouseEvent));
+        lyr.on('mouseover', () => handlersRef.current.onProvinceHover(f));
+        lyr.on('mouseout', () => handlersRef.current.onProvinceMouseOut());
       },
     });
 

@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type L from 'leaflet';
 import { useLeafletMap } from '@/hooks/useLeafletMap';
 import { useProvincesLayer } from '@/hooks/useProvincesLayer';
@@ -89,6 +89,25 @@ export function MapView() {
   useRulerTool({ mapRef });
   useAddForceClick({ mapRef });
   useDragSelect({ mapRef });
+
+  // Left-click on the map background (ocean / no province under cursor)
+  // deselects all provinces. Clicks on a province go through
+  // handleProvinceClick — Leaflet's canvas renderer suppresses the map
+  // click in that case, so this only fires on truly empty areas.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const handler = (e: L.LeafletMouseEvent): void => {
+      if (e.originalEvent.shiftKey) return;
+      if (mode !== 'view') return;
+      if (selectedFids.size === 0) return;
+      dispatch({ type: 'SELECT_PROVINCES', payload: { fids: [], mode: 'clear' } });
+    };
+    map.on('click', handler);
+    return () => {
+      map.off('click', handler);
+    };
+  }, [mapRef, mode, selectedFids, dispatch]);
 
   const handleForceContextMenu = useCallback((force: Force): void => {
     setEditingForce(force);

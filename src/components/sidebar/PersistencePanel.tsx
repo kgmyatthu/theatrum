@@ -104,12 +104,21 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       }
       arr.push(f);
     }
+    // Shrink labels for export so they don't crowd the world-extent view.
+    // The embedded snapshot below is independent of label size, so re-import
+    // still restores all data exactly.
+    const SVG_LABEL_SHRINK = 0.5;
     const countryLabels: Array<{ name: string; lon: number; lat: number; fontSize: number }> = [];
     for (const [owner, feats] of featuresByOwner) {
       const labels = computeLandmassLabelsForOwner(feats, coordSets, bboxes);
       for (const lbl of labels) {
-        const fontSize = Math.min(20, Math.max(10, Math.sqrt(lbl.area) * 1.5));
-        countryLabels.push({ name: owner, lon: lbl.lon, lat: lbl.lat, fontSize });
+        const baseFont = Math.min(20, Math.max(10, Math.sqrt(lbl.area) * 1.5));
+        countryLabels.push({
+          name: owner,
+          lon: lbl.lon,
+          lat: lbl.lat,
+          fontSize: baseFont * SVG_LABEL_SHRINK,
+        });
       }
     }
 

@@ -21,6 +21,7 @@ export function reducer(state: AppState, action: Action): AppState {
         originalPalette: { ...palette },
         forces,
         nextForceId,
+        provincesVersion: state.provincesVersion + 1,
       };
     }
 
@@ -35,8 +36,7 @@ export function reducer(state: AppState, action: Action): AppState {
       for (const f of state.provinces.features) {
         if (fidSet.has(f.properties._fid)) f.properties.owner = owner;
       }
-      // Owner sort isn't affected; just return new state shell so React re-renders.
-      return { ...state };
+      return { ...state, provincesVersion: state.provincesVersion + 1 };
     }
 
     case 'ADD_COUNTRY': {
@@ -89,6 +89,7 @@ export function reducer(state: AppState, action: Action): AppState {
         forces,
         builtinOwners: newBuiltins,
         removedBuiltins: newRemoved,
+        provincesVersion: state.provincesVersion + 1,
       };
     }
 
@@ -103,6 +104,10 @@ export function reducer(state: AppState, action: Action): AppState {
 
     case 'SET_OPACITY': {
       return { ...state, provinceFillOpacity: action.payload.opacity };
+    }
+
+    case 'SET_ICON_SCALE': {
+      return { ...state, iconScale: action.payload.scale };
     }
 
     case 'ADD_FORCE': {
@@ -211,6 +216,7 @@ export function reducer(state: AppState, action: Action): AppState {
           typeof snapshot.provinceFillOpacity === 'number'
             ? snapshot.provinceFillOpacity
             : state.provinceFillOpacity,
+        provincesVersion: state.provincesVersion + 1,
       };
     }
 

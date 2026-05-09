@@ -9,16 +9,33 @@ interface UseCountryLabelsLayerOptions {
   mapRef: RefObject<L.Map | null>;
 }
 
-function makeLabelMarker(owner: string, label: LandmassLabel): L.Marker {
-  const fontSize = Math.min(20, Math.max(10, Math.sqrt(label.area) * 1.5));
+/**
+ * Auto-shrink scale based on zoom: full size at zoom 4 and above, shrinks
+ * down to 50% at the minimum zoom of 2 so labels don't crowd at low zoom.
+ */
+function zoomScaleFactor(zoom: number): number {
+  return Math.min(1.0, Math.max(0.5, zoom / 4));
+}
+
+function baseFontSize(area: number): number {
+  return Math.min(20, Math.max(10, Math.sqrt(area) * 1.5));
+}
+
+function makeLabelMarker(owner: string, label: LandmassLabel, fontSize: number): L.Marker {
   const html = `<div class="country-label" style="font-size:${fontSize}px">${owner}</div>`;
   const icon = L.divIcon({ html, className: '', iconSize: undefined, iconAnchor: [0, 0] });
   return L.marker([label.lat, label.lon], { icon, interactive: false, keyboard: false });
 }
 
+interface LabelMarkerEntry {
+  marker: L.Marker;
+  baseFont: number;
+}
+
 export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions): void {
-  const { provinces, layerVisibility } = useAppState();
+  const { provinces, layerVisibility, provincesVersion, iconScale } = useAppState();
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const markersRef = useRef<LabelMarkerEntry[]>([]);
 
   // Precompute bbox & coord sets ONCE per provinces collection
   const indexes = useMemo(() => {
@@ -33,11 +50,9 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
     return { bboxes, coordSets };
   }, [provinces]);
 
-  // Group features by current owner whenever ownership changes.
-  // Note: we read from provinces.features which has mutable owner properties.
-  // To detect changes, we depend on a "version" counter — but simpler is to
-  // include the provinces reference. Reducer creates a new state shell on
-  // SET_OWNER (returns ...state spread) so this effect re-runs.
+  // Group features by current owner. Province ownership is mutated in place
+  // (provinces ref is stable), so depend on provincesVersion to recompute
+  // after SET_OWNER and RENAME_COUNTRY.
   const featuresByOwner = useMemo(() => {
     const map = new Map<string, ProvinceFeature[]>();
     if (!provinces) return map;
@@ -52,11 +67,24 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
       arr.push(f);
     }
     return map;
-    // we want this to recompute on every state change that re-spreads root state
-    // (SET_OWNER returns {...state}); using state itself as a coarse trigger
-  }, [provinces]);
+  }, [provinces, provincesVersion]);
 
-  // Rebuild the labels layer
+  // Compute label positions ONCE per ownership change. The connected-components
+  // pass is O(n²); doing it inside the rebuild effect would re-run on every
+  // slider tick and zoom event.
+  const ownerLabels = useMemo(() => {
+    const out: Array<{ owner: string; label: LandmassLabel }> = [];
+    for (const [owner, features] of featuresByOwner) {
+      const labels = computeLandmassLabelsForOwner(features, indexes.coordSets, indexes.bboxes);
+      for (const label of labels) out.push({ owner, label });
+    }
+    return out;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [featuresByOwner, indexes]);
+
+  // Build markers when ownership or visibility changes — NOT when scale/zoom
+  // change. Initial font size uses the current scale; the next effect updates
+  // it in place from then on.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -64,16 +92,41 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
     const old = layerRef.current;
     if (old) map.removeLayer(old);
 
+    const initialScale = iconScale * zoomScaleFactor(map.getZoom());
     const group = L.layerGroup();
-    for (const [owner, features] of featuresByOwner) {
-      const labels = computeLandmassLabelsForOwner(features, indexes.coordSets, indexes.bboxes);
-      for (const label of labels) {
-        makeLabelMarker(owner, label).addTo(group);
-      }
+    const entries: LabelMarkerEntry[] = [];
+    for (const { owner, label } of ownerLabels) {
+      const baseFont = baseFontSize(label.area);
+      const marker = makeLabelMarker(owner, label, baseFont * initialScale);
+      entries.push({ marker, baseFont });
+      marker.addTo(group);
     }
     layerRef.current = group;
+    markersRef.current = entries;
     if (layerVisibility.countryLabels) group.addTo(map);
-  }, [mapRef, featuresByOwner, indexes, layerVisibility.countryLabels]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapRef, ownerLabels, layerVisibility.countryLabels]);
+
+  // Apply scale on zoom change or when iconScale slider moves. Mutate the
+  // existing label DOM directly — no marker rebuild, no connected-components
+  // recompute.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const apply = (): void => {
+      const scale = iconScale * zoomScaleFactor(map.getZoom());
+      for (const { marker, baseFont } of markersRef.current) {
+        const icon = (marker as unknown as { _icon?: HTMLElement })._icon;
+        const el = icon?.querySelector<HTMLElement>('.country-label');
+        if (el) el.style.fontSize = `${baseFont * scale}px`;
+      }
+    };
+    apply();
+    map.on('zoomend', apply);
+    return () => {
+      map.off('zoomend', apply);
+    };
+  }, [mapRef, iconScale]);
 
   // Honor toggle
   useEffect(() => {
