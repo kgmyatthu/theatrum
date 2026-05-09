@@ -7,22 +7,28 @@ interface UseCitiesLayerOptions {
   mapRef: RefObject<L.Map | null>;
 }
 
+// All cities — including the smallest towns (rank 7-10) — appear together
+// at zoom >= 9, sharing the tier where towns (rank 6) already showed up.
+// Below that, a coarse-to-fine ladder filters by scale rank.
 function isVisible(scaleRank: number, zoom: number): boolean {
-  if (zoom >= 10) return true;
+  if (zoom >= 9) return true;
   if (scaleRank <= 1 && zoom >= 5) return true;
   if (scaleRank <= 3 && zoom >= 6) return true;
   if (scaleRank <= 4 && zoom >= 7) return true;
   if (scaleRank <= 5 && zoom >= 8) return true;
-  if (scaleRank <= 6 && zoom >= 9) return true;
   return false;
 }
 
-/** Uniform font size at zoom >= 10 (CSS handles per-rank sizes at lower zoom). */
+/** Uniform font size at zoom >= 9 (CSS handles per-rank sizes below that). */
 function uniformFontSizeForZoom(zoom: number): number {
   if (zoom >= 13) return 13;
   if (zoom >= 11) return 12;
   return 11;
 }
+
+const ALL_CITIES_ZOOM = 9;
+/** Heavy add/remove of markers waits this long after the last zoom event. */
+const ZOOM_SETTLE_MS = 250;
 
 interface CityEntry {
   city: City;
@@ -53,22 +59,28 @@ export function useCitiesLayer({ mapRef }: UseCitiesLayerOptions): void {
       return { city, marker, shown: false };
     });
 
-    // On zoom: add/remove markers crossing the visibility threshold, then
-    // update the marker-pane class/CSS-var to drive font size for the entire
-    // layer at once. CSS rules (.cities-low-zoom .city-rank-N) handle the
-    // per-rank ladder; --city-font handles the uniform size at zoom >= 10.
-    const update = (): void => {
+    // Update font size styling immediately on every zoomend — this is just
+    // a class swap and a CSS-var write on one DOM node, essentially free.
+    const updateFontStyle = (): void => {
       const zoom = map.getZoom();
       const pane = map.getPane('markerPane');
-      if (pane) {
-        if (zoom >= 10) {
-          pane.classList.remove('cities-low-zoom');
-          pane.style.setProperty('--city-font', `${uniformFontSizeForZoom(zoom)}px`);
-        } else {
-          pane.classList.add('cities-low-zoom');
-          pane.style.removeProperty('--city-font');
-        }
+      if (!pane) return;
+      if (zoom >= ALL_CITIES_ZOOM) {
+        pane.classList.remove('cities-low-zoom');
+        pane.style.setProperty('--city-font', `${uniformFontSizeForZoom(zoom)}px`);
+      } else {
+        pane.classList.add('cities-low-zoom');
+        pane.style.removeProperty('--city-font');
       }
+    };
+
+    // Add/remove markers crossing the visibility threshold. This is the
+    // expensive pass — Leaflet has to create/destroy DOM for each crossing
+    // marker. We DEBOUNCE it: rapid scroll-wheel zooms produce a flurry of
+    // zoomend events, but we only want to do the DOM work once after the
+    // user has stopped zooming.
+    const updateVisibility = (): void => {
+      const zoom = map.getZoom();
       for (const entry of entries) {
         const visible = isVisible(entry.city.SCALERANK, zoom);
         if (visible && !entry.shown) {
@@ -81,14 +93,27 @@ export function useCitiesLayer({ mapRef }: UseCitiesLayerOptions): void {
       }
     };
 
+    let settleTimeout: number | null = null;
+    const onZoomEnd = (): void => {
+      updateFontStyle();
+      if (settleTimeout !== null) clearTimeout(settleTimeout);
+      settleTimeout = window.setTimeout(() => {
+        settleTimeout = null;
+        updateVisibility();
+      }, ZOOM_SETTLE_MS);
+    };
+
     layerRef.current = group;
     entriesRef.current = entries;
     if (layerVisibility.cities) group.addTo(map);
-    update();
-    map.on('zoomend', update);
+    // Initial render — apply both immediately, no debounce on first paint.
+    updateFontStyle();
+    updateVisibility();
+    map.on('zoomend', onZoomEnd);
 
     return () => {
-      map.off('zoomend', update);
+      map.off('zoomend', onZoomEnd);
+      if (settleTimeout !== null) clearTimeout(settleTimeout);
       map.removeLayer(group);
       layerRef.current = null;
       entriesRef.current = [];
