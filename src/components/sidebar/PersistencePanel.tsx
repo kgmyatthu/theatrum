@@ -1,35 +1,22 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
 import { buildSnapshot } from '@/utils/snapshot';
-import { hasMeaningfulDiff, type CountryRename } from '@/auth/submitMove';
 import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
-import { useAuth } from '@/auth/AuthContext';
-import { SubmitMoveModal } from '@/components/modals/SubmitMoveModal';
 import type { AppSnapshot, ProvinceFeature } from '@/types';
 
 interface PersistencePanelProps {
   onStatus: (msg: string) => void;
 }
 
-interface PendingSubmission {
-  snapshot: AppSnapshot;
-  description: string;
-  renames: CountryRename[];
-}
-
 export function PersistencePanel({ onStatus }: PersistencePanelProps) {
   const dispatch = useAppDispatch();
   const state = useAppState();
-  const auth = useAuth();
   const jsonInputRef = useRef<HTMLInputElement>(null);
   const svgInputRef = useRef<HTMLInputElement>(null);
-  const [pending, setPending] = useState<PendingSubmission | null>(null);
-
-  const isAuthed = auth.status === 'authenticated';
 
   const buildCurrentSnapshot = (): AppSnapshot | null => {
     if (!state.provinces) return null;
@@ -147,71 +134,26 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     e.target.value = '';
   };
 
-  const handleSubmitMove = async (): Promise<void> => {
-    if (!auth.login) return onStatus('Sign in first.');
-    const snap = buildCurrentSnapshot();
-    if (!snap) return onStatus('No state to submit.');
-
-    onStatus('Checking for changes…');
-    let changed: boolean;
-    try {
-      changed = await hasMeaningfulDiff(snap);
-    } catch (err) {
-      return onStatus(`Couldn't reach main: ${(err as Error).message}`);
-    }
-    if (!changed) return onStatus('No changes to submit.');
-
-    const description = window.prompt('Describe your move (optional):') ?? '';
-    // Only admins can submit perm.json edits — the validator rejects any
-    // non-admin PR that touches it. Drop renames for everyone else.
-    const renames = auth.role === 'admin' ? state.pendingRenames : [];
-    setPending({ snapshot: snap, description, renames });
-  };
-
   return (
-    <>
-      <Panel title={isAuthed ? 'Submit / Export' : 'Export / Import'}>
-        {isAuthed && (
-          <>
-            <Button variant="primary" onClick={handleSubmitMove} fullWidth>
-              Submit move (PR)
-            </Button>
-            <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
-          </>
-        )}
-        <Button onClick={handleExportJson}>Export JSON</Button>
-        <Button onClick={handleImportJsonClick}>Import JSON</Button>
-        <Button onClick={handleExportSvg}>Export SVG</Button>
-        <Button onClick={handleImportSvgClick}>Import SVG</Button>
-        <input
-          ref={jsonInputRef}
-          type="file"
-          accept=".json,application/json"
-          onChange={handleJsonFile}
-          style={{ display: 'none' }}
-        />
-        <input
-          ref={svgInputRef}
-          type="file"
-          accept=".svg,image/svg+xml"
-          onChange={handleSvgFile}
-          style={{ display: 'none' }}
-        />
-      </Panel>
-      {pending && auth.login && (
-        <SubmitMoveModal
-          login={auth.login}
-          snapshot={pending.snapshot}
-          description={pending.description}
-          renames={pending.renames}
-          onClose={() => setPending(null)}
-          onAuthExpired={() => {
-            // Refresh-token flow already failed; need a full re-auth.
-            auth.signOut();
-            auth.signIn();
-          }}
-        />
-      )}
-    </>
+    <Panel title="Export / Import">
+      <Button onClick={handleExportJson}>Export JSON</Button>
+      <Button onClick={handleImportJsonClick}>Import JSON</Button>
+      <Button onClick={handleExportSvg}>Export SVG</Button>
+      <Button onClick={handleImportSvgClick}>Import SVG</Button>
+      <input
+        ref={jsonInputRef}
+        type="file"
+        accept=".json,application/json"
+        onChange={handleJsonFile}
+        style={{ display: 'none' }}
+      />
+      <input
+        ref={svgInputRef}
+        type="file"
+        accept=".svg,image/svg+xml"
+        onChange={handleSvgFile}
+        style={{ display: 'none' }}
+      />
+    </Panel>
   );
 }

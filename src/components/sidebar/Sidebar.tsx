@@ -25,7 +25,7 @@ export function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <h2 className={styles.title}>Theatrum</h2>
-      <AccountPanel />
+      <AccountPanel onStatus={setStatus} />
 
       {showGameplayPanels && <ModePanel status={status} />}
       {showGameplayPanels && <AddForcePanel onStatus={setStatus} />}

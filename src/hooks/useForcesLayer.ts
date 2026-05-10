@@ -41,11 +41,25 @@ function counterTransform(scale: number): string {
   return `translate(-50%, -50%) scale(${scale})`;
 }
 
+/** Wargame-style strength pips: one dot per 5k, capped so very large
+ *  armies don't blow up the marker DOM. The actual strength text is
+ *  still shown below the box; the dots are just a quick visual cue. */
+const ARMY_DOTS_PER_STRENGTH = 5000;
+const ARMY_DOTS_MAX = 20;
+
+function armyDotsHtml(strength: number): string {
+  const n = Math.min(Math.floor(strength / ARMY_DOTS_PER_STRENGTH), ARMY_DOTS_MAX);
+  if (n === 0) return '';
+  return `<div class="force-dots">${'<span class="force-dot"></span>'.repeat(n)}</div>`;
+}
+
 function makeForceIcon(force: Force, color: string, scale: number): L.DivIcon {
   const branchClass = force.branch === 'navy' ? 'navy' : 'army';
-  const style = `background:${color};transform:${counterTransform(scale)}`;
+  const style = `background:${color};transform:${counterTransform(scale)};--nation-color:${color}`;
+  const dots = force.branch === 'army' ? armyDotsHtml(force.strength) : '';
   const html = `<div class="force-counter ${branchClass}" style="${style}">
     <div class="force-nation-above">${force.nation}</div>
+    ${dots}
     <div class="force-name-below">${force.name}</div>
     <div class="force-strength-below">${formatStrength(force.strength, force.branch)}</div>
   </div>`;

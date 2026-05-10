@@ -1,16 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import type { AppSnapshot } from '@/types';
-import { submitMove, type CountryRename } from '@/auth/submitMove';
+import {
+  hasMeaningfulDiff,
+  submitMove,
+  type CountryRename,
+} from '@/auth/submitMove';
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import styles from './SubmitMoveModal.module.css';
 
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
 
-const POLL_INTERVAL_MS = 3000;
-const MAX_ATTEMPTS = 60; // ~3 minutes
+const POLL_INTERVAL_MS = 1500;
+const MAX_ATTEMPTS = 80; // ~2 minutes
+const MERGE_DISPLAY_MS = 600;
 
 type Phase =
+  | { kind: 'checking' }
+  | { kind: 'no-changes' }
+  | { kind: 'describe' }
   | { kind: 'opening' }
   | { kind: 'polling'; prNumber: number; prUrl: string; attempt: number }
   | { kind: 'merged'; prNumber: number; prUrl: string }
@@ -22,7 +30,6 @@ type Phase =
 interface SubmitMoveModalProps {
   login: string;
   snapshot: AppSnapshot;
-  description: string;
   /** Country renames to mirror into perm.json — admin-only. */
   renames: CountryRename[];
   onClose: () => void;
@@ -33,100 +40,121 @@ interface SubmitMoveModalProps {
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 /**
- * Owns the full submit-move lifecycle: opens the PR via GitHub API, then
- * polls every POLL_INTERVAL_MS for the validator workflow's verdict
- * (merged → success, closed without merge → rejected, timeout otherwise).
- * On success, reloads the page so the bootstrap re-fetches the live
- * state.json from main. On rejection, surfaces the validator's last
- * comment as the reason and prompts a refresh-and-retry.
+ * Owns the full submit-move lifecycle. The modal opens immediately
+ * (no async work in the parent), and the diff check runs as the first
+ * in-modal phase so the spinner is visible during the network wait.
+ *
+ * Phases:
+ *   checking → describe (or no-changes terminal)
+ *   describe → opening on user submit
+ *   opening → polling → merged | rejected | timeout
+ *   any → expired | error on faults
  */
 export function SubmitMoveModal({
   login,
   snapshot,
-  description,
   renames,
   onClose,
   onAuthExpired,
 }: SubmitMoveModalProps) {
-  const [phase, setPhase] = useState<Phase>({ kind: 'opening' });
+  const [phase, setPhase] = useState<Phase>({ kind: 'checking' });
+  const [description, setDescription] = useState('');
+  const mountedRef = useRef(true);
 
   useEffect(() => {
-    let cancelled = false;
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
 
+  // Initial diff check — runs once per modal mount.
+  useEffect(() => {
     (async () => {
-      // 1. Open the PR
-      let prNumber: number;
-      let prUrl: string;
       try {
-        const r = await submitMove({ login, snapshot, description, renames });
-        if (cancelled) return;
-        prNumber = r.prNumber;
-        prUrl = r.prUrl;
+        const changed = await hasMeaningfulDiff(snapshot);
+        if (!mountedRef.current) return;
+        setPhase(changed ? { kind: 'describe' } : { kind: 'no-changes' });
       } catch (err) {
-        if (cancelled) return;
+        if (!mountedRef.current) return;
         if (err instanceof GitHubAuthError) {
           setPhase({ kind: 'expired' });
         } else {
           setPhase({ kind: 'error', message: (err as Error).message });
         }
-        return;
       }
-
-      // 2. Poll until merged/closed/timeout
-      setPhase({ kind: 'polling', prNumber, prUrl, attempt: 1 });
-      for (let i = 1; i <= MAX_ATTEMPTS; i++) {
-        await sleep(POLL_INTERVAL_MS);
-        if (cancelled) return;
-        try {
-          const pr = await getPullRequest(REPO, prNumber);
-          if (pr.merged) {
-            if (!cancelled) setPhase({ kind: 'merged', prNumber, prUrl });
-            return;
-          }
-          if (pr.state === 'closed') {
-            // Closed without merge → rejected. Pull the validator's last
-            // comment as the reason; the workflow leaves a single line
-            // beginning with "Move rejected by validator: <reason>".
-            let reason = 'The validator workflow closed the PR without merging.';
-            try {
-              const comments = await listIssueComments(REPO, prNumber);
-              const bot = comments.filter((c) => c.user.login === 'github-actions[bot]').pop();
-              if (bot?.body) {
-                const m = bot.body.match(/Move rejected by validator:\s*(.+)/);
-                reason = (m ? m[1]! : bot.body).trim();
-              }
-            } catch {
-              // keep generic reason
-            }
-            if (!cancelled) setPhase({ kind: 'rejected', prNumber, prUrl, reason });
-            return;
-          }
-          if (!cancelled) {
-            setPhase({ kind: 'polling', prNumber, prUrl, attempt: i + 1 });
-          }
-        } catch (err) {
-          if (err instanceof GitHubAuthError) {
-            if (!cancelled) setPhase({ kind: 'expired' });
-            return;
-          }
-          // Transient API errors during polling — keep going.
-          // eslint-disable-next-line no-console
-          console.warn('Poll error:', err);
-        }
-      }
-      if (!cancelled) setPhase({ kind: 'timeout', prNumber, prUrl });
     })();
+  }, [snapshot]);
 
-    return () => {
-      cancelled = true;
-    };
-  }, [login, snapshot, description, renames]);
+  // Open the PR, then poll for the validator's verdict. Triggered by the
+  // Submit button in the 'describe' phase, not from a useEffect — the
+  // user controls when the network work starts.
+  const startSubmit = async (): Promise<void> => {
+    setPhase({ kind: 'opening' });
+
+    let prNumber: number;
+    let prUrl: string;
+    try {
+      const r = await submitMove({ login, snapshot, description, renames });
+      if (!mountedRef.current) return;
+      prNumber = r.prNumber;
+      prUrl = r.prUrl;
+    } catch (err) {
+      if (!mountedRef.current) return;
+      if (err instanceof GitHubAuthError) {
+        setPhase({ kind: 'expired' });
+      } else {
+        setPhase({ kind: 'error', message: (err as Error).message });
+      }
+      return;
+    }
+
+    setPhase({ kind: 'polling', prNumber, prUrl, attempt: 1 });
+    for (let i = 1; i <= MAX_ATTEMPTS; i++) {
+      await sleep(POLL_INTERVAL_MS);
+      if (!mountedRef.current) return;
+      try {
+        const pr = await getPullRequest(REPO, prNumber);
+        if (pr.merged) {
+          if (mountedRef.current) setPhase({ kind: 'merged', prNumber, prUrl });
+          return;
+        }
+        if (pr.state === 'closed') {
+          let reason = 'The validator workflow closed the PR without merging.';
+          try {
+            const comments = await listIssueComments(REPO, prNumber);
+            const bot = comments.filter((c) => c.user.login === 'github-actions[bot]').pop();
+            if (bot?.body) {
+              const m = bot.body.match(/Move rejected by validator:\s*(.+)/);
+              reason = (m ? m[1]! : bot.body).trim();
+            }
+          } catch {
+            // keep generic reason
+          }
+          if (mountedRef.current) setPhase({ kind: 'rejected', prNumber, prUrl, reason });
+          return;
+        }
+        if (mountedRef.current) {
+          setPhase({ kind: 'polling', prNumber, prUrl, attempt: i + 1 });
+        }
+      } catch (err) {
+        if (err instanceof GitHubAuthError) {
+          if (mountedRef.current) setPhase({ kind: 'expired' });
+          return;
+        }
+        // Transient API errors during polling — keep going.
+        // eslint-disable-next-line no-console
+        console.warn('Poll error:', err);
+      }
+    }
+    if (mountedRef.current) setPhase({ kind: 'timeout', prNumber, prUrl });
+  };
 
   // Auto-reload after the merge confirmation so the bootstrap picks up
   // the new state.json. Short pause so the user sees the success message.
   useEffect(() => {
     if (phase.kind !== 'merged') return;
-    const t = window.setTimeout(() => window.location.reload(), 1500);
+    const t = window.setTimeout(() => window.location.reload(), MERGE_DISPLAY_MS);
     return () => window.clearTimeout(t);
   }, [phase.kind]);
 
@@ -134,14 +162,59 @@ export function SubmitMoveModal({
     <div className={styles.backdrop}>
       <div className={styles.panel}>
         <h3 className={styles.title}>Submit Move</h3>
-        {renderPhase(phase, onClose, onAuthExpired)}
+        {renderPhase(phase, description, setDescription, startSubmit, onClose, onAuthExpired)}
       </div>
     </div>
   );
 }
 
-function renderPhase(phase: Phase, onClose: () => void, onAuthExpired: () => void) {
+function renderPhase(
+  phase: Phase,
+  description: string,
+  setDescription: (v: string) => void,
+  onStartSubmit: () => void,
+  onClose: () => void,
+  onAuthExpired: () => void,
+) {
   switch (phase.kind) {
+    case 'checking':
+      return (
+        <>
+          <div className={styles.spinner} />
+          <p className={styles.message}>Checking for changes…</p>
+        </>
+      );
+    case 'no-changes':
+      return (
+        <>
+          <p className={styles.message}>No changes to submit.</p>
+          <p className={styles.subnote}>Make some edits, then try again.</p>
+          <div className={styles.buttons}>
+            <Button onClick={onClose}>Close</Button>
+          </div>
+        </>
+      );
+    case 'describe':
+      return (
+        <>
+          <p className={styles.message} style={{ textAlign: 'left' }}>
+            Describe your move (optional):
+          </p>
+          <textarea
+            className={styles.textarea}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="e.g. moved 5th Army to Vienna"
+            autoFocus
+          />
+          <div className={styles.buttons}>
+            <Button onClick={onClose}>Cancel</Button>
+            <Button variant="primary" onClick={onStartSubmit}>
+              Submit
+            </Button>
+          </div>
+        </>
+      );
     case 'opening':
       return (
         <>

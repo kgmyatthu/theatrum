@@ -88,3 +88,23 @@
   margin-top: 14px;
   justify-content: center;
 }
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  background: var(--bg-input, #1f1f1f);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  resize: vertical;
+  min-height: 56px;
+  margin: 4px 0 4px 0;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--warning);
+}
