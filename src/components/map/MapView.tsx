@@ -9,6 +9,7 @@ import { useRulerTool } from '@/hooks/useRulerTool';
 import { useAddForceClick } from '@/hooks/useAddForceClick';
 import { useDragSelect } from '@/hooks/useDragSelect';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
+import { useAuth } from '@/auth/AuthContext';
 import type { Force, ProvinceFeature } from '@/types';
 import { ContextMenu, type ContextMenuPosition } from './ContextMenu';
 import { ProvinceInfo } from './ProvinceInfo';
@@ -33,6 +34,8 @@ export function MapView() {
   const mapRef = useLeafletMap({ containerRef });
   const dispatch = useAppDispatch();
   const { mode, selectedFids } = useAppState();
+  const auth = useAuth();
+  const isAdmin = auth.role === 'admin';
 
   const [menu, setMenu] = useState<ContextMenuState | null>(null);
   const [hover, setHover] = useState<HoverState | null>(null);
@@ -41,6 +44,8 @@ export function MapView() {
 
   const handleProvinceClick = useCallback(
     (feature: ProvinceFeature, ev: L.LeafletMouseEvent): void => {
+      // Province select / deselect is admin-only.
+      if (!isAdmin) return;
       const { _fid } = feature.properties;
       if (ev.originalEvent.shiftKey) {
         dispatch({ type: 'SELECT_PROVINCES', payload: { fids: [_fid], mode: 'toggle' } });
@@ -51,11 +56,13 @@ export function MapView() {
       }
       ev.originalEvent.stopPropagation();
     },
-    [dispatch, mode, selectedFids],
+    [dispatch, mode, selectedFids, isAdmin],
   );
 
   const handleProvinceContextMenu = useCallback(
     (feature: ProvinceFeature, ev: L.LeafletMouseEvent): void => {
+      // Right-click reassign-owner menu is admin-only.
+      if (!isAdmin) return;
       ev.originalEvent.preventDefault();
       ev.originalEvent.stopPropagation();
       const { _fid } = feature.properties;
@@ -65,7 +72,7 @@ export function MapView() {
         fids,
       });
     },
-    [selectedFids],
+    [selectedFids, isAdmin],
   );
 
   const handleProvinceHover = useCallback((feature: ProvinceFeature): void => {
@@ -91,12 +98,10 @@ export function MapView() {
   useDragSelect({ mapRef });
 
   // Left-click on the map background (ocean / no province under cursor)
-  // deselects all provinces. Clicks on a province go through
-  // handleProvinceClick — Leaflet's canvas renderer suppresses the map
-  // click in that case, so this only fires on truly empty areas.
+  // deselects all provinces. Admin-only since selection is admin-only.
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || !isAdmin) return;
     const handler = (e: L.LeafletMouseEvent): void => {
       if (e.originalEvent.shiftKey) return;
       if (mode !== 'view') return;
@@ -107,7 +112,7 @@ export function MapView() {
     return () => {
       map.off('click', handler);
     };
-  }, [mapRef, mode, selectedFids, dispatch]);
+  }, [mapRef, mode, selectedFids, dispatch, isAdmin]);
 
   const handleForceContextMenu = useCallback((force: Force): void => {
     setEditingForce(force);

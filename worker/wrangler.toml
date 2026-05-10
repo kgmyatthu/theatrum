@@ -1,0 +1,6 @@
+name = "theatrum-oauth"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Secrets are set via `wrangler secret put GITHUB_CLIENT_ID` / GITHUB_CLIENT_SECRET / ALLOWED_ORIGIN.
+# ALLOWED_ORIGIN should be the deployed app origin, e.g. https://theatrum.kaungmyatthu.dev

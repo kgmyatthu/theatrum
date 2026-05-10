@@ -7,22 +7,33 @@ import { DisplayPanel } from './DisplayPanel';
 import { LayersPanel } from './LayersPanel';
 import { PersistencePanel } from './PersistencePanel';
 import { StatsPanel } from './StatsPanel';
+import { AccountPanel } from '@/auth/AccountPanel';
+import { useAuth } from '@/auth/AuthContext';
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {
   const [status, setStatus] = useState('Ready.');
+  const auth = useAuth();
+
+  const isAuthed = auth.status === 'authenticated';
+  const isAdmin = auth.role === 'admin';
+  // Player + admin both get the gameplay panels (Mode / AddForce / Display /
+  // Layers / Stats). Country admin (rename / recolor / new) is admin-only.
+  const showGameplayPanels = isAuthed;
 
   return (
     <div className={styles.sidebar}>
       <h2 className={styles.title}>Theatrum</h2>
-      <ModePanel status={status} />
-      <AddForcePanel onStatus={setStatus} />
-      <NewCountryPanel onStatus={setStatus} />
-      <EditCountryPanel onStatus={setStatus} />
-      <DisplayPanel />
-      <LayersPanel />
+      <AccountPanel />
+
+      {showGameplayPanels && <ModePanel status={status} />}
+      {showGameplayPanels && <AddForcePanel onStatus={setStatus} />}
+      {isAdmin && <NewCountryPanel onStatus={setStatus} />}
+      {isAdmin && <EditCountryPanel onStatus={setStatus} />}
+      {showGameplayPanels && <DisplayPanel />}
+      {showGameplayPanels && <LayersPanel />}
       <PersistencePanel onStatus={setStatus} />
-      <StatsPanel />
+      {showGameplayPanels && <StatsPanel />}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, type RefObject } from 'react';
 import type L from 'leaflet';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { useForceDraft } from '@/state/ForceDraftContext';
+import { useAuth } from '@/auth/AuthContext';
 
 interface UseAddForceClickOptions {
   mapRef: RefObject<L.Map | null>;
@@ -11,15 +12,21 @@ interface UseAddForceClickOptions {
 /**
  * When mode === 'add-force', a single map click reads the AddForcePanel
  * draft from ForceDraftContext and dispatches ADD_FORCE at the click latlng.
+ *
+ * Players are constrained to their own nation: any draft.nation diverging
+ * from auth.nation is overridden before dispatch (the AddForcePanel locks
+ * its UI too — this is defense in depth).
  */
 export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions): void {
   const { mode, nextForceId } = useAppState();
   const dispatch = useAppDispatch();
   const { draftRef } = useForceDraft();
+  const auth = useAuth();
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || mode !== 'add-force') return;
+    // Anonymous and unregistered users cannot add forces.
+    if (!map || mode !== 'add-force' || auth.status !== 'authenticated') return;
 
     const handler = (e: L.LeafletMouseEvent): void => {
       const draft = draftRef.current;
@@ -28,7 +35,10 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
         onStatus?.('Enter a force name in the form before placing.');
         return;
       }
-      if (!draft.nation) {
+      // Players cannot pick nations other than their own.
+      const nation =
+        auth.role === 'player' && auth.nation ? auth.nation : draft.nation;
+      if (!nation) {
         onStatus?.('Choose a nation in the form before placing.');
         return;
       }
@@ -37,7 +47,7 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
         payload: {
           force: {
             id: nextForceId,
-            nation: draft.nation,
+            nation,
             branch: draft.branch,
             name: draft.name,
             strength: draft.strength,
@@ -53,5 +63,5 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
     return () => {
       map.off('click', handler);
     };
-  }, [mapRef, mode, nextForceId, dispatch, draftRef, onStatus]);
+  }, [mapRef, mode, nextForceId, dispatch, draftRef, onStatus, auth.status, auth.role, auth.nation]);
 }

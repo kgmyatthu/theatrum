@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAppState } from '@/state/AppContext';
 import { useForceDraft } from '@/state/ForceDraftContext';
+import { useAuth } from '@/auth/AuthContext';
 import { Panel } from '@/components/ui/Panel';
 import type { ForceBranch } from '@/types';
 import styles from './NewCountryPanel.module.css';
@@ -12,25 +13,33 @@ interface AddForcePanelProps {
 /**
  * Holds the new-force form. Form values mirror into a ref via ForceDraftContext
  * so MapView can read them when the user clicks the map in add-force mode.
- * This decouples form ownership from map-click handling.
+ *
+ * For a player (role === 'player'), the nation field is locked to their
+ * assigned nation. Admins can pick any nation.
  */
 export function AddForcePanel({ onStatus }: AddForcePanelProps) {
   const { mode, owners, forces } = useAppState();
   const { draftRef } = useForceDraft();
+  const auth = useAuth();
+  const lockedNation = auth.role === 'player' ? auth.nation : null;
 
-  const [nation, setNation] = useState(owners[0] ?? '');
+  const [nation, setNation] = useState(lockedNation ?? owners[0] ?? '');
   const [branch, setBranch] = useState<ForceBranch>('army');
   const [name, setName] = useState('');
   const [strength, setStrength] = useState('40000');
   const [commander, setCommander] = useState('');
 
-  // Keep nation valid if owners list shifts under us
+  // Keep nation valid: player → locked to their nation; admin → first owner if current is missing.
   useEffect(() => {
+    if (lockedNation) {
+      if (nation !== lockedNation) setNation(lockedNation);
+      return;
+    }
     if (owners.length === 0) return;
     if (!owners.includes(nation)) setNation(owners[0]!);
-  }, [owners, nation]);
+  }, [owners, nation, lockedNation]);
 
-  // Mirror form into draftRef whenever any field changes
+  // Mirror form into draftRef
   useEffect(() => {
     draftRef.current = {
       nation,
@@ -41,14 +50,12 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
     };
   }, [draftRef, nation, branch, name, strength, commander]);
 
-  // Status hint when entering mode
   useEffect(() => {
     if (mode === 'add-force') {
       onStatus('Fill in the form, then click on the map to place the force.');
     }
   }, [mode, onStatus]);
 
-  // Detect successful placement (forces.length grew) and clear form
   const [lastSeenCount, setLastSeenCount] = useState(forces.length);
   useEffect(() => {
     if (forces.length > lastSeenCount) {
@@ -67,17 +74,26 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
   return (
     <Panel title="New Force">
       <label className={styles.label}>Nation</label>
-      <select
-        className={styles.input}
-        value={nation}
-        onChange={(e) => setNation(e.target.value)}
-      >
-        {owners.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
+      {lockedNation ? (
+        <input
+          className={styles.input}
+          value={lockedNation}
+          readOnly
+          style={{ opacity: 0.7, cursor: 'not-allowed' }}
+        />
+      ) : (
+        <select
+          className={styles.input}
+          value={nation}
+          onChange={(e) => setNation(e.target.value)}
+        >
+          {owners.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+      )}
       <label className={styles.label}>Branch</label>
       <select
         className={styles.input}
@@ -109,9 +125,7 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
         value={commander}
         onChange={(e) => setCommander(e.target.value)}
       />
-      <div className={styles.helper}>
-        Click anywhere on the map to place the force.
-      </div>
+      <div className={styles.helper}>Click anywhere on the map to place the force.</div>
     </Panel>
   );
 }

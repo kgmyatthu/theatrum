@@ -2,6 +2,7 @@ import { useEffect, useRef, type RefObject } from 'react';
 import L from 'leaflet';
 import type { Force } from '@/types';
 import { useAppState } from '@/state/AppContext';
+import { useAuth } from '@/auth/AuthContext';
 import { haversineKm, formatDistance } from '@/utils/geometry';
 
 export interface PendingMove {
@@ -63,10 +64,19 @@ export function useForcesLayer({
   onForceDragEnd,
 }: UseForcesLayerOptions): void {
   const { forces, palette, layerVisibility, iconScale } = useAppState();
+  const auth = useAuth();
   const layerRef = useRef<L.LayerGroup | null>(null);
   const markersRef = useRef<L.Marker[]>([]);
 
-  // Rebuild markers when forces or palette changes
+  // Per-force write permission: admin can drag/edit anything; players can
+  // only act on forces of their own nation; everyone else is read-only.
+  const canEdit = (force: Force): boolean => {
+    if (auth.role === 'admin') return true;
+    if (auth.role === 'player' && auth.nation === force.nation) return true;
+    return false;
+  };
+
+  // Rebuild markers when forces / palette / auth role/nation changes
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -81,9 +91,10 @@ export function useForcesLayer({
 
     for (const force of forces) {
       const color = palette[force.nation] ?? '#888';
+      const editable = canEdit(force);
       const marker = L.marker([force.lat, force.lon], {
         icon: makeForceIcon(force, color, initialScale),
-        draggable: true,
+        draggable: editable,
         title: `${force.name} (${force.nation})`,
       });
 
@@ -143,12 +154,15 @@ export function useForcesLayer({
         });
       });
 
-      marker.on('contextmenu', (ev) => {
-        const e = ev as L.LeafletMouseEvent;
-        e.originalEvent.preventDefault();
-        e.originalEvent.stopPropagation();
-        onForceContextMenu(force);
-      });
+      // Edit (right-click) is gated the same way as drag.
+      if (editable) {
+        marker.on('contextmenu', (ev) => {
+          const e = ev as L.LeafletMouseEvent;
+          e.originalEvent.preventDefault();
+          e.originalEvent.stopPropagation();
+          onForceContextMenu(force);
+        });
+      }
 
       marker.addTo(group);
       markers.push(marker);
@@ -157,7 +171,7 @@ export function useForcesLayer({
     markersRef.current = markers;
     if (layerVisibility.forces) group.addTo(map);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mapRef, forces, palette, layerVisibility.forces, onForceContextMenu, onForceDragEnd]);
+  }, [mapRef, forces, palette, layerVisibility.forces, onForceContextMenu, onForceDragEnd, auth.role, auth.nation]);
 
   // Apply scale on zoom change or when iconScale slider moves. Updates the
   // existing DOM directly to avoid rebuilding markers (which would tear down

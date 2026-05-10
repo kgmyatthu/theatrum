@@ -1,6 +1,7 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import L from 'leaflet';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
+import { useAuth } from '@/auth/AuthContext';
 import { computeBBox } from '@/utils/geometry';
 import type { BBox } from '@/types';
 
@@ -26,6 +27,8 @@ interface DragState {
 export function useDragSelect({ mapRef }: UseDragSelectOptions): void {
   const { provinces } = useAppState();
   const dispatch = useAppDispatch();
+  const auth = useAuth();
+  const isAdmin = auth.role === 'admin';
   const dragRef = useRef<DragState | null>(null);
   const bboxCacheRef = useRef<Map<number, BBox> | null>(null);
 
@@ -44,7 +47,8 @@ export function useDragSelect({ mapRef }: UseDragSelectOptions): void {
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    // Multi-select is admin-only; bail out for everyone else.
+    if (!map || !isAdmin) return;
 
     const container = map.getContainer();
 
@@ -149,5 +153,5 @@ export function useDragSelect({ mapRef }: UseDragSelectOptions): void {
         map.dragging.enable();
       }
     };
-  }, [mapRef, provinces, dispatch]);
+  }, [mapRef, provinces, dispatch, isAdmin]);
 }

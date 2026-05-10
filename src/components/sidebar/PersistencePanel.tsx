@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
@@ -6,6 +6,8 @@ import { buildSnapshot } from '@/utils/snapshot';
 import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
+import { useAuth } from '@/auth/AuthContext';
+import { submitMove } from '@/auth/submitMove';
 import type { AppSnapshot, ProvinceFeature } from '@/types';
 
 const STORAGE_KEY = 'theatrum';
@@ -17,8 +19,12 @@ interface PersistencePanelProps {
 export function PersistencePanel({ onStatus }: PersistencePanelProps) {
   const dispatch = useAppDispatch();
   const state = useAppState();
+  const auth = useAuth();
   const jsonInputRef = useRef<HTMLInputElement>(null);
   const svgInputRef = useRef<HTMLInputElement>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const isAuthed = auth.status === 'authenticated';
 
   const buildCurrentSnapshot = (): AppSnapshot | null => {
     if (!state.provinces) return null;
@@ -82,7 +88,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     const snap = buildCurrentSnapshot();
     if (!snap || !state.provinces) return onStatus('Nothing to export yet.');
 
-    // Build country labels using the same algorithm as the runtime layer
     const bboxes = new Map<number, ReturnType<typeof computeBBox>>();
     const coordSets = new Map<number, Set<string>>();
     for (const f of state.provinces.features) {
@@ -101,9 +106,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       }
       arr.push(f);
     }
-    // Shrink labels for export so they don't crowd the world-extent view.
-    // The embedded snapshot below is independent of label size, so re-import
-    // still restores all data exactly.
     const SVG_LABEL_SHRINK = 0.5;
     const countryLabels: Array<{ name: string; lon: number; lat: number; fontSize: number }> = [];
     for (const [owner, feats] of featuresByOwner) {
@@ -170,12 +172,48 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     e.target.value = '';
   };
 
+  const handleSubmitMove = async (): Promise<void> => {
+    if (!auth.token || !auth.login) return onStatus('Sign in first.');
+    const snap = buildCurrentSnapshot();
+    if (!snap) return onStatus('No state to submit.');
+    const description = window.prompt('Describe your move (optional):') ?? '';
+    setSubmitting(true);
+    try {
+      onStatus('Opening pull request…');
+      const result = await submitMove({
+        token: auth.token,
+        login: auth.login,
+        snapshot: snap,
+        description,
+      });
+      onStatus(`Submitted PR #${result.prNumber}. Validator will auto-merge if it passes.`);
+      window.open(result.prUrl, '_blank', 'noopener');
+    } catch (err) {
+      onStatus(`Submit failed: ${(err as Error).message}`);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
-    <Panel title="Save / Load">
-      <Button onClick={handleSave}>Save</Button>
-      <Button onClick={handleLoad}>Load</Button>
-      <Button onClick={handleReset}>Reset</Button>
-      <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
+    <Panel title={isAuthed ? 'Save / Load / Submit' : 'Export / Import'}>
+      {isAuthed && (
+        <>
+          <Button
+            variant="primary"
+            onClick={handleSubmitMove}
+            disabled={submitting}
+            fullWidth
+          >
+            {submitting ? 'Submitting…' : 'Submit move (PR)'}
+          </Button>
+          <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
+          <Button onClick={handleSave}>Save</Button>
+          <Button onClick={handleLoad}>Load</Button>
+          <Button onClick={handleReset}>Reset</Button>
+          <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
+        </>
+      )}
       <Button onClick={handleExportJson}>Export JSON</Button>
       <Button onClick={handleImportJsonClick}>Import JSON</Button>
       <Button onClick={handleExportSvg}>Export SVG</Button>

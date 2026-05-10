@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  # Allows the validator workflow to redeploy after auto-merging a move PR.
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,7 +23,13 @@ jobs:
 
       - run: npm ci
 
+      # Vite inlines VITE_* env vars at build time, so they must be on the
+      # process when `vite build` runs. Repo secrets are exposed via env here.
       - run: npm run build
+        env:
+          VITE_GITHUB_CLIENT_ID: ${{ secrets.VITE_GITHUB_CLIENT_ID }}
+          VITE_OAUTH_WORKER_URL: ${{ secrets.VITE_OAUTH_WORKER_URL }}
+          VITE_GITHUB_REPO: ${{ secrets.VITE_GITHUB_REPO }}
 
       - uses: peaceiris/actions-gh-pages@v4
         with:

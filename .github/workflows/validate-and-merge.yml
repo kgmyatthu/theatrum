@@ -1,0 +1,79 @@
+name: Validate and auto-merge moves
+
+# pull_request_target runs in the BASE repo's trusted context with access
+# to GITHUB_TOKEN write perms. The PR head is checked out READ-ONLY —
+# we never execute code from it.
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'public/data/state.json'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout base (main, trusted)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          path: base
+
+      - name: Checkout head (PR, untrusted — read only)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: head
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate move
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        # Validator script comes from BASE — never from HEAD — so a malicious
+        # PR can't ship a "valid: always true" validator.
+        run: node base/scripts/validate-move.mjs
+
+      - name: Comment rejection
+        if: steps.validate.outputs.valid == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          REASON: ${{ steps.validate.outputs.reason }}
+        run: |
+          gh pr comment "$PR_NUMBER" --repo "$REPO" \
+            --body "Move rejected by validator: $REASON"
+
+      - name: Merge approved move
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch
+
+      - name: Trigger deploy
+        if: steps.validate.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        # GITHUB_TOKEN-driven merges don't trigger downstream workflows;
+        # explicitly dispatch the deploy. Requires deploy.yml to also list
+        # `workflow_dispatch:` as a trigger.
+        run: gh workflow run deploy.yml --ref main --repo "$REPO"
