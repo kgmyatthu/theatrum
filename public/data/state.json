@@ -18454,8 +18454,8 @@
       "name": "Army of the Rhine",
       "strength": 80000,
       "commander": "Charles",
-      "lon": 17.116699218750004,
-      "lat": 52.482780222078226
+      "lon": 21.159667968750004,
+      "lat": 51.957807388715544
     },
     {
       "id": 8,
@@ -18786,5 +18786,5 @@
     }
   ],
   "provinceFillOpacity": 0.5,
-  "exportedAt": "2026-05-10T01:59:36.359Z"
+  "exportedAt": "2026-05-10T02:07:43.636Z"
 }
