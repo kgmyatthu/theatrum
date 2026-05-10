@@ -1,4 +1,4 @@
-:global(.force-counter) {
+.force-counter {
   position: relative;
   border: 2px solid #000;
   width: 50px;
@@ -8,8 +8,8 @@
   cursor: move;
 }
 
-:global(.force-counter.army)::before,
-:global(.force-counter.army)::after {
+.force-counter.army::before,
+.force-counter.army::after {
   content: '';
   position: absolute;
   left: 0;
@@ -19,7 +19,7 @@
   pointer-events: none;
 }
 
-:global(.force-counter.army)::before {
+.force-counter.army::before {
   background: linear-gradient(
     to top right,
     transparent calc(50% - 1px),
@@ -29,7 +29,7 @@
   );
 }
 
-:global(.force-counter.army)::after {
+.force-counter.army::after {
   background: linear-gradient(
     to bottom right,
     transparent calc(50% - 1px),
@@ -39,7 +39,7 @@
   );
 }
 
-:global(.force-counter.navy)::before {
+.force-counter.navy::before {
   content: '⚓';
   position: absolute;
   left: 50%;
@@ -51,7 +51,7 @@
   line-height: 1;
 }
 
-:global(.force-nation-above) {
+.force-nation-above {
   position: absolute;
   bottom: calc(100% + 2px);
   left: 50%;
@@ -67,7 +67,7 @@
   letter-spacing: 0.6px;
 }
 
-:global(.force-name-below) {
+.force-name-below {
   position: absolute;
   top: calc(100% + 2px);
   left: 50%;
@@ -82,7 +82,7 @@
   letter-spacing: 0.3px;
 }
 
-:global(.force-strength-below) {
+.force-strength-below {
   position: absolute;
   top: calc(100% + 16px);
   left: 50%;
@@ -96,7 +96,7 @@
   font-family: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
 }
 
-:global(.force-drag-distance) {
+.force-drag-distance {
   background: rgba(255, 235, 59, 0.92);
   color: #000;
   font-size: 11px;

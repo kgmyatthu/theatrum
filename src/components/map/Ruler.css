@@ -1,4 +1,4 @@
-:global(.ruler-segment) {
+.ruler-segment {
   background: rgba(255, 235, 59, 0.85);
   color: #000;
   font-size: 11px;
@@ -12,7 +12,7 @@
   border: 1px solid #aa8800;
 }
 
-:global(.ruler-total) {
+.ruler-total {
   background: rgba(40, 110, 60, 0.95);
   color: #fff;
   font-size: 11px;

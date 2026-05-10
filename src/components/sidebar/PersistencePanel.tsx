@@ -3,6 +3,7 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
 import { buildSnapshot } from '@/utils/snapshot';
+import { hasMeaningfulDiff } from '@/auth/submitMove';
 import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
@@ -145,10 +146,20 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     e.target.value = '';
   };
 
-  const handleSubmitMove = (): void => {
+  const handleSubmitMove = async (): Promise<void> => {
     if (!auth.login) return onStatus('Sign in first.');
     const snap = buildCurrentSnapshot();
     if (!snap) return onStatus('No state to submit.');
+
+    onStatus('Checking for changes…');
+    let changed: boolean;
+    try {
+      changed = await hasMeaningfulDiff(snap);
+    } catch (err) {
+      return onStatus(`Couldn't reach main: ${(err as Error).message}`);
+    }
+    if (!changed) return onStatus('No changes to submit.');
+
     const description = window.prompt('Describe your move (optional):') ?? '';
     setPending({ snapshot: snap, description });
   };

@@ -11,6 +11,33 @@ import {
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
 const STATE_PATH = 'public/data/state.json';
 
+function base64ToUtf8(b64: string): string {
+  // GitHub returns base64 with embedded newlines.
+  const clean = b64.replace(/\s+/g, '');
+  const binary = atob(clean);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+/**
+ * Compare a candidate snapshot against state.json on main. Returns false
+ * when they're structurally identical — caller should refuse to open an
+ * empty PR. Throws on network/auth errors so caller can surface them.
+ */
+export async function hasMeaningfulDiff(snapshot: AppSnapshot): Promise<boolean> {
+  if (!REPO) return true;
+  const file = await getFile(REPO, STATE_PATH, 'main');
+  let remote: AppSnapshot;
+  try {
+    remote = JSON.parse(base64ToUtf8(file.content)) as AppSnapshot;
+  } catch {
+    // Couldn't parse main — let the caller submit; validator will sort it out.
+    return true;
+  }
+  return JSON.stringify(snapshot) !== JSON.stringify(remote);
+}
+
 export interface SubmitMoveArgs {
   login: string;
   /** Snapshot to commit (built from current in-memory state). */

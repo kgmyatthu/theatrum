@@ -1,4 +1,4 @@
-:global(.drag-select-rect) {
+.drag-select-rect {
   position: absolute;
   background: rgba(255, 235, 59, 0.15);
   border: 1.5px dashed #ffeb3b;
