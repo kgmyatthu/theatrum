@@ -49,8 +49,9 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
   // 3. existing state.json blob SHA on main
   const file = await getFile(token, REPO, STATE_PATH, 'main');
 
-  // 4. commit new state.json on the branch
-  const json = JSON.stringify(snapshot);
+  // 4. commit new state.json on the branch — pretty-printed so subsequent
+  // PR diffs are line-scoped and merge conflicts stay rare.
+  const json = JSON.stringify(snapshot, null, 2);
   const base64 = utf8ToBase64(json);
   await putFile(token, REPO, STATE_PATH, branchName, `move: @${login} ${ts}`, base64, file.sha);
 

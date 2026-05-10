@@ -16,9 +16,12 @@ import { ProvinceInfo } from './ProvinceInfo';
 import { ForceModal } from '@/components/modals/ForceModal';
 import { MobilizationConfirm } from '@/components/modals/MobilizationConfirm';
 import styles from './Map.module.css';
-import './ForceCounter.module.css';
-import './Ruler.module.css';
-import './DragSelect.module.css';
+// Plain global CSS (not modules) — they only contain :global rules and
+// must be side-effect-imported. Vite drops side-effect-only .module.css
+// files from the bundle, so these are renamed to .css to keep them in.
+import './ForceCounter.css';
+import './Ruler.css';
+import './DragSelect.css';
 
 interface ContextMenuState {
   position: ContextMenuPosition;

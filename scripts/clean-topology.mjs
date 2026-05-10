@@ -61,7 +61,8 @@ console.log(
 );
 
 const out = { type: 'FeatureCollection', features: merged };
-fs.writeFileSync(SRC, JSON.stringify(out));
+// Pretty-printed for the same reason as state.json — line-based diffs.
+fs.writeFileSync(SRC, JSON.stringify(out, null, 2));
 
 // Quick stats
 function vertexStats(features) {

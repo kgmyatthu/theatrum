@@ -56,7 +56,9 @@ const snapshot = {
   exportedAt: new Date().toISOString(),
 };
 
-fs.writeFileSync(OUT, JSON.stringify(snapshot));
+// Pretty-printed: keeps line-based git diffs cheap so concurrent player
+// PRs against state.json have lower merge-conflict odds.
+fs.writeFileSync(OUT, JSON.stringify(snapshot, null, 2));
 
 console.log(`Wrote ${OUT}`);
 console.log(`  ownerships:  ${ownerships.length}`);
