@@ -147,7 +147,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
   };
 
   const handleSubmitMove = (): void => {
-    if (!auth.token || !auth.login) return onStatus('Sign in first.');
+    if (!auth.login) return onStatus('Sign in first.');
     const snap = buildCurrentSnapshot();
     if (!snap) return onStatus('No state to submit.');
     const description = window.prompt('Describe your move (optional):') ?? '';
@@ -184,15 +184,14 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
           style={{ display: 'none' }}
         />
       </Panel>
-      {pending && auth.token && auth.login && (
+      {pending && auth.login && (
         <SubmitMoveModal
-          token={auth.token}
           login={auth.login}
           snapshot={pending.snapshot}
           description={pending.description}
           onClose={() => setPending(null)}
           onAuthExpired={() => {
-            // Clear the dead token, then kick off a fresh OAuth dance.
+            // Refresh-token flow already failed; need a full re-auth.
             auth.signOut();
             auth.signIn();
           }}

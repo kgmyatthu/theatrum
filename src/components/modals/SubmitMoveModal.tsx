@@ -20,7 +20,6 @@ type Phase =
   | { kind: 'error'; message: string };
 
 interface SubmitMoveModalProps {
-  token: string;
   login: string;
   snapshot: AppSnapshot;
   description: string;
@@ -40,7 +39,6 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
  * comment as the reason and prompts a refresh-and-retry.
  */
 export function SubmitMoveModal({
-  token,
   login,
   snapshot,
   description,
@@ -57,7 +55,7 @@ export function SubmitMoveModal({
       let prNumber: number;
       let prUrl: string;
       try {
-        const r = await submitMove({ token, login, snapshot, description });
+        const r = await submitMove({ login, snapshot, description });
         if (cancelled) return;
         prNumber = r.prNumber;
         prUrl = r.prUrl;
@@ -77,7 +75,7 @@ export function SubmitMoveModal({
         await sleep(POLL_INTERVAL_MS);
         if (cancelled) return;
         try {
-          const pr = await getPullRequest(token, REPO, prNumber);
+          const pr = await getPullRequest(REPO, prNumber);
           if (pr.merged) {
             if (!cancelled) setPhase({ kind: 'merged', prNumber, prUrl });
             return;
@@ -88,7 +86,7 @@ export function SubmitMoveModal({
             // beginning with "Move rejected by validator: <reason>".
             let reason = 'The validator workflow closed the PR without merging.';
             try {
-              const comments = await listIssueComments(token, REPO, prNumber);
+              const comments = await listIssueComments(REPO, prNumber);
               const bot = comments.filter((c) => c.user.login === 'github-actions[bot]').pop();
               if (bot?.body) {
                 const m = bot.body.match(/Move rejected by validator:\s*(.+)/);
@@ -119,7 +117,7 @@ export function SubmitMoveModal({
     return () => {
       cancelled = true;
     };
-  }, [token, login, snapshot, description]);
+  }, [login, snapshot, description]);
 
   // Auto-reload after the merge confirmation so the bootstrap picks up
   // the new state.json. Short pause so the user sees the success message.

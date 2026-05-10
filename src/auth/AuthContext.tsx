@@ -1,12 +1,19 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { liveDataUrl } from '@/utils/liveData';
+import {
+  authedFetch,
+  clearSession,
+  exchangeCode,
+  getSession,
+  GitHubAuthError,
+} from './session';
 
 export type AuthRole = 'admin' | 'player';
 
 export type AuthStatus =
-  /** First-paint until we've checked for an existing token. */
+  /** First-paint until we've checked for an existing session. */
   | 'loading'
-  /** No token stored. */
+  /** No session stored. */
   | 'anonymous'
   /** Signed in but not in perm.json — read-only viewer. */
   | 'unregistered'
@@ -15,7 +22,6 @@ export type AuthStatus =
 
 export interface AuthValue {
   status: AuthStatus;
-  token: string | null;
   login: string | null;
   role: AuthRole | null;
   /** Set only when role === 'player'. */
@@ -30,18 +36,15 @@ interface PermEntry {
 }
 type PermFile = Record<string, PermEntry>;
 
-const TOKEN_KEY = 'theatrum.gh_token';
 const STATE_KEY = 'theatrum.oauth_state';
 
 const CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID as string | undefined;
-const WORKER_URL = import.meta.env.VITE_OAUTH_WORKER_URL as string | undefined;
 
 const AuthContext = createContext<AuthValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [auth, setAuth] = useState<AuthValue>(() => ({
     status: 'loading',
-    token: null,
     login: null,
     role: null,
     nation: null,
@@ -49,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     signOut: () => {},
   }));
 
-  // On mount: handle a returning ?code=, then resolve identity.
+  // On mount: complete a returning ?code= dance, then resolve identity.
   useEffect(() => {
     let cancelled = false;
 
@@ -66,43 +69,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       const expected = sessionStorage.getItem(STATE_KEY);
       sessionStorage.removeItem(STATE_KEY);
-      if (!expected || stateParam !== expected) {
-        // CSRF guard; refuse silently.
-        return;
-      }
-      if (!WORKER_URL) {
-        console.error('VITE_OAUTH_WORKER_URL is not set; cannot complete sign-in.');
-        return;
-      }
+      if (!expected || stateParam !== expected) return; // CSRF guard
+
       try {
-        const r = await fetch(`${WORKER_URL}?code=${encodeURIComponent(code)}`);
-        const j = await r.json();
-        if (j.access_token) {
-          localStorage.setItem(TOKEN_KEY, j.access_token);
-        } else {
-          console.error('OAuth exchange returned no token:', j);
-        }
+        await exchangeCode(code);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error('OAuth exchange failed:', err);
       }
     }
 
     async function resolveIdentity(): Promise<void> {
-      const token = localStorage.getItem(TOKEN_KEY);
-      if (!token) {
-        if (!cancelled) setAuth((a) => ({ ...a, status: 'anonymous', token: null, login: null, role: null, nation: null }));
+      const session = getSession();
+      if (!session) {
+        if (!cancelled) {
+          setAuth((a) => ({ ...a, status: 'anonymous', login: null, role: null, nation: null }));
+        }
         return;
       }
       try {
-        const r = await fetch('https://api.github.com/user', {
-          headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
-        });
-        if (!r.ok) {
-          // Token expired / revoked
-          localStorage.removeItem(TOKEN_KEY);
-          if (!cancelled) setAuth((a) => ({ ...a, status: 'anonymous', token: null, login: null, role: null, nation: null }));
-          return;
-        }
+        const r = await authedFetch('https://api.github.com/user');
+        if (!r.ok) throw new GitHubAuthError(`/user → ${r.status}`);
         const userData = (await r.json()) as { login: string };
         const login = userData.login;
 
@@ -113,21 +100,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const entry = perms[login];
 
         if (!entry) {
-          if (!cancelled) setAuth((a) => ({ ...a, status: 'unregistered', token, login, role: null, nation: null }));
+          if (!cancelled) {
+            setAuth((a) => ({ ...a, status: 'unregistered', login, role: null, nation: null }));
+          }
           return;
         }
         if (entry.role === 'admin') {
-          if (!cancelled) setAuth((a) => ({ ...a, status: 'authenticated', token, login, role: 'admin', nation: null }));
+          if (!cancelled) {
+            setAuth((a) => ({ ...a, status: 'authenticated', login, role: 'admin', nation: null }));
+          }
           return;
         }
         if (entry.role === 'player' && entry.nation) {
-          if (!cancelled) setAuth((a) => ({ ...a, status: 'authenticated', token, login, role: 'player', nation: entry.nation! }));
+          if (!cancelled) {
+            setAuth((a) => ({
+              ...a,
+              status: 'authenticated',
+              login,
+              role: 'player',
+              nation: entry.nation!,
+            }));
+          }
           return;
         }
-        if (!cancelled) setAuth((a) => ({ ...a, status: 'unregistered', token, login, role: null, nation: null }));
+        if (!cancelled) {
+          setAuth((a) => ({ ...a, status: 'unregistered', login, role: null, nation: null }));
+        }
       } catch (err) {
+        if (err instanceof GitHubAuthError) {
+          // Session is dead and refresh failed (or there was no refresh
+          // token). Wipe and fall back to anonymous.
+          clearSession();
+        }
+        // eslint-disable-next-line no-console
         console.error('Identity resolution failed:', err);
-        if (!cancelled) setAuth((a) => ({ ...a, status: 'anonymous', token: null, login: null, role: null, nation: null }));
+        if (!cancelled) {
+          setAuth((a) => ({ ...a, status: 'anonymous', login: null, role: null, nation: null }));
+        }
       }
     }
 
@@ -141,8 +150,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // Provide stable signIn/signOut functions — the dependency-light approach
-  // here is fine because they don't read changing state.
+  // Stable signIn/signOut.
   useEffect(() => {
     setAuth((a) => ({ ...a, signIn, signOut }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -159,9 +167,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     sessionStorage.setItem(STATE_KEY, state);
     const redirect = window.location.origin + window.location.pathname;
     // GitHub Apps use App-defined permissions (configured in the App's
-    // settings), so we don't pass `scope=` here — it's ignored. The App
-    // is configured for Contents r/w, Pull requests r/w, Metadata r,
-    // and is installed only on the theatrum repo.
+    // settings), so we don't pass `scope=` here — it's ignored.
     const params = new URLSearchParams({
       client_id: CLIENT_ID,
       redirect_uri: redirect,
@@ -171,8 +177,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   function signOut(): void {
-    localStorage.removeItem(TOKEN_KEY);
-    setAuth((a) => ({ ...a, status: 'anonymous', token: null, login: null, role: null, nation: null }));
+    clearSession();
+    setAuth((a) => ({ ...a, status: 'anonymous', login: null, role: null, nation: null }));
   }
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
