@@ -18454,8 +18454,8 @@
       "name": "Army of the Rhine",
       "strength": 80000,
       "commander": "Charles",
-      "lon": 23.2470703125,
-      "lat": 49.38237278700955
+      "lon": 17.270507812500004,
+      "lat": 48.07807894349862
     },
     {
       "id": 8,
@@ -18464,8 +18464,8 @@
       "name": "Western Army",
       "strength": 70000,
       "commander": "Suvorov",
-      "lon": 30,
-      "lat": 53
+      "lon": 26.982421875000004,
+      "lat": 50.48547354578499
     },
     {
       "id": 9,
