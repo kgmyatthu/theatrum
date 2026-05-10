@@ -8,13 +8,16 @@ import {
   type UserAdd,
 } from '@/auth/submitMove';
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
+import { useAppDispatch } from '@/state/AppContext';
+import { fetchLiveDataFresh } from '@/utils/liveData';
+import { syncStateRefreshBaseline } from '@/hooks/useStateRefresh';
 import styles from './SubmitMoveModal.module.css';
 
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
 
-const POLL_INTERVAL_MS = 1500;
-const MAX_ATTEMPTS = 80; // ~2 minutes
-const MERGE_DISPLAY_MS = 600;
+const POLL_INTERVAL_MS = 1000;
+const MAX_ATTEMPTS = 120; // ~2 minutes at 1s polling
+const MERGE_DISPLAY_MS = 250;
 
 type Phase =
   | { kind: 'checking' }
@@ -35,6 +38,8 @@ interface SubmitMoveModalProps {
   renames: CountryRename[];
   /** Player additions / nation reassignments to apply to perm.json — admin-only. */
   userAdds: UserAdd[];
+  /** Logins to delete from perm.json — admin-only. */
+  userRemoves: string[];
   onClose: () => void;
   /** Called when a 401 surfaces — UI prompts re-auth via this. */
   onAuthExpired: () => void;
@@ -58,10 +63,13 @@ export function SubmitMoveModal({
   snapshot,
   renames,
   userAdds,
+  userRemoves,
   onClose,
   onAuthExpired,
 }: SubmitMoveModalProps) {
-  const hasPermChanges = renames.length > 0 || userAdds.length > 0;
+  const dispatch = useAppDispatch();
+  const hasPermChanges =
+    renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0;
   const [phase, setPhase] = useState<Phase>({ kind: 'checking' });
   const [description, setDescription] = useState('');
   const mountedRef = useRef(true);
@@ -102,7 +110,14 @@ export function SubmitMoveModal({
     let prNumber: number;
     let prUrl: string;
     try {
-      const r = await submitMove({ login, snapshot, description, renames, userAdds });
+      const r = await submitMove({
+        login,
+        snapshot,
+        description,
+        renames,
+        userAdds,
+        userRemoves,
+      });
       if (!mountedRef.current) return;
       prNumber = r.prNumber;
       prUrl = r.prUrl;
@@ -157,13 +172,39 @@ export function SubmitMoveModal({
     if (mountedRef.current) setPhase({ kind: 'timeout', prNumber, prUrl });
   };
 
-  // Auto-reload after the merge confirmation so the bootstrap picks up
-  // the new state.json. Short pause so the user sees the success message.
+  // After the validator merges, fetch the fresh state.json and apply
+  // it in place — much faster than a full page reload. Update the
+  // refresh-loop baseline in the same step so the next poll doesn't
+  // see this snapshot as drift. The success line still flashes briefly
+  // (MERGE_DISPLAY_MS) so the user registers the accepted state.
   useEffect(() => {
     if (phase.kind !== 'merged') return;
-    const t = window.setTimeout(() => window.location.reload(), MERGE_DISPLAY_MS);
-    return () => window.clearTimeout(t);
-  }, [phase.kind]);
+    let cancelled = false;
+    (async () => {
+      try {
+        const fresh = await fetchLiveDataFresh<AppSnapshot>('state.json');
+        if (cancelled || !mountedRef.current) return;
+        dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: fresh } });
+        syncStateRefreshBaseline(fresh);
+      } catch (err) {
+        // If the live fetch hiccups, fall back to a full reload so the
+        // user still ends up on fresh data.
+        // eslint-disable-next-line no-console
+        console.warn('Post-merge fetch failed, reloading:', err);
+        if (!cancelled && mountedRef.current) window.location.reload();
+        return;
+      }
+      if (cancelled || !mountedRef.current) return;
+      // Brief flash of the success message, then dismiss the modal.
+      const t = window.setTimeout(() => {
+        if (mountedRef.current) onClose();
+      }, MERGE_DISPLAY_MS);
+      return () => window.clearTimeout(t);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [phase.kind, dispatch, onClose]);
 
   return (
     <div className={styles.backdrop}>
@@ -247,7 +288,7 @@ function renderPhase(
       return (
         <>
           <p className={styles.success}>Move accepted (PR #{phase.prNumber})</p>
-          <p className={styles.subnote}>Reloading with the latest state…</p>
+          <p className={styles.subnote}>Updating the map…</p>
         </>
       );
     case 'rejected':

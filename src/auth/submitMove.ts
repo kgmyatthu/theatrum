@@ -32,13 +32,16 @@ type PermFile = Record<string, PermEntry>;
  * Apply admin-staged perm.json edits in order:
  *   1. Country renames — walk every player's nation through the chain so
  *      case drift in perm.json doesn't miss the rewrite.
- *   2. User adds — upsert each (login, nation) entry as a player.
+ *   2. User adds — upsert each (login, role, nation) entry.
+ *   3. User removes — delete entries by login (case-insensitive).
+ *      Removal wins if a login appears in both adds and removes.
  * Returns a new object; input is not mutated.
  */
 function rewritePerm(
   perm: PermFile,
   renames: CountryRename[],
   userAdds: UserAdd[],
+  userRemoves: string[],
 ): PermFile {
   const out: PermFile = {};
   // Renames are already normalized at the reducer; do it again as defense
@@ -70,6 +73,15 @@ function rewritePerm(
       const nation = normalizeNation(u.nation);
       if (!nation) continue;
       out[login] = { role: 'player', nation };
+    }
+  }
+  // Apply removes last so they take precedence over a same-login add.
+  // Match case-insensitively so admin doesn't have to guess the exact key.
+  for (const login of userRemoves) {
+    const lc = login.trim().toLowerCase();
+    if (!lc) continue;
+    for (const k of Object.keys(out)) {
+      if (k.toLowerCase() === lc) delete out[k];
     }
   }
   return out;
@@ -121,6 +133,8 @@ export interface SubmitMoveArgs {
    * PRs that touch perm.json.
    */
   userAdds?: UserAdd[];
+  /** GitHub logins to delete from perm.json. Admin-only. */
+  userRemoves?: string[];
 }
 
 export interface SubmitMoveResult {
@@ -141,7 +155,14 @@ export interface SubmitMoveResult {
  */
 export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult> {
   if (!REPO) throw new Error('VITE_GITHUB_REPO is not configured');
-  const { login, snapshot, description, renames = [], userAdds = [] } = args;
+  const {
+    login,
+    snapshot,
+    description,
+    renames = [],
+    userAdds = [],
+    userRemoves = [],
+  } = args;
 
   const mainRef = await getRef(REPO, 'main');
   const baseSha = mainRef.object.sha;
@@ -155,10 +176,10 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
   // country. Skip the round-trip when no renames are pending, and skip
   // the commit when the rewrite produces no effective change (e.g. the
   // renamed countries had no players assigned).
-  if (renames.length > 0 || userAdds.length > 0) {
+  if (renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0) {
     const permFile = await getFile(REPO, PERM_PATH, 'main');
     const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
-    const permAfter = rewritePerm(permBefore, renames, userAdds);
+    const permAfter = rewritePerm(permBefore, renames, userAdds, userRemoves);
     if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
       const permJson = JSON.stringify(permAfter, null, 2) + '\n';
       const permB64 = utf8ToBase64(permJson);
@@ -172,6 +193,9 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
             .map((u) => (u.role === 'admin' ? `+@${u.login}=admin` : `+@${u.login}=${u.nation}`))
             .join(', '),
         );
+      }
+      if (userRemoves.length > 0) {
+        summaryParts.push(userRemoves.map((l) => `-@${l}`).join(', '));
       }
       await putFile(
         REPO,

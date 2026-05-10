@@ -30,4 +30,6 @@ export type Action =
         | { login: string; role: 'admin' };
     }
   | { type: 'REMOVE_PENDING_USER'; payload: { login: string } }
+  | { type: 'STAGE_USER_REMOVE'; payload: { login: string } }
+  | { type: 'UNSTAGE_USER_REMOVE'; payload: { login: string } }
   | { type: 'RESET' };

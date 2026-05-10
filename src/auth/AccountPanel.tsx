@@ -12,6 +12,7 @@ interface PendingSubmission {
   snapshot: AppSnapshot;
   renames: CountryRename[];
   userAdds: UserAdd[];
+  userRemoves: string[];
 }
 
 interface AccountPanelProps {
@@ -38,7 +39,8 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
     });
     const renames = auth.role === 'admin' ? state.pendingRenames : [];
     const userAdds = auth.role === 'admin' ? state.pendingUserAdds : [];
-    setPending({ snapshot, renames, userAdds });
+    const userRemoves = auth.role === 'admin' ? state.pendingUserRemoves : [];
+    setPending({ snapshot, renames, userAdds, userRemoves });
   };
 
   if (auth.status === 'loading') {
@@ -105,6 +107,7 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
           snapshot={pending.snapshot}
           renames={pending.renames}
           userAdds={pending.userAdds}
+          userRemoves={pending.userRemoves}
           onClose={() => setPending(null)}
           onAuthExpired={() => {
             auth.signOut();

@@ -62,12 +62,18 @@ async function exchangeWithGitHub(
 }
 
 async function revokeWithGitHub(env: Env, token: string, origin: string): Promise<Response> {
-  // DELETE /applications/<client_id>/token revokes the entire grant
-  // (access + refresh) when given either token. Authenticated as the App
-  // via Basic <client_id>:<client_secret>.
+  // DELETE /applications/<client_id>/grant revokes the whole authorization
+  // — access token, refresh token, and the user's OAuth grant — so the
+  // next /login/oauth/authorize forces the consent screen back up.
+  //
+  // /grant supersedes /token; the latter would only kill tokens, leaving
+  // the grant intact and letting GitHub silently auto-issue a new token
+  // on the next sign-in.
+  //
+  // Authenticated as the App via Basic <client_id>:<client_secret>.
   const basic = btoa(`${env.GITHUB_CLIENT_ID}:${env.GITHUB_CLIENT_SECRET}`);
   const r = await fetch(
-    `https://api.github.com/applications/${env.GITHUB_CLIENT_ID}/token`,
+    `https://api.github.com/applications/${env.GITHUB_CLIENT_ID}/grant`,
     {
       method: 'DELETE',
       headers: {
@@ -81,7 +87,7 @@ async function revokeWithGitHub(env: Env, token: string, origin: string): Promis
       body: JSON.stringify({ access_token: token }),
     },
   );
-  // 204 → success. 422 → already-invalid token (treat as success for the
+  // 204 → success. 422 → already-revoked grant (treat as success for the
   // client). Anything else → propagate the error body.
   if (r.status === 204 || r.status === 422) {
     return jsonResponse('{}', 200, origin);

@@ -50,11 +50,20 @@ export interface AppState {
    * Permission entries staged by the admin since bootstrap. Bundled into
    * the next Finalize-changes PR's perm.json commit. `role: 'player'`
    * carries a `nation` (canonical lowercase); `role: 'admin'` doesn't.
+   * Upserts existing entries — used both for adding new users and
+   * changing an existing user's role / nation.
    */
   pendingUserAdds: Array<
     | { login: string; role: 'player'; nation: string }
     | { login: string; role: 'admin' }
   >;
+
+  /**
+   * GitHub logins staged for removal from perm.json. Bundled into the
+   * next Finalize-changes PR. Removal wins if a login is in both
+   * pendingUserAdds and pendingUserRemoves.
+   */
+  pendingUserRemoves: string[];
 }
 
 export const initialState: AppState = {
@@ -78,4 +87,5 @@ export const initialState: AppState = {
   provincesVersion: 0,
   pendingRenames: [],
   pendingUserAdds: [],
+  pendingUserRemoves: [],
 };

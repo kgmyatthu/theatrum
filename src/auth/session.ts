@@ -66,6 +66,18 @@ function postRevoke(token: string): void {
   }).catch(() => {});
 }
 
+function purgeNamespaced(storage: Storage): void {
+  // Use length / key(i) — Storage objects are reliable with this API across
+  // browsers, while Object.keys(storage) is not specified and varies. Collect
+  // first because removeItem mutates indices mid-iteration.
+  const toRemove: string[] = [];
+  for (let i = 0; i < storage.length; i++) {
+    const k = storage.key(i);
+    if (k && k.startsWith('theatrum.')) toRemove.push(k);
+  }
+  for (const k of toRemove) storage.removeItem(k);
+}
+
 export function clearSession(): void {
   // Best-effort revoke FIRST so the network call is built before we
   // forget the token. The actual fetch is async + ignored.
@@ -76,15 +88,10 @@ export function clearSession(): void {
   // double-checks readSession() so a race can't re-populate storage.
   refreshing = null;
 
-  // Wipe everything namespaced to the app from both stores. Catches
-  // SESSION_KEY, LEGACY_TOKEN_KEY, the OAuth CSRF state in
-  // sessionStorage, and any future theatrum.* keys.
-  for (const k of Object.keys(localStorage)) {
-    if (k.startsWith('theatrum.')) localStorage.removeItem(k);
-  }
-  for (const k of Object.keys(sessionStorage)) {
-    if (k.startsWith('theatrum.')) sessionStorage.removeItem(k);
-  }
+  // Wipe everything namespaced to the app from both stores. Catches the
+  // session, the OAuth CSRF state, and any future theatrum.* keys.
+  purgeNamespaced(localStorage);
+  purgeNamespaced(sessionStorage);
 }
 
 interface TokenResponse {

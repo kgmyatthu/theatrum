@@ -6,6 +6,18 @@ import { fetchLiveDataFresh } from '@/utils/liveData';
 
 const REFRESH_INTERVAL_MS = 60_000;
 
+// Imperative handle for components outside this hook (e.g. the submit
+// modal) to tell the refresh loop "we just synced to this snapshot —
+// don't treat it as drift on the next tick". Set when the hook mounts.
+type SyncBaselineFn = (snapshot: AppSnapshot) => void;
+const handle = { syncBaseline: ((_s: AppSnapshot) => {}) as SyncBaselineFn };
+
+/** Call after dispatching APPLY_SNAPSHOT so useStateRefresh updates its
+ *  baseline in lockstep. No-op when the hook isn't mounted. */
+export function syncStateRefreshBaseline(snapshot: AppSnapshot): void {
+  handle.syncBaseline(snapshot);
+}
+
 /**
  * Polls main's state.json every 60s and reconciles with local state:
  *
@@ -54,6 +66,20 @@ export function useStateRefresh(): { conflict: boolean } {
     state.palette,
     state.owners,
   ]);
+
+  // Wire the imperative handle so external callers (the submit modal)
+  // can advance the baseline after dispatching APPLY_SNAPSHOT.
+  useEffect(() => {
+    handle.syncBaseline = (snapshot) => {
+      baselineRef.current = JSON.stringify(snapshot);
+      // A successful sync resolves any prior conflict for free.
+      conflictRef.current = false;
+      setConflict(false);
+    };
+    return () => {
+      handle.syncBaseline = () => {};
+    };
+  }, []);
 
   useEffect(() => {
     if (!state.loaded) return;

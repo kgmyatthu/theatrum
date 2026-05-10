@@ -54,6 +54,7 @@ export function reducer(state: AppState, action: Action): AppState {
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],
+        pendingUserRemoves: [],
       };
     }
 
@@ -231,6 +232,7 @@ export function reducer(state: AppState, action: Action): AppState {
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],
+        pendingUserRemoves: [],
       };
     }
 
@@ -260,6 +262,24 @@ export function reducer(state: AppState, action: Action): AppState {
         ...state,
         pendingUserAdds: state.pendingUserAdds.filter(
           (u) => u.login.toLowerCase() !== login,
+        ),
+      };
+    }
+
+    case 'STAGE_USER_REMOVE': {
+      const login = action.payload.login.trim();
+      if (!login) return state;
+      const lc = login.toLowerCase();
+      if (state.pendingUserRemoves.some((l) => l.toLowerCase() === lc)) return state;
+      return { ...state, pendingUserRemoves: [...state.pendingUserRemoves, login] };
+    }
+
+    case 'UNSTAGE_USER_REMOVE': {
+      const lc = action.payload.login.toLowerCase();
+      return {
+        ...state,
+        pendingUserRemoves: state.pendingUserRemoves.filter(
+          (l) => l.toLowerCase() !== lc,
         ),
       };
     }
