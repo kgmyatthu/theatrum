@@ -1,5 +1,6 @@
 {
   "kgmyatthu": {
-    "role": "admin"
+    "role": "player",
+    "nation": "france"
   }
 }
