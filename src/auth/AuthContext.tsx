@@ -158,10 +158,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const state = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
     sessionStorage.setItem(STATE_KEY, state);
     const redirect = window.location.origin + window.location.pathname;
+    // GitHub Apps use App-defined permissions (configured in the App's
+    // settings), so we don't pass `scope=` here — it's ignored. The App
+    // is configured for Contents r/w, Pull requests r/w, Metadata r,
+    // and is installed only on the theatrum repo.
     const params = new URLSearchParams({
       client_id: CLIENT_ID,
       redirect_uri: redirect,
-      scope: 'public_repo',
       state,
     });
     window.location.href = `https://github.com/login/oauth/authorize?${params.toString()}`;

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import type { AppSnapshot } from '@/types';
 import { submitMove } from '@/auth/submitMove';
-import { getPullRequest, listIssueComments } from '@/auth/githubApi';
+import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import styles from './SubmitMoveModal.module.css';
 
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
@@ -16,6 +16,7 @@ type Phase =
   | { kind: 'merged'; prNumber: number; prUrl: string }
   | { kind: 'rejected'; prNumber: number; prUrl: string; reason: string }
   | { kind: 'timeout'; prNumber: number; prUrl: string }
+  | { kind: 'expired' }
   | { kind: 'error'; message: string };
 
 interface SubmitMoveModalProps {
@@ -24,6 +25,8 @@ interface SubmitMoveModalProps {
   snapshot: AppSnapshot;
   description: string;
   onClose: () => void;
+  /** Called when a 401 surfaces — UI prompts re-auth via this. */
+  onAuthExpired: () => void;
 }
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
@@ -42,6 +45,7 @@ export function SubmitMoveModal({
   snapshot,
   description,
   onClose,
+  onAuthExpired,
 }: SubmitMoveModalProps) {
   const [phase, setPhase] = useState<Phase>({ kind: 'opening' });
 
@@ -58,7 +62,12 @@ export function SubmitMoveModal({
         prNumber = r.prNumber;
         prUrl = r.prUrl;
       } catch (err) {
-        if (!cancelled) setPhase({ kind: 'error', message: (err as Error).message });
+        if (cancelled) return;
+        if (err instanceof GitHubAuthError) {
+          setPhase({ kind: 'expired' });
+        } else {
+          setPhase({ kind: 'error', message: (err as Error).message });
+        }
         return;
       }
 
@@ -95,6 +104,10 @@ export function SubmitMoveModal({
             setPhase({ kind: 'polling', prNumber, prUrl, attempt: i + 1 });
           }
         } catch (err) {
+          if (err instanceof GitHubAuthError) {
+            if (!cancelled) setPhase({ kind: 'expired' });
+            return;
+          }
           // Transient API errors during polling — keep going.
           // eslint-disable-next-line no-console
           console.warn('Poll error:', err);
@@ -120,13 +133,13 @@ export function SubmitMoveModal({
     <div className={styles.backdrop}>
       <div className={styles.panel}>
         <h3 className={styles.title}>Submit Move</h3>
-        {renderPhase(phase, onClose)}
+        {renderPhase(phase, onClose, onAuthExpired)}
       </div>
     </div>
   );
 }
 
-function renderPhase(phase: Phase, onClose: () => void) {
+function renderPhase(phase: Phase, onClose: () => void, onAuthExpired: () => void) {
   switch (phase.kind) {
     case 'opening':
       return (
@@ -186,6 +199,24 @@ function renderPhase(phase: Phase, onClose: () => void) {
             <Button onClick={onClose}>Close</Button>
             <Button variant="primary" onClick={() => window.open(phase.prUrl, '_blank', 'noopener')}>
               View PR
+            </Button>
+          </div>
+        </>
+      );
+    case 'expired':
+      return (
+        <>
+          <p className={styles.warning}>Sign-in expired</p>
+          <p className={styles.message}>
+            GitHub tokens last 8 hours. Sign in again to retry your move.
+          </p>
+          <p className={styles.subnote}>
+            Note: re-signing redirects to GitHub, so any unsubmitted local edits will be lost.
+          </p>
+          <div className={styles.buttons}>
+            <Button onClick={onClose}>Close</Button>
+            <Button variant="primary" onClick={onAuthExpired}>
+              Sign in again
             </Button>
           </div>
         </>

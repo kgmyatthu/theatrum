@@ -191,6 +191,11 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
           snapshot={pending.snapshot}
           description={pending.description}
           onClose={() => setPending(null)}
+          onAuthExpired={() => {
+            // Clear the dead token, then kick off a fresh OAuth dance.
+            auth.signOut();
+            auth.signIn();
+          }}
         />
       )}
     </>

@@ -1,11 +1,20 @@
 // Thin wrapper for the bits of the GitHub REST API we need to open a
 // move PR: read main's HEAD, create a branch, commit a file, open a PR.
 //
-// All requests use the user's OAuth token (Bearer). The token has
-// `public_repo` scope and is otherwise restricted by repository
-// permissions (collaborators only).
+// We use a GitHub App User-to-Server token (the `Authorization: Bearer`
+// header). Tokens are scoped to whatever repositories the app is installed
+// on (theatrum) and last 8 hours; on 401 we throw GitHubAuthError so the
+// UI can prompt the user to sign in again.
 
 const GH = 'https://api.github.com';
+
+/** Thrown when GitHub returns 401 — token expired or revoked. */
+export class GitHubAuthError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'GitHubAuthError';
+  }
+}
 
 interface RequestInitJson extends Omit<RequestInit, 'body'> {
   body?: unknown;
@@ -24,6 +33,9 @@ async function gh<T>(token: string, path: string, init: RequestInitJson = {}): P
     headers['Content-Type'] = 'application/json';
   }
   const r = await fetch(`${GH}${path}`, { ...init, headers, body });
+  if (r.status === 401) {
+    throw new GitHubAuthError('GitHub session expired (token rejected).');
+  }
   if (!r.ok) {
     const text = await r.text();
     throw new Error(`GitHub ${init.method ?? 'GET'} ${path} → ${r.status}: ${text}`);
