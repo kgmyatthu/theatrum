@@ -18394,8 +18394,8 @@
       "name": "Army of Italy",
       "strength": 38000,
       "commander": "Bonaparte",
-      "lon": 7.7,
-      "lat": 45
+      "lon": 12.128906250000002,
+      "lat": 46.21785176740301
     },
     {
       "id": 2,
@@ -18404,8 +18404,8 @@
       "name": "Army of the Rhine",
       "strength": 60000,
       "commander": "Moreau",
-      "lon": 7.5,
-      "lat": 48.5
+      "lon": 12.073974609375002,
+      "lat": 48.80686346108519
     },
     {
       "id": 3,
@@ -18414,8 +18414,8 @@
       "name": "Army of Sambre-Meuse",
       "strength": 70000,
       "commander": "Jourdan",
-      "lon": 5.5,
-      "lat": 50.5
+      "lon": 13.359375000000002,
+      "lat": 52.25470880113083
     },
     {
       "id": 4,
