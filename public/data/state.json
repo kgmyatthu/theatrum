@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v4",
+  "appVersion": "theatrum/v5",
   "ownerships": [
     [
       0,
@@ -18784,7 +18784,5 @@
       "name": "Yoruba",
       "color": "#7B2D8E"
     }
-  ],
-  "provinceFillOpacity": 0.5,
-  "exportedAt": "2026-05-10T02:26:18.578Z"
+  ]
 }

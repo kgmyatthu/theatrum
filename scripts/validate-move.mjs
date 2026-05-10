@@ -92,8 +92,20 @@ if (!deepEq(baseState.ownerships, headState.ownerships)) {
 if (!deepEq(baseState.countries, headState.countries)) {
   fail('country list (names/colors) cannot be changed by players');
 }
-if (baseState.provinceFillOpacity !== headState.provinceFillOpacity) {
-  fail('display settings cannot be changed by players');
+
+// Defense in depth: reject duplicate ids in head.forces. JSON.parse
+// silently keeps the last duplicate, which `new Map(...)` would also
+// coalesce — both can mask a sneaky "swap an enemy force's nation by
+// adding a same-id entry" attempt before the per-force checks below.
+const headIds = headState.forces.map((f) => f.id);
+const seen = new Set();
+const dups = new Set();
+for (const id of headIds) {
+  if (seen.has(id)) dups.add(id);
+  seen.add(id);
+}
+if (dups.size > 0) {
+  fail(`duplicate force id(s) in head: ${[...dups].join(', ')}`);
 }
 
 const baseForces = new Map(baseState.forces.map((f) => [f.id, f]));

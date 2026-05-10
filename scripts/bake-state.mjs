@@ -46,14 +46,11 @@ if (missing.length > 0) {
 }
 
 const snapshot = {
-  appVersion: 'theatrum/v4',
+  appVersion: 'theatrum/v5',
   ownerships,
   forces,
   nextForceId,
   countries,
-  // Matches initialState.provinceFillOpacity in src/state/state.ts.
-  provinceFillOpacity: 0.5,
-  exportedAt: new Date().toISOString(),
 };
 
 // Pretty-printed: keeps line-based git diffs cheap so concurrent player

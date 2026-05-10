@@ -43,10 +43,6 @@ export function reducer(state: AppState, action: Action): AppState {
         palette,
         forces: snapshot.forces ?? [],
         nextForceId: snapshot.nextForceId ?? 1,
-        provinceFillOpacity:
-          typeof snapshot.provinceFillOpacity === 'number'
-            ? snapshot.provinceFillOpacity
-            : state.provinceFillOpacity,
         provincesVersion: state.provincesVersion + 1,
       };
     }
@@ -214,10 +210,6 @@ export function reducer(state: AppState, action: Action): AppState {
         palette,
         forces: snapshot.forces ?? [],
         nextForceId: snapshot.nextForceId ?? 1,
-        provinceFillOpacity:
-          typeof snapshot.provinceFillOpacity === 'number'
-            ? snapshot.provinceFillOpacity
-            : state.provinceFillOpacity,
         provincesVersion: state.provincesVersion + 1,
       };
     }

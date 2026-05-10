@@ -37,7 +37,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       nextForceId: state.nextForceId,
       palette: state.palette,
       owners: state.owners,
-      provinceFillOpacity: state.provinceFillOpacity,
     });
   };
 

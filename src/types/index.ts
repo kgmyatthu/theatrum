@@ -76,8 +76,6 @@ export interface AppSnapshot {
   nextForceId: number;
   /** Full country list — name + color. No built-in / custom split. */
   countries: Country[];
-  provinceFillOpacity: number;
-  exportedAt?: string;
   appVersion?: string;
 }
 
