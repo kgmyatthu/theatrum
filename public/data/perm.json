@@ -1,5 +1,9 @@
 {
   "kgmyatthu": {
     "role": "admin"
+  },
+  "RadetzkyNTW": {
+    "role": "player",
+    "nation": "austria"
   }
 }
