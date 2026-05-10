@@ -18516,9 +18516,19 @@
       "commander": "de Winter",
       "lon": 4.7,
       "lat": 53
+    },
+    {
+      "id": 14,
+      "nation": "france",
+      "branch": "army",
+      "name": "1st corp",
+      "strength": 40000,
+      "commander": "napoleon",
+      "lat": 50.6947178381929,
+      "lon": 11.887207031250002
     }
   ],
-  "nextForceId": 14,
+  "nextForceId": 15,
   "countries": [
     {
       "name": "afghanistan",
