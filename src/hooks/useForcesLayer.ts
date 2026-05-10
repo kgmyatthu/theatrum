@@ -86,7 +86,16 @@ export function useForcesLayer({
   // only act on forces of their own nation; everyone else is read-only.
   const canEdit = (force: Force): boolean => {
     if (auth.role === 'admin') return true;
-    if (auth.role === 'player' && auth.nation === force.nation) return true;
+    if (
+      auth.role === 'player' &&
+      auth.nation != null &&
+      // Defensive case-insensitive match — both sides are already normalized
+      // by the reducer / AuthContext, but this protects against stale data
+      // that hasn't gone through that path yet.
+      auth.nation.toLowerCase() === (force.nation ?? '').toLowerCase()
+    ) {
+      return true;
+    }
     return false;
   };
 

@@ -34,7 +34,8 @@ export function StatsPanel() {
           style={{ fontSize: 11, color: 'var(--text-muted)', margin: '2px 0' }}
         >
           <span style={{ ...SWATCH_STYLE, background: palette[name] ?? '#888' }} />
-          <b style={{ color: 'var(--text-primary)' }}>{name}</b>: {count}
+          <b style={{ color: 'var(--text-primary)', textTransform: 'uppercase' }}>{name}</b>:{' '}
+          {count}
         </div>
       ))}
     </Panel>

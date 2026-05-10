@@ -3,6 +3,7 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
 import { ColorPicker } from '@/components/ui/ColorPicker';
+import { normalizeNation } from '@/utils/nation';
 import styles from './NewCountryPanel.module.css';
 
 interface EditCountryPanelProps {
@@ -40,11 +41,12 @@ export function EditCountryPanel({ onStatus }: EditCountryPanelProps) {
     const newName = name.trim();
     if (!selected) return onStatus('Pick a country first.');
     if (!newName) return onStatus('Enter a new name.');
-    if (newName === selected) return onStatus('Name unchanged.');
-    if (owners.includes(newName)) return onStatus(`'${newName}' already exists.`);
+    const norm = normalizeNation(newName);
+    if (norm === selected) return onStatus('Name unchanged.');
+    if (owners.includes(norm)) return onStatus(`'${newName}' already exists.`);
     dispatch({ type: 'RENAME_COUNTRY', payload: { oldName: selected, newName } });
     onStatus(`Renamed '${selected}' → '${newName}'.`);
-    setSelected(newName);
+    setSelected(norm);
   };
 
   const handleColor = (): void => {
@@ -60,6 +62,7 @@ export function EditCountryPanel({ onStatus }: EditCountryPanelProps) {
         className={styles.input}
         value={selected}
         onChange={(e) => setSelected(e.target.value)}
+        style={{ textTransform: 'uppercase' }}
       >
         {owners.map((o) => (
           <option key={o} value={o}>

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { fetchLiveData } from '@/utils/liveData';
+import { normalizeNation } from '@/utils/nation';
 import {
   authedFetch,
   clearSession,
@@ -119,7 +120,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
               status: 'authenticated',
               login,
               role: 'player',
-              nation: entry.nation!,
+              nation: normalizeNation(entry.nation!),
             }));
           }
           return;

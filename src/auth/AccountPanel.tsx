@@ -60,19 +60,24 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
     );
   }
 
-  const headline =
-    auth.role === 'admin'
-      ? `Master @${auth.login}`
-      : auth.role === 'player'
-        ? `@${auth.login} — ${auth.nation}`
-        : `@${auth.login}`;
+  const headlineNode =
+    auth.role === 'admin' ? (
+      <>Master @{auth.login}</>
+    ) : auth.role === 'player' ? (
+      <>
+        @{auth.login} —{' '}
+        <span style={{ textTransform: 'uppercase' }}>{auth.nation}</span>
+      </>
+    ) : (
+      <>@{auth.login}</>
+    );
 
   const isAuthed = auth.status === 'authenticated';
 
   return (
     <>
       <Panel title="Account">
-        <div style={{ fontSize: 12, marginBottom: 6 }}>{headline}</div>
+        <div style={{ fontSize: 12, marginBottom: 6 }}>{headlineNode}</div>
         {auth.status === 'unregistered' && (
           <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 6 }}>
             Not in perm.json — read-only access. Ask admin to add you.

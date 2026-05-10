@@ -3,6 +3,7 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
 import { ColorPicker } from '@/components/ui/ColorPicker';
+import { normalizeNation } from '@/utils/nation';
 import styles from './NewCountryPanel.module.css';
 
 interface NewCountryPanelProps {
@@ -19,7 +20,9 @@ export function NewCountryPanel({ onStatus }: NewCountryPanelProps) {
     e.preventDefault();
     const trimmed = name.trim();
     if (!trimmed) return onStatus('Enter a country name first.');
-    if (owners.includes(trimmed)) return onStatus(`'${trimmed}' already exists.`);
+    if (owners.includes(normalizeNation(trimmed))) {
+      return onStatus(`'${trimmed}' already exists.`);
+    }
     dispatch({ type: 'ADD_COUNTRY', payload: { name: trimmed, color } });
     onStatus(`Added '${trimmed}' (${color}). Use right-click to assign provinces.`);
     setName('');

@@ -1,7 +1,8 @@
 import type { Action } from './actions';
 import type { AppState } from './state';
 import { initialState } from './state';
-import type { Country } from '@/types';
+import type { Country, Force } from '@/types';
+import { normalizeNation } from '@/utils/nation';
 
 function countriesToOwnersAndPalette(countries: Country[]): {
   owners: string[];
@@ -10,11 +11,17 @@ function countriesToOwnersAndPalette(countries: Country[]): {
   const palette: Record<string, string> = {};
   const owners: string[] = [];
   for (const c of countries) {
-    palette[c.name] = c.color;
-    owners.push(c.name);
+    const name = normalizeNation(c.name);
+    palette[name] = c.color;
+    owners.push(name);
   }
   owners.sort();
   return { owners, palette };
+}
+
+function normalizeForce(f: Force): Force {
+  const n = normalizeNation(f.nation);
+  return n === f.nation ? f : { ...f, nation: n };
 }
 
 export function reducer(state: AppState, action: Action): AppState {
@@ -27,9 +34,10 @@ export function reducer(state: AppState, action: Action): AppState {
       });
 
       // Apply ownership overrides — by _fid (== array index after the tag pass above).
+      // Normalize so case drift in the source data file can't break key lookups.
       for (const [fid, owner] of snapshot.ownerships) {
         const feat = provinces.features[fid];
-        if (feat) feat.properties.owner = owner;
+        if (feat) feat.properties.owner = normalizeNation(owner);
       }
 
       const { owners, palette } = countriesToOwnersAndPalette(snapshot.countries);
@@ -41,7 +49,7 @@ export function reducer(state: AppState, action: Action): AppState {
         cities,
         owners,
         palette,
-        forces: snapshot.forces ?? [],
+        forces: (snapshot.forces ?? []).map(normalizeForce),
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
@@ -52,49 +60,53 @@ export function reducer(state: AppState, action: Action): AppState {
       if (!state.provinces) return state;
       const { fids, owner } = action.payload;
       const fidSet = new Set(fids);
+      const norm = normalizeNation(owner);
       // Mutate feature properties in place — accept this for performance
       // since the GeoJSON has 4,596 features and creating a new collection
       // each time would be wasteful. Components subscribing to ownership
       // changes use the `mutationCounter` increment via a separate hook.
       for (const f of state.provinces.features) {
-        if (fidSet.has(f.properties._fid)) f.properties.owner = owner;
+        if (fidSet.has(f.properties._fid)) f.properties.owner = norm;
       }
       return { ...state, provincesVersion: state.provincesVersion + 1 };
     }
 
     case 'ADD_COUNTRY': {
       const { name, color } = action.payload;
-      if (state.owners.includes(name)) return state;
+      const norm = normalizeNation(name);
+      if (!norm || state.owners.includes(norm)) return state;
       return {
         ...state,
-        owners: [...state.owners, name].sort(),
-        palette: { ...state.palette, [name]: color },
+        owners: [...state.owners, norm].sort(),
+        palette: { ...state.palette, [norm]: color },
       };
     }
 
     case 'RENAME_COUNTRY': {
       const { oldName, newName } = action.payload;
       if (!state.provinces) return state;
-      if (oldName === newName || state.owners.includes(newName)) return state;
+      const oldN = normalizeNation(oldName);
+      const newN = normalizeNation(newName);
+      if (!newN || oldN === newN || state.owners.includes(newN)) return state;
 
       // Migrate provinces
       for (const f of state.provinces.features) {
-        if (f.properties.owner === oldName) f.properties.owner = newName;
+        if (f.properties.owner === oldN) f.properties.owner = newN;
       }
       // Migrate forces
       const forces = state.forces.map((force) =>
-        force.nation === oldName ? { ...force, nation: newName } : force,
+        force.nation === oldN ? { ...force, nation: newN } : force,
       );
       // Migrate palette
       const newPalette: Record<string, string> = { ...state.palette };
-      if (newPalette[oldName] !== undefined) {
-        newPalette[newName] = newPalette[oldName]!;
-        delete newPalette[oldName];
+      if (newPalette[oldN] !== undefined) {
+        newPalette[newN] = newPalette[oldN]!;
+        delete newPalette[oldN];
       }
       // Migrate owners list
       const owners = state.owners
-        .filter((o) => o !== oldName)
-        .concat(newName)
+        .filter((o) => o !== oldN)
+        .concat(newN)
         .sort();
       return {
         ...state,
@@ -102,16 +114,17 @@ export function reducer(state: AppState, action: Action): AppState {
         palette: newPalette,
         forces,
         provincesVersion: state.provincesVersion + 1,
-        pendingRenames: [...state.pendingRenames, { from: oldName, to: newName }],
+        pendingRenames: [...state.pendingRenames, { from: oldN, to: newN }],
       };
     }
 
     case 'CHANGE_COUNTRY_COLOR': {
       const { name, color } = action.payload;
-      if (!state.owners.includes(name)) return state;
+      const norm = normalizeNation(name);
+      if (!state.owners.includes(norm)) return state;
       return {
         ...state,
-        palette: { ...state.palette, [name]: color },
+        palette: { ...state.palette, [norm]: color },
       };
     }
 
@@ -126,16 +139,17 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'ADD_FORCE': {
       return {
         ...state,
-        forces: [...state.forces, action.payload.force],
+        forces: [...state.forces, normalizeForce(action.payload.force)],
         nextForceId: state.nextForceId + 1,
       };
     }
 
     case 'UPDATE_FORCE': {
       const { force } = action.payload;
+      const norm = normalizeForce(force);
       return {
         ...state,
-        forces: state.forces.map((f) => (f.id === force.id ? force : f)),
+        forces: state.forces.map((f) => (f.id === norm.id ? norm : f)),
       };
     }
 
@@ -194,10 +208,11 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'APPLY_SNAPSHOT': {
       if (!state.provinces) return state;
       const { snapshot } = action.payload;
-      // Apply ownerships
+      // Apply ownerships, normalizing in case the snapshot was authored
+      // before this contract or by a third-party tool.
       for (const [fid, owner] of snapshot.ownerships) {
         const feat = state.provinces.features[fid];
-        if (feat) feat.properties.owner = owner;
+        if (feat) feat.properties.owner = normalizeNation(owner);
       }
       // Pre-v4 snapshots stored only diffs (customCountries / removedBuiltins)
       // against a built-in baseline that no longer exists. Fall back to the
@@ -210,7 +225,7 @@ export function reducer(state: AppState, action: Action): AppState {
         ...state,
         owners,
         palette,
-        forces: snapshot.forces ?? [],
+        forces: (snapshot.forces ?? []).map(normalizeForce),
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],

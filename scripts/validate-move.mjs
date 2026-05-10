@@ -71,7 +71,10 @@ if (user.role === 'admin') pass(`admin @${PR_AUTHOR}`);
 if (user.role !== 'player' || !user.nation) {
   fail(`@${PR_AUTHOR} has no playable role assigned`);
 }
-const playerNation = user.nation;
+// Country names are stored lowercase canonically; do the comparison in
+// lowercase so legacy mixed-case data still matches.
+const playerNation = user.nation.trim().toLowerCase();
+const lc = (s) => (s ?? '').trim().toLowerCase();
 
 // Step 3: only public/data/state.json may change.
 const files = JSON.parse(gh(`repos/${REPO}/pulls/${PR_NUMBER}/files`));
@@ -115,11 +118,11 @@ const headForces = new Map(headState.forces.map((f) => [f.id, f]));
 for (const [id, base] of baseForces) {
   const head = headForces.get(id);
   if (!head) {
-    if (base.nation !== playerNation) {
+    if (lc(base.nation) !== playerNation) {
       fail(`force #${id} (${base.nation}: ${base.name}) removed; not owned by ${playerNation}`);
     }
   } else if (!deepEq(base, head)) {
-    if (base.nation !== playerNation || head.nation !== playerNation) {
+    if (lc(base.nation) !== playerNation || lc(head.nation) !== playerNation) {
       fail(
         `force #${id} edited but nation must be ${playerNation} ` +
           `before AND after (was ${base.nation}, now ${head.nation})`,
@@ -131,7 +134,7 @@ for (const [id, base] of baseForces) {
 // Added forces
 for (const [id, head] of headForces) {
   if (baseForces.has(id)) continue;
-  if (head.nation !== playerNation) {
+  if (lc(head.nation) !== playerNation) {
     fail(`force #${id} (${head.nation}: ${head.name}) added; not owned by ${playerNation}`);
   }
 }

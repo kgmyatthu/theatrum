@@ -31,14 +31,19 @@ const forces = JSON.parse(fs.readFileSync(SEED_FORCES, 'utf-8'));
 const ownerNames = JSON.parse(fs.readFileSync(OWNERS, 'utf-8'));
 const palette = JSON.parse(fs.readFileSync(PALETTE, 'utf-8'));
 
+// Country / nation names are stored canonically as lowercase so the
+// runtime palette[name] / owners.includes(name) lookups never miss.
+const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : s);
+
 // _fid is the feature's array index (assigned at runtime in BOOTSTRAP_DATA).
-const ownerships = provinces.features.map((f, i) => [i, f.properties.owner]);
+const ownerships = provinces.features.map((f, i) => [i, lc(f.properties.owner)]);
 
 const nextForceId = Math.max(0, ...forces.map((f) => f.id)) + 1;
+for (const f of forces) f.nation = lc(f.nation);
 
 const countries = ownerNames
   .filter((name) => typeof palette[name] === 'string')
-  .map((name) => ({ name, color: palette[name] }));
+  .map((name) => ({ name: lc(name), color: palette[name] }));
 
 const missing = ownerNames.filter((n) => typeof palette[n] !== 'string');
 if (missing.length > 0) {

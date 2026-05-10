@@ -79,13 +79,14 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
           className={styles.input}
           value={lockedNation}
           readOnly
-          style={{ opacity: 0.7, cursor: 'not-allowed' }}
+          style={{ opacity: 0.7, cursor: 'not-allowed', textTransform: 'uppercase' }}
         />
       ) : (
         <select
           className={styles.input}
           value={nation}
           onChange={(e) => setNation(e.target.value)}
+          style={{ textTransform: 'uppercase' }}
         >
           {owners.map((o) => (
             <option key={o} value={o}>

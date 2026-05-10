@@ -1,4 +1,5 @@
 import type { AppSnapshot } from '@/types';
+import { normalizeNation } from '@/utils/nation';
 import {
   createBranch,
   createPullRequest,
@@ -30,13 +31,18 @@ type PermFile = Record<string, PermEntry>;
  */
 function rewritePerm(perm: PermFile, renames: CountryRename[]): PermFile {
   const out: PermFile = {};
+  // Renames are already normalized at the reducer; do it again here as a
+  // defense in case a stale pendingRenames entry slipped through.
+  const norm = renames.map((r) => ({ from: normalizeNation(r.from), to: normalizeNation(r.to) }));
   for (const [login, entry] of Object.entries(perm)) {
     if (entry.role !== 'player' || !entry.nation) {
       out[login] = entry;
       continue;
     }
-    let nation = entry.nation;
-    for (const r of renames) {
+    // Compare against the normalized form so case drift in perm.json
+    // (e.g. "Spain" vs "spain") doesn't miss the rename.
+    let nation = normalizeNation(entry.nation);
+    for (const r of norm) {
       if (nation === r.from) nation = r.to;
     }
     out[login] = nation === entry.nation ? entry : { ...entry, nation };
