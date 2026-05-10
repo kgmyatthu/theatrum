@@ -62,3 +62,22 @@ export async function fetchLiveData<T>(filename: string): Promise<T> {
   if (!r.ok) throw new Error(`raw@${sha.slice(0, 7)} ${filename} → ${r.status}`);
   return (await r.json()) as T;
 }
+
+/**
+ * Like {@link fetchLiveData} but bypasses the session-memoized SHA so a
+ * long-lived page can pick up new commits. Used by useStateRefresh to
+ * detect upstream drift while the user is still editing.
+ */
+export async function fetchLiveDataFresh<T>(filename: string): Promise<T> {
+  if (!REPO) {
+    const r = await fetch(`/data/${filename}`);
+    if (!r.ok) throw new Error(`/data/${filename} → ${r.status}`);
+    return (await r.json()) as T;
+  }
+  const sha = await fetchLatestSha(REPO);
+  const r = await fetch(
+    `https://raw.githubusercontent.com/${REPO}/${sha}/public/data/${filename}`,
+  );
+  if (!r.ok) throw new Error(`raw@${sha.slice(0, 7)} ${filename} → ${r.status}`);
+  return (await r.json()) as T;
+}
