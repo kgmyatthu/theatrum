@@ -47,11 +47,14 @@ export interface AppState {
   pendingRenames: Array<{ from: string; to: string }>;
 
   /**
-   * Player additions staged by the admin since bootstrap. Bundled into the
-   * next Finalize-changes PR's perm.json commit. Login is the GitHub
-   * username; nation is canonical lowercase.
+   * Permission entries staged by the admin since bootstrap. Bundled into
+   * the next Finalize-changes PR's perm.json commit. `role: 'player'`
+   * carries a `nation` (canonical lowercase); `role: 'admin'` doesn't.
    */
-  pendingUserAdds: Array<{ login: string; nation: string }>;
+  pendingUserAdds: Array<
+    | { login: string; role: 'player'; nation: string }
+    | { login: string; role: 'admin' }
+  >;
 }
 
 export const initialState: AppState = {

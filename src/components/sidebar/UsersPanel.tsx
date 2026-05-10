@@ -13,11 +13,14 @@ interface UsersPanelProps {
  * Admin-only. Stages player additions / nation reassignments. Each entry
  * is bundled into the next "Finalize changes" PR's perm.json commit.
  */
+type RoleChoice = 'player' | 'admin';
+
 export function UsersPanel({ onStatus }: UsersPanelProps) {
   const dispatch = useAppDispatch();
   const { owners, pendingUserAdds } = useAppState();
 
   const [login, setLogin] = useState('');
+  const [role, setRole] = useState<RoleChoice>('player');
   const [nation, setNation] = useState(owners[0] ?? '');
 
   // Keep nation valid when owners change
@@ -29,15 +32,20 @@ export function UsersPanel({ onStatus }: UsersPanelProps) {
   const handleAdd = (): void => {
     const trimmed = login.trim();
     if (!trimmed) return onStatus('Enter a GitHub login first.');
-    if (!nation) return onStatus('Pick a nation.');
     if (/[^A-Za-z0-9-]/.test(trimmed)) {
       return onStatus('Login may only contain letters, digits, and dashes.');
     }
-    dispatch({
-      type: 'ADD_PENDING_USER',
-      payload: { login: trimmed, nation: normalizeNation(nation) },
-    });
-    onStatus(`Staged @${trimmed} → ${nation}. Finalize changes to commit.`);
+    if (role === 'admin') {
+      dispatch({ type: 'ADD_PENDING_USER', payload: { login: trimmed, role: 'admin' } });
+      onStatus(`Staged @${trimmed} → admin. Finalize changes to commit.`);
+    } else {
+      if (!nation) return onStatus('Pick a nation.');
+      dispatch({
+        type: 'ADD_PENDING_USER',
+        payload: { login: trimmed, role: 'player', nation: normalizeNation(nation) },
+      });
+      onStatus(`Staged @${trimmed} → ${nation}. Finalize changes to commit.`);
+    }
     setLogin('');
   };
 
@@ -55,21 +63,34 @@ export function UsersPanel({ onStatus }: UsersPanelProps) {
         value={login}
         onChange={(e) => setLogin(e.target.value)}
       />
-      <label className={styles.label}>Nation</label>
+      <label className={styles.label}>Role</label>
       <select
         className={styles.input}
-        value={nation}
-        onChange={(e) => setNation(e.target.value)}
-        style={{ textTransform: 'uppercase' }}
+        value={role}
+        onChange={(e) => setRole(e.target.value as RoleChoice)}
       >
-        {owners.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
+        <option value="player">Player</option>
+        <option value="admin">Master (admin)</option>
       </select>
+      {role === 'player' && (
+        <>
+          <label className={styles.label}>Nation</label>
+          <select
+            className={styles.input}
+            value={nation}
+            onChange={(e) => setNation(e.target.value)}
+            style={{ textTransform: 'uppercase' }}
+          >
+            {owners.map((o) => (
+              <option key={o} value={o}>
+                {o}
+              </option>
+            ))}
+          </select>
+        </>
+      )}
       <Button variant="success" onClick={handleAdd} fullWidth style={{ marginTop: 8 }}>
-        Add Player
+        {role === 'admin' ? 'Add Master' : 'Add Player'}
       </Button>
       {pendingUserAdds.length > 0 && (
         <div style={{ marginTop: 10 }}>
@@ -90,7 +111,11 @@ export function UsersPanel({ onStatus }: UsersPanelProps) {
             >
               <span style={{ flex: 1 }}>
                 @{u.login} →{' '}
-                <span style={{ textTransform: 'uppercase' }}>{u.nation}</span>
+                {u.role === 'admin' ? (
+                  <span>master</span>
+                ) : (
+                  <span style={{ textTransform: 'uppercase' }}>{u.nation}</span>
+                )}
               </span>
               <button
                 onClick={() => handleRemove(u.login)}

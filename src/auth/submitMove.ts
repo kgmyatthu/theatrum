@@ -18,10 +18,9 @@ export interface CountryRename {
   to: string;
 }
 
-export interface UserAdd {
-  login: string;
-  nation: string;
-}
+export type UserAdd =
+  | { login: string; role: 'player'; nation: string }
+  | { login: string; role: 'admin' };
 
 interface PermEntry {
   role: 'admin' | 'player';
@@ -60,12 +59,18 @@ function rewritePerm(
     out[login] = nation === entry.nation ? entry : { ...entry, nation };
   }
   // Upsert user adds. Existing entries are replaced — admin can use this
-  // to reassign a player's nation as well as introduce new ones.
+  // to reassign a player's nation, promote a player to admin, or introduce
+  // a brand-new entry.
   for (const u of userAdds) {
     const login = u.login.trim();
-    const nation = normalizeNation(u.nation);
-    if (!login || !nation) continue;
-    out[login] = { role: 'player', nation };
+    if (!login) continue;
+    if (u.role === 'admin') {
+      out[login] = { role: 'admin' };
+    } else {
+      const nation = normalizeNation(u.nation);
+      if (!nation) continue;
+      out[login] = { role: 'player', nation };
+    }
   }
   return out;
 }
@@ -162,7 +167,11 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
         summaryParts.push(renames.map((r) => `${r.from}→${r.to}`).join(', '));
       }
       if (userAdds.length > 0) {
-        summaryParts.push(userAdds.map((u) => `+@${u.login}=${u.nation}`).join(', '));
+        summaryParts.push(
+          userAdds
+            .map((u) => (u.role === 'admin' ? `+@${u.login}=admin` : `+@${u.login}=${u.nation}`))
+            .join(', '),
+        );
       }
       await putFile(
         REPO,

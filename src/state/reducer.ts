@@ -236,15 +236,22 @@ export function reducer(state: AppState, action: Action): AppState {
 
     case 'ADD_PENDING_USER': {
       const login = action.payload.login.trim();
-      const nation = normalizeNation(action.payload.nation);
-      if (!login || !nation) return state;
+      if (!login) return state;
       // Replace any existing entry for the same login so admin can fix typos
       // without growing the queue. Login compare is case-insensitive — GitHub
       // usernames are case-insensitive in practice.
       const filtered = state.pendingUserAdds.filter(
         (u) => u.login.toLowerCase() !== login.toLowerCase(),
       );
-      return { ...state, pendingUserAdds: [...filtered, { login, nation }] };
+      const entry =
+        action.payload.role === 'admin'
+          ? { login, role: 'admin' as const }
+          : (() => {
+              const nation = normalizeNation(action.payload.nation);
+              return nation ? { login, role: 'player' as const, nation } : null;
+            })();
+      if (!entry) return state;
+      return { ...state, pendingUserAdds: [...filtered, entry] };
     }
 
     case 'REMOVE_PENDING_USER': {
