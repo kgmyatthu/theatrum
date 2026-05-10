@@ -18446,26 +18446,6 @@
       "commander": "Mazarredo",
       "lon": -6.3,
       "lat": 36.5
-    },
-    {
-      "id": 15,
-      "nation": "bulgaria",
-      "branch": "army",
-      "name": "Test unit - not real",
-      "strength": 40000,
-      "commander": "",
-      "lat": 43.303038709892434,
-      "lon": 25.06650793803458
-    },
-    {
-      "id": 16,
-      "nation": "bulgaria",
-      "branch": "navy",
-      "name": "Test fleet - not real",
-      "strength": 40000,
-      "commander": "",
-      "lat": 43.06526661706659,
-      "lon": 28.29560945936617
     }
   ],
   "nextForceId": 17,
