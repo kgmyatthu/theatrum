@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { liveDataUrl } from '@/utils/liveData';
 
 export type AuthRole = 'admin' | 'player';
 
@@ -105,7 +106,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const userData = (await r.json()) as { login: string };
         const login = userData.login;
 
-        const permResp = await fetch('/data/perm.json', { cache: 'no-store' });
+        // perm.json read live from main so admin role updates take effect
+        // without a Pages rebuild.
+        const permResp = await fetch(liveDataUrl('perm.json'), { cache: 'no-cache' });
         const perms = (await permResp.json()) as PermFile;
         const entry = perms[login];
 

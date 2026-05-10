@@ -68,12 +68,7 @@ jobs:
         run: |
           gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch
 
-      - name: Trigger deploy
-        if: steps.validate.outputs.valid == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-        # GITHUB_TOKEN-driven merges don't trigger downstream workflows;
-        # explicitly dispatch the deploy. Requires deploy.yml to also list
-        # `workflow_dispatch:` as a trigger.
-        run: gh workflow run deploy.yml --ref main --repo "$REPO"
+      # No deploy dispatch: the frontend reads state.json live from
+      # raw.githubusercontent.com on every load, so the merge lands
+      # in main and clients pick it up next refresh — no Pages rebuild
+      # needed (saves CI minutes).

@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - main
-  # Allows the validator workflow to redeploy after auto-merging a move PR.
+    # state.json and perm.json are read live from raw.githubusercontent.com
+    # at runtime (see src/utils/liveData.ts). Pushes that touch only those
+    # files don't need a Pages rebuild — skip them to save CI minutes.
+    paths-ignore:
+      - 'public/data/state.json'
+      - 'public/data/perm.json'
+  # Manual trigger remains for admin-driven redeploys.
   workflow_dispatch:
 
 permissions:
