@@ -1,0 +1,27 @@
+name: Validator tests
+
+# Run the adversarial validator test suite on every push and PR. If
+# someone weakens scripts/lib/validate-move-core.mjs (or its CLI wrapper
+# stops calling it correctly), this surfaces immediately instead of
+# waiting for an attacker to find the gap.
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test

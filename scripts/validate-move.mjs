@@ -2,6 +2,9 @@
 // validate-and-merge workflow. Outputs `valid=true|false` and a `reason`
 // to $GITHUB_OUTPUT; the workflow comments + merges accordingly.
 //
+// I/O is handled here; the decision logic lives in lib/validate-move-core.mjs
+// so it's independently testable without gh CLI / fs fixtures.
+//
 // Inputs (env): PR_AUTHOR, PR_NUMBER, GITHUB_REPOSITORY, GITHUB_OUTPUT, GH_TOKEN
 // Reads:
 //   ./base/public/data/perm.json     (TRUSTED — main's perm.json)
@@ -12,6 +15,7 @@
 
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
+import { validateMove } from './lib/validate-move-core.mjs';
 
 const PR_AUTHOR = process.env.PR_AUTHOR;
 const PR_NUMBER = process.env.PR_NUMBER;
@@ -27,122 +31,48 @@ function output(key, value) {
   fs.appendFileSync(process.env.GITHUB_OUTPUT, `${key}=${value}\n`);
 }
 
-function fail(reason) {
-  console.log(`REJECT: ${reason}`);
-  output('valid', 'false');
-  output('reason', reason);
-  process.exit(0);
-}
-
-function pass(note) {
-  console.log(`PASS: ${note}`);
-  output('valid', 'true');
-  process.exit(0);
-}
-
-function deepEq(a, b) {
-  return JSON.stringify(a) === JSON.stringify(b);
-}
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// Step 1: mergeability — reject conflicts up front.
+// Resolve mergeability with retries — GitHub can return null while the
+// background mergeability check is still running.
 let pr;
+let mergeable = null;
 for (let i = 0; i < 5; i++) {
   pr = JSON.parse(gh(`repos/${REPO}/pulls/${PR_NUMBER}`));
-  if (pr.mergeable !== null) break;
+  if (pr.mergeable !== null) {
+    mergeable = pr.mergeable_state === 'dirty' ? false : pr.mergeable;
+    break;
+  }
   await sleep(2000);
 }
-if (pr.mergeable === false || pr.mergeable_state === 'dirty') {
-  fail('merge conflict against main — refresh the latest state and resubmit');
-}
-if (pr.mergeable === null) {
-  fail('mergeability could not be determined; please retry');
-}
 
-// Step 2: author must be a registered user (perm.json read from BASE — trusted).
-const perms = JSON.parse(fs.readFileSync(`${BASE}/public/data/perm.json`, 'utf-8'));
-const user = perms[PR_AUTHOR];
-if (!user) fail(`@${PR_AUTHOR} is not registered in perm.json`);
-
-// Admins may pass without further checks.
-if (user.role === 'admin') pass(`admin @${PR_AUTHOR}`);
-
-if (user.role !== 'player' || !user.nation) {
-  fail(`@${PR_AUTHOR} has no playable role assigned`);
-}
-// Country names are stored lowercase canonically; do the comparison in
-// lowercase so legacy mixed-case data still matches.
-const playerNation = user.nation.trim().toLowerCase();
-const lc = (s) => (s ?? '').trim().toLowerCase();
-
-// Step 3: only public/data/state.json may change.
 const files = JSON.parse(gh(`repos/${REPO}/pulls/${PR_NUMBER}/files`));
-const changed = files.map((f) => f.filename);
-const allowed = new Set(['public/data/state.json']);
-const disallowed = changed.filter((p) => !allowed.has(p));
-if (disallowed.length > 0) {
-  fail(`PR modifies files outside public/data/state.json: ${disallowed.join(', ')}`);
-}
+const changedFiles = files.map((f) => f.filename);
 
-// Step 4: structural diff of state.json.
+const perms = JSON.parse(fs.readFileSync(`${BASE}/public/data/perm.json`, 'utf-8'));
 const baseState = JSON.parse(fs.readFileSync(`${BASE}/public/data/state.json`, 'utf-8'));
-const headState = JSON.parse(fs.readFileSync(`${HEAD}/public/data/state.json`, 'utf-8'));
-
-if (!deepEq(baseState.ownerships, headState.ownerships)) {
-  fail('province ownership cannot be changed by players');
-}
-if (!deepEq(baseState.countries, headState.countries)) {
-  fail('country list (names/colors) cannot be changed by players');
-}
-
-// Defense in depth: reject duplicate ids in head.forces. JSON.parse
-// silently keeps the last duplicate, which `new Map(...)` would also
-// coalesce — both can mask a sneaky "swap an enemy force's nation by
-// adding a same-id entry" attempt before the per-force checks below.
-const headIds = headState.forces.map((f) => f.id);
-const seen = new Set();
-const dups = new Set();
-for (const id of headIds) {
-  if (seen.has(id)) dups.add(id);
-  seen.add(id);
-}
-if (dups.size > 0) {
-  fail(`duplicate force id(s) in head: ${[...dups].join(', ')}`);
+// Head state may be absent if the PR doesn't touch state.json (admin
+// perm-only edit). Fall back to base so structural checks are no-ops.
+let headState = baseState;
+const headStatePath = `${HEAD}/public/data/state.json`;
+if (fs.existsSync(headStatePath)) {
+  headState = JSON.parse(fs.readFileSync(headStatePath, 'utf-8'));
 }
 
-const baseForces = new Map(baseState.forces.map((f) => [f.id, f]));
-const headForces = new Map(headState.forces.map((f) => [f.id, f]));
+const result = validateMove({
+  baseState,
+  headState,
+  perms,
+  prAuthor: PR_AUTHOR,
+  changedFiles,
+  mergeable,
+});
 
-// Removed / modified forces
-for (const [id, base] of baseForces) {
-  const head = headForces.get(id);
-  if (!head) {
-    if (lc(base.nation) !== playerNation) {
-      fail(`force #${id} (${base.nation}: ${base.name}) removed; not owned by ${playerNation}`);
-    }
-  } else if (!deepEq(base, head)) {
-    if (lc(base.nation) !== playerNation || lc(head.nation) !== playerNation) {
-      fail(
-        `force #${id} edited but nation must be ${playerNation} ` +
-          `before AND after (was ${base.nation}, now ${head.nation})`,
-      );
-    }
-  }
+if (result.valid) {
+  console.log(`PASS: ${result.note ?? ''}`);
+  output('valid', 'true');
+} else {
+  console.log(`REJECT: ${result.reason}`);
+  output('valid', 'false');
+  output('reason', result.reason);
 }
-
-// Added forces
-for (const [id, head] of headForces) {
-  if (baseForces.has(id)) continue;
-  if (lc(head.nation) !== playerNation) {
-    fail(`force #${id} (${head.nation}: ${head.name}) added; not owned by ${playerNation}`);
-  }
-}
-
-// Consistency: nextForceId must be > all existing ids
-const maxId = Math.max(0, ...headState.forces.map((f) => f.id));
-if (headState.nextForceId <= maxId) {
-  fail(`nextForceId (${headState.nextForceId}) must be > max(force.id) (${maxId})`);
-}
-
-pass(`player @${PR_AUTHOR} (${playerNation}) — force changes only`);
