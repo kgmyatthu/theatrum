@@ -18464,8 +18464,8 @@
       "name": "Western Army",
       "strength": 70000,
       "commander": "Suvorov",
-      "lon": 30,
-      "lat": 53
+      "lon": 27.685546875000004,
+      "lat": 49.5822260446217
     },
     {
       "id": 9,
@@ -18786,5 +18786,5 @@
     }
   ],
   "provinceFillOpacity": 0.5,
-  "exportedAt": "2026-05-10T02:24:17.533Z"
+  "exportedAt": "2026-05-10T02:26:22.400Z"
 }
