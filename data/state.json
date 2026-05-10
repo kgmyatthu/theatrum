@@ -18394,8 +18394,8 @@
       "name": "Army of Italy",
       "strength": 38000,
       "commander": "Bonaparte",
-      "lon": 7.7,
-      "lat": 45
+      "lon": 12.128906250000002,
+      "lat": 46.21785176740301
     },
     {
       "id": 2,
@@ -18404,8 +18404,8 @@
       "name": "Army of the Rhine",
       "strength": 60000,
       "commander": "Moreau",
-      "lon": 7.5,
-      "lat": 48.5
+      "lon": 12.073974609375002,
+      "lat": 48.80686346108519
     },
     {
       "id": 3,
@@ -18414,8 +18414,8 @@
       "name": "Army of Sambre-Meuse",
       "strength": 70000,
       "commander": "Jourdan",
-      "lon": 5.5,
-      "lat": 50.5
+      "lon": 13.359375000000002,
+      "lat": 52.25470880113083
     },
     {
       "id": 4,
@@ -18516,9 +18516,19 @@
       "commander": "de Winter",
       "lon": 4.7,
       "lat": 53
+    },
+    {
+      "id": 14,
+      "nation": "france",
+      "branch": "army",
+      "name": "1st corp",
+      "strength": 40000,
+      "commander": "napoleon",
+      "lat": 50.6947178381929,
+      "lon": 11.887207031250002
     }
   ],
-  "nextForceId": 14,
+  "nextForceId": 15,
   "countries": [
     {
       "name": "afghanistan",
@@ -18613,12 +18623,12 @@
       "color": "#9f7443"
     },
     {
-      "name": "hre minor states",
-      "color": "#9CB4D6"
-    },
-    {
       "name": "hausa city-states",
       "color": "#01796F"
+    },
+    {
+      "name": "hre minor states",
+      "color": "#9CB4D6"
     },
     {
       "name": "hyderabad",
@@ -18667,6 +18677,10 @@
     {
       "name": "merina",
       "color": "#B32134"
+    },
+    {
+      "name": "moldavia",
+      "color": "#ff9300"
     },
     {
       "name": "montenegro",
@@ -18773,6 +18787,10 @@
       "color": "#C2B280"
     },
     {
+      "name": "tuggurt",
+      "color": "#942a72"
+    },
+    {
       "name": "tuscany",
       "color": "#C0A050"
     },
@@ -18803,14 +18821,6 @@
     {
       "name": "yoruba",
       "color": "#7B2D8E"
-    },
-    {
-      "name": "moldavia",
-      "color": "#ff9300"
-    },
-    {
-      "name": "tuggurt",
-      "color": "#942a72"
     }
   ]
 }
