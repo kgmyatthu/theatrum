@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v4",
+  "appVersion": "theatrum/v5",
   "ownerships": [
     [
       0,
@@ -1371,7 +1371,7 @@
     ],
     [
       342,
-      "Russia"
+      "Austria"
     ],
     [
       343,
@@ -18454,8 +18454,8 @@
       "name": "Army of the Rhine",
       "strength": 80000,
       "commander": "Charles",
-      "lon": 16.918945312500004,
-      "lat": 48.07807894349862
+      "lon": 23.2470703125,
+      "lat": 49.38237278700955
     },
     {
       "id": 8,
@@ -18784,7 +18784,5 @@
       "name": "Yoruba",
       "color": "#7B2D8E"
     }
-  ],
-  "provinceFillOpacity": 0.5,
-  "exportedAt": "2026-05-10T02:11:30.400Z"
+  ]
 }
