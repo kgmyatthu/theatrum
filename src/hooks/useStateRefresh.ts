@@ -7,15 +7,30 @@ import { fetchLiveDataFresh } from '@/utils/liveData';
 const REFRESH_INTERVAL_MS = 60_000;
 
 // Imperative handle for components outside this hook (e.g. the submit
-// modal) to tell the refresh loop "we just synced to this snapshot —
-// don't treat it as drift on the next tick". Set when the hook mounts.
+// modal) to talk to the refresh loop. Set when the hook mounts.
 type SyncBaselineFn = (snapshot: AppSnapshot) => void;
-const handle = { syncBaseline: ((_s: AppSnapshot) => {}) as SyncBaselineFn };
+type SetSubmittingFn = (submitting: boolean) => void;
+const handle = {
+  syncBaseline: ((_s: AppSnapshot) => {}) as SyncBaselineFn,
+  setSubmitting: ((_b: boolean) => {}) as SetSubmittingFn,
+};
 
 /** Call after dispatching APPLY_SNAPSHOT so useStateRefresh updates its
  *  baseline in lockstep. No-op when the hook isn't mounted. */
 export function syncStateRefreshBaseline(snapshot: AppSnapshot): void {
   handle.syncBaseline(snapshot);
+}
+
+/**
+ * Pause / resume the refresh loop. Used by the submit modal: while a
+ * PR is in flight, upstream drift would otherwise look like a concurrent
+ * conflict (the user's local edits haven't been APPLY_SNAPSHOTted yet,
+ * so they'd false-positive against any remote change). The validator
+ * already rejects truly conflicting submissions, so silencing this hook
+ * during submit is safe.
+ */
+export function setStateRefreshSubmitting(submitting: boolean): void {
+  handle.setSubmitting(submitting);
 }
 
 /**
@@ -42,6 +57,7 @@ export function useStateRefresh(): { conflict: boolean } {
 
   const baselineRef = useRef<string | null>(null);
   const conflictRef = useRef(false);
+  const submittingRef = useRef(false);
   // Keep a live ref to the latest state so the interval callback (which
   // closes over `state` from when it was set up) reads fresh values.
   const stateRef = useRef(state);
@@ -68,7 +84,8 @@ export function useStateRefresh(): { conflict: boolean } {
   ]);
 
   // Wire the imperative handle so external callers (the submit modal)
-  // can advance the baseline after dispatching APPLY_SNAPSHOT.
+  // can advance the baseline after dispatching APPLY_SNAPSHOT and
+  // gate the polling loop while a submission is in flight.
   useEffect(() => {
     handle.syncBaseline = (snapshot) => {
       baselineRef.current = JSON.stringify(snapshot);
@@ -76,8 +93,12 @@ export function useStateRefresh(): { conflict: boolean } {
       conflictRef.current = false;
       setConflict(false);
     };
+    handle.setSubmitting = (b) => {
+      submittingRef.current = b;
+    };
     return () => {
       handle.syncBaseline = () => {};
+      handle.setSubmitting = () => {};
     };
   }, []);
 
@@ -86,6 +107,11 @@ export function useStateRefresh(): { conflict: boolean } {
 
     const tick = async (): Promise<void> => {
       if (conflictRef.current) return;
+      // While a PR is in flight, drift detection is the validator's job —
+      // the modal will fetch fresh state.json on merge and resync the
+      // baseline. Silence here so we don't pop a conflict modal over the
+      // already-open submit modal.
+      if (submittingRef.current) return;
       if (!baselineRef.current) return;
 
       let remote: AppSnapshot;

@@ -10,7 +10,10 @@ import {
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import { useAppDispatch } from '@/state/AppContext';
 import { fetchLiveDataFresh } from '@/utils/liveData';
-import { syncStateRefreshBaseline } from '@/hooks/useStateRefresh';
+import {
+  syncStateRefreshBaseline,
+  setStateRefreshSubmitting,
+} from '@/hooks/useStateRefresh';
 import styles from './SubmitMoveModal.module.css';
 
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
@@ -76,8 +79,14 @@ export function SubmitMoveModal({
 
   useEffect(() => {
     mountedRef.current = true;
+    // Suspend the 60s state.json refresh loop while this modal is open.
+    // Otherwise an unrelated PR merging during our poll window would
+    // see local edits + remote drift and pop a conflict modal on top
+    // of an already-active submit. The validator handles real conflicts.
+    setStateRefreshSubmitting(true);
     return () => {
       mountedRef.current = false;
+      setStateRefreshSubmitting(false);
     };
   }, []);
 
