@@ -26,7 +26,13 @@ async function gh<T>(path: string, init: RequestInitJson = {}): Promise<T> {
     body = JSON.stringify(init.body);
     headers['Content-Type'] = 'application/json';
   }
-  const r = await authedFetch(`${GH}${path}`, { ...init, headers, body });
+  // GitHub returns `cache-control: private, max-age=60` on most read
+  // endpoints, which the browser respects — so a 1 s polling loop was
+  // hitting the in-memory cache 59 out of 60 times and only seeing
+  // upstream changes after a full minute. `no-cache` forces revalidation
+  // against GitHub's ETag on every call: lightweight 304 most polls,
+  // 200-with-fresh-bytes the moment something actually changes.
+  const r = await authedFetch(`${GH}${path}`, { ...init, headers, body, cache: 'no-cache' });
   if (!r.ok) {
     const text = await r.text();
     throw new Error(`GitHub ${init.method ?? 'GET'} ${path} → ${r.status}: ${text}`);
