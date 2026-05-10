@@ -1,11 +1,13 @@
-// OAuth proxy for the Theatrum app. Two flows, both POST + JSON body:
-//   { code }           → initial code-for-token exchange
-//   { refresh_token }  → refresh an expired access token
+// OAuth proxy for the Theatrum app. Three flows, all POST + JSON body:
+//   { code }            → initial code-for-token exchange
+//   { refresh_token }   → refresh an expired access token
+//   { revoke: <token> } → invalidate an access token server-side
 //
 // GitHub App User-to-Server tokens last 8 hours; refresh tokens last
-// 6 months and rotate on each use. Both endpoints proxy to GitHub's
-// /login/oauth/access_token; the only reason this lives server-side is
-// `client_secret`, which can't safely sit in the SPA bundle.
+// 6 months and rotate on each use. /token endpoints proxy to GitHub's
+// /login/oauth/access_token; revoke calls DELETE /applications/<id>/token
+// with Basic auth. The reason this lives server-side is `client_secret`,
+// which can't safely sit in the SPA bundle.
 //
 // Legacy `GET /?code=...` is still accepted for back-compat with the
 // pre-refresh-token bundle that may still be cached in someone's browser.
@@ -59,6 +61,34 @@ async function exchangeWithGitHub(
   return jsonResponse(await r.text(), r.status, origin);
 }
 
+async function revokeWithGitHub(env: Env, token: string, origin: string): Promise<Response> {
+  // DELETE /applications/<client_id>/token revokes the entire grant
+  // (access + refresh) when given either token. Authenticated as the App
+  // via Basic <client_id>:<client_secret>.
+  const basic = btoa(`${env.GITHUB_CLIENT_ID}:${env.GITHUB_CLIENT_SECRET}`);
+  const r = await fetch(
+    `https://api.github.com/applications/${env.GITHUB_CLIENT_ID}/token`,
+    {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Basic ${basic}`,
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Content-Type': 'application/json',
+        // GitHub requires a UA on App-auth requests.
+        'User-Agent': 'theatrum-oauth-worker',
+      },
+      body: JSON.stringify({ access_token: token }),
+    },
+  );
+  // 204 → success. 422 → already-invalid token (treat as success for the
+  // client). Anything else → propagate the error body.
+  if (r.status === 204 || r.status === 422) {
+    return jsonResponse('{}', 200, origin);
+  }
+  return jsonResponse(await r.text(), r.status, origin);
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = env.ALLOWED_ORIGIN || '*';
@@ -79,9 +109,13 @@ export default {
       return errorJson(origin, 405, 'method not allowed');
     }
 
-    let body: { code?: string; refresh_token?: string };
+    let body: { code?: string; refresh_token?: string; revoke?: string };
     try {
-      body = (await request.json()) as { code?: string; refresh_token?: string };
+      body = (await request.json()) as {
+        code?: string;
+        refresh_token?: string;
+        revoke?: string;
+      };
     } catch {
       return errorJson(origin, 400, 'invalid json body');
     }
@@ -96,6 +130,9 @@ export default {
         origin,
       );
     }
-    return errorJson(origin, 400, 'missing code or refresh_token');
+    if (body.revoke) {
+      return revokeWithGitHub(env, body.revoke, origin);
+    }
+    return errorJson(origin, 400, 'missing code, refresh_token, or revoke');
   },
 };

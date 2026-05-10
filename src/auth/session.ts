@@ -14,7 +14,6 @@
 // token.
 
 const SESSION_KEY = 'theatrum.gh_session';
-const LEGACY_TOKEN_KEY = 'theatrum.gh_token';
 const REFRESH_BUFFER_MS = 60 * 1000;
 
 const WORKER_URL = import.meta.env.VITE_OAUTH_WORKER_URL as string | undefined;
@@ -54,10 +53,38 @@ export function getSession(): Session | null {
   return readSession();
 }
 
+function postRevoke(token: string): void {
+  if (!WORKER_URL) return;
+  // Fire-and-forget — local state wipe must not wait on the network.
+  // If the worker / GitHub is unreachable, the token still expires
+  // naturally in <= 8h.
+  fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ revoke: token }),
+    keepalive: true,
+  }).catch(() => {});
+}
+
 export function clearSession(): void {
-  localStorage.removeItem(SESSION_KEY);
-  // One-time cleanup of the pre-refresh-token storage key.
-  localStorage.removeItem(LEGACY_TOKEN_KEY);
+  // Best-effort revoke FIRST so the network call is built before we
+  // forget the token. The actual fetch is async + ignored.
+  const cur = readSession();
+  if (cur?.access_token) postRevoke(cur.access_token);
+
+  // Cancel any in-flight refresh — refreshSession's writeback also
+  // double-checks readSession() so a race can't re-populate storage.
+  refreshing = null;
+
+  // Wipe everything namespaced to the app from both stores. Catches
+  // SESSION_KEY, LEGACY_TOKEN_KEY, the OAuth CSRF state in
+  // sessionStorage, and any future theatrum.* keys.
+  for (const k of Object.keys(localStorage)) {
+    if (k.startsWith('theatrum.')) localStorage.removeItem(k);
+  }
+  for (const k of Object.keys(sessionStorage)) {
+    if (k.startsWith('theatrum.')) sessionStorage.removeItem(k);
+  }
 }
 
 interface TokenResponse {
@@ -128,7 +155,9 @@ export async function refreshSession(): Promise<Session> {
   refreshing = (async () => {
     try {
       const s = await postWorker({ refresh_token: cur.refresh_token });
-      writeSession(s);
+      // If a concurrent signout cleared storage during the round-trip,
+      // do not re-populate it.
+      if (readSession()) writeSession(s);
       return s;
     } finally {
       refreshing = null;

@@ -18,6 +18,7 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
   const [branch, setBranch] = useState<ForceBranch>(force.branch);
   const [strength, setStrength] = useState(String(force.strength));
   const [commander, setCommander] = useState(force.commander);
+  const [confirmingDelete, setConfirmingDelete] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -40,8 +41,7 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
     onDismiss();
   };
 
-  const handleDelete = (): void => {
-    if (!window.confirm(`Delete force "${force.name}"?`)) return;
+  const handleConfirmDelete = (): void => {
     dispatch({ type: 'DELETE_FORCE', payload: { id: force.id } });
     onDismiss();
   };
@@ -100,19 +100,33 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
           onChange={(e) => setCommander(e.target.value)}
         />
 
-        <div className={styles.buttons}>
-          <div className={styles.left}>
-            <Button variant="danger" onClick={handleDelete}>
-              Delete
-            </Button>
+        {confirmingDelete ? (
+          <div className={styles.buttons}>
+            <span className={styles.confirmText}>
+              Delete &ldquo;{force.name}&rdquo;?
+            </span>
+            <div className={styles.right}>
+              <Button onClick={() => setConfirmingDelete(false)}>Cancel</Button>
+              <Button variant="danger" onClick={handleConfirmDelete}>
+                Confirm Delete
+              </Button>
+            </div>
           </div>
-          <div className={styles.right}>
-            <Button onClick={onDismiss}>Cancel</Button>
-            <Button variant="primary" onClick={handleSave}>
-              Save
-            </Button>
+        ) : (
+          <div className={styles.buttons}>
+            <div className={styles.left}>
+              <Button variant="danger" onClick={() => setConfirmingDelete(true)}>
+                Delete
+              </Button>
+            </div>
+            <div className={styles.right}>
+              <Button onClick={onDismiss}>Cancel</Button>
+              <Button variant="primary" onClick={handleSave}>
+                Save
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
