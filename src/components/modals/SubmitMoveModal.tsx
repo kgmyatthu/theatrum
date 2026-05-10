@@ -35,7 +35,6 @@ type Phase =
   | { kind: 'error'; message: string };
 
 interface SubmitMoveModalProps {
-  login: string;
   snapshot: AppSnapshot;
   /** Country renames to mirror into perm.json — admin-only. */
   renames: CountryRename[];
@@ -62,7 +61,6 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
  *   any → expired | error on faults
  */
 export function SubmitMoveModal({
-  login,
   snapshot,
   renames,
   userAdds,
@@ -120,7 +118,6 @@ export function SubmitMoveModal({
     let prUrl: string;
     try {
       const r = await submitMove({
-        login,
         snapshot,
         description,
         renames,

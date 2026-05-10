@@ -45,6 +45,7 @@ for (let i = 0; i < 5; i++) {
   }
   await sleep(2000);
 }
+const prBody = pr?.body ?? '';
 
 const files = JSON.parse(gh(`repos/${REPO}/pulls/${PR_NUMBER}/files`));
 const changedFiles = files.map((f) => f.filename);
@@ -64,6 +65,7 @@ const result = validateMove({
   headState,
   perms,
   prAuthor: PR_AUTHOR,
+  prBody,
   changedFiles,
   mergeable,
 });

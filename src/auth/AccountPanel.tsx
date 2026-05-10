@@ -103,7 +103,6 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
       </Panel>
       {pending && auth.login && (
         <SubmitMoveModal
-          login={auth.login}
           snapshot={pending.snapshot}
           renames={pending.renames}
           userAdds={pending.userAdds}

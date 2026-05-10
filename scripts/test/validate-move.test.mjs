@@ -428,3 +428,146 @@ test('reject: admin PR with merge conflict still blocked', () => {
     /merge conflict/,
   );
 });
+
+// ────────────────────────────────────────────────────────────────────
+// Bot-authored PRs (the worker submitting as the App). The author
+// reported by GitHub is the bot; the verified submitter login is in
+// the PR body marker. The marker is trusted only for bot-authored PRs.
+// ────────────────────────────────────────────────────────────────────
+
+const BOT = 'theatrumauth[bot]';
+const marker = (login) => `Some prose.\n\n<!-- theatrum-submitter: ${login} -->`;
+
+test('reject: bot PR with no body marker', () => {
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: 'plain prose, no marker',
+      }),
+    ),
+    /missing the theatrum-submitter marker/,
+  );
+});
+
+test('reject: bot PR with marker pointing to an unregistered user', () => {
+  // GitHub logins are [A-Za-z0-9-]+; pick something valid so the marker
+  // parses, but not present in PERMS.
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: marker('randomattacker'),
+      }),
+    ),
+    /not registered/,
+  );
+});
+
+test('pass: bot PR with marker for an admin', () => {
+  expectPass(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: marker('master'),
+        // admin can change anything
+        headState: state({
+          ownerships: [[0, 'france'], [1, 'france'], [2, 'france']],
+        }),
+      }),
+    ),
+  );
+});
+
+test('pass: bot PR with marker for a player moving their own force', () => {
+  const head = state({
+    forces: [
+      force({ id: 1, nation: 'spain', lat: 41, lon: -4 }),
+      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+    ],
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: marker('alice'),
+        headState: head,
+      }),
+    ),
+  );
+});
+
+test('reject: bot PR with marker for a player moving an enemy force', () => {
+  const head = state({
+    forces: [
+      force({ id: 1, nation: 'spain' }),
+      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+    ],
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: marker('alice'),
+        headState: head,
+      }),
+    ),
+    /force #2 edited but nation must be spain/,
+  );
+});
+
+test('reject: bot PR for a player attempting perm.json edit', () => {
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: marker('alice'),
+        changedFiles: ['public/data/state.json', 'public/data/perm.json'],
+      }),
+    ),
+    /modifies files outside/,
+  );
+});
+
+test('reject: bot PR with malformed marker (non-alphanumeric chars)', () => {
+  // Marker regex requires [A-Za-z0-9-]+ — anything else is treated as missing.
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: BOT,
+        prBody: '<!-- theatrum-submitter: not a login -->',
+      }),
+    ),
+    /missing the theatrum-submitter marker/,
+  );
+});
+
+test('pass: non-bot PR ignores stray marker (auth=login, marker irrelevant)', () => {
+  // If a real user opens a PR with a forged marker pointing to someone
+  // else, the validator must NOT honor it — only bot PRs use markers.
+  // pr.user.login is the author, so they get checked against perm.json
+  // as themselves.
+  expectPass(
+    validateMove(
+      defaults({
+        prAuthor: 'master',
+        prBody: marker('not-a-real-login'),
+      }),
+    ),
+  );
+});
+
+test('reject: non-bot PR with forged marker still uses pr.user.login', () => {
+  // Random user opens a PR directly (somehow) with a marker claiming
+  // they're the admin. Validator uses prAuthor = random_attacker, not
+  // the marker. Random user isn't in perm.json → reject.
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: 'random_attacker',
+        prBody: marker('master'),
+      }),
+    ),
+    /not registered/,
+  );
+});

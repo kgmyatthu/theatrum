@@ -8,19 +8,41 @@ const ALLOWED_NON_ADMIN_FILES = new Set(['public/data/state.json']);
 const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : '');
 const deepEq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
+// Bot-authored PRs (the worker submits as the App) carry the verified
+// submitter login as a marker in the PR body. Format:
+//   <!-- theatrum-submitter: <login> -->
+const SUBMITTER_MARKER = /<!--\s*theatrum-submitter:\s*([A-Za-z0-9-]+)\s*-->/;
+
+/**
+ * Resolve the effective submitter for a PR. For bot-authored PRs we
+ * trust the body marker (only our worker can produce these PRs); for
+ * any other author we use the GitHub-reported login as-is.
+ *
+ * Returns null when the PR was bot-authored but the marker is missing
+ * or malformed — caller should reject.
+ */
+function resolveSubmitter(prAuthor, prBody) {
+  if (typeof prAuthor === 'string' && prAuthor.endsWith('[bot]')) {
+    const m = (prBody ?? '').match(SUBMITTER_MARKER);
+    return m ? m[1] : null;
+  }
+  return prAuthor;
+}
+
 /**
  * @param {{
  *   baseState: { ownerships: Array<[number, string]>, forces: Array<object>, nextForceId: number, countries: Array<{name:string,color:string}> },
  *   headState: { ownerships: Array<[number, string]>, forces: Array<object>, nextForceId: number, countries: Array<{name:string,color:string}> },
  *   perms: Record<string, { role: 'admin' | 'player', nation?: string }>,
  *   prAuthor: string,
+ *   prBody?: string,
  *   changedFiles: string[],
  *   mergeable: boolean | null,
  * }} inputs
  * @returns {{ valid: true, note?: string } | { valid: false, reason: string }}
  */
 export function validateMove(inputs) {
-  const { baseState, headState, perms, prAuthor, changedFiles, mergeable } = inputs;
+  const { baseState, headState, perms, prAuthor, prBody, changedFiles, mergeable } = inputs;
 
   // Mergeability — null/undefined means GitHub couldn't determine.
   if (mergeable === false) {
@@ -33,15 +55,28 @@ export function validateMove(inputs) {
     return { valid: false, reason: 'mergeability could not be determined; please retry' };
   }
 
-  // Author must be in perm.json.
-  const user = perms[prAuthor];
-  if (!user) return { valid: false, reason: `@${prAuthor} is not registered in perm.json` };
+  // Resolve the effective submitter. For bot-authored PRs (the worker
+  // submitting as the App), the GitHub-reported author is the bot — the
+  // real submitter is in the PR body marker. The marker is trusted only
+  // when the PR is bot-authored, since only our worker can author PRs
+  // as the App on this repo.
+  const submitter = resolveSubmitter(prAuthor, prBody);
+  if (!submitter) {
+    return {
+      valid: false,
+      reason: `bot-authored PR missing the theatrum-submitter marker in the body`,
+    };
+  }
+
+  // Submitter must be in perm.json.
+  const user = perms[submitter];
+  if (!user) return { valid: false, reason: `@${submitter} is not registered in perm.json` };
 
   // Admins skip every other check — they own the source of truth.
-  if (user.role === 'admin') return { valid: true, note: `admin @${prAuthor}` };
+  if (user.role === 'admin') return { valid: true, note: `admin @${submitter}` };
 
   if (user.role !== 'player' || !user.nation) {
-    return { valid: false, reason: `@${prAuthor} has no playable role assigned` };
+    return { valid: false, reason: `@${submitter} has no playable role assigned` };
   }
   const playerNation = lc(user.nation);
 
@@ -127,5 +162,5 @@ export function validateMove(inputs) {
     };
   }
 
-  return { valid: true, note: `player @${prAuthor} (${playerNation}) — force changes only` };
+  return { valid: true, note: `player @${submitter} (${playerNation}) — force changes only` };
 }
