@@ -18613,12 +18613,12 @@
       "color": "#9f7443"
     },
     {
-      "name": "hre minor states",
-      "color": "#9CB4D6"
-    },
-    {
       "name": "hausa city-states",
       "color": "#01796F"
+    },
+    {
+      "name": "hre minor states",
+      "color": "#9CB4D6"
     },
     {
       "name": "hyderabad",
@@ -18667,6 +18667,10 @@
     {
       "name": "merina",
       "color": "#B32134"
+    },
+    {
+      "name": "moldavia",
+      "color": "#ff9300"
     },
     {
       "name": "montenegro",
@@ -18773,6 +18777,10 @@
       "color": "#C2B280"
     },
     {
+      "name": "tuggurt",
+      "color": "#942a72"
+    },
+    {
       "name": "tuscany",
       "color": "#C0A050"
     },
@@ -18803,14 +18811,6 @@
     {
       "name": "yoruba",
       "color": "#7B2D8E"
-    },
-    {
-      "name": "moldavia",
-      "color": "#ff9300"
-    },
-    {
-      "name": "tuggurt",
-      "color": "#942a72"
     }
   ]
 }
