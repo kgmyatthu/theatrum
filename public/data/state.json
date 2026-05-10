@@ -2683,7 +2683,7 @@
     ],
     [
       670,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       671,
@@ -3303,7 +3303,7 @@
     ],
     [
       825,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       826,
@@ -3323,11 +3323,11 @@
     ],
     [
       830,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       831,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       832,
@@ -3459,7 +3459,7 @@
     ],
     [
       864,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       865,
@@ -6859,7 +6859,7 @@
     ],
     [
       1714,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       1715,
@@ -6875,11 +6875,11 @@
     ],
     [
       1718,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       1719,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       1720,
@@ -13999,11 +13999,11 @@
     ],
     [
       3499,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       3500,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       3501,
@@ -14011,7 +14011,7 @@
     ],
     [
       3502,
-      "Ottoman Empire"
+      "Serbia"
     ],
     [
       3503,
@@ -18739,6 +18739,10 @@
     {
       "name": "Sardinia",
       "color": "#7C2128"
+    },
+    {
+      "name": "Serbia",
+      "color": "#0432ff"
     },
     {
       "name": "Siam",
