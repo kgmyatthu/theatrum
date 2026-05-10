@@ -2379,7 +2379,7 @@
     ],
     [
       594,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       595,
@@ -5679,7 +5679,7 @@
     ],
     [
       1419,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1420,
@@ -5691,7 +5691,7 @@
     ],
     [
       1422,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1423,
@@ -5703,7 +5703,7 @@
     ],
     [
       1425,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1426,
@@ -5711,7 +5711,7 @@
     ],
     [
       1427,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1428,
@@ -5743,7 +5743,7 @@
     ],
     [
       1435,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1436,
@@ -5839,7 +5839,7 @@
     ],
     [
       1459,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1460,
@@ -6103,15 +6103,15 @@
     ],
     [
       1525,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1526,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1527,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       1528,
@@ -17059,11 +17059,11 @@
     ],
     [
       4264,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       4265,
-      "Ottoman Empire"
+      "Unclaimed"
     ],
     [
       4266,
@@ -18444,8 +18444,8 @@
       "name": "Army of Italy",
       "strength": 50000,
       "commander": "Beaulieu",
-      "lon": 12.1673583984375,
-      "lat": 45.920587344733654
+      "lon": 24.675292968750004,
+      "lat": 49.06666839558117
     },
     {
       "id": 7,
@@ -18454,18 +18454,18 @@
       "name": "Army of the Rhine",
       "strength": 80000,
       "commander": "Charles",
-      "lon": 17.270507812500004,
-      "lat": 48.07807894349862
+      "lon": 23.664550781250004,
+      "lat": 50.00773901463687
     },
     {
       "id": 8,
       "nation": "Russia",
       "branch": "army",
-      "name": "Western Army",
-      "strength": 70000,
-      "commander": "Suvorov",
-      "lon": 26.982421875000004,
-      "lat": 50.48547354578499
+      "name": "2nd Western Army",
+      "strength": 50000,
+      "commander": "Platov",
+      "lon": 30.596923828125004,
+      "lat": 50.33844888725473
     },
     {
       "id": 9,
@@ -18598,7 +18598,7 @@
     },
     {
       "name": "Georgia",
-      "color": "#9F1B1B"
+      "color": "#9f7443"
     },
     {
       "name": "HRE Minor States",
@@ -18690,7 +18690,7 @@
     },
     {
       "name": "Ottoman Empire",
-      "color": "#8C7B3D"
+      "color": "#ff1c01"
     },
     {
       "name": "Papal States",
