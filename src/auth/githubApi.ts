@@ -27,12 +27,14 @@ async function gh<T>(path: string, init: RequestInitJson = {}): Promise<T> {
     headers['Content-Type'] = 'application/json';
   }
   // GitHub returns `cache-control: private, max-age=60` on most read
-  // endpoints, which the browser respects — so a 1 s polling loop was
-  // hitting the in-memory cache 59 out of 60 times and only seeing
-  // upstream changes after a full minute. `no-cache` forces revalidation
-  // against GitHub's ETag on every call: lightweight 304 most polls,
-  // 200-with-fresh-bytes the moment something actually changes.
-  const r = await authedFetch(`${GH}${path}`, { ...init, headers, body, cache: 'no-cache' });
+  // endpoints, which the browser respects — a 1 s polling loop was
+  // hitting the cache 59 out of 60 times and only seeing upstream
+  // changes after a full minute. `no-cache` should defeat that, but
+  // Firefox's heuristic cache can still short-circuit GETs (visible
+  // as "Transferred: cached" with no network request). `no-store` is
+  // explicit: never read or write the HTTP cache. Every call is a real
+  // round trip — fine for the volumes we're at (a handful of pollers).
+  const r = await authedFetch(`${GH}${path}`, { ...init, headers, body, cache: 'no-store' });
   if (!r.ok) {
     const text = await r.text();
     throw new Error(`GitHub ${init.method ?? 'GET'} ${path} → ${r.status}: ${text}`);
@@ -106,7 +108,10 @@ export interface PullStatus {
 }
 
 export function getPullRequest(repo: string, pullNumber: number): Promise<PullStatus> {
-  return gh<PullStatus>(`/repos/${repo}/pulls/${pullNumber}`);
+  // The query param has no semantic meaning to GitHub — it's a unique
+  // URL per poll to defeat any intermediate (browser / Fastly / proxy)
+  // cache that might otherwise serve a stale "open" PR response.
+  return gh<PullStatus>(`/repos/${repo}/pulls/${pullNumber}?_=${Date.now()}`);
 }
 
 export interface IssueComment {

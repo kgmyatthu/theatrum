@@ -19,18 +19,22 @@ let shaPromise: Promise<string> | null = null;
 async function fetchLatestSha(repo: string): Promise<string> {
   // Attach the user token when we have one. Authenticated calls get
   // 5000 requests/hour per user; anonymous gets 60/hour per IP, which
-  // the bootstrap + 60s refresh loop will burn through quickly.
+  // the bootstrap + refresh loop will burn through quickly.
   const session = getSession();
   const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
   if (session?.access_token) {
     headers.Authorization = `Bearer ${session.access_token}`;
   }
-  const r = await fetch(`https://api.github.com/repos/${repo}/commits/main`, {
-    // no-cache forces revalidation against the API's etag so we always
-    // pick up the latest HEAD sha within seconds of a merge.
-    cache: 'no-cache',
-    headers,
-  });
+  // no-store + cache-busting query param so we ALWAYS see fresh main
+  // HEAD even when the post-merge handler races a still-cached response
+  // (Firefox's heuristic cache can short-circuit no-cache).
+  const r = await fetch(
+    `https://api.github.com/repos/${repo}/commits/main?_=${Date.now()}`,
+    {
+      cache: 'no-store',
+      headers,
+    },
+  );
   if (!r.ok) {
     throw new Error(`commits/main → ${r.status}`);
   }
