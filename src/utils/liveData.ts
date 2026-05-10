@@ -1,20 +1,64 @@
 const REPO = import.meta.env.VITE_GITHUB_REPO as string | undefined;
 
+// raw.githubusercontent.com URLs go through Fastly with `cache-control:
+// max-age=300`. Branch-ref URLs (.../main/...) can serve stale content
+// for up to 5 minutes after a commit lands; query-string cache busting
+// doesn't reliably defeat this because the CDN's cache key normalization
+// can ignore query params on these paths.
+//
+// SHA-pinned URLs (.../<commit-sha>/...) are immutable: a new commit
+// produces a brand-new URL with no prior cache entry, so the response
+// is always the freshly committed bytes. We pay one round-trip to the
+// GitHub API to learn the latest SHA, then memoize it for the page
+// session — every live-data fetch in the same load shares that SHA.
+
+let shaPromise: Promise<string> | null = null;
+
+async function fetchLatestSha(repo: string): Promise<string> {
+  const r = await fetch(`https://api.github.com/repos/${repo}/commits/main`, {
+    // no-cache forces revalidation against the API's etag so we always
+    // pick up the latest HEAD sha within seconds of a merge.
+    cache: 'no-cache',
+    headers: { Accept: 'application/vnd.github+json' },
+  });
+  if (!r.ok) {
+    throw new Error(`commits/main → ${r.status}`);
+  }
+  const j = (await r.json()) as { sha: string };
+  return j.sha;
+}
+
+async function getLatestSha(repo: string): Promise<string> {
+  if (shaPromise) return shaPromise;
+  shaPromise = fetchLatestSha(repo);
+  // On failure, clear the memo so the next caller (or a retry on the
+  // next page interaction) can try again instead of replaying the error.
+  shaPromise.catch(() => {
+    shaPromise = null;
+  });
+  return shaPromise;
+}
+
 /**
- * URL for a data file that must reflect the current state of `main` —
- * NOT the deploy bundle. Reading from raw.githubusercontent.com lets:
- *   - player move PRs propagate state.json updates instantly,
- *   - admin perm.json edits take effect on next sign-in,
- * with no Pages rebuild required (saves CI minutes).
+ * Fetch a JSON data file from main HEAD with no CDN-staleness window.
  *
- * The `?t=...` cache-bust defeats Fastly's edge cache (raw sets
- * Cache-Control: max-age=300 by default). One miss per app load is
- * negligible compared to forcing a full Pages rebuild per change.
+ * In production the URL resolves to
+ *   https://raw.githubusercontent.com/<repo>/<latest-sha>/public/data/<file>
+ * which is immutable and never served stale.
  *
- * In local dev (no VITE_GITHUB_REPO set), falls back to /data/<file>
- * which Vite serves from public/.
+ * In local dev (no VITE_GITHUB_REPO) we read the bundled copy at
+ *   /data/<file>
  */
-export function liveDataUrl(filename: string): string {
-  if (!REPO) return `/data/${filename}`;
-  return `https://raw.githubusercontent.com/${REPO}/main/public/data/${filename}?t=${Date.now()}`;
+export async function fetchLiveData<T>(filename: string): Promise<T> {
+  if (!REPO) {
+    const r = await fetch(`/data/${filename}`);
+    if (!r.ok) throw new Error(`/data/${filename} → ${r.status}`);
+    return (await r.json()) as T;
+  }
+  const sha = await getLatestSha(REPO);
+  const r = await fetch(
+    `https://raw.githubusercontent.com/${REPO}/${sha}/public/data/${filename}`,
+  );
+  if (!r.ok) throw new Error(`raw@${sha.slice(0, 7)} ${filename} → ${r.status}`);
+  return (await r.json()) as T;
 }

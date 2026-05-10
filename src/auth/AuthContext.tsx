@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { liveDataUrl } from '@/utils/liveData';
+import { fetchLiveData } from '@/utils/liveData';
 import {
   authedFetch,
   clearSession,
@@ -93,10 +93,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const userData = (await r.json()) as { login: string };
         const login = userData.login;
 
-        // perm.json read live from main so admin role updates take effect
-        // without a Pages rebuild.
-        const permResp = await fetch(liveDataUrl('perm.json'), { cache: 'no-cache' });
-        const perms = (await permResp.json()) as PermFile;
+        // perm.json read at main's latest commit SHA so admin perm
+        // updates take effect on next sign-in without a Pages rebuild
+        // and without Fastly staleness. Shares the SHA fetch with
+        // useDataBootstrap, so this adds zero extra round-trips.
+        const perms = await fetchLiveData<PermFile>('perm.json');
         const entry = perms[login];
 
         if (!entry) {
