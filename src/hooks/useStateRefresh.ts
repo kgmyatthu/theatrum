@@ -4,7 +4,7 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { buildSnapshot } from '@/utils/snapshot';
 import { fetchLiveDataFresh } from '@/utils/liveData';
 
-const REFRESH_INTERVAL_MS = 60_000;
+const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 
 // Imperative handle for components outside this hook (e.g. the submit
 // modal) to talk to the refresh loop. Set when the hook mounts.
@@ -34,7 +34,7 @@ export function setStateRefreshSubmitting(submitting: boolean): void {
 }
 
 /**
- * Polls main's state.json every 60s and reconciles with local state:
+ * Polls main's state.json every REFRESH_INTERVAL_MS and reconciles with local state:
  *
  *   remote == baseline → nothing changed upstream, ignore.
  *   remote != baseline AND no local edits → silently APPLY_SNAPSHOT

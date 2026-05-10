@@ -77,7 +77,7 @@ export function SubmitMoveModal({
 
   useEffect(() => {
     mountedRef.current = true;
-    // Suspend the 60s state.json refresh loop while this modal is open.
+    // Suspend the state.json refresh loop while this modal is open.
     // Otherwise an unrelated PR merging during our poll window would
     // see local edits + remote drift and pop a conflict modal on top
     // of an already-active submit. The validator handles real conflicts.
