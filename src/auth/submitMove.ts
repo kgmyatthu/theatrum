@@ -10,6 +10,39 @@ import {
 
 const REPO = (import.meta.env.VITE_GITHUB_REPO as string | undefined) ?? '';
 const STATE_PATH = 'public/data/state.json';
+const PERM_PATH = 'public/data/perm.json';
+
+export interface CountryRename {
+  from: string;
+  to: string;
+}
+
+interface PermEntry {
+  role: 'admin' | 'player';
+  nation?: string;
+}
+type PermFile = Record<string, PermEntry>;
+
+/**
+ * Apply rename pairs in order to the player nation entries in perm.json.
+ * Order matters: chained renames (Spain→France, France→Germany) walk
+ * the chain as written. Returns a new object; input is not mutated.
+ */
+function rewritePerm(perm: PermFile, renames: CountryRename[]): PermFile {
+  const out: PermFile = {};
+  for (const [login, entry] of Object.entries(perm)) {
+    if (entry.role !== 'player' || !entry.nation) {
+      out[login] = entry;
+      continue;
+    }
+    let nation = entry.nation;
+    for (const r of renames) {
+      if (nation === r.from) nation = r.to;
+    }
+    out[login] = nation === entry.nation ? entry : { ...entry, nation };
+  }
+  return out;
+}
 
 function base64ToUtf8(b64: string): string {
   // GitHub returns base64 with embedded newlines.
@@ -44,6 +77,13 @@ export interface SubmitMoveArgs {
   snapshot: AppSnapshot;
   /** Optional player-supplied description. */
   description?: string;
+  /**
+   * Country renames performed since bootstrap. Admin-only; ignored for
+   * players (the validator rejects any non-admin PR that touches perm.json).
+   * When non-empty and effective, perm.json is committed alongside
+   * state.json so player nation assignments follow the rename.
+   */
+  renames?: CountryRename[];
 }
 
 export interface SubmitMoveResult {
@@ -64,7 +104,7 @@ export interface SubmitMoveResult {
  */
 export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult> {
   if (!REPO) throw new Error('VITE_GITHUB_REPO is not configured');
-  const { login, snapshot, description } = args;
+  const { login, snapshot, description, renames = [] } = args;
 
   const mainRef = await getRef(REPO, 'main');
   const baseSha = mainRef.object.sha;
@@ -72,6 +112,30 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
   const ts = new Date().toISOString().replace(/[:.]/g, '-');
   const branchName = `move/${login}-${ts}`;
   await createBranch(REPO, branchName, baseSha);
+
+  // perm.json carries player nation assignments. Renames have to be
+  // mirrored here or players would be locked out of their renamed
+  // country. Skip the round-trip when no renames are pending, and skip
+  // the commit when the rewrite produces no effective change (e.g. the
+  // renamed countries had no players assigned).
+  if (renames.length > 0) {
+    const permFile = await getFile(REPO, PERM_PATH, 'main');
+    const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
+    const permAfter = rewritePerm(permBefore, renames);
+    if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
+      const permJson = JSON.stringify(permAfter, null, 2) + '\n';
+      const permB64 = utf8ToBase64(permJson);
+      const summary = renames.map((r) => `${r.from}→${r.to}`).join(', ');
+      await putFile(
+        REPO,
+        PERM_PATH,
+        branchName,
+        `perm: rewrite player nations (${summary})`,
+        permB64,
+        permFile.sha,
+      );
+    }
+  }
 
   const file = await getFile(REPO, STATE_PATH, 'main');
 

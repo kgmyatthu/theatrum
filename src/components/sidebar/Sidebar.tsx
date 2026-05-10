@@ -17,8 +17,9 @@ export function Sidebar() {
 
   const isAuthed = auth.status === 'authenticated';
   const isAdmin = auth.role === 'admin';
-  // Player + admin both get the gameplay panels (Mode / AddForce / Display /
-  // Layers / Stats). Country admin (rename / recolor / new) is admin-only.
+  // Player + admin get gameplay panels (Mode / AddForce / Stats). Country
+  // admin (rename / recolor / new) is admin-only. Layers is purely a
+  // client-side render toggle, so everyone gets it.
   const showGameplayPanels = isAuthed;
 
   return (
@@ -31,7 +32,7 @@ export function Sidebar() {
       {isAdmin && <NewCountryPanel onStatus={setStatus} />}
       {isAdmin && <EditCountryPanel onStatus={setStatus} />}
       {showGameplayPanels && <DisplayPanel />}
-      {showGameplayPanels && <LayersPanel />}
+      <LayersPanel />
       <PersistencePanel onStatus={setStatus} />
       {showGameplayPanels && <StatsPanel />}
     </div>

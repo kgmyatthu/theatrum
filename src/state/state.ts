@@ -38,6 +38,13 @@ export interface AppState {
    * derived state (e.g. country labels) depend on this counter.
    */
   provincesVersion: number;
+
+  /**
+   * Country renames performed locally since the last bootstrap, in order.
+   * Read at submit time so admin PRs can rewrite player nation entries in
+   * perm.json — keeps players assigned to their renamed country.
+   */
+  pendingRenames: Array<{ from: string; to: string }>;
 }
 
 export const initialState: AppState = {
@@ -59,4 +66,5 @@ export const initialState: AppState = {
   provinceFillOpacity: 0.5,
   iconScale: 1.0,
   provincesVersion: 0,
+  pendingRenames: [],
 };

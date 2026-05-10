@@ -30,7 +30,11 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
         type="color"
         className={styles.colorInput}
         value={value}
-        onChange={(e) => handleColorChange(e.target.value)}
+        onChange={(e) => {
+          handleColorChange(e.target.value);
+          // Dismiss the native picker dialog (Safari keeps it open otherwise).
+          e.target.blur();
+        }}
       />
       <input
         type="text"

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
 import { buildSnapshot } from '@/utils/snapshot';
-import { hasMeaningfulDiff } from '@/auth/submitMove';
+import { hasMeaningfulDiff, type CountryRename } from '@/auth/submitMove';
 import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
@@ -18,6 +18,7 @@ interface PersistencePanelProps {
 interface PendingSubmission {
   snapshot: AppSnapshot;
   description: string;
+  renames: CountryRename[];
 }
 
 export function PersistencePanel({ onStatus }: PersistencePanelProps) {
@@ -161,7 +162,10 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     if (!changed) return onStatus('No changes to submit.');
 
     const description = window.prompt('Describe your move (optional):') ?? '';
-    setPending({ snapshot: snap, description });
+    // Only admins can submit perm.json edits — the validator rejects any
+    // non-admin PR that touches it. Drop renames for everyone else.
+    const renames = auth.role === 'admin' ? state.pendingRenames : [];
+    setPending({ snapshot: snap, description, renames });
   };
 
   return (
@@ -199,6 +203,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
           login={auth.login}
           snapshot={pending.snapshot}
           description={pending.description}
+          renames={pending.renames}
           onClose={() => setPending(null)}
           onAuthExpired={() => {
             // Refresh-token flow already failed; need a full re-auth.

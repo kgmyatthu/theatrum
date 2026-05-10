@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import type { AppSnapshot } from '@/types';
-import { submitMove } from '@/auth/submitMove';
+import { submitMove, type CountryRename } from '@/auth/submitMove';
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import styles from './SubmitMoveModal.module.css';
 
@@ -23,6 +23,8 @@ interface SubmitMoveModalProps {
   login: string;
   snapshot: AppSnapshot;
   description: string;
+  /** Country renames to mirror into perm.json — admin-only. */
+  renames: CountryRename[];
   onClose: () => void;
   /** Called when a 401 surfaces — UI prompts re-auth via this. */
   onAuthExpired: () => void;
@@ -42,6 +44,7 @@ export function SubmitMoveModal({
   login,
   snapshot,
   description,
+  renames,
   onClose,
   onAuthExpired,
 }: SubmitMoveModalProps) {
@@ -55,7 +58,7 @@ export function SubmitMoveModal({
       let prNumber: number;
       let prUrl: string;
       try {
-        const r = await submitMove({ login, snapshot, description });
+        const r = await submitMove({ login, snapshot, description, renames });
         if (cancelled) return;
         prNumber = r.prNumber;
         prUrl = r.prUrl;
@@ -117,7 +120,7 @@ export function SubmitMoveModal({
     return () => {
       cancelled = true;
     };
-  }, [login, snapshot, description]);
+  }, [login, snapshot, description, renames]);
 
   // Auto-reload after the merge confirmation so the bootstrap picks up
   // the new state.json. Short pause so the user sees the success message.

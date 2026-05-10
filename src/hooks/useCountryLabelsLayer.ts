@@ -30,7 +30,15 @@ function makeLabelMarker(owner: string, label: LandmassLabel, fontSize: number):
 interface LabelMarkerEntry {
   marker: L.Marker;
   baseFont: number;
+  /** True for the largest landmass of an owner (or its only one). */
+  isMainland: boolean;
 }
+
+/**
+ * At zooms below this, hide every non-mainland label so each country
+ * shows once. At/above, show everything.
+ */
+const SHOW_ALL_LABELS_FROM_ZOOM = 4;
 
 export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions): void {
   const { provinces, layerVisibility, provincesVersion, iconScale } = useAppState();
@@ -76,10 +84,17 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
   // pass is O(n²); doing it inside the rebuild effect would re-run on every
   // slider tick and zoom event.
   const ownerLabels = useMemo(() => {
-    const out: Array<{ owner: string; label: LandmassLabel }> = [];
+    const out: Array<{ owner: string; label: LandmassLabel; isMainland: boolean }> = [];
     for (const [owner, features] of featuresByOwner) {
       const labels = computeLandmassLabelsForOwner(features, indexes.coordSets, indexes.bboxes);
-      for (const label of labels) out.push({ owner, label });
+      if (labels.length === 0) continue;
+      let mainlandArea = -Infinity;
+      for (const l of labels) {
+        if (l.area > mainlandArea) mainlandArea = l.area;
+      }
+      for (const label of labels) {
+        out.push({ owner, label, isMainland: label.area === mainlandArea });
+      }
     }
     return out;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,14 +110,20 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
     const old = layerRef.current;
     if (old) map.removeLayer(old);
 
-    const initialScale = iconScale * zoomScaleFactor(map.getZoom());
+    const initialZoom = map.getZoom();
+    const initialScale = iconScale * zoomScaleFactor(initialZoom);
+    const initialOnlyMainland = initialZoom < SHOW_ALL_LABELS_FROM_ZOOM;
     const group = L.layerGroup();
     const entries: LabelMarkerEntry[] = [];
-    for (const { owner, label } of ownerLabels) {
+    for (const { owner, label, isMainland } of ownerLabels) {
       const baseFont = baseFontSize(label.area);
       const marker = makeLabelMarker(owner, label, baseFont * initialScale);
-      entries.push({ marker, baseFont });
+      entries.push({ marker, baseFont, isMainland });
       marker.addTo(group);
+      if (initialOnlyMainland && !isMainland) {
+        const icon = (marker as unknown as { _icon?: HTMLElement })._icon;
+        if (icon) icon.style.display = 'none';
+      }
     }
     layerRef.current = group;
     markersRef.current = entries;
@@ -117,10 +138,14 @@ export function useCountryLabelsLayer({ mapRef }: UseCountryLabelsLayerOptions):
     const map = mapRef.current;
     if (!map) return;
     const apply = (): void => {
-      const scale = iconScale * zoomScaleFactor(map.getZoom());
-      for (const { marker, baseFont } of markersRef.current) {
+      const zoom = map.getZoom();
+      const scale = iconScale * zoomScaleFactor(zoom);
+      const onlyMainland = zoom < SHOW_ALL_LABELS_FROM_ZOOM;
+      for (const { marker, baseFont, isMainland } of markersRef.current) {
         const icon = (marker as unknown as { _icon?: HTMLElement })._icon;
-        const el = icon?.querySelector<HTMLElement>('.country-label');
+        if (!icon) continue;
+        icon.style.display = onlyMainland && !isMainland ? 'none' : '';
+        const el = icon.querySelector<HTMLElement>('.country-label');
         if (el) el.style.fontSize = `${baseFont * scale}px`;
       }
     };

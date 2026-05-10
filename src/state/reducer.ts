@@ -44,6 +44,7 @@ export function reducer(state: AppState, action: Action): AppState {
         forces: snapshot.forces ?? [],
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
+        pendingRenames: [],
       };
     }
 
@@ -101,6 +102,7 @@ export function reducer(state: AppState, action: Action): AppState {
         palette: newPalette,
         forces,
         provincesVersion: state.provincesVersion + 1,
+        pendingRenames: [...state.pendingRenames, { from: oldName, to: newName }],
       };
     }
 
@@ -211,6 +213,7 @@ export function reducer(state: AppState, action: Action): AppState {
         forces: snapshot.forces ?? [],
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
+        pendingRenames: [],
       };
     }
 
