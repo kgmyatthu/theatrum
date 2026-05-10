@@ -53,6 +53,7 @@ export function reducer(state: AppState, action: Action): AppState {
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
+        pendingUserAdds: [],
       };
     }
 
@@ -229,6 +230,30 @@ export function reducer(state: AppState, action: Action): AppState {
         nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
+        pendingUserAdds: [],
+      };
+    }
+
+    case 'ADD_PENDING_USER': {
+      const login = action.payload.login.trim();
+      const nation = normalizeNation(action.payload.nation);
+      if (!login || !nation) return state;
+      // Replace any existing entry for the same login so admin can fix typos
+      // without growing the queue. Login compare is case-insensitive — GitHub
+      // usernames are case-insensitive in practice.
+      const filtered = state.pendingUserAdds.filter(
+        (u) => u.login.toLowerCase() !== login.toLowerCase(),
+      );
+      return { ...state, pendingUserAdds: [...filtered, { login, nation }] };
+    }
+
+    case 'REMOVE_PENDING_USER': {
+      const login = action.payload.login.toLowerCase();
+      return {
+        ...state,
+        pendingUserAdds: state.pendingUserAdds.filter(
+          (u) => u.login.toLowerCase() !== login,
+        ),
       };
     }
 

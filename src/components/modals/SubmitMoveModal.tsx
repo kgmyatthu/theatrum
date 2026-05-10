@@ -5,6 +5,7 @@ import {
   hasMeaningfulDiff,
   submitMove,
   type CountryRename,
+  type UserAdd,
 } from '@/auth/submitMove';
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import styles from './SubmitMoveModal.module.css';
@@ -32,6 +33,8 @@ interface SubmitMoveModalProps {
   snapshot: AppSnapshot;
   /** Country renames to mirror into perm.json — admin-only. */
   renames: CountryRename[];
+  /** Player additions / nation reassignments to apply to perm.json — admin-only. */
+  userAdds: UserAdd[];
   onClose: () => void;
   /** Called when a 401 surfaces — UI prompts re-auth via this. */
   onAuthExpired: () => void;
@@ -54,9 +57,11 @@ export function SubmitMoveModal({
   login,
   snapshot,
   renames,
+  userAdds,
   onClose,
   onAuthExpired,
 }: SubmitMoveModalProps) {
+  const hasPermChanges = renames.length > 0 || userAdds.length > 0;
   const [phase, setPhase] = useState<Phase>({ kind: 'checking' });
   const [description, setDescription] = useState('');
   const mountedRef = useRef(true);
@@ -74,7 +79,9 @@ export function SubmitMoveModal({
       try {
         const changed = await hasMeaningfulDiff(snapshot);
         if (!mountedRef.current) return;
-        setPhase(changed ? { kind: 'describe' } : { kind: 'no-changes' });
+        // Pending perm.json edits (renames or user adds) count as a
+        // submittable change even if state.json matches main.
+        setPhase(changed || hasPermChanges ? { kind: 'describe' } : { kind: 'no-changes' });
       } catch (err) {
         if (!mountedRef.current) return;
         if (err instanceof GitHubAuthError) {
@@ -84,7 +91,7 @@ export function SubmitMoveModal({
         }
       }
     })();
-  }, [snapshot]);
+  }, [snapshot, hasPermChanges]);
 
   // Open the PR, then poll for the validator's verdict. Triggered by the
   // Submit button in the 'describe' phase, not from a useEffect — the
@@ -95,7 +102,7 @@ export function SubmitMoveModal({
     let prNumber: number;
     let prUrl: string;
     try {
-      const r = await submitMove({ login, snapshot, description, renames });
+      const r = await submitMove({ login, snapshot, description, renames, userAdds });
       if (!mountedRef.current) return;
       prNumber = r.prNumber;
       prUrl = r.prUrl;

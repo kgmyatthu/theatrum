@@ -23,4 +23,6 @@ export type Action =
   | { type: 'SET_MODE'; payload: { mode: 'view' | 'add-force' | 'ruler' } }
   | { type: 'SELECT_PROVINCES'; payload: { fids: number[]; mode: 'set' | 'add' | 'toggle' | 'clear' } }
   | { type: 'APPLY_SNAPSHOT'; payload: { snapshot: AppSnapshot } }
+  | { type: 'ADD_PENDING_USER'; payload: { login: string; nation: string } }
+  | { type: 'REMOVE_PENDING_USER'; payload: { login: string } }
   | { type: 'RESET' };

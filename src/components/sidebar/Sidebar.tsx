@@ -3,6 +3,7 @@ import { ModePanel } from './ModePanel';
 import { AddForcePanel } from './AddForcePanel';
 import { NewCountryPanel } from './NewCountryPanel';
 import { EditCountryPanel } from './EditCountryPanel';
+import { UsersPanel } from './UsersPanel';
 import { DisplayPanel } from './DisplayPanel';
 import { LayersPanel } from './LayersPanel';
 import { PersistencePanel } from './PersistencePanel';
@@ -31,6 +32,7 @@ export function Sidebar() {
       {showGameplayPanels && <AddForcePanel onStatus={setStatus} />}
       {isAdmin && <NewCountryPanel onStatus={setStatus} />}
       {isAdmin && <EditCountryPanel onStatus={setStatus} />}
+      {isAdmin && <UsersPanel onStatus={setStatus} />}
       {showGameplayPanels && <DisplayPanel />}
       <LayersPanel />
       <PersistencePanel onStatus={setStatus} />

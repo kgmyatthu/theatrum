@@ -18,6 +18,11 @@ export interface CountryRename {
   to: string;
 }
 
+export interface UserAdd {
+  login: string;
+  nation: string;
+}
+
 interface PermEntry {
   role: 'admin' | 'player';
   nation?: string;
@@ -25,27 +30,42 @@ interface PermEntry {
 type PermFile = Record<string, PermEntry>;
 
 /**
- * Apply rename pairs in order to the player nation entries in perm.json.
- * Order matters: chained renames (Spain→France, France→Germany) walk
- * the chain as written. Returns a new object; input is not mutated.
+ * Apply admin-staged perm.json edits in order:
+ *   1. Country renames — walk every player's nation through the chain so
+ *      case drift in perm.json doesn't miss the rewrite.
+ *   2. User adds — upsert each (login, nation) entry as a player.
+ * Returns a new object; input is not mutated.
  */
-function rewritePerm(perm: PermFile, renames: CountryRename[]): PermFile {
+function rewritePerm(
+  perm: PermFile,
+  renames: CountryRename[],
+  userAdds: UserAdd[],
+): PermFile {
   const out: PermFile = {};
-  // Renames are already normalized at the reducer; do it again here as a
-  // defense in case a stale pendingRenames entry slipped through.
-  const norm = renames.map((r) => ({ from: normalizeNation(r.from), to: normalizeNation(r.to) }));
+  // Renames are already normalized at the reducer; do it again as defense
+  // against any stale pendingRenames entry.
+  const renamePairs = renames.map((r) => ({
+    from: normalizeNation(r.from),
+    to: normalizeNation(r.to),
+  }));
   for (const [login, entry] of Object.entries(perm)) {
     if (entry.role !== 'player' || !entry.nation) {
       out[login] = entry;
       continue;
     }
-    // Compare against the normalized form so case drift in perm.json
-    // (e.g. "Spain" vs "spain") doesn't miss the rename.
     let nation = normalizeNation(entry.nation);
-    for (const r of norm) {
+    for (const r of renamePairs) {
       if (nation === r.from) nation = r.to;
     }
     out[login] = nation === entry.nation ? entry : { ...entry, nation };
+  }
+  // Upsert user adds. Existing entries are replaced — admin can use this
+  // to reassign a player's nation as well as introduce new ones.
+  for (const u of userAdds) {
+    const login = u.login.trim();
+    const nation = normalizeNation(u.nation);
+    if (!login || !nation) continue;
+    out[login] = { role: 'player', nation };
   }
   return out;
 }
@@ -90,6 +110,12 @@ export interface SubmitMoveArgs {
    * state.json so player nation assignments follow the rename.
    */
   renames?: CountryRename[];
+  /**
+   * Player additions / nation reassignments staged by the admin. Same
+   * admin-only contract as renames — the validator rejects non-admin
+   * PRs that touch perm.json.
+   */
+  userAdds?: UserAdd[];
 }
 
 export interface SubmitMoveResult {
@@ -110,7 +136,7 @@ export interface SubmitMoveResult {
  */
 export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult> {
   if (!REPO) throw new Error('VITE_GITHUB_REPO is not configured');
-  const { login, snapshot, description, renames = [] } = args;
+  const { login, snapshot, description, renames = [], userAdds = [] } = args;
 
   const mainRef = await getRef(REPO, 'main');
   const baseSha = mainRef.object.sha;
@@ -124,19 +150,25 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
   // country. Skip the round-trip when no renames are pending, and skip
   // the commit when the rewrite produces no effective change (e.g. the
   // renamed countries had no players assigned).
-  if (renames.length > 0) {
+  if (renames.length > 0 || userAdds.length > 0) {
     const permFile = await getFile(REPO, PERM_PATH, 'main');
     const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
-    const permAfter = rewritePerm(permBefore, renames);
+    const permAfter = rewritePerm(permBefore, renames, userAdds);
     if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
       const permJson = JSON.stringify(permAfter, null, 2) + '\n';
       const permB64 = utf8ToBase64(permJson);
-      const summary = renames.map((r) => `${r.from}→${r.to}`).join(', ');
+      const summaryParts: string[] = [];
+      if (renames.length > 0) {
+        summaryParts.push(renames.map((r) => `${r.from}→${r.to}`).join(', '));
+      }
+      if (userAdds.length > 0) {
+        summaryParts.push(userAdds.map((u) => `+@${u.login}=${u.nation}`).join(', '));
+      }
       await putFile(
         REPO,
         PERM_PATH,
         branchName,
-        `perm: rewrite player nations (${summary})`,
+        `perm: ${summaryParts.join('; ')}`,
         permB64,
         permFile.sha,
       );
@@ -147,8 +179,14 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
 
   // Pretty-printed so PR diffs are line-scoped and merge conflicts stay rare.
   const json = JSON.stringify(snapshot, null, 2);
-  const base64 = utf8ToBase64(json);
-  await putFile(REPO, STATE_PATH, branchName, `move: @${login} ${ts}`, base64, file.sha);
+  // Skip the PUT if state.json is unchanged (admin might be submitting a
+  // perm-only change). GitHub rejects same-content PUTs, and an empty
+  // diff PR also wouldn't pass the validator's mergeability check.
+  const remoteJson = base64ToUtf8(file.content);
+  if (json !== remoteJson) {
+    const base64 = utf8ToBase64(json);
+    await putFile(REPO, STATE_PATH, branchName, `move: @${login} ${ts}`, base64, file.sha);
+  }
 
   const title = `Move from @${login}`;
   const body =

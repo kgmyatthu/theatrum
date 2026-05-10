@@ -45,6 +45,13 @@ export interface AppState {
    * perm.json — keeps players assigned to their renamed country.
    */
   pendingRenames: Array<{ from: string; to: string }>;
+
+  /**
+   * Player additions staged by the admin since bootstrap. Bundled into the
+   * next Finalize-changes PR's perm.json commit. Login is the GitHub
+   * username; nation is canonical lowercase.
+   */
+  pendingUserAdds: Array<{ login: string; nation: string }>;
 }
 
 export const initialState: AppState = {
@@ -67,4 +74,5 @@ export const initialState: AppState = {
   iconScale: 1.0,
   provincesVersion: 0,
   pendingRenames: [],
+  pendingUserAdds: [],
 };

@@ -4,13 +4,14 @@ import { Button } from '@/components/ui/Button';
 import { useAuth } from './AuthContext';
 import { useAppState } from '@/state/AppContext';
 import { buildSnapshot } from '@/utils/snapshot';
-import type { CountryRename } from './submitMove';
+import type { CountryRename, UserAdd } from './submitMove';
 import { SubmitMoveModal } from '@/components/modals/SubmitMoveModal';
 import type { AppSnapshot } from '@/types';
 
 interface PendingSubmission {
   snapshot: AppSnapshot;
   renames: CountryRename[];
+  userAdds: UserAdd[];
 }
 
 interface AccountPanelProps {
@@ -36,7 +37,8 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
       owners: state.owners,
     });
     const renames = auth.role === 'admin' ? state.pendingRenames : [];
-    setPending({ snapshot, renames });
+    const userAdds = auth.role === 'admin' ? state.pendingUserAdds : [];
+    setPending({ snapshot, renames, userAdds });
   };
 
   if (auth.status === 'loading') {
@@ -102,6 +104,7 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
           login={auth.login}
           snapshot={pending.snapshot}
           renames={pending.renames}
+          userAdds={pending.userAdds}
           onClose={() => setPending(null)}
           onAuthExpired={() => {
             auth.signOut();
