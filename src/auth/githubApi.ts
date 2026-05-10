@@ -97,6 +97,34 @@ export function createPullRequest(
   });
 }
 
+export interface PullStatus {
+  number: number;
+  state: 'open' | 'closed';
+  merged: boolean;
+  html_url: string;
+}
+
+export function getPullRequest(
+  token: string,
+  repo: string,
+  pullNumber: number,
+): Promise<PullStatus> {
+  return gh<PullStatus>(token, `/repos/${repo}/pulls/${pullNumber}`);
+}
+
+export interface IssueComment {
+  body: string;
+  user: { login: string };
+}
+
+export function listIssueComments(
+  token: string,
+  repo: string,
+  issueNumber: number,
+): Promise<IssueComment[]> {
+  return gh<IssueComment[]>(token, `/repos/${repo}/issues/${issueNumber}/comments`);
+}
+
 /** UTF-8-safe base64 encoder for File API. */
 export function utf8ToBase64(str: string): string {
   const bytes = new TextEncoder().encode(str);

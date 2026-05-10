@@ -7,13 +7,16 @@ import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
 import { useAuth } from '@/auth/AuthContext';
-import { submitMove } from '@/auth/submitMove';
+import { SubmitMoveModal } from '@/components/modals/SubmitMoveModal';
 import type { AppSnapshot, ProvinceFeature } from '@/types';
-
-const STORAGE_KEY = 'theatrum';
 
 interface PersistencePanelProps {
   onStatus: (msg: string) => void;
+}
+
+interface PendingSubmission {
+  snapshot: AppSnapshot;
+  description: string;
 }
 
 export function PersistencePanel({ onStatus }: PersistencePanelProps) {
@@ -22,7 +25,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
   const auth = useAuth();
   const jsonInputRef = useRef<HTMLInputElement>(null);
   const svgInputRef = useRef<HTMLInputElement>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [pending, setPending] = useState<PendingSubmission | null>(null);
 
   const isAuthed = auth.status === 'authenticated';
 
@@ -36,35 +39,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       owners: state.owners,
       provinceFillOpacity: state.provinceFillOpacity,
     });
-  };
-
-  const handleSave = (): void => {
-    const snap = buildCurrentSnapshot();
-    if (!snap) return onStatus('Nothing to save yet.');
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(snap));
-      onStatus('Saved to browser storage.');
-    } catch (err) {
-      onStatus(`Save failed: ${(err as Error).message}`);
-    }
-  };
-
-  const handleLoad = (): void => {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return onStatus('No saved state.');
-    try {
-      const snap = JSON.parse(raw) as AppSnapshot;
-      dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: snap } });
-      onStatus('Loaded.');
-    } catch (err) {
-      onStatus(`Load failed: ${(err as Error).message}`);
-    }
-  };
-
-  const handleReset = (): void => {
-    if (!window.confirm('Reset all changes?')) return;
-    localStorage.removeItem(STORAGE_KEY);
-    window.location.reload();
   };
 
   const downloadBlob = (data: string, type: string, ext: string): void => {
@@ -172,66 +146,53 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     e.target.value = '';
   };
 
-  const handleSubmitMove = async (): Promise<void> => {
+  const handleSubmitMove = (): void => {
     if (!auth.token || !auth.login) return onStatus('Sign in first.');
     const snap = buildCurrentSnapshot();
     if (!snap) return onStatus('No state to submit.');
     const description = window.prompt('Describe your move (optional):') ?? '';
-    setSubmitting(true);
-    try {
-      onStatus('Opening pull request…');
-      const result = await submitMove({
-        token: auth.token,
-        login: auth.login,
-        snapshot: snap,
-        description,
-      });
-      onStatus(`Submitted PR #${result.prNumber}. Validator will auto-merge if it passes.`);
-      window.open(result.prUrl, '_blank', 'noopener');
-    } catch (err) {
-      onStatus(`Submit failed: ${(err as Error).message}`);
-    } finally {
-      setSubmitting(false);
-    }
+    setPending({ snapshot: snap, description });
   };
 
   return (
-    <Panel title={isAuthed ? 'Save / Load / Submit' : 'Export / Import'}>
-      {isAuthed && (
-        <>
-          <Button
-            variant="primary"
-            onClick={handleSubmitMove}
-            disabled={submitting}
-            fullWidth
-          >
-            {submitting ? 'Submitting…' : 'Submit move (PR)'}
-          </Button>
-          <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
-          <Button onClick={handleSave}>Save</Button>
-          <Button onClick={handleLoad}>Load</Button>
-          <Button onClick={handleReset}>Reset</Button>
-          <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
-        </>
+    <>
+      <Panel title={isAuthed ? 'Submit / Export' : 'Export / Import'}>
+        {isAuthed && (
+          <>
+            <Button variant="primary" onClick={handleSubmitMove} fullWidth>
+              Submit move (PR)
+            </Button>
+            <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
+          </>
+        )}
+        <Button onClick={handleExportJson}>Export JSON</Button>
+        <Button onClick={handleImportJsonClick}>Import JSON</Button>
+        <Button onClick={handleExportSvg}>Export SVG</Button>
+        <Button onClick={handleImportSvgClick}>Import SVG</Button>
+        <input
+          ref={jsonInputRef}
+          type="file"
+          accept=".json,application/json"
+          onChange={handleJsonFile}
+          style={{ display: 'none' }}
+        />
+        <input
+          ref={svgInputRef}
+          type="file"
+          accept=".svg,image/svg+xml"
+          onChange={handleSvgFile}
+          style={{ display: 'none' }}
+        />
+      </Panel>
+      {pending && auth.token && auth.login && (
+        <SubmitMoveModal
+          token={auth.token}
+          login={auth.login}
+          snapshot={pending.snapshot}
+          description={pending.description}
+          onClose={() => setPending(null)}
+        />
       )}
-      <Button onClick={handleExportJson}>Export JSON</Button>
-      <Button onClick={handleImportJsonClick}>Import JSON</Button>
-      <Button onClick={handleExportSvg}>Export SVG</Button>
-      <Button onClick={handleImportSvgClick}>Import SVG</Button>
-      <input
-        ref={jsonInputRef}
-        type="file"
-        accept=".json,application/json"
-        onChange={handleJsonFile}
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={svgInputRef}
-        type="file"
-        accept=".svg,image/svg+xml"
-        onChange={handleSvgFile}
-        style={{ display: 'none' }}
-      />
-    </Panel>
+    </>
   );
 }
