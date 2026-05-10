@@ -8,5 +8,9 @@
   },
   "iiv213": {
     "role": "admin"
-  }
+  },
+  "SXc_eng": {
+    "role": "player",
+    "nation": "bulgaria"
+  },
 }
