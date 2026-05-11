@@ -667,15 +667,15 @@
     ],
     [
       166,
-      "norway"
+      "denmark"
     ],
     [
       167,
-      "norway"
+      "denmark"
     ],
     [
       168,
-      "norway"
+      "denmark"
     ],
     [
       169,
@@ -687,11 +687,11 @@
     ],
     [
       171,
-      "norway"
+      "denmark"
     ],
     [
       172,
-      "norway"
+      "denmark"
     ],
     [
       173,
@@ -2499,11 +2499,11 @@
     ],
     [
       624,
-      "spain"
+      "contested territories"
     ],
     [
       625,
-      "spain"
+      "contested territories"
     ],
     [
       626,
@@ -9615,43 +9615,43 @@
     ],
     [
       2403,
-      "norway"
+      "denmark"
     ],
     [
       2404,
-      "norway"
+      "denmark"
     ],
     [
       2405,
-      "norway"
+      "denmark"
     ],
     [
       2406,
-      "norway"
+      "denmark"
     ],
     [
       2407,
-      "norway"
+      "denmark"
     ],
     [
       2408,
-      "norway"
+      "denmark"
     ],
     [
       2409,
-      "norway"
+      "denmark"
     ],
     [
       2410,
-      "norway"
+      "denmark"
     ],
     [
       2411,
-      "norway"
+      "denmark"
     ],
     [
       2412,
-      "norway"
+      "denmark"
     ],
     [
       2413,
@@ -10083,7 +10083,7 @@
     ],
     [
       2520,
-      "spain"
+      "contested territories"
     ],
     [
       2521,
@@ -13655,11 +13655,11 @@
     ],
     [
       3413,
-      "spain"
+      "contested territories"
     ],
     [
       3414,
-      "spain"
+      "contested territories"
     ],
     [
       3415,
@@ -13687,7 +13687,7 @@
     ],
     [
       3421,
-      "spain"
+      "contested territories"
     ],
     [
       3422,
@@ -14015,7 +14015,7 @@
     ],
     [
       3503,
-      "norway"
+      "denmark"
     ],
     [
       3504,
@@ -18554,8 +18554,8 @@
       "name": "BERNADOTTE'S ARMY OF FINLAND",
       "strength": 47000,
       "commander": "Charles XIII",
-      "lat": 60.988429428680114,
-      "lon": 24.5050048828125
+      "lat": 61.01572481397616,
+      "lon": 24.19189453125
     },
     {
       "id": 28,
@@ -18809,16 +18809,246 @@
     },
     {
       "id": 53,
-      "nation": "sweden",
+      "nation": "france",
       "branch": "army",
-      "name": "V RESERVE ARMY-CORPS",
-      "strength": 5400,
-      "commander": "Georg Carl von Döbeln",
-      "lat": 59.37239142233719,
-      "lon": 18.149414062500004
+      "name": "I Corp",
+      "strength": 30000,
+      "commander": "Auguste de Marmont",
+      "lat": 55.59380528078022,
+      "lon": 11.986015741132544
+    },
+    {
+      "id": 54,
+      "nation": "france",
+      "branch": "army",
+      "name": "II Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Bessieres",
+      "lat": 52.30225859053071,
+      "lon": 5.108287968379193
+    },
+    {
+      "id": 55,
+      "nation": "france",
+      "branch": "army",
+      "name": "III Corp",
+      "strength": 30000,
+      "commander": "Saint-Cyr",
+      "lat": 55.33569570785867,
+      "lon": 10.281815299807676
+    },
+    {
+      "id": 56,
+      "nation": "france",
+      "branch": "army",
+      "name": "IV Corp",
+      "strength": 30000,
+      "commander": "Charles Gudin Sablonniere",
+      "lat": 49.41322185150463,
+      "lon": 0.4393791416716964
+    },
+    {
+      "id": 57,
+      "nation": "france",
+      "branch": "army",
+      "name": "V Corp",
+      "strength": 30000,
+      "commander": "Jean Lannes",
+      "lat": 43.23096975342086,
+      "lon": -2.8180792653497204
+    },
+    {
+      "id": 58,
+      "nation": "france",
+      "branch": "army",
+      "name": "VI Corp",
+      "strength": 30000,
+      "commander": "Michel Ney",
+      "lat": 48.85105206965697,
+      "lon": 2.3278680818373503
+    },
+    {
+      "id": 59,
+      "nation": "france",
+      "branch": "army",
+      "name": "VII Corp",
+      "strength": 30000,
+      "commander": "Pierre Augereau",
+      "lat": 43.36000695975413,
+      "lon": 5.535503426546741
+    },
+    {
+      "id": 60,
+      "nation": "france",
+      "branch": "army",
+      "name": "VIII Corp",
+      "strength": 30000,
+      "commander": "Edouard Mortier",
+      "lat": 45.469887317012486,
+      "lon": 9.226481083472668
+    },
+    {
+      "id": 61,
+      "nation": "france",
+      "branch": "army",
+      "name": "IX Corp",
+      "strength": 30000,
+      "commander": "Jean-de-Dieu Soult",
+      "lat": 44.88928643567234,
+      "lon": -0.5062754761593614
+    },
+    {
+      "id": 62,
+      "nation": "france",
+      "branch": "army",
+      "name": "X Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Jourdan",
+      "lat": 42.460153069261104,
+      "lon": -2.8562520629442627
+    },
+    {
+      "id": 63,
+      "nation": "france",
+      "branch": "army",
+      "name": "XI Corp",
+      "strength": 30000,
+      "commander": "Dominique Vandamme",
+      "lat": 50.95044490297526,
+      "lon": 2.932307464906119
+    },
+    {
+      "id": 64,
+      "nation": "france",
+      "branch": "army",
+      "name": "XII Corp",
+      "strength": 30000,
+      "commander": "Guillaume Duhesme",
+      "lat": 48.23183465987424,
+      "lon": -4.032215852031444
+    },
+    {
+      "id": 65,
+      "nation": "france",
+      "branch": "army",
+      "name": "XIII Corp",
+      "strength": 30000,
+      "commander": "Francois Joseph Lefebvre",
+      "lat": 42.3181428349173,
+      "lon": -4.048336269961917
+    },
+    {
+      "id": 66,
+      "nation": "france",
+      "branch": "army",
+      "name": "XIV Corp",
+      "strength": 30000,
+      "commander": "Jacques Macdonald",
+      "lat": 49.36125747280013,
+      "lon": -1.450819068491758
+    },
+    {
+      "id": 67,
+      "nation": "france",
+      "branch": "army",
+      "name": "XVI Corp",
+      "strength": 30000,
+      "commander": "Claude Victor Perrin",
+      "lat": 50.36648392273347,
+      "lon": 1.7238611185665103
+    },
+    {
+      "id": 68,
+      "nation": "france",
+      "branch": "army",
+      "name": "XVI Corp",
+      "strength": 30000,
+      "commander": "Nicolas Oudinot",
+      "lat": 42.676911434577114,
+      "lon": 11.42413425356181
+    },
+    {
+      "id": 69,
+      "nation": "france",
+      "branch": "army",
+      "name": "XVII Corp",
+      "strength": 30000,
+      "commander": "Eugene de Beauharnais",
+      "lat": 43.59055064830811,
+      "lon": 12.896131295312015
+    },
+    {
+      "id": 70,
+      "nation": "france",
+      "branch": "army",
+      "name": "XVIII Corp",
+      "strength": 30000,
+      "commander": "Louis de Saint-Hilaire",
+      "lat": 43.81018880786829,
+      "lon": 10.634573013231586
+    },
+    {
+      "id": 71,
+      "nation": "france",
+      "branch": "army",
+      "name": "XVIV Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Kleber",
+      "lat": 46.702764134911426,
+      "lon": -1.5609476692638304
+    },
+    {
+      "id": 72,
+      "nation": "france",
+      "branch": "army",
+      "name": "XX Corp",
+      "strength": 30000,
+      "commander": "Antoine Lasalle",
+      "lat": 51.3707548612829,
+      "lon": 4.42590597069036
+    },
+    {
+      "id": 73,
+      "nation": "poland",
+      "branch": "army",
+      "name": "I Korpus",
+      "strength": 30000,
+      "commander": "Davoust I",
+      "lat": 52.47016876300687,
+      "lon": 16.302893294165205
+    },
+    {
+      "id": 74,
+      "nation": "poland",
+      "branch": "army",
+      "name": "II Korpus",
+      "strength": 30000,
+      "commander": "Jozef Poniatowski",
+      "lat": 53.560269809075045,
+      "lon": 17.192682550745523
+    },
+    {
+      "id": 75,
+      "nation": "poland",
+      "branch": "army",
+      "name": "III Korpus",
+      "strength": 30000,
+      "commander": "Jan Henryk Dabrowski",
+      "lat": 51.9316867566421,
+      "lon": 16.64342992322682
+    },
+    {
+      "id": 76,
+      "nation": "poland",
+      "branch": "army",
+      "name": "IV Korpus",
+      "strength": 30000,
+      "commander": "Jozef Chlopicki",
+      "lat": 53.1999609704001,
+      "lon": 21.004495785725585
     }
   ],
-  "nextForceId": 54,
+  "nextForceId": 77,
   "countries": [
     {
       "name": "afghanistan",
@@ -19007,10 +19237,6 @@
     {
       "name": "netherlands",
       "color": "#FF8C42"
-    },
-    {
-      "name": "norway",
-      "color": "#f9e82f"
     },
     {
       "name": "oman",
