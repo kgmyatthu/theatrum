@@ -1755,7 +1755,7 @@
     ],
     [
       438,
-      "territory occupied by sweden"
+      "contested lands"
     ],
     [
       439,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "territory occupied by russia"
+      "contested lands"
     ],
     [
       2389,
-      "territory occupied by russia"
+      "contested lands"
     ],
     [
       2390,
@@ -18747,6 +18747,10 @@
       "color": "#E8A317"
     },
     {
+      "name": "contested lands",
+      "color": "#ffffff"
+    },
+    {
       "name": "dahomey",
       "color": "#3F4DBF"
     },
@@ -18949,10 +18953,6 @@
     {
       "name": "territory occupied by russia",
       "color": "#5fca07"
-    },
-    {
-      "name": "territory occupied by sweden",
-      "color": "#009dff"
     },
     {
       "name": "trucial states",
