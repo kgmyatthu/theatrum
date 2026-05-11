@@ -30,5 +30,8 @@
   },
   "yellowwithblue": {
     "role": "admin"
+  },
+  "AceApache": {
+    "role": "admin"
   }
 }
