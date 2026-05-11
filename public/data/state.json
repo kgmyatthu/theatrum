@@ -18791,11 +18791,11 @@
       "id": 51,
       "nation": "britain",
       "branch": "army",
-      "name": "British Army",
-      "strength": 90000,
+      "name": "Anglo-Spanish Army",
+      "strength": 60000,
       "commander": "Arthur Wellesley",
-      "lat": 51.50874245880335,
-      "lon": -0.02197265625
+      "lat": 43.328674183738606,
+      "lon": -8.366088867187502
     },
     {
       "id": 52,
@@ -18814,8 +18814,8 @@
       "name": "I Corp",
       "strength": 30000,
       "commander": "Auguste de Marmont",
-      "lat": 55.397831459360326,
-      "lon": 10.118408203125002
+      "lat": 55.59380528078022,
+      "lon": 11.986015741132544
     },
     {
       "id": 54,
@@ -19166,19 +19166,9 @@
       "commander": "",
       "lat": 50.708634400828224,
       "lon": 18.413085937500004
-    },
-    {
-      "id": 89,
-      "nation": "britain",
-      "branch": "army",
-      "name": "British Volunteers",
-      "strength": 10000,
-      "commander": "",
-      "lat": 43.27720532212024,
-      "lon": -8.151855468750002
     }
   ],
-  "nextForceId": 90,
+  "nextForceId": 89,
   "countries": [
     {
       "name": "afghanistan",
