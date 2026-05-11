@@ -667,15 +667,15 @@
     ],
     [
       166,
-      "denmark"
+      "norway"
     ],
     [
       167,
-      "denmark"
+      "norway"
     ],
     [
       168,
-      "denmark"
+      "norway"
     ],
     [
       169,
@@ -687,11 +687,11 @@
     ],
     [
       171,
-      "denmark"
+      "norway"
     ],
     [
       172,
-      "denmark"
+      "norway"
     ],
     [
       173,
@@ -9615,43 +9615,43 @@
     ],
     [
       2403,
-      "denmark"
+      "norway"
     ],
     [
       2404,
-      "denmark"
+      "norway"
     ],
     [
       2405,
-      "denmark"
+      "norway"
     ],
     [
       2406,
-      "denmark"
+      "norway"
     ],
     [
       2407,
-      "denmark"
+      "norway"
     ],
     [
       2408,
-      "denmark"
+      "norway"
     ],
     [
       2409,
-      "denmark"
+      "norway"
     ],
     [
       2410,
-      "denmark"
+      "norway"
     ],
     [
       2411,
-      "denmark"
+      "norway"
     ],
     [
       2412,
-      "denmark"
+      "norway"
     ],
     [
       2413,
@@ -14015,7 +14015,7 @@
     ],
     [
       3503,
-      "denmark"
+      "norway"
     ],
     [
       3504,
@@ -18554,8 +18554,8 @@
       "name": "BERNADOTTE'S ARMY OF FINLAND",
       "strength": 47000,
       "commander": "Charles XIII",
-      "lat": 61.01572481397616,
-      "lon": 24.19189453125
+      "lat": 60.988429428680114,
+      "lon": 24.5050048828125
     },
     {
       "id": 28,
@@ -18997,6 +18997,10 @@
     {
       "name": "netherlands",
       "color": "#FF8C42"
+    },
+    {
+      "name": "norway",
+      "color": "#f9e82f"
     },
     {
       "name": "oman",
