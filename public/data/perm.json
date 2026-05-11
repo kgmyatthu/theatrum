@@ -28,5 +28,8 @@
   "KingREN1-Suitman": {
     "role": "player",
     "nation": "prussia"
+  },
+  "yellowwithblue": {
+    "role": "admin"
   }
 }
