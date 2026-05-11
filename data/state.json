@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v5",
+  "appVersion": "theatrum/v6",
   "ownerships": [
     [
       0,
@@ -1647,7 +1647,7 @@
     ],
     [
       411,
-      "france"
+      "prussia"
     ],
     [
       412,
@@ -1755,7 +1755,7 @@
     ],
     [
       438,
-      "russia"
+      "contested territories"
     ],
     [
       439,
@@ -1775,7 +1775,7 @@
     ],
     [
       443,
-      "sweden"
+      "russia"
     ],
     [
       444,
@@ -1783,7 +1783,7 @@
     ],
     [
       445,
-      "sweden"
+      "russia"
     ],
     [
       446,
@@ -2407,7 +2407,7 @@
     ],
     [
       601,
-      "venice"
+      "austria"
     ],
     [
       602,
@@ -2427,7 +2427,7 @@
     ],
     [
       606,
-      "venice"
+      "austria"
     ],
     [
       607,
@@ -2499,11 +2499,11 @@
     ],
     [
       624,
-      "spain"
+      "contested territories"
     ],
     [
       625,
-      "spain"
+      "contested territories"
     ],
     [
       626,
@@ -2695,11 +2695,11 @@
     ],
     [
       673,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       674,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       675,
@@ -2711,7 +2711,7 @@
     ],
     [
       677,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       678,
@@ -2823,7 +2823,7 @@
     ],
     [
       705,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       706,
@@ -2831,15 +2831,15 @@
     ],
     [
       707,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       708,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       709,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       710,
@@ -2847,7 +2847,7 @@
     ],
     [
       711,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       712,
@@ -3247,15 +3247,15 @@
     ],
     [
       811,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       812,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       813,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       814,
@@ -3475,11 +3475,11 @@
     ],
     [
       868,
-      "ottoman empire"
+      "montenegro"
     ],
     [
       869,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       870,
@@ -5395,7 +5395,7 @@
     ],
     [
       1348,
-      "poland"
+      "prussia"
     ],
     [
       1349,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "sweden"
+      "contested territories"
     ],
     [
       2389,
-      "sweden"
+      "contested territories"
     ],
     [
       2390,
@@ -10079,11 +10079,11 @@
     ],
     [
       2519,
-      "spain"
+      "contested territories"
     ],
     [
       2520,
-      "spain"
+      "contested territories"
     ],
     [
       2521,
@@ -10159,7 +10159,7 @@
     ],
     [
       2539,
-      "hre minor states"
+      "prussia"
     ],
     [
       2540,
@@ -13655,11 +13655,11 @@
     ],
     [
       3413,
-      "spain"
+      "contested territories"
     ],
     [
       3414,
-      "spain"
+      "contested territories"
     ],
     [
       3415,
@@ -13687,7 +13687,7 @@
     ],
     [
       3421,
-      "spain"
+      "contested territories"
     ],
     [
       3422,
@@ -14379,7 +14379,7 @@
     ],
     [
       3594,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       3595,
@@ -14387,11 +14387,11 @@
     ],
     [
       3596,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       3597,
-      "montenegro"
+      "ottoman empire"
     ],
     [
       3598,
@@ -16639,7 +16639,7 @@
     ],
     [
       4159,
-      "poland"
+      "prussia"
     ],
     [
       4160,
@@ -17407,7 +17407,7 @@
     ],
     [
       4351,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4352,
@@ -18159,7 +18159,7 @@
     ],
     [
       4539,
-      "spain"
+      "contested territories"
     ],
     [
       4540,
@@ -18388,47 +18388,47 @@
   ],
   "forces": [
     {
-      "id": 5,
+      "id": "seed-1778367500000-0",
       "nation": "britain",
       "branch": "navy",
       "name": "Mediterranean Fleet",
-      "strength": 22,
+      "strength": 30,
       "commander": "Jervis",
       "lon": 5,
       "lat": 38
     },
     {
-      "id": 6,
+      "id": "seed-1778367500000-1",
       "nation": "austria",
       "branch": "army",
-      "name": "Army of Italy",
-      "strength": 50000,
+      "name": "X Corps",
+      "strength": 30000,
       "commander": "Beaulieu",
       "lon": 24.675292968750004,
       "lat": 49.06666839558117
     },
     {
-      "id": 7,
+      "id": "seed-1778367500000-2",
       "nation": "austria",
       "branch": "army",
-      "name": "Army of the Rhine",
-      "strength": 80000,
+      "name": "XI Korps",
+      "strength": 40000,
       "commander": "Charles",
       "lon": 23.664550781250004,
       "lat": 50.00773901463687
     },
     {
-      "id": 8,
+      "id": "seed-1778367500000-3",
       "nation": "russia",
       "branch": "army",
-      "name": "2nd Western Army",
-      "strength": 50000,
-      "commander": "Platov",
-      "lon": 30.574951171875004,
-      "lat": 50.3734961443035
+      "name": "Army of the Cossack",
+      "strength": 30000,
+      "commander": "Matvei Platov",
+      "lon": 26.608886718750004,
+      "lat": 49.774169585277406
     },
     {
-      "id": 11,
+      "id": "seed-1778367500000-4",
       "nation": "ottoman empire",
       "branch": "army",
       "name": "Imperial Army",
@@ -18438,7 +18438,7 @@
       "lat": 41.01
     },
     {
-      "id": 12,
+      "id": "seed-1778367500000-5",
       "nation": "spain",
       "branch": "navy",
       "name": "Cadiz Fleet",
@@ -18446,9 +18446,758 @@
       "commander": "Mazarredo",
       "lon": -6.3,
       "lat": 36.5
+    },
+    {
+      "id": "SXc-eng-1778455735000-0",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "I Army Division",
+      "strength": 14000,
+      "commander": "",
+      "lat": 43.21199161024157,
+      "lon": 25.181616209086457
+    },
+    {
+      "id": "SXc-eng-1778455735000-1",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "II Army Division",
+      "strength": 14000,
+      "commander": "",
+      "lat": 43.615587961122976,
+      "lon": 26.722909741103294
+    },
+    {
+      "id": "SXc-eng-1778455735000-2",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "III Army Division",
+      "strength": 14000,
+      "commander": "",
+      "lat": 43.92715752599128,
+      "lon": 27.63484047331645
+    },
+    {
+      "id": "SXc-eng-1778455735000-3",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "IV Army Division (1/2 mobilised)",
+      "strength": 7000,
+      "commander": "",
+      "lat": 44.441639477751984,
+      "lon": 28.40859762046977
+    },
+    {
+      "id": "SXc-eng-1778455735000-4",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "I Reserve Army Division (Not mobilised)",
+      "strength": 10000,
+      "commander": "",
+      "lat": 43.47140891976953,
+      "lon": 23.645619661808578
+    },
+    {
+      "id": "SXc-eng-1778455735000-5",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "Varnian Guard (1/2 mobilised)",
+      "strength": 3000,
+      "commander": "",
+      "lat": 43.20569861570248,
+      "lon": 27.90940005625635
+    },
+    {
+      "id": "SXc-eng-1778455735000-6",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "Varnian Infantry Brigade (Not mobilised)",
+      "strength": 4000,
+      "commander": "",
+      "lat": 43.22657198365105,
+      "lon": 27.932308263734114
+    },
+    {
+      "id": "SXc-eng-1778455735000-7",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "Dobrich Infantry Brigade (Not mobilised)",
+      "strength": 4000,
+      "commander": "",
+      "lat": 43.58010646914413,
+      "lon": 27.840787089406707
+    },
+    {
+      "id": "SXc-eng-1778455735000-8",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "Dobrich Guard (1/2 mobilised)",
+      "strength": 3000,
+      "commander": "",
+      "lat": 43.57481724635254,
+      "lon": 27.90102711880358
+    },
+    {
+      "id": "SXc-eng-1778455735000-9",
+      "nation": "bulgaria",
+      "branch": "army",
+      "name": "Sofia Guard (Bulgaria)",
+      "strength": 4000,
+      "commander": "",
+      "lat": 42.70665956351041,
+      "lon": 23.32217536868864
+    },
+    {
+      "id": "yellowwithblue-1778478177000-0",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "BERNADOTTE'S ARMY OF FINLAND",
+      "strength": 47000,
+      "commander": "Charles XIII",
+      "lat": 61.01572481397616,
+      "lon": 24.19189453125
+    },
+    {
+      "id": "yellowwithblue-1778478177000-1",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "XI ARMY-CORPS",
+      "strength": 16000,
+      "commander": "JOHAN CHRISTOPHER TOLL",
+      "lat": 60.37586010056013,
+      "lon": 21.489257812500004
+    },
+    {
+      "id": "yellowwithblue-1778478177000-2",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "PORI GARRISON",
+      "strength": 3600,
+      "commander": "Johan Adam Cronstedt",
+      "lat": 61.0954790195121,
+      "lon": 21.566162109375
+    },
+    {
+      "id": "yellowwithblue-1778478177000-3",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "ARMY OF SCANIA",
+      "strength": 7800,
+      "commander": "MARUITZ KLINGSPLOR",
+      "lat": 56.139428693863266,
+      "lon": 12.963867187500002
+    },
+    {
+      "id": "yellowwithblue-1778478466000-0",
+      "nation": "sweden",
+      "branch": "navy",
+      "name": "SWEDISH BATTLEFLEET",
+      "strength": 50,
+      "commander": "Rudolf Cederstrom",
+      "lat": 56.225031333026806,
+      "lon": 15.380859375000002
+    },
+    {
+      "id": "yellowwithblue-1778478796000-0",
+      "nation": "russia",
+      "branch": "army",
+      "name": "ARMY OF FINLAND",
+      "strength": 60000,
+      "commander": "Alexander I",
+      "lat": 56.927741966236376,
+      "lon": 24.05044555664063
+    },
+    {
+      "id": "yellowwithblue-1778478796000-1",
+      "nation": "russia",
+      "branch": "army",
+      "name": "WESTERN ARMY OF FINLAND",
+      "strength": 60000,
+      "commander": "Konstantin Pavlovich",
+      "lat": 60.694695372877476,
+      "lon": 22.401123046875004
+    },
+    {
+      "id": "yellowwithblue-1778478796000-2",
+      "nation": "russia",
+      "branch": "army",
+      "name": "ARMY OF THE BALTICS",
+      "strength": 23000,
+      "commander": "Mikhail Bulatov",
+      "lat": 55.973798205076605,
+      "lon": 23.70849609375
+    },
+    {
+      "id": "yellowwithblue-1778478796000-3",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "III ARMY-CORPS",
+      "strength": 7000,
+      "commander": "Gustaf Fredrik Morner",
+      "lat": 61.21737938763191,
+      "lon": 29.366455078125004
+    },
+    {
+      "id": "yellowwithblue-1778478796000-4",
+      "nation": "sweden",
+      "branch": "army",
+      "name": "SVEABORG GARRISON",
+      "strength": 7000,
+      "commander": "Eberhard von Vegesack",
+      "lat": 60.146973929322854,
+      "lon": 25.048828125000004
+    },
+    {
+      "id": "yellowwithblue-1778479985000-0",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "I Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich Wilhelm von Bülow",
+      "lat": 52.84271455240748,
+      "lon": 7.283924045477127
+    },
+    {
+      "id": "yellowwithblue-1778479985000-1",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "Gen. Gebhard Leberecht von Blücher",
+      "lat": 52.049096679424196,
+      "lon": 6.970869284004318
+    },
+    {
+      "id": "yellowwithblue-1778479985000-2",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "Gen. Ludwig von Wallmoden-Gimborn",
+      "lat": 51.27910401205116,
+      "lon": 6.300678348683931
+    },
+    {
+      "id": "yellowwithblue-1778479985000-3",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "Gen. Bogislav von Tauentzien",
+      "lat": 50.45755641289912,
+      "lon": 6.520439415377553
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-0",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "Gen. Hans David von Yorck",
+      "lat": 50.134569737204906,
+      "lon": 7.997947196218492
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-1",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich von Kleist",
+      "lat": 50.057167926142114,
+      "lon": 8.942882595147877
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-2",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "Gen. August von Pannwitz",
+      "lat": 50.49247778429617,
+      "lon": 10.502714994739831
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-3",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "Gen. Adolf von Lützow",
+      "lat": 50.93783341506454,
+      "lon": 12.137902836294103
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-4",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "Gen. Anton Wilhelm von L'Estocq",
+      "lat": 51.508618825613205,
+      "lon": 13.609557075939405
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-5",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "X Corps",
+      "strength": 30000,
+      "commander": "Gen. Frederick William, Duke of Brunswick",
+      "lat": 51.65896537666039,
+      "lon": 15.545642795477129
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-6",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XI Corps",
+      "strength": 30000,
+      "commander": "Gen. Prince Augustus of Prussia",
+      "lat": 52.48250371342609,
+      "lon": 15.696821402915038
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-7",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XII Corps",
+      "strength": 30000,
+      "commander": "Gen. Karl von Grolman",
+      "lat": 53.522416287203775,
+      "lon": 16.69920245635301
+    },
+    {
+      "id": "KingREN1-Suitman-1778480453000-8",
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XIII Corps",
+      "strength": 30000,
+      "commander": "Gen. August Neidhardt von Gneisenau",
+      "lat": 53.44913131045756,
+      "lon": 20.291897565047243
+    },
+    {
+      "id": "Walrusbear0831-1778504149000-0",
+      "nation": "antilles",
+      "branch": "army",
+      "name": "VIII Black Guard Corps",
+      "strength": 15000,
+      "commander": "Juan Maria Laurent",
+      "lat": 9.133730055794876,
+      "lon": -79.34326171875001
+    },
+    {
+      "id": "KingRed2007-1778521313000-0",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Anglo-Spanish Army",
+      "strength": 60000,
+      "commander": "Arthur Wellesley",
+      "lat": 43.328674183738606,
+      "lon": -8.366088867187502
+    },
+    {
+      "id": "KingRed2007-1778521313000-1",
+      "nation": "britain",
+      "branch": "navy",
+      "name": "Baltic Station",
+      "strength": 50,
+      "commander": "Horatio Nelson",
+      "lat": 56.41390137600676,
+      "lon": 11.656494140625002
+    },
+    {
+      "id": "yellowwithblue-1778525862000-0",
+      "nation": "france",
+      "branch": "army",
+      "name": "I Corp",
+      "strength": 30000,
+      "commander": "Auguste de Marmont",
+      "lat": 55.59380528078022,
+      "lon": 11.986015741132544
+    },
+    {
+      "id": "AceApache-1778526187000-0",
+      "nation": "france",
+      "branch": "army",
+      "name": "II Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Bessieres",
+      "lat": 52.30225859053071,
+      "lon": 5.108287968379193
+    },
+    {
+      "id": "AceApache-1778526187000-1",
+      "nation": "france",
+      "branch": "army",
+      "name": "III Corp",
+      "strength": 30000,
+      "commander": "Saint-Cyr",
+      "lat": 55.33569570785867,
+      "lon": 10.281815299807676
+    },
+    {
+      "id": "AceApache-1778526187000-2",
+      "nation": "france",
+      "branch": "army",
+      "name": "IV Corp",
+      "strength": 30000,
+      "commander": "Charles Gudin Sablonniere",
+      "lat": 49.41322185150463,
+      "lon": 0.4393791416716964
+    },
+    {
+      "id": "AceApache-1778526187000-3",
+      "nation": "france",
+      "branch": "army",
+      "name": "V Corp",
+      "strength": 30000,
+      "commander": "Jean Lannes",
+      "lat": 43.233196028174014,
+      "lon": -4.388855678766093
+    },
+    {
+      "id": "AceApache-1778526187000-4",
+      "nation": "france",
+      "branch": "army",
+      "name": "VI Corp",
+      "strength": 30000,
+      "commander": "Michel Ney",
+      "lat": 48.85105206965697,
+      "lon": 2.3278680818373503
+    },
+    {
+      "id": "AceApache-1778526187000-5",
+      "nation": "france",
+      "branch": "army",
+      "name": "VII Corp",
+      "strength": 30000,
+      "commander": "Pierre Augereau",
+      "lat": 43.36000695975413,
+      "lon": 5.535503426546741
+    },
+    {
+      "id": "AceApache-1778526187000-6",
+      "nation": "france",
+      "branch": "army",
+      "name": "VIII Corp",
+      "strength": 30000,
+      "commander": "Edouard Mortier",
+      "lat": 45.469887317012486,
+      "lon": 9.226481083472668
+    },
+    {
+      "id": "AceApache-1778526187000-7",
+      "nation": "france",
+      "branch": "army",
+      "name": "IX Corp",
+      "strength": 30000,
+      "commander": "Jean-de-Dieu Soult",
+      "lat": 44.88928643567234,
+      "lon": -0.5062754761593614
+    },
+    {
+      "id": "AceApache-1778526187000-8",
+      "nation": "france",
+      "branch": "army",
+      "name": "X Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Jourdan",
+      "lat": 42.78722577018684,
+      "lon": -4.542650878982512
+    },
+    {
+      "id": "AceApache-1778526187000-9",
+      "nation": "france",
+      "branch": "army",
+      "name": "XI Corp",
+      "strength": 30000,
+      "commander": "Dominique Vandamme",
+      "lat": 50.95044490297526,
+      "lon": 2.932307464906119
+    },
+    {
+      "id": "AceApache-1778526187000-10",
+      "nation": "france",
+      "branch": "army",
+      "name": "XII Corp",
+      "strength": 30000,
+      "commander": "Guillaume Duhesme",
+      "lat": 48.23183465987424,
+      "lon": -4.032215852031444
+    },
+    {
+      "id": "AceApache-1778526187000-11",
+      "nation": "france",
+      "branch": "army",
+      "name": "XIII Corp",
+      "strength": 30000,
+      "commander": "Francois Joseph Lefebvre",
+      "lat": 42.338237952483624,
+      "lon": -4.6526398043331145
+    },
+    {
+      "id": "AceApache-1778526187000-12",
+      "nation": "france",
+      "branch": "army",
+      "name": "XIV Corp",
+      "strength": 30000,
+      "commander": "Jacques Macdonald",
+      "lat": 49.36125747280013,
+      "lon": -1.450819068491758
+    },
+    {
+      "id": "AceApache-1778526187000-13",
+      "nation": "france",
+      "branch": "army",
+      "name": "XVI Corp",
+      "strength": 30000,
+      "commander": "Claude Victor Perrin",
+      "lat": 50.36648392273347,
+      "lon": 1.7238611185665103
+    },
+    {
+      "id": "AceApache-1778526187000-14",
+      "nation": "france",
+      "branch": "army",
+      "name": "XVI Corp",
+      "strength": 30000,
+      "commander": "Nicolas Oudinot",
+      "lat": 42.676911434577114,
+      "lon": 11.42413425356181
+    },
+    {
+      "id": "AceApache-1778526187000-15",
+      "nation": "france",
+      "branch": "army",
+      "name": "XVII Corp",
+      "strength": 30000,
+      "commander": "Eugene de Beauharnais",
+      "lat": 43.59055064830811,
+      "lon": 12.896131295312015
+    },
+    {
+      "id": "AceApache-1778526187000-16",
+      "nation": "france",
+      "branch": "army",
+      "name": "XVIII Corp",
+      "strength": 30000,
+      "commander": "Louis de Saint-Hilaire",
+      "lat": 43.81018880786829,
+      "lon": 10.634573013231586
+    },
+    {
+      "id": "AceApache-1778526187000-17",
+      "nation": "france",
+      "branch": "army",
+      "name": "XVIV Corp",
+      "strength": 30000,
+      "commander": "Jean-Baptiste Kleber",
+      "lat": 46.702764134911426,
+      "lon": -1.5609476692638304
+    },
+    {
+      "id": "AceApache-1778526187000-18",
+      "nation": "france",
+      "branch": "army",
+      "name": "XX Corp",
+      "strength": 30000,
+      "commander": "Antoine Lasalle",
+      "lat": 51.3707548612829,
+      "lon": 4.42590597069036
+    },
+    {
+      "id": "AceApache-1778526187000-19",
+      "nation": "poland",
+      "branch": "army",
+      "name": "I Korpus",
+      "strength": 30000,
+      "commander": "Davoust I",
+      "lat": 52.47016876300687,
+      "lon": 16.302893294165205
+    },
+    {
+      "id": "AceApache-1778526187000-20",
+      "nation": "poland",
+      "branch": "army",
+      "name": "II Korpus",
+      "strength": 30000,
+      "commander": "Jozef Poniatowski",
+      "lat": 53.39651673019612,
+      "lon": 16.949243016877908
+    },
+    {
+      "id": "AceApache-1778526187000-21",
+      "nation": "poland",
+      "branch": "army",
+      "name": "III Korpus",
+      "strength": 30000,
+      "commander": "Jan Henryk Dabrowski",
+      "lat": 51.9316867566421,
+      "lon": 16.64342992322682
+    },
+    {
+      "id": "AceApache-1778526187000-22",
+      "nation": "poland",
+      "branch": "army",
+      "name": "IV Korpus",
+      "strength": 30000,
+      "commander": "Jozef Chlopicki",
+      "lat": 53.1999609704001,
+      "lon": 21.004495785725585
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-0",
+      "nation": "austria",
+      "branch": "army",
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 51.27566243415853,
+      "lon": 15.787353515625002
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-1",
+      "nation": "austria",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 51.03448563297415,
+      "lon": 13.645019531250002
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-2",
+      "nation": "austria",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.534380406110806,
+      "lon": 12.568359375000002
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-3",
+      "nation": "austria",
+      "branch": "army",
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.085344397538876,
+      "lon": 10.72265625
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-4",
+      "nation": "austria",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 48.63290858589535,
+      "lon": 8.942871093750002
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-5",
+      "nation": "austria",
+      "branch": "army",
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 46.51351558059737,
+      "lon": 11.689453125000002
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-6",
+      "nation": "austria",
+      "branch": "army",
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.81348649679973,
+      "lon": 16.325683593750004
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-7",
+      "nation": "austria",
+      "branch": "army",
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.82879925192134,
+      "lon": 20.258789062500004
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-8",
+      "nation": "austria",
+      "branch": "army",
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 46.70973594407157,
+      "lon": 24.367675781250004
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-9",
+      "nation": "austria",
+      "branch": "army",
+      "name": "I Korps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 48.26491251331118,
+      "lon": 16.452026367187504
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-10",
+      "nation": "austria",
+      "branch": "army",
+      "name": "XII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 49.92293545449574,
+      "lon": 20.324707031250004
+    },
+    {
+      "id": "RadetzkyNTW-1778528727000-11",
+      "nation": "austria",
+      "branch": "army",
+      "name": "XIII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.708634400828224,
+      "lon": 18.413085937500004
+    },
+    {
+      "id": "Vancouver1903-1778540725000-0",
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Ukraine",
+      "strength": 54000,
+      "commander": "Mikhail Kutuzov",
+      "lat": 48.857487002645485,
+      "lon": 26.707763671875004
+    },
+    {
+      "id": "Vancouver1903-1778540725000-1",
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Ruthenia",
+      "strength": 54000,
+      "commander": "Pyotr Bagration",
+      "lat": 53.72921671251272,
+      "lon": 26.828613281250004
+    },
+    {
+      "id": "Vancouver1903-1778540725000-2",
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Caucasia",
+      "strength": 42000,
+      "commander": "Barclay de Tolly",
+      "lat": 44.59829048984011,
+      "lon": 33.55808258056641
     }
   ],
-  "nextForceId": 15,
   "countries": [
     {
       "name": "afghanistan",
@@ -18505,6 +19254,10 @@
     {
       "name": "china",
       "color": "#E8A317"
+    },
+    {
+      "name": "contested territories",
+      "color": "#ffffff"
     },
     {
       "name": "dahomey",
@@ -18700,7 +19453,7 @@
     },
     {
       "name": "sweden",
-      "color": "#1B5E9F"
+      "color": "#034e7c"
     },
     {
       "name": "switzerland",
