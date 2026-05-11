@@ -18392,7 +18392,7 @@
       "nation": "britain",
       "branch": "navy",
       "name": "Mediterranean Fleet",
-      "strength": 22,
+      "strength": 30,
       "commander": "Jervis",
       "lon": 5,
       "lat": 38
@@ -18786,9 +18786,29 @@
       "commander": "Juan Maria Laurent",
       "lat": 9.133730055794876,
       "lon": -79.34326171875001
+    },
+    {
+      "id": 51,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Anglo-Spanish Army",
+      "strength": 60000,
+      "commander": "Arthur Wellesley",
+      "lat": 43.328674183738606,
+      "lon": -8.366088867187502
+    },
+    {
+      "id": 52,
+      "nation": "britain",
+      "branch": "navy",
+      "name": "Baltic Station",
+      "strength": 50,
+      "commander": "Horatio Nelson",
+      "lat": 56.41390137600676,
+      "lon": 11.656494140625002
     }
   ],
-  "nextForceId": 51,
+  "nextForceId": 53,
   "countries": [
     {
       "name": "afghanistan",
