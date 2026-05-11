@@ -18421,11 +18421,11 @@
       "id": 8,
       "nation": "russia",
       "branch": "army",
-      "name": "2nd Western Army",
-      "strength": 50000,
-      "commander": "Platov",
-      "lon": 26.24496459960938,
-      "lat": 50.60808149212023
+      "name": "Army of the Cossack",
+      "strength": 30000,
+      "commander": "Matvei Platov",
+      "lon": 26.608886718750004,
+      "lat": 49.774169585277406
     },
     {
       "id": 11,
@@ -18604,8 +18604,8 @@
       "name": "ARMY OF FINLAND",
       "strength": 60000,
       "commander": "Alexander I",
-      "lat": 60.486997991046856,
-      "lon": 24.384155273437504
+      "lat": 56.927741966236376,
+      "lon": 24.05044555664063
     },
     {
       "id": 33,
@@ -18624,8 +18624,8 @@
       "name": "ARMY OF THE BALTICS",
       "strength": 23000,
       "commander": "Mikhail Bulatov",
-      "lat": 59.377988012638916,
-      "lon": 24.675292968750004
+      "lat": 55.973798205076605,
+      "lon": 23.70849609375
     },
     {
       "id": 35,
@@ -19166,9 +19166,39 @@
       "commander": "",
       "lat": 50.708634400828224,
       "lon": 18.413085937500004
+    },
+    {
+      "id": 89,
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Ukraine",
+      "strength": 54000,
+      "commander": "Mikhail Kutuzov",
+      "lat": 48.857487002645485,
+      "lon": 26.707763671875004
+    },
+    {
+      "id": 90,
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Ruthenia",
+      "strength": 54000,
+      "commander": "Pyotr Bagration",
+      "lat": 53.72921671251272,
+      "lon": 26.828613281250004
+    },
+    {
+      "id": 91,
+      "nation": "russia",
+      "branch": "army",
+      "name": "Army of Caucasia",
+      "strength": 42000,
+      "commander": "Barclay de Tolly",
+      "lat": 44.59829048984011,
+      "lon": 33.55808258056641
     }
   ],
-  "nextForceId": 89,
+  "nextForceId": 92,
   "countries": [
     {
       "name": "afghanistan",
