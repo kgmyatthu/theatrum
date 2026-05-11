@@ -18806,9 +18806,19 @@
       "commander": "Horatio Nelson",
       "lat": 56.41390137600676,
       "lon": 11.656494140625002
+    },
+    {
+      "id": 53,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "V RESERVE ARMY-CORPS",
+      "strength": 5400,
+      "commander": "Georg Carl von Döbeln",
+      "lat": 59.37239142233719,
+      "lon": 18.149414062500004
     }
   ],
-  "nextForceId": 53,
+  "nextForceId": 54,
   "countries": [
     {
       "name": "afghanistan",
