@@ -18554,8 +18554,8 @@
       "name": "BERNADOTTE'S ARMY OF FINLAND",
       "strength": 47000,
       "commander": "Charles XIII",
-      "lat": 56.68037378950137,
-      "lon": 14.23828125
+      "lat": 61.01572481397616,
+      "lon": 24.19189453125
     },
     {
       "id": 28,
@@ -18634,8 +18634,8 @@
       "name": "III ARMY-CORPS",
       "strength": 7000,
       "commander": "Gustaf Fredrik Morner",
-      "lat": 61.18562468142283,
-      "lon": 23.027343750000004
+      "lat": 61.21737938763191,
+      "lon": 29.366455078125004
     },
     {
       "id": 36,
@@ -18791,11 +18791,11 @@
       "id": 51,
       "nation": "britain",
       "branch": "army",
-      "name": "Anglo-Spanish Army",
-      "strength": 60000,
+      "name": "British Army",
+      "strength": 90000,
       "commander": "Arthur Wellesley",
-      "lat": 43.328674183738606,
-      "lon": -8.366088867187502
+      "lat": 51.50874245880335,
+      "lon": -0.02197265625
     },
     {
       "id": 52,
@@ -19166,9 +19166,39 @@
       "commander": "",
       "lat": 50.708634400828224,
       "lon": 18.413085937500004
+    },
+    {
+      "id": 89,
+      "nation": "britain",
+      "branch": "army",
+      "name": "British Volunteers",
+      "strength": 10000,
+      "commander": "",
+      "lat": 43.27720532212024,
+      "lon": -8.151855468750002
+    },
+    {
+      "id": 90,
+      "nation": "britain",
+      "branch": "navy",
+      "name": "Plymouth Station",
+      "strength": 100,
+      "commander": "",
+      "lat": 50.15930523913416,
+      "lon": -4.152832031250001
+    },
+    {
+      "id": 91,
+      "nation": "britain",
+      "branch": "army",
+      "name": "I Corps (Mobilizing)",
+      "strength": 30000,
+      "commander": "Sir John Moore",
+      "lat": 50.48547354578499,
+      "lon": -4.125366210937501
     }
   ],
-  "nextForceId": 89,
+  "nextForceId": 92,
   "countries": [
     {
       "name": "afghanistan",
