@@ -18561,7 +18561,7 @@
       "id": 28,
       "nation": "sweden",
       "branch": "army",
-      "name": "XI CORPS",
+      "name": "XI ARMY-CORPS",
       "strength": 16000,
       "commander": "JOHAN CHRISTOPHER TOLL",
       "lat": 60.261617082844616,
@@ -18596,9 +18596,59 @@
       "commander": "Rudolf Cederstrom",
       "lat": 56.225031333026806,
       "lon": 15.380859375000002
+    },
+    {
+      "id": 32,
+      "nation": "russia",
+      "branch": "army",
+      "name": "ARMY OF FINLAND",
+      "strength": 60000,
+      "commander": "Alexander I",
+      "lat": 60.486997991046856,
+      "lon": 24.384155273437504
+    },
+    {
+      "id": 33,
+      "nation": "russia",
+      "branch": "army",
+      "name": "WESTERN ARMY OF FINLAND",
+      "strength": 60000,
+      "commander": "Konstantin Pavlovich",
+      "lat": 60.694695372877476,
+      "lon": 22.401123046875004
+    },
+    {
+      "id": 34,
+      "nation": "russia",
+      "branch": "army",
+      "name": "ARMY OF THE BALTICS",
+      "strength": 23000,
+      "commander": "Mikhail Bulatov",
+      "lat": 59.377988012638916,
+      "lon": 24.675292968750004
+    },
+    {
+      "id": 35,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "III ARMY-CORPS",
+      "strength": 7000,
+      "commander": "Gustaf Fredrik Morner",
+      "lat": 61.91827102335593,
+      "lon": 28.388671875000004
+    },
+    {
+      "id": 36,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "SVEABORG GARRISON",
+      "strength": 7000,
+      "commander": "Eberhard von Vegesack",
+      "lat": 60.146973929322854,
+      "lon": 25.048828125000004
     }
   ],
-  "nextForceId": 32,
+  "nextForceId": 37,
   "countries": [
     {
       "name": "afghanistan",
