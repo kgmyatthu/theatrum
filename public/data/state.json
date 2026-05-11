@@ -18776,9 +18776,19 @@
       "commander": "Gen. August Neidhardt von Gneisenau",
       "lat": 54.07249578464433,
       "lon": 20.7201458353628
+    },
+    {
+      "id": 50,
+      "nation": "antilles",
+      "branch": "army",
+      "name": "VIII Black Guard Corps",
+      "strength": 15000,
+      "commander": "Juan Maria Laurent",
+      "lat": 9.133730055794876,
+      "lon": -79.34326171875001
     }
   ],
-  "nextForceId": 50,
+  "nextForceId": 51,
   "countries": [
     {
       "name": "afghanistan",
