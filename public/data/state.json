@@ -1755,7 +1755,7 @@
     ],
     [
       438,
-      "russia"
+      "territory occupied by sweden"
     ],
     [
       439,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "russia"
+      "territory occupied by russia"
     ],
     [
       2389,
-      "russia"
+      "territory occupied by russia"
     ],
     [
       2390,
@@ -18564,8 +18564,8 @@
       "name": "XI ARMY-CORPS",
       "strength": 16000,
       "commander": "JOHAN CHRISTOPHER TOLL",
-      "lat": 60.261617082844616,
-      "lon": 19.753417968750004
+      "lat": 60.37781167534939,
+      "lon": 21.482391357421875
     },
     {
       "id": 29,
@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 55.56592203025787,
-      "lon": 13.128662109375002
+      "lat": 56.029087419764366,
+      "lon": 12.952880859375002
     },
     {
       "id": 31,
@@ -18634,8 +18634,8 @@
       "name": "III ARMY-CORPS",
       "strength": 7000,
       "commander": "Gustaf Fredrik Morner",
-      "lat": 61.91827102335593,
-      "lon": 28.388671875000004
+      "lat": 61.47026680312171,
+      "lon": 29.080810546875
     },
     {
       "id": 36,
@@ -18644,11 +18644,51 @@
       "name": "SVEABORG GARRISON",
       "strength": 7000,
       "commander": "Eberhard von Vegesack",
-      "lat": 60.146973929322854,
-      "lon": 25.048828125000004
+      "lat": 60.1465466812523,
+      "lon": 24.986171722412113
+    },
+    {
+      "id": 37,
+      "nation": "denmark",
+      "branch": "army",
+      "name": "Army of the Interior",
+      "strength": 15000,
+      "commander": "Hesse-Kassel and Høegh-Goldberg",
+      "lat": 55.6341979462584,
+      "lon": 9.217529296875002
+    },
+    {
+      "id": 38,
+      "nation": "denmark",
+      "branch": "army",
+      "name": "Belts Armies",
+      "strength": 22500,
+      "commander": "Carl Edvardsen",
+      "lat": 55.31039088379827,
+      "lon": 10.404052734375002
+    },
+    {
+      "id": 39,
+      "nation": "denmark",
+      "branch": "army",
+      "name": "Royal Army",
+      "strength": 7500,
+      "commander": "Fredrik IV",
+      "lat": 55.665193184436035,
+      "lon": 12.469482421875
+    },
+    {
+      "id": 40,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "KOLA OCCUPATION FORCE",
+      "strength": 50,
+      "commander": "Johan Israel",
+      "lat": 68.06509825098962,
+      "lon": 34.71679687500001
     }
   ],
-  "nextForceId": 37,
+  "nextForceId": 41,
   "countries": [
     {
       "name": "afghanistan",
@@ -18905,6 +18945,14 @@
     {
       "name": "switzerland",
       "color": "#DA291C"
+    },
+    {
+      "name": "territory occupied by russia",
+      "color": "#5fca07"
+    },
+    {
+      "name": "territory occupied by sweden",
+      "color": "#009dff"
     },
     {
       "name": "trucial states",
