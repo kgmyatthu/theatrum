@@ -18791,11 +18791,11 @@
       "id": 51,
       "nation": "britain",
       "branch": "army",
-      "name": "Anglo-Spanish Army",
-      "strength": 60000,
+      "name": "Army of Britain",
+      "strength": 100000,
       "commander": "Arthur Wellesley",
-      "lat": 43.328674183738606,
-      "lon": -8.366088867187502
+      "lat": 51.481382896100975,
+      "lon": -0.087890625
     },
     {
       "id": 52,
@@ -19166,9 +19166,49 @@
       "commander": "",
       "lat": 50.708634400828224,
       "lon": 18.413085937500004
+    },
+    {
+      "id": 89,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bengal Presidency Army",
+      "strength": 80000,
+      "commander": "",
+      "lat": 23.34225583513053,
+      "lon": 89.69238281250001
+    },
+    {
+      "id": 90,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Madras Presidency Army",
+      "strength": 80000,
+      "commander": "",
+      "lat": 10.639013775260537,
+      "lon": 79.40917968750001
+    },
+    {
+      "id": 91,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bombay Presidency Army",
+      "strength": 40000,
+      "commander": "",
+      "lat": 11.609193407938953,
+      "lon": 75.91552734375001
+    },
+    {
+      "id": 92,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Army of the Carribean",
+      "strength": 15000,
+      "commander": "",
+      "lat": 24.541738038099307,
+      "lon": -77.90690976985603
     }
   ],
-  "nextForceId": 89,
+  "nextForceId": 93,
   "countries": [
     {
       "name": "afghanistan",
