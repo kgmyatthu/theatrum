@@ -18764,8 +18764,8 @@
       "name": "XII Corps",
       "strength": 30000,
       "commander": "Gen. Karl von Grolman",
-      "lat": 53.522416287203775,
-      "lon": 16.69920245635301
+      "lat": 53.651408940198365,
+      "lon": 16.653613402407974
     },
     {
       "id": 49,
@@ -19024,8 +19024,8 @@
       "name": "II Korpus",
       "strength": 30000,
       "commander": "Jozef Poniatowski",
-      "lat": 53.39651673019612,
-      "lon": 16.949243016877908
+      "lat": 53.560269809075045,
+      "lon": 17.192682550745523
     },
     {
       "id": 75,
@@ -19196,9 +19196,39 @@
       "commander": "Barclay de Tolly",
       "lat": 44.59829048984011,
       "lon": 33.55808258056641
+    },
+    {
+      "id": 92,
+      "nation": "russia",
+      "branch": "navy",
+      "name": "Baltic Fleet",
+      "strength": 13,
+      "commander": "Fyodor Ushakov",
+      "lat": 60.005165542352074,
+      "lon": 29.773635864257816
+    },
+    {
+      "id": 93,
+      "nation": "russia",
+      "branch": "navy",
+      "name": "Black Sea Fleet",
+      "strength": 32,
+      "commander": "Dmitry Senyavin",
+      "lat": 44.584843527769706,
+      "lon": 33.378009796142585
+    },
+    {
+      "id": 94,
+      "nation": "russia",
+      "branch": "army",
+      "name": "Moldavian Musketeers",
+      "strength": 15000,
+      "commander": "Alexander Hangerli",
+      "lat": 46.81885778879603,
+      "lon": 26.081542968750004
     }
   ],
-  "nextForceId": 92,
+  "nextForceId": 95,
   "countries": [
     {
       "name": "afghanistan",
