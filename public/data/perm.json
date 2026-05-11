@@ -37,5 +37,9 @@
   "KingRed2007": {
     "role": "player",
     "nation": "britain"
+  },
+  "Vancouver1903": {
+    "role": "player",
+    "nation": "russia"
   }
 }
