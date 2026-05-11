@@ -38,11 +38,13 @@ const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : s);
 // _fid is the feature's array index (assigned at runtime in BOOTSTRAP_DATA).
 const ownerships = provinces.features.map((f, i) => [i, lc(f.properties.owner)]);
 
-// Force IDs are strings at runtime (deterministic ${login}-${epochMs}-${seq}
-// for new ones; legacy seed forces are numeric strings). Coerce the seed
-// numerics here so the baked snapshot conforms to the runtime type.
+// Mint deterministic IDs for the seed forces in the new ${author}-${epochMs}-${seq}
+// shape. We use author='seed' and a fixed sentinel epoch (0) so re-running the
+// bake produces identical IDs every time — and so the validator's "force IDs
+// must be strings, not numbers" schema gate never trips on a fresh bake.
+let seedSeq = 0;
 for (const f of forces) {
-  f.id = String(f.id);
+  f.id = `seed-0-${seedSeq++}`;
   f.nation = lc(f.nation);
 }
 

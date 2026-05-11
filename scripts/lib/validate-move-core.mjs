@@ -5,6 +5,12 @@
 
 const ALLOWED_NON_ADMIN_FILES = new Set(['public/data/state.json']);
 
+// Bumped when the on-disk shape of state.json changes. Submissions whose
+// appVersion doesn't match are rejected up-front so a stale browser-cached
+// client can't unintentionally rewrite the schema (e.g. renumber the
+// deterministic force IDs back to the old shared-counter form).
+const SCHEMA_VERSION = 'theatrum/v6';
+
 const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : '');
 const deepEq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
@@ -53,6 +59,30 @@ export function validateMove(inputs) {
   }
   if (mergeable !== true) {
     return { valid: false, reason: 'mergeability could not be determined; please retry' };
+  }
+
+  // Schema gate — runs before admin bypass so even an admin's stale browser
+  // can't regress the file shape. Catches the specific "old client rewrites
+  // force IDs back to numerics" failure mode.
+  if (headState.appVersion !== SCHEMA_VERSION) {
+    return {
+      valid: false,
+      reason: `appVersion mismatch — expected ${SCHEMA_VERSION}, got ${headState.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
+    };
+  }
+  if ('nextForceId' in headState) {
+    return {
+      valid: false,
+      reason: `state.json contains the legacy nextForceId field. Your client is stale; hard-refresh the page.`,
+    };
+  }
+  for (const f of headState.forces) {
+    if (typeof f.id !== 'string') {
+      return {
+        valid: false,
+        reason: `force id ${JSON.stringify(f.id)} is not a string. Your client is stale; hard-refresh the page.`,
+      };
+    }
   }
 
   // Resolve the effective submitter. For bot-authored PRs (the worker

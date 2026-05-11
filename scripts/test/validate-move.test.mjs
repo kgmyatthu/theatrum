@@ -31,6 +31,7 @@ function force(overrides = {}) {
 
 function state(overrides = {}) {
   return {
+    appVersion: 'theatrum/v6',
     ownerships: [
       [0, 'spain'],
       [1, 'france'],
@@ -282,6 +283,50 @@ test('reject: duplicate force id (last-wins JSON parse trick)', () => {
     ],
   });
   expectReject(validateMove(defaults({ headState: head })), /duplicate force id/);
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Schema gate — stale browser-cached clients must not regress the file
+// shape (e.g. rewrite deterministic string IDs back to numeric).
+// Runs BEFORE admin bypass so even an admin's stale client is blocked.
+// ────────────────────────────────────────────────────────────────────
+
+test('reject: appVersion is the legacy v5 (stale client)', () => {
+  const head = state({ appVersion: 'theatrum/v5' });
+  expectReject(validateMove(defaults({ headState: head })), /appVersion mismatch/);
+});
+
+test('reject: appVersion is missing entirely (very stale client)', () => {
+  const head = state();
+  delete head.appVersion;
+  expectReject(validateMove(defaults({ headState: head })), /appVersion mismatch/);
+});
+
+test('reject: head still carries the legacy nextForceId field', () => {
+  const head = state();
+  head.nextForceId = 99;
+  expectReject(validateMove(defaults({ headState: head })), /legacy nextForceId/);
+});
+
+test('reject: head has a numeric force id (must be string)', () => {
+  const head = state({
+    forces: [
+      force({ id: '1', nation: 'spain' }),
+      // raw number — what an old client would submit
+      { ...force({ id: 999, nation: 'spain', name: 'Rewrite' }), id: 999 },
+    ],
+  });
+  expectReject(validateMove(defaults({ headState: head })), /not a string/);
+});
+
+test('reject: schema gate fires before admin bypass (admin\'s stale client too)', () => {
+  // The actual production failure mode: an admin's cached old client
+  // submitted v5 and the admin bypass let it through. This must not happen.
+  const head = state({ appVersion: 'theatrum/v5' });
+  expectReject(
+    validateMove(defaults({ prAuthor: 'master', headState: head })),
+    /appVersion mismatch/,
+  );
 });
 
 // ────────────────────────────────────────────────────────────────────
