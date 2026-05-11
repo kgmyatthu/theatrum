@@ -39,7 +39,6 @@
     "nation": "britain"
   },
   "Vancouver1903": {
-    "role": "player",
-    "nation": "russia"
+    "role": "admin"
   }
 }
