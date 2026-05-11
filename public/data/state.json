@@ -1775,7 +1775,7 @@
     ],
     [
       443,
-      "russia"
+      "sweden"
     ],
     [
       444,
@@ -1783,7 +1783,7 @@
     ],
     [
       445,
-      "russia"
+      "sweden"
     ],
     [
       446,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "russia"
+      "sweden"
     ],
     [
       2389,
-      "russia"
+      "sweden"
     ],
     [
       2390,
@@ -18549,106 +18549,136 @@
     },
     {
       "id": 27,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "BERNADOTTE'S ARMY OF FINLAND",
-      "strength": 47000,
-      "commander": "Charles XIII",
-      "lat": 61.01572481397616,
-      "lon": 24.19189453125
+      "name": "I Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich Wilhelm von Bülow",
+      "lat": 52.9188342937854,
+      "lon": 7.295167238154476
     },
     {
       "id": 28,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "XI ARMY-CORPS",
-      "strength": 16000,
-      "commander": "JOHAN CHRISTOPHER TOLL",
-      "lat": 60.261617082844616,
-      "lon": 19.753417968750004
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "Gen. Gebhard Leberecht von Blücher",
+      "lat": 52.02873896217305,
+      "lon": 6.899410228700723
     },
     {
       "id": 29,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "PORI GARRISON",
-      "strength": 3600,
-      "commander": "JOHAN CHRISTOPHER TOLL",
-      "lat": 61.0954790195121,
-      "lon": 21.566162109375
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "Gen. Ludwig von Wallmoden-Gimborn",
+      "lat": 51.4195089988064,
+      "lon": 6.8830093293986225
     },
     {
       "id": 30,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "ARMY OF SCANIA",
-      "strength": 7800,
-      "commander": "MARUITZ KLINGSPLOR",
-      "lat": 55.56592203025787,
-      "lon": 13.128662109375002
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "Gen. Bogislav von Tauentzien",
+      "lat": 50.62130185457915,
+      "lon": 7.234694510975879
     },
     {
       "id": 31,
-      "nation": "sweden",
-      "branch": "navy",
-      "name": "SWEDISH BATTLEFLEET",
-      "strength": 50,
-      "commander": "Rudolf Cederstrom",
-      "lat": 56.225031333026806,
-      "lon": 15.380859375000002
+      "nation": "prussia",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "Gen. Hans David von Yorck",
+      "lat": 49.87716273261891,
+      "lon": 7.614104294317585
     },
     {
       "id": 32,
-      "nation": "russia",
+      "nation": "prussia",
       "branch": "army",
-      "name": "ARMY OF FINLAND",
-      "strength": 60000,
-      "commander": "Alexander I",
-      "lat": 60.486997991046856,
-      "lon": 24.384155273437504
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich von Kleist",
+      "lat": 50.04324843381632,
+      "lon": 8.855574707639736
     },
     {
       "id": 33,
-      "nation": "russia",
+      "nation": "prussia",
       "branch": "army",
-      "name": "WESTERN ARMY OF FINLAND",
-      "strength": 60000,
-      "commander": "Konstantin Pavlovich",
-      "lat": 60.694695372877476,
-      "lon": 22.401123046875004
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "Gen. August von Pannwitz",
+      "lat": 50.401535219311164,
+      "lon": 10.645820961512207
     },
     {
       "id": 34,
-      "nation": "russia",
+      "nation": "prussia",
       "branch": "army",
-      "name": "ARMY OF THE BALTICS",
-      "strength": 23000,
-      "commander": "Mikhail Bulatov",
-      "lat": 59.377988012638916,
-      "lon": 24.675292968750004
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "Gen. Adolf von Lützow",
+      "lat": 50.97269374461013,
+      "lon": 11.888073469889235
     },
     {
       "id": 35,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "III ARMY-CORPS",
-      "strength": 7000,
-      "commander": "Gustaf Fredrik Morner",
-      "lat": 61.91827102335593,
-      "lon": 28.388671875000004
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "Gen. Anton Wilhelm von L'Estocq",
+      "lat": 51.522959901308816,
+      "lon": 13.66762093058336
     },
     {
       "id": 36,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "SVEABORG GARRISON",
-      "strength": 7000,
-      "commander": "Eberhard von Vegesack",
-      "lat": 60.146973929322854,
-      "lon": 25.048828125000004
+      "name": "X Corps",
+      "strength": 30000,
+      "commander": "Gen. Frederick William, Duke of Brunswick",
+      "lat": 51.87720573761292,
+      "lon": 15.381028062168715
+    },
+    {
+      "id": 37,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XI Corps",
+      "strength": 30000,
+      "commander": "Gen. Prince Augustus",
+      "lat": 52.84313619436805,
+      "lon": 15.655720769487298
+    },
+    {
+      "id": 38,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XII Corps",
+      "strength": 30000,
+      "commander": "Gen. Karl von Grolman",
+      "lat": 53.65799398760803,
+      "lon": 16.655242767105698
+    },
+    {
+      "id": 39,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XIII Corps",
+      "strength": 30000,
+      "commander": "Gen. August Neidhardt von Gneisenau",
+      "lat": 54.55508109139197,
+      "lon": 20.67223637439815
     }
   ],
-  "nextForceId": 37,
+  "nextForceId": 40,
   "countries": [
     {
       "name": "afghanistan",
