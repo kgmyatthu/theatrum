@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v6",
+  "appVersion": "theatrum/v5",
   "ownerships": [
     [
       0,
@@ -18601,11 +18601,11 @@
       "id": "yellowwithblue-1778478796000-0",
       "nation": "russia",
       "branch": "army",
-      "name": "ARMY OF FINLAND",
+      "name": "ARMY OF THE NORTH",
       "strength": 60000,
       "commander": "Alexander I",
-      "lat": 56.927741966236376,
-      "lon": 24.05044555664063
+      "lat": 56.0965557505683,
+      "lon": 24.741210937500004
     },
     {
       "id": "yellowwithblue-1778478796000-1",
@@ -18624,8 +18624,8 @@
       "name": "ARMY OF THE BALTICS",
       "strength": 23000,
       "commander": "Mikhail Bulatov",
-      "lat": 55.973798205076605,
-      "lon": 23.70849609375
+      "lat": 55.178867663282006,
+      "lon": 23.9007568359375
     },
     {
       "id": "yellowwithblue-1778478796000-3",
@@ -19174,8 +19174,8 @@
       "name": "Army of Ukraine",
       "strength": 54000,
       "commander": "Mikhail Kutuzov",
-      "lat": 49.06846786975949,
-      "lon": 24.842834472656254
+      "lat": 48.88639177703194,
+      "lon": 25.938720703125004
     },
     {
       "id": "Vancouver1903-1778540725000-1",
@@ -19184,8 +19184,8 @@
       "name": "Army of Ruthenia",
       "strength": 54000,
       "commander": "Pyotr Bagration",
-      "lat": 53.72921671251272,
-      "lon": 26.828613281250004
+      "lat": 53.54030739150022,
+      "lon": 25.378417968750004
     },
     {
       "id": "Vancouver1903-1778540725000-2",
@@ -19196,8 +19196,29 @@
       "commander": "Barclay de Tolly",
       "lat": 44.59829048984011,
       "lon": 33.55808258056641
+    },
+    {
+      "id": 1,
+      "nation": "moldavia",
+      "branch": "army",
+      "name": "Army of Moldavia",
+      "strength": 25000,
+      "commander": "Scarlat Callimachi",
+      "lat": 47.14863351130145,
+      "lon": 27.130737304687504
+    },
+    {
+      "id": 2,
+      "nation": "russia",
+      "branch": "navy",
+      "name": "Baltic Fleet",
+      "strength": 13,
+      "commander": "Dmitry Senyavin",
+      "lat": 54.61025498157912,
+      "lon": 11.288452148437502
     }
   ],
+  "nextForceId": 3,
   "countries": [
     {
       "name": "afghanistan",
