@@ -1755,7 +1755,7 @@
     ],
     [
       438,
-      "contested lands"
+      "russia"
     ],
     [
       439,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "contested lands"
+      "russia"
     ],
     [
       2389,
-      "contested lands"
+      "russia"
     ],
     [
       2390,
@@ -18564,8 +18564,8 @@
       "name": "XI ARMY-CORPS",
       "strength": 16000,
       "commander": "JOHAN CHRISTOPHER TOLL",
-      "lat": 60.37781167534939,
-      "lon": 21.482391357421875
+      "lat": 60.261617082844616,
+      "lon": 19.753417968750004
     },
     {
       "id": 29,
@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 56.029087419764366,
-      "lon": 12.952880859375002
+      "lat": 55.56592203025787,
+      "lon": 13.128662109375002
     },
     {
       "id": 31,
@@ -18634,8 +18634,8 @@
       "name": "III ARMY-CORPS",
       "strength": 7000,
       "commander": "Gustaf Fredrik Morner",
-      "lat": 61.47026680312171,
-      "lon": 29.080810546875
+      "lat": 61.91827102335593,
+      "lon": 28.388671875000004
     },
     {
       "id": 36,
@@ -18644,51 +18644,141 @@
       "name": "SVEABORG GARRISON",
       "strength": 7000,
       "commander": "Eberhard von Vegesack",
-      "lat": 60.1465466812523,
-      "lon": 24.986171722412113
+      "lat": 60.146973929322854,
+      "lon": 25.048828125000004
     },
     {
       "id": 37,
-      "nation": "denmark",
+      "nation": "prussia",
       "branch": "army",
-      "name": "Army of the Interior",
-      "strength": 15000,
-      "commander": "Hesse-Kassel and Høegh-Goldberg",
-      "lat": 55.6341979462584,
-      "lon": 9.217529296875002
+      "name": "I Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich Wilhelm von Bülow",
+      "lat": 52.84271455240748,
+      "lon": 7.283924045477127
     },
     {
       "id": 38,
-      "nation": "denmark",
+      "nation": "prussia",
       "branch": "army",
-      "name": "Belts Armies",
-      "strength": 22500,
-      "commander": "Carl Edvardsen",
-      "lat": 55.31039088379827,
-      "lon": 10.404052734375002
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "Gen. Gebhard Leberecht von Blücher",
+      "lat": 52.01866315407693,
+      "lon": 7.097179470147875
     },
     {
       "id": 39,
-      "nation": "denmark",
+      "nation": "prussia",
       "branch": "army",
-      "name": "Royal Army",
-      "strength": 7500,
-      "commander": "Fredrik IV",
-      "lat": 55.665193184436035,
-      "lon": 12.469482421875
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "Gen. Ludwig von Wallmoden-Gimborn",
+      "lat": 51.28937750789603,
+      "lon": 6.624729022779975
     },
     {
       "id": 40,
-      "nation": "sweden",
+      "nation": "prussia",
       "branch": "army",
-      "name": "KOLA OCCUPATION FORCE",
-      "strength": 50,
-      "commander": "Johan Israel",
-      "lat": 68.06509825098962,
-      "lon": 34.71679687500001
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "Gen. Bogislav von Tauentzien",
+      "lat": 50.590179511174554,
+      "lon": 6.910385055427848
+    },
+    {
+      "id": 41,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "Gen. Hans David von Yorck",
+      "lat": 49.95127103394974,
+      "lon": 7.712448349341457
+    },
+    {
+      "id": 42,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "Gen. Friedrich von Kleist",
+      "lat": 50.057167926142114,
+      "lon": 8.942882595147877
+    },
+    {
+      "id": 43,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "Gen. August von Pannwitz",
+      "lat": 50.49247778429617,
+      "lon": 10.502714994739831
+    },
+    {
+      "id": 44,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "Gen. Adolf von Lützow",
+      "lat": 50.93783341506454,
+      "lon": 12.137902836294103
+    },
+    {
+      "id": 45,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "Gen. Anton Wilhelm von L'Estocq",
+      "lat": 51.508618825613205,
+      "lon": 13.609557075939405
+    },
+    {
+      "id": 46,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "X Corps",
+      "strength": 30000,
+      "commander": "Gen. Frederick William, Duke of Brunswick",
+      "lat": 51.65896537666039,
+      "lon": 15.545642795477129
+    },
+    {
+      "id": 47,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XI Corps",
+      "strength": 30000,
+      "commander": "Gen. Prince Augustus of Prussia",
+      "lat": 52.48250371342609,
+      "lon": 15.696821402915038
+    },
+    {
+      "id": 48,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XII Corps",
+      "strength": 30000,
+      "commander": "Gen. Karl von Grolman",
+      "lat": 53.651408940198365,
+      "lon": 16.653613402407974
+    },
+    {
+      "id": 49,
+      "nation": "prussia",
+      "branch": "army",
+      "name": "XIII Corps",
+      "strength": 30000,
+      "commander": "Gen. August Neidhardt von Gneisenau",
+      "lat": 54.47696239547075,
+      "lon": 20.519869289180814
     }
   ],
-  "nextForceId": 41,
+  "nextForceId": 50,
   "countries": [
     {
       "name": "afghanistan",
@@ -18745,10 +18835,6 @@
     {
       "name": "china",
       "color": "#E8A317"
-    },
-    {
-      "name": "contested lands",
-      "color": "#ffffff"
     },
     {
       "name": "dahomey",
@@ -18949,10 +19035,6 @@
     {
       "name": "switzerland",
       "color": "#DA291C"
-    },
-    {
-      "name": "territory occupied by russia",
-      "color": "#5fca07"
     },
     {
       "name": "trucial states",
