@@ -10079,7 +10079,7 @@
     ],
     [
       2519,
-      "contested territories"
+      "spain"
     ],
     [
       2520,
@@ -18159,7 +18159,7 @@
     ],
     [
       4539,
-      "contested territories"
+      "spain"
     ],
     [
       4540,
@@ -18791,11 +18791,11 @@
       "id": 51,
       "nation": "britain",
       "branch": "army",
-      "name": "Anglo-Spanish Army",
-      "strength": 60000,
+      "name": "I Corp",
+      "strength": 33500,
       "commander": "Arthur Wellesley",
-      "lat": 43.328674183738606,
-      "lon": -8.366088867187502
+      "lat": 51.467696956223385,
+      "lon": -0.28564453125000006
     },
     {
       "id": 52,
@@ -18854,8 +18854,8 @@
       "name": "V Corp",
       "strength": 30000,
       "commander": "Jean Lannes",
-      "lat": 43.233196028174014,
-      "lon": -4.388855678766093
+      "lat": 43.23096975342086,
+      "lon": -2.8180792653497204
     },
     {
       "id": 58,
@@ -18904,8 +18904,8 @@
       "name": "X Corp",
       "strength": 30000,
       "commander": "Jean-Baptiste Jourdan",
-      "lat": 42.78722577018684,
-      "lon": -4.542650878982512
+      "lat": 42.460153069261104,
+      "lon": -2.8562520629442627
     },
     {
       "id": 63,
@@ -18934,8 +18934,8 @@
       "name": "XIII Corp",
       "strength": 30000,
       "commander": "Francois Joseph Lefebvre",
-      "lat": 42.338237952483624,
-      "lon": -4.6526398043331145
+      "lat": 42.3181428349173,
+      "lon": -4.048336269961917
     },
     {
       "id": 66,
@@ -19166,9 +19166,59 @@
       "commander": "",
       "lat": 50.708634400828224,
       "lon": 18.413085937500004
+    },
+    {
+      "id": 89,
+      "nation": "britain",
+      "branch": "army",
+      "name": "II Corp",
+      "strength": 33500,
+      "commander": "Rowland Hill",
+      "lat": 53.48804553605622,
+      "lon": -2.7465820312500004
+    },
+    {
+      "id": 90,
+      "nation": "britain",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 33000,
+      "commander": "Sir John Moore",
+      "lat": 51.590722643120166,
+      "lon": -3.1860351562500004
+    },
+    {
+      "id": 91,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bengal Presidency Army",
+      "strength": 80000,
+      "commander": "Richard Wellesley",
+      "lat": 21.87116280406355,
+      "lon": 86.96153269137082
+    },
+    {
+      "id": 92,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Madras Presidency Army",
+      "strength": 80000,
+      "commander": "Richard Wellesley",
+      "lat": 10.660607953624776,
+      "lon": 79.14550781250001
+    },
+    {
+      "id": 93,
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bombay Presidency Army",
+      "strength": 40000,
+      "commander": "Eyre Coote",
+      "lat": 11.587669416896215,
+      "lon": 75.78369140625001
     }
   ],
-  "nextForceId": 89,
+  "nextForceId": 94,
   "countries": [
     {
       "name": "afghanistan",
