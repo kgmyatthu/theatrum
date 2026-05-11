@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v5",
+  "appVersion": "theatrum/v6",
   "ownerships": [
     [
       0,
@@ -19216,9 +19216,18 @@
       "commander": "Dmitry Senyavin",
       "lat": 54.61025498157912,
       "lon": 11.288452148437502
+    },
+    {
+      "id": "kgmyatthu-1778542889744-0",
+      "nation": "burma",
+      "branch": "army",
+      "name": "test",
+      "strength": 1,
+      "commander": "test",
+      "lat": 21.248422235627014,
+      "lon": 96.43798828125001
     }
   ],
-  "nextForceId": 3,
   "countries": [
     {
       "name": "afghanistan",
