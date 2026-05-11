@@ -31,8 +31,8 @@ function resolveSubmitter(prAuthor, prBody) {
 
 /**
  * @param {{
- *   baseState: { ownerships: Array<[number, string]>, forces: Array<object>, nextForceId: number, countries: Array<{name:string,color:string}> },
- *   headState: { ownerships: Array<[number, string]>, forces: Array<object>, nextForceId: number, countries: Array<{name:string,color:string}> },
+ *   baseState: { ownerships: Array<[number, string]>, forces: Array<object>, countries: Array<{name:string,color:string}> },
+ *   headState: { ownerships: Array<[number, string]>, forces: Array<object>, countries: Array<{name:string,color:string}> },
  *   perms: Record<string, { role: 'admin' | 'player', nation?: string }>,
  *   prAuthor: string,
  *   prBody?: string,
@@ -150,16 +150,6 @@ export function validateMove(inputs) {
         reason: `force #${id} (${head.nation}: ${head.name}) added; not owned by ${playerNation}`,
       };
     }
-  }
-
-  // nextForceId must monotonically increase past every existing id, otherwise
-  // a future ADD_FORCE could collide with the ones present.
-  const maxId = Math.max(0, ...headState.forces.map((f) => f.id));
-  if (headState.nextForceId <= maxId) {
-    return {
-      valid: false,
-      reason: `nextForceId (${headState.nextForceId}) must be > max(force.id) (${maxId})`,
-    };
   }
 
   return { valid: true, note: `player @${submitter} (${playerNation}) — force changes only` };

@@ -9,7 +9,6 @@ import type {
 export interface SnapshotInputs {
   provinces: ProvinceCollection;
   forces: Force[];
-  nextForceId: number;
   palette: Palette;
   owners: string[];
 }
@@ -26,12 +25,11 @@ function buildCountries(owners: string[], palette: Palette): Country[] {
 
 export function buildSnapshot(inputs: SnapshotInputs): AppSnapshot {
   return {
-    appVersion: 'theatrum/v5',
+    appVersion: 'theatrum/v6',
     ownerships: inputs.provinces.features.map(
       (f) => [f.properties._fid, f.properties.owner] as [number, string],
     ),
     forces: inputs.forces,
-    nextForceId: inputs.nextForceId,
     countries: buildCountries(inputs.owners, inputs.palette),
   };
 }

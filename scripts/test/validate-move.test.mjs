@@ -17,7 +17,7 @@ import { validateMove } from '../lib/validate-move-core.mjs';
 
 function force(overrides = {}) {
   return {
-    id: 1,
+    id: '1',
     nation: 'spain',
     branch: 'army',
     name: '1st Corps',
@@ -37,10 +37,9 @@ function state(overrides = {}) {
       [2, 'spain'],
     ],
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
-    nextForceId: 3,
     countries: [
       { name: 'spain', color: '#1F4E9C' },
       { name: 'france', color: '#D7837F' },
@@ -211,7 +210,7 @@ test('reject: player recolors an existing country', () => {
 
 test('reject: player removes another nation\'s force', () => {
   const head = state({
-    forces: [force({ id: 1, nation: 'spain' })], // dropped force #2 (france)
+    forces: [force({ id: '1', nation: 'spain' })], // dropped force #2 (france)
   });
   expectReject(validateMove(defaults({ headState: head })), /force #2.*not owned by spain/);
 });
@@ -219,8 +218,8 @@ test('reject: player removes another nation\'s force', () => {
 test('reject: player moves another nation\'s force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
     ],
   });
   expectReject(validateMove(defaults({ headState: head })), /force #2 edited but nation must be spain/);
@@ -229,8 +228,8 @@ test('reject: player moves another nation\'s force', () => {
 test('reject: player renames another nation\'s force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Comically Renamed', commander: 'Bonaparte' }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Comically Renamed', commander: 'Bonaparte' }),
     ],
   });
   expectReject(validateMove(defaults({ headState: head })), /force #2 edited/);
@@ -239,8 +238,8 @@ test('reject: player renames another nation\'s force', () => {
 test('reject: player changes another nation\'s force strength', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', strength: 1 }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', strength: 1 }),
     ],
   });
   expectReject(validateMove(defaults({ headState: head })), /force #2 edited/);
@@ -249,11 +248,10 @@ test('reject: player changes another nation\'s force strength', () => {
 test('reject: player adds a force claiming another nation', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: 3, nation: 'france', name: 'Phantom Army', strength: 999999 }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '3', nation: 'france', name: 'Phantom Army', strength: 999999 }),
     ],
-    nextForceId: 4,
   });
   expectReject(validateMove(defaults({ headState: head })), /force #3.*not owned by spain/);
 });
@@ -261,9 +259,9 @@ test('reject: player adds a force claiming another nation', () => {
 test('reject: player tries to convert enemy force to their nation (nation swap)', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
+      force({ id: '1', nation: 'spain' }),
       // bob (france) tries to take over force #2 by relabeling it spanish
-      force({ id: 2, nation: 'spain', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '2', nation: 'spain', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
   });
   expectReject(
@@ -278,24 +276,12 @@ test('reject: duplicate force id (last-wins JSON parse trick)', () => {
   // The duplicate-id guard catches it before per-force checks run.
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: 2, nation: 'spain', name: 'Decoy' }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '2', nation: 'spain', name: 'Decoy' }),
     ],
   });
   expectReject(validateMove(defaults({ headState: head })), /duplicate force id/);
-});
-
-test('reject: nextForceId not strictly greater than max id (collision risk)', () => {
-  const head = state({
-    forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: 5, nation: 'spain', name: 'Reserve' }),
-    ],
-    nextForceId: 5, // should be > 5
-  });
-  expectReject(validateMove(defaults({ headState: head })), /nextForceId/);
 });
 
 // ────────────────────────────────────────────────────────────────────
@@ -317,8 +303,8 @@ test('reject: GitHub couldn\'t determine mergeability (still pending)', () => {
 test('pass: player legitimately moves their own force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain', lat: 41, lon: -4 }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '1', nation: 'spain', lat: 41, lon: -4 }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
   });
   expectPass(validateMove(defaults({ headState: head })));
@@ -327,18 +313,31 @@ test('pass: player legitimately moves their own force', () => {
 test('pass: player adds a new force of their own nation', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: 3, nation: 'spain', name: '2nd Corps' }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '3', nation: 'spain', name: '2nd Corps' }),
     ],
-    nextForceId: 4,
+  });
+  expectPass(validateMove(defaults({ headState: head })));
+});
+
+test('pass: deterministic string IDs (login-epoch-seq) validate without collision', () => {
+  // Two players adding armies "concurrently" mint self-namespaced IDs.
+  // Without the old nextForceId counter, neither side claims a number the
+  // other might also pick — both PRs validate independently.
+  const head = state({
+    forces: [
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve' }),
+    ],
   });
   expectPass(validateMove(defaults({ headState: head })));
 });
 
 test('pass: player removes one of their own forces', () => {
   const head = state({
-    forces: [force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' })],
+    forces: [force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' })],
   });
   expectPass(validateMove(defaults({ headState: head })));
 });
@@ -347,8 +346,8 @@ test('pass: case-insensitive nation match (perm.json has TitleCase)', () => {
   // Carol is registered as "Spain" — state is "spain". Should still match.
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain', lat: 42 }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '1', nation: 'spain', lat: 42 }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
   });
   expectPass(validateMove(defaults({ headState: head, prAuthor: 'carol' })));
@@ -367,8 +366,8 @@ test('pass: empty PR (no diff) is technically valid — diff check is upstream',
 test('pass: admin moves an enemy force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
     ],
   });
   expectPass(validateMove(defaults({ headState: head, prAuthor: 'master' })));
@@ -482,8 +481,8 @@ test('pass: bot PR with marker for an admin', () => {
 test('pass: bot PR with marker for a player moving their own force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain', lat: 41, lon: -4 }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+      force({ id: '1', nation: 'spain', lat: 41, lon: -4 }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
   });
   expectPass(
@@ -500,8 +499,8 @@ test('pass: bot PR with marker for a player moving their own force', () => {
 test('reject: bot PR with marker for a player moving an enemy force', () => {
   const head = state({
     forces: [
-      force({ id: 1, nation: 'spain' }),
-      force({ id: 2, nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+      force({ id: '1', nation: 'spain' }),
+      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
     ],
   });
   expectReject(

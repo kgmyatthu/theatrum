@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v5",
+  "appVersion": "theatrum/v6",
   "ownerships": [
     [
       0,
@@ -18388,7 +18388,7 @@
   ],
   "forces": [
     {
-      "id": 5,
+      "id": "seed-1778367500000-0",
       "nation": "britain",
       "branch": "navy",
       "name": "Mediterranean Fleet",
@@ -18398,7 +18398,7 @@
       "lat": 38
     },
     {
-      "id": 6,
+      "id": "seed-1778367500000-1",
       "nation": "austria",
       "branch": "army",
       "name": "X Corps",
@@ -18408,7 +18408,7 @@
       "lat": 49.06666839558117
     },
     {
-      "id": 7,
+      "id": "seed-1778367500000-2",
       "nation": "austria",
       "branch": "army",
       "name": "XI Korps",
@@ -18418,7 +18418,7 @@
       "lat": 50.00773901463687
     },
     {
-      "id": 8,
+      "id": "seed-1778367500000-3",
       "nation": "russia",
       "branch": "army",
       "name": "Army of the Cossack",
@@ -18428,7 +18428,7 @@
       "lat": 49.774169585277406
     },
     {
-      "id": 11,
+      "id": "seed-1778367500000-4",
       "nation": "ottoman empire",
       "branch": "army",
       "name": "Imperial Army",
@@ -18438,7 +18438,7 @@
       "lat": 41.01
     },
     {
-      "id": 12,
+      "id": "seed-1778367500000-5",
       "nation": "spain",
       "branch": "navy",
       "name": "Cadiz Fleet",
@@ -18448,7 +18448,7 @@
       "lat": 36.5
     },
     {
-      "id": 17,
+      "id": "SXc-eng-1778455735000-0",
       "nation": "bulgaria",
       "branch": "army",
       "name": "I Army Division",
@@ -18458,7 +18458,7 @@
       "lon": 25.181616209086457
     },
     {
-      "id": 18,
+      "id": "SXc-eng-1778455735000-1",
       "nation": "bulgaria",
       "branch": "army",
       "name": "II Army Division",
@@ -18468,7 +18468,7 @@
       "lon": 26.722909741103294
     },
     {
-      "id": 19,
+      "id": "SXc-eng-1778455735000-2",
       "nation": "bulgaria",
       "branch": "army",
       "name": "III Army Division",
@@ -18478,7 +18478,7 @@
       "lon": 27.63484047331645
     },
     {
-      "id": 20,
+      "id": "SXc-eng-1778455735000-3",
       "nation": "bulgaria",
       "branch": "army",
       "name": "IV Army Division (1/2 mobilised)",
@@ -18488,7 +18488,7 @@
       "lon": 28.40859762046977
     },
     {
-      "id": 21,
+      "id": "SXc-eng-1778455735000-4",
       "nation": "bulgaria",
       "branch": "army",
       "name": "I Reserve Army Division (Not mobilised)",
@@ -18498,7 +18498,7 @@
       "lon": 23.645619661808578
     },
     {
-      "id": 22,
+      "id": "SXc-eng-1778455735000-5",
       "nation": "bulgaria",
       "branch": "army",
       "name": "Varnian Guard (1/2 mobilised)",
@@ -18508,7 +18508,7 @@
       "lon": 27.90940005625635
     },
     {
-      "id": 23,
+      "id": "SXc-eng-1778455735000-6",
       "nation": "bulgaria",
       "branch": "army",
       "name": "Varnian Infantry Brigade (Not mobilised)",
@@ -18518,7 +18518,7 @@
       "lon": 27.932308263734114
     },
     {
-      "id": 24,
+      "id": "SXc-eng-1778455735000-7",
       "nation": "bulgaria",
       "branch": "army",
       "name": "Dobrich Infantry Brigade (Not mobilised)",
@@ -18528,7 +18528,7 @@
       "lon": 27.840787089406707
     },
     {
-      "id": 25,
+      "id": "SXc-eng-1778455735000-8",
       "nation": "bulgaria",
       "branch": "army",
       "name": "Dobrich Guard (1/2 mobilised)",
@@ -18538,7 +18538,7 @@
       "lon": 27.90102711880358
     },
     {
-      "id": 26,
+      "id": "SXc-eng-1778455735000-9",
       "nation": "bulgaria",
       "branch": "army",
       "name": "Sofia Guard (Bulgaria)",
@@ -18548,7 +18548,7 @@
       "lon": 23.32217536868864
     },
     {
-      "id": 27,
+      "id": "yellowwithblue-1778478177000-0",
       "nation": "sweden",
       "branch": "army",
       "name": "BERNADOTTE'S ARMY OF FINLAND",
@@ -18558,7 +18558,7 @@
       "lon": 24.19189453125
     },
     {
-      "id": 28,
+      "id": "yellowwithblue-1778478177000-1",
       "nation": "sweden",
       "branch": "army",
       "name": "XI ARMY-CORPS",
@@ -18568,7 +18568,7 @@
       "lon": 21.489257812500004
     },
     {
-      "id": 29,
+      "id": "yellowwithblue-1778478177000-2",
       "nation": "sweden",
       "branch": "army",
       "name": "PORI GARRISON",
@@ -18578,7 +18578,7 @@
       "lon": 21.566162109375
     },
     {
-      "id": 30,
+      "id": "yellowwithblue-1778478177000-3",
       "nation": "sweden",
       "branch": "army",
       "name": "ARMY OF SCANIA",
@@ -18588,7 +18588,7 @@
       "lon": 12.963867187500002
     },
     {
-      "id": 31,
+      "id": "yellowwithblue-1778478466000-0",
       "nation": "sweden",
       "branch": "navy",
       "name": "SWEDISH BATTLEFLEET",
@@ -18598,7 +18598,7 @@
       "lon": 15.380859375000002
     },
     {
-      "id": 32,
+      "id": "yellowwithblue-1778478796000-0",
       "nation": "russia",
       "branch": "army",
       "name": "ARMY OF FINLAND",
@@ -18608,7 +18608,7 @@
       "lon": 24.05044555664063
     },
     {
-      "id": 33,
+      "id": "yellowwithblue-1778478796000-1",
       "nation": "russia",
       "branch": "army",
       "name": "WESTERN ARMY OF FINLAND",
@@ -18618,7 +18618,7 @@
       "lon": 22.401123046875004
     },
     {
-      "id": 34,
+      "id": "yellowwithblue-1778478796000-2",
       "nation": "russia",
       "branch": "army",
       "name": "ARMY OF THE BALTICS",
@@ -18628,7 +18628,7 @@
       "lon": 23.70849609375
     },
     {
-      "id": 35,
+      "id": "yellowwithblue-1778478796000-3",
       "nation": "sweden",
       "branch": "army",
       "name": "III ARMY-CORPS",
@@ -18638,7 +18638,7 @@
       "lon": 29.366455078125004
     },
     {
-      "id": 36,
+      "id": "yellowwithblue-1778478796000-4",
       "nation": "sweden",
       "branch": "army",
       "name": "SVEABORG GARRISON",
@@ -18648,7 +18648,7 @@
       "lon": 25.048828125000004
     },
     {
-      "id": 37,
+      "id": "yellowwithblue-1778479985000-0",
       "nation": "prussia",
       "branch": "army",
       "name": "I Corps",
@@ -18658,7 +18658,7 @@
       "lon": 7.283924045477127
     },
     {
-      "id": 38,
+      "id": "yellowwithblue-1778479985000-1",
       "nation": "prussia",
       "branch": "army",
       "name": "II Corps",
@@ -18668,7 +18668,7 @@
       "lon": 6.970869284004318
     },
     {
-      "id": 39,
+      "id": "yellowwithblue-1778479985000-2",
       "nation": "prussia",
       "branch": "army",
       "name": "III Corps",
@@ -18678,7 +18678,7 @@
       "lon": 6.300678348683931
     },
     {
-      "id": 40,
+      "id": "yellowwithblue-1778479985000-3",
       "nation": "prussia",
       "branch": "army",
       "name": "IV Corps",
@@ -18688,7 +18688,7 @@
       "lon": 6.520439415377553
     },
     {
-      "id": 41,
+      "id": "KingREN1-Suitman-1778480453000-0",
       "nation": "prussia",
       "branch": "army",
       "name": "V Corps",
@@ -18698,7 +18698,7 @@
       "lon": 7.997947196218492
     },
     {
-      "id": 42,
+      "id": "KingREN1-Suitman-1778480453000-1",
       "nation": "prussia",
       "branch": "army",
       "name": "VI Corps",
@@ -18708,7 +18708,7 @@
       "lon": 8.942882595147877
     },
     {
-      "id": 43,
+      "id": "KingREN1-Suitman-1778480453000-2",
       "nation": "prussia",
       "branch": "army",
       "name": "VII Corps",
@@ -18718,7 +18718,7 @@
       "lon": 10.502714994739831
     },
     {
-      "id": 44,
+      "id": "KingREN1-Suitman-1778480453000-3",
       "nation": "prussia",
       "branch": "army",
       "name": "VIII Corps",
@@ -18728,7 +18728,7 @@
       "lon": 12.137902836294103
     },
     {
-      "id": 45,
+      "id": "KingREN1-Suitman-1778480453000-4",
       "nation": "prussia",
       "branch": "army",
       "name": "IX Corps",
@@ -18738,7 +18738,7 @@
       "lon": 13.609557075939405
     },
     {
-      "id": 46,
+      "id": "KingREN1-Suitman-1778480453000-5",
       "nation": "prussia",
       "branch": "army",
       "name": "X Corps",
@@ -18748,7 +18748,7 @@
       "lon": 15.545642795477129
     },
     {
-      "id": 47,
+      "id": "KingREN1-Suitman-1778480453000-6",
       "nation": "prussia",
       "branch": "army",
       "name": "XI Corps",
@@ -18758,7 +18758,7 @@
       "lon": 15.696821402915038
     },
     {
-      "id": 48,
+      "id": "KingREN1-Suitman-1778480453000-7",
       "nation": "prussia",
       "branch": "army",
       "name": "XII Corps",
@@ -18768,7 +18768,7 @@
       "lon": 16.69920245635301
     },
     {
-      "id": 49,
+      "id": "KingREN1-Suitman-1778480453000-8",
       "nation": "prussia",
       "branch": "army",
       "name": "XIII Corps",
@@ -18778,7 +18778,7 @@
       "lon": 20.291897565047243
     },
     {
-      "id": 50,
+      "id": "Walrusbear0831-1778504149000-0",
       "nation": "antilles",
       "branch": "army",
       "name": "VIII Black Guard Corps",
@@ -18788,7 +18788,7 @@
       "lon": -79.34326171875001
     },
     {
-      "id": 51,
+      "id": "KingRed2007-1778521313000-0",
       "nation": "britain",
       "branch": "army",
       "name": "Anglo-Spanish Army",
@@ -18798,7 +18798,7 @@
       "lon": -8.366088867187502
     },
     {
-      "id": 52,
+      "id": "KingRed2007-1778521313000-1",
       "nation": "britain",
       "branch": "navy",
       "name": "Baltic Station",
@@ -18808,7 +18808,7 @@
       "lon": 11.656494140625002
     },
     {
-      "id": 53,
+      "id": "yellowwithblue-1778525862000-0",
       "nation": "france",
       "branch": "army",
       "name": "I Corp",
@@ -18818,7 +18818,7 @@
       "lon": 11.986015741132544
     },
     {
-      "id": 54,
+      "id": "AceApache-1778526187000-0",
       "nation": "france",
       "branch": "army",
       "name": "II Corp",
@@ -18828,7 +18828,7 @@
       "lon": 5.108287968379193
     },
     {
-      "id": 55,
+      "id": "AceApache-1778526187000-1",
       "nation": "france",
       "branch": "army",
       "name": "III Corp",
@@ -18838,7 +18838,7 @@
       "lon": 10.281815299807676
     },
     {
-      "id": 56,
+      "id": "AceApache-1778526187000-2",
       "nation": "france",
       "branch": "army",
       "name": "IV Corp",
@@ -18848,7 +18848,7 @@
       "lon": 0.4393791416716964
     },
     {
-      "id": 57,
+      "id": "AceApache-1778526187000-3",
       "nation": "france",
       "branch": "army",
       "name": "V Corp",
@@ -18858,7 +18858,7 @@
       "lon": -4.388855678766093
     },
     {
-      "id": 58,
+      "id": "AceApache-1778526187000-4",
       "nation": "france",
       "branch": "army",
       "name": "VI Corp",
@@ -18868,7 +18868,7 @@
       "lon": 2.3278680818373503
     },
     {
-      "id": 59,
+      "id": "AceApache-1778526187000-5",
       "nation": "france",
       "branch": "army",
       "name": "VII Corp",
@@ -18878,7 +18878,7 @@
       "lon": 5.535503426546741
     },
     {
-      "id": 60,
+      "id": "AceApache-1778526187000-6",
       "nation": "france",
       "branch": "army",
       "name": "VIII Corp",
@@ -18888,7 +18888,7 @@
       "lon": 9.226481083472668
     },
     {
-      "id": 61,
+      "id": "AceApache-1778526187000-7",
       "nation": "france",
       "branch": "army",
       "name": "IX Corp",
@@ -18898,7 +18898,7 @@
       "lon": -0.5062754761593614
     },
     {
-      "id": 62,
+      "id": "AceApache-1778526187000-8",
       "nation": "france",
       "branch": "army",
       "name": "X Corp",
@@ -18908,7 +18908,7 @@
       "lon": -4.542650878982512
     },
     {
-      "id": 63,
+      "id": "AceApache-1778526187000-9",
       "nation": "france",
       "branch": "army",
       "name": "XI Corp",
@@ -18918,7 +18918,7 @@
       "lon": 2.932307464906119
     },
     {
-      "id": 64,
+      "id": "AceApache-1778526187000-10",
       "nation": "france",
       "branch": "army",
       "name": "XII Corp",
@@ -18928,7 +18928,7 @@
       "lon": -4.032215852031444
     },
     {
-      "id": 65,
+      "id": "AceApache-1778526187000-11",
       "nation": "france",
       "branch": "army",
       "name": "XIII Corp",
@@ -18938,7 +18938,7 @@
       "lon": -4.6526398043331145
     },
     {
-      "id": 66,
+      "id": "AceApache-1778526187000-12",
       "nation": "france",
       "branch": "army",
       "name": "XIV Corp",
@@ -18948,7 +18948,7 @@
       "lon": -1.450819068491758
     },
     {
-      "id": 67,
+      "id": "AceApache-1778526187000-13",
       "nation": "france",
       "branch": "army",
       "name": "XVI Corp",
@@ -18958,7 +18958,7 @@
       "lon": 1.7238611185665103
     },
     {
-      "id": 68,
+      "id": "AceApache-1778526187000-14",
       "nation": "france",
       "branch": "army",
       "name": "XVI Corp",
@@ -18968,7 +18968,7 @@
       "lon": 11.42413425356181
     },
     {
-      "id": 69,
+      "id": "AceApache-1778526187000-15",
       "nation": "france",
       "branch": "army",
       "name": "XVII Corp",
@@ -18978,7 +18978,7 @@
       "lon": 12.896131295312015
     },
     {
-      "id": 70,
+      "id": "AceApache-1778526187000-16",
       "nation": "france",
       "branch": "army",
       "name": "XVIII Corp",
@@ -18988,7 +18988,7 @@
       "lon": 10.634573013231586
     },
     {
-      "id": 71,
+      "id": "AceApache-1778526187000-17",
       "nation": "france",
       "branch": "army",
       "name": "XVIV Corp",
@@ -18998,7 +18998,7 @@
       "lon": -1.5609476692638304
     },
     {
-      "id": 72,
+      "id": "AceApache-1778526187000-18",
       "nation": "france",
       "branch": "army",
       "name": "XX Corp",
@@ -19008,7 +19008,7 @@
       "lon": 4.42590597069036
     },
     {
-      "id": 73,
+      "id": "AceApache-1778526187000-19",
       "nation": "poland",
       "branch": "army",
       "name": "I Korpus",
@@ -19018,7 +19018,7 @@
       "lon": 16.302893294165205
     },
     {
-      "id": 74,
+      "id": "AceApache-1778526187000-20",
       "nation": "poland",
       "branch": "army",
       "name": "II Korpus",
@@ -19028,7 +19028,7 @@
       "lon": 16.949243016877908
     },
     {
-      "id": 75,
+      "id": "AceApache-1778526187000-21",
       "nation": "poland",
       "branch": "army",
       "name": "III Korpus",
@@ -19038,7 +19038,7 @@
       "lon": 16.64342992322682
     },
     {
-      "id": 76,
+      "id": "AceApache-1778526187000-22",
       "nation": "poland",
       "branch": "army",
       "name": "IV Korpus",
@@ -19048,7 +19048,7 @@
       "lon": 21.004495785725585
     },
     {
-      "id": 77,
+      "id": "RadetzkyNTW-1778528727000-0",
       "nation": "austria",
       "branch": "army",
       "name": "II Corps",
@@ -19058,7 +19058,7 @@
       "lon": 15.787353515625002
     },
     {
-      "id": 78,
+      "id": "RadetzkyNTW-1778528727000-1",
       "nation": "austria",
       "branch": "army",
       "name": "III Corps",
@@ -19068,7 +19068,7 @@
       "lon": 13.645019531250002
     },
     {
-      "id": 79,
+      "id": "RadetzkyNTW-1778528727000-2",
       "nation": "austria",
       "branch": "army",
       "name": "III Corps",
@@ -19078,7 +19078,7 @@
       "lon": 12.568359375000002
     },
     {
-      "id": 80,
+      "id": "RadetzkyNTW-1778528727000-3",
       "nation": "austria",
       "branch": "army",
       "name": "IV Corps",
@@ -19088,7 +19088,7 @@
       "lon": 10.72265625
     },
     {
-      "id": 81,
+      "id": "RadetzkyNTW-1778528727000-4",
       "nation": "austria",
       "branch": "army",
       "name": "V Corps",
@@ -19098,7 +19098,7 @@
       "lon": 8.942871093750002
     },
     {
-      "id": 82,
+      "id": "RadetzkyNTW-1778528727000-5",
       "nation": "austria",
       "branch": "army",
       "name": "VI Corps",
@@ -19108,7 +19108,7 @@
       "lon": 11.689453125000002
     },
     {
-      "id": 83,
+      "id": "RadetzkyNTW-1778528727000-6",
       "nation": "austria",
       "branch": "army",
       "name": "VII Corps",
@@ -19118,7 +19118,7 @@
       "lon": 16.325683593750004
     },
     {
-      "id": 84,
+      "id": "RadetzkyNTW-1778528727000-7",
       "nation": "austria",
       "branch": "army",
       "name": "VIII Corps",
@@ -19128,7 +19128,7 @@
       "lon": 20.258789062500004
     },
     {
-      "id": 85,
+      "id": "RadetzkyNTW-1778528727000-8",
       "nation": "austria",
       "branch": "army",
       "name": "IX Corps",
@@ -19138,7 +19138,7 @@
       "lon": 24.367675781250004
     },
     {
-      "id": 86,
+      "id": "RadetzkyNTW-1778528727000-9",
       "nation": "austria",
       "branch": "army",
       "name": "I Korps",
@@ -19148,7 +19148,7 @@
       "lon": 16.452026367187504
     },
     {
-      "id": 87,
+      "id": "RadetzkyNTW-1778528727000-10",
       "nation": "austria",
       "branch": "army",
       "name": "XII Corps",
@@ -19158,7 +19158,7 @@
       "lon": 20.324707031250004
     },
     {
-      "id": 88,
+      "id": "RadetzkyNTW-1778528727000-11",
       "nation": "austria",
       "branch": "army",
       "name": "XIII Corps",
@@ -19168,7 +19168,7 @@
       "lon": 18.413085937500004
     },
     {
-      "id": 89,
+      "id": "Vancouver1903-1778540725000-0",
       "nation": "russia",
       "branch": "army",
       "name": "Army of Ukraine",
@@ -19178,7 +19178,7 @@
       "lon": 26.707763671875004
     },
     {
-      "id": 90,
+      "id": "Vancouver1903-1778540725000-1",
       "nation": "russia",
       "branch": "army",
       "name": "Army of Ruthenia",
@@ -19188,7 +19188,7 @@
       "lon": 26.828613281250004
     },
     {
-      "id": 91,
+      "id": "Vancouver1903-1778540725000-2",
       "nation": "russia",
       "branch": "army",
       "name": "Army of Caucasia",
@@ -19198,7 +19198,6 @@
       "lon": 33.55808258056641
     }
   ],
-  "nextForceId": 92,
   "countries": [
     {
       "name": "afghanistan",

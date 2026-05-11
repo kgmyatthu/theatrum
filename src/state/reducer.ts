@@ -50,7 +50,6 @@ export function reducer(state: AppState, action: Action): AppState {
         owners,
         palette,
         forces: (snapshot.forces ?? []).map(normalizeForce),
-        nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],
@@ -142,7 +141,6 @@ export function reducer(state: AppState, action: Action): AppState {
       return {
         ...state,
         forces: [...state.forces, normalizeForce(action.payload.force)],
-        nextForceId: state.nextForceId + 1,
       };
     }
 
@@ -228,7 +226,6 @@ export function reducer(state: AppState, action: Action): AppState {
         owners,
         palette,
         forces: (snapshot.forces ?? []).map(normalizeForce),
-        nextForceId: snapshot.nextForceId ?? 1,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],

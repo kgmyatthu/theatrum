@@ -21,7 +21,6 @@ export interface AppState {
   palette: Palette;
 
   forces: Force[];
-  nextForceId: number;
 
   selectedFids: ReadonlySet<number>;
 
@@ -73,7 +72,6 @@ export const initialState: AppState = {
   owners: [],
   palette: {},
   forces: [],
-  nextForceId: 1,
   selectedFids: new Set(),
   layerVisibility: {
     provinces: true,

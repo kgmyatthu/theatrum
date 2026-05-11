@@ -109,7 +109,7 @@ export function useForcesLayer({
     const markers: L.Marker[] = [];
 
     // Per-marker drag artifacts (line + distance label)
-    const artifacts = new Map<number, DragArtifacts>();
+    const artifacts = new Map<string, DragArtifacts>();
     const initialScale = iconScale * zoomScaleFactor(map.getZoom());
 
     for (const force of forces) {

@@ -3,6 +3,7 @@ import type L from 'leaflet';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { useForceDraft } from '@/state/ForceDraftContext';
 import { useAuth } from '@/auth/AuthContext';
+import { mintForceId } from '@/utils/forceId';
 
 interface UseAddForceClickOptions {
   mapRef: RefObject<L.Map | null>;
@@ -18,7 +19,7 @@ interface UseAddForceClickOptions {
  * its UI too — this is defense in depth).
  */
 export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions): void {
-  const { mode, nextForceId } = useAppState();
+  const { mode } = useAppState();
   const dispatch = useAppDispatch();
   const { draftRef } = useForceDraft();
   const auth = useAuth();
@@ -42,11 +43,12 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
         onStatus?.('Choose a nation in the form before placing.');
         return;
       }
+      if (!auth.login) return; // narrowing — authenticated implies login
       dispatch({
         type: 'ADD_FORCE',
         payload: {
           force: {
-            id: nextForceId,
+            id: mintForceId(auth.login),
             nation,
             branch: draft.branch,
             name: draft.name,
@@ -63,5 +65,5 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
     return () => {
       map.off('click', handler);
     };
-  }, [mapRef, mode, nextForceId, dispatch, draftRef, onStatus, auth.status, auth.role, auth.nation]);
+  }, [mapRef, mode, dispatch, draftRef, onStatus, auth.status, auth.role, auth.nation, auth.login]);
 }

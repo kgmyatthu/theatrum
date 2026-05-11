@@ -42,7 +42,12 @@ export interface City {
 export type ForceBranch = 'army' | 'navy';
 
 export interface Force {
-  id: number;
+  /**
+   * Deterministic ID minted client-side as `${login}-${epochMs}-${seq}`.
+   * Self-namespacing per user, so concurrent army adds across two players
+   * never collide. Legacy seed forces use numeric strings ("1", "2", ...).
+   */
+  id: string;
   nation: string;
   branch: ForceBranch;
   name: string;
@@ -73,7 +78,6 @@ export interface AppSnapshot {
   /** [fid, owner] pairs — only the current ownership map. */
   ownerships: Array<[number, string]>;
   forces: Force[];
-  nextForceId: number;
   /** Full country list — name + color. No built-in / custom split. */
   countries: Country[];
   appVersion?: string;

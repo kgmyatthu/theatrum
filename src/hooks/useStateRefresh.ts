@@ -69,7 +69,6 @@ export function useStateRefresh(): { conflict: boolean } {
     const snap = buildSnapshot({
       provinces: state.provinces,
       forces: state.forces,
-      nextForceId: state.nextForceId,
       palette: state.palette,
       owners: state.owners,
     });
@@ -78,7 +77,6 @@ export function useStateRefresh(): { conflict: boolean } {
     state.loaded,
     state.provinces,
     state.forces,
-    state.nextForceId,
     state.palette,
     state.owners,
   ]);
@@ -133,7 +131,6 @@ export function useStateRefresh(): { conflict: boolean } {
       const localSnap = buildSnapshot({
         provinces: cur.provinces,
         forces: cur.forces,
-        nextForceId: cur.nextForceId,
         palette: cur.palette,
         owners: cur.owners,
       });

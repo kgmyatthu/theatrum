@@ -38,8 +38,13 @@ const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : s);
 // _fid is the feature's array index (assigned at runtime in BOOTSTRAP_DATA).
 const ownerships = provinces.features.map((f, i) => [i, lc(f.properties.owner)]);
 
-const nextForceId = Math.max(0, ...forces.map((f) => f.id)) + 1;
-for (const f of forces) f.nation = lc(f.nation);
+// Force IDs are strings at runtime (deterministic ${login}-${epochMs}-${seq}
+// for new ones; legacy seed forces are numeric strings). Coerce the seed
+// numerics here so the baked snapshot conforms to the runtime type.
+for (const f of forces) {
+  f.id = String(f.id);
+  f.nation = lc(f.nation);
+}
 
 const countries = ownerNames
   .filter((name) => typeof palette[name] === 'string')
@@ -51,10 +56,9 @@ if (missing.length > 0) {
 }
 
 const snapshot = {
-  appVersion: 'theatrum/v5',
+  appVersion: 'theatrum/v6',
   ownerships,
   forces,
-  nextForceId,
   countries,
 };
 
@@ -63,7 +67,6 @@ const snapshot = {
 fs.writeFileSync(OUT, JSON.stringify(snapshot, null, 2));
 
 console.log(`Wrote ${OUT}`);
-console.log(`  ownerships:  ${ownerships.length}`);
-console.log(`  countries:   ${countries.length}`);
-console.log(`  forces:      ${forces.length}`);
-console.log(`  nextForceId: ${nextForceId}`);
+console.log(`  ownerships: ${ownerships.length}`);
+console.log(`  countries:  ${countries.length}`);
+console.log(`  forces:     ${forces.length}`);

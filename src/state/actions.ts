@@ -17,8 +17,8 @@ export type Action =
   | { type: 'SET_ICON_SCALE'; payload: { scale: number } }
   | { type: 'ADD_FORCE'; payload: { force: Force } }
   | { type: 'UPDATE_FORCE'; payload: { force: Force } }
-  | { type: 'DELETE_FORCE'; payload: { id: number } }
-  | { type: 'MOVE_FORCE'; payload: { id: number; lat: number; lon: number } }
+  | { type: 'DELETE_FORCE'; payload: { id: string } }
+  | { type: 'MOVE_FORCE'; payload: { id: string; lat: number; lon: number } }
   | { type: 'TOGGLE_LAYER'; payload: { layer: 'provinces' | 'countryLabels' | 'cities' | 'forces' } }
   | { type: 'SET_MODE'; payload: { mode: 'view' | 'add-force' | 'ruler' } }
   | { type: 'SELECT_PROVINCES'; payload: { fids: number[]; mode: 'set' | 'add' | 'toggle' | 'clear' } }

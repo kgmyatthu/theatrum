@@ -23,7 +23,6 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     return buildSnapshot({
       provinces: state.provinces,
       forces: state.forces,
-      nextForceId: state.nextForceId,
       palette: state.palette,
       owners: state.owners,
     });
