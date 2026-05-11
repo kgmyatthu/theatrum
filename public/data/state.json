@@ -1775,7 +1775,7 @@
     ],
     [
       443,
-      "sweden"
+      "russia"
     ],
     [
       444,
@@ -1783,7 +1783,7 @@
     ],
     [
       445,
-      "sweden"
+      "russia"
     ],
     [
       446,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "sweden"
+      "russia"
     ],
     [
       2389,
-      "sweden"
+      "russia"
     ],
     [
       2390,
@@ -18546,9 +18546,49 @@
       "commander": "",
       "lat": 42.70665956351041,
       "lon": 23.32217536868864
+    },
+    {
+      "id": 27,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "BERNADOTTE'S ARMY OF FINLAND",
+      "strength": 47000,
+      "commander": "Charles XIII",
+      "lat": 61.01572481397616,
+      "lon": 24.19189453125
+    },
+    {
+      "id": 28,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "XI CORPS",
+      "strength": 16000,
+      "commander": "JOHAN CHRISTOPHER TOLL",
+      "lat": 60.261617082844616,
+      "lon": 19.753417968750004
+    },
+    {
+      "id": 29,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "PORI GARRISON",
+      "strength": 3600,
+      "commander": "JOHAN CHRISTOPHER TOLL",
+      "lat": 61.0954790195121,
+      "lon": 21.566162109375
+    },
+    {
+      "id": 30,
+      "nation": "sweden",
+      "branch": "army",
+      "name": "ARMY OF SCANIA",
+      "strength": 7800,
+      "commander": "MARUITZ KLINGSPLOR",
+      "lat": 55.56592203025787,
+      "lon": 13.128662109375002
     }
   ],
-  "nextForceId": 27,
+  "nextForceId": 31,
   "countries": [
     {
       "name": "afghanistan",
