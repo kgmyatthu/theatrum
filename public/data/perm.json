@@ -33,5 +33,9 @@
   },
   "AceApache": {
     "role": "admin"
+  },
+  "KingRed2007": {
+    "role": "player",
+    "nation": "britain"
   }
 }
