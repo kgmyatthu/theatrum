@@ -18401,8 +18401,8 @@
       "id": 6,
       "nation": "austria",
       "branch": "army",
-      "name": "Army of Italy",
-      "strength": 50000,
+      "name": "X Corps",
+      "strength": 30000,
       "commander": "Beaulieu",
       "lon": 24.675292968750004,
       "lat": 49.06666839558117
@@ -18411,8 +18411,8 @@
       "id": 7,
       "nation": "austria",
       "branch": "army",
-      "name": "Army of the Rhine",
-      "strength": 80000,
+      "name": "XI Korps",
+      "strength": 40000,
       "commander": "Charles",
       "lon": 23.664550781250004,
       "lat": 50.00773901463687
@@ -19046,9 +19046,129 @@
       "commander": "Jozef Chlopicki",
       "lat": 53.1999609704001,
       "lon": 21.004495785725585
+    },
+    {
+      "id": 77,
+      "nation": "austria",
+      "branch": "army",
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 51.27566243415853,
+      "lon": 15.787353515625002
+    },
+    {
+      "id": 78,
+      "nation": "austria",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 51.03448563297415,
+      "lon": 13.645019531250002
+    },
+    {
+      "id": 79,
+      "nation": "austria",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.534380406110806,
+      "lon": 12.568359375000002
+    },
+    {
+      "id": 80,
+      "nation": "austria",
+      "branch": "army",
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.085344397538876,
+      "lon": 10.72265625
+    },
+    {
+      "id": 81,
+      "nation": "austria",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 48.63290858589535,
+      "lon": 8.942871093750002
+    },
+    {
+      "id": 82,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 46.51351558059737,
+      "lon": 11.689453125000002
+    },
+    {
+      "id": 83,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.81348649679973,
+      "lon": 16.325683593750004
+    },
+    {
+      "id": 84,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.82879925192134,
+      "lon": 20.258789062500004
+    },
+    {
+      "id": 85,
+      "nation": "austria",
+      "branch": "army",
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 46.70973594407157,
+      "lon": 24.367675781250004
+    },
+    {
+      "id": 86,
+      "nation": "austria",
+      "branch": "army",
+      "name": "I Korps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 48.26491251331118,
+      "lon": 16.452026367187504
+    },
+    {
+      "id": 87,
+      "nation": "austria",
+      "branch": "army",
+      "name": "XII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 49.92293545449574,
+      "lon": 20.324707031250004
+    },
+    {
+      "id": 88,
+      "nation": "austria",
+      "branch": "army",
+      "name": "XIII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.708634400828224,
+      "lon": 18.413085937500004
     }
   ],
-  "nextForceId": 77,
+  "nextForceId": 89,
   "countries": [
     {
       "name": "afghanistan",
