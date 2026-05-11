@@ -18564,8 +18564,8 @@
       "name": "XI ARMY-CORPS",
       "strength": 16000,
       "commander": "JOHAN CHRISTOPHER TOLL",
-      "lat": 60.261617082844616,
-      "lon": 19.753417968750004
+      "lat": 60.37586010056013,
+      "lon": 21.489257812500004
     },
     {
       "id": 29,
@@ -18573,7 +18573,7 @@
       "branch": "army",
       "name": "PORI GARRISON",
       "strength": 3600,
-      "commander": "JOHAN CHRISTOPHER TOLL",
+      "commander": "Johan Adam Cronstedt",
       "lat": 61.0954790195121,
       "lon": 21.566162109375
     },
@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 55.56592203025787,
-      "lon": 13.128662109375002
+      "lat": 56.139428693863266,
+      "lon": 12.963867187500002
     },
     {
       "id": 31,
@@ -18634,8 +18634,8 @@
       "name": "III ARMY-CORPS",
       "strength": 7000,
       "commander": "Gustaf Fredrik Morner",
-      "lat": 61.91827102335593,
-      "lon": 28.388671875000004
+      "lat": 61.21737938763191,
+      "lon": 29.366455078125004
     },
     {
       "id": 36,
