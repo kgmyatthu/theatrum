@@ -19046,9 +19046,109 @@
       "commander": "Jozef Chlopicki",
       "lat": 53.1999609704001,
       "lon": 21.004495785725585
+    },
+    {
+      "id": 77,
+      "nation": "austria",
+      "branch": "army",
+      "name": "I Corps",
+      "strength": 15000,
+      "commander": "",
+      "lat": 48.268569112964364,
+      "lon": 16.325683593750004
+    },
+    {
+      "id": 78,
+      "nation": "austria",
+      "branch": "army",
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.84757295365389,
+      "lon": 13.293457031250002
+    },
+    {
+      "id": 79,
+      "nation": "austria",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 51.08282186160978,
+      "lon": 15.051269531250002
+    },
+    {
+      "id": 80,
+      "nation": "austria",
+      "branch": "army",
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 50.317408112618715,
+      "lon": 12.01904296875
+    },
+    {
+      "id": 81,
+      "nation": "austria",
+      "branch": "army",
+      "name": "V Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 49.95121990866204,
+      "lon": 10.546875000000002
+    },
+    {
+      "id": 82,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VI Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 49.396675075193976,
+      "lon": 9.074707031250002
+    },
+    {
+      "id": 83,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VII Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 48.03401915864286,
+      "lon": 8.195800781250002
+    },
+    {
+      "id": 84,
+      "nation": "austria",
+      "branch": "army",
+      "name": "VIII Corps",
+      "strength": 30000,
+      "commander": "Radetzky",
+      "lat": 46.13417004624326,
+      "lon": 24.521484375000004
+    },
+    {
+      "id": 85,
+      "nation": "austria",
+      "branch": "army",
+      "name": "IX Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.99696161820381,
+      "lon": 11.887207031250002
+    },
+    {
+      "id": 86,
+      "nation": "austria",
+      "branch": "army",
+      "name": "X Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 45.55252525134013,
+      "lon": 16.457519531250004
     }
   ],
-  "nextForceId": 77,
+  "nextForceId": 87,
   "countries": [
     {
       "name": "afghanistan",
@@ -19304,7 +19404,7 @@
     },
     {
       "name": "sweden",
-      "color": "#034e7c"
+      "color": "#1B5E9F"
     },
     {
       "name": "switzerland",
