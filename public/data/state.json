@@ -1755,7 +1755,7 @@
     ],
     [
       438,
-      "contested territories"
+      "russia"
     ],
     [
       439,
@@ -9555,11 +9555,11 @@
     ],
     [
       2388,
-      "contested territories"
+      "russia"
     ],
     [
       2389,
-      "contested territories"
+      "russia"
     ],
     [
       2390,
@@ -10159,7 +10159,7 @@
     ],
     [
       2539,
-      "hre minor states"
+      "prussia"
     ],
     [
       2540,
@@ -18684,8 +18684,8 @@
       "name": "IV Corps",
       "strength": 30000,
       "commander": "Gen. Bogislav von Tauentzien",
-      "lat": 50.590179511174554,
-      "lon": 6.910385055427848
+      "lat": 50.68770766881034,
+      "lon": 7.206927737419214
     },
     {
       "id": 41,
@@ -18694,8 +18694,8 @@
       "name": "V Corps",
       "strength": 30000,
       "commander": "Gen. Hans David von Yorck",
-      "lat": 49.95127103394974,
-      "lon": 7.712448349341457
+      "lat": 50.134569737204906,
+      "lon": 7.997947196218492
     },
     {
       "id": 42,
@@ -18774,8 +18774,8 @@
       "name": "XIII Corps",
       "strength": 30000,
       "commander": "Gen. August Neidhardt von Gneisenau",
-      "lat": 54.47696239547075,
-      "lon": 20.519869289180814
+      "lat": 54.07249578464433,
+      "lon": 20.7201458353628
     }
   ],
   "nextForceId": 50,
@@ -18835,10 +18835,6 @@
     {
       "name": "china",
       "color": "#E8A317"
-    },
-    {
-      "name": "contested territories",
-      "color": "#ffffff"
     },
     {
       "name": "dahomey",
