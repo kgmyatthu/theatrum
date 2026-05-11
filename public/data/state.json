@@ -18664,8 +18664,8 @@
       "name": "II Corps",
       "strength": 30000,
       "commander": "Gen. Gebhard Leberecht von Blücher",
-      "lat": 52.01866315407693,
-      "lon": 7.097179470147875
+      "lat": 52.049096679424196,
+      "lon": 6.970869284004318
     },
     {
       "id": 39,
@@ -18674,8 +18674,8 @@
       "name": "III Corps",
       "strength": 30000,
       "commander": "Gen. Ludwig von Wallmoden-Gimborn",
-      "lat": 51.28937750789603,
-      "lon": 6.624729022779975
+      "lat": 51.27910401205116,
+      "lon": 6.300678348683931
     },
     {
       "id": 40,
@@ -18684,8 +18684,8 @@
       "name": "IV Corps",
       "strength": 30000,
       "commander": "Gen. Bogislav von Tauentzien",
-      "lat": 50.68770766881034,
-      "lon": 7.206927737419214
+      "lat": 50.45755641289912,
+      "lon": 6.520439415377553
     },
     {
       "id": 41,
