@@ -18586,9 +18586,19 @@
       "commander": "MARUITZ KLINGSPLOR",
       "lat": 55.56592203025787,
       "lon": 13.128662109375002
+    },
+    {
+      "id": 31,
+      "nation": "sweden",
+      "branch": "navy",
+      "name": "SWEDISH BATTLEFLEET",
+      "strength": 50,
+      "commander": "Rudolf Cederstrom",
+      "lat": 56.225031333026806,
+      "lon": 15.380859375000002
     }
   ],
-  "nextForceId": 31,
+  "nextForceId": 32,
   "countries": [
     {
       "name": "afghanistan",
