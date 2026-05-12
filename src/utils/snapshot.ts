@@ -5,6 +5,7 @@ import type {
   Palette,
   ProvinceCollection,
 } from '@/types';
+import { SCHEMA_VERSION } from './schema';
 
 export interface SnapshotInputs {
   provinces: ProvinceCollection;
@@ -25,7 +26,7 @@ function buildCountries(owners: string[], palette: Palette): Country[] {
 
 export function buildSnapshot(inputs: SnapshotInputs): AppSnapshot {
   return {
-    appVersion: 'theatrum/v6',
+    appVersion: SCHEMA_VERSION,
     ownerships: inputs.provinces.features.map(
       (f) => [f.properties._fid, f.properties.owner] as [number, string],
     ),

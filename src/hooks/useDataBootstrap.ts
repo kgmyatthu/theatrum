@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '@/state/AppContext';
 import { fetchLiveData } from '@/utils/liveData';
+import { flagStaleClientFromSnapshot } from '@/hooks/useStateRefresh';
 import type { AppSnapshot, City, ProvinceCollection } from '@/types';
 
 interface Manifest {
@@ -37,6 +38,10 @@ export function useDataBootstrap(): void {
       .then((m) => {
         if (cancelled) return;
         dispatch({ type: 'BOOTSTRAP_DATA', payload: m });
+        // Surface the refresh modal at page load if main's state.json
+        // already declares a schema this bundle wasn't compiled for —
+        // no need to wait for the 30-min polling tick to notice.
+        flagStaleClientFromSnapshot(m.snapshot);
       })
       .catch((err) => {
         // eslint-disable-next-line no-console

@@ -3,6 +3,7 @@ import type { AppSnapshot } from '@/types';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { buildSnapshot } from '@/utils/snapshot';
 import { fetchLiveDataFresh } from '@/utils/liveData';
+import { SCHEMA_VERSION } from '@/utils/schema';
 
 const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 
@@ -10,9 +11,11 @@ const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 // modal) to talk to the refresh loop. Set when the hook mounts.
 type SyncBaselineFn = (snapshot: AppSnapshot) => void;
 type SetSubmittingFn = (submitting: boolean) => void;
+type FlagStaleFn = (remoteVersion: string | undefined) => void;
 const handle = {
   syncBaseline: ((_s: AppSnapshot) => {}) as SyncBaselineFn,
   setSubmitting: ((_b: boolean) => {}) as SetSubmittingFn,
+  flagStale: ((_v: string | undefined) => {}) as FlagStaleFn,
 };
 
 /** Call after dispatching APPLY_SNAPSHOT so useStateRefresh updates its
@@ -34,6 +37,15 @@ export function setStateRefreshSubmitting(submitting: boolean): void {
 }
 
 /**
+ * Called by the bootstrap loader the moment it sees a snapshot whose
+ * appVersion doesn't match our compiled-in SCHEMA_VERSION. Surfaces the
+ * stale-client modal at page load instead of waiting for the 30-min poll.
+ */
+export function flagStaleClientFromSnapshot(snapshot: AppSnapshot): void {
+  handle.flagStale(snapshot.appVersion);
+}
+
+/**
  * Polls main's state.json every REFRESH_INTERVAL_MS and reconciles with local state:
  *
  *   remote == baseline → nothing changed upstream, ignore.
@@ -50,13 +62,15 @@ export function setStateRefreshSubmitting(submitting: boolean): void {
  * to clear it. Module-level SHA cache in liveData is bypassed via
  * fetchLiveDataFresh so we actually pick up new commits.
  */
-export function useStateRefresh(): { conflict: boolean } {
+export function useStateRefresh(): { conflict: boolean; stale: boolean } {
   const dispatch = useAppDispatch();
   const state = useAppState();
   const [conflict, setConflict] = useState(false);
+  const [stale, setStale] = useState(false);
 
   const baselineRef = useRef<string | null>(null);
   const conflictRef = useRef(false);
+  const staleRef = useRef(false);
   const submittingRef = useRef(false);
   // Keep a live ref to the latest state so the interval callback (which
   // closes over `state` from when it was set up) reads fresh values.
@@ -94,9 +108,16 @@ export function useStateRefresh(): { conflict: boolean } {
     handle.setSubmitting = (b) => {
       submittingRef.current = b;
     };
+    handle.flagStale = (remoteVersion) => {
+      if (staleRef.current) return; // idempotent
+      if (remoteVersion === SCHEMA_VERSION) return;
+      staleRef.current = true;
+      setStale(true);
+    };
     return () => {
       handle.syncBaseline = () => {};
       handle.setSubmitting = () => {};
+      handle.flagStale = () => {};
     };
   }, []);
 
@@ -119,6 +140,18 @@ export function useStateRefresh(): { conflict: boolean } {
         // Transient — try again next tick.
         // eslint-disable-next-line no-console
         console.warn('State refresh failed:', err);
+        return;
+      }
+
+      // Schema-bump detection — main moved to a version this bundle
+      // doesn't know how to round-trip. Surface the refresh prompt and
+      // bail before we apply anything; the user's edits would just get
+      // rejected by the validator's schema gate anyway.
+      if (remote.appVersion !== SCHEMA_VERSION) {
+        if (!staleRef.current) {
+          staleRef.current = true;
+          setStale(true);
+        }
         return;
       }
 
@@ -151,5 +184,5 @@ export function useStateRefresh(): { conflict: boolean } {
     return () => clearInterval(id);
   }, [state.loaded, dispatch]);
 
-  return { conflict };
+  return { conflict, stale };
 }
