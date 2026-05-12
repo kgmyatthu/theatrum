@@ -56,8 +56,8 @@
     "name": "X Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Jourdan",
-    "lat": 49.23907129203691,
-    "lon": 4.888742537475955
+    "lat": 49.65326212992575,
+    "lon": 6.168674637743671
   },
   {
     "id": "AceApache-1778526187000-5",
@@ -106,8 +106,8 @@
     "name": "XI Corp",
     "strength": 30000,
     "commander": "Dominique Vandamme",
-    "lat": 50.83723516209102,
-    "lon": 4.339494374468412
+    "lat": 50.66345059116828,
+    "lon": 5.630343284044025
   },
   {
     "id": "AceApache-1778526187000-10",
@@ -146,8 +146,8 @@
     "name": "XVI Corp",
     "strength": 30000,
     "commander": "Claude Victor Perrin",
-    "lat": 50.28232914724808,
-    "lon": 4.158165110697017
+    "lat": 50.33842951579579,
+    "lon": 5.553426869210108
   },
   {
     "id": "AceApache-1778526187000-14",
