@@ -116,8 +116,8 @@
     "name": "I Korps",
     "strength": 30000,
     "commander": "",
-    "lat": 48.26491251331118,
-    "lon": 16.452026367187504
+    "lat": 51.01375465718821,
+    "lon": 13.732910156250002
   },
   {
     "id": "RadetzkyNTW-1778528727000-10",
@@ -138,5 +138,15 @@
     "commander": "",
     "lat": 50.708634400828224,
     "lon": 18.413085937500004
+  },
+  {
+    "id": "RadetzkyNTW-1778552119679-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Bohemia",
+    "strength": 90000,
+    "commander": "",
+    "lat": 49.62494564650146,
+    "lon": 13.156127929687502
   }
 ]
