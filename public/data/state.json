@@ -19236,6 +19236,16 @@
       "commander": "Steen Andersen Bille",
       "lat": 54.83233630197034,
       "lon": 10.458984375000002
+    },
+    {
+      "id": "RadetzkyNTW-1778548569819-0",
+      "nation": "austria",
+      "branch": "army",
+      "name": "Army of Bohemia",
+      "strength": 90000,
+      "commander": "",
+      "lat": 49.74029024858135,
+      "lon": 13.371219635009766
     }
   ],
   "countries": [
