@@ -26,7 +26,8 @@
     "nation": "antilles"
   },
   "KingREN1-Suitman": {
-    "role": "admin"
+    "role": "player",
+    "nation": "prussia"
   },
   "yellowwithblue": {
     "role": "admin"
@@ -39,6 +40,11 @@
     "nation": "britain"
   },
   "Vancouver1903": {
-    "role": "admin"
+    "role": "player",
+    "nation": "russia"
+  },
+  "yourlocalgeobukseon": {
+    "role": "player",
+    "nation": "denmark"
   }
 }

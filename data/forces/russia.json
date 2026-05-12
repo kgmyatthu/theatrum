@@ -1,0 +1,72 @@
+[
+  {
+    "id": "seed-1778367500000-3",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of the Cossack",
+    "strength": 30000,
+    "commander": "Matvei Platov",
+    "lon": 26.608886718750004,
+    "lat": 49.774169585277406
+  },
+  {
+    "id": "yellowwithblue-1778478796000-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "ARMY OF FINLAND",
+    "strength": 60000,
+    "commander": "Alexander I",
+    "lat": 55.21649013168979,
+    "lon": 25.312500000000004
+  },
+  {
+    "id": "yellowwithblue-1778478796000-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "WESTERN ARMY OF FINLAND",
+    "strength": 60000,
+    "commander": "Konstantin Pavlovich",
+    "lat": 60.694695372877476,
+    "lon": 22.401123046875004
+  },
+  {
+    "id": "yellowwithblue-1778478796000-2",
+    "nation": "russia",
+    "branch": "army",
+    "name": "ARMY OF THE BALTICS",
+    "strength": 23000,
+    "commander": "Mikhail Bulatov",
+    "lat": 54.87660665410869,
+    "lon": 24.884033203125004
+  },
+  {
+    "id": "Vancouver1903-1778540725000-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of Ukraine",
+    "strength": 54000,
+    "commander": "Mikhail Kutuzov",
+    "lat": 48.857487002645485,
+    "lon": 26.707763671875004
+  },
+  {
+    "id": "Vancouver1903-1778540725000-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of Ruthenia",
+    "strength": 54000,
+    "commander": "Pyotr Bagration",
+    "lat": 53.350551318399916,
+    "lon": 25.147705078125004
+  },
+  {
+    "id": "Vancouver1903-1778540725000-2",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of Caucasia",
+    "strength": 42000,
+    "commander": "Barclay de Tolly",
+    "lat": 44.59829048984011,
+    "lon": 33.55808258056641
+  }
+]
