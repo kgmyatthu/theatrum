@@ -20,46 +20,6 @@
     "lon": 11.656494140625002
   },
   {
-    "id": "KingRed2007-1778549548547-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "I Corp",
-    "strength": 30000,
-    "commander": "",
-    "lat": 43.27720532212024,
-    "lon": -4.886169433593751
-  },
-  {
-    "id": "KingRed2007-1778549555321-1",
-    "nation": "britain",
-    "branch": "army",
-    "name": "II Corp",
-    "strength": 30000,
-    "commander": "",
-    "lat": 42.83166720261409,
-    "lon": -5.042724609375001
-  },
-  {
-    "id": "KingRed2007-1778549563129-2",
-    "nation": "britain",
-    "branch": "army",
-    "name": "III Corp",
-    "strength": 30000,
-    "commander": "",
-    "lat": 42.382894009614034,
-    "lon": -5.122375488281251
-  },
-  {
-    "id": "KingRed2007-1778549569688-3",
-    "nation": "britain",
-    "branch": "army",
-    "name": "IV Corp",
-    "strength": 30000,
-    "commander": "",
-    "lat": 42.597070956721446,
-    "lon": -5.041694641113282
-  },
-  {
     "id": "KingRed2007-1778549579648-4",
     "nation": "britain",
     "branch": "army",

@@ -53,9 +53,9 @@
     "id": "AceApache-1778526187000-4",
     "nation": "french empire",
     "branch": "army",
-    "name": "VI Corp",
+    "name": "X Corp",
     "strength": 30000,
-    "commander": "Michel Ney",
+    "commander": "Jean-Baptiste Jourdan",
     "lat": 49.23907129203691,
     "lon": 4.888742537475955
   },
@@ -93,9 +93,9 @@
     "id": "AceApache-1778526187000-8",
     "nation": "french empire",
     "branch": "army",
-    "name": "X Corp",
+    "name": "VI Corp",
     "strength": 30000,
-    "commander": "Jean-Baptiste Jourdan",
+    "commander": "Michel Ney",
     "lat": 42.78722577018684,
     "lon": -4.542650878982512
   },
