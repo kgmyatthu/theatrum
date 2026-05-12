@@ -18552,7 +18552,7 @@
       "nation": "sweden",
       "branch": "army",
       "name": "BERNADOTTE'S ARMY OF THE NORTH",
-      "strength": 156000,
+      "strength": 126000,
       "commander": "Charles XIII",
       "lat": 51.38892310050487,
       "lon": 12.450256347656252
@@ -18788,16 +18788,6 @@
       "lon": -79.34326171875001
     },
     {
-      "id": "KingRed2007-1778521313000-0",
-      "nation": "britain",
-      "branch": "army",
-      "name": "Anglo-Spanish Army",
-      "strength": 60000,
-      "commander": "Arthur Wellesley",
-      "lat": 43.328674183738606,
-      "lon": -8.366088867187502
-    },
-    {
       "id": "KingRed2007-1778521313000-1",
       "nation": "britain",
       "branch": "navy",
@@ -18814,8 +18804,8 @@
       "name": "I Corp",
       "strength": 30000,
       "commander": "Auguste de Marmont",
-      "lat": 55.59380528078022,
-      "lon": 11.986015741132544
+      "lat": 55.584554519645074,
+      "lon": 9.596557617187502
     },
     {
       "id": "AceApache-1778526187000-0",
@@ -18834,8 +18824,8 @@
       "name": "III Corp",
       "strength": 30000,
       "commander": "Saint-Cyr",
-      "lat": 55.33569570785867,
-      "lon": 10.281815299807676
+      "lat": 55.522411831398216,
+      "lon": 9.288940429687502
     },
     {
       "id": "AceApache-1778526187000-2",
@@ -18844,8 +18834,8 @@
       "name": "IV Corp",
       "strength": 30000,
       "commander": "Charles Gudin Sablonniere",
-      "lat": 49.41322185150463,
-      "lon": 0.4393791416716964
+      "lat": 49.53946900793534,
+      "lon": 1.636962890625
     },
     {
       "id": "AceApache-1778526187000-3",
@@ -18864,8 +18854,8 @@
       "name": "VI Corp",
       "strength": 30000,
       "commander": "Michel Ney",
-      "lat": 48.85105206965697,
-      "lon": 2.3278680818373503
+      "lat": 49.095452162534826,
+      "lon": 3.3947753906250004
     },
     {
       "id": "AceApache-1778526187000-5",
@@ -18884,8 +18874,8 @@
       "name": "VIII Corp",
       "strength": 30000,
       "commander": "Edouard Mortier",
-      "lat": 45.469887317012486,
-      "lon": 9.226481083472668
+      "lat": 45.78284835197676,
+      "lon": 9.667968750000002
     },
     {
       "id": "AceApache-1778526187000-7",
@@ -18914,8 +18904,8 @@
       "name": "XI Corp",
       "strength": 30000,
       "commander": "Dominique Vandamme",
-      "lat": 50.95044490297526,
-      "lon": 2.932307464906119
+      "lat": 51.03448563297415,
+      "lon": 3.4332275390625004
     },
     {
       "id": "AceApache-1778526187000-10",
@@ -18954,8 +18944,8 @@
       "name": "XVI Corp",
       "strength": 30000,
       "commander": "Claude Victor Perrin",
-      "lat": 50.36648392273347,
-      "lon": 1.7238611185665103
+      "lat": 50.31039245071915,
+      "lon": 2.7795410156250004
     },
     {
       "id": "AceApache-1778526187000-14",
@@ -18974,8 +18964,8 @@
       "name": "XVII Corp",
       "strength": 30000,
       "commander": "Eugene de Beauharnais",
-      "lat": 43.59055064830811,
-      "lon": 12.896131295312015
+      "lat": 43.78695837311561,
+      "lon": 12.282714843750002
     },
     {
       "id": "AceApache-1778526187000-16",
@@ -18984,8 +18974,8 @@
       "name": "XVIII Corp",
       "strength": 30000,
       "commander": "Louis de Saint-Hilaire",
-      "lat": 43.81018880786829,
-      "lon": 10.634573013231586
+      "lat": 44.15068115978094,
+      "lon": 10.458984375000002
     },
     {
       "id": "AceApache-1778526187000-17",
