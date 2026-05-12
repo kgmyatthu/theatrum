@@ -36,6 +36,8 @@ interface Env {
   ALLOWED_ORIGIN: string;
 }
 
+import { rebaseForceFile } from '../../scripts/lib/rebase-forces.mjs';
+
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
 // Keep in sync with src/utils/schema.ts and scripts/lib/validate-move-core.mjs.
@@ -490,6 +492,13 @@ async function syncNationForces(
 
 interface SubmitBody {
   snapshot?: unknown;
+  /**
+   * The bootstrap (or most-recently-polled) snapshot the player has been
+   * editing against. Required by the v2 submit path to power 3-way merge;
+   * omitted by older cached clients, in which case we fall back to blind
+   * commit semantics (the v7 behavior).
+   */
+  baseline?: unknown;
   description?: string;
   renames?: CountryRename[];
   userAdds?: UserAdd[];
@@ -542,6 +551,25 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   }
   if (!Array.isArray(snapshot.countries)) {
     return errorJson(origin, 400, 'snapshot.countries must be an array');
+  }
+
+  // baseline is optional (older cached clients won't send it). When
+  // present, structurally validate so the rebase math can't blow up on
+  // a malformed shape, then keep it for the 3-way merge below.
+  interface BaselineShape {
+    appVersion?: unknown;
+    ownerships: Array<[number, string]>;
+    countries: Array<{ name: string; color: string }>;
+    forces: ForceLike[];
+  }
+  let baseline: BaselineShape | undefined = undefined;
+  if (body.baseline && typeof body.baseline === 'object') {
+    const b = body.baseline as { forces?: unknown; ownerships?: unknown; countries?: unknown };
+    if (Array.isArray(b.forces) && Array.isArray(b.ownerships) && Array.isArray(b.countries)) {
+      baseline = body.baseline as unknown as BaselineShape;
+    }
+    // Silently drop a malformed baseline rather than rejecting — falls
+    // through to blind-commit semantics, same as a missing baseline.
   }
 
   let installToken: string;
@@ -637,28 +665,72 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   //    validator enforces the same rule. Admins can touch state.json
   //    (ownerships + countries) and every per-nation force file.
   //
-  //    The incoming `snapshot` is the unified in-memory view (flat forces
-  //    array). We decompose it server-side and only commit files whose
-  //    bytes actually changed against main — this keeps PRs minimal and
-  //    sidesteps the "stale baseline rolls back another player's work"
-  //    failure mode that caused the v6 rejections.
+  //    When the client sends a `baseline` (what they last saw on main),
+  //    we do per-nation 3-way merge: apply (snapshot - baseline) to
+  //    current main. This makes concurrent edits in the same nation
+  //    file no-ops for unchanged forces — exactly the rollback failure
+  //    mode the v6 schema couldn't dodge. Older cached clients that
+  //    don't send a baseline fall back to blind commit (v7 behavior).
   const incomingByNation = groupForcesByNation(snapshot.forces);
+  const baselineByNation = baseline ? groupForcesByNation(baseline.forces) : null;
+
+  /** Read main's per-nation file, rebase against baseline if we have one,
+   *  and commit the result. The rebase falls back to incoming-as-is when
+   *  baseline is absent or has no entry for this nation. */
+  async function commitNation(nation: string): Promise<void> {
+    const incoming = incomingByNation.get(nation) ?? [];
+    const path = `public/data/forces/${nation}.json`;
+    if (!baselineByNation) {
+      // Legacy / no-baseline path — preserve v7's blind-commit semantics.
+      await syncNationForces(
+        env.GITHUB_REPO,
+        branchName,
+        nation,
+        incoming,
+        login,
+        ts,
+        installToken,
+      );
+      return;
+    }
+    const onMain = await readFileOnMain(env.GITHUB_REPO, path, installToken);
+    const mainForces = onMain.exists ? (JSON.parse(onMain.content) as ForceLike[]) : [];
+    const baselineForces = baselineByNation.get(nation) ?? [];
+    const merged = rebaseForceFile(baselineForces, incoming, mainForces) as ForceLike[];
+
+    const newJson = merged.length > 0 ? JSON.stringify(merged, null, 2) + '\n' : '';
+    const mainJson = onMain.exists ? onMain.content : '';
+    if (newJson === mainJson) return; // no-op after rebase
+    if (merged.length === 0 && onMain.exists) {
+      await deleteFile(
+        env.GITHUB_REPO,
+        path,
+        branchName,
+        onMain.sha,
+        `forces: @${login} clear ${nation} ${ts}`,
+        installToken,
+      );
+      return;
+    }
+    if (merged.length > 0) {
+      await commitFile(
+        env.GITHUB_REPO,
+        path,
+        branchName,
+        newJson,
+        `move: @${login} ${nation} ${ts}`,
+        installToken,
+        onMain.exists ? onMain.sha : undefined,
+      );
+    }
+  }
+
   try {
     if (!isAdmin) {
       if (!entry.nation) {
         return errorJson(origin, 403, `@${login} has no nation assigned in perm.json`);
       }
-      const playerNation = normalizeNation(entry.nation);
-      const playerForces = incomingByNation.get(playerNation) ?? [];
-      await syncNationForces(
-        env.GITHUB_REPO,
-        branchName,
-        playerNation,
-        playerForces,
-        login,
-        ts,
-        installToken,
-      );
+      await commitNation(normalizeNation(entry.nation));
     } else {
       // Admin: state.json + every force file that differs. We need the
       // union of (nations that already have a force file on main) and
@@ -672,6 +744,39 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       if (!stateOnMain.exists) {
         return errorJson(origin, 502, 'state.json missing on main — repo is broken');
       }
+      const mainState = JSON.parse(stateOnMain.content) as {
+        appVersion: string;
+        ownerships: Array<[number, string]>;
+        countries: Array<{ name: string; color: string }>;
+      };
+
+      // Stale-baseline gate for state.json fields. Per the design call,
+      // admin must operate against fresh main for ownerships / countries —
+      // a 3-way merge of these arrays is ambiguous (e.g. an ownership
+      // pair flip is indistinguishable from a stale value), so we reject
+      // and force the admin to refresh + redo when concurrent edits
+      // landed for those fields. Pure force edits are still rebased.
+      if (baseline) {
+        const baselineOwnershipsJson = JSON.stringify(baseline.ownerships);
+        const mainOwnershipsJson = JSON.stringify(mainState.ownerships);
+        if (baselineOwnershipsJson !== mainOwnershipsJson) {
+          return errorJson(
+            origin,
+            409,
+            'main moved while you were editing: province ownerships changed. Refresh the page and redo any ownership edits.',
+          );
+        }
+        const baselineCountriesJson = JSON.stringify(baseline.countries);
+        const mainCountriesJson = JSON.stringify(mainState.countries);
+        if (baselineCountriesJson !== mainCountriesJson) {
+          return errorJson(
+            origin,
+            409,
+            'main moved while you were editing: country list changed. Refresh the page and redo any country edits.',
+          );
+        }
+      }
+
       const newStateJson =
         JSON.stringify(
           {
@@ -713,16 +818,7 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
 
       const allNations = new Set([...existingNations, ...incomingByNation.keys()]);
       for (const nation of allNations) {
-        const incomingForces = incomingByNation.get(nation) ?? [];
-        await syncNationForces(
-          env.GITHUB_REPO,
-          branchName,
-          nation,
-          incomingForces,
-          login,
-          ts,
-          installToken,
-        );
+        await commitNation(nation);
       }
     }
   } catch (e) {

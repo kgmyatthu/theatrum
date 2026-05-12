@@ -13,10 +13,12 @@ const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 type SyncBaselineFn = (snapshot: AppSnapshot) => void;
 type SetSubmittingFn = (submitting: boolean) => void;
 type FlagStaleFn = (remoteVersion: string | undefined) => void;
+type GetBaselineFn = () => AppSnapshot | null;
 const handle = {
   syncBaseline: ((_s: AppSnapshot) => {}) as SyncBaselineFn,
   setSubmitting: ((_b: boolean) => {}) as SetSubmittingFn,
   flagStale: ((_v: string | undefined) => {}) as FlagStaleFn,
+  getBaseline: (() => null) as GetBaselineFn,
 };
 
 /** Call after dispatching APPLY_SNAPSHOT so useStateRefresh updates its
@@ -44,6 +46,19 @@ export function setStateRefreshSubmitting(submitting: boolean): void {
  */
 export function flagStaleClientFromSnapshot(snapshot: AppSnapshot): void {
   handle.flagStale(snapshot.appVersion);
+}
+
+/**
+ * Returns the snapshot we last saw on main (bootstrap or last poll-sync),
+ * which is the baseline the player has been editing against. The submit
+ * modal sends this to the worker so it can compute the player's true
+ * intent (snapshot - baseline) and apply that on top of current main —
+ * preventing stale-rollback rejections from concurrent player edits.
+ *
+ * Returns null if called before bootstrap.
+ */
+export function getStateRefreshBaseline(): AppSnapshot | null {
+  return handle.getBaseline();
 }
 
 /**
@@ -115,10 +130,15 @@ export function useStateRefresh(): { conflict: boolean; stale: boolean } {
       staleRef.current = true;
       setStale(true);
     };
+    handle.getBaseline = () => {
+      const raw = baselineRef.current;
+      return raw === null ? null : (JSON.parse(raw) as AppSnapshot);
+    };
     return () => {
       handle.syncBaseline = () => {};
       handle.setSubmitting = () => {};
       handle.flagStale = () => {};
+      handle.getBaseline = () => null;
     };
   }, []);
 

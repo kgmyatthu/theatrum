@@ -36,6 +36,16 @@ export async function hasMeaningfulDiff(snapshot: AppSnapshot): Promise<boolean>
 export interface SubmitMoveArgs {
   /** Snapshot to commit (built from current in-memory state). */
   snapshot: AppSnapshot;
+  /**
+   * Snapshot the user has been editing against — what they saw at
+   * bootstrap or after the most recent polling sync. The worker computes
+   * the player's intent as (snapshot - baseline) and applies it on top
+   * of current main, so concurrent edits from other players in the same
+   * nation don't get rolled back. Optional for backwards compatibility
+   * with cached clients shipped before this field landed; the worker
+   * falls back to blind commit semantics when it's missing.
+   */
+  baseline?: AppSnapshot;
   /** Optional player-supplied description. */
   description?: string;
   /**
@@ -80,6 +90,7 @@ export async function submitMove(args: SubmitMoveArgs): Promise<SubmitMoveResult
     },
     body: JSON.stringify({
       snapshot: args.snapshot,
+      baseline: args.baseline,
       description: args.description,
       renames: args.renames ?? [],
       userAdds: args.userAdds ?? [],

@@ -14,6 +14,7 @@ import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import {
   syncStateRefreshBaseline,
   setStateRefreshSubmitting,
+  getStateRefreshBaseline,
 } from '@/hooks/useStateRefresh';
 import styles from './SubmitMoveModal.module.css';
 
@@ -120,6 +121,11 @@ export function SubmitMoveModal({
     try {
       const r = await submitMove({
         snapshot,
+        // The bootstrap baseline (or the most recent polled value)
+        // tells the worker what we started editing from. It uses that
+        // to layer our edits onto current main and avoid the
+        // stale-rollback rejection failure mode.
+        baseline: getStateRefreshBaseline() ?? undefined,
         description,
         renames,
         userAdds,
