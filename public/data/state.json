@@ -18791,11 +18791,11 @@
       "id": "KingRed2007-1778521313000-0",
       "nation": "britain",
       "branch": "army",
-      "name": "Anglo-Spanish Army",
-      "strength": 60000,
+      "name": "I Corps",
+      "strength": 30000,
       "commander": "Arthur Wellesley",
-      "lat": 43.328674183738606,
-      "lon": -8.366088867187502
+      "lat": 42.52272381854161,
+      "lon": -5.108642578125001
     },
     {
       "id": "KingRed2007-1778521313000-1",
@@ -19174,8 +19174,8 @@
       "name": "Army of Ukraine",
       "strength": 54000,
       "commander": "Mikhail Kutuzov",
-      "lat": 49.059469847170526,
-      "lon": 25.026855468750004
+      "lat": 48.857487002645485,
+      "lon": 26.707763671875004
     },
     {
       "id": "Vancouver1903-1778540725000-1",
@@ -19196,6 +19196,96 @@
       "commander": "Barclay de Tolly",
       "lat": 44.59829048984011,
       "lon": 33.55808258056641
+    },
+    {
+      "id": "KingRed2007-1778544321915-0",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Reserve Corps",
+      "strength": 20000,
+      "commander": "",
+      "lat": 51.55658218576253,
+      "lon": -0.16479492187500003
+    },
+    {
+      "id": "KingRed2007-1778544335343-1",
+      "nation": "britain",
+      "branch": "navy",
+      "name": "Plymouth Station",
+      "strength": 100,
+      "commander": "",
+      "lat": 50.07124366044474,
+      "lon": -0.9777832031250001
+    },
+    {
+      "id": "KingRed2007-1778544397604-3",
+      "nation": "britain",
+      "branch": "army",
+      "name": "II Corps",
+      "strength": 30000,
+      "commander": "Sir John Moore",
+      "lat": 43.34715236003303,
+      "lon": -4.952087402343751
+    },
+    {
+      "id": "KingRed2007-1778544405146-4",
+      "nation": "britain",
+      "branch": "army",
+      "name": "III Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 42.124710287101955,
+      "lon": -5.086669921875001
+    },
+    {
+      "id": "KingRed2007-1778544415230-5",
+      "nation": "britain",
+      "branch": "army",
+      "name": "IV Corps",
+      "strength": 30000,
+      "commander": "",
+      "lat": 42.87797684287408,
+      "lon": -5.039978027343751
+    },
+    {
+      "id": "KingRed2007-1778544474144-6",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bengal Presidency",
+      "strength": 80000,
+      "commander": "",
+      "lat": 23.523703180770564,
+      "lon": 90.0878742814251
+    },
+    {
+      "id": "KingRed2007-1778544480744-7",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Madras Presidency",
+      "strength": 80000,
+      "commander": "",
+      "lat": 11.005904459659451,
+      "lon": 79.1015625
+    },
+    {
+      "id": "KingRed2007-1778544489460-8",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Bombay Presidency",
+      "strength": 40000,
+      "commander": "",
+      "lat": 11.221510260010541,
+      "lon": 76.10229492187501
+    },
+    {
+      "id": "KingRed2007-1778544501952-9",
+      "nation": "britain",
+      "branch": "army",
+      "name": "Army of the Indies",
+      "strength": 15000,
+      "commander": "",
+      "lat": 24.68528777319631,
+      "lon": -77.93285731043076
     }
   ],
   "countries": [
