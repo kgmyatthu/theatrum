@@ -6,8 +6,8 @@
     "name": "I Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich Wilhelm von Bülow",
-    "lat": 52.17903285305614,
-    "lon": 5.398330306436115
+    "lat": 51.90544919149066,
+    "lon": 5.2515161208154755
   },
   {
     "id": "yellowwithblue-1778479985000-1",
@@ -118,5 +118,35 @@
     "commander": "",
     "lat": 49.5536776492634,
     "lon": 5.855843239800814
+  },
+  {
+    "id": "KingREN1-Suitman-1778555772555-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XVII Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.48927685890572,
+    "lon": 12.575534906631997
+  },
+  {
+    "id": "KingREN1-Suitman-1778555779458-1",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XIX Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.15369356664224,
+    "lon": 12.333920031466315
+  },
+  {
+    "id": "KingREN1-Suitman-1778555784923-2",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XX Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.8630535926716,
+    "lon": 12.707324838540499
   }
 ]
