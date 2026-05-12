@@ -68,5 +68,15 @@
     "commander": "Barclay de Tolly",
     "lat": 44.59829048984011,
     "lon": 33.55808258056641
+  },
+  {
+    "id": "Vancouver1903-1778555135112-0",
+    "nation": "russian empire",
+    "branch": "army",
+    "name": "Baltic Fleet",
+    "strength": 13,
+    "commander": "Dmitry Senyevin",
+    "lat": 54.73255026902896,
+    "lon": 10.338134765625002
   }
 ]
