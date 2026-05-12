@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 54.30370443989811,
-      "lon": 10.393066406250002
+      "lat": 54.39015388401026,
+      "lon": 9.777832031250002
     },
     {
       "id": "yellowwithblue-1778478466000-0",
@@ -19224,8 +19224,8 @@
       "name": "Army of Jutland",
       "strength": 15000,
       "commander": "Frederick of Hessen",
-      "lat": 54.282330899072235,
-      "lon": 10.063476562500002
+      "lat": 54.374158445055734,
+      "lon": 9.305419921875002
     },
     {
       "id": "yourlocalgeobukseon-1778545295367-3",
@@ -19236,16 +19236,6 @@
       "commander": "Steen Andersen Bille",
       "lat": 54.83233630197034,
       "lon": 10.458984375000002
-    },
-    {
-      "id": "RadetzkyNTW-1778548569819-0",
-      "nation": "austria",
-      "branch": "army",
-      "name": "Army of Bohemia",
-      "strength": 90000,
-      "commander": "",
-      "lat": 49.74029024858135,
-      "lon": 13.371219635009766
     }
   ],
   "countries": [
