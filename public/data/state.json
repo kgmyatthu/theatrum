@@ -647,7 +647,7 @@
     ],
     [
       161,
-      "sweden"
+      "norway"
     ],
     [
       162,
@@ -655,7 +655,7 @@
     ],
     [
       163,
-      "sweden"
+      "norway"
     ],
     [
       164,
@@ -667,15 +667,15 @@
     ],
     [
       166,
-      "denmark"
+      "norway"
     ],
     [
       167,
-      "denmark"
+      "norway"
     ],
     [
       168,
-      "denmark"
+      "norway"
     ],
     [
       169,
@@ -687,11 +687,11 @@
     ],
     [
       171,
-      "denmark"
+      "norway"
     ],
     [
       172,
-      "denmark"
+      "norway"
     ],
     [
       173,
@@ -703,7 +703,7 @@
     ],
     [
       175,
-      "sweden"
+      "norway"
     ],
     [
       176,
@@ -9615,43 +9615,43 @@
     ],
     [
       2403,
-      "denmark"
+      "norway"
     ],
     [
       2404,
-      "denmark"
+      "norway"
     ],
     [
       2405,
-      "denmark"
+      "norway"
     ],
     [
       2406,
-      "denmark"
+      "norway"
     ],
     [
       2407,
-      "denmark"
+      "norway"
     ],
     [
       2408,
-      "denmark"
+      "norway"
     ],
     [
       2409,
-      "denmark"
+      "norway"
     ],
     [
       2410,
-      "denmark"
+      "norway"
     ],
     [
       2411,
-      "denmark"
+      "norway"
     ],
     [
       2412,
-      "denmark"
+      "norway"
     ],
     [
       2413,
@@ -14015,7 +14015,7 @@
     ],
     [
       3503,
-      "denmark"
+      "norway"
     ],
     [
       3504,
@@ -18574,6 +18574,10 @@
     {
       "name": "netherlands",
       "color": "#FF8C42"
+    },
+    {
+      "name": "norway",
+      "color": "#fffef5"
     },
     {
       "name": "oman",
