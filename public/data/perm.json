@@ -40,5 +40,9 @@
   },
   "Vancouver1903": {
     "role": "admin"
+  },
+  "yourlocalgeobukseon": {
+    "role": "player",
+    "nation": "denmark"
   }
 }
