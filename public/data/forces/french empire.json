@@ -6,8 +6,8 @@
     "name": "I Corp",
     "strength": 30000,
     "commander": "Auguste de Marmont",
-    "lat": 54.52745749948722,
-    "lon": 9.596557617187502
+    "lat": 54.133614845727,
+    "lon": 9.61852772228825
   },
   {
     "id": "AceApache-1778526187000-0",
@@ -16,8 +16,8 @@
     "name": "II Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Bessieres",
-    "lat": 51.97484312160997,
-    "lon": 4.7516283702378335
+    "lat": 51.92904045789921,
+    "lon": 6.176897482473631
   },
   {
     "id": "AceApache-1778526187000-1",
@@ -26,8 +26,8 @@
     "name": "III Corp",
     "strength": 25000,
     "commander": "Saint-Cyr",
-    "lat": 54.54976567389827,
-    "lon": 9.074707031250002
+    "lat": 54.25890802177257,
+    "lon": 9.096677136350749
   },
   {
     "id": "AceApache-1778526187000-2",
@@ -196,7 +196,7 @@
     "name": "XX Corp",
     "strength": 30000,
     "commander": "Antoine Lasalle",
-    "lat": 51.85088416471087,
-    "lon": 4.932802332798576
+    "lat": 51.691342909167716,
+    "lon": 5.8418744266684905
   }
 ]
