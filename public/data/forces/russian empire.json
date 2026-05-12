@@ -16,18 +16,18 @@
     "name": "ARMY OF FINLAND",
     "strength": 60000,
     "commander": "Alexander I",
-    "lat": 55.21649013168979,
-    "lon": 25.312500000000004
+    "lat": 54.66588940440647,
+    "lon": 25.199890136718754
   },
   {
     "id": "yellowwithblue-1778478796000-1",
     "nation": "russian empire",
     "branch": "army",
-    "name": "WESTERN ARMY OF FINLAND",
+    "name": "Army of Germany (Not Able To Move Yet)",
     "strength": 60000,
     "commander": "Konstantin Pavlovich",
-    "lat": 56.218923189166624,
-    "lon": 14.029541015625002
+    "lat": 54.53263726969077,
+    "lon": 18.533935546875004
   },
   {
     "id": "yellowwithblue-1778478796000-2",
@@ -36,8 +36,8 @@
     "name": "ARMY OF THE BALTICS",
     "strength": 23000,
     "commander": "Mikhail Bulatov",
-    "lat": 54.87660665410869,
-    "lon": 24.884033203125004
+    "lat": 54.66112372206639,
+    "lon": 25.345458984375004
   },
   {
     "id": "Vancouver1903-1778540725000-0",
@@ -56,8 +56,8 @@
     "name": "Army of Ruthenia",
     "strength": 54000,
     "commander": "Pyotr Bagration",
-    "lat": 53.350551318399916,
-    "lon": 25.147705078125004
+    "lat": 52.23368724057246,
+    "lon": 21.169281005859375
   },
   {
     "id": "Vancouver1903-1778540725000-2",
