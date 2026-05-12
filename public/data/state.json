@@ -18551,11 +18551,11 @@
       "id": "yellowwithblue-1778478177000-0",
       "nation": "sweden",
       "branch": "army",
-      "name": "BERNADOTTE'S ARMY OF FINLAND",
-      "strength": 47000,
+      "name": "BERNADOTTE'S ARMY OF THE NORTH",
+      "strength": 126000,
       "commander": "Charles XIII",
-      "lat": 61.01572481397616,
-      "lon": 24.19189453125
+      "lat": 51.52241608253256,
+      "lon": 12.617797851562502
     },
     {
       "id": "yellowwithblue-1778478177000-1",
@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 56.139428693863266,
-      "lon": 12.963867187500002
+      "lat": 55.92150795277898,
+      "lon": 12.315673828125
     },
     {
       "id": "yellowwithblue-1778478466000-0",
@@ -18634,8 +18634,8 @@
       "name": "III ARMY-CORPS",
       "strength": 7000,
       "commander": "Gustaf Fredrik Morner",
-      "lat": 61.21737938763191,
-      "lon": 29.366455078125004
+      "lat": 61.18562468142283,
+      "lon": 23.334960937500004
     },
     {
       "id": "yellowwithblue-1778478796000-4",
