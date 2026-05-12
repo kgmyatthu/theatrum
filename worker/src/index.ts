@@ -38,6 +38,8 @@ interface Env {
 
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
+// Keep in sync with src/utils/schema.ts and scripts/lib/validate-move-core.mjs.
+const SCHEMA_VERSION = 'theatrum/v7';
 
 // ────────────────────────────────────────────────────────────────────
 // Generic helpers
@@ -346,6 +348,143 @@ function summaryParts(
 }
 
 // ────────────────────────────────────────────────────────────────────
+// Per-file commit helpers
+// ────────────────────────────────────────────────────────────────────
+
+interface ForceLike {
+  id: string;
+  nation: string;
+  [k: string]: unknown;
+}
+
+function groupForcesByNation(forces: ForceLike[]): Map<string, ForceLike[]> {
+  const m = new Map<string, ForceLike[]>();
+  for (const f of forces) {
+    const n = normalizeNation(f.nation);
+    if (!n) continue;
+    if (!m.has(n)) m.set(n, []);
+    m.get(n)!.push(f);
+  }
+  return m;
+}
+
+/** Per-segment URL-encode a repo path so file names with spaces survive. */
+function encodeRepoPath(path: string): string {
+  return path.split('/').map(encodeURIComponent).join('/');
+}
+
+type MainFile =
+  | { exists: true; sha: string; content: string }
+  | { exists: false };
+
+async function readFileOnMain(
+  repo: string,
+  path: string,
+  token: string,
+): Promise<MainFile> {
+  try {
+    const f = await gh<{ sha: string; content: string }>(
+      `/repos/${repo}/contents/${encodeRepoPath(path)}?ref=main`,
+      { method: 'GET' },
+      token,
+    );
+    return { exists: true, sha: f.sha, content: base64ToUtf8(f.content) };
+  } catch (e) {
+    if (e instanceof HttpError && e.status === 404) return { exists: false };
+    throw e;
+  }
+}
+
+async function commitFile(
+  repo: string,
+  path: string,
+  branch: string,
+  content: string,
+  message: string,
+  token: string,
+  existingSha: string | undefined,
+): Promise<void> {
+  await gh<unknown>(
+    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
+    {
+      method: 'PUT',
+      body: {
+        message,
+        content: utf8ToBase64(content),
+        branch,
+        ...(existingSha ? { sha: existingSha } : {}),
+      },
+    },
+    token,
+  );
+}
+
+async function deleteFile(
+  repo: string,
+  path: string,
+  branch: string,
+  sha: string,
+  message: string,
+  token: string,
+): Promise<void> {
+  await gh<unknown>(
+    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
+    {
+      method: 'DELETE',
+      body: { message, sha, branch },
+    },
+    token,
+  );
+}
+
+/**
+ * Apply an incoming forces array for one nation against main's
+ * forces/<nation>.json. Creates / updates / deletes the file as needed
+ * and returns whether a commit was made. Empty incoming + existing file
+ * → delete; empty incoming + no file → no-op (the common case).
+ */
+async function syncNationForces(
+  repo: string,
+  branch: string,
+  nation: string,
+  incomingForces: ForceLike[],
+  login: string,
+  ts: string,
+  token: string,
+): Promise<boolean> {
+  const path = `public/data/forces/${nation}.json`;
+  const onMain = await readFileOnMain(repo, path, token);
+
+  const incomingJson = JSON.stringify(incomingForces, null, 2) + '\n';
+  const mainJson = onMain.exists ? onMain.content : '';
+
+  if (incomingJson === mainJson) return false; // identical
+  if (incomingForces.length === 0) {
+    // Nation no longer has any forces — drop the file if it exists.
+    if (!onMain.exists) return false;
+    await deleteFile(
+      repo,
+      path,
+      branch,
+      onMain.sha,
+      `forces: @${login} clear ${nation} ${ts}`,
+      token,
+    );
+    return true;
+  }
+  await commitFile(
+    repo,
+    path,
+    branch,
+    incomingJson,
+    `move: @${login} ${nation} ${ts}`,
+    token,
+    onMain.exists ? onMain.sha : undefined,
+  );
+  return true;
+}
+
+// ────────────────────────────────────────────────────────────────────
 // Submit handler
 // ────────────────────────────────────────────────────────────────────
 
@@ -375,9 +514,34 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   } catch {
     return errorJson(origin, 400, 'invalid json body');
   }
-  const snapshot = body.snapshot;
+  const snapshot = body.snapshot as
+    | undefined
+    | {
+        appVersion?: unknown;
+        ownerships?: Array<[number, string]>;
+        countries?: Array<{ name: string; color: string }>;
+        forces?: ForceLike[];
+      };
   if (!snapshot || typeof snapshot !== 'object') {
     return errorJson(origin, 400, 'missing or invalid snapshot');
+  }
+  // Schema gate — fail fast on stale browser-cached clients so we don't
+  // burn a branch + PR + CI run on something the validator will reject.
+  if (snapshot.appVersion !== SCHEMA_VERSION) {
+    return errorJson(
+      origin,
+      400,
+      `client is stale: expected appVersion ${SCHEMA_VERSION}, got ${String(snapshot.appVersion)}. Hard-refresh and try again.`,
+    );
+  }
+  if (!Array.isArray(snapshot.forces)) {
+    return errorJson(origin, 400, 'snapshot.forces must be an array');
+  }
+  if (!Array.isArray(snapshot.ownerships)) {
+    return errorJson(origin, 400, 'snapshot.ownerships must be an array');
+  }
+  if (!Array.isArray(snapshot.countries)) {
+    return errorJson(origin, 400, 'snapshot.countries must be an array');
   }
 
   let installToken: string;
@@ -466,32 +630,104 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     }
   }
 
-  // 3. state.json (skip if unchanged from main).
+  // 3. Commit per-file content. The on-disk layout is:
+  //      public/data/state.json            — { appVersion, ownerships, countries }
+  //      public/data/forces/<nation>.json  — Force[]
+  //    Non-admin players only touch their own nation's force file; the
+  //    validator enforces the same rule. Admins can touch state.json
+  //    (ownerships + countries) and every per-nation force file.
+  //
+  //    The incoming `snapshot` is the unified in-memory view (flat forces
+  //    array). We decompose it server-side and only commit files whose
+  //    bytes actually changed against main — this keeps PRs minimal and
+  //    sidesteps the "stale baseline rolls back another player's work"
+  //    failure mode that caused the v6 rejections.
+  const incomingByNation = groupForcesByNation(snapshot.forces);
   try {
-    const stateFile = await gh<{ sha: string; content: string }>(
-      `/repos/${env.GITHUB_REPO}/contents/public/data/state.json?ref=main`,
-      { method: 'GET' },
-      installToken,
-    );
-    const remoteJson = base64ToUtf8(stateFile.content);
-    const newJson = JSON.stringify(snapshot, null, 2);
-    if (newJson !== remoteJson) {
-      await gh<unknown>(
-        `/repos/${env.GITHUB_REPO}/contents/public/data/state.json`,
-        {
-          method: 'PUT',
-          body: {
-            message: `move: @${login} ${ts}`,
-            content: utf8ToBase64(newJson),
-            sha: stateFile.sha,
-            branch: branchName,
-          },
-        },
+    if (!isAdmin) {
+      if (!entry.nation) {
+        return errorJson(origin, 403, `@${login} has no nation assigned in perm.json`);
+      }
+      const playerNation = normalizeNation(entry.nation);
+      const playerForces = incomingByNation.get(playerNation) ?? [];
+      await syncNationForces(
+        env.GITHUB_REPO,
+        branchName,
+        playerNation,
+        playerForces,
+        login,
+        ts,
         installToken,
       );
+    } else {
+      // Admin: state.json + every force file that differs. We need the
+      // union of (nations that already have a force file on main) and
+      // (nations with forces in the incoming snapshot) so deletions
+      // (e.g. a country rename's old name) are caught too.
+      const stateOnMain = await readFileOnMain(
+        env.GITHUB_REPO,
+        'public/data/state.json',
+        installToken,
+      );
+      if (!stateOnMain.exists) {
+        return errorJson(origin, 502, 'state.json missing on main — repo is broken');
+      }
+      const newStateJson =
+        JSON.stringify(
+          {
+            appVersion: snapshot.appVersion,
+            ownerships: snapshot.ownerships,
+            countries: snapshot.countries,
+          },
+          null,
+          2,
+        ) + '\n';
+      if (newStateJson !== stateOnMain.content) {
+        await commitFile(
+          env.GITHUB_REPO,
+          'public/data/state.json',
+          branchName,
+          newStateJson,
+          `state: @${login} ${ts}`,
+          installToken,
+          stateOnMain.sha,
+        );
+      }
+
+      // Discover existing nation files via one Contents API listing —
+      // saves us probing every country in the world with a 404.
+      let existingNations: string[] = [];
+      try {
+        const dir = await gh<Array<{ name: string; type: string }>>(
+          `/repos/${env.GITHUB_REPO}/contents/public/data/forces?ref=main`,
+          { method: 'GET' },
+          installToken,
+        );
+        existingNations = dir
+          .filter((e) => e.type === 'file' && e.name.endsWith('.json'))
+          .map((e) => e.name.slice(0, -'.json'.length));
+      } catch (e) {
+        if (!(e instanceof HttpError && e.status === 404)) throw e;
+        // 404 means forces/ directory doesn't exist yet — first ever bake.
+      }
+
+      const allNations = new Set([...existingNations, ...incomingByNation.keys()]);
+      for (const nation of allNations) {
+        const incomingForces = incomingByNation.get(nation) ?? [];
+        await syncNationForces(
+          env.GITHUB_REPO,
+          branchName,
+          nation,
+          incomingForces,
+          login,
+          ts,
+          installToken,
+        );
+      }
     }
   } catch (e) {
-    return errorJson(origin, 502, `state.json commit: ${(e as Error).message}`);
+    const msg = (e as Error).message;
+    return errorJson(origin, e instanceof HttpError ? e.status : 502, `commit: ${msg}`);
   }
 
   // 4. Open the PR — body carries the verified submitter marker.

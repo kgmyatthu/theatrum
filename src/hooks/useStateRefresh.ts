@@ -3,6 +3,7 @@ import type { AppSnapshot } from '@/types';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { buildSnapshot } from '@/utils/snapshot';
 import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import { SCHEMA_VERSION } from '@/utils/schema';
 
 const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
@@ -135,7 +136,7 @@ export function useStateRefresh(): { conflict: boolean; stale: boolean } {
 
       let remote: AppSnapshot;
       try {
-        remote = await fetchLiveDataFresh<AppSnapshot>('state.json');
+        remote = await fetchLiveSnapshot(fetchLiveDataFresh);
       } catch (err) {
         // Transient — try again next tick.
         // eslint-disable-next-line no-console

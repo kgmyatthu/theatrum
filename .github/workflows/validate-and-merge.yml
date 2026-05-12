@@ -9,6 +9,7 @@ on:
     paths:
       - 'public/data/state.json'
       - 'public/data/perm.json'
+      - 'public/data/forces/**'
 
 permissions:
   contents: write

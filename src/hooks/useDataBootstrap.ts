@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useAppDispatch } from '@/state/AppContext';
 import { fetchLiveData } from '@/utils/liveData';
 import { flagStaleClientFromSnapshot } from '@/hooks/useStateRefresh';
+import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import type { AppSnapshot, City, ProvinceCollection } from '@/types';
 
 interface Manifest {
@@ -15,9 +16,10 @@ async function fetchManifest(): Promise<Manifest> {
     // Static factory data — bundled into the deploy.
     fetch('/data/provinces.geojson').then((r) => r.json() as Promise<ProvinceCollection>),
     fetch('/data/cities.json').then((r) => r.json() as Promise<City[]>),
-    // Live game state — pinned to main's latest commit SHA so we never
-    // see Fastly's stale-on-branch-ref window.
-    fetchLiveData<AppSnapshot>('state.json'),
+    // Live game state — assembled from state.json (global) + per-nation
+    // force files. All SHA-pinned to one main HEAD so the snapshot is
+    // consistent across all the files.
+    fetchLiveSnapshot(fetchLiveData),
   ]);
   return { provinces, cities, snapshot };
 }

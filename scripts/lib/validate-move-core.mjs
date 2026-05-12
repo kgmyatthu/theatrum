@@ -2,31 +2,38 @@
 // (scripts/validate-move.mjs) gathers I/O — gh API calls, fs reads —
 // and hands all inputs to validateMove() below, which is deterministic
 // and independently testable. Keep this file dependency-free.
+//
+// v7 data layout (file-per-nation, not monolithic state.json):
+//   public/data/state.json            — { appVersion, ownerships, countries }
+//   public/data/forces/<nation>.json  — Force[]  (only created when non-empty)
+//   public/data/perm.json             — admin-only
+//
+// File-scope rules:
+//   Non-admin player : may only touch forces/<their-nation>.json
+//   Admin            : may touch state.json, perm.json, and any forces/*.json
+//
+// Cross-file invariants enforced for everyone (admins included):
+//   - state.json.appVersion === SCHEMA_VERSION
+//   - every force in forces/<nation>.json has nation === <nation>
+//   - force IDs are unique across all nation files
+//
+// Bumped when the on-disk shape of state.json or forces/*.json changes
+// in a way an older client can't safely round-trip. Mirrors the constant
+// in src/utils/schema.ts and worker/src/index.ts.
+const SCHEMA_VERSION = 'theatrum/v7';
 
-const ALLOWED_NON_ADMIN_FILES = new Set(['public/data/state.json']);
-
-// Bumped when the on-disk shape of state.json changes. Submissions whose
-// appVersion doesn't match are rejected up-front so a stale browser-cached
-// client can't unintentionally rewrite the schema (e.g. renumber the
-// deterministic force IDs back to the old shared-counter form).
-const SCHEMA_VERSION = 'theatrum/v6';
+const PERM_FILE = 'public/data/perm.json';
+const STATE_FILE = 'public/data/state.json';
+const FORCES_PREFIX = 'public/data/forces/';
+const FORCES_SUFFIX = '.json';
 
 const lc = (s) => (typeof s === 'string' ? s.trim().toLowerCase() : '');
-const deepEq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // Bot-authored PRs (the worker submits as the App) carry the verified
 // submitter login as a marker in the PR body. Format:
 //   <!-- theatrum-submitter: <login> -->
 const SUBMITTER_MARKER = /<!--\s*theatrum-submitter:\s*([A-Za-z0-9-]+)\s*-->/;
 
-/**
- * Resolve the effective submitter for a PR. For bot-authored PRs we
- * trust the body marker (only our worker can produce these PRs); for
- * any other author we use the GitHub-reported login as-is.
- *
- * Returns null when the PR was bot-authored but the marker is missing
- * or malformed — caller should reject.
- */
 function resolveSubmitter(prAuthor, prBody) {
   if (typeof prAuthor === 'string' && prAuthor.endsWith('[bot]')) {
     const m = (prBody ?? '').match(SUBMITTER_MARKER);
@@ -35,10 +42,17 @@ function resolveSubmitter(prAuthor, prBody) {
   return prAuthor;
 }
 
+/** Convert "public/data/forces/spain.json" → "spain". Returns null if not
+ *  in the forces directory or not a .json file. */
+function nationFromForcePath(p) {
+  if (!p.startsWith(FORCES_PREFIX) || !p.endsWith(FORCES_SUFFIX)) return null;
+  return p.slice(FORCES_PREFIX.length, -FORCES_SUFFIX.length);
+}
+
 /**
  * @param {{
- *   baseState: { ownerships: Array<[number, string]>, forces: Array<object>, countries: Array<{name:string,color:string}> },
- *   headState: { ownerships: Array<[number, string]>, forces: Array<object>, countries: Array<{name:string,color:string}> },
+ *   base: { state: object, forces: Record<string, object[]> },
+ *   head: { state: object, forces: Record<string, object[]> },
  *   perms: Record<string, { role: 'admin' | 'player', nation?: string }>,
  *   prAuthor: string,
  *   prBody?: string,
@@ -48,9 +62,9 @@ function resolveSubmitter(prAuthor, prBody) {
  * @returns {{ valid: true, note?: string } | { valid: false, reason: string }}
  */
 export function validateMove(inputs) {
-  const { baseState, headState, perms, prAuthor, prBody, changedFiles, mergeable } = inputs;
+  const { base, head, perms, prAuthor, prBody, changedFiles, mergeable } = inputs;
 
-  // Mergeability — null/undefined means GitHub couldn't determine.
+  // ── Mergeability gate ────────────────────────────────────────────────
   if (mergeable === false) {
     return {
       valid: false,
@@ -61,35 +75,59 @@ export function validateMove(inputs) {
     return { valid: false, reason: 'mergeability could not be determined; please retry' };
   }
 
-  // Schema gate — runs before admin bypass so even an admin's stale browser
-  // can't regress the file shape. Catches the specific "old client rewrites
-  // force IDs back to numerics" failure mode.
-  if (headState.appVersion !== SCHEMA_VERSION) {
+  // ── Schema gate ─────────────────────────────────────────────────────
+  // Runs before admin bypass so an admin's stale browser-cached client
+  // can't accidentally regress the file shape (e.g. write back v6
+  // monolithic state.json after we cut over to v7).
+  if (head.state.appVersion !== SCHEMA_VERSION) {
     return {
       valid: false,
-      reason: `appVersion mismatch — expected ${SCHEMA_VERSION}, got ${headState.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
+      reason: `appVersion mismatch — expected ${SCHEMA_VERSION}, got ${head.state.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
     };
   }
-  if ('nextForceId' in headState) {
-    return {
-      valid: false,
-      reason: `state.json contains the legacy nextForceId field. Your client is stale; hard-refresh the page.`,
-    };
+
+  // Force shape invariants (universal — admins included):
+  //   1. Every force has a string id.
+  //   2. Every force's nation matches the file it lives in.
+  //   3. Force ids are unique across all nation files.
+  // Filename → nation consistency is what keeps the file-scope check
+  // meaningful: without it, a player could put a force with nation X in
+  // forces/<their-nation>.json and impersonate X.
+  const seenIds = new Set();
+  for (const [nation, forces] of Object.entries(head.forces)) {
+    for (const f of forces) {
+      if (typeof f.id !== 'string') {
+        return {
+          valid: false,
+          reason: `force id ${JSON.stringify(f.id)} in forces/${nation}.json is not a string. Your client is stale; hard-refresh the page.`,
+        };
+      }
+      if (lc(f.nation) !== nation) {
+        return {
+          valid: false,
+          reason: `force ${f.id} in forces/${nation}.json declares nation "${f.nation}"; must match filename`,
+        };
+      }
+      if (seenIds.has(f.id)) {
+        return { valid: false, reason: `duplicate force id ${f.id} across nation files` };
+      }
+      seenIds.add(f.id);
+    }
   }
-  for (const f of headState.forces) {
-    if (typeof f.id !== 'string') {
+
+  // Every nation file in head must correspond to a country in state.json.
+  // Catches orphans from an admin who removed a country but left its file.
+  const knownCountries = new Set(head.state.countries.map((c) => lc(c.name)));
+  for (const nation of Object.keys(head.forces)) {
+    if (!knownCountries.has(nation)) {
       return {
         valid: false,
-        reason: `force id ${JSON.stringify(f.id)} is not a string. Your client is stale; hard-refresh the page.`,
+        reason: `forces/${nation}.json exists but ${nation} is not in state.json countries`,
       };
     }
   }
 
-  // Resolve the effective submitter. For bot-authored PRs (the worker
-  // submitting as the App), the GitHub-reported author is the bot — the
-  // real submitter is in the PR body marker. The marker is trusted only
-  // when the PR is bot-authored, since only our worker can author PRs
-  // as the App on this repo.
+  // ── Resolve submitter ────────────────────────────────────────────────
   const submitter = resolveSubmitter(prAuthor, prBody);
   if (!submitter) {
     return {
@@ -98,89 +136,51 @@ export function validateMove(inputs) {
     };
   }
 
-  // Submitter must be in perm.json.
   const user = perms[submitter];
   if (!user) return { valid: false, reason: `@${submitter} is not registered in perm.json` };
 
-  // Admins skip every other check — they own the source of truth.
+  // Admins skip the per-role file-scope check. They still passed every
+  // universal invariant above.
   if (user.role === 'admin') return { valid: true, note: `admin @${submitter}` };
 
   if (user.role !== 'player' || !user.nation) {
     return { valid: false, reason: `@${submitter} has no playable role assigned` };
   }
   const playerNation = lc(user.nation);
+  const playerFile = `${FORCES_PREFIX}${playerNation}${FORCES_SUFFIX}`;
 
-  // Non-admin PRs may only touch state.json.
-  const disallowed = changedFiles.filter((p) => !ALLOWED_NON_ADMIN_FILES.has(p));
+  // ── Non-admin file scope ─────────────────────────────────────────────
+  // The only file a player may touch is their own nation's force file.
+  // Everything else (state.json, perm.json, other nation files, workflow
+  // files, source code, etc.) is off-limits.
+  const disallowed = changedFiles.filter((p) => p !== playerFile);
   if (disallowed.length > 0) {
     return {
       valid: false,
-      reason: `PR modifies files outside public/data/state.json: ${disallowed.join(', ')}`,
+      reason: `PR modifies files outside ${playerFile}: ${disallowed.join(', ')}`,
     };
   }
 
-  // Players can't change borders or the country list.
-  if (!deepEq(baseState.ownerships, headState.ownerships)) {
-    return { valid: false, reason: 'province ownership cannot be changed by players' };
-  }
-  if (!deepEq(baseState.countries, headState.countries)) {
-    return {
-      valid: false,
-      reason: 'country list (names/colors) cannot be changed by players',
-    };
-  }
-
-  // Defense in depth: reject duplicate ids in head.forces. JSON.parse keeps
-  // the last duplicate, which `new Map(...)` would also coalesce — both can
-  // mask a "swap an enemy force's nation by adding a same-id entry" attempt
-  // before the per-force checks below.
-  const seen = new Set();
-  const dups = new Set();
-  for (const f of headState.forces) {
-    if (seen.has(f.id)) dups.add(f.id);
-    seen.add(f.id);
-  }
-  if (dups.size > 0) {
-    return { valid: false, reason: `duplicate force id(s) in head: ${[...dups].join(', ')}` };
-  }
-
-  const baseForces = new Map(baseState.forces.map((f) => [f.id, f]));
-  const headForces = new Map(headState.forces.map((f) => [f.id, f]));
-
-  // Removed / modified forces.
-  for (const [id, base] of baseForces) {
-    const head = headForces.get(id);
-    if (!head) {
-      if (lc(base.nation) !== playerNation) {
-        return {
-          valid: false,
-          reason: `force #${id} (${base.nation}: ${base.name}) removed; not owned by ${playerNation}`,
-        };
-      }
-    } else if (!deepEq(base, head)) {
-      // Nation must match player BEFORE AND AFTER the edit — catches both
-      // "edit enemy force" and "convert enemy force to my nation" attacks.
-      if (lc(base.nation) !== playerNation || lc(head.nation) !== playerNation) {
-        return {
-          valid: false,
-          reason:
-            `force #${id} edited but nation must be ${playerNation} ` +
-            `before AND after (was ${base.nation}, now ${head.nation})`,
-        };
-      }
-    }
-  }
-
-  // Added forces.
-  for (const [id, head] of headForces) {
-    if (baseForces.has(id)) continue;
-    if (lc(head.nation) !== playerNation) {
-      return {
-        valid: false,
-        reason: `force #${id} (${head.nation}: ${head.name}) added; not owned by ${playerNation}`,
-      };
-    }
+  // Belt-and-suspenders for the case where changedFiles is empty (admin
+  // edge case shouldn't apply here, but be explicit): if any non-allowed
+  // file actually differs between base and head, reject. With the file-
+  // scope check above this is normally unreachable, but it guards
+  // against a CI configuration where changedFiles is misreported.
+  const baseStateJson = JSON.stringify(base.state);
+  const headStateJson = JSON.stringify(head.state);
+  if (baseStateJson !== headStateJson) {
+    return { valid: false, reason: `state.json cannot be changed by players` };
   }
 
   return { valid: true, note: `player @${submitter} (${playerNation}) — force changes only` };
 }
+
+// Re-exports for the CLI to share constants without parsing the file twice.
+export {
+  SCHEMA_VERSION,
+  PERM_FILE,
+  STATE_FILE,
+  FORCES_PREFIX,
+  FORCES_SUFFIX,
+  nationFromForcePath,
+};

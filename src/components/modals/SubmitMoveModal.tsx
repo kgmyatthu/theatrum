@@ -10,6 +10,7 @@ import {
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import { useAppDispatch } from '@/state/AppContext';
 import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import {
   syncStateRefreshBaseline,
   setStateRefreshSubmitting,
@@ -188,7 +189,7 @@ export function SubmitMoveModal({
     let cancelled = false;
     (async () => {
       try {
-        const fresh = await fetchLiveDataFresh<AppSnapshot>('state.json');
+        const fresh = await fetchLiveSnapshot(fetchLiveDataFresh);
         if (cancelled || !mountedRef.current) return;
         dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: fresh } });
         syncStateRefreshBaseline(fresh);

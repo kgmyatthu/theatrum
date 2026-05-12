@@ -1,0 +1,12 @@
+[
+  {
+    "id": "seed-1778367500000-5",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Cadiz Fleet",
+    "strength": 28,
+    "commander": "Mazarredo",
+    "lon": -6.3,
+    "lat": 36.5
+  }
+]

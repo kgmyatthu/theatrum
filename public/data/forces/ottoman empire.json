@@ -1,0 +1,12 @@
+[
+  {
+    "id": "seed-1778367500000-4",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Imperial Army",
+    "strength": 100000,
+    "commander": "Selim III",
+    "lon": 28.97,
+    "lat": 41.01
+  }
+]

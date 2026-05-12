@@ -1,0 +1,72 @@
+[
+  {
+    "id": "yellowwithblue-1778478177000-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "BERNADOTTE'S ARMY OF THE NORTH",
+    "strength": 111000,
+    "commander": "Charles XIII",
+    "lat": 52.274880130680536,
+    "lon": 13.546142578125
+  },
+  {
+    "id": "yellowwithblue-1778478177000-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "XI ARMY-CORPS",
+    "strength": 16000,
+    "commander": "JOHAN CHRISTOPHER TOLL",
+    "lat": 60.37586010056013,
+    "lon": 21.489257812500004
+  },
+  {
+    "id": "yellowwithblue-1778478177000-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "PORI GARRISON",
+    "strength": 3600,
+    "commander": "Johan Adam Cronstedt",
+    "lat": 61.0954790195121,
+    "lon": 21.566162109375
+  },
+  {
+    "id": "yellowwithblue-1778478177000-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "ARMY OF SCANIA",
+    "strength": 7800,
+    "commander": "MARUITZ KLINGSPLOR",
+    "lat": 54.39015388401026,
+    "lon": 9.777832031250002
+  },
+  {
+    "id": "yellowwithblue-1778478466000-0",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "SWEDISH BATTLEFLEET",
+    "strength": 50,
+    "commander": "Rudolf Cederstrom",
+    "lat": 56.225031333026806,
+    "lon": 15.380859375000002
+  },
+  {
+    "id": "yellowwithblue-1778478796000-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "III ARMY-CORPS",
+    "strength": 7000,
+    "commander": "Gustaf Fredrik Morner",
+    "lat": 61.270232790000634,
+    "lon": 22.96142578125
+  },
+  {
+    "id": "yellowwithblue-1778478796000-4",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "SVEABORG GARRISON",
+    "strength": 7000,
+    "commander": "Eberhard von Vegesack",
+    "lat": 60.146973929322854,
+    "lon": 25.048828125000004
+  }
+]

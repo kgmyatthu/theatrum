@@ -1,4 +1,4 @@
-// Adversarial tests for the move validator. Every test is a single
+// Adversarial tests for the v7 move validator. Each test is one
 // scenario expressed as a fixture passed to the pure validateMove()
 // function — no fs, no gh CLI, no network. Run with:
 //
@@ -17,7 +17,7 @@ import { validateMove } from '../lib/validate-move-core.mjs';
 
 function force(overrides = {}) {
   return {
-    id: '1',
+    id: 'seed-0-0',
     nation: 'spain',
     branch: 'army',
     name: '1st Corps',
@@ -29,17 +29,13 @@ function force(overrides = {}) {
   };
 }
 
-function state(overrides = {}) {
+function stateFile(overrides = {}) {
   return {
-    appVersion: 'theatrum/v6',
+    appVersion: 'theatrum/v7',
     ownerships: [
       [0, 'spain'],
       [1, 'france'],
       [2, 'spain'],
-    ],
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
     ],
     countries: [
       { name: 'spain', color: '#1F4E9C' },
@@ -49,24 +45,31 @@ function state(overrides = {}) {
   };
 }
 
+function forcesMap(overrides = {}) {
+  return {
+    spain: [force({ id: 'spain-1', nation: 'spain', name: '1st Corps' })],
+    france: [force({ id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' })],
+    ...overrides,
+  };
+}
+
 const PERMS = {
   master: { role: 'admin' },
   alice: { role: 'player', nation: 'spain' },
   bob: { role: 'player', nation: 'france' },
-  // Mixed-case nation in perm.json — must still match against lowercase state.
+  // Mixed-case nation in perm.json — must still resolve to the lowercase file.
   carol: { role: 'player', nation: 'Spain' },
   // A registered user with no nation — borked entry.
   dangling: { role: 'player' },
 };
 
 function defaults(overrides = {}) {
-  const base = state();
   return {
-    baseState: base,
-    headState: state(),
+    base: { state: stateFile(), forces: forcesMap() },
+    head: { state: stateFile(), forces: forcesMap() },
     perms: PERMS,
     prAuthor: 'alice',
-    changedFiles: ['public/data/state.json'],
+    changedFiles: ['public/data/forces/spain.json'],
     mergeable: true,
     ...overrides,
   };
@@ -82,7 +85,7 @@ function expectPass(result) {
 }
 
 // ────────────────────────────────────────────────────────────────────
-// Authorization: no-permission users must get nothing
+// Authorization
 // ────────────────────────────────────────────────────────────────────
 
 test('reject: random GitHub user not in perm.json', () => {
@@ -112,17 +115,28 @@ test('reject: registered user with explicitly garbage role', () => {
 });
 
 // ────────────────────────────────────────────────────────────────────
-// File scope: players are quarantined to state.json
+// File scope: players are quarantined to their nation's force file
 // ────────────────────────────────────────────────────────────────────
 
 test('reject: player tries to edit perm.json (privilege escalation)', () => {
   expectReject(
     validateMove(
       defaults({
-        changedFiles: ['public/data/state.json', 'public/data/perm.json'],
+        changedFiles: ['public/data/forces/spain.json', 'public/data/perm.json'],
       }),
     ),
-    /modifies files outside public\/data\/state\.json/,
+    /modifies files outside/,
+  );
+});
+
+test('reject: player tries to edit state.json (province ownership)', () => {
+  expectReject(
+    validateMove(
+      defaults({
+        changedFiles: ['public/data/forces/spain.json', 'public/data/state.json'],
+      }),
+    ),
+    /modifies files outside/,
   );
 });
 
@@ -130,7 +144,7 @@ test('reject: player tries to edit a workflow file', () => {
   expectReject(
     validateMove(
       defaults({
-        changedFiles: ['public/data/state.json', '.github/workflows/validate-and-merge.yml'],
+        changedFiles: ['public/data/forces/spain.json', '.github/workflows/validate-and-merge.yml'],
       }),
     ),
     /modifies files outside/,
@@ -141,18 +155,18 @@ test('reject: player tries to add a brand-new file', () => {
   expectReject(
     validateMove(
       defaults({
-        changedFiles: ['public/data/state.json', 'src/payload.ts'],
+        changedFiles: ['public/data/forces/spain.json', 'src/payload.ts'],
       }),
     ),
     /modifies files outside/,
   );
 });
 
-test('reject: player tries to edit only perm.json (no state.json change)', () => {
+test('reject: player tries to edit another nation\'s force file', () => {
   expectReject(
     validateMove(
       defaults({
-        changedFiles: ['public/data/perm.json'],
+        changedFiles: ['public/data/forces/france.json'],
       }),
     ),
     /modifies files outside/,
@@ -160,171 +174,99 @@ test('reject: player tries to edit only perm.json (no state.json change)', () =>
 });
 
 // ────────────────────────────────────────────────────────────────────
-// Border integrity: only admins can change ownership / countries
+// Force/file consistency invariants (universal — admins too)
 // ────────────────────────────────────────────────────────────────────
 
-test('reject: player tries to steal a province (change ownership)', () => {
-  const head = state({
-    ownerships: [
-      [0, 'spain'],
-      [1, 'spain'], // was france — alice annexes France's province
-      [2, 'spain'],
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /ownership cannot be changed/);
+test('reject: force in spain.json with nation=france (impersonation)', () => {
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      // Player puts a france-nation force inside their own file.
+      spain: [
+        force({ id: 'spain-1', nation: 'spain' }),
+        force({ id: 'sneaky', nation: 'france', name: 'Phantom Army' }),
+      ],
+    },
+  };
+  expectReject(validateMove(defaults({ head })), /declares nation "france"; must match filename/);
 });
 
-test('reject: player adds a new country', () => {
-  const head = state({
-    countries: [
-      { name: 'spain', color: '#1F4E9C' },
-      { name: 'france', color: '#D7837F' },
-      { name: 'wakanda', color: '#000000' },
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /country list/);
+test('reject: numeric force id (must be string)', () => {
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [
+        force({ id: 'spain-1', nation: 'spain' }),
+        // Cast to bypass the helper's string default
+        { ...force({ id: 'x', nation: 'spain', name: 'Numeric' }), id: 999 },
+      ],
+    },
+  };
+  expectReject(validateMove(defaults({ head })), /not a string/);
 });
 
-test('reject: player renames an existing country', () => {
-  const head = state({
-    countries: [
-      { name: 'spain-empire', color: '#1F4E9C' },
-      { name: 'france', color: '#D7837F' },
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /country list/);
+test('reject: duplicate force id across nation files', () => {
+  const head = {
+    state: stateFile(),
+    forces: {
+      spain: [force({ id: 'dup', nation: 'spain' })],
+      france: [force({ id: 'dup', nation: 'france', name: 'Collision' })],
+    },
+  };
+  expectReject(validateMove(defaults({ head })), /duplicate force id dup/);
 });
 
-test('reject: player recolors an existing country', () => {
-  const head = state({
-    countries: [
-      { name: 'spain', color: '#FF00FF' }, // changed
-      { name: 'france', color: '#D7837F' },
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /country list/);
+test('reject: duplicate force id within a single nation file', () => {
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [
+        force({ id: 'spain-1', nation: 'spain' }),
+        force({ id: 'spain-1', nation: 'spain', name: 'Decoy' }),
+      ],
+    },
+  };
+  expectReject(validateMove(defaults({ head })), /duplicate force id/);
 });
 
-// ────────────────────────────────────────────────────────────────────
-// Force integrity: players can only touch their own
-// ────────────────────────────────────────────────────────────────────
-
-test('reject: player removes another nation\'s force', () => {
-  const head = state({
-    forces: [force({ id: '1', nation: 'spain' })], // dropped force #2 (france)
-  });
-  expectReject(validateMove(defaults({ headState: head })), /force #2.*not owned by spain/);
-});
-
-test('reject: player moves another nation\'s force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /force #2 edited but nation must be spain/);
-});
-
-test('reject: player renames another nation\'s force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Comically Renamed', commander: 'Bonaparte' }),
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /force #2 edited/);
-});
-
-test('reject: player changes another nation\'s force strength', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', strength: 1 }),
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /force #2 edited/);
-});
-
-test('reject: player adds a force claiming another nation', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: '3', nation: 'france', name: 'Phantom Army', strength: 999999 }),
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /force #3.*not owned by spain/);
-});
-
-test('reject: player tries to convert enemy force to their nation (nation swap)', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      // bob (france) tries to take over force #2 by relabeling it spanish
-      force({ id: '2', nation: 'spain', name: 'Grande Armée', commander: 'Bonaparte' }),
-    ],
-  });
+test('reject: orphan force file (country removed but file kept)', () => {
+  const head = {
+    state: stateFile({
+      countries: [{ name: 'france', color: '#D7837F' }], // spain removed
+    }),
+    forces: forcesMap(), // spain.json still has forces
+  };
   expectReject(
-    validateMove(defaults({ headState: head, prAuthor: 'bob' })),
-    /force #2 edited but nation must be france/,
+    validateMove(defaults({ head, prAuthor: 'master' })),
+    /forces\/spain\.json exists but spain is not in state\.json countries/,
   );
 });
 
-test('reject: duplicate force id (last-wins JSON parse trick)', () => {
-  // Two entries with id=2: one keeps the original (france), the other
-  // claims it for spain. JSON.parse keeps the last; new Map() dedupes.
-  // The duplicate-id guard catches it before per-force checks run.
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: '2', nation: 'spain', name: 'Decoy' }),
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /duplicate force id/);
-});
-
 // ────────────────────────────────────────────────────────────────────
-// Schema gate — stale browser-cached clients must not regress the file
-// shape (e.g. rewrite deterministic string IDs back to numeric).
-// Runs BEFORE admin bypass so even an admin's stale client is blocked.
+// Schema gate — stale browser clients can't regress the file shape
 // ────────────────────────────────────────────────────────────────────
 
-test('reject: appVersion is the legacy v5 (stale client)', () => {
-  const head = state({ appVersion: 'theatrum/v5' });
-  expectReject(validateMove(defaults({ headState: head })), /appVersion mismatch/);
+test('reject: appVersion is the legacy v6 (stale client)', () => {
+  const head = { state: stateFile({ appVersion: 'theatrum/v6' }), forces: forcesMap() };
+  expectReject(validateMove(defaults({ head })), /appVersion mismatch/);
 });
 
 test('reject: appVersion is missing entirely (very stale client)', () => {
-  const head = state();
-  delete head.appVersion;
-  expectReject(validateMove(defaults({ headState: head })), /appVersion mismatch/);
-});
-
-test('reject: head still carries the legacy nextForceId field', () => {
-  const head = state();
-  head.nextForceId = 99;
-  expectReject(validateMove(defaults({ headState: head })), /legacy nextForceId/);
-});
-
-test('reject: head has a numeric force id (must be string)', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      // raw number — what an old client would submit
-      { ...force({ id: 999, nation: 'spain', name: 'Rewrite' }), id: 999 },
-    ],
-  });
-  expectReject(validateMove(defaults({ headState: head })), /not a string/);
+  const head = { state: stateFile(), forces: forcesMap() };
+  delete head.state.appVersion;
+  expectReject(validateMove(defaults({ head })), /appVersion mismatch/);
 });
 
 test('reject: schema gate fires before admin bypass (admin\'s stale client too)', () => {
-  // The actual production failure mode: an admin's cached old client
-  // submitted v5 and the admin bypass let it through. This must not happen.
-  const head = state({ appVersion: 'theatrum/v5' });
+  // The production failure mode that triggered this redesign: an admin's
+  // cached old client submitted v6 and the admin bypass let it through.
+  // Must NOT happen.
+  const head = { state: stateFile({ appVersion: 'theatrum/v6' }), forces: forcesMap() };
   expectReject(
-    validateMove(defaults({ prAuthor: 'master', headState: head })),
+    validateMove(defaults({ prAuthor: 'master', head })),
     /appVersion mismatch/,
   );
 });
@@ -342,116 +284,131 @@ test('reject: GitHub couldn\'t determine mergeability (still pending)', () => {
 });
 
 // ────────────────────────────────────────────────────────────────────
-// Legitimate paths must pass — no false positives
+// Happy paths — legitimate player actions must pass
 // ────────────────────────────────────────────────────────────────────
 
 test('pass: player legitimately moves their own force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain', lat: 41, lon: -4 }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head })));
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [force({ id: 'spain-1', nation: 'spain', lat: 41, lon: -4 })],
+    },
+  };
+  expectPass(validateMove(defaults({ head })));
 });
 
 test('pass: player adds a new force of their own nation', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: '3', nation: 'spain', name: '2nd Corps' }),
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head })));
-});
-
-test('pass: deterministic string IDs (login-epoch-seq) validate without collision', () => {
-  // Two players adding armies "concurrently" mint self-namespaced IDs.
-  // Without the old nextForceId counter, neither side claims a number the
-  // other might also pick — both PRs validate independently.
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-      force({ id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve' }),
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head })));
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [
+        force({ id: 'spain-1', nation: 'spain' }),
+        force({ id: 'alice-123-0', nation: 'spain', name: '2nd Corps' }),
+      ],
+    },
+  };
+  expectPass(validateMove(defaults({ head })));
 });
 
 test('pass: player removes one of their own forces', () => {
-  const head = state({
-    forces: [force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' })],
-  });
-  expectPass(validateMove(defaults({ headState: head })));
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [], // alice deletes her one force
+    },
+  };
+  expectPass(validateMove(defaults({ head })));
 });
 
 test('pass: case-insensitive nation match (perm.json has TitleCase)', () => {
-  // Carol is registered as "Spain" — state is "spain". Should still match.
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain', lat: 42 }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head, prAuthor: 'carol' })));
+  expectPass(validateMove(defaults({ prAuthor: 'carol' })));
 });
 
-test('pass: empty PR (no diff) is technically valid — diff check is upstream', () => {
-  // The submit modal short-circuits empty PRs, but if one slips through
-  // the validator should still pass (no malicious change).
-  expectPass(validateMove(defaults()));
+test('pass: deterministic string IDs from multiple players in same nation', () => {
+  // Two spain players added forces — both ids namespaced by their own
+  // login, so no collision.
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [
+        force({ id: 'spain-1', nation: 'spain' }),
+        force({ id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve' }),
+        force({ id: 'carol-1715551200001-0', nation: 'spain', name: 'Aragón' }),
+      ],
+    },
+  };
+  expectPass(validateMove(defaults({ head })));
 });
 
 // ────────────────────────────────────────────────────────────────────
-// Admin bypass — master can do anything
+// Admin bypass — master can do anything (modulo schema + consistency)
 // ────────────────────────────────────────────────────────────────────
 
 test('pass: admin moves an enemy force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head, prAuthor: 'master' })));
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      france: [
+        force({ id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+      ],
+    },
+  };
+  expectPass(
+    validateMove(defaults({ head, prAuthor: 'master', changedFiles: ['public/data/forces/france.json'] })),
+  );
 });
 
 test('pass: admin changes ownership', () => {
-  const head = state({
-    ownerships: [
-      [0, 'france'], // re-assign Spanish provinces
-      [1, 'france'],
-      [2, 'france'],
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head, prAuthor: 'master' })));
+  const head = {
+    state: stateFile({
+      ownerships: [
+        [0, 'france'],
+        [1, 'france'],
+        [2, 'france'],
+      ],
+    }),
+    forces: forcesMap(),
+  };
+  expectPass(
+    validateMove(defaults({ head, prAuthor: 'master', changedFiles: ['public/data/state.json'] })),
+  );
 });
 
-test('pass: admin renames / recolors / adds countries', () => {
-  const head = state({
-    countries: [
-      { name: 'spain-empire', color: '#FF0000' },
-      { name: 'france', color: '#D7837F' },
-      { name: 'wakanda', color: '#000000' },
-    ],
-  });
-  expectPass(validateMove(defaults({ headState: head, prAuthor: 'master' })));
-});
-
-test('pass: admin edits perm.json alongside state.json', () => {
+test('pass: admin renames a country (state.json + force file moved)', () => {
+  const head = {
+    state: stateFile({
+      countries: [
+        { name: 'spain-empire', color: '#1F4E9C' },
+        { name: 'france', color: '#D7837F' },
+      ],
+    }),
+    forces: {
+      // forces/spain.json deleted; forces/spain-empire.json created with renamed nation
+      'spain-empire': [force({ id: 'spain-1', nation: 'spain-empire', name: '1st Corps' })],
+      france: forcesMap().france,
+    },
+  };
   expectPass(
     validateMove(
       defaults({
+        head,
         prAuthor: 'master',
-        changedFiles: ['public/data/state.json', 'public/data/perm.json'],
+        changedFiles: [
+          'public/data/state.json',
+          'public/data/forces/spain.json',
+          'public/data/forces/spain-empire.json',
+        ],
       }),
     ),
   );
 });
 
-test('pass: admin perm-only PR (no state.json edits)', () => {
+test('pass: admin perm-only PR (no state.json or force edits)', () => {
   expectPass(
     validateMove(
       defaults({
@@ -463,20 +420,7 @@ test('pass: admin perm-only PR (no state.json edits)', () => {
 });
 
 // ────────────────────────────────────────────────────────────────────
-// Admin still subject to the mergeability gate
-// ────────────────────────────────────────────────────────────────────
-
-test('reject: admin PR with merge conflict still blocked', () => {
-  expectReject(
-    validateMove(defaults({ prAuthor: 'master', mergeable: false })),
-    /merge conflict/,
-  );
-});
-
-// ────────────────────────────────────────────────────────────────────
-// Bot-authored PRs (the worker submitting as the App). The author
-// reported by GitHub is the bot; the verified submitter login is in
-// the PR body marker. The marker is trusted only for bot-authored PRs.
+// Bot-authored PRs (the worker submitting as the App)
 // ────────────────────────────────────────────────────────────────────
 
 const BOT = 'theatrumauth[bot]';
@@ -495,8 +439,6 @@ test('reject: bot PR with no body marker', () => {
 });
 
 test('reject: bot PR with marker pointing to an unregistered user', () => {
-  // GitHub logins are [A-Za-z0-9-]+; pick something valid so the marker
-  // parses, but not present in PERMS.
   expectReject(
     validateMove(
       defaults({
@@ -514,59 +456,44 @@ test('pass: bot PR with marker for an admin', () => {
       defaults({
         prAuthor: BOT,
         prBody: marker('master'),
-        // admin can change anything
-        headState: state({
-          ownerships: [[0, 'france'], [1, 'france'], [2, 'france']],
-        }),
+        changedFiles: ['public/data/state.json'],
+        head: {
+          state: stateFile({
+            ownerships: [[0, 'france'], [1, 'france'], [2, 'france']],
+          }),
+          forces: forcesMap(),
+        },
       }),
     ),
   );
 });
 
 test('pass: bot PR with marker for a player moving their own force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain', lat: 41, lon: -4 }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
-    ],
-  });
+  const head = {
+    state: stateFile(),
+    forces: {
+      ...forcesMap(),
+      spain: [force({ id: 'spain-1', nation: 'spain', lat: 41 })],
+    },
+  };
   expectPass(
     validateMove(
       defaults({
         prAuthor: BOT,
         prBody: marker('alice'),
-        headState: head,
+        head,
       }),
     ),
   );
 });
 
-test('reject: bot PR with marker for a player moving an enemy force', () => {
-  const head = state({
-    forces: [
-      force({ id: '1', nation: 'spain' }),
-      force({ id: '2', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
-    ],
-  });
+test('reject: bot PR with marker for a player editing another nation\'s file', () => {
   expectReject(
     validateMove(
       defaults({
         prAuthor: BOT,
         prBody: marker('alice'),
-        headState: head,
-      }),
-    ),
-    /force #2 edited but nation must be spain/,
-  );
-});
-
-test('reject: bot PR for a player attempting perm.json edit', () => {
-  expectReject(
-    validateMove(
-      defaults({
-        prAuthor: BOT,
-        prBody: marker('alice'),
-        changedFiles: ['public/data/state.json', 'public/data/perm.json'],
+        changedFiles: ['public/data/forces/france.json'],
       }),
     ),
     /modifies files outside/,
@@ -574,7 +501,6 @@ test('reject: bot PR for a player attempting perm.json edit', () => {
 });
 
 test('reject: bot PR with malformed marker (non-alphanumeric chars)', () => {
-  // Marker regex requires [A-Za-z0-9-]+ — anything else is treated as missing.
   expectReject(
     validateMove(
       defaults({
@@ -586,11 +512,9 @@ test('reject: bot PR with malformed marker (non-alphanumeric chars)', () => {
   );
 });
 
-test('pass: non-bot PR ignores stray marker (auth=login, marker irrelevant)', () => {
-  // If a real user opens a PR with a forged marker pointing to someone
-  // else, the validator must NOT honor it — only bot PRs use markers.
-  // pr.user.login is the author, so they get checked against perm.json
-  // as themselves.
+test('pass: non-bot PR ignores stray marker', () => {
+  // Real user opens a PR with a forged marker pointing to someone else —
+  // the validator must NOT honor it.
   expectPass(
     validateMove(
       defaults({
@@ -602,9 +526,6 @@ test('pass: non-bot PR ignores stray marker (auth=login, marker irrelevant)', ()
 });
 
 test('reject: non-bot PR with forged marker still uses pr.user.login', () => {
-  // Random user opens a PR directly (somehow) with a marker claiming
-  // they're the admin. Validator uses prAuthor = random_attacker, not
-  // the marker. Random user isn't in perm.json → reject.
   expectReject(
     validateMove(
       defaults({

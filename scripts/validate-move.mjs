@@ -7,15 +7,18 @@
 //
 // Inputs (env): PR_AUTHOR, PR_NUMBER, GITHUB_REPOSITORY, GITHUB_OUTPUT, GH_TOKEN
 // Reads:
-//   ./base/public/data/perm.json     (TRUSTED — main's perm.json)
-//   ./base/public/data/state.json    (TRUSTED — main's state.json)
-//   ./head/public/data/state.json    (proposed)
-//   gh api repos/.../pulls/<n>       (mergeability)
-//   gh api repos/.../pulls/<n>/files (changed file list)
+//   ./base/public/data/perm.json           (TRUSTED — main's perm.json)
+//   ./base/public/data/state.json          (TRUSTED — main's state.json)
+//   ./base/public/data/forces/<nation>.json  (TRUSTED — main's forces, per nation)
+//   ./head/public/data/state.json          (proposed)
+//   ./head/public/data/forces/<nation>.json  (proposed, per nation)
+//   gh api repos/.../pulls/<n>             (mergeability)
+//   gh api repos/.../pulls/<n>/files       (changed file list)
 
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
-import { validateMove } from './lib/validate-move-core.mjs';
+import path from 'node:path';
+import { validateMove, FORCES_SUFFIX } from './lib/validate-move-core.mjs';
 
 const PR_AUTHOR = process.env.PR_AUTHOR;
 const PR_NUMBER = process.env.PR_NUMBER;
@@ -23,8 +26,8 @@ const REPO = process.env.GITHUB_REPOSITORY;
 const BASE = './base';
 const HEAD = './head';
 
-function gh(path) {
-  return execSync(`gh api ${path} --paginate`, { encoding: 'utf-8' });
+function gh(p) {
+  return execSync(`gh api ${p} --paginate`, { encoding: 'utf-8' });
 }
 
 function output(key, value) {
@@ -32,6 +35,33 @@ function output(key, value) {
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Read a state-and-forces tree from a checkout root (base/ or head/).
+ * Returns { state, forces } where forces is { <nation>: Force[] }.
+ *
+ * Missing state.json or missing forces/ directory is fine for the head
+ * (e.g. admin perm-only PRs don't touch them) — fall back to {} and let
+ * the validator's structural checks compare apples-to-apples.
+ */
+function readStateAndForces(root) {
+  const statePath = `${root}/public/data/state.json`;
+  const state = fs.existsSync(statePath)
+    ? JSON.parse(fs.readFileSync(statePath, 'utf-8'))
+    : {};
+  const forces = {};
+  const forcesDir = `${root}/public/data/forces`;
+  if (fs.existsSync(forcesDir)) {
+    for (const filename of fs.readdirSync(forcesDir)) {
+      if (!filename.endsWith(FORCES_SUFFIX)) continue;
+      const nation = filename.slice(0, -FORCES_SUFFIX.length);
+      forces[nation] = JSON.parse(
+        fs.readFileSync(path.join(forcesDir, filename), 'utf-8'),
+      );
+    }
+  }
+  return { state, forces };
+}
 
 // Resolve mergeability with retries — GitHub can return null while the
 // background mergeability check is still running.
@@ -51,18 +81,20 @@ const files = JSON.parse(gh(`repos/${REPO}/pulls/${PR_NUMBER}/files`));
 const changedFiles = files.map((f) => f.filename);
 
 const perms = JSON.parse(fs.readFileSync(`${BASE}/public/data/perm.json`, 'utf-8'));
-const baseState = JSON.parse(fs.readFileSync(`${BASE}/public/data/state.json`, 'utf-8'));
-// Head state may be absent if the PR doesn't touch state.json (admin
-// perm-only edit). Fall back to base so structural checks are no-ops.
-let headState = baseState;
-const headStatePath = `${HEAD}/public/data/state.json`;
-if (fs.existsSync(headStatePath)) {
-  headState = JSON.parse(fs.readFileSync(headStatePath, 'utf-8'));
-}
+const base = readStateAndForces(BASE);
+// Head may be missing files the PR didn't touch — but the actions/checkout
+// step always pulls the full PR branch, so files unchanged from main are
+// still present. Use whatever is there; fall back to base values if a
+// structural file is missing entirely.
+const headRaw = readStateAndForces(HEAD);
+const head = {
+  state: Object.keys(headRaw.state).length > 0 ? headRaw.state : base.state,
+  forces: Object.keys(headRaw.forces).length > 0 ? headRaw.forces : base.forces,
+};
 
 const result = validateMove({
-  baseState,
-  headState,
+  base,
+  head,
   perms,
   prAuthor: PR_AUTHOR,
   prBody,

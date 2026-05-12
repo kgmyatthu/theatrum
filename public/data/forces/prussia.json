@@ -1,0 +1,142 @@
+[
+  {
+    "id": "yellowwithblue-1778479985000-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "I Corps",
+    "strength": 30000,
+    "commander": "Gen. Friedrich Wilhelm von Bülow",
+    "lat": 52.17903285305614,
+    "lon": 5.398330306436115
+  },
+  {
+    "id": "yellowwithblue-1778479985000-1",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "II Corps",
+    "strength": 30000,
+    "commander": "Gen. Gebhard Leberecht von Blücher",
+    "lat": 52.07875532013546,
+    "lon": 5.177279333861424
+  },
+  {
+    "id": "yellowwithblue-1778479985000-2",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "III Corps",
+    "strength": 30000,
+    "commander": "Gen. Ludwig von Wallmoden-Gimborn",
+    "lat": 51.2679454615362,
+    "lon": 4.691137189679613
+  },
+  {
+    "id": "yellowwithblue-1778479985000-3",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "IV Corps",
+    "strength": 30000,
+    "commander": "Gen. Bogislav von Tauentzien",
+    "lat": 51.19483826678912,
+    "lon": 4.475530500226488
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "V Corps",
+    "strength": 30000,
+    "commander": "Gen. Hans David von Yorck",
+    "lat": 50.46432815382458,
+    "lon": 5.219475810595063
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-1",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "VI Corps",
+    "strength": 30000,
+    "commander": "Gen. Friedrich von Kleist",
+    "lat": 49.84517737497192,
+    "lon": 9.305293406498466
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-2",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "VII Corps",
+    "strength": 30000,
+    "commander": "Gen. August von Pannwitz",
+    "lat": 50.49247778429617,
+    "lon": 10.502714994739831
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-3",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "VIII Corps",
+    "strength": 30000,
+    "commander": "Gen. Adolf von Lützow",
+    "lat": 50.93783341506454,
+    "lon": 12.137902836294103
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-4",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "IX Corps",
+    "strength": 30000,
+    "commander": "Gen. Anton Wilhelm von L'Estocq",
+    "lat": 51.508618825613205,
+    "lon": 13.609557075939405
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-5",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "X Corps",
+    "strength": 30000,
+    "commander": "Gen. Frederick William, Duke of Brunswick",
+    "lat": 51.65896537666039,
+    "lon": 15.545642795477129
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-6",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XI Corps",
+    "strength": 30000,
+    "commander": "Gen. Prince Augustus of Prussia",
+    "lat": 52.48250371342609,
+    "lon": 15.696821402915038
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-7",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XII Corps",
+    "strength": 30000,
+    "commander": "Gen. Karl von Grolman",
+    "lat": 53.522416287203775,
+    "lon": 16.69920245635301
+  },
+  {
+    "id": "KingREN1-Suitman-1778480453000-8",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XIII Corps",
+    "strength": 30000,
+    "commander": "Gen. August Neidhardt von Gneisenau",
+    "lat": 53.44913131045756,
+    "lon": 20.291897565047243
+  },
+  {
+    "id": "KingREN1-Suitman-1778544659933-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XVII Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.5536776492634,
+    "lon": 5.855843239800814
+  }
+]

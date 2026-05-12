@@ -1,5 +1,6 @@
 import type { AppSnapshot } from '@/types';
 import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import { getSession, GitHubAuthError } from './session';
 
 const WORKER_URL = import.meta.env.VITE_OAUTH_WORKER_URL as string | undefined;
@@ -24,7 +25,7 @@ export type UserAdd =
  */
 export async function hasMeaningfulDiff(snapshot: AppSnapshot): Promise<boolean> {
   try {
-    const remote = await fetchLiveDataFresh<AppSnapshot>('state.json');
+    const remote = await fetchLiveSnapshot(fetchLiveDataFresh);
     return JSON.stringify(snapshot) !== JSON.stringify(remote);
   } catch {
     // Couldn't read main — let the caller submit; the validator will sort it out.
