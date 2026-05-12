@@ -18604,8 +18604,8 @@
       "name": "ARMY OF FINLAND",
       "strength": 60000,
       "commander": "Alexander I",
-      "lat": 56.927741966236376,
-      "lon": 24.05044555664063
+      "lat": 55.21649013168979,
+      "lon": 25.312500000000004
     },
     {
       "id": "yellowwithblue-1778478796000-1",
@@ -18624,8 +18624,8 @@
       "name": "ARMY OF THE BALTICS",
       "strength": 23000,
       "commander": "Mikhail Bulatov",
-      "lat": 55.973798205076605,
-      "lon": 23.70849609375
+      "lat": 54.87660665410869,
+      "lon": 24.884033203125004
     },
     {
       "id": "yellowwithblue-1778478796000-3",
@@ -19174,8 +19174,8 @@
       "name": "Army of Ruthenia",
       "strength": 54000,
       "commander": "Pyotr Bagration",
-      "lat": 53.72921671251272,
-      "lon": 26.828613281250004
+      "lat": 53.350551318399916,
+      "lon": 25.147705078125004
     },
     {
       "id": "Vancouver1903-1778540725000-2",
