@@ -16,8 +16,8 @@
     "name": "XI ARMY-CORPS",
     "strength": 16000,
     "commander": "JOHAN CHRISTOPHER TOLL",
-    "lat": 54.348552775876065,
-    "lon": 12.85400390625
+    "lat": 54.3197273165176,
+    "lon": 10.137634277343752
   },
   {
     "id": "yellowwithblue-1778478177000-3",
@@ -46,8 +46,8 @@
     "name": "III ARMY-CORPS",
     "strength": 7000,
     "commander": "Gustaf Fredrik Morner",
-    "lat": 53.42262754609996,
-    "lon": 14.518432617187502
+    "lat": 54.229918830835224,
+    "lon": 9.893188476562502
   },
   {
     "id": "yellowwithblue-1778554864860-0",
@@ -56,7 +56,7 @@
     "name": "XVIII Corps",
     "strength": 8000,
     "commander": "Carl Adlercreutz",
-    "lat": 54.049714182106946,
-    "lon": 13.2440185546875
+    "lat": 54.223496448152744,
+    "lon": 10.099182128906252
   }
 ]
