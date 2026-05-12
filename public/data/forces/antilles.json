@@ -78,5 +78,45 @@
     "commander": "Henri Cristophe",
     "lat": 18.407204042834895,
     "lon": -66.11758997663857
+  },
+  {
+    "id": "Walrusbear0831-1778557826314-7",
+    "nation": "antilles",
+    "branch": "navy",
+    "name": "Santiago/Port-au-Prince Naval Station",
+    "strength": 36,
+    "commander": "Louis Verano Rodrigues",
+    "lat": 20.01056793091625,
+    "lon": -75.85163048257463
+  },
+  {
+    "id": "Walrusbear0831-1778557933981-8",
+    "nation": "antilles",
+    "branch": "navy",
+    "name": "Cartagena Fleet",
+    "strength": 30,
+    "commander": "Henri Cristophe",
+    "lat": 10.340128255367146,
+    "lon": -75.52721106272658
+  },
+  {
+    "id": "Walrusbear0831-1778558140580-9",
+    "nation": "antilles",
+    "branch": "navy",
+    "name": "La Habana Fleet",
+    "strength": 26,
+    "commander": "Victor Simon Quinones",
+    "lat": 23.1333355738232,
+    "lon": -82.34176792670043
+  },
+  {
+    "id": "Walrusbear0831-1778558202712-10",
+    "nation": "antilles",
+    "branch": "navy",
+    "name": "Pacific Fleet",
+    "strength": 18,
+    "commander": "Juan Maria Laurent",
+    "lat": 8.895711596969484,
+    "lon": -79.53002929687501
   }
 ]
