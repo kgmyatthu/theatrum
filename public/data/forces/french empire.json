@@ -16,8 +16,8 @@
     "name": "II Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Bessieres",
-    "lat": 52.30225859053071,
-    "lon": 5.108287968379193
+    "lat": 51.97484312160997,
+    "lon": 4.7516283702378335
   },
   {
     "id": "AceApache-1778526187000-1",
@@ -194,9 +194,9 @@
     "nation": "french empire",
     "branch": "army",
     "name": "XX Corp",
-    "strength": 30000,
+    "strength": 20000,
     "commander": "Antoine Lasalle",
-    "lat": 51.3707548612829,
-    "lon": 4.42590597069036
+    "lat": 51.85088416471087,
+    "lon": 4.932802332798576
   }
 ]
