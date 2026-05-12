@@ -1,15 +1,5 @@
 [
   {
-    "id": "seed-1778367500000-3",
-    "nation": "russian empire",
-    "branch": "army",
-    "name": "Army of the Cossack",
-    "strength": 30000,
-    "commander": "Matvei Platov",
-    "lon": 24.257812500000004,
-    "lat": 49.85215166777001
-  },
-  {
     "id": "yellowwithblue-1778478796000-0",
     "nation": "russian empire",
     "branch": "army",
@@ -44,10 +34,10 @@
     "nation": "russian empire",
     "branch": "army",
     "name": "Army of Ukraine",
-    "strength": 54000,
+    "strength": 84000,
     "commander": "Mikhail Kutuzov",
-    "lat": 49.086459027368335,
-    "lon": 25.122985839843754
+    "lat": 50.07300647938297,
+    "lon": 22.008361816406254
   },
   {
     "id": "Vancouver1903-1778540725000-1",
