@@ -18654,8 +18654,8 @@
       "name": "I Corps",
       "strength": 30000,
       "commander": "Gen. Friedrich Wilhelm von Bülow",
-      "lat": 52.84271455240748,
-      "lon": 7.283924045477127
+      "lat": 52.17903285305614,
+      "lon": 5.398330306436115
     },
     {
       "id": "yellowwithblue-1778479985000-1",
@@ -18664,8 +18664,8 @@
       "name": "II Corps",
       "strength": 30000,
       "commander": "Gen. Gebhard Leberecht von Blücher",
-      "lat": 52.049096679424196,
-      "lon": 6.970869284004318
+      "lat": 52.07875532013546,
+      "lon": 5.177279333861424
     },
     {
       "id": "yellowwithblue-1778479985000-2",
@@ -18674,8 +18674,8 @@
       "name": "III Corps",
       "strength": 30000,
       "commander": "Gen. Ludwig von Wallmoden-Gimborn",
-      "lat": 51.27910401205116,
-      "lon": 6.300678348683931
+      "lat": 51.2679454615362,
+      "lon": 4.691137189679613
     },
     {
       "id": "yellowwithblue-1778479985000-3",
@@ -18684,8 +18684,8 @@
       "name": "IV Corps",
       "strength": 30000,
       "commander": "Gen. Bogislav von Tauentzien",
-      "lat": 50.45755641289912,
-      "lon": 6.520439415377553
+      "lat": 51.19483826678912,
+      "lon": 4.475530500226488
     },
     {
       "id": "KingREN1-Suitman-1778480453000-0",
@@ -18694,8 +18694,8 @@
       "name": "V Corps",
       "strength": 30000,
       "commander": "Gen. Hans David von Yorck",
-      "lat": 50.134569737204906,
-      "lon": 7.997947196218492
+      "lat": 50.46432815382458,
+      "lon": 5.219475810595063
     },
     {
       "id": "KingREN1-Suitman-1778480453000-1",
@@ -18704,8 +18704,8 @@
       "name": "VI Corps",
       "strength": 30000,
       "commander": "Gen. Friedrich von Kleist",
-      "lat": 50.057167926142114,
-      "lon": 8.942882595147877
+      "lat": 49.84517737497192,
+      "lon": 9.305293406498466
     },
     {
       "id": "KingREN1-Suitman-1778480453000-2",
@@ -18791,11 +18791,11 @@
       "id": "KingRed2007-1778521313000-0",
       "nation": "britain",
       "branch": "army",
-      "name": "I Corps",
-      "strength": 30000,
+      "name": "Anglo-Spanish Army",
+      "strength": 60000,
       "commander": "Arthur Wellesley",
-      "lat": 42.52272381854161,
-      "lon": -5.108642578125001
+      "lat": 43.328674183738606,
+      "lon": -8.366088867187502
     },
     {
       "id": "KingRed2007-1778521313000-1",
@@ -19198,94 +19198,14 @@
       "lon": 33.55808258056641
     },
     {
-      "id": "KingRed2007-1778544321915-0",
-      "nation": "britain",
+      "id": "KingREN1-Suitman-1778544659933-0",
+      "nation": "prussia",
       "branch": "army",
-      "name": "Reserve Corps",
-      "strength": 20000,
-      "commander": "",
-      "lat": 51.55658218576253,
-      "lon": -0.16479492187500003
-    },
-    {
-      "id": "KingRed2007-1778544335343-1",
-      "nation": "britain",
-      "branch": "navy",
-      "name": "Plymouth Station",
-      "strength": 100,
-      "commander": "",
-      "lat": 50.07124366044474,
-      "lon": -0.9777832031250001
-    },
-    {
-      "id": "KingRed2007-1778544397604-3",
-      "nation": "britain",
-      "branch": "army",
-      "name": "II Corps",
-      "strength": 30000,
-      "commander": "Sir John Moore",
-      "lat": 43.34715236003303,
-      "lon": -4.952087402343751
-    },
-    {
-      "id": "KingRed2007-1778544405146-4",
-      "nation": "britain",
-      "branch": "army",
-      "name": "III Corps",
+      "name": "XVII Corps",
       "strength": 30000,
       "commander": "",
-      "lat": 42.124710287101955,
-      "lon": -5.086669921875001
-    },
-    {
-      "id": "KingRed2007-1778544415230-5",
-      "nation": "britain",
-      "branch": "army",
-      "name": "IV Corps",
-      "strength": 30000,
-      "commander": "",
-      "lat": 42.87797684287408,
-      "lon": -5.039978027343751
-    },
-    {
-      "id": "KingRed2007-1778544474144-6",
-      "nation": "britain",
-      "branch": "army",
-      "name": "Bengal Presidency",
-      "strength": 80000,
-      "commander": "",
-      "lat": 23.523703180770564,
-      "lon": 90.0878742814251
-    },
-    {
-      "id": "KingRed2007-1778544480744-7",
-      "nation": "britain",
-      "branch": "army",
-      "name": "Madras Presidency",
-      "strength": 80000,
-      "commander": "",
-      "lat": 11.005904459659451,
-      "lon": 79.1015625
-    },
-    {
-      "id": "KingRed2007-1778544489460-8",
-      "nation": "britain",
-      "branch": "army",
-      "name": "Bombay Presidency",
-      "strength": 40000,
-      "commander": "",
-      "lat": 11.221510260010541,
-      "lon": 76.10229492187501
-    },
-    {
-      "id": "KingRed2007-1778544501952-9",
-      "nation": "britain",
-      "branch": "army",
-      "name": "Army of the Indies",
-      "strength": 15000,
-      "commander": "",
-      "lat": 24.68528777319631,
-      "lon": -77.93285731043076
+      "lat": 49.5536776492634,
+      "lon": 5.855843239800814
     }
   ],
   "countries": [
