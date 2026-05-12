@@ -16,18 +16,8 @@
     "name": "XI ARMY-CORPS",
     "strength": 16000,
     "commander": "JOHAN CHRISTOPHER TOLL",
-    "lat": 60.37586010056013,
-    "lon": 21.489257812500004
-  },
-  {
-    "id": "yellowwithblue-1778478177000-2",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "PORI GARRISON",
-    "strength": 3600,
-    "commander": "Johan Adam Cronstedt",
-    "lat": 61.0954790195121,
-    "lon": 21.566162109375
+    "lat": 54.348552775876065,
+    "lon": 12.85400390625
   },
   {
     "id": "yellowwithblue-1778478177000-3",
@@ -56,17 +46,17 @@
     "name": "III ARMY-CORPS",
     "strength": 7000,
     "commander": "Gustaf Fredrik Morner",
-    "lat": 61.270232790000634,
-    "lon": 22.96142578125
+    "lat": 53.42262754609996,
+    "lon": 14.518432617187502
   },
   {
-    "id": "yellowwithblue-1778478796000-4",
+    "id": "yellowwithblue-1778554864860-0",
     "nation": "sweden",
     "branch": "army",
-    "name": "SVEABORG GARRISON",
-    "strength": 7000,
-    "commander": "Eberhard von Vegesack",
-    "lat": 60.146973929322854,
-    "lon": 25.048828125000004
+    "name": "XVIII Corps",
+    "strength": 8000,
+    "commander": "Carl Adlercreutz",
+    "lat": 54.049714182106946,
+    "lon": 13.2440185546875
   }
 ]
