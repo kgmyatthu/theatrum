@@ -18674,8 +18674,8 @@
       "name": "III Corps",
       "strength": 30000,
       "commander": "Gen. Ludwig von Wallmoden-Gimborn",
-      "lat": 51.328863997399246,
-      "lon": 4.594378878129671
+      "lat": 51.2679454615362,
+      "lon": 4.691137189679613
     },
     {
       "id": "yellowwithblue-1778479985000-3",
@@ -18684,8 +18684,8 @@
       "name": "IV Corps",
       "strength": 30000,
       "commander": "Gen. Bogislav von Tauentzien",
-      "lat": 51.24899478471219,
-      "lon": 4.474182608131151
+      "lat": 51.19483826678912,
+      "lon": 4.475530500226488
     },
     {
       "id": "KingREN1-Suitman-1778480453000-0",
@@ -19094,8 +19094,8 @@
       "name": "V Corps",
       "strength": 30000,
       "commander": "",
-      "lat": 49.83687530828034,
-      "lon": 9.305419921875002
+      "lat": 48.63290858589535,
+      "lon": 8.942871093750002
     },
     {
       "id": "RadetzkyNTW-1778528727000-5",
@@ -19206,6 +19206,46 @@
       "commander": "",
       "lat": 49.5536776492634,
       "lon": 5.855843239800814
+    },
+    {
+      "id": "yourlocalgeobukseon-1778544896552-0",
+      "nation": "denmark",
+      "branch": "army",
+      "name": "His Majesty’s Royal Army",
+      "strength": 7500,
+      "commander": "Frederick VI",
+      "lat": 55.64504907040864,
+      "lon": 12.428283691406252
+    },
+    {
+      "id": "yourlocalgeobukseon-1778545027842-1",
+      "nation": "denmark",
+      "branch": "army",
+      "name": "Army of Zeeland",
+      "strength": 23000,
+      "commander": "Carl Edvardsen",
+      "lat": 55.787127290709066,
+      "lon": 11.9837951660156
+    },
+    {
+      "id": "yourlocalgeobukseon-1778545144410-2",
+      "nation": "denmark",
+      "branch": "army",
+      "name": "Army of Jutland",
+      "strength": 15000,
+      "commander": "Frederick of Hessen",
+      "lat": 55.50504611547583,
+      "lon": 11.443634033203086
+    },
+    {
+      "id": "yourlocalgeobukseon-1778545295367-3",
+      "nation": "denmark",
+      "branch": "navy",
+      "name": "Copenhagen Battlefleet",
+      "strength": 30,
+      "commander": "Steen Andersen Bille",
+      "lat": 54.65476860921582,
+      "lon": 10.447998046875002
     }
   ],
   "countries": [
