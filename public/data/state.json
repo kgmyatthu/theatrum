@@ -18601,21 +18601,21 @@
       "id": "yellowwithblue-1778478796000-0",
       "nation": "russia",
       "branch": "army",
-      "name": "ARMY OF THE NORTH",
+      "name": "ARMY OF FINLAND",
       "strength": 60000,
       "commander": "Alexander I",
-      "lat": 55.25407706707272,
-      "lon": 25.224609375000004
+      "lat": 56.927741966236376,
+      "lon": 24.05044555664063
     },
     {
       "id": "yellowwithblue-1778478796000-1",
       "nation": "russia",
       "branch": "army",
-      "name": "ARMY OF GERMANY",
+      "name": "WESTERN ARMY OF FINLAND",
       "strength": 60000,
       "commander": "Konstantin Pavlovich",
-      "lat": 54.58280714851737,
-      "lon": 18.494453430175785
+      "lat": 60.694695372877476,
+      "lon": 22.401123046875004
     },
     {
       "id": "yellowwithblue-1778478796000-2",
@@ -18624,8 +18624,8 @@
       "name": "ARMY OF THE BALTICS",
       "strength": 23000,
       "commander": "Mikhail Bulatov",
-      "lat": 55.19141243527065,
-      "lon": 23.444824218750004
+      "lat": 55.973798205076605,
+      "lon": 23.70849609375
     },
     {
       "id": "yellowwithblue-1778478796000-3",
@@ -18674,8 +18674,8 @@
       "name": "III Corps",
       "strength": 30000,
       "commander": "Gen. Ludwig von Wallmoden-Gimborn",
-      "lat": 51.2679454615362,
-      "lon": 4.691137189679613
+      "lat": 51.328863997399246,
+      "lon": 4.594378878129671
     },
     {
       "id": "yellowwithblue-1778479985000-3",
@@ -18684,8 +18684,8 @@
       "name": "IV Corps",
       "strength": 30000,
       "commander": "Gen. Bogislav von Tauentzien",
-      "lat": 51.19483826678912,
-      "lon": 4.475530500226488
+      "lat": 51.24899478471219,
+      "lon": 4.474182608131151
     },
     {
       "id": "KingREN1-Suitman-1778480453000-0",
@@ -19094,7 +19094,7 @@
       "name": "V Corps",
       "strength": 30000,
       "commander": "",
-      "lat": 49.61070993807422,
+      "lat": 49.83687530828034,
       "lon": 9.305419921875002
     },
     {
@@ -19206,16 +19206,6 @@
       "commander": "",
       "lat": 49.5536776492634,
       "lon": 5.855843239800814
-    },
-    {
-      "id": "Vancouver1903-1778545353095-0",
-      "nation": "russia",
-      "branch": "navy",
-      "name": "Black Sea Fleet",
-      "strength": 32,
-      "commander": "Fyodor Ushakov",
-      "lat": 43.929549935614595,
-      "lon": 32.25585937500001
     }
   ],
   "countries": [
