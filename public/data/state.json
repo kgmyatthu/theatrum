@@ -18554,8 +18554,8 @@
       "name": "BERNADOTTE'S ARMY OF THE NORTH",
       "strength": 111000,
       "commander": "Charles XIII",
-      "lat": 52.274880130680536,
-      "lon": 13.546142578125
+      "lat": 52.429222277955134,
+      "lon": 13.392333984375
     },
     {
       "id": "yellowwithblue-1778478177000-1",
@@ -18584,8 +18584,8 @@
       "name": "ARMY OF SCANIA",
       "strength": 7800,
       "commander": "MARUITZ KLINGSPLOR",
-      "lat": 54.39015388401026,
-      "lon": 9.777832031250002
+      "lat": 54.30370443989811,
+      "lon": 10.393066406250002
     },
     {
       "id": "yellowwithblue-1778478466000-0",
@@ -18604,8 +18604,8 @@
       "name": "ARMY OF FINLAND",
       "strength": 60000,
       "commander": "Alexander I",
-      "lat": 55.21649013168979,
-      "lon": 25.312500000000004
+      "lat": 56.927741966236376,
+      "lon": 24.05044555664063
     },
     {
       "id": "yellowwithblue-1778478796000-1",
@@ -18624,8 +18624,8 @@
       "name": "ARMY OF THE BALTICS",
       "strength": 23000,
       "commander": "Mikhail Bulatov",
-      "lat": 54.87660665410869,
-      "lon": 24.884033203125004
+      "lat": 55.973798205076605,
+      "lon": 23.70849609375
     },
     {
       "id": "yellowwithblue-1778478796000-3",
@@ -19174,8 +19174,8 @@
       "name": "Army of Ruthenia",
       "strength": 54000,
       "commander": "Pyotr Bagration",
-      "lat": 53.350551318399916,
-      "lon": 25.147705078125004
+      "lat": 53.72921671251272,
+      "lon": 26.828613281250004
     },
     {
       "id": "Vancouver1903-1778540725000-2",
@@ -19224,8 +19224,8 @@
       "name": "Army of Jutland",
       "strength": 15000,
       "commander": "Frederick of Hessen",
-      "lat": 54.374158445055734,
-      "lon": 9.305419921875002
+      "lat": 54.282330899072235,
+      "lon": 10.063476562500002
     },
     {
       "id": "yourlocalgeobukseon-1778545295367-3",
@@ -19234,8 +19234,8 @@
       "name": "Copenhagen Battlefleet",
       "strength": 30,
       "commander": "Steen Andersen Bille",
-      "lat": 54.83233630197034,
-      "lon": 10.458984375000002
+      "lat": 54.64682332026277,
+      "lon": 10.526275634765625
     }
   ],
   "countries": [
