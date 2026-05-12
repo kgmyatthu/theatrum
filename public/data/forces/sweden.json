@@ -10,26 +10,6 @@
     "lon": 13.546142578125
   },
   {
-    "id": "yellowwithblue-1778478177000-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "XI ARMY-CORPS",
-    "strength": 16000,
-    "commander": "JOHAN CHRISTOPHER TOLL",
-    "lat": 54.3197273165176,
-    "lon": 10.137634277343752
-  },
-  {
-    "id": "yellowwithblue-1778478177000-3",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "ARMY OF SCANIA",
-    "strength": 7800,
-    "commander": "MARUITZ KLINGSPLOR",
-    "lat": 54.39015388401026,
-    "lon": 9.777832031250002
-  },
-  {
     "id": "yellowwithblue-1778478466000-0",
     "nation": "sweden",
     "branch": "navy",
@@ -38,25 +18,5 @@
     "commander": "Rudolf Cederstrom",
     "lat": 56.225031333026806,
     "lon": 15.380859375000002
-  },
-  {
-    "id": "yellowwithblue-1778478796000-3",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "III ARMY-CORPS",
-    "strength": 7000,
-    "commander": "Gustaf Fredrik Morner",
-    "lat": 54.229918830835224,
-    "lon": 9.893188476562502
-  },
-  {
-    "id": "yellowwithblue-1778554864860-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "XVIII Corps",
-    "strength": 8000,
-    "commander": "Carl Adlercreutz",
-    "lat": 54.223496448152744,
-    "lon": 10.099182128906252
   }
 ]
