@@ -126,8 +126,8 @@
     "name": "XVII Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 52.48927685890572,
-    "lon": 12.575534906631997
+    "lat": 52.682942984994234,
+    "lon": 12.40911512417683
   },
   {
     "id": "KingREN1-Suitman-1778555779458-1",
@@ -136,8 +136,8 @@
     "name": "XIX Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 52.15369356664224,
-    "lon": 12.333920031466315
+    "lat": 52.42238451083561,
+    "lon": 12.04660846784401
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
@@ -146,7 +146,47 @@
     "name": "XX Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 51.8630535926716,
-    "lon": 12.707324838540499
+    "lat": 52.09288908519993,
+    "lon": 12.046738817019826
+  },
+  {
+    "id": "KingREN1-Suitman-1778564660907-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XXI Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.1911863993252,
+    "lon": 12.682235973787062
+  },
+  {
+    "id": "KingREN1-Suitman-1778564670248-1",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XXII Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.16088453535081,
+    "lon": 12.989745814906994
+  },
+  {
+    "id": "KingREN1-Suitman-1778564677272-2",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XXIII Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.28485646234224,
+    "lon": 13.287992620682166
+  },
+  {
+    "id": "KingREN1-Suitman-1778564686417-3",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XXIV Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.42281541449962,
+    "lon": 13.648695474449674
   }
 ]
