@@ -72,11 +72,21 @@
   {
     "id": "Vancouver1903-1778555135112-0",
     "nation": "russian empire",
-    "branch": "army",
+    "branch": "navy",
     "name": "Baltic Fleet",
     "strength": 13,
     "commander": "Dmitry Senyevin",
     "lat": 54.73255026902896,
     "lon": 10.338134765625002
+  },
+  {
+    "id": "Vancouver1903-1778555218744-1",
+    "nation": "russian empire",
+    "branch": "navy",
+    "name": "Black Sea Fleet",
+    "strength": 32,
+    "commander": "Fyodor Ushakov",
+    "lat": 44.64129986075226,
+    "lon": 31.025390625000004
   }
 ]
