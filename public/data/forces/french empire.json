@@ -4,7 +4,7 @@
     "nation": "french empire",
     "branch": "army",
     "name": "I Corp",
-    "strength": 30000,
+    "strength": 23000,
     "commander": "Auguste de Marmont",
     "lat": 54.133614845727,
     "lon": 9.61852772228825
@@ -26,8 +26,8 @@
     "name": "III Corp",
     "strength": 25000,
     "commander": "Saint-Cyr",
-    "lat": 54.25890802177257,
-    "lon": 9.096677136350749
+    "lat": 54.15600109028493,
+    "lon": 9.308166503906252
   },
   {
     "id": "AceApache-1778526187000-2",
