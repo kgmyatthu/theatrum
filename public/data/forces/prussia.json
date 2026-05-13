@@ -26,8 +26,8 @@
     "name": "V Corps",
     "strength": 30000,
     "commander": "Gen. Hans David von Yorck",
-    "lat": 50.229699638969834,
-    "lon": 6.646757269119666
+    "lat": 50.61971134768433,
+    "lon": 7.171264774905379
   },
   {
     "id": "KingREN1-Suitman-1778480453000-1",
@@ -116,28 +116,8 @@
     "name": "XVIII Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 49.92299026375161,
-    "lon": 6.893897895641753
-  },
-  {
-    "id": "KingREN1-Suitman-1778555772555-0",
-    "nation": "prussia",
-    "branch": "army",
-    "name": "XVII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 50.618182126738866,
-    "lon": 6.470995188116097
-  },
-  {
-    "id": "KingREN1-Suitman-1778555779458-1",
-    "nation": "prussia",
-    "branch": "army",
-    "name": "XIX Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 50.86153366878279,
-    "lon": 6.15232458100357
+    "lat": 50.04298832398965,
+    "lon": 7.849620470320105
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
