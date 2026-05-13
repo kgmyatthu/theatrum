@@ -54,10 +54,10 @@
     "nation": "austria",
     "branch": "army",
     "name": "IV Corps",
-    "strength": 30000,
+    "strength": 20000,
     "commander": "",
-    "lat": 50.085344397538876,
-    "lon": 10.72265625
+    "lat": 50.40851753069729,
+    "lon": 10.56610107421875
   },
   {
     "id": "RadetzkyNTW-1778528727000-4",
