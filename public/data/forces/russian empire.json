@@ -4,7 +4,7 @@
     "nation": "russian empire",
     "branch": "army",
     "name": "Army of the North (Russia)",
-    "strength": 60000,
+    "strength": 83000,
     "commander": "Alexander I",
     "lat": 54.66588940440647,
     "lon": 25.199890136718754
@@ -13,21 +13,11 @@
     "id": "yellowwithblue-1778478796000-1",
     "nation": "russian empire",
     "branch": "army",
-    "name": "Army of Germany (Not Able To Move Yet)",
+    "name": "Army of Germany",
     "strength": 60000,
     "commander": "Konstantin Pavlovich",
     "lat": 52.274880130680536,
     "lon": 13.897705078125002
-  },
-  {
-    "id": "yellowwithblue-1778478796000-2",
-    "nation": "russian empire",
-    "branch": "army",
-    "name": "ARMY OF THE BALTICS",
-    "strength": 23000,
-    "commander": "Mikhail Bulatov",
-    "lat": 54.66112372206639,
-    "lon": 25.345458984375004
   },
   {
     "id": "Vancouver1903-1778540725000-0",
@@ -46,8 +36,8 @@
     "name": "Army of Ruthenia",
     "strength": 54000,
     "commander": "Pyotr Bagration",
-    "lat": 52.23368724057246,
-    "lon": 21.169281005859375
+    "lat": 52.21854554986636,
+    "lon": 21.005859375000004
   },
   {
     "id": "Vancouver1903-1778540725000-2",
@@ -78,5 +68,15 @@
     "commander": "Fyodor Ushakov",
     "lat": 44.64129986075226,
     "lon": 31.025390625000004
+  },
+  {
+    "id": "Vancouver1903-1778630456543-0",
+    "nation": "russian empire",
+    "branch": "army",
+    "name": "Moldavian Army",
+    "strength": 30000,
+    "commander": "Scarlat Callimachi",
+    "lat": 47.032694598521374,
+    "lon": 28.839111328125004
   }
 ]
