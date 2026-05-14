@@ -18,5 +18,15 @@
     "commander": "Rudolf Cederstrom",
     "lat": 56.225031333026806,
     "lon": 15.380859375000002
+  },
+  {
+    "id": "yellowwithblue-1778736462692-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Provisional I Corps",
+    "strength": 6000,
+    "commander": "Georg Carl von Dobeln",
+    "lat": 53.16982647814065,
+    "lon": 8.756103515625002
   }
 ]
