@@ -6,8 +6,8 @@
     "name": "I Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich Wilhelm von Bülow",
-    "lat": 51.70327423229981,
-    "lon": 6.338985046237095
+    "lat": 52.09974995303053,
+    "lon": 7.4927447896372055
   },
   {
     "id": "yellowwithblue-1778479985000-1",
@@ -16,8 +16,8 @@
     "name": "II Corps",
     "strength": 30000,
     "commander": "Gen. Gebhard Leberecht von Blücher",
-    "lat": 51.862979556846355,
-    "lon": 6.866483778554074
+    "lat": 52.62958418574266,
+    "lon": 7.99795103001777
   },
   {
     "id": "KingREN1-Suitman-1778480453000-0",
@@ -26,8 +26,8 @@
     "name": "V Corps",
     "strength": 30000,
     "commander": "Gen. Hans David von Yorck",
-    "lat": 50.61971134768433,
-    "lon": 7.171264774905379
+    "lat": 51.53609266228766,
+    "lon": 7.0314416899644225
   },
   {
     "id": "KingREN1-Suitman-1778480453000-1",
@@ -36,8 +36,8 @@
     "name": "VI Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich von Kleist",
-    "lat": 50.07817435583987,
-    "lon": 8.750803958426602
+    "lat": 50.162780704940054,
+    "lon": 8.679226055345026
   },
   {
     "id": "KingREN1-Suitman-1778480453000-2",
@@ -116,8 +116,8 @@
     "name": "XVIII Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 50.04298832398965,
-    "lon": 7.849620470320105
+    "lat": 50.81986487400153,
+    "lon": 7.349976197202258
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
@@ -126,8 +126,8 @@
     "name": "XX Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 49.725733961098065,
-    "lon": 7.538196785257672
+    "lat": 50.47134997508288,
+    "lon": 8.074970340871431
   },
   {
     "id": "KingREN1-Suitman-1778564660907-0",
@@ -166,7 +166,7 @@
     "name": "XXIV Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 52.032420618788386,
-    "lon": 14.177672422946637
+    "lat": 52.01171646314631,
+    "lon": 14.260499269404475
   }
 ]
