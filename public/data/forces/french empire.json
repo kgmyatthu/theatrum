@@ -16,8 +16,8 @@
     "name": "IV Corp",
     "strength": 30000,
     "commander": "Charles Gudin Sablonniere",
-    "lat": 49.53946900793534,
-    "lon": 1.636962890625
+    "lat": 50.97177753570114,
+    "lon": 7.1624443234635
   },
   {
     "id": "AceApache-1778526187000-3",
@@ -26,8 +26,8 @@
     "name": "V Corp",
     "strength": 30000,
     "commander": "Jean Lannes",
-    "lat": 49.94062248924383,
-    "lon": 7.80580913560825
+    "lat": 50.1943970933941,
+    "lon": 8.80817217803418
   },
   {
     "id": "AceApache-1778526187000-4",
@@ -36,8 +36,8 @@
     "name": "X Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Jourdan",
-    "lat": 50.18569667741088,
-    "lon": 7.9843398429889385
+    "lat": 50.368177787369305,
+    "lon": 8.852133116323364
   },
   {
     "id": "AceApache-1778526187000-5",
@@ -56,8 +56,8 @@
     "name": "VIII Corp",
     "strength": 30000,
     "commander": "Edouard Mortier",
-    "lat": 49.95475977537416,
-    "lon": 8.242518553926438
+    "lat": 50.05886618747465,
+    "lon": 8.923565933904483
   },
   {
     "id": "AceApache-1778526187000-7",
@@ -116,8 +116,8 @@
     "name": "XVI Corp",
     "strength": 30000,
     "commander": "Claude Victor Perrin",
-    "lat": 50.37875009654789,
-    "lon": 8.127156357915021
+    "lat": 50.539561965580305,
+    "lon": 9.011432960773915
   },
   {
     "id": "AceApache-1778526187000-14",
@@ -126,8 +126,8 @@
     "name": "XVI Corp",
     "strength": 30000,
     "commander": "Nicolas Oudinot",
-    "lat": 42.676911434577114,
-    "lon": 11.42413425356181
+    "lat": 50.07831402472997,
+    "lon": 9.508769038157537
   },
   {
     "id": "AceApache-1778526187000-15",
