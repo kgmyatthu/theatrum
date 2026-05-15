@@ -44,10 +44,10 @@
     "nation": "prussia",
     "branch": "army",
     "name": "VII Corps",
-    "strength": 12000,
+    "strength": 3000,
     "commander": "Gen. August von Pannwitz",
-    "lat": 50.49247778429617,
-    "lon": 10.502714994739831
+    "lat": 50.673835249921346,
+    "lon": 10.475463867187502
   },
   {
     "id": "KingREN1-Suitman-1778480453000-3",
