@@ -1,15 +1,5 @@
 [
   {
-    "id": "yellowwithblue-1778478177000-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Army of the North",
-    "strength": 197000,
-    "commander": "Charles XIII",
-    "lat": 51.85613885029435,
-    "lon": 13.595581054687502
-  },
-  {
     "id": "yellowwithblue-1778478466000-0",
     "nation": "sweden",
     "branch": "navy",
@@ -28,5 +18,75 @@
     "commander": "Georg Carl von Dobeln",
     "lat": 53.16982647814065,
     "lon": 8.756103515625002
+  },
+  {
+    "id": "yellowwithblue-1778861775845-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "IV Reserve Army-Corps (AOTN)",
+    "strength": 20000,
+    "commander": "Hans Henrik von Essen",
+    "lat": 52.2530274427686,
+    "lon": 13.406066894531252
+  },
+  {
+    "id": "yellowwithblue-1778861805060-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "XIV Army-Corps (AOTN)",
+    "strength": 7400,
+    "commander": "Johan August Sandels",
+    "lat": 52.19750685699392,
+    "lon": 13.070983886718752
+  },
+  {
+    "id": "yellowwithblue-1778861850425-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "XII Reserve Army-Corps (AOTN)",
+    "strength": 6000,
+    "commander": "Gustaf Fredrik Mörner",
+    "lat": 52.21602143271681,
+    "lon": 13.757629394531252
+  },
+  {
+    "id": "yellowwithblue-1778861913959-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "III Army-Corps (AOTN)",
+    "strength": 5000,
+    "commander": "Magnus Björnstjerna",
+    "lat": 51.95611479866181,
+    "lon": 12.930908203125
+  },
+  {
+    "id": "yellowwithblue-1778861932435-4",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "VI Army-Corps (AOTN)",
+    "strength": 4000,
+    "commander": "Gustav Armfelt",
+    "lat": 52.071065406906634,
+    "lon": 13.672485351562502
+  },
+  {
+    "id": "yellowwithblue-1778861973865-5",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Cavalry Division (AOTN)",
+    "strength": 4000,
+    "commander": "Johan Christopher Toll",
+    "lat": 52.037287059127024,
+    "lon": 13.216552734375002
+  },
+  {
+    "id": "yellowwithblue-1778862004232-6",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Artillery Reserve",
+    "strength": 500,
+    "commander": "Charles de Suremain",
+    "lat": 52.51120638909939,
+    "lon": 13.433532714843752
   }
 ]

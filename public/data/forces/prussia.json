@@ -188,5 +188,15 @@
     "commander": "",
     "lat": 51.25851105671665,
     "lon": 7.371787833882101
+  },
+  {
+    "id": "yellowwithblue-1778862050131-7",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "Prussian contingent of the AOTN",
+    "strength": 90000,
+    "commander": "idk",
+    "lat": 51.96119237712624,
+    "lon": 13.414306640625002
   }
 ]

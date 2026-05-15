@@ -78,5 +78,15 @@
     "commander": "Semyon Gangeblov (Temporary)",
     "lat": 50.422956317144944,
     "lon": 30.523452758789062
+  },
+  {
+    "id": "yellowwithblue-1778478177000-0",
+    "nation": "russian empire",
+    "branch": "army",
+    "name": "Russian Contingent of AOTN",
+    "strength": 60000,
+    "commander": "Idk",
+    "lat": 52.08119393167706,
+    "lon": 14.00482177734375
   }
 ]
