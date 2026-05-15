@@ -6,8 +6,8 @@
     "name": "Army of the North (Russia)",
     "strength": 83000,
     "commander": "Alexander I",
-    "lat": 52.23242563023073,
-    "lon": 21.06250762939453
+    "lat": 51.76210296563997,
+    "lon": 19.46914672851563
   },
   {
     "id": "Vancouver1903-1778540725000-0",
@@ -16,8 +16,8 @@
     "name": "Army of Ukraine",
     "strength": 84000,
     "commander": "Mikhail Kutuzov",
-    "lat": 49.834439500479235,
-    "lon": 24.0216064453125
+    "lat": 49.69606181911566,
+    "lon": 23.653564453125004
   },
   {
     "id": "Vancouver1903-1778540725000-1",
@@ -44,10 +44,10 @@
     "nation": "russian empire",
     "branch": "navy",
     "name": "Baltic Fleet",
-    "strength": 13,
+    "strength": 25,
     "commander": "Dmitry Senyevin",
-    "lat": 54.73255026902896,
-    "lon": 10.338134765625002
+    "lat": 54.61184559302165,
+    "lon": 11.2445068359375
   },
   {
     "id": "Vancouver1903-1778555218744-1",
@@ -56,8 +56,8 @@
     "name": "Black Sea Fleet",
     "strength": 32,
     "commander": "Fyodor Ushakov",
-    "lat": 44.49650533109348,
-    "lon": 32.22290039062501
+    "lat": 44.5278427984555,
+    "lon": 32.99194335937501
   },
   {
     "id": "Vancouver1903-1778630456543-0",
@@ -76,8 +76,8 @@
     "name": "Army of Russia",
     "strength": 160000,
     "commander": "Semyon Gangeblov (Temporary)",
-    "lat": 50.422956317144944,
-    "lon": 30.523452758789062
+    "lat": 46.9690080331196,
+    "lon": 31.168212890625004
   },
   {
     "id": "yellowwithblue-1778478177000-0",
