@@ -26,8 +26,8 @@
     "name": "IV Reserve Army-Corps (AOTN)",
     "strength": 20000,
     "commander": "Hans Henrik von Essen",
-    "lat": 51.34948523447414,
-    "lon": 13.035278320312502
+    "lat": 51.263633525637,
+    "lon": 13.298950195312502
   },
   {
     "id": "yellowwithblue-1778861805060-1",
@@ -36,8 +36,8 @@
     "name": "XIV Army-Corps (AOTN)",
     "strength": 7400,
     "commander": "Johan August Sandels",
-    "lat": 51.385495069223204,
-    "lon": 13.146514892578127
+    "lat": 51.18020386644292,
+    "lon": 13.498077392578127
   },
   {
     "id": "yellowwithblue-1778861850425-2",
@@ -46,8 +46,8 @@
     "name": "XII Reserve Army-Corps (AOTN)",
     "strength": 6000,
     "commander": "Gustaf Fredrik Mörner",
-    "lat": 51.44202475087509,
-    "lon": 13.156127929687502
+    "lat": 51.337475662965225,
+    "lon": 13.492584228515627
   },
   {
     "id": "yellowwithblue-1778861913959-3",
@@ -56,8 +56,8 @@
     "name": "III Army-Corps (AOTN)",
     "strength": 5000,
     "commander": "Magnus Björnstjerna",
-    "lat": 51.51814351604911,
-    "lon": 13.042144775390625
+    "lat": 51.27909868682927,
+    "lon": 13.509063720703125
   },
   {
     "id": "yellowwithblue-1778861932435-4",
@@ -66,8 +66,8 @@
     "name": "VI Army-Corps (AOTN)",
     "strength": 4000,
     "commander": "Gustav Armfelt",
-    "lat": 51.474540439419755,
-    "lon": 12.8594970703125
+    "lat": 51.19139393653176,
+    "lon": 13.303070068359377
   },
   {
     "id": "yellowwithblue-1778861973865-5",
@@ -76,8 +76,8 @@
     "name": "Cavalry Division (AOTN)",
     "strength": 4000,
     "commander": "Johan Christopher Toll",
-    "lat": 51.58218993269148,
-    "lon": 12.884216308593752
+    "lat": 51.29713479668796,
+    "lon": 13.396453857421877
   },
   {
     "id": "yellowwithblue-1778862004232-6",
@@ -86,7 +86,7 @@
     "name": "Artillery Reserve (aotn)",
     "strength": 500,
     "commander": "Charles de Suremain",
-    "lat": 51.45571839040817,
-    "lon": 13.022918701171877
+    "lat": 51.22150754599216,
+    "lon": 13.419799804687502
   }
 ]
