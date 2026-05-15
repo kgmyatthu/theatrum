@@ -1,15 +1,5 @@
 [
   {
-    "id": "yellowwithblue-1778525862000-0",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "I Corp",
-    "strength": 23000,
-    "commander": "Auguste de Marmont",
-    "lat": 54.133614845727,
-    "lon": 9.61852772228825
-  },
-  {
     "id": "AceApache-1778526187000-0",
     "nation": "french empire",
     "branch": "army",
@@ -18,16 +8,6 @@
     "commander": "Jean-Baptiste Bessieres",
     "lat": 51.76104049272952,
     "lon": 6.751098632812501
-  },
-  {
-    "id": "AceApache-1778526187000-1",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "III Corp",
-    "strength": 25000,
-    "commander": "Saint-Cyr",
-    "lat": 54.15600109028493,
-    "lon": 9.308166503906252
   },
   {
     "id": "AceApache-1778526187000-2",
