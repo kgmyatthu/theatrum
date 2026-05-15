@@ -16,8 +16,8 @@
     "name": "II Corps",
     "strength": 30000,
     "commander": "Gen. Gebhard Leberecht von Blücher",
-    "lat": 52.62958418574266,
-    "lon": 7.99795103001777
+    "lat": 51.9885968618721,
+    "lon": 7.031587374337428
   },
   {
     "id": "KingREN1-Suitman-1778480453000-0",
@@ -36,8 +36,8 @@
     "name": "VI Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich von Kleist",
-    "lat": 50.162780704940054,
-    "lon": 8.679226055345026
+    "lat": 50.1610666367946,
+    "lon": 8.599475497657268
   },
   {
     "id": "KingREN1-Suitman-1778480453000-2",
@@ -116,8 +116,8 @@
     "name": "XVIII Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 50.56230444080573,
-    "lon": 8.723144531250002
+    "lat": 50.42783786726224,
+    "lon": 8.465055914595775
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
@@ -166,7 +166,27 @@
     "name": "XXIV Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 52.01171646314631,
-    "lon": 14.260499269404475
+    "lat": 51.852828317323855,
+    "lon": 15.764855628872432
+  },
+  {
+    "id": "KingREN1-Suitman-1778816207643-1",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XVII Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.98490564860184,
+    "lon": 8.63457436532603
+  },
+  {
+    "id": "KingREN1-Suitman-1778816258616-2",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "XIX Corps",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.32534413429037,
+    "lon": 7.261388779181496
   }
 ]
