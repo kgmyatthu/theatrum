@@ -16,8 +16,8 @@
     "name": "II Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Bessieres",
-    "lat": 51.92904045789921,
-    "lon": 6.176897482473631
+    "lat": 51.76104049272952,
+    "lon": 6.751098632812501
   },
   {
     "id": "AceApache-1778526187000-1",
@@ -46,8 +46,8 @@
     "name": "V Corp",
     "strength": 30000,
     "commander": "Jean Lannes",
-    "lat": 46.75357019280285,
-    "lon": 4.833359343433617
+    "lat": 49.954754298064195,
+    "lon": 7.871704101562501
   },
   {
     "id": "AceApache-1778526187000-4",
@@ -56,8 +56,8 @@
     "name": "X Corp",
     "strength": 30000,
     "commander": "Jean-Baptiste Jourdan",
-    "lat": 50.12569856480941,
-    "lon": 6.685120712055103
+    "lat": 50.194484528931746,
+    "lon": 8.058471679687502
   },
   {
     "id": "AceApache-1778526187000-5",
@@ -76,8 +76,8 @@
     "name": "VIII Corp",
     "strength": 30000,
     "commander": "Edouard Mortier",
-    "lat": 49.094592615650164,
-    "lon": 7.470991404865301
+    "lat": 49.96535590991311,
+    "lon": 8.316650390625002
   },
   {
     "id": "AceApache-1778526187000-7",
@@ -96,8 +96,8 @@
     "name": "VI Corp",
     "strength": 30000,
     "commander": "Michel Ney",
-    "lat": 44.52737759252064,
-    "lon": 3.668081484647199
+    "lat": 51.227527905265006,
+    "lon": 6.910400390625001
   },
   {
     "id": "AceApache-1778526187000-10",
@@ -116,8 +116,8 @@
     "name": "XIII Corp",
     "strength": 30000,
     "commander": "Francois Joseph Lefebvre",
-    "lat": 46.34582767872124,
-    "lon": 1.9763119597104999
+    "lat": 51.36149165915505,
+    "lon": 6.608276367187501
   },
   {
     "id": "AceApache-1778526187000-12",
@@ -136,8 +136,8 @@
     "name": "XVI Corp",
     "strength": 30000,
     "commander": "Claude Victor Perrin",
-    "lat": 50.48367584427892,
-    "lon": 6.404930439841562
+    "lat": 50.37699944702328,
+    "lon": 8.184814453125002
   },
   {
     "id": "AceApache-1778526187000-14",
@@ -186,7 +186,7 @@
     "name": "XX Corp",
     "strength": 30000,
     "commander": "Antoine Lasalle",
-    "lat": 51.691342909167716,
-    "lon": 5.8418744266684905
+    "lat": 51.58389660297626,
+    "lon": 6.427001953125
   }
 ]
