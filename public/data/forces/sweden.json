@@ -36,8 +36,8 @@
     "name": "XIV Army-Corps (AOTN)",
     "strength": 7400,
     "commander": "Johan August Sandels",
-    "lat": 51.66659318427356,
-    "lon": 12.944641113281252
+    "lat": 51.385495069223204,
+    "lon": 13.146514892578127
   },
   {
     "id": "yellowwithblue-1778861850425-2",
@@ -76,8 +76,8 @@
     "name": "Cavalry Division (AOTN)",
     "strength": 4000,
     "commander": "Johan Christopher Toll",
-    "lat": 51.59584150020812,
-    "lon": 12.955627441406252
+    "lat": 51.58218993269148,
+    "lon": 12.884216308593752
   },
   {
     "id": "yellowwithblue-1778862004232-6",
@@ -86,7 +86,7 @@
     "name": "Artillery Reserve (aotn)",
     "strength": 500,
     "commander": "Charles de Suremain",
-    "lat": 51.62654252978602,
-    "lon": 12.760620117187502
+    "lat": 51.45571839040817,
+    "lon": 13.022918701171877
   }
 ]
