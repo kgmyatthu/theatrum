@@ -33,10 +33,30 @@
     "id": "yourlocalgeobukseon-1778545295367-3",
     "nation": "denmark",
     "branch": "navy",
-    "name": "Copenhagen Battlefleet",
-    "strength": 30,
+    "name": "1st Fleet",
+    "strength": 18,
     "commander": "Steen Andersen Bille",
     "lat": 55.99607698640492,
     "lon": 12.652130126953127
+  },
+  {
+    "id": "yourlocalgeobukseon-1778864929703-0",
+    "nation": "denmark",
+    "branch": "navy",
+    "name": "2nd Fleet",
+    "strength": 19,
+    "commander": "Jesper Epstein",
+    "lat": 55.71009271344361,
+    "lon": 12.622375488281225
+  },
+  {
+    "id": "yourlocalgeobukseon-1778865020717-1",
+    "nation": "denmark",
+    "branch": "navy",
+    "name": "3rd Fleet",
+    "strength": 18,
+    "commander": "Hans Holm",
+    "lat": 55.58144971869657,
+    "lon": 12.490539550781225
   }
 ]
