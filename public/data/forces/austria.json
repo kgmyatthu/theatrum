@@ -44,10 +44,10 @@
     "nation": "austria",
     "branch": "army",
     "name": "XIV Corps",
-    "strength": 30000,
+    "strength": 20000,
     "commander": "",
-    "lat": 51.31173026903262,
-    "lon": 12.060241699218752
+    "lat": 50.93766174471314,
+    "lon": 12.128906250000002
   },
   {
     "id": "RadetzkyNTW-1778528727000-3",
@@ -56,18 +56,18 @@
     "name": "IV Corps",
     "strength": 20000,
     "commander": "",
-    "lat": 51.57194856482396,
-    "lon": 11.461486816406252
+    "lat": 51.416338106400424,
+    "lon": 11.041259765625002
   },
   {
     "id": "RadetzkyNTW-1778528727000-4",
     "nation": "austria",
     "branch": "army",
     "name": "V Corps",
-    "strength": 30000,
+    "strength": 25000,
     "commander": "",
-    "lat": 51.34776977407131,
-    "lon": 11.771850585937502
+    "lat": 51.086272518565515,
+    "lon": 11.689453125000002
   },
   {
     "id": "RadetzkyNTW-1778528727000-5",
@@ -76,8 +76,8 @@
     "name": "VI Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 51.46085244645549,
-    "lon": 11.579589843750002
+    "lat": 51.19655766797793,
+    "lon": 11.304931640625002
   },
   {
     "id": "RadetzkyNTW-1778528727000-6",
@@ -168,5 +168,15 @@
     "commander": "",
     "lat": 49.33228198473771,
     "lon": 18.874511718750004
+  },
+  {
+    "id": "RadetzkyNTW-1778898129799-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hussar-Grenzer Detachment",
+    "strength": 15000,
+    "commander": "",
+    "lat": 51.32717923968566,
+    "lon": 12.442016601562502
   }
 ]
