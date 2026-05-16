@@ -6,8 +6,8 @@
     "name": "I Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich Wilhelm von Bülow",
-    "lat": 51.94090310392822,
-    "lon": 7.294948711595027
+    "lat": 51.76792944955656,
+    "lon": 7.481624278537074
   },
   {
     "id": "yellowwithblue-1778479985000-1",
@@ -26,8 +26,8 @@
     "name": "V Corps",
     "strength": 30000,
     "commander": "Gen. Hans David von Yorck",
-    "lat": 51.436888577204996,
-    "lon": 7.377401762622219
+    "lat": 51.14160114045593,
+    "lon": 7.575004233800295
   },
   {
     "id": "KingREN1-Suitman-1778480453000-1",
@@ -46,8 +46,8 @@
     "name": "VII Corps",
     "strength": 3000,
     "commander": "Gen. August von Pannwitz",
-    "lat": 51.83917171504397,
-    "lon": 11.508178710937502
+    "lat": 51.823903717141974,
+    "lon": 11.777249821917408
   },
   {
     "id": "KingREN1-Suitman-1778480453000-3",
@@ -66,8 +66,8 @@
     "name": "IX Corps",
     "strength": 30000,
     "commander": "Gen. Anton Wilhelm von L'Estocq",
-    "lat": 51.63165382661559,
-    "lon": 7.542202435196136
+    "lat": 51.34105796818048,
+    "lon": 7.509166774835375
   },
   {
     "id": "KingREN1-Suitman-1778480453000-5",
@@ -146,8 +146,8 @@
     "name": "XXIII Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 51.78825474635593,
-    "lon": 7.564138670352915
+    "lat": 51.56694167099219,
+    "lon": 7.514665689596792
   },
   {
     "id": "KingREN1-Suitman-1778564686417-3",
@@ -176,8 +176,8 @@
     "name": "XIX Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 51.25851105671665,
-    "lon": 7.371787833882101
+    "lat": 50.774932911104145,
+    "lon": 9.112551522500253
   },
   {
     "id": "yellowwithblue-1778862050131-7",
