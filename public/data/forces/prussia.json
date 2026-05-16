@@ -36,8 +36,8 @@
     "name": "VI Corps",
     "strength": 30000,
     "commander": "Gen. Friedrich von Kleist",
-    "lat": 50.29631500259598,
-    "lon": 9.148817868726283
+    "lat": 51.55999738544502,
+    "lon": 9.923400878906252
   },
   {
     "id": "KingREN1-Suitman-1778480453000-2",
@@ -114,20 +114,20 @@
     "nation": "prussia",
     "branch": "army",
     "name": "XVIII Corps",
-    "strength": 30000,
+    "strength": 10000,
     "commander": "",
-    "lat": 50.647690678000345,
-    "lon": 9.390501461687101
+    "lat": 51.681070878869825,
+    "lon": 10.011291503906252
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
     "nation": "prussia",
     "branch": "army",
-    "name": "XX Corps",
-    "strength": 30000,
+    "name": "XX Corps (RERAISED)",
+    "strength": 1000,
     "commander": "",
-    "lat": 50.446982191579636,
-    "lon": 9.313593656981874
+    "lat": 52.576349937498875,
+    "lon": 10.604553222656252
   },
   {
     "id": "KingREN1-Suitman-1778564660907-0",
@@ -136,8 +136,8 @@
     "name": "XXI Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 50.257729284597744,
-    "lon": 9.722819880839921
+    "lat": 51.32374658474385,
+    "lon": 9.563598632812502
   },
   {
     "id": "KingREN1-Suitman-1778564677272-2",
@@ -163,11 +163,11 @@
     "id": "KingREN1-Suitman-1778816207643-1",
     "nation": "prussia",
     "branch": "army",
-    "name": "XVII Corps",
-    "strength": 30000,
+    "name": "XVII Corps (RERAISED)",
+    "strength": 1000,
     "commander": "",
-    "lat": 50.24715772026043,
-    "lon": 9.426169852468492
+    "lat": 52.5680036028874,
+    "lon": 10.87921142578125
   },
   {
     "id": "KingREN1-Suitman-1778816258616-2",
@@ -176,8 +176,8 @@
     "name": "XIX Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 50.774932911104145,
-    "lon": 9.112551522500253
+    "lat": 51.44373668041616,
+    "lon": 9.750366210937502
   },
   {
     "id": "yellowwithblue-1778862050131-7",
