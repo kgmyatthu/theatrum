@@ -114,7 +114,7 @@
     "nation": "austria",
     "branch": "army",
     "name": "I Korps",
-    "strength": 10000,
+    "strength": 30000,
     "commander": "",
     "lat": 50.862310920919754,
     "lon": 14.051513671875002
@@ -144,7 +144,7 @@
     "nation": "austria",
     "branch": "army",
     "name": "Army of Bohemia",
-    "strength": 60000,
+    "strength": 40000,
     "commander": "",
     "lat": 50.8267584823633,
     "lon": 13.863372802734377
