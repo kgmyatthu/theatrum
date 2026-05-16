@@ -168,5 +168,15 @@
     "commander": "",
     "lat": 49.33228198473771,
     "lon": 18.874511718750004
+  },
+  {
+    "id": "kgmyatthu-1778972495627-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Serbian Division of Austria",
+    "strength": 20000,
+    "commander": "",
+    "lat": 50.06066538593667,
+    "lon": 14.4635009765625
   }
 ]
