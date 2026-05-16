@@ -1,0 +1,52 @@
+[
+  {
+    "id": "KingREN1-Suitman-1778969856881-0",
+    "nation": "liberal spain",
+    "branch": "army",
+    "name": "Liberal Militia",
+    "strength": 10000,
+    "commander": "",
+    "lat": 37.35456505448756,
+    "lon": -5.845405144974112
+  },
+  {
+    "id": "KingREN1-Suitman-1778969894620-1",
+    "nation": "liberal spain",
+    "branch": "army",
+    "name": "Liberal Militia",
+    "strength": 10000,
+    "commander": "",
+    "lat": 39.462388532409754,
+    "lon": -0.47496541970130984
+  },
+  {
+    "id": "KingREN1-Suitman-1778969903520-2",
+    "nation": "liberal spain",
+    "branch": "army",
+    "name": "Liberal Militia",
+    "strength": 10000,
+    "commander": "",
+    "lat": 41.64789814746964,
+    "lon": 1.9851133092580313
+  },
+  {
+    "id": "KingREN1-Suitman-1778969917746-3",
+    "nation": "liberal spain",
+    "branch": "army",
+    "name": "Liberal Militia",
+    "strength": 5000,
+    "commander": "",
+    "lat": 41.96710640444281,
+    "lon": -3.539081336574759
+  },
+  {
+    "id": "KingREN1-Suitman-1778969930429-4",
+    "nation": "liberal spain",
+    "branch": "army",
+    "name": "Liberal Militia",
+    "strength": 5000,
+    "commander": "",
+    "lat": 37.43997855852373,
+    "lon": -2.8782799519756113
+  }
+]
