@@ -16,8 +16,8 @@
     "name": "II Corps",
     "strength": 30000,
     "commander": "Gen. Gebhard Leberecht von Blücher",
-    "lat": 52.07608460979457,
-    "lon": 7.003793764185735
+    "lat": 51.90878298681268,
+    "lon": 7.245399054853144
   },
   {
     "id": "KingREN1-Suitman-1778480453000-0",
@@ -46,8 +46,8 @@
     "name": "VII Corps",
     "strength": 3000,
     "commander": "Gen. August von Pannwitz",
-    "lat": 51.823903717141974,
-    "lon": 11.777249821917408
+    "lat": 51.59425427243206,
+    "lon": 11.903642434745683
   },
   {
     "id": "KingREN1-Suitman-1778480453000-3",
@@ -56,8 +56,8 @@
     "name": "VIII Corps",
     "strength": 30000,
     "commander": "Gen. Adolf von Lützow",
-    "lat": 51.699686408947244,
-    "lon": 11.966831073561226
+    "lat": 51.519091648104016,
+    "lon": 12.087665347739073
   },
   {
     "id": "KingREN1-Suitman-1778480453000-4",
