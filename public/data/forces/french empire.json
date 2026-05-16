@@ -26,18 +26,8 @@
     "name": "V Corp",
     "strength": 30000,
     "commander": "Jean Lannes",
-    "lat": 50.1943970933941,
-    "lon": 8.80817217803418
-  },
-  {
-    "id": "AceApache-1778526187000-4",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "X Corp",
-    "strength": 30000,
-    "commander": "Jean-Baptiste Jourdan",
-    "lat": 50.368177787369305,
-    "lon": 8.852133116323364
+    "lat": 50.89067965973297,
+    "lon": 9.357541642807515
   },
   {
     "id": "AceApache-1778526187000-5",
@@ -56,8 +46,8 @@
     "name": "VIII Corp",
     "strength": 30000,
     "commander": "Edouard Mortier",
-    "lat": 50.05886618747465,
-    "lon": 8.923565933904483
+    "lat": 50.88717176633086,
+    "lon": 9.577256171151884
   },
   {
     "id": "AceApache-1778526187000-7",
@@ -110,24 +100,14 @@
     "lon": -1.450819068491758
   },
   {
-    "id": "AceApache-1778526187000-13",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "XVI Corp",
-    "strength": 30000,
-    "commander": "Claude Victor Perrin",
-    "lat": 50.539561965580305,
-    "lon": 9.011432960773915
-  },
-  {
     "id": "AceApache-1778526187000-14",
     "nation": "french empire",
     "branch": "army",
     "name": "XVI Corp",
     "strength": 30000,
     "commander": "Nicolas Oudinot",
-    "lat": 50.07831402472997,
-    "lon": 9.508769038157537
+    "lat": 50.800491956377094,
+    "lon": 9.722875688937105
   },
   {
     "id": "AceApache-1778526187000-15",
@@ -146,8 +126,8 @@
     "name": "XVIII Corp",
     "strength": 30000,
     "commander": "Louis de Saint-Hilaire",
-    "lat": 50.645977340713586,
-    "lon": 10.546875000000002
+    "lat": 50.90121710990831,
+    "lon": 9.810875888091015
   },
   {
     "id": "AceApache-1778526187000-17",
