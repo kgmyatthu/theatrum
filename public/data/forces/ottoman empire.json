@@ -16,8 +16,8 @@
     "name": "Rumeli Ordusu",
     "strength": 66000,
     "commander": "Alemdar Mustafa Pasha",
-    "lat": 44.99588261816546,
-    "lon": 27.707119233176435
+    "lat": 42.50450285299051,
+    "lon": 25.2685546875
   },
   {
     "id": "Fouzi-707-1778782722227-1",
@@ -36,8 +36,8 @@
     "name": "Bosna Ordusu",
     "strength": 55000,
     "commander": "Husrev Mehmed Pasha",
-    "lat": 45.19752230305685,
-    "lon": 26.299242380749348
+    "lat": 41.97582726102573,
+    "lon": 23.752441406250004
   },
   {
     "id": "Fouzi-707-1778782789334-3",
@@ -56,8 +56,8 @@
     "name": "Anadolu Ordusu",
     "strength": 60000,
     "commander": "Şehzade Mustafa",
-    "lat": 45.089035564831036,
-    "lon": 28.928130998973458
+    "lat": 42.633958722673164,
+    "lon": 27.015380859375004
   },
   {
     "id": "Fouzi-707-1778782905328-5",
