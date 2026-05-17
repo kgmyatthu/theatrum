@@ -1,15 +1,5 @@
 [
   {
-    "id": "AceApache-1778526187000-0",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "II Corp",
-    "strength": 30000,
-    "commander": "Jean-Baptiste Bessieres",
-    "lat": 51.80859833206625,
-    "lon": 6.778561264188446
-  },
-  {
     "id": "AceApache-1778526187000-2",
     "nation": "french empire",
     "branch": "army",
@@ -58,16 +48,6 @@
     "commander": "Jean-de-Dieu Soult",
     "lat": 44.88928643567234,
     "lon": -0.5062754761593614
-  },
-  {
-    "id": "AceApache-1778526187000-8",
-    "nation": "french empire",
-    "branch": "army",
-    "name": "VI Corp",
-    "strength": 30000,
-    "commander": "Michel Ney",
-    "lat": 51.28251569862116,
-    "lon": 6.976310705927245
   },
   {
     "id": "AceApache-1778526187000-10",
@@ -144,7 +124,7 @@
     "nation": "french empire",
     "branch": "army",
     "name": "XX Corp",
-    "strength": 30000,
+    "strength": 15000,
     "commander": "Antoine Lasalle",
     "lat": 51.69635635830713,
     "lon": 7.086105106147485
