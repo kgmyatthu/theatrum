@@ -6,8 +6,8 @@
     "name": "IV Corp",
     "strength": 30000,
     "commander": "Charles Gudin Sablonniere",
-    "lat": 51.06898328365019,
-    "lon": 7.152100884949607
+    "lat": 51.506882429977544,
+    "lon": 7.503621290987012
   },
   {
     "id": "AceApache-1778526187000-3",
@@ -66,8 +66,8 @@
     "name": "XIII Corp",
     "strength": 30000,
     "commander": "Francois Joseph Lefebvre",
-    "lat": 51.50527382094952,
-    "lon": 7.025708364101756
+    "lat": 51.558271537676035,
+    "lon": 7.388263570099865
   },
   {
     "id": "AceApache-1778526187000-12",
@@ -126,7 +126,7 @@
     "name": "XX Corp",
     "strength": 15000,
     "commander": "Antoine Lasalle",
-    "lat": 51.69635635830713,
-    "lon": 7.086105106147485
+    "lat": 51.65893959296238,
+    "lon": 7.4074944277234485
   }
 ]
