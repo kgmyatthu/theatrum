@@ -4,10 +4,10 @@
     "nation": "prussia",
     "branch": "army",
     "name": "I Corps",
-    "strength": 30000,
+    "strength": 43000,
     "commander": "Gen. Friedrich Wilhelm von Bülow",
-    "lat": 51.76792944955656,
-    "lon": 7.481624278537074
+    "lat": 51.791629704426924,
+    "lon": 7.926635742187501
   },
   {
     "id": "yellowwithblue-1778479985000-1",
@@ -16,18 +16,8 @@
     "name": "II Corps",
     "strength": 30000,
     "commander": "Gen. Gebhard Leberecht von Blücher",
-    "lat": 51.90878298681268,
-    "lon": 7.245399054853144
-  },
-  {
-    "id": "KingREN1-Suitman-1778480453000-0",
-    "nation": "prussia",
-    "branch": "army",
-    "name": "V Corps",
-    "strength": 30000,
-    "commander": "Gen. Hans David von Yorck",
-    "lat": 51.14160114045593,
-    "lon": 7.575004233800295
+    "lat": 51.97472977494965,
+    "lon": 7.695922851562501
   },
   {
     "id": "KingREN1-Suitman-1778480453000-1",
@@ -58,16 +48,6 @@
     "commander": "Gen. Adolf von Lützow",
     "lat": 51.519091648104016,
     "lon": 12.087665347739073
-  },
-  {
-    "id": "KingREN1-Suitman-1778480453000-4",
-    "nation": "prussia",
-    "branch": "army",
-    "name": "IX Corps",
-    "strength": 30000,
-    "commander": "Gen. Anton Wilhelm von L'Estocq",
-    "lat": 51.34105796818048,
-    "lon": 7.509166774835375
   },
   {
     "id": "KingREN1-Suitman-1778480453000-5",
@@ -128,16 +108,6 @@
     "commander": "",
     "lat": 51.32374658474385,
     "lon": 9.563598632812502
-  },
-  {
-    "id": "KingREN1-Suitman-1778564677272-2",
-    "nation": "prussia",
-    "branch": "army",
-    "name": "XXIII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.56694167099219,
-    "lon": 7.514665689596792
   },
   {
     "id": "KingREN1-Suitman-1778564686417-3",
