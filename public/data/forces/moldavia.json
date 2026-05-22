@@ -6,7 +6,17 @@
     "name": "Moldavian Army",
     "strength": 30000,
     "commander": "Scarlat Callimachi",
-    "lat": 46.7248003746672,
-    "lon": 28.789672851562504
+    "lat": 46.36588370484979,
+    "lon": 27.899780273437504
+  },
+  {
+    "id": "Vancouver1903-1779491816998-0",
+    "nation": "moldavia",
+    "branch": "army",
+    "name": "Moldavian Volunteer Rifles",
+    "strength": 20000,
+    "commander": "",
+    "lat": 46.97275640318639,
+    "lon": 28.948974609375004
   }
 ]
