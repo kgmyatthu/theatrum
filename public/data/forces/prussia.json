@@ -56,8 +56,8 @@
     "name": "X Corps",
     "strength": 30000,
     "commander": "Gen. Frederick William, Duke of Brunswick",
-    "lat": 51.65896537666039,
-    "lon": 15.545642795477129
+    "lat": 51.549751017014195,
+    "lon": 15.53741455078125
   },
   {
     "id": "KingREN1-Suitman-1778480453000-6",
@@ -66,8 +66,8 @@
     "name": "XI Corps",
     "strength": 30000,
     "commander": "Gen. Prince Augustus of Prussia",
-    "lat": 51.88843497562978,
-    "lon": 15.949414315316426
+    "lat": 51.635066908847826,
+    "lon": 16.062011718750004
   },
   {
     "id": "KingREN1-Suitman-1778480453000-7",
@@ -76,8 +76,8 @@
     "name": "XII Corps",
     "strength": 30000,
     "commander": "Gen. Karl von Grolman",
-    "lat": 51.56682701546225,
-    "lon": 15.012817382812502
+    "lat": 51.42490192575532,
+    "lon": 15.010070800781252
   },
   {
     "id": "KingREN1-Suitman-1778480453000-8",
@@ -86,8 +86,8 @@
     "name": "XIII Corps",
     "strength": 30000,
     "commander": "Gen. August Neidhardt von Gneisenau",
-    "lat": 51.70660846336452,
-    "lon": 15.194091796875002
+    "lat": 51.44887208400473,
+    "lon": 15.251770019531252
   },
   {
     "id": "KingREN1-Suitman-1778555784923-2",
@@ -116,8 +116,8 @@
     "name": "XXIV Corps",
     "strength": 30000,
     "commander": "",
-    "lat": 51.74749309558768,
-    "lon": 15.68850339909503
+    "lat": 51.587309751245456,
+    "lon": 15.817565917968752
   },
   {
     "id": "KingREN1-Suitman-1778816207643-1",
