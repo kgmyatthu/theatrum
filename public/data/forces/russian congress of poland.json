@@ -1,0 +1,32 @@
+[
+  {
+    "id": "AceApache-1778526187000-20",
+    "nation": "russian congress of poland",
+    "branch": "army",
+    "name": "II Korpus",
+    "strength": 30000,
+    "commander": "Jozef Poniatowski",
+    "lat": 52.44429203405363,
+    "lon": 16.443786621093754
+  },
+  {
+    "id": "AceApache-1778526187000-21",
+    "nation": "russian congress of poland",
+    "branch": "army",
+    "name": "III Korpus",
+    "strength": 30000,
+    "commander": "Jan Henryk Dabrowski",
+    "lat": 51.89513899196507,
+    "lon": 16.361389160156254
+  },
+  {
+    "id": "AceApache-1778526187000-22",
+    "nation": "russian congress of poland",
+    "branch": "army",
+    "name": "IV Korpus",
+    "strength": 30000,
+    "commander": "Jozef Chlopicki",
+    "lat": 51.23784668914442,
+    "lon": 17.852783203125004
+  }
+]
