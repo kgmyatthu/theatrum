@@ -1,17 +1,7 @@
 [
   {
-    "id": "AceApache-1778526187000-19",
-    "nation": "poland",
-    "branch": "army",
-    "name": "I Korpus",
-    "strength": 30000,
-    "commander": "Davoust I",
-    "lat": 52.47016876300687,
-    "lon": 16.302893294165205
-  },
-  {
     "id": "AceApache-1778526187000-20",
-    "nation": "poland",
+    "nation": "russian congress of poland",
     "branch": "army",
     "name": "II Korpus",
     "strength": 30000,
@@ -21,22 +11,22 @@
   },
   {
     "id": "AceApache-1778526187000-21",
-    "nation": "poland",
+    "nation": "russian congress of poland",
     "branch": "army",
     "name": "III Korpus",
     "strength": 30000,
     "commander": "Jan Henryk Dabrowski",
-    "lat": 51.81884199099706,
-    "lon": 16.171929849708896
+    "lat": 51.89513899196507,
+    "lon": 16.361389160156254
   },
   {
     "id": "AceApache-1778526187000-22",
-    "nation": "poland",
+    "nation": "russian congress of poland",
     "branch": "army",
     "name": "IV Korpus",
     "strength": 30000,
     "commander": "Jozef Chlopicki",
-    "lat": 51.035251460120115,
-    "lon": 17.655418347135733
+    "lat": 51.23784668914442,
+    "lon": 17.852783203125004
   }
 ]

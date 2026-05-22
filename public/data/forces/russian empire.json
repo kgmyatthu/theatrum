@@ -3,11 +3,11 @@
     "id": "yellowwithblue-1778478796000-0",
     "nation": "russian empire",
     "branch": "army",
-    "name": "Army of the North (Russia)",
+    "name": "Konstantin's Second Army",
     "strength": 83000,
-    "commander": "Alexander I",
-    "lat": 51.76210296563997,
-    "lon": 19.46914672851563
+    "commander": "Konstantin Pavlovich (Under Random Officer)",
+    "lat": 51.44716034698012,
+    "lon": 24.63134765625
   },
   {
     "id": "Vancouver1903-1778540725000-0",
@@ -26,8 +26,8 @@
     "name": "Army of Ruthenia",
     "strength": 54000,
     "commander": "Pyotr Bagration",
-    "lat": 51.544754914643754,
-    "lon": 11.857026257750396
+    "lat": 51.951036645095904,
+    "lon": 17.687988281250004
   },
   {
     "id": "Vancouver1903-1778540725000-2",
@@ -36,8 +36,8 @@
     "name": "Army of Caucasia",
     "strength": 42000,
     "commander": "Barclay de Tolly",
-    "lat": 46.47167987053019,
-    "lon": 30.739746093750004
+    "lat": 45.663966415824056,
+    "lon": 29.481811523437504
   },
   {
     "id": "Vancouver1903-1778555135112-0",
@@ -46,8 +46,8 @@
     "name": "Baltic Fleet",
     "strength": 25,
     "commander": "Dmitry Senyevin",
-    "lat": 54.61184559302165,
-    "lon": 11.2445068359375
+    "lat": 55.89995614406812,
+    "lon": 18.391113281250004
   },
   {
     "id": "Vancouver1903-1778555218744-1",
@@ -66,8 +66,8 @@
     "name": "Moldavian Army",
     "strength": 30000,
     "commander": "Scarlat Callimachi",
-    "lat": 47.032694598521374,
-    "lon": 28.839111328125004
+    "lat": 46.7248003746672,
+    "lon": 28.789672851562504
   },
   {
     "id": "Vancouver1903-1778814786514-0",
@@ -76,17 +76,37 @@
     "name": "Army of Russia",
     "strength": 160000,
     "commander": "Semyon Gangeblov (Temporary)",
-    "lat": 46.9690080331196,
-    "lon": 31.168212890625004
+    "lat": 45.62172169252446,
+    "lon": 28.652343750000004
   },
   {
     "id": "yellowwithblue-1778478177000-0",
     "nation": "russian empire",
     "branch": "army",
-    "name": "Russian Contingent of AOTN",
+    "name": "Konstantin's First Army",
     "strength": 60000,
-    "commander": "Idk",
-    "lat": 51.102659624033514,
-    "lon": 13.791961669921877
+    "commander": "Konstantin Pavlovich",
+    "lat": 51.04139389812637,
+    "lon": 23.521728515625004
+  },
+  {
+    "id": "Vancouver1903-1779426028283-0",
+    "nation": "russian empire",
+    "branch": "army",
+    "name": "Army of the Don",
+    "strength": 100000,
+    "commander": "Alexander von Benckendorff",
+    "lat": 47.2288945564232,
+    "lon": 39.71420288085938
+  },
+  {
+    "id": "Vancouver1903-1779426084307-1",
+    "nation": "russian empire",
+    "branch": "army",
+    "name": "Alexander's Semenovski Guard",
+    "strength": 3000,
+    "commander": "Alexander I",
+    "lat": 50.41026792102017,
+    "lon": 30.533752441406254
   }
 ]

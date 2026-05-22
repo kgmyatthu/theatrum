@@ -1243,7 +1243,7 @@
     ],
     [
       310,
-      "austria"
+      "kingdom of galicia"
     ],
     [
       311,
@@ -1251,7 +1251,7 @@
     ],
     [
       312,
-      "russian empire"
+      "kingdom of galicia"
     ],
     [
       313,
@@ -3555,7 +3555,7 @@
     ],
     [
       888,
-      "russian empire"
+      "austria"
     ],
     [
       889,
@@ -3567,7 +3567,7 @@
     ],
     [
       891,
-      "russian empire"
+      "kingdom of galicia"
     ],
     [
       892,
@@ -3639,11 +3639,11 @@
     ],
     [
       909,
-      "russian empire"
+      "russian congress of poland"
     ],
     [
       910,
-      "russian empire"
+      "kingdom of galicia"
     ],
     [
       911,
@@ -16631,23 +16631,23 @@
     ],
     [
       4157,
-      "russian empire"
+      "russian congress of poland"
     ],
     [
       4158,
-      "poland"
+      "russian congress of poland"
     ],
     [
       4159,
-      "prussia"
+      "russian congress of poland"
     ],
     [
       4160,
-      "poland"
+      "russian congress of poland"
     ],
     [
       4161,
-      "poland"
+      "russian congress of poland"
     ],
     [
       4162,
@@ -18520,6 +18520,10 @@
       "color": "#40826D"
     },
     {
+      "name": "kingdom of galicia",
+      "color": "#72fdd3"
+    },
+    {
       "name": "knights of malta",
       "color": "#E8E8E8"
     },
@@ -18618,6 +18622,10 @@
     {
       "name": "ragusa",
       "color": "#8B6F47"
+    },
+    {
+      "name": "russian congress of poland",
+      "color": "#36874a"
     },
     {
       "name": "russian empire",
