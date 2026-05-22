@@ -88,5 +88,25 @@
     "commander": "Charles de Suremain",
     "lat": 51.22150754599216,
     "lon": 13.419799804687502
+  },
+  {
+    "id": "yellowwithblue-1779417972454-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "ARMY OF THE MIDDLE RHINE",
+    "strength": 47000,
+    "commander": "Vegesack",
+    "lat": 53.8460456413833,
+    "lon": 12.436523437500002
+  },
+  {
+    "id": "yellowwithblue-1779418102571-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "ARMY OF THE WESER",
+    "strength": 33000,
+    "commander": "MAURITZ KLINGSPLOR",
+    "lat": 53.68369534495075,
+    "lon": 12.914428710937502
   }
 ]
