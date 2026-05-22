@@ -68,5 +68,15 @@
     "commander": "",
     "lat": 24.457150524185852,
     "lon": -77.94799804687501
+  },
+  {
+    "id": "KingRed2007-1779424626663-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Norwegian I Corps",
+    "strength": 25000,
+    "commander": "",
+    "lat": 53.57293832648609,
+    "lon": 8.596801757812502
   }
 ]
