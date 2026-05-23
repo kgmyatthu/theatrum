@@ -20,16 +20,6 @@
     "lat": 49.28397883860267
   },
   {
-    "id": "RadetzkyNTW-1778528727000-0",
-    "nation": "austria",
-    "branch": "army",
-    "name": "II Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.63719775332166,
-    "lon": 15.772247314453127
-  },
-  {
     "id": "RadetzkyNTW-1778528727000-1",
     "nation": "austria",
     "branch": "army",
@@ -80,26 +70,6 @@
     "lon": 11.304931640625002
   },
   {
-    "id": "RadetzkyNTW-1778528727000-6",
-    "nation": "austria",
-    "branch": "army",
-    "name": "VII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.55103193929691,
-    "lon": 15.103454589843752
-  },
-  {
-    "id": "RadetzkyNTW-1778528727000-7",
-    "nation": "austria",
-    "branch": "army",
-    "name": "VIII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.5693878622646,
-    "lon": 15.779113769531252
-  },
-  {
     "id": "RadetzkyNTW-1778528727000-8",
     "nation": "austria",
     "branch": "army",
@@ -120,26 +90,6 @@
     "lon": 14.051513671875002
   },
   {
-    "id": "RadetzkyNTW-1778528727000-10",
-    "nation": "austria",
-    "branch": "army",
-    "name": "XII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.68958500811337,
-    "lon": 15.84983825683594
-  },
-  {
-    "id": "RadetzkyNTW-1778528727000-11",
-    "nation": "austria",
-    "branch": "army",
-    "name": "XIII Corps",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.536085601784755,
-    "lon": 15.255203247070314
-  },
-  {
     "id": "RadetzkyNTW-1778552119679-0",
     "nation": "austria",
     "branch": "army",
@@ -156,18 +106,8 @@
     "name": "Transylvanian Landwehr",
     "strength": 30000,
     "commander": "",
-    "lat": 47.01771635397925,
-    "lon": 22.620849609375004
-  },
-  {
-    "id": "RadetzkyNTW-1778875890835-2",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Slovakian Landwehr",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.60778325682619,
-    "lon": 15.831298828125002
+    "lat": 49.880477638742555,
+    "lon": 16.633300781250004
   },
   {
     "id": "kgmyatthu-1778972495627-0",
@@ -178,5 +118,145 @@
     "commander": "",
     "lat": 50.06066538593667,
     "lon": 14.4635009765625
+  },
+  {
+    "id": "RadetzkyNTW-1779496534313-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Bohemian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 50.39451208023374,
+    "lon": 15.836791992187502
+  },
+  {
+    "id": "RadetzkyNTW-1779496543786-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Moravian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 49.95828842806968,
+    "lon": 17.534179687500004
+  },
+  {
+    "id": "RadetzkyNTW-1779496580076-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "II Bohemian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 50.680797145321655,
+    "lon": 14.930419921875002
+  },
+  {
+    "id": "RadetzkyNTW-1779496654341-3",
+    "nation": "austria",
+    "branch": "army",
+    "name": "II Moravian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 49.834439500479235,
+    "lon": 18.242797851562504
+  },
+  {
+    "id": "RadetzkyNTW-1779496669605-4",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Austrian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.5493419587775,
+    "lon": 16.215820312500004
+  },
+  {
+    "id": "RadetzkyNTW-1779496678033-5",
+    "nation": "austria",
+    "branch": "army",
+    "name": "II Austrian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.30877444352327,
+    "lon": 15.765380859375002
+  },
+  {
+    "id": "RadetzkyNTW-1779496684699-6",
+    "nation": "austria",
+    "branch": "army",
+    "name": "III Austrian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.27953734226008,
+    "lon": 16.732177734375004
+  },
+  {
+    "id": "RadetzkyNTW-1779496696406-7",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Croatian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 45.78284835197676,
+    "lon": 15.820312500000002
+  },
+  {
+    "id": "RadetzkyNTW-1779496707449-8",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Hungarian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 47.11499982620772,
+    "lon": 19.687500000000004
+  },
+  {
+    "id": "RadetzkyNTW-1779496713514-9",
+    "nation": "austria",
+    "branch": "army",
+    "name": "II Hungarian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 47.17477833929906,
+    "lon": 21.027832031250004
+  },
+  {
+    "id": "RadetzkyNTW-1779496719437-10",
+    "nation": "austria",
+    "branch": "army",
+    "name": "III Hungarian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 46.99524110694596,
+    "lon": 18.522949218750004
+  },
+  {
+    "id": "RadetzkyNTW-1779496728005-11",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I German landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 49.66762782262194,
+    "lon": 11.535644531250002
+  },
+  {
+    "id": "RadetzkyNTW-1779496733880-12",
+    "nation": "austria",
+    "branch": "army",
+    "name": "II German Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.980216985374994,
+    "lon": 9.228515625000002
+  },
+  {
+    "id": "RadetzkyNTW-1779496741813-13",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Tyrolean Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 47.025206001585396,
+    "lon": 11.71142578125
   }
 ]
