@@ -178,5 +178,15 @@
     "commander": "",
     "lat": 50.06066538593667,
     "lon": 14.4635009765625
+  },
+  {
+    "id": "RadetzkyNTW-1779497116912-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "I Bohemian Landwehr",
+    "strength": 40000,
+    "commander": "",
+    "lat": 50.73037076236953,
+    "lon": 15.026550292968752
   }
 ]
