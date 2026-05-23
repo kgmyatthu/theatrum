@@ -33,11 +33,11 @@
     "id": "Vancouver1903-1778540725000-2",
     "nation": "russian empire",
     "branch": "army",
-    "name": "Tolly's Army of Caucasia",
+    "name": "Tolly's Army of Romania",
     "strength": 42000,
     "commander": "Barclay de Tolly",
-    "lat": 45.663966415824056,
-    "lon": 29.481811523437504
+    "lat": 45.932050196856316,
+    "lon": 28.635864257812504
   },
   {
     "id": "Vancouver1903-1778555135112-0",
@@ -66,8 +66,8 @@
     "name": "Gangeblov's Army of Russia",
     "strength": 160000,
     "commander": "Semyon Gangeblov",
-    "lat": 45.62172169252446,
-    "lon": 28.652343750000004
+    "lat": 47.154237057576616,
+    "lon": 27.611389160156254
   },
   {
     "id": "yellowwithblue-1778478177000-0",
