@@ -15,19 +15,18 @@
   },
   "SXc-eng": {
     "role": "player",
-    "nation": "bulgaria"
+    "nation": "ottoman empire"
   },
   "lxcnreyes": {
     "role": "player",
-    "nation": "russian empire"
+    "nation": "russia"
   },
   "Walrusbear0831": {
     "role": "player",
-    "nation": "antilles"
+    "nation": "spain"
   },
   "KingREN1-Suitman": {
-    "role": "player",
-    "nation": "prussia"
+    "role": "admin"
   },
   "yellowwithblue": {
     "role": "admin"
@@ -40,11 +39,14 @@
     "nation": "britain"
   },
   "Vancouver1903": {
-    "role": "player",
-    "nation": "russian empire"
+    "role": "admin"
   },
   "yourlocalgeobukseon": {
     "role": "player",
     "nation": "denmark"
+  },
+  "Nindze2009": {
+    "role": "player",
+    "nation": "ottoman empire"
   }
 }
