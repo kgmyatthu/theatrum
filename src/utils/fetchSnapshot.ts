@@ -9,6 +9,9 @@ interface StateFile {
   appVersion: string;
   ownerships: Array<[number, string]>;
   countries: Country[];
+  currentDate: string;
+  lastTurnDays: number;
+  turnNumber: number;
 }
 
 type Fetcher = <T>(filename: string) => Promise<T>;
@@ -46,5 +49,8 @@ export async function fetchLiveSnapshot(fetcher: Fetcher): Promise<AppSnapshot> 
     ownerships: state.ownerships,
     countries: state.countries,
     forces,
+    currentDate: state.currentDate,
+    lastTurnDays: state.lastTurnDays,
+    turnNumber: state.turnNumber,
   };
 }

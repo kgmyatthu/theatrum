@@ -1,15 +1,1 @@
-[
-  {"id": 1, "nation": "France", "branch": "army", "name": "Army of Italy", "strength": 38000, "commander": "Bonaparte", "lon": 7.7, "lat": 45.0},
-  {"id": 2, "nation": "France", "branch": "army", "name": "Army of the Rhine", "strength": 60000, "commander": "Moreau", "lon": 7.5, "lat": 48.5},
-  {"id": 3, "nation": "France", "branch": "army", "name": "Army of Sambre-Meuse", "strength": 70000, "commander": "Jourdan", "lon": 5.5, "lat": 50.5},
-  {"id": 4, "nation": "Britain", "branch": "navy", "name": "Channel Fleet", "strength": 36, "commander": "Howe", "lon": -3.0, "lat": 50.0},
-  {"id": 5, "nation": "Britain", "branch": "navy", "name": "Mediterranean Fleet", "strength": 22, "commander": "Jervis", "lon": 5.0, "lat": 38.0},
-  {"id": 6, "nation": "Austria", "branch": "army", "name": "Army of Italy", "strength": 50000, "commander": "Beaulieu", "lon": 9.5, "lat": 45.5},
-  {"id": 7, "nation": "Austria", "branch": "army", "name": "Army of the Rhine", "strength": 80000, "commander": "Charles", "lon": 8.5, "lat": 49.0},
-  {"id": 8, "nation": "Russia", "branch": "army", "name": "Western Army", "strength": 70000, "commander": "Suvorov", "lon": 30.0, "lat": 53.0},
-  {"id": 9, "nation": "Prussia", "branch": "army", "name": "Royal Army", "strength": 60000, "commander": "Frederick William II", "lon": 13.4, "lat": 52.5},
-  {"id": 10, "nation": "Spain", "branch": "army", "name": "Royal Army", "strength": 35000, "commander": "Godoy", "lon": -3.7, "lat": 40.4},
-  {"id": 11, "nation": "Ottoman Empire", "branch": "army", "name": "Imperial Army", "strength": 100000, "commander": "Selim III", "lon": 28.97, "lat": 41.01},
-  {"id": 12, "nation": "Spain", "branch": "navy", "name": "Cadiz Fleet", "strength": 28, "commander": "Mazarredo", "lon": -6.3, "lat": 36.5},
-  {"id": 13, "nation": "Netherlands", "branch": "navy", "name": "Texel Fleet", "strength": 16, "commander": "de Winter", "lon": 4.7, "lat": 53.0}
-]
+[]

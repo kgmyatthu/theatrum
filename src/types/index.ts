@@ -56,6 +56,20 @@ export interface Force {
   commander: string;
   lon: number;
   lat: number;
+  /**
+   * Position at the most recent turn advance (or creation if newer). The
+   * server uses this as a sanity check: displacement (turnStart → current)
+   * must be ≤ kmMovedThisTurn, catching a cheating client that lies about
+   * its path length.
+   */
+  turnStartLon: number;
+  turnStartLat: number;
+  /**
+   * Cumulative great-circle path length walked this turn. Incremented on
+   * every MOVE_FORCE; reset to 0 on ADVANCE_TURN. Enforced ≤
+   * branch-km/day × state.lastTurnDays both client- and server-side.
+   */
+  kmMovedThisTurn: number;
 }
 
 // ------------------------------------------------------------------
@@ -81,6 +95,12 @@ export interface AppSnapshot {
   /** Full country list — name + color. No built-in / custom split. */
   countries: Country[];
   appVersion?: string;
+  /** ISO YYYY-MM-DD — the in-game date this snapshot represents. */
+  currentDate: string;
+  /** Days the most recent turn covered. Drives every force's movement budget. */
+  lastTurnDays: number;
+  /** Display-only turn counter. Starts at 0; bumped on each ADVANCE_TURN. */
+  turnNumber: number;
 }
 
 // ------------------------------------------------------------------

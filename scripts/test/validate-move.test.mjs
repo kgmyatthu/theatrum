@@ -16,6 +16,8 @@ import { validateMove } from '../lib/validate-move-core.mjs';
 // ────────────────────────────────────────────────────────────────────
 
 function force(overrides = {}) {
+  const lon = overrides.lon ?? -3.7;
+  const lat = overrides.lat ?? 40.4;
   return {
     id: 'seed-0-0',
     nation: 'spain',
@@ -23,15 +25,19 @@ function force(overrides = {}) {
     name: '1st Corps',
     strength: 40000,
     commander: 'Castaños',
-    lon: -3.7,
-    lat: 40.4,
+    lon,
+    lat,
+    // Default to a stationary force at turn start — passes the budget gate.
+    turnStartLon: overrides.turnStartLon ?? lon,
+    turnStartLat: overrides.turnStartLat ?? lat,
+    kmMovedThisTurn: overrides.kmMovedThisTurn ?? 0,
     ...overrides,
   };
 }
 
 function stateFile(overrides = {}) {
   return {
-    appVersion: 'theatrum/v7',
+    appVersion: 'theatrum/v8',
     ownerships: [
       [0, 'spain'],
       [1, 'france'],
@@ -41,6 +47,9 @@ function stateFile(overrides = {}) {
       { name: 'spain', color: '#1F4E9C' },
       { name: 'france', color: '#D7837F' },
     ],
+    currentDate: '1680-01-01',
+    lastTurnDays: 30,
+    turnNumber: 0,
     ...overrides,
   };
 }
@@ -534,5 +543,192 @@ test('reject: non-bot PR with forged marker still uses pr.user.login', () => {
       }),
     ),
     /not registered/,
+  );
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Per-force movement budget (army 25 km/day, navy 200 km/day)
+// ────────────────────────────────────────────────────────────────────
+
+// ~600 km due north of Madrid (5.4° of latitude). Exact-axis move so
+// the displacement math is trivial: 5.4 × 111 ≈ 599 km.
+const MOVED_600KM_LAT = 45.8;
+const MOVED_600KM_LON = -3.7;
+
+test('pass: army moves within budget (~600 km on a 30-day turn)', () => {
+  const moved = force({
+    id: 'spain-1',
+    nation: 'spain',
+    name: '1st Corps',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    // Cumulative ≥ great-circle displacement (~600.5) and within 750 budget.
+    kmMovedThisTurn: 601,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [moved] }) },
+      }),
+    ),
+  );
+});
+
+test('reject: army exceeds budget (800 km cumulative on a 30-day turn)', () => {
+  const cheating = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: 40.4,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 800,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [cheating] }) },
+      }),
+    ),
+    /exceeded movement budget/,
+  );
+});
+
+test('reject: navy exceeds budget at navy rate (7000 km on a 30-day turn)', () => {
+  const fleet = force({
+    id: 'spain-1',
+    nation: 'spain',
+    branch: 'navy',
+    name: 'Cadiz Fleet',
+    lat: 40.4,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 7000,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [fleet] }) },
+      }),
+    ),
+    /exceeded movement budget/,
+  );
+});
+
+test('pass: navy covers 6000 km on a 30-day turn (under navy budget of 6000)', () => {
+  const fleet = force({
+    id: 'spain-1',
+    nation: 'spain',
+    branch: 'navy',
+    name: 'Atlantic Fleet',
+    lat: 40.4,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 6000,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [fleet] }) },
+      }),
+    ),
+  );
+});
+
+test('reject: kmMovedThisTurn < displacement (cheating client lied about path)', () => {
+  // Force is now 600 km from turnStart, but client claims it only moved 0 km.
+  // The sanity gate should catch this.
+  const liar = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [liar] }) },
+      }),
+    ),
+    /displacement.*exceeds reported movement/,
+  );
+});
+
+test('reject: force missing turn-tracking fields (stale client bundle)', () => {
+  const stale = force({ id: 'spain-1', nation: 'spain' });
+  delete stale.turnStartLon;
+  delete stale.kmMovedThisTurn;
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [stale] }) },
+      }),
+    ),
+    /missing turn-tracking fields/,
+  );
+});
+
+test('reject: state.json missing lastTurnDays (stale schema)', () => {
+  const state = stateFile();
+  delete state.lastTurnDays;
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state, forces: forcesMap() },
+      }),
+    ),
+    /lastTurnDays is missing/,
+  );
+});
+
+test('pass: longer turn unlocks more movement (900 km on a 90-day turn = 2250 budget)', () => {
+  const moved = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 900,
+  });
+  // Bumping lastTurnDays is admin-only, so this scenario assumes admin
+  // submitted the PR (same base + head turn fields — admin advances
+  // are captured in the bumped state, not as a base→head delta).
+  expectPass(
+    validateMove(
+      defaults({
+        base: { state: stateFile({ lastTurnDays: 90 }), forces: forcesMap() },
+        head: { state: stateFile({ lastTurnDays: 90 }), forces: forcesMap({ spain: [moved] }) },
+        prAuthor: 'master',
+        changedFiles: ['public/data/state.json', 'public/data/forces/spain.json'],
+      }),
+    ),
+  );
+});
+
+test('pass: tolerance absorbs sub-100m float drift on displacement check', () => {
+  // Real displacement is ~600.45 km; reported 600.4 km (diff < 0.1 tolerance).
+  const moved = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 600.4,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [moved] }) },
+      }),
+    ),
   );
 });

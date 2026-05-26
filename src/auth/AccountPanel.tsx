@@ -35,6 +35,9 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
       forces: state.forces,
       palette: state.palette,
       owners: state.owners,
+      currentDate: state.currentDate,
+      lastTurnDays: state.lastTurnDays,
+      turnNumber: state.turnNumber,
     });
     const renames = auth.role === 'admin' ? state.pendingRenames : [];
     const userAdds = auth.role === 'admin' ? state.pendingUserAdds : [];

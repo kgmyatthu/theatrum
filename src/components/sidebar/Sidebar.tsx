@@ -8,6 +8,7 @@ import { DisplayPanel } from './DisplayPanel';
 import { LayersPanel } from './LayersPanel';
 import { PersistencePanel } from './PersistencePanel';
 import { StatsPanel } from './StatsPanel';
+import { TurnPanel } from './TurnPanel';
 import { AccountPanel } from '@/auth/AccountPanel';
 import { useAuth } from '@/auth/AuthContext';
 import styles from './Sidebar.module.css';
@@ -28,6 +29,7 @@ export function Sidebar() {
       <h2 className={styles.title}>Theatrum</h2>
       <AccountPanel onStatus={setStatus} />
 
+      <TurnPanel />
       {showGameplayPanels && <ModePanel status={status} />}
       {showGameplayPanels && <AddForcePanel onStatus={setStatus} />}
       {isAdmin && <NewCountryPanel onStatus={setStatus} />}

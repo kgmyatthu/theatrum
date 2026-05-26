@@ -22,6 +22,13 @@ export interface AppState {
 
   forces: Force[];
 
+  /** In-game date the current state represents. ISO YYYY-MM-DD. */
+  currentDate: string;
+  /** Days the most recent turn covered. Drives every force's movement budget. */
+  lastTurnDays: number;
+  /** Display-only turn counter. Starts at 0; bumped on each ADVANCE_TURN. */
+  turnNumber: number;
+
   selectedFids: ReadonlySet<number>;
 
   layerVisibility: LayerVisibility;
@@ -72,6 +79,9 @@ export const initialState: AppState = {
   owners: [],
   palette: {},
   forces: [],
+  currentDate: '1680-01-01',
+  lastTurnDays: 30,
+  turnNumber: 0,
   selectedFids: new Set(),
   layerVisibility: {
     provinces: true,

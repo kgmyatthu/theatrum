@@ -1,7 +1,14 @@
 // Pure decision logic for the move validator. The CLI wrapper
 // (scripts/validate-move.mjs) gathers I/O — gh API calls, fs reads —
 // and hands all inputs to validateMove() below, which is deterministic
-// and independently testable. Keep this file dependency-free.
+// and independently testable. Keep this file dependency-free (the one
+// imported helper, movement.mjs, is also dependency-free).
+
+import {
+  budgetForBranch,
+  haversineKm,
+  MOVEMENT_TOLERANCE_KM,
+} from './movement.mjs';
 //
 // v7 data layout (file-per-nation, not monolithic state.json):
 //   public/data/state.json            — { appVersion, ownerships, countries }
@@ -20,7 +27,7 @@
 // Bumped when the on-disk shape of state.json or forces/*.json changes
 // in a way an older client can't safely round-trip. Mirrors the constant
 // in src/utils/schema.ts and worker/src/index.ts.
-const SCHEMA_VERSION = 'theatrum/v7';
+const SCHEMA_VERSION = 'theatrum/v8';
 
 const PERM_FILE = 'public/data/perm.json';
 const STATE_FILE = 'public/data/state.json';
@@ -124,6 +131,51 @@ export function validateMove(inputs) {
         valid: false,
         reason: `forces/${nation}.json exists but ${nation} is not in state.json countries`,
       };
+    }
+  }
+
+  // ── Per-force movement budget (universal) ───────────────────────────
+  // Two checks per force:
+  //   1. kmMovedThisTurn ≤ branch budget for state.lastTurnDays.
+  //   2. straight-line displacement (turnStart → current) ≤ kmMovedThisTurn.
+  //      Catches a cheating client that lies about its path length —
+  //      you can't have moved less far than the displacement.
+  // Tolerance MOVEMENT_TOLERANCE_KM absorbs JSON round-trip float drift.
+  const lastTurnDays = head.state.lastTurnDays;
+  if (typeof lastTurnDays !== 'number' || lastTurnDays < 0) {
+    return {
+      valid: false,
+      reason: `state.lastTurnDays is missing or invalid (${lastTurnDays}). Your client is stale; hard-refresh the page.`,
+    };
+  }
+  for (const [nation, forces] of Object.entries(head.forces)) {
+    for (const f of forces) {
+      // Reject pre-turn forces — every force must carry its turn-tracking
+      // fields. Clients on older bundles get rejected here.
+      if (
+        typeof f.turnStartLon !== 'number' ||
+        typeof f.turnStartLat !== 'number' ||
+        typeof f.kmMovedThisTurn !== 'number'
+      ) {
+        return {
+          valid: false,
+          reason: `force ${f.id} in forces/${nation}.json is missing turn-tracking fields (turnStartLon, turnStartLat, kmMovedThisTurn). Hard-refresh the page.`,
+        };
+      }
+      const budget = budgetForBranch(f.branch, lastTurnDays);
+      if (f.kmMovedThisTurn > budget + MOVEMENT_TOLERANCE_KM) {
+        return {
+          valid: false,
+          reason: `force ${f.id} (${f.branch}) in forces/${nation}.json exceeded movement budget: ${Math.round(f.kmMovedThisTurn)} km moved, budget is ${budget} km this turn`,
+        };
+      }
+      const displacement = haversineKm(f.turnStartLat, f.turnStartLon, f.lat, f.lon);
+      if (displacement > f.kmMovedThisTurn + MOVEMENT_TOLERANCE_KM) {
+        return {
+          valid: false,
+          reason: `force ${f.id} in forces/${nation}.json displacement (${Math.round(displacement)} km) exceeds reported movement (${Math.round(f.kmMovedThisTurn)} km) — refresh the page`,
+        };
+      }
     }
   }
 

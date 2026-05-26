@@ -56,6 +56,11 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
             commander: draft.commander,
             lat: e.latlng.lat,
             lon: e.latlng.lng,
+            // A new force starts pinned at its placement spot — full
+            // movement budget remains for the rest of the current turn.
+            turnStartLat: e.latlng.lat,
+            turnStartLon: e.latlng.lng,
+            kmMovedThisTurn: 0,
           },
         },
       });

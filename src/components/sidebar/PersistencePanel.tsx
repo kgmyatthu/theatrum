@@ -25,6 +25,9 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       forces: state.forces,
       palette: state.palette,
       owners: state.owners,
+      currentDate: state.currentDate,
+      lastTurnDays: state.lastTurnDays,
+      turnNumber: state.turnNumber,
     });
   };
 

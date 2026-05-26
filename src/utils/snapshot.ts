@@ -12,6 +12,9 @@ export interface SnapshotInputs {
   forces: Force[];
   palette: Palette;
   owners: string[];
+  currentDate: string;
+  lastTurnDays: number;
+  turnNumber: number;
 }
 
 function buildCountries(owners: string[], palette: Palette): Country[] {
@@ -32,5 +35,8 @@ export function buildSnapshot(inputs: SnapshotInputs): AppSnapshot {
     ),
     forces: inputs.forces,
     countries: buildCountries(inputs.owners, inputs.palette),
+    currentDate: inputs.currentDate,
+    lastTurnDays: inputs.lastTurnDays,
+    turnNumber: inputs.turnNumber,
   };
 }

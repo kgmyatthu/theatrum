@@ -3,6 +3,8 @@ import type { AppState } from './state';
 import { initialState } from './state';
 import type { Country, Force } from '@/types';
 import { normalizeNation } from '@/utils/nation';
+import { haversineKm } from '@/utils/geometry';
+import { daysBetween } from '@/utils/movement';
 
 function countriesToOwnersAndPalette(countries: Country[]): {
   owners: string[];
@@ -21,7 +23,21 @@ function countriesToOwnersAndPalette(countries: Country[]): {
 
 function normalizeForce(f: Force): Force {
   const n = normalizeNation(f.nation);
-  return n === f.nation ? f : { ...f, nation: n };
+  // Backfill turn-tracking fields for forces loaded from a pre-turn snapshot
+  // (the v8 reset shipped without these; once everyone has a turn-aware
+  // snapshot in their browser this branch is dead code).
+  const needsTurnFields =
+    typeof f.turnStartLon !== 'number' ||
+    typeof f.turnStartLat !== 'number' ||
+    typeof f.kmMovedThisTurn !== 'number';
+  if (n === f.nation && !needsTurnFields) return f;
+  return {
+    ...f,
+    nation: n,
+    turnStartLon: typeof f.turnStartLon === 'number' ? f.turnStartLon : f.lon,
+    turnStartLat: typeof f.turnStartLat === 'number' ? f.turnStartLat : f.lat,
+    kmMovedThisTurn: typeof f.kmMovedThisTurn === 'number' ? f.kmMovedThisTurn : 0,
+  };
 }
 
 export function reducer(state: AppState, action: Action): AppState {
@@ -50,6 +66,11 @@ export function reducer(state: AppState, action: Action): AppState {
         owners,
         palette,
         forces: (snapshot.forces ?? []).map(normalizeForce),
+        currentDate: snapshot.currentDate ?? state.currentDate,
+        lastTurnDays:
+          typeof snapshot.lastTurnDays === 'number' ? snapshot.lastTurnDays : state.lastTurnDays,
+        turnNumber:
+          typeof snapshot.turnNumber === 'number' ? snapshot.turnNumber : state.turnNumber,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],
@@ -165,7 +186,36 @@ export function reducer(state: AppState, action: Action): AppState {
       const { id, lat, lon } = action.payload;
       return {
         ...state,
-        forces: state.forces.map((f) => (f.id === id ? { ...f, lat, lon } : f)),
+        forces: state.forces.map((f) => {
+          if (f.id !== id) return f;
+          const stepKm = haversineKm(f.lat, f.lon, lat, lon);
+          return {
+            ...f,
+            lat,
+            lon,
+            kmMovedThisTurn: f.kmMovedThisTurn + stepKm,
+          };
+        }),
+      };
+    }
+
+    case 'ADVANCE_TURN': {
+      const { newDate } = action.payload;
+      const elapsed = daysBetween(state.currentDate, newDate);
+      // Refuse non-forward moves silently — UI gates this, but keep the
+      // reducer safe in case a bad dispatch slips through.
+      if (elapsed <= 0) return state;
+      return {
+        ...state,
+        currentDate: newDate,
+        lastTurnDays: elapsed,
+        turnNumber: state.turnNumber + 1,
+        forces: state.forces.map((f) => ({
+          ...f,
+          turnStartLon: f.lon,
+          turnStartLat: f.lat,
+          kmMovedThisTurn: 0,
+        })),
       };
     }
 
@@ -226,6 +276,11 @@ export function reducer(state: AppState, action: Action): AppState {
         owners,
         palette,
         forces: (snapshot.forces ?? []).map(normalizeForce),
+        currentDate: snapshot.currentDate ?? state.currentDate,
+        lastTurnDays:
+          typeof snapshot.lastTurnDays === 'number' ? snapshot.lastTurnDays : state.lastTurnDays,
+        turnNumber:
+          typeof snapshot.turnNumber === 'number' ? snapshot.turnNumber : state.turnNumber,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],

@@ -37,11 +37,16 @@ interface Env {
 }
 
 import { rebaseForceFile } from '../../scripts/lib/rebase-forces.mjs';
+import {
+  budgetForBranch,
+  haversineKm,
+  MOVEMENT_TOLERANCE_KM,
+} from '../../scripts/lib/movement.mjs';
 
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
 // Keep in sync with src/utils/schema.ts and scripts/lib/validate-move-core.mjs.
-const SCHEMA_VERSION = 'theatrum/v7';
+const SCHEMA_VERSION = 'theatrum/v8';
 
 // ────────────────────────────────────────────────────────────────────
 // Generic helpers
@@ -530,6 +535,9 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
         ownerships?: Array<[number, string]>;
         countries?: Array<{ name: string; color: string }>;
         forces?: ForceLike[];
+        currentDate?: unknown;
+        lastTurnDays?: unknown;
+        turnNumber?: unknown;
       };
   if (!snapshot || typeof snapshot !== 'object') {
     return errorJson(origin, 400, 'missing or invalid snapshot');
@@ -552,6 +560,15 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   if (!Array.isArray(snapshot.countries)) {
     return errorJson(origin, 400, 'snapshot.countries must be an array');
   }
+  if (typeof snapshot.currentDate !== 'string') {
+    return errorJson(origin, 400, 'snapshot.currentDate must be an ISO YYYY-MM-DD string');
+  }
+  if (typeof snapshot.lastTurnDays !== 'number' || snapshot.lastTurnDays < 0) {
+    return errorJson(origin, 400, 'snapshot.lastTurnDays must be a non-negative number');
+  }
+  if (typeof snapshot.turnNumber !== 'number') {
+    return errorJson(origin, 400, 'snapshot.turnNumber must be a number');
+  }
 
   // baseline is optional (older cached clients won't send it). When
   // present, structurally validate so the rebase math can't blow up on
@@ -561,6 +578,9 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     ownerships: Array<[number, string]>;
     countries: Array<{ name: string; color: string }>;
     forces: ForceLike[];
+    currentDate?: string;
+    lastTurnDays?: number;
+    turnNumber?: number;
   }
   let baseline: BaselineShape | undefined = undefined;
   if (body.baseline && typeof body.baseline === 'object') {
@@ -726,6 +746,97 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   }
 
   try {
+    // Always read mainState — non-admin needs it to lock turn-field
+    // values and to validate movement budgets against the canonical
+    // lastTurnDays; admin needs it for the existing drift gate.
+    const stateOnMain = await readFileOnMain(
+      env.GITHUB_REPO,
+      'public/data/state.json',
+      installToken,
+    );
+    if (!stateOnMain.exists) {
+      return errorJson(origin, 502, 'state.json missing on main — repo is broken');
+    }
+    const mainState = JSON.parse(stateOnMain.content) as {
+      appVersion: string;
+      ownerships: Array<[number, string]>;
+      countries: Array<{ name: string; color: string }>;
+      currentDate: string;
+      lastTurnDays: number;
+      turnNumber: number;
+    };
+
+    // ── Turn-field permission / drift gate ─────────────────────────────
+    // Players can't change currentDate / lastTurnDays / turnNumber. Admins
+    // can — but only if their baseline matches main (so a concurrent admin
+    // advance hasn't already landed since they started editing). Both
+    // checks collapse to the same rule: the values the client is operating
+    // against must match what's on main right now.
+    const probe = isAdmin && baseline ? baseline : snapshot;
+    const probeCurrentDate = (probe as { currentDate?: unknown }).currentDate;
+    const probeLastTurnDays = (probe as { lastTurnDays?: unknown }).lastTurnDays;
+    const probeTurnNumber = (probe as { turnNumber?: unknown }).turnNumber;
+    if (
+      probeCurrentDate !== mainState.currentDate ||
+      probeLastTurnDays !== mainState.lastTurnDays ||
+      probeTurnNumber !== mainState.turnNumber
+    ) {
+      return errorJson(
+        origin,
+        409,
+        isAdmin
+          ? 'main moved while you were editing: the turn was advanced. Refresh the page and re-apply any turn change.'
+          : 'turn fields (currentDate / lastTurnDays / turnNumber) cannot be changed by players — refresh the page.',
+      );
+    }
+
+    // ── Per-force movement budget (universal) ──────────────────────────
+    // Budget basis: admin uses snapshot.lastTurnDays (they may be
+    // advancing the turn in this same PR); everyone else uses main's
+    // value, since the gate above already proved snapshot == main for
+    // non-admins.
+    const effectiveLastTurnDays = isAdmin
+      ? (snapshot.lastTurnDays as number)
+      : mainState.lastTurnDays;
+    for (const f of snapshot.forces!) {
+      const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
+      const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;
+      const kmMovedThisTurn = (f as { kmMovedThisTurn?: unknown }).kmMovedThisTurn;
+      const branch = (f as { branch?: unknown }).branch;
+      const lat = (f as { lat?: unknown }).lat;
+      const lon = (f as { lon?: unknown }).lon;
+      if (
+        typeof turnStartLon !== 'number' ||
+        typeof turnStartLat !== 'number' ||
+        typeof kmMovedThisTurn !== 'number' ||
+        typeof lat !== 'number' ||
+        typeof lon !== 'number' ||
+        (branch !== 'army' && branch !== 'navy')
+      ) {
+        return errorJson(
+          origin,
+          400,
+          `force ${String(f.id)} is missing turn-tracking fields. Hard-refresh the page.`,
+        );
+      }
+      const budget = budgetForBranch(branch, effectiveLastTurnDays);
+      if (kmMovedThisTurn > budget + MOVEMENT_TOLERANCE_KM) {
+        return errorJson(
+          origin,
+          422,
+          `force ${f.id} (${branch}) exceeded movement budget: ${Math.round(kmMovedThisTurn)} km moved, budget is ${budget} km this turn`,
+        );
+      }
+      const displacement = haversineKm(turnStartLat, turnStartLon, lat, lon);
+      if (displacement > kmMovedThisTurn + MOVEMENT_TOLERANCE_KM) {
+        return errorJson(
+          origin,
+          422,
+          `force ${f.id} displacement (${Math.round(displacement)} km) exceeds reported movement (${Math.round(kmMovedThisTurn)} km) — refresh the page`,
+        );
+      }
+    }
+
     if (!isAdmin) {
       if (!entry.nation) {
         return errorJson(origin, 403, `@${login} has no nation assigned in perm.json`);
@@ -736,20 +847,6 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       // union of (nations that already have a force file on main) and
       // (nations with forces in the incoming snapshot) so deletions
       // (e.g. a country rename's old name) are caught too.
-      const stateOnMain = await readFileOnMain(
-        env.GITHUB_REPO,
-        'public/data/state.json',
-        installToken,
-      );
-      if (!stateOnMain.exists) {
-        return errorJson(origin, 502, 'state.json missing on main — repo is broken');
-      }
-      const mainState = JSON.parse(stateOnMain.content) as {
-        appVersion: string;
-        ownerships: Array<[number, string]>;
-        countries: Array<{ name: string; color: string }>;
-      };
-
       // Stale-baseline gate for state.json fields. Per the design call,
       // admin must operate against fresh main for ownerships / countries —
       // a 3-way merge of these arrays is ambiguous (e.g. an ownership
@@ -783,6 +880,9 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
             appVersion: snapshot.appVersion,
             ownerships: snapshot.ownerships,
             countries: snapshot.countries,
+            currentDate: snapshot.currentDate,
+            lastTurnDays: snapshot.lastTurnDays,
+            turnNumber: snapshot.turnNumber,
           },
           null,
           2,

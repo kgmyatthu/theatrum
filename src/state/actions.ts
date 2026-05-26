@@ -19,6 +19,7 @@ export type Action =
   | { type: 'UPDATE_FORCE'; payload: { force: Force } }
   | { type: 'DELETE_FORCE'; payload: { id: string } }
   | { type: 'MOVE_FORCE'; payload: { id: string; lat: number; lon: number } }
+  | { type: 'ADVANCE_TURN'; payload: { newDate: string } }
   | { type: 'TOGGLE_LAYER'; payload: { layer: 'provinces' | 'countryLabels' | 'cities' | 'forces' } }
   | { type: 'SET_MODE'; payload: { mode: 'view' | 'add-force' | 'ruler' } }
   | { type: 'SELECT_PROVINCES'; payload: { fids: number[]; mode: 'set' | 'add' | 'toggle' | 'clear' } }

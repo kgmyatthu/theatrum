@@ -47,11 +47,16 @@ const ownerships = provinces.features.map((f, i) => [i, lc(f.properties.owner)])
 
 // Mint deterministic seed IDs (`seed-0-<seq>`) so re-running the bake
 // produces identical IDs every time and the validator's "force IDs must
-// be strings" gate is never tripped on a fresh bake.
+// be strings" gate is never tripped on a fresh bake. Also seed the
+// turn-tracking fields: a fresh force sits at its placement spot with
+// a full movement budget, so turnStart == current and kmMovedThisTurn = 0.
 let seedSeq = 0;
 for (const f of seedForces) {
   f.id = `seed-0-${seedSeq++}`;
   f.nation = lc(f.nation);
+  f.turnStartLon = f.lon;
+  f.turnStartLat = f.lat;
+  f.kmMovedThisTurn = 0;
 }
 
 // Group seed forces by canonical nation.
@@ -71,9 +76,16 @@ if (missing.length > 0) {
 }
 
 const state = {
-  appVersion: 'theatrum/v7',
+  appVersion: 'theatrum/v8',
   ownerships,
   countries,
+  // Initial turn. The starter budget (lastTurnDays = 30) lets players
+  // deploy + reposition forces on day one — without it the very first
+  // session is read-only until an admin advances. Admins can bump from
+  // here via the in-app "Advance Turn" control.
+  currentDate: '1680-01-01',
+  lastTurnDays: 30,
+  turnNumber: 0,
 };
 
 // Pretty-printed: keeps line-based git diffs cheap so concurrent player
