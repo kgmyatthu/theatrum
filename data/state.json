@@ -1,5 +1,5 @@
 {
-  "appVersion": "theatrum/v8",
+  "appVersion": "theatrum/v9",
   "ownerships": [
     [
       0,
@@ -18627,8 +18627,5 @@
       "name": "yemen",
       "color": "#800000"
     }
-  ],
-  "currentDate": "1680-01-01",
-  "lastTurnDays": 30,
-  "turnNumber": 0
+  ]
 }
