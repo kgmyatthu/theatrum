@@ -79,7 +79,7 @@ export const initialState: AppState = {
   owners: [],
   palette: {},
   forces: [],
-  currentDate: '1680-01-01',
+  currentDate: '1683-01-01',
   lastTurnDays: 30,
   turnNumber: 0,
   selectedFids: new Set(),

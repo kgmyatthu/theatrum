@@ -86,14 +86,15 @@ const state = {
   countries,
 };
 
-// Initial turn. The starter budget (lastTurnDays = 30) lets players
-// deploy + reposition forces on day one — without it the very first
-// session is read-only until an admin advances. Admins bump these from
-// the in-app "Advance Turn" control, which writes turn.json without
-// disturbing state.json.
+// Initial turn. Clock starts at 1683-01-01 (province ownership map is
+// 1680-era; the three-year gap leaves room for early 1680s deployment
+// without rewriting the map). The starter budget (lastTurnDays = 30)
+// lets players deploy + reposition forces on day one. Admins bump
+// these from the in-app "Advance Turn" control, which writes turn.json
+// without disturbing state.json.
 const turn = {
   appVersion: 'theatrum/v9',
-  currentDate: '1680-01-01',
+  currentDate: '1683-01-01',
   lastTurnDays: 30,
   turnNumber: 0,
 };
