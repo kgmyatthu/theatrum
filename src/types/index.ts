@@ -70,6 +70,14 @@ export interface Force {
    * branch-km/day × state.lastTurnDays both client- and server-side.
    */
   kmMovedThisTurn: number;
+  /**
+   * Turn number this force was raised on. Set once at ADD_FORCE time
+   * and never mutated. Server locks movement (budget = 0) while
+   * createdAtTurn === current turnNumber — "newly raised forces can't
+   * march until the next turn." Optional for back-compat: seed forces
+   * baked without this field are treated as primordial (always movable).
+   */
+  createdAtTurn?: number;
 }
 
 // ------------------------------------------------------------------

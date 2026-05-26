@@ -804,10 +804,16 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     const effectiveLastTurnDays = isAdmin
       ? (snapshot.lastTurnDays as number)
       : mainTurn.lastTurnDays;
+    // For "newly raised this turn" purposes we use main's turnNumber.
+    // The permission gate above already proved snapshot/baseline matches
+    // main, and an admin advancing turn in this same PR has snapshot ==
+    // baseline pre-advance, so this is the right reference frame either way.
+    const effectiveTurnNumber = mainTurn.turnNumber;
     for (const f of snapshot.forces!) {
       const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
       const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;
       const kmMovedThisTurn = (f as { kmMovedThisTurn?: unknown }).kmMovedThisTurn;
+      const createdAtTurn = (f as { createdAtTurn?: unknown }).createdAtTurn;
       const branch = (f as { branch?: unknown }).branch;
       const lat = (f as { lat?: unknown }).lat;
       const lon = (f as { lon?: unknown }).lon;
@@ -825,7 +831,21 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           `force ${String(f.id)} is missing turn-tracking fields. Hard-refresh the page.`,
         );
       }
-      const budget = budgetForBranch(branch, effectiveLastTurnDays);
+      // Newly raised forces (createdAtTurn === current turnNumber) are
+      // locked from movement until the next turn. createdAtTurn is
+      // optional for back-compat with seed forces, which are primordial
+      // (always movable). Stale clients omitting the field would let
+      // their new forces move freely — acceptable transient until refresh.
+      const justRaised =
+        typeof createdAtTurn === 'number' && createdAtTurn === effectiveTurnNumber;
+      if (justRaised && kmMovedThisTurn > MOVEMENT_TOLERANCE_KM) {
+        return errorJson(
+          origin,
+          422,
+          `force ${f.id} was raised this turn and cannot move until the next turn`,
+        );
+      }
+      const budget = justRaised ? 0 : budgetForBranch(branch, effectiveLastTurnDays);
       if (kmMovedThisTurn > budget + MOVEMENT_TOLERANCE_KM) {
         return errorJson(
           origin,

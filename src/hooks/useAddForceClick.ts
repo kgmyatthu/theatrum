@@ -1,6 +1,8 @@
 import { useEffect, type RefObject } from 'react';
 import type L from 'leaflet';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
+// useAppState gives us the live turnNumber so each new force can be stamped
+// with the turn it was raised on.
 import { useForceDraft } from '@/state/ForceDraftContext';
 import { useAuth } from '@/auth/AuthContext';
 import { mintForceId } from '@/utils/forceId';
@@ -19,7 +21,7 @@ interface UseAddForceClickOptions {
  * its UI too — this is defense in depth).
  */
 export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions): void {
-  const { mode } = useAppState();
+  const { mode, turnNumber } = useAppState();
   const dispatch = useAppDispatch();
   const { draftRef } = useForceDraft();
   const auth = useAuth();
@@ -56,11 +58,13 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
             commander: draft.commander,
             lat: e.latlng.lat,
             lon: e.latlng.lng,
-            // A new force starts pinned at its placement spot — full
-            // movement budget remains for the rest of the current turn.
+            // A new force starts pinned at its placement spot. The
+            // createdAtTurn stamp locks it from moving during the turn
+            // it was raised in — server enforces this universally.
             turnStartLat: e.latlng.lat,
             turnStartLon: e.latlng.lng,
             kmMovedThisTurn: 0,
+            createdAtTurn: turnNumber,
           },
         },
       });
@@ -70,5 +74,5 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
     return () => {
       map.off('click', handler);
     };
-  }, [mapRef, mode, dispatch, draftRef, onStatus, auth.status, auth.role, auth.nation, auth.login]);
+  }, [mapRef, mode, dispatch, draftRef, onStatus, auth.status, auth.role, auth.nation, auth.login, turnNumber]);
 }

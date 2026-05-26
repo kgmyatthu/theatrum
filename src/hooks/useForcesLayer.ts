@@ -4,7 +4,7 @@ import type { Force } from '@/types';
 import { useAppState } from '@/state/AppContext';
 import { useAuth } from '@/auth/AuthContext';
 import { haversineKm, formatDistance } from '@/utils/geometry';
-import { budgetForBranch } from '@/utils/movement';
+import { effectiveBudget } from '@/utils/movement';
 
 export interface PendingMove {
   force: Force;
@@ -84,7 +84,7 @@ export function useForcesLayer({
   onForceContextMenu,
   onForceDragEnd,
 }: UseForcesLayerOptions): void {
-  const { forces, palette, layerVisibility, iconScale, lastTurnDays } = useAppState();
+  const { forces, palette, layerVisibility, iconScale, lastTurnDays, turnNumber } = useAppState();
   const auth = useAuth();
   const layerRef = useRef<L.LayerGroup | null>(null);
   const markersRef = useRef<L.Marker[]>([]);
@@ -130,10 +130,12 @@ export function useForcesLayer({
 
       // Range circle radius is "how far this force can still move this
        // turn" — the same budget the worker and validator enforce. A drop
-       // inside the circle is acceptable; outside is over budget.
+       // inside the circle is acceptable; outside is over budget. Newly
+       // raised forces have effectiveBudget = 0 → radius collapses to 0
+       // (invisible circle, any drop position shows red feedback).
       const remainingKm = Math.max(
         0,
-        budgetForBranch(force.branch, lastTurnDays) - force.kmMovedThisTurn,
+        effectiveBudget(force, lastTurnDays, turnNumber) - force.kmMovedThisTurn,
       );
 
       marker.on('dragstart', () => {

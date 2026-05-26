@@ -766,6 +766,98 @@ test('pass: longer turn unlocks more movement (900 km on a 90-day turn = 2250 bu
   );
 });
 
+test('reject: newly raised force cannot move during the turn it was raised', () => {
+  // Force raised on turn 0 (= current turn) trying to move 100 km.
+  const justRaised = force({
+    id: 'spain-new-1',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 601,
+    createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [justRaised] }) },
+      }),
+    ),
+    /raised this turn and cannot move until the next turn/,
+  );
+});
+
+test('pass: newly raised force that stays put is fine', () => {
+  // Same as above but the force never left its placement spot.
+  const placed = force({
+    id: 'spain-new-2',
+    nation: 'spain',
+    lat: 40.4,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 0,
+    createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [placed] }) },
+      }),
+    ),
+  );
+});
+
+test('pass: force raised in a previous turn can move normally', () => {
+  // Force raised on turn 0; we are now on turn 1 (admin advanced).
+  const movedNextTurn = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 601,
+    createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        base: { state: stateFile(), turn: turnFile({ turnNumber: 1 }), forces: forcesMap() },
+        head: {
+          state: stateFile(),
+          turn: turnFile({ turnNumber: 1 }),
+          forces: forcesMap({ spain: [movedNextTurn] }),
+        },
+      }),
+    ),
+  );
+});
+
+test('pass: legacy seed force without createdAtTurn is treated as primordial (movable)', () => {
+  // Seed forces baked without createdAtTurn must not be locked — they
+  // existed before the rule did. Verify the gate is opt-in.
+  const seed = force({
+    id: 'seed-0-0',
+    nation: 'spain',
+    lat: MOVED_600KM_LAT,
+    lon: MOVED_600KM_LON,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 601,
+    // createdAtTurn intentionally omitted
+  });
+  delete seed.createdAtTurn;
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [seed] }) },
+      }),
+    ),
+  );
+});
+
 test('pass: tolerance absorbs sub-100m float drift on displacement check', () => {
   // Real displacement is ~600.45 km; reported 600.4 km (diff < 0.1 tolerance).
   const moved = force({

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
 import { haversineKm, formatDistance } from '@/utils/geometry';
-import { budgetForBranch } from '@/utils/movement';
+import { effectiveBudget, isNewlyRaised } from '@/utils/movement';
 import { useAppState } from '@/state/AppContext';
 import type { PendingMove } from '@/hooks/useForcesLayer';
 import styles from './MobilizationConfirm.module.css';
@@ -14,14 +14,16 @@ interface MobilizationConfirmProps {
 
 export function MobilizationConfirm({ pending, onConfirm, onCancel }: MobilizationConfirmProps) {
   const { force, origin, target } = pending;
-  const { lastTurnDays } = useAppState();
+  const { lastTurnDays, turnNumber } = useAppState();
   const km = haversineKm(origin.lat, origin.lon, target.lat, target.lon);
 
   // Budget math — uses the force's current kmMovedThisTurn (already-spent
   // budget) plus this drag's straight-line distance. Matches the worker's
   // server-side check, so an in-UI green light means the submission won't
-  // be rejected for movement.
-  const budget = budgetForBranch(force.branch, lastTurnDays);
+  // be rejected for movement. effectiveBudget returns 0 for forces raised
+  // this turn — they can't move at all until next turn.
+  const justRaised = isNewlyRaised(force, turnNumber);
+  const budget = effectiveBudget(force, lastTurnDays, turnNumber);
   const spent = force.kmMovedThisTurn;
   const projected = spent + km;
   const overBudget = projected > budget;
@@ -74,13 +76,21 @@ export function MobilizationConfirm({ pending, onConfirm, onCancel }: Mobilizati
             marginTop: 6,
           }}
         >
-          Budget this turn: {Math.round(spent)} / {budget} km
-          <br />
-          After this move: {Math.round(projected)} / {budget} km
-          {overBudget && (
+          {justRaised ? (
             <>
+              Newly raised this turn — <b>cannot move until next turn.</b>
+            </>
+          ) : (
+            <>
+              Budget this turn: {Math.round(spent)} / {budget} km
               <br />
-              <span style={{ fontWeight: 700 }}>Over budget — cannot confirm.</span>
+              After this move: {Math.round(projected)} / {budget} km
+              {overBudget && (
+                <>
+                  <br />
+                  <span style={{ fontWeight: 700 }}>Over budget — cannot confirm.</span>
+                </>
+              )}
             </>
           )}
         </div>

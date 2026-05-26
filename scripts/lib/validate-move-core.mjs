@@ -158,6 +158,7 @@ export function validateMove(inputs) {
       reason: `turn.lastTurnDays is missing or invalid (${lastTurnDays}). Your client is stale; hard-refresh the page.`,
     };
   }
+  const currentTurnNumber = head.turn?.turnNumber;
   for (const [nation, forces] of Object.entries(head.forces)) {
     for (const f of forces) {
       // Reject pre-turn forces — every force must carry its turn-tracking
@@ -172,7 +173,20 @@ export function validateMove(inputs) {
           reason: `force ${f.id} in forces/${nation}.json is missing turn-tracking fields (turnStartLon, turnStartLat, kmMovedThisTurn). Hard-refresh the page.`,
         };
       }
-      const budget = budgetForBranch(f.branch, lastTurnDays);
+      // Newly raised forces can't move at all during the turn they were
+      // raised on. createdAtTurn is optional for back-compat with seed
+      // forces baked without it — those are treated as primordial.
+      const justRaised =
+        typeof f.createdAtTurn === 'number' &&
+        typeof currentTurnNumber === 'number' &&
+        f.createdAtTurn === currentTurnNumber;
+      if (justRaised && f.kmMovedThisTurn > MOVEMENT_TOLERANCE_KM) {
+        return {
+          valid: false,
+          reason: `force ${f.id} in forces/${nation}.json was raised this turn and cannot move until the next turn`,
+        };
+      }
+      const budget = justRaised ? 0 : budgetForBranch(f.branch, lastTurnDays);
       if (f.kmMovedThisTurn > budget + MOVEMENT_TOLERANCE_KM) {
         return {
           valid: false,
