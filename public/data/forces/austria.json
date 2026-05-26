@@ -1,0 +1,15 @@
+[
+  {
+    "id": "kgmyatthu-1779774485719-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "1st Corps",
+    "strength": 40000,
+    "commander": "Arch Duke Test",
+    "lat": 48.1367666796927,
+    "lon": 16.721191406250004,
+    "turnStartLat": 48.1367666796927,
+    "turnStartLon": 16.721191406250004,
+    "kmMovedThisTurn": 0
+  }
+]
