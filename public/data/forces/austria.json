@@ -6,10 +6,10 @@
     "name": "1st Corps",
     "strength": 40000,
     "commander": "Arch Duke Test",
-    "lat": 48.1367666796927,
-    "lon": 16.721191406250004,
-    "turnStartLat": 48.1367666796927,
-    "turnStartLon": 16.721191406250004,
-    "kmMovedThisTurn": 0
+    "lat": 47.96785877999251,
+    "lon": 17.105712890625004,
+    "turnStartLat": 50.42951794712289,
+    "turnStartLon": 23.115234375,
+    "kmMovedThisTurn": 515.1084731665819
   }
 ]
