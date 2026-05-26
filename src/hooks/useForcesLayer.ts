@@ -4,6 +4,7 @@ import type { Force } from '@/types';
 import { useAppState } from '@/state/AppContext';
 import { useAuth } from '@/auth/AuthContext';
 import { haversineKm, formatDistance } from '@/utils/geometry';
+import { budgetForBranch } from '@/utils/movement';
 
 export interface PendingMove {
   force: Force;
@@ -70,14 +71,20 @@ interface DragArtifacts {
   origin: L.LatLng;
   line: L.Polyline;
   distanceLabel: L.Marker;
+  /** Range circle, radius = remaining km this turn. Drop point outside
+   *  the circle is over budget and will be rejected by MobilizationConfirm. */
+  rangeCircle: L.Circle;
 }
+
+const RANGE_OK_COLOR = '#4caf50';
+const RANGE_OVER_COLOR = '#e53935';
 
 export function useForcesLayer({
   mapRef,
   onForceContextMenu,
   onForceDragEnd,
 }: UseForcesLayerOptions): void {
-  const { forces, palette, layerVisibility, iconScale } = useAppState();
+  const { forces, palette, layerVisibility, iconScale, lastTurnDays } = useAppState();
   const auth = useAuth();
   const layerRef = useRef<L.LayerGroup | null>(null);
   const markersRef = useRef<L.Marker[]>([]);
@@ -121,6 +128,14 @@ export function useForcesLayer({
         title: `${force.name} (${force.nation})`,
       });
 
+      // Range circle radius is "how far this force can still move this
+       // turn" — the same budget the worker and validator enforce. A drop
+       // inside the circle is acceptable; outside is over budget.
+      const remainingKm = Math.max(
+        0,
+        budgetForBranch(force.branch, lastTurnDays) - force.kmMovedThisTurn,
+      );
+
       marker.on('dragstart', () => {
         const origin = L.latLng(force.lat, force.lon);
         const line = L.polyline([origin, origin], {
@@ -140,7 +155,17 @@ export function useForcesLayer({
           interactive: false,
           keyboard: false,
         }).addTo(group);
-        artifacts.set(force.id, { origin, line, distanceLabel });
+        const rangeCircle = L.circle(origin, {
+          radius: remainingKm * 1000, // Leaflet wants metres
+          color: RANGE_OK_COLOR,
+          weight: 1.5,
+          opacity: 0.85,
+          fillColor: RANGE_OK_COLOR,
+          fillOpacity: 0.08,
+          interactive: false,
+          dashArray: '3 4',
+        }).addTo(group);
+        artifacts.set(force.id, { origin, line, distanceLabel, rangeCircle });
       });
 
       marker.on('drag', (ev) => {
@@ -159,6 +184,11 @@ export function useForcesLayer({
             iconAnchor: [0, 0],
           }),
         );
+        // Flip the circle red when the drop point is outside the
+        // remaining-budget radius. Confirm button will be disabled either way.
+        const overBudget = km > remainingKm;
+        const color = overBudget ? RANGE_OVER_COLOR : RANGE_OK_COLOR;
+        art.rangeCircle.setStyle({ color, fillColor: color });
       });
 
       marker.on('dragend', () => {
@@ -168,6 +198,7 @@ export function useForcesLayer({
         // Remove the drag artifacts; parent decides whether to commit the move
         group.removeLayer(art.line);
         group.removeLayer(art.distanceLabel);
+        group.removeLayer(art.rangeCircle);
         artifacts.delete(force.id);
         onForceDragEnd({
           force,

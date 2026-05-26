@@ -37,7 +37,7 @@ function force(overrides = {}) {
 
 function stateFile(overrides = {}) {
   return {
-    appVersion: 'theatrum/v8',
+    appVersion: 'theatrum/v9',
     ownerships: [
       [0, 'spain'],
       [1, 'france'],
@@ -47,6 +47,13 @@ function stateFile(overrides = {}) {
       { name: 'spain', color: '#1F4E9C' },
       { name: 'france', color: '#D7837F' },
     ],
+    ...overrides,
+  };
+}
+
+function turnFile(overrides = {}) {
+  return {
+    appVersion: 'theatrum/v9',
     currentDate: '1680-01-01',
     lastTurnDays: 30,
     turnNumber: 0,
@@ -73,14 +80,26 @@ const PERMS = {
 };
 
 function defaults(overrides = {}) {
+  // Backfill turn on caller-supplied base/head so older tests written
+  // before the state↔turn split don't have to be rewritten — they pass
+  // { state, forces } and we transparently add a default turn.
+  const base = overrides.base
+    ? { state: stateFile(), turn: turnFile(), forces: forcesMap(), ...overrides.base }
+    : { state: stateFile(), turn: turnFile(), forces: forcesMap() };
+  const head = overrides.head
+    ? { state: stateFile(), turn: turnFile(), forces: forcesMap(), ...overrides.head }
+    : { state: stateFile(), turn: turnFile(), forces: forcesMap() };
+  const { base: _b, head: _h, ...rest } = overrides;
+  void _b;
+  void _h;
   return {
-    base: { state: stateFile(), forces: forcesMap() },
-    head: { state: stateFile(), forces: forcesMap() },
+    base,
+    head,
     perms: PERMS,
     prAuthor: 'alice',
     changedFiles: ['public/data/forces/spain.json'],
     mergeable: true,
-    ...overrides,
+    ...rest,
   };
 }
 
@@ -675,16 +694,44 @@ test('reject: force missing turn-tracking fields (stale client bundle)', () => {
   );
 });
 
-test('reject: state.json missing lastTurnDays (stale schema)', () => {
-  const state = stateFile();
-  delete state.lastTurnDays;
+test('reject: turn.json missing lastTurnDays (stale schema)', () => {
+  const turn = turnFile();
+  delete turn.lastTurnDays;
   expectReject(
     validateMove(
       defaults({
-        head: { state, forces: forcesMap() },
+        head: { state: stateFile(), turn, forces: forcesMap() },
       }),
     ),
     /lastTurnDays is missing/,
+  );
+});
+
+test('reject: turn.json appVersion mismatch (stale schema)', () => {
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), turn: turnFile({ appVersion: 'theatrum/v7' }), forces: forcesMap() },
+      }),
+    ),
+    /appVersion mismatch in turn\.json/,
+  );
+});
+
+test('reject: player touching turn.json gets file-scope rejection', () => {
+  expectReject(
+    validateMove(
+      defaults({
+        head: {
+          state: stateFile(),
+          turn: turnFile({ currentDate: '1680-06-01' }),
+          forces: forcesMap(),
+        },
+        // changedFiles still scoped to forces/spain.json — but base→head
+        // turn drift trips the belt-and-suspenders gate.
+      }),
+    ),
+    /turn\.json cannot be changed by players/,
   );
 });
 
@@ -698,16 +745,22 @@ test('pass: longer turn unlocks more movement (900 km on a 90-day turn = 2250 bu
     turnStartLon: -3.7,
     kmMovedThisTurn: 900,
   });
-  // Bumping lastTurnDays is admin-only, so this scenario assumes admin
-  // submitted the PR (same base + head turn fields — admin advances
-  // are captured in the bumped state, not as a base→head delta).
+  // Bumping lastTurnDays is admin-only, and turn fields now live in
+  // turn.json (separate file from state.json). The validator accepts
+  // them as long as both base and head agree — admin "advance turn" PRs
+  // appear here as already-bumped base + head, with the budget basis
+  // taken from head.turn.
   expectPass(
     validateMove(
       defaults({
-        base: { state: stateFile({ lastTurnDays: 90 }), forces: forcesMap() },
-        head: { state: stateFile({ lastTurnDays: 90 }), forces: forcesMap({ spain: [moved] }) },
+        base: { state: stateFile(), turn: turnFile({ lastTurnDays: 90 }), forces: forcesMap() },
+        head: {
+          state: stateFile(),
+          turn: turnFile({ lastTurnDays: 90 }),
+          forces: forcesMap({ spain: [moved] }),
+        },
         prAuthor: 'master',
-        changedFiles: ['public/data/state.json', 'public/data/forces/spain.json'],
+        changedFiles: ['public/data/turn.json', 'public/data/forces/spain.json'],
       }),
     ),
   );

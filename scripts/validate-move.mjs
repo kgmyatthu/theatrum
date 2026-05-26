@@ -9,8 +9,10 @@
 // Reads:
 //   ./base/public/data/perm.json           (TRUSTED — main's perm.json)
 //   ./base/public/data/state.json          (TRUSTED — main's state.json)
+//   ./base/public/data/turn.json           (TRUSTED — main's turn.json)
 //   ./base/public/data/forces/<nation>.json  (TRUSTED — main's forces, per nation)
 //   ./head/public/data/state.json          (proposed)
+//   ./head/public/data/turn.json           (proposed)
 //   ./head/public/data/forces/<nation>.json  (proposed, per nation)
 //   gh api repos/.../pulls/<n>             (mergeability)
 //   gh api repos/.../pulls/<n>/files       (changed file list)
@@ -37,17 +39,21 @@ function output(key, value) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
- * Read a state-and-forces tree from a checkout root (base/ or head/).
- * Returns { state, forces } where forces is { <nation>: Force[] }.
+ * Read the state / turn / forces tree from a checkout root (base/ or head/).
+ * Returns { state, turn, forces } where forces is { <nation>: Force[] }.
  *
- * Missing state.json or missing forces/ directory is fine for the head
- * (e.g. admin perm-only PRs don't touch them) — fall back to {} and let
- * the validator's structural checks compare apples-to-apples.
+ * Missing state.json / turn.json / forces/ is fine for the head (e.g.
+ * admin perm-only PRs don't touch them) — fall back to {} and let the
+ * validator's structural checks compare apples-to-apples.
  */
 function readStateAndForces(root) {
   const statePath = `${root}/public/data/state.json`;
   const state = fs.existsSync(statePath)
     ? JSON.parse(fs.readFileSync(statePath, 'utf-8'))
+    : {};
+  const turnPath = `${root}/public/data/turn.json`;
+  const turn = fs.existsSync(turnPath)
+    ? JSON.parse(fs.readFileSync(turnPath, 'utf-8'))
     : {};
   const forces = {};
   const forcesDir = `${root}/public/data/forces`;
@@ -60,7 +66,7 @@ function readStateAndForces(root) {
       );
     }
   }
-  return { state, forces };
+  return { state, turn, forces };
 }
 
 // Resolve mergeability with retries — GitHub can return null while the
@@ -89,6 +95,7 @@ const base = readStateAndForces(BASE);
 const headRaw = readStateAndForces(HEAD);
 const head = {
   state: Object.keys(headRaw.state).length > 0 ? headRaw.state : base.state,
+  turn: Object.keys(headRaw.turn).length > 0 ? headRaw.turn : base.turn,
   forces: Object.keys(headRaw.forces).length > 0 ? headRaw.forces : base.forces,
 };
 

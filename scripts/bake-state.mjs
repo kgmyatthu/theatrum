@@ -1,7 +1,8 @@
 // One-shot baker for the initial state files.
 //
 // The runtime state of the game is split across:
-//   public/data/state.json            - global: appVersion, ownerships, countries
+//   public/data/state.json            - appVersion, ownerships, countries
+//   public/data/turn.json             - currentDate, lastTurnDays, turnNumber
 //   public/data/forces/<nation>.json  - per-nation force list, one file per
 //                                       country that has at least one force
 //
@@ -12,7 +13,10 @@
 // File-per-nation contains the blast radius: two players in different
 // nations touch different files (git auto-merges); two in the same
 // nation touch the same file but with self-namespacing IDs that don't
-// collide.
+// collide. Splitting turn.json from state.json applies the same logic:
+// an admin advancing the turn no longer rewrites the same file that
+// ownership / country-rename edits live in, so the two streams can
+// progress in parallel without merge contention.
 //
 // Factory inputs:
 //   provinces.geojson  → ownership (each feature's properties.owner)
@@ -33,6 +37,7 @@ const SEED_FORCES = path.join(DATA, 'seed_forces.json');
 const OWNERS = path.join(DATA, 'owners.json');
 const PALETTE = path.join(DATA, 'palette.json');
 const STATE_OUT = path.join(DATA, 'state.json');
+const TURN_OUT = path.join(DATA, 'turn.json');
 const FORCES_OUT = path.join(DATA, 'forces');
 
 const provinces = JSON.parse(fs.readFileSync(GEOJSON, 'utf-8'));
@@ -76,13 +81,18 @@ if (missing.length > 0) {
 }
 
 const state = {
-  appVersion: 'theatrum/v8',
+  appVersion: 'theatrum/v9',
   ownerships,
   countries,
-  // Initial turn. The starter budget (lastTurnDays = 30) lets players
-  // deploy + reposition forces on day one — without it the very first
-  // session is read-only until an admin advances. Admins can bump from
-  // here via the in-app "Advance Turn" control.
+};
+
+// Initial turn. The starter budget (lastTurnDays = 30) lets players
+// deploy + reposition forces on day one — without it the very first
+// session is read-only until an admin advances. Admins bump these from
+// the in-app "Advance Turn" control, which writes turn.json without
+// disturbing state.json.
+const turn = {
+  appVersion: 'theatrum/v9',
   currentDate: '1680-01-01',
   lastTurnDays: 30,
   turnNumber: 0,
@@ -91,6 +101,7 @@ const state = {
 // Pretty-printed: keeps line-based git diffs cheap so concurrent player
 // PRs against the same nation file have lower merge-conflict odds.
 fs.writeFileSync(STATE_OUT, JSON.stringify(state, null, 2) + '\n');
+fs.writeFileSync(TURN_OUT, JSON.stringify(turn, null, 2) + '\n');
 fs.mkdirSync(FORCES_OUT, { recursive: true });
 for (const [nation, forces] of byNation) {
   fs.writeFileSync(
@@ -102,6 +113,7 @@ for (const [nation, forces] of byNation) {
 console.log(`Wrote ${STATE_OUT}`);
 console.log(`  countries:  ${countries.length}`);
 console.log(`  ownerships: ${ownerships.length}`);
+console.log(`Wrote ${TURN_OUT} (currentDate=${turn.currentDate}, lastTurnDays=${turn.lastTurnDays}, turnNumber=${turn.turnNumber})`);
 console.log(`Wrote ${byNation.size} per-nation force files in ${FORCES_OUT}:`);
 for (const [nation, forces] of byNation) {
   console.log(`  ${forces.length.toString().padStart(3)}  forces/${nation}.json`);

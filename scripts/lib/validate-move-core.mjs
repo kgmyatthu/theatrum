@@ -10,27 +10,30 @@ import {
   MOVEMENT_TOLERANCE_KM,
 } from './movement.mjs';
 //
-// v7 data layout (file-per-nation, not monolithic state.json):
+// v9 data layout (file-per-nation, plus per-concern global files):
 //   public/data/state.json            — { appVersion, ownerships, countries }
+//   public/data/turn.json             — { appVersion, currentDate, lastTurnDays, turnNumber }
 //   public/data/forces/<nation>.json  — Force[]  (only created when non-empty)
 //   public/data/perm.json             — admin-only
 //
 // File-scope rules:
 //   Non-admin player : may only touch forces/<their-nation>.json
-//   Admin            : may touch state.json, perm.json, and any forces/*.json
+//   Admin            : may touch state.json, turn.json, perm.json, and any forces/*.json
 //
 // Cross-file invariants enforced for everyone (admins included):
 //   - state.json.appVersion === SCHEMA_VERSION
+//   - turn.json.appVersion === SCHEMA_VERSION
 //   - every force in forces/<nation>.json has nation === <nation>
 //   - force IDs are unique across all nation files
 //
 // Bumped when the on-disk shape of state.json or forces/*.json changes
 // in a way an older client can't safely round-trip. Mirrors the constant
 // in src/utils/schema.ts and worker/src/index.ts.
-const SCHEMA_VERSION = 'theatrum/v8';
+const SCHEMA_VERSION = 'theatrum/v9';
 
 const PERM_FILE = 'public/data/perm.json';
 const STATE_FILE = 'public/data/state.json';
+const TURN_FILE = 'public/data/turn.json';
 const FORCES_PREFIX = 'public/data/forces/';
 const FORCES_SUFFIX = '.json';
 
@@ -58,8 +61,8 @@ function nationFromForcePath(p) {
 
 /**
  * @param {{
- *   base: { state: object, forces: Record<string, object[]> },
- *   head: { state: object, forces: Record<string, object[]> },
+ *   base: { state: object, turn: object, forces: Record<string, object[]> },
+ *   head: { state: object, turn: object, forces: Record<string, object[]> },
  *   perms: Record<string, { role: 'admin' | 'player', nation?: string }>,
  *   prAuthor: string,
  *   prBody?: string,
@@ -85,11 +88,18 @@ export function validateMove(inputs) {
   // ── Schema gate ─────────────────────────────────────────────────────
   // Runs before admin bypass so an admin's stale browser-cached client
   // can't accidentally regress the file shape (e.g. write back v6
-  // monolithic state.json after we cut over to v7).
+  // monolithic state.json after we cut over to v7). turn.json and
+  // state.json both carry appVersion so either side can detect drift.
   if (head.state.appVersion !== SCHEMA_VERSION) {
     return {
       valid: false,
-      reason: `appVersion mismatch — expected ${SCHEMA_VERSION}, got ${head.state.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
+      reason: `appVersion mismatch in state.json — expected ${SCHEMA_VERSION}, got ${head.state.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
+    };
+  }
+  if (head.turn?.appVersion !== SCHEMA_VERSION) {
+    return {
+      valid: false,
+      reason: `appVersion mismatch in turn.json — expected ${SCHEMA_VERSION}, got ${head.turn?.appVersion ?? '(missing)'}. Your client is stale; hard-refresh the page.`,
     };
   }
 
@@ -136,16 +146,16 @@ export function validateMove(inputs) {
 
   // ── Per-force movement budget (universal) ───────────────────────────
   // Two checks per force:
-  //   1. kmMovedThisTurn ≤ branch budget for state.lastTurnDays.
+  //   1. kmMovedThisTurn ≤ branch budget for turn.lastTurnDays.
   //   2. straight-line displacement (turnStart → current) ≤ kmMovedThisTurn.
   //      Catches a cheating client that lies about its path length —
   //      you can't have moved less far than the displacement.
   // Tolerance MOVEMENT_TOLERANCE_KM absorbs JSON round-trip float drift.
-  const lastTurnDays = head.state.lastTurnDays;
+  const lastTurnDays = head.turn?.lastTurnDays;
   if (typeof lastTurnDays !== 'number' || lastTurnDays < 0) {
     return {
       valid: false,
-      reason: `state.lastTurnDays is missing or invalid (${lastTurnDays}). Your client is stale; hard-refresh the page.`,
+      reason: `turn.lastTurnDays is missing or invalid (${lastTurnDays}). Your client is stale; hard-refresh the page.`,
     };
   }
   for (const [nation, forces] of Object.entries(head.forces)) {
@@ -218,10 +228,11 @@ export function validateMove(inputs) {
   // file actually differs between base and head, reject. With the file-
   // scope check above this is normally unreachable, but it guards
   // against a CI configuration where changedFiles is misreported.
-  const baseStateJson = JSON.stringify(base.state);
-  const headStateJson = JSON.stringify(head.state);
-  if (baseStateJson !== headStateJson) {
+  if (JSON.stringify(base.state) !== JSON.stringify(head.state)) {
     return { valid: false, reason: `state.json cannot be changed by players` };
+  }
+  if (JSON.stringify(base.turn) !== JSON.stringify(head.turn)) {
+    return { valid: false, reason: `turn.json cannot be changed by players` };
   }
 
   return { valid: true, note: `player @${submitter} (${playerNation}) — force changes only` };
@@ -232,6 +243,7 @@ export {
   SCHEMA_VERSION,
   PERM_FILE,
   STATE_FILE,
+  TURN_FILE,
   FORCES_PREFIX,
   FORCES_SUFFIX,
   nationFromForcePath,

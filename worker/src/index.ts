@@ -46,7 +46,7 @@ import {
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
 // Keep in sync with src/utils/schema.ts and scripts/lib/validate-move-core.mjs.
-const SCHEMA_VERSION = 'theatrum/v8';
+const SCHEMA_VERSION = 'theatrum/v9';
 
 // ────────────────────────────────────────────────────────────────────
 // Generic helpers
@@ -746,21 +746,27 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   }
 
   try {
-    // Always read mainState — non-admin needs it to lock turn-field
-    // values and to validate movement budgets against the canonical
-    // lastTurnDays; admin needs it for the existing drift gate.
-    const stateOnMain = await readFileOnMain(
-      env.GITHUB_REPO,
-      'public/data/state.json',
-      installToken,
-    );
+    // Read mainState AND mainTurn in parallel — state.json carries
+    // appVersion/ownerships/countries; turn.json carries the time fields.
+    // Splitting them by file means an admin advancing the turn doesn't
+    // create merge contention with concurrent state-only edits.
+    const [stateOnMain, turnOnMain] = await Promise.all([
+      readFileOnMain(env.GITHUB_REPO, 'public/data/state.json', installToken),
+      readFileOnMain(env.GITHUB_REPO, 'public/data/turn.json', installToken),
+    ]);
     if (!stateOnMain.exists) {
       return errorJson(origin, 502, 'state.json missing on main — repo is broken');
+    }
+    if (!turnOnMain.exists) {
+      return errorJson(origin, 502, 'turn.json missing on main — repo is broken');
     }
     const mainState = JSON.parse(stateOnMain.content) as {
       appVersion: string;
       ownerships: Array<[number, string]>;
       countries: Array<{ name: string; color: string }>;
+    };
+    const mainTurn = JSON.parse(turnOnMain.content) as {
+      appVersion: string;
       currentDate: string;
       lastTurnDays: number;
       turnNumber: number;
@@ -777,9 +783,9 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     const probeLastTurnDays = (probe as { lastTurnDays?: unknown }).lastTurnDays;
     const probeTurnNumber = (probe as { turnNumber?: unknown }).turnNumber;
     if (
-      probeCurrentDate !== mainState.currentDate ||
-      probeLastTurnDays !== mainState.lastTurnDays ||
-      probeTurnNumber !== mainState.turnNumber
+      probeCurrentDate !== mainTurn.currentDate ||
+      probeLastTurnDays !== mainTurn.lastTurnDays ||
+      probeTurnNumber !== mainTurn.turnNumber
     ) {
       return errorJson(
         origin,
@@ -797,7 +803,7 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     // non-admins.
     const effectiveLastTurnDays = isAdmin
       ? (snapshot.lastTurnDays as number)
-      : mainState.lastTurnDays;
+      : mainTurn.lastTurnDays;
     for (const f of snapshot.forces!) {
       const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
       const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;
@@ -880,9 +886,6 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
             appVersion: snapshot.appVersion,
             ownerships: snapshot.ownerships,
             countries: snapshot.countries,
-            currentDate: snapshot.currentDate,
-            lastTurnDays: snapshot.lastTurnDays,
-            turnNumber: snapshot.turnNumber,
           },
           null,
           2,
@@ -896,6 +899,32 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           `state: @${login} ${ts}`,
           installToken,
           stateOnMain.sha,
+        );
+      }
+
+      // turn.json is its own commit so a turn-advance PR doesn't churn
+      // the (much larger) state.json blob; merge contention drops as a
+      // result. Skipped when nothing changed.
+      const newTurnJson =
+        JSON.stringify(
+          {
+            appVersion: snapshot.appVersion,
+            currentDate: snapshot.currentDate,
+            lastTurnDays: snapshot.lastTurnDays,
+            turnNumber: snapshot.turnNumber,
+          },
+          null,
+          2,
+        ) + '\n';
+      if (newTurnJson !== turnOnMain.content) {
+        await commitFile(
+          env.GITHUB_REPO,
+          'public/data/turn.json',
+          branchName,
+          newTurnJson,
+          `turn: @${login} → ${String(snapshot.currentDate)} (${String(snapshot.lastTurnDays)} days)`,
+          installToken,
+          turnOnMain.sha,
         );
       }
 
