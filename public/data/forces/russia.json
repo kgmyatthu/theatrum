@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pointerayden-ship-it-1779983685022-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "I Host",
+    "strength": 76000,
+    "commander": "Vasily Golitsyn",
+    "lat": 48.3416461723746,
+    "lon": 39.11132812500001,
+    "turnStartLat": 48.3416461723746,
+    "turnStartLon": 39.11132812500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "pointerayden-ship-it-1779983805932-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "IV Host",
+    "strength": 48000,
+    "commander": "Patrick Gordon",
+    "lat": 47.30530951077587,
+    "lon": 40.67138671875001,
+    "turnStartLat": 47.30530951077587,
+    "turnStartLon": 40.67138671875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
