@@ -42,20 +42,6 @@
     "createdAtTurn": 0
   },
   {
-    "id": "Fouzi-707-1779922884958-3",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Kırım Ordusu",
-    "strength": 35000,
-    "commander": "Murad Giray",
-    "lat": 45.836454050187726,
-    "lon": 34.330530501586466,
-    "turnStartLat": 45.836454050187726,
-    "turnStartLon": 34.330530501586466,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
     "id": "Fouzi-707-1779922967976-4",
     "nation": "ottoman empire",
     "branch": "army",
@@ -164,6 +150,20 @@
     "lon": 4.131570160681872,
     "turnStartLat": 36.41244153535644,
     "turnStartLon": 4.131570160681872,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "Fouzi-707-1779989814601-1",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Kostantiniyye Ordusu",
+    "strength": 35000,
+    "commander": "Mehmed IV",
+    "lat": 41.15177429844501,
+    "lon": 28.849816677794543,
+    "turnStartLat": 41.15177429844501,
+    "turnStartLon": 28.849816677794543,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }
