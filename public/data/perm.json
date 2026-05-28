@@ -52,5 +52,8 @@
   "Celavetex": {
     "role": "player",
     "nation": "britain"
+  },
+  "pointerayden-ship-it": {
+    "role": "admin"
   }
 }
