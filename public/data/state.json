@@ -295,7 +295,7 @@
     ],
     [
       73,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       74,
@@ -319,7 +319,7 @@
     ],
     [
       79,
-      "zaporozhian sich"
+      "poland-lithuania"
     ],
     [
       80,
@@ -3675,7 +3675,7 @@
     ],
     [
       918,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       919,
@@ -12883,7 +12883,7 @@
     ],
     [
       3220,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       3221,
@@ -12895,15 +12895,15 @@
     ],
     [
       3223,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       3224,
-      "zaporozhian sich"
+      "poland-lithuania"
     ],
     [
       3225,
-      "zaporozhian sich"
+      "poland-lithuania"
     ],
     [
       3226,
@@ -17463,7 +17463,7 @@
     ],
     [
       4365,
-      "zaporozhian sich"
+      "poland-lithuania"
     ],
     [
       4366,
@@ -18644,8 +18644,8 @@
       "color": "#800000"
     },
     {
-      "name": "zaporozhian sich",
-      "color": "#5dac67"
+      "name": "zaporozhian hetmanate (rus)",
+      "color": "#437a4a"
     }
   ]
 }
