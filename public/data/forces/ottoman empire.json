@@ -6,11 +6,11 @@
     "name": "Viyana Ordusu",
     "strength": 100000,
     "commander": "Merzifonlu Kara Mustafa Pasha",
-    "lat": 47.52461999690651,
-    "lon": 19.103469456283296,
+    "lat": 48.17701642999292,
+    "lon": 16.512451171875004,
     "turnStartLat": 47.52461999690651,
     "turnStartLon": 19.103469456283296,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 206.4872932933525,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Rumeli Ordusu",
     "strength": 50000,
     "commander": "Kara Ibrahim Pasha",
-    "lat": 42.73087427928485,
-    "lon": 23.398992886480404,
+    "lat": 47.67842418900549,
+    "lon": 17.094726562500004,
     "turnStartLat": 42.73087427928485,
     "turnStartLon": 23.398992886480404,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 738.827878664605,
     "createdAtTurn": 0
   },
   {
@@ -34,11 +34,11 @@
     "name": "Anadolu Ordusu",
     "strength": 35000,
     "commander": "Şehzade Mustafa",
-    "lat": 39.62261494094297,
-    "lon": 35.13062334082221,
+    "lat": 38.56574357663767,
+    "lon": 43.54980468750001,
     "turnStartLat": 39.62261494094297,
     "turnStartLon": 35.13062334082221,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 735.7269389488969,
     "createdAtTurn": 0
   },
   {
@@ -48,11 +48,11 @@
     "name": "Şam Ordusu",
     "strength": 5000,
     "commander": "Şam Beylerbeyi",
-    "lat": 35.871246850027966,
-    "lon": 37.87882965848602,
+    "lat": 35.532352446911126,
+    "lon": 45.94482421875,
     "turnStartLat": 35.871246850027966,
     "turnStartLon": 37.87882965848602,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 729.106076779416,
     "createdAtTurn": 0
   },
   {
@@ -62,11 +62,11 @@
     "name": "Bağdad Ordusu",
     "strength": 5000,
     "commander": "Bağdad Beylerbeyi",
-    "lat": 33.486435450999885,
-    "lon": 44.555532885027475,
+    "lat": 30.241313466473027,
+    "lon": 48.40576171875,
     "turnStartLat": 33.486435450999885,
     "turnStartLon": 44.555532885027475,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 512.1795253287019,
     "createdAtTurn": 0
   },
   {
@@ -146,11 +146,11 @@
     "name": "Cezayir Ordusu",
     "strength": 10000,
     "commander": "Cezayir Beylerbeyi",
-    "lat": 36.41244153535644,
-    "lon": 4.131570160681872,
+    "lat": 34.958229472214036,
+    "lon": -1.2744140625000002,
     "turnStartLat": 36.41244153535644,
     "turnStartLon": 4.131570160681872,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 514.2376134475733,
     "createdAtTurn": 0
   },
   {
@@ -160,11 +160,11 @@
     "name": "Kostantiniyye Ordusu",
     "strength": 35000,
     "commander": "Mehmed IV",
-    "lat": 41.15177429844501,
-    "lon": 28.849816677794543,
+    "lat": 44.683000483347186,
+    "lon": 21.181640625000004,
     "turnStartLat": 41.15177429844501,
     "turnStartLon": 28.849816677794543,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 737.1455410396529,
     "createdAtTurn": 0
   }
 ]
