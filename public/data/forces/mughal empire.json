@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Vancouver1903-1780265713929-2",
+    "nation": "mughal empire",
+    "branch": "army",
+    "name": "Mughal Army I",
+    "strength": 140000,
+    "commander": "Idk",
+    "lat": 31.88688652578083,
+    "lon": 54.43725585937501,
+    "turnStartLat": 31.88688652578083,
+    "turnStartLon": 54.43725585937501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1780265744679-3",
+    "nation": "mughal empire",
+    "branch": "army",
+    "name": "Mughal Army II",
+    "strength": 60000,
+    "commander": "Idk",
+    "lat": 26.091321632191132,
+    "lon": 57.41729736328126,
+    "turnStartLat": 26.091321632191132,
+    "turnStartLon": 57.41729736328126,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  }
+]
