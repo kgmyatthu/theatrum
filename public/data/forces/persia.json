@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Vancouver1903-1780265643499-0",
+    "nation": "persia",
+    "branch": "army",
+    "name": "Suleiman I's Army",
+    "strength": 65000,
+    "commander": "Suleiman I",
+    "lat": 32.699488680852674,
+    "lon": 51.70955657958985,
+    "turnStartLat": 32.699488680852674,
+    "turnStartLon": 51.70955657958985,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1780265680543-1",
+    "nation": "persia",
+    "branch": "army",
+    "name": "Soltan Hoseyn's Army",
+    "strength": 35000,
+    "commander": "Soltan Hoseyn, Prince of Persia",
+    "lat": 38.07296037683433,
+    "lon": 46.314239501953125,
+    "turnStartLat": 38.07296037683433,
+    "turnStartLon": 46.314239501953125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  }
+]
