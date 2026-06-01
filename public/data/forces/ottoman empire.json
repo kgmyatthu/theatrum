@@ -8,9 +8,9 @@
     "commander": "Merzifonlu Kara Mustafa Pasha",
     "lat": 48.17701642999292,
     "lon": 16.512451171875004,
-    "turnStartLat": 47.52461999690651,
-    "turnStartLon": 19.103469456283296,
-    "kmMovedThisTurn": 206.4872932933525,
+    "turnStartLat": 48.17701642999292,
+    "turnStartLon": 16.512451171875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Kara Ibrahim Pasha",
     "lat": 47.67842418900549,
     "lon": 17.094726562500004,
-    "turnStartLat": 42.73087427928485,
-    "turnStartLon": 23.398992886480404,
-    "kmMovedThisTurn": 738.827878664605,
+    "turnStartLat": 47.67842418900549,
+    "turnStartLon": 17.094726562500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Şehzade Mustafa",
     "lat": 38.56574357663767,
     "lon": 43.54980468750001,
-    "turnStartLat": 39.62261494094297,
-    "turnStartLon": 35.13062334082221,
-    "kmMovedThisTurn": 735.7269389488969,
+    "turnStartLat": 38.56574357663767,
+    "turnStartLon": 43.54980468750001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Şam Beylerbeyi",
     "lat": 35.532352446911126,
     "lon": 45.94482421875,
-    "turnStartLat": 35.871246850027966,
-    "turnStartLon": 37.87882965848602,
-    "kmMovedThisTurn": 729.106076779416,
+    "turnStartLat": 35.532352446911126,
+    "turnStartLon": 45.94482421875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Bağdad Beylerbeyi",
     "lat": 30.241313466473027,
     "lon": 48.40576171875,
-    "turnStartLat": 33.486435450999885,
-    "turnStartLon": 44.555532885027475,
-    "kmMovedThisTurn": 512.1795253287019,
+    "turnStartLat": 30.241313466473027,
+    "turnStartLon": 48.40576171875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Cezayir Beylerbeyi",
     "lat": 34.958229472214036,
     "lon": -1.2744140625000002,
-    "turnStartLat": 36.41244153535644,
-    "turnStartLon": 4.131570160681872,
-    "kmMovedThisTurn": 514.2376134475733,
+    "turnStartLat": 34.958229472214036,
+    "turnStartLon": -1.2744140625000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Mehmed IV",
     "lat": 44.683000483347186,
     "lon": 21.181640625000004,
-    "turnStartLat": 41.15177429844501,
-    "turnStartLon": 28.849816677794543,
-    "kmMovedThisTurn": 737.1455410396529,
+    "turnStartLat": 44.683000483347186,
+    "turnStartLon": 21.181640625000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }
 ]
