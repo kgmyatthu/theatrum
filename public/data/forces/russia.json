@@ -26,5 +26,33 @@
     "turnStartLon": 32.14599609375001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "pointerayden-ship-it-1780306124173-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "IV Army",
+    "strength": 48000,
+    "commander": "Some German Guy",
+    "lat": 44.629573191951046,
+    "lon": 33.66760253906251,
+    "turnStartLat": 44.629573191951046,
+    "turnStartLon": 33.66760253906251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "pointerayden-ship-it-1780306229802-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "III Army",
+    "strength": 58000,
+    "commander": "Mikhail Loris-Melikov",
+    "lat": 47.15236927446393,
+    "lon": 39.55078125,
+    "turnStartLat": 47.15236927446393,
+    "turnStartLon": 39.55078125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
   }
 ]
