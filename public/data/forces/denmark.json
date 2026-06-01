@@ -250,5 +250,19 @@
     "turnStartLon": 80.85937500000001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "Vancouver1903-1780283830207-0",
+    "nation": "denmark",
+    "branch": "navy",
+    "name": "Danish West India Company",
+    "strength": 12,
+    "commander": "Governor Nicolai Esmit",
+    "lat": 17.78334333838028,
+    "lon": -64.75616455078126,
+    "turnStartLat": 17.78334333838028,
+    "turnStartLon": -64.75616455078126,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
   }
 ]
