@@ -166,5 +166,19 @@
     "turnStartLon": 21.181640625000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "Fouzi-707-1780434467421-0",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Balkanlar Ordusu",
+    "strength": 30000,
+    "commander": "Imre Thököly",
+    "lat": 47.442176061663936,
+    "lon": 19.138183593750004,
+    "turnStartLat": 47.442176061663936,
+    "turnStartLon": 19.138183593750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
   }
 ]
