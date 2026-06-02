@@ -54,5 +54,19 @@
     "turnStartLon": 15.842285156250002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
+  },
+  {
+    "id": "RadetzkyNTW-1780436025245-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Venetian Force",
+    "strength": 11000,
+    "commander": "",
+    "lat": 46.0856143970306,
+    "lon": 15.450897216796877,
+    "turnStartLat": 46.0856143970306,
+    "turnStartLon": 15.450897216796877,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
   }
 ]
