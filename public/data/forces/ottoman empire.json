@@ -20,11 +20,11 @@
     "name": "Rumeli Ordusu",
     "strength": 50000,
     "commander": "Kara Ibrahim Pasha",
-    "lat": 47.67842418900549,
-    "lon": 17.094726562500004,
+    "lat": 48.50962083397938,
+    "lon": 16.600341796875004,
     "turnStartLat": 47.67842418900549,
     "turnStartLon": 17.094726562500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 99.45039201833343,
     "createdAtTurn": 0
   },
   {
@@ -34,11 +34,11 @@
     "name": "Anadolu Ordusu",
     "strength": 35000,
     "commander": "Şehzade Mustafa",
-    "lat": 38.56574357663767,
-    "lon": 43.54980468750001,
+    "lat": 38.22079619152975,
+    "lon": 47.08740234375001,
     "turnStartLat": 38.56574357663767,
     "turnStartLon": 43.54980468750001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 310.66136961478514,
     "createdAtTurn": 0
   },
   {
@@ -48,11 +48,11 @@
     "name": "Şam Ordusu",
     "strength": 5000,
     "commander": "Şam Beylerbeyi",
-    "lat": 35.532352446911126,
-    "lon": 45.94482421875,
+    "lat": 37.719361748172986,
+    "lon": 47.28515625000001,
     "turnStartLat": 35.532352446911126,
     "turnStartLon": 45.94482421875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 270.99888546327503,
     "createdAtTurn": 0
   },
   {
@@ -62,11 +62,11 @@
     "name": "Bağdad Ordusu",
     "strength": 5000,
     "commander": "Bağdad Beylerbeyi",
-    "lat": 30.241313466473027,
-    "lon": 48.40576171875,
+    "lat": 33.19377080552753,
+    "lon": 48.076171875,
     "turnStartLat": 30.241313466473027,
     "turnStartLon": 48.40576171875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 329.7744563711147,
     "createdAtTurn": 0
   },
   {
@@ -160,11 +160,11 @@
     "name": "Kostantiniyye Ordusu",
     "strength": 35000,
     "commander": "Mehmed IV",
-    "lat": 44.683000483347186,
-    "lon": 21.181640625000004,
+    "lat": 47.89536301036742,
+    "lon": 16.226806640625004,
     "turnStartLat": 44.683000483347186,
     "turnStartLon": 21.181640625000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 521.850042198248,
     "createdAtTurn": 0
   },
   {
