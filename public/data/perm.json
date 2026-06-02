@@ -55,5 +55,9 @@
   },
   "pointerayden-ship-it": {
     "role": "admin"
+  },
+  "JimmyTheSturgeon": {
+    "role": "player",
+    "nation": "spain"
   }
 }
