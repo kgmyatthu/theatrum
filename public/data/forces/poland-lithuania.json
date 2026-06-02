@@ -1,0 +1,44 @@
+[
+  {
+    "id": "AceApache-1780418121871-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Crown Army",
+    "strength": 27000,
+    "commander": "Jan III Sobieski",
+    "lat": 50.061062989979874,
+    "lon": 19.9811683863384,
+    "turnStartLat": 50.061062989979874,
+    "turnStartLon": 19.9811683863384,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  },
+  {
+    "id": "AceApache-1780418160107-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Polish Magnate Army",
+    "strength": 15000,
+    "commander": "Marcin Katski",
+    "lat": 51.74750792322002,
+    "lon": 19.459306639122957,
+    "turnStartLat": 51.74750792322002,
+    "turnStartLon": 19.459306639122957,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  },
+  {
+    "id": "AceApache-1780418177200-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Lithuanian Magnate Army",
+    "strength": 15000,
+    "commander": "Sapiehas",
+    "lat": 52.37880431182609,
+    "lon": 16.919013236848787,
+    "turnStartLat": 52.37880431182609,
+    "turnStartLon": 16.919013236848787,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  }
+]
