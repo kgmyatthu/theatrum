@@ -1,0 +1,44 @@
+[
+  {
+    "id": "yellowwithblue-1780388140582-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of the Holy League",
+    "strength": 126000,
+    "commander": "Leopold I",
+    "lat": 48.211862417203214,
+    "lon": 16.009826660156254,
+    "turnStartLat": 48.211862417203214,
+    "turnStartLon": 16.009826660156254,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  },
+  {
+    "id": "yellowwithblue-1780388209550-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Croatia",
+    "strength": 16000,
+    "commander": "Prinz Eugen",
+    "lat": 45.89000815866184,
+    "lon": 15.611572265625002,
+    "turnStartLat": 45.89000815866184,
+    "turnStartLon": 15.611572265625002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  },
+  {
+    "id": "yellowwithblue-1780388215257-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Slovakia",
+    "strength": 20000,
+    "commander": "Waldeck",
+    "lat": 48.75618876280552,
+    "lon": 19.302978515625,
+    "turnStartLat": 48.75618876280552,
+    "turnStartLon": 19.302978515625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
+  }
+]
