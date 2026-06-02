@@ -8,9 +8,9 @@
     "commander": "Vasily Golitsyn",
     "lat": 49.38237278700955,
     "lon": 33.96972656250001,
-    "turnStartLat": 55.727110085045986,
-    "turnStartLon": 37.68310546875,
-    "kmMovedThisTurn": 748.566563017266,
+    "turnStartLat": 49.38237278700955,
+    "turnStartLon": 33.96972656250001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Patrick Gordon",
     "lat": 48.63290858589535,
     "lon": 27.685546875000004,
-    "turnStartLat": 54.73730756865752,
-    "turnStartLon": 32.14599609375001,
-    "kmMovedThisTurn": 744.8129749513377,
+    "turnStartLat": 48.63290858589535,
+    "turnStartLon": 27.685546875000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Mikhail Loris-Melikov",
     "lat": 45.55252525134013,
     "lon": 40.56152343750001,
-    "turnStartLat": 47.15236927446393,
-    "turnStartLon": 39.55078125,
-    "kmMovedThisTurn": 194.0678886663449,
+    "turnStartLat": 45.55252525134013,
+    "turnStartLon": 40.56152343750001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
