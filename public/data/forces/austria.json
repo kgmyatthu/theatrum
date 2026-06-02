@@ -40,5 +40,19 @@
     "turnStartLon": 19.302978515625,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
+  },
+  {
+    "id": "RadetzkyNTW-1780431551671-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Crusaders",
+    "strength": 15000,
+    "commander": "",
+    "lat": 46.10751733820335,
+    "lon": 15.842285156250002,
+    "turnStartLat": 46.10751733820335,
+    "turnStartLon": 15.842285156250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
   }
 ]
