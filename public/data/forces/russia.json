@@ -8,9 +8,9 @@
     "commander": "Vasily Golitsyn",
     "lat": 46.694667307773116,
     "lon": 30.388183593750004,
-    "turnStartLat": 49.38237278700955,
-    "turnStartLon": 33.96972656250001,
-    "kmMovedThisTurn": 400.1859890241198,
+    "turnStartLat": 46.694667307773116,
+    "turnStartLon": 30.388183593750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Mikhail Loris-Melikov",
     "lat": 43.54854811091288,
     "lon": 41.04492187500001,
-    "turnStartLat": 45.55252525134013,
-    "turnStartLon": 40.56152343750001,
-    "kmMovedThisTurn": 226.09914932220164,
+    "turnStartLat": 43.54854811091288,
+    "turnStartLon": 41.04492187500001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
