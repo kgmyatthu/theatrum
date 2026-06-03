@@ -20,11 +20,11 @@
     "name": "Rumeli Ordusu",
     "strength": 50000,
     "commander": "Kara Ibrahim Pasha",
-    "lat": 48.50962083397938,
-    "lon": 16.600341796875004,
-    "turnStartLat": 47.67842418900549,
-    "turnStartLon": 17.094726562500004,
-    "kmMovedThisTurn": 99.45039201833343,
+    "lat": 47.42622912485741,
+    "lon": 19.07501220703125,
+    "turnStartLat": 47.42622912485741,
+    "turnStartLon": 19.07501220703125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Şehzade Mustafa",
     "lat": 38.22079619152975,
     "lon": 47.08740234375001,
-    "turnStartLat": 38.56574357663767,
-    "turnStartLon": 43.54980468750001,
-    "kmMovedThisTurn": 310.66136961478514,
+    "turnStartLat": 38.22079619152975,
+    "turnStartLon": 47.08740234375001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Şam Beylerbeyi",
     "lat": 37.719361748172986,
     "lon": 47.28515625000001,
-    "turnStartLat": 35.532352446911126,
-    "turnStartLon": 45.94482421875,
-    "kmMovedThisTurn": 270.99888546327503,
+    "turnStartLat": 37.719361748172986,
+    "turnStartLon": 47.28515625000001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Bağdad Beylerbeyi",
     "lat": 33.19377080552753,
     "lon": 48.076171875,
-    "turnStartLat": 30.241313466473027,
-    "turnStartLon": 48.40576171875,
-    "kmMovedThisTurn": 329.7744563711147,
+    "turnStartLat": 33.19377080552753,
+    "turnStartLon": 48.076171875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Mehmed IV",
     "lat": 47.89536301036742,
     "lon": 16.226806640625004,
-    "turnStartLat": 44.683000483347186,
-    "turnStartLon": 21.181640625000004,
-    "kmMovedThisTurn": 521.850042198248,
+    "turnStartLat": 47.89536301036742,
+    "turnStartLon": 16.226806640625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -172,12 +172,12 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Balkanlar Ordusu",
-    "strength": 30000,
+    "strength": 2000,
     "commander": "Imre Thököly",
-    "lat": 47.442176061663936,
-    "lon": 19.138183593750004,
-    "turnStartLat": 47.442176061663936,
-    "turnStartLon": 19.138183593750004,
+    "lat": 45.336701909968134,
+    "lon": 16.457519531250004,
+    "turnStartLat": 45.336701909968134,
+    "turnStartLon": 16.457519531250004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   }

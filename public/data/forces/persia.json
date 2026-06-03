@@ -22,9 +22,9 @@
     "commander": "Soltan Hoseyn, Prince of Persia",
     "lat": 34.78222760653013,
     "lon": 48.66943359375,
-    "turnStartLat": 38.07296037683433,
-    "turnStartLon": 46.314239501953125,
-    "kmMovedThisTurn": 422.20697194116,
+    "turnStartLat": 34.78222760653013,
+    "turnStartLon": 48.66943359375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   }
 ]
