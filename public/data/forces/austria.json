@@ -68,5 +68,33 @@
     "turnStartLon": 15.450897216796877,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
+  },
+  {
+    "id": "RadetzkyNTW-1780528870886-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Croatian Provisional Army",
+    "strength": 20000,
+    "commander": "",
+    "lat": 46.85079989251277,
+    "lon": 16.855773925781254,
+    "turnStartLat": 46.85079989251277,
+    "turnStartLon": 16.855773925781254,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 6
+  },
+  {
+    "id": "RadetzkyNTW-1780528882636-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Slovak Provisional Army",
+    "strength": 15000,
+    "commander": "",
+    "lat": 48.14959568930188,
+    "lon": 17.199096679687504,
+    "turnStartLat": 48.14959568930188,
+    "turnStartLon": 17.199096679687504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 6
   }
 ]
