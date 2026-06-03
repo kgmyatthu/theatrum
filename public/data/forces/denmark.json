@@ -59,14 +59,14 @@
     "id": "Vancouver1903-1780032993919-4",
     "nation": "denmark",
     "branch": "army",
-    "name": "Army of Schleswig-Holstein",
-    "strength": 400,
+    "name": "Danish Contingent (AotHL)",
+    "strength": 3400,
     "commander": "Ulrik Frederik Gyldenløve",
-    "lat": 48.19904897935915,
-    "lon": 16.36173248291016,
+    "lat": 48.27679550566662,
+    "lon": 16.04690551757813,
     "turnStartLat": 48.19904897935915,
     "turnStartLon": 16.36173248291016,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 24.867191311614267,
     "createdAtTurn": 0
   },
   {
@@ -230,11 +230,11 @@
     "name": "Danish East India Company",
     "strength": 50,
     "commander": "Sir Sivert Cortsen Adeler",
-    "lat": 10.568822151626943,
-    "lon": 79.8211669921875,
+    "lat": 10.925011415607088,
+    "lon": 79.80743408203126,
     "turnStartLat": 10.568822151626943,
     "turnStartLon": 79.8211669921875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 39.63484260215486,
     "createdAtTurn": 0
   },
   {
@@ -244,11 +244,11 @@
     "name": "Danish East India Company",
     "strength": 4,
     "commander": "Sir Sivert Cortsen Adeler",
-    "lat": 10.001310360636941,
-    "lon": 80.85937500000001,
+    "lat": 10.82251525771678,
+    "lon": 80.08209228515626,
     "turnStartLat": 10.001310360636941,
     "turnStartLon": 80.85937500000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 124.75663566406863,
     "createdAtTurn": 0
   },
   {
@@ -264,5 +264,19 @@
     "turnStartLon": -64.75616455078126,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1780450369963-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Saint Anthony Garrison",
+    "strength": 80,
+    "commander": "Kapitan appointed by Governor Nicolai Esmit",
+    "lat": -37.997785998829976,
+    "lon": -57.59033203125001,
+    "turnStartLat": -37.997785998829976,
+    "turnStartLon": -57.59033203125001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4
   }
 ]

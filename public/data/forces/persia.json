@@ -18,13 +18,13 @@
     "nation": "persia",
     "branch": "army",
     "name": "Soltan Hoseyn's Army",
-    "strength": 35000,
+    "strength": 5000,
     "commander": "Soltan Hoseyn, Prince of Persia",
-    "lat": 38.07296037683433,
-    "lon": 46.314239501953125,
+    "lat": 34.78222760653013,
+    "lon": 48.66943359375,
     "turnStartLat": 38.07296037683433,
     "turnStartLon": 46.314239501953125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 422.20697194116,
     "createdAtTurn": 2
   }
 ]
