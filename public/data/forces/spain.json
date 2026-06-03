@@ -1,0 +1,16 @@
+[
+  {
+    "id": "Vancouver1903-1780528186425-0",
+    "nation": "spain",
+    "branch": "army",
+    "name": "Spanish Army in Croatia",
+    "strength": 20000,
+    "commander": "Spanish Officer",
+    "lat": 45.805828539928356,
+    "lon": 15.972747802734377,
+    "turnStartLat": 45.805828539928356,
+    "turnStartLon": 15.972747802734377,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 5
+  }
+]
