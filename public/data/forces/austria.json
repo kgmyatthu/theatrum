@@ -22,9 +22,9 @@
     "commander": "Prinz Eugen",
     "lat": 45.61403741135093,
     "lon": 16.007080078125004,
-    "turnStartLat": 45.89000815866184,
-    "turnStartLon": 15.611572265625002,
-    "kmMovedThisTurn": 43.39728674237498,
+    "turnStartLat": 45.61403741135093,
+    "turnStartLon": 16.007080078125004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 45.744526980468436,
     "lon": 16.237792968750004,
-    "turnStartLat": 46.10751733820335,
-    "turnStartLon": 15.842285156250002,
-    "kmMovedThisTurn": 50.645139100150864,
+    "turnStartLat": 45.744526980468436,
+    "turnStartLon": 16.237792968750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -64,9 +64,9 @@
     "commander": "",
     "lat": 45.690832836458185,
     "lon": 16.111450195312504,
-    "turnStartLat": 46.0856143970306,
-    "turnStartLon": 15.450897216796877,
-    "kmMovedThisTurn": 67.38539091949559,
+    "turnStartLat": 45.690832836458185,
+    "turnStartLon": 16.111450195312504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
