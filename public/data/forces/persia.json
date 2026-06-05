@@ -26,5 +26,33 @@
     "turnStartLon": 48.66943359375,
     "kmMovedThisTurn": 268.0216788792369,
     "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1780624209841-0",
+    "nation": "persia",
+    "branch": "army",
+    "name": "Azerbaijani Armies",
+    "strength": 5000,
+    "commander": "Local Nobles",
+    "lat": 40.397548698986995,
+    "lon": 49.858360290527344,
+    "turnStartLat": 40.397548698986995,
+    "turnStartLon": 49.858360290527344,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
+  },
+  {
+    "id": "Vancouver1903-1780624225904-1",
+    "nation": "persia",
+    "branch": "army",
+    "name": "Georgian Armies",
+    "strength": 2000,
+    "commander": "Local Nobles",
+    "lat": 41.72213058512578,
+    "lon": 44.80499267578126,
+    "turnStartLat": 41.72213058512578,
+    "turnStartLon": 44.80499267578126,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
   }
 ]
