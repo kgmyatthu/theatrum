@@ -4,13 +4,13 @@
     "nation": "mughal empire",
     "branch": "army",
     "name": "Mughal Army I",
-    "strength": 140000,
+    "strength": 115000,
     "commander": "Idk",
-    "lat": 31.88688652578083,
-    "lon": 54.43725585937501,
+    "lat": 34.903952965590065,
+    "lon": 51.30615234375001,
     "turnStartLat": 31.88688652578083,
     "turnStartLon": 54.43725585937501,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 443.8366984678909,
     "createdAtTurn": 2
   },
   {
@@ -20,11 +20,11 @@
     "name": "Mughal Army II",
     "strength": 60000,
     "commander": "Idk",
-    "lat": 26.091321632191132,
-    "lon": 57.41729736328126,
+    "lat": 27.066463347710176,
+    "lon": 53.34686279296875,
     "turnStartLat": 26.091321632191132,
     "turnStartLon": 57.41729736328126,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 714.6230760897957,
     "createdAtTurn": 2
   }
 ]
