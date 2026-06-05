@@ -12,5 +12,19 @@
     "turnStartLon": 11.458740234375002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "yellowwithblue-1780632627115-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Army of the Upper Rhine (Austro-Bavarian)",
+    "strength": 45000,
+    "commander": "Max Emanuel",
+    "lat": 48.531157010976735,
+    "lon": 8.267211914062502,
+    "turnStartLat": 48.531157010976735,
+    "turnStartLon": 8.267211914062502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
   }
 ]
