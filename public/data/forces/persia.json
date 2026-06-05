@@ -26,19 +26,5 @@
     "turnStartLon": 49.858360290527344,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
-  },
-  {
-    "id": "Vancouver1903-1780624225904-1",
-    "nation": "persia",
-    "branch": "army",
-    "name": "Georgian Armies",
-    "strength": 2000,
-    "commander": "Local Nobles",
-    "lat": 41.72213058512578,
-    "lon": 44.80499267578126,
-    "turnStartLat": 41.72213058512578,
-    "turnStartLon": 44.80499267578126,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 7
   }
 ]
