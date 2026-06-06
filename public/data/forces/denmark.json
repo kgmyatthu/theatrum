@@ -157,7 +157,7 @@
     "id": "Vancouver1903-1780033304214-13",
     "nation": "denmark",
     "branch": "army",
-    "name": "Militia of Iceland",
+    "name": "Militia of Iceland (Not Raised)",
     "strength": 400,
     "commander": "Local Kapitan",
     "lat": 63.927717045495136,
@@ -174,11 +174,11 @@
     "name": "Thule Natives",
     "strength": 135,
     "commander": "Local Chief/Tribes",
-    "lat": 64.74601725111455,
-    "lon": -51.62475585937501,
+    "lat": 64.17767943926998,
+    "lon": -51.6192626953125,
     "turnStartLat": 64.74601725111455,
     "turnStartLon": -51.62475585937501,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 63.19682985413069,
     "createdAtTurn": 0
   },
   {

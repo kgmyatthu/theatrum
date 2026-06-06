@@ -4959,23 +4959,23 @@
     ],
     [
       1239,
-      "britain"
+      "unclaimed"
     ],
     [
       1240,
-      "britain"
+      "france"
     ],
     [
       1241,
-      "unclaimed"
+      "france"
     ],
     [
       1242,
-      "britain"
+      "france"
     ],
     [
       1243,
-      "unclaimed"
+      "france"
     ],
     [
       1244,
@@ -4983,11 +4983,11 @@
     ],
     [
       1245,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       1246,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       1247,
@@ -5019,7 +5019,7 @@
     ],
     [
       1254,
-      "spain"
+      "unclaimed"
     ],
     [
       1255,
@@ -5031,7 +5031,7 @@
     ],
     [
       1257,
-      "spain"
+      "unclaimed"
     ],
     [
       1258,
@@ -5043,7 +5043,7 @@
     ],
     [
       1260,
-      "spain"
+      "unclaimed"
     ],
     [
       1261,
@@ -8299,7 +8299,7 @@
     ],
     [
       2074,
-      "unclaimed"
+      "france"
     ],
     [
       2075,
@@ -8315,7 +8315,7 @@
     ],
     [
       2078,
-      "unclaimed"
+      "britain"
     ],
     [
       2079,
@@ -8691,11 +8691,11 @@
     ],
     [
       2172,
-      "britain"
+      "unclaimed"
     ],
     [
       2173,
-      "britain"
+      "france"
     ],
     [
       2174,
@@ -9467,7 +9467,7 @@
     ],
     [
       2366,
-      "britain"
+      "unclaimed"
     ],
     [
       2367,
@@ -10179,11 +10179,11 @@
     ],
     [
       2544,
-      "denmark"
+      "unclaimed"
     ],
     [
       2545,
-      "denmark"
+      "unclaimed"
     ],
     [
       2546,
@@ -10191,7 +10191,7 @@
     ],
     [
       2547,
-      "denmark"
+      "unclaimed"
     ],
     [
       2548,
@@ -13107,7 +13107,7 @@
     ],
     [
       3276,
-      "unclaimed"
+      "france"
     ],
     [
       3277,
@@ -13115,31 +13115,31 @@
     ],
     [
       3278,
-      "unclaimed"
+      "france"
     ],
     [
       3279,
-      "unclaimed"
+      "france"
     ],
     [
       3280,
-      "unclaimed"
+      "france"
     ],
     [
       3281,
-      "unclaimed"
+      "france"
     ],
     [
       3282,
-      "unclaimed"
+      "france"
     ],
     [
       3283,
-      "unclaimed"
+      "france"
     ],
     [
       3284,
-      "unclaimed"
+      "france"
     ],
     [
       3285,
@@ -17419,19 +17419,19 @@
     ],
     [
       4354,
-      "unclaimed"
+      "contested territories"
     ],
     [
       4355,
-      "unclaimed"
+      "contested territories"
     ],
     [
       4356,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       4357,
-      "unclaimed"
+      "france"
     ],
     [
       4358,
@@ -17439,11 +17439,11 @@
     ],
     [
       4359,
-      "britain"
+      "haudenosaunee confederacy"
     ],
     [
       4360,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       4361,
@@ -18470,6 +18470,10 @@
     {
       "name": "genoa",
       "color": "#9F2D2D"
+    },
+    {
+      "name": "haudenosaunee confederacy",
+      "color": "#400e71"
     },
     {
       "name": "hausa city-states",
