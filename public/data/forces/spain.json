@@ -12,5 +12,61 @@
     "turnStartLon": 15.972747802734377,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 5
+  },
+  {
+    "id": "Walrusbear0831-1780786772187-0",
+    "nation": "spain",
+    "branch": "army",
+    "name": "Army of Flanders",
+    "strength": 20000,
+    "commander": "Charles Eugène de Croÿ",
+    "lat": 51.024320894109074,
+    "lon": 3.7618430703878403,
+    "turnStartLat": 51.024320894109074,
+    "turnStartLon": 3.7618430703878403,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780786836824-1",
+    "nation": "spain",
+    "branch": "army",
+    "name": "1st Army of Spain",
+    "strength": 20000,
+    "commander": "Baltasar de los Cobos y Luna",
+    "lat": 42.281836533835516,
+    "lon": 3.0210553295910363,
+    "turnStartLat": 42.281836533835516,
+    "turnStartLon": 3.0210553295910363,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780786911525-2",
+    "nation": "spain",
+    "branch": "army",
+    "name": "2nd Army of Spain",
+    "strength": 30000,
+    "commander": "Íñigo Melchor Fernández de Velasco",
+    "lat": 38.88922278034375,
+    "lon": -6.294624879956246,
+    "turnStartLat": 38.88922278034375,
+    "turnStartLon": -6.294624879956246,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780786984339-3",
+    "nation": "spain",
+    "branch": "army",
+    "name": "3rd Army of Spain",
+    "strength": 20000,
+    "commander": "Domingo Pignatelli y Vagher",
+    "lat": 42.32713426257731,
+    "lon": -7.862001210451127,
+    "turnStartLat": 42.32713426257731,
+    "turnStartLon": -7.862001210451127,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
   }
 ]
