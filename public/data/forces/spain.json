@@ -68,5 +68,33 @@
     "turnStartLon": -7.862001210451127,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780787115372-4",
+    "nation": "spain",
+    "branch": "army",
+    "name": "1st Army of Italy",
+    "strength": 20000,
+    "commander": "Luigi Vicente de Brommeo",
+    "lat": 45.458674974979566,
+    "lon": 9.192810058593752,
+    "turnStartLat": 45.458674974979566,
+    "turnStartLon": 9.192810058593752,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780787230017-5",
+    "nation": "spain",
+    "branch": "army",
+    "name": "2nd Army of Italy",
+    "strength": 10000,
+    "commander": "Pietro Ricardo de Palermo",
+    "lat": 41.10036076651069,
+    "lon": 14.787821033969525,
+    "turnStartLat": 41.10036076651069,
+    "turnStartLon": 14.787821033969525,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7
   }
 ]
