@@ -26,5 +26,19 @@
     "turnStartLon": 8.267211914062502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
+  },
+  {
+    "id": "yellowwithblue-1780921288368-8",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Liege Garrison",
+    "strength": 5000,
+    "commander": "Baden",
+    "lat": 50.62158811330541,
+    "lon": 5.614013671875001,
+    "turnStartLat": 50.62158811330541,
+    "turnStartLon": 5.614013671875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
