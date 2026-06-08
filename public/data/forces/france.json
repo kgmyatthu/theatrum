@@ -4,13 +4,13 @@
     "nation": "france",
     "branch": "army",
     "name": "Armée Royale",
-    "strength": 150000,
+    "strength": 75000,
     "commander": "",
-    "lat": 48.79393941299108,
-    "lon": 2.5268554687500004,
+    "lat": 50.00773901463687,
+    "lon": 5.207519531250001,
     "turnStartLat": 48.79393941299108,
     "turnStartLon": 2.5268554687500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 236.30004691346429,
     "createdAtTurn": 4
   },
   {
@@ -96,5 +96,19 @@
     "turnStartLon": -17.398331165313724,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
+  },
+  {
+    "id": "kgmyatthu-1780922532321-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "France Army Of Rear",
+    "strength": 75000,
+    "commander": "",
+    "lat": 48.50204750525715,
+    "lon": 6.5478515625,
+    "turnStartLat": 48.50204750525715,
+    "turnStartLon": 6.5478515625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
