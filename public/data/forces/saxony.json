@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1780887988253-2",
+    "nation": "saxony",
+    "branch": "army",
+    "name": "Army of the Lower Rhine",
+    "strength": 25000,
+    "commander": "Augustus II of Saxony",
+    "lat": 50.78857450392836,
+    "lon": 6.580810546875,
+    "turnStartLat": 50.78857450392836,
+    "turnStartLon": 6.580810546875,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  }
+]
