@@ -110,5 +110,47 @@
     "turnStartLon": 6.5478515625,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "kgmyatthu-1780922896140-1",
+    "nation": "france",
+    "branch": "army",
+    "name": "Arrmee de Bordeaux",
+    "strength": 25000,
+    "commander": "",
+    "lat": 44.75453548416007,
+    "lon": -0.21972656250000003,
+    "turnStartLat": 44.75453548416007,
+    "turnStartLon": -0.21972656250000003,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "kgmyatthu-1780922908526-2",
+    "nation": "france",
+    "branch": "army",
+    "name": "Armee de Lyon",
+    "strength": 25000,
+    "commander": "",
+    "lat": 45.744526980468436,
+    "lon": 4.647216796875001,
+    "turnStartLat": 45.744526980468436,
+    "turnStartLon": 4.647216796875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "kgmyatthu-1780922985966-3",
+    "nation": "france",
+    "branch": "army",
+    "name": "L'armée personnelle du roi",
+    "strength": 50000,
+    "commander": "",
+    "lat": 48.879167148960214,
+    "lon": 2.4060058593750004,
+    "turnStartLat": 48.879167148960214,
+    "turnStartLon": 2.4060058593750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
