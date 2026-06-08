@@ -68,5 +68,61 @@
     "turnStartLon": -1.8127441406250002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780938233943-0",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "American Naval Station",
+    "strength": 5,
+    "commander": "Lawrence Washington",
+    "lat": 40.67924942190253,
+    "lon": -74.05883789062501,
+    "turnStartLat": 40.67924942190253,
+    "turnStartLon": -74.05883789062501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780938553733-1",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "Red Squadron",
+    "strength": 40,
+    "commander": "Sir George Rooke",
+    "lat": 50.76541750791389,
+    "lon": -1.0473632812500069,
+    "turnStartLat": 50.76541750791389,
+    "turnStartLon": -1.0473632812500069,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780938632207-2",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "White Squadron",
+    "strength": 30,
+    "commander": "Edward Russell",
+    "lat": 50.333773964654405,
+    "lon": -4.215087890625014,
+    "turnStartLat": 50.333773964654405,
+    "turnStartLon": -4.215087890625014,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780938807444-3",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "Blue Squadron",
+    "strength": 25,
+    "commander": "Arthur Herbert",
+    "lat": 51.42946863998156,
+    "lon": 0.6600952148437367,
+    "turnStartLat": 51.42946863998156,
+    "turnStartLon": 0.6600952148437367,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
