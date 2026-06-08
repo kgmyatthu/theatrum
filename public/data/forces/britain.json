@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1780921579164-9",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "West Indies Station (SOTLs no. only)",
+    "strength": 12,
+    "commander": "Rooke",
+    "lat": 17.811456088564483,
+    "lon": -76.640625,
+    "turnStartLat": 17.811456088564483,
+    "turnStartLon": -76.640625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  }
+]
