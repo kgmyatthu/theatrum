@@ -82,5 +82,19 @@
     "turnStartLon": 14.787821033969525,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
+  },
+  {
+    "id": "Walrusbear0831-1780938692168-0",
+    "nation": "spain",
+    "branch": "army",
+    "name": "Ligne's Army",
+    "strength": 15000,
+    "commander": "Albert Charles of Ligne",
+    "lat": 51.203486122632356,
+    "lon": 4.432371137717857,
+    "turnStartLat": 51.203486122632356,
+    "turnStartLon": 4.432371137717857,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
