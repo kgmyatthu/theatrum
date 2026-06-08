@@ -180,5 +180,19 @@
     "turnStartLon": 15.831298828125002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
+  },
+  {
+    "id": "yellowwithblue-1780887604808-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of the Middle Rhine",
+    "strength": 30000,
+    "commander": "Prinz Eugen",
+    "lat": 50.02185841773447,
+    "lon": 7.360839843750001,
+    "turnStartLat": 50.02185841773447,
+    "turnStartLon": 7.360839843750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
