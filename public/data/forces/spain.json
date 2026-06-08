@@ -96,5 +96,33 @@
     "turnStartLon": 4.432371137717857,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780938796586-0",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Cartagena Station",
+    "strength": 18,
+    "commander": "Andres de Paz",
+    "lat": 10.44390779359786,
+    "lon": -75.59325926005842,
+    "turnStartLat": 10.44390779359786,
+    "turnStartLon": -75.59325926005842,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780939046703-2",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "New Spain Fleet",
+    "strength": 18,
+    "commander": "Manuel de Valasco",
+    "lat": 23.225853023272265,
+    "lon": -82.37548828125001,
+    "turnStartLat": 23.225853023272265,
+    "turnStartLon": -82.37548828125001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
