@@ -6,11 +6,11 @@
     "name": "Viyana Ordusu",
     "strength": 100000,
     "commander": "Merzifonlu Kara Mustafa Pasha",
-    "lat": 48.17701642999292,
-    "lon": 16.512451171875004,
+    "lat": 45.31352900692261,
+    "lon": 20.423583984375004,
     "turnStartLat": 48.17701642999292,
     "turnStartLon": 16.512451171875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 435.9965573909694,
     "createdAtTurn": 0
   },
   {
@@ -160,11 +160,11 @@
     "name": "Kostantiniyye Ordusu",
     "strength": 35000,
     "commander": "Mehmed IV",
-    "lat": 47.89536301036742,
-    "lon": 16.226806640625004,
+    "lat": 46.411351502899215,
+    "lon": 19.671020507812504,
     "turnStartLat": 47.89536301036742,
     "turnStartLon": 16.226806640625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 315.0939565094805,
     "createdAtTurn": 0
   },
   {
@@ -174,11 +174,11 @@
     "name": "Balkanlar Ordusu",
     "strength": 2000,
     "commander": "Imre Thököly",
-    "lat": 45.336701909968134,
-    "lon": 16.457519531250004,
+    "lat": 44.809121700077355,
+    "lon": 18.094482421875004,
     "turnStartLat": 45.336701909968134,
     "turnStartLon": 16.457519531250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 141.29507262455118,
     "createdAtTurn": 4
   }
 ]
