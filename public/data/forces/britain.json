@@ -26,5 +26,47 @@
     "turnStartLon": -76.09460450889665,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780936040466-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Regular Army of America",
+    "strength": 10000,
+    "commander": "Joseph Dudley",
+    "lat": 42.35042512243457,
+    "lon": -71.07055664062501,
+    "turnStartLat": 42.35042512243457,
+    "turnStartLon": -71.07055664062501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780936079719-1",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Army of the Continent",
+    "strength": 60000,
+    "commander": "Duke of Marlborough",
+    "lat": 51.878186564984,
+    "lon": 5.204772949218751,
+    "turnStartLat": 51.878186564984,
+    "turnStartLon": 5.204772949218751,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1780936104527-2",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Army of England",
+    "strength": 30000,
+    "commander": "Duke of Schomberg",
+    "lat": 52.4794347588594,
+    "lon": -1.8127441406250002,
+    "turnStartLat": 52.4794347588594,
+    "turnStartLon": -1.8127441406250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
