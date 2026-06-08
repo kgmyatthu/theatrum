@@ -124,5 +124,61 @@
     "turnStartLon": -82.37548828125001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780939443434-3",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Cadiz Fleet",
+    "strength": 40,
+    "commander": "Antonio Merida de La Cruz",
+    "lat": 38.367467766557255,
+    "lon": -9.405514597892763,
+    "turnStartLat": 38.367467766557255,
+    "turnStartLon": -9.405514597892763,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780939513206-4",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Vigo Fleet",
+    "strength": 30,
+    "commander": "Jose Manuel de Santo Domingo",
+    "lat": 41.0297864207259,
+    "lon": -9.193418920040132,
+    "turnStartLat": 41.0297864207259,
+    "turnStartLon": -9.193418920040132,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780939617130-5",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Palma Station",
+    "strength": 25,
+    "commander": "Manuel Estaban de Soler y Roca",
+    "lat": 39.492038632770594,
+    "lon": 2.6390220969915394,
+    "turnStartLat": 39.492038632770594,
+    "turnStartLon": 2.6390220969915394,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1780939704543-6",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Italian Fleet",
+    "strength": 20,
+    "commander": "Luigi Antonio di Potenza",
+    "lat": 40.69680981298295,
+    "lon": 14.221801757812502,
+    "turnStartLat": 40.69680981298295,
+    "turnStartLon": 14.221801757812502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
   }
 ]
