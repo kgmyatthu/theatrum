@@ -182,16 +182,16 @@
     "createdAtTurn": 7
   },
   {
-    "id": "yellowwithblue-1780887604808-1",
+    "id": "RadetzkyNTW-1781014373812-0",
     "nation": "austria",
     "branch": "army",
-    "name": "Army of the Middle Rhine",
+    "name": "Army of the Habsburgs",
     "strength": 30000,
     "commander": "Prinz Eugen",
-    "lat": 50.02185841773447,
-    "lon": 7.360839843750001,
-    "turnStartLat": 50.02185841773447,
-    "turnStartLon": 7.360839843750001,
+    "lat": 47.66538735632654,
+    "lon": 17.644042968750004,
+    "turnStartLat": 47.66538735632654,
+    "turnStartLon": 17.644042968750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   }
