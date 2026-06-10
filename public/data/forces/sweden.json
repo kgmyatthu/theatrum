@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1781065650746-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Army of General Stuart",
+    "strength": 20000,
+    "commander": "Carl Magnus Stuart",
+    "lat": 53.126998061776156,
+    "lon": 6.701660156250001,
+    "turnStartLat": 53.126998061776156,
+    "turnStartLon": 6.701660156250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8
+  }
+]
