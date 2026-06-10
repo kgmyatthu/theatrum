@@ -8,9 +8,9 @@
     "commander": "Peter I",
     "lat": 55.30413773740139,
     "lon": 38.3203125,
-    "turnStartLat": 46.694667307773116,
-    "turnStartLon": 30.388183593750004,
-    "kmMovedThisTurn": 1105.0138204489592,
+    "turnStartLat": 55.30413773740139,
+    "turnStartLon": 38.3203125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Patrick Gordon",
     "lat": 55.92458580482951,
     "lon": 31.420898437500004,
-    "turnStartLat": 48.63290858589535,
-    "turnStartLon": 27.685546875000004,
-    "kmMovedThisTurn": 1154.6670632694613,
+    "turnStartLat": 55.92458580482951,
+    "turnStartLon": 31.420898437500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Some German Guy",
     "lat": 46.99524110694596,
     "lon": 35.13427734375001,
-    "turnStartLat": 44.629573191951046,
-    "turnStartLon": 33.66760253906251,
-    "kmMovedThisTurn": 286.54666506526974,
+    "turnStartLat": 46.99524110694596,
+    "turnStartLon": 35.13427734375001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Mikhail Loris-Melikov",
     "lat": 51.01375465718821,
     "lon": 33.35449218750001,
-    "turnStartLat": 43.54854811091288,
-    "turnStartLon": 41.04492187500001,
-    "kmMovedThisTurn": 1011.5209206277277,
+    "turnStartLat": 51.01375465718821,
+    "turnStartLon": 33.35449218750001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
