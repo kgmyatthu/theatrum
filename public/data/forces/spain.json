@@ -132,11 +132,11 @@
     "name": "Cadiz Fleet",
     "strength": 40,
     "commander": "Antonio Merida de La Cruz",
-    "lat": 38.367467766557255,
-    "lon": -9.405514597892763,
+    "lat": 36.29801211656896,
+    "lon": -6.315732859075069,
     "turnStartLat": 38.367467766557255,
     "turnStartLon": -9.405514597892763,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 357.14214053026444,
     "createdAtTurn": 8
   },
   {
@@ -146,11 +146,11 @@
     "name": "Vigo Fleet",
     "strength": 30,
     "commander": "Jose Manuel de Santo Domingo",
-    "lat": 41.0297864207259,
-    "lon": -9.193418920040132,
+    "lat": 42.32078622908183,
+    "lon": -9.0470427274704,
     "turnStartLat": 41.0297864207259,
     "turnStartLon": -9.193418920040132,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 144.06641831413424,
     "createdAtTurn": 8
   },
   {
