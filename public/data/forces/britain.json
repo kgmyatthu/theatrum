@@ -104,11 +104,11 @@
     "name": "Blue Squadron",
     "strength": 30,
     "commander": "Arthur Herbert",
-    "lat": 51.42946863998156,
-    "lon": 0.6600952148437367,
+    "lat": 38.61687046392973,
+    "lon": -9.250488281250002,
     "turnStartLat": 51.42946863998156,
     "turnStartLon": 0.6600952148437367,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1853.8786948102318,
     "createdAtTurn": 8
   },
   {
