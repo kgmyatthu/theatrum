@@ -82,5 +82,33 @@
     "turnStartLon": 42.01171875000001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 11
+  },
+  {
+    "id": "pointerayden-ship-it-1781189435399-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "VI Host (West)",
+    "strength": 15000,
+    "commander": "Steppe Man",
+    "lat": 55.727110085045986,
+    "lon": 74.66308593750001,
+    "turnStartLat": 55.727110085045986,
+    "turnStartLon": 74.66308593750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
+  },
+  {
+    "id": "pointerayden-ship-it-1781189456901-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "VI Host (East)",
+    "strength": 15000,
+    "commander": "Steppe Man II",
+    "lat": 51.781435604431195,
+    "lon": 106.34765625000001,
+    "turnStartLat": 51.781435604431195,
+    "turnStartLon": 106.34765625000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
