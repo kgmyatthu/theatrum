@@ -12,5 +12,33 @@
     "turnStartLon": 6.701660156250001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "yellowwithblue-1781154951988-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "DANO-SWEDISH ARMY OF EGYPT",
+    "strength": 30000,
+    "commander": "Charles XII and Frederick IV",
+    "lat": 32.657875736955305,
+    "lon": 28.63037109375,
+    "turnStartLat": 32.657875736955305,
+    "turnStartLon": 28.63037109375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
+  },
+  {
+    "id": "yellowwithblue-1781154986156-1",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "DANO-SWEDISH FLEET (SOTLS NO ONLY)",
+    "strength": 26,
+    "commander": "Charles XII and Frederick IV",
+    "lat": 32.08257455954592,
+    "lon": 28.410644531250004,
+    "turnStartLat": 32.08257455954592,
+    "turnStartLon": 28.410644531250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
