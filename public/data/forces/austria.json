@@ -82,5 +82,47 @@
     "turnStartLon": 19.187622070312504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "RadetzkyNTW-1781184461834-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Bohemian Crusaders",
+    "strength": 30000,
+    "commander": "",
+    "lat": 48.61838518688487,
+    "lon": 19.995117187500004,
+    "turnStartLat": 48.61838518688487,
+    "turnStartLon": 19.995117187500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
+  },
+  {
+    "id": "RadetzkyNTW-1781184514319-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Austrian Crusaders",
+    "strength": 30000,
+    "commander": "",
+    "lat": 47.15984001304432,
+    "lon": 16.962890625000004,
+    "turnStartLat": 47.15984001304432,
+    "turnStartLon": 16.962890625000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
+  },
+  {
+    "id": "RadetzkyNTW-1781184523647-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Croatian Crusaders",
+    "strength": 30000,
+    "commander": "",
+    "lat": 45.84410779560204,
+    "lon": 16.298217773437504,
+    "turnStartLat": 45.84410779560204,
+    "turnStartLon": 16.298217773437504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
