@@ -134,9 +134,9 @@
     "commander": "Antonio Merida de La Cruz",
     "lat": 36.29801211656896,
     "lon": -6.315732859075069,
-    "turnStartLat": 38.367467766557255,
-    "turnStartLon": -9.405514597892763,
-    "kmMovedThisTurn": 357.14214053026444,
+    "turnStartLat": 36.29801211656896,
+    "turnStartLon": -6.315732859075069,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Jose Manuel de Santo Domingo",
     "lat": 42.32078622908183,
     "lon": -9.0470427274704,
-    "turnStartLat": 41.0297864207259,
-    "turnStartLon": -9.193418920040132,
-    "kmMovedThisTurn": 144.06641831413424,
+    "turnStartLat": 42.32078622908183,
+    "turnStartLon": -9.0470427274704,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
