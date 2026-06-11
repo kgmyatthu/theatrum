@@ -132,11 +132,11 @@
     "name": "Cezayir Ordusu",
     "strength": 10000,
     "commander": "Dey Hadj Mustafa",
-    "lat": 36.46419424272188,
-    "lon": 3.3618164062500004,
+    "lat": 35.665934812776015,
+    "lon": -0.30761718750000006,
     "turnStartLat": 36.46419424272188,
     "turnStartLon": 3.3618164062500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 341.5340560319844,
     "createdAtTurn": 8
   },
   {
@@ -160,11 +160,11 @@
     "name": "Tunus Ordusu",
     "strength": 5000,
     "commander": "Murad Bey",
-    "lat": 36.09332460750145,
-    "lon": 3.328857421875,
+    "lat": 35.43806006419985,
+    "lon": -0.27465820312500006,
     "turnStartLat": 36.57946347027697,
     "turnStartLon": 10.195312500000002,
-    "kmMovedThisTurn": 617.2883083797367,
+    "kmMovedThisTurn": 950.4579235144083,
     "createdAtTurn": 8
   },
   {
@@ -174,11 +174,11 @@
     "name": "Trablus Ordusu",
     "strength": 5000,
     "commander": "Khalil Bey",
-    "lat": 36.20120831214733,
-    "lon": 3.8122558593750004,
+    "lat": 35.16445460064066,
+    "lon": -0.21423339843750003,
     "turnStartLat": 32.63312639235295,
     "turnStartLon": 13.381347656250002,
-    "kmMovedThisTurn": 962.6619689841912,
+    "kmMovedThisTurn": 1344.1288138757893,
     "createdAtTurn": 8
   },
   {
