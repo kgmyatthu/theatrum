@@ -20,11 +20,11 @@
     "name": "1st Army of Spain",
     "strength": 20000,
     "commander": "Baltasar de los Cobos y Luna",
-    "lat": 42.281836533835516,
-    "lon": 3.0210553295910363,
+    "lat": 35.46879292565789,
+    "lon": -0.7811732590198518,
     "turnStartLat": 42.281836533835516,
     "turnStartLon": 3.0210553295910363,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 825.751884427502,
     "createdAtTurn": 7
   },
   {
@@ -132,11 +132,11 @@
     "name": "Cadiz Fleet",
     "strength": 40,
     "commander": "Antonio Merida de La Cruz",
-    "lat": 36.29801211656896,
-    "lon": -6.315732859075069,
+    "lat": 36.207399305069195,
+    "lon": -0.765824317932129,
     "turnStartLat": 36.29801211656896,
     "turnStartLon": -6.315732859075069,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 497.6910022997421,
     "createdAtTurn": 8
   },
   {
@@ -160,11 +160,11 @@
     "name": "Palma Station",
     "strength": 25,
     "commander": "Manuel Estaban de Soler y Roca",
-    "lat": 39.492038632770594,
-    "lon": 2.6390220969915394,
+    "lat": 36.19557019474847,
+    "lon": -0.7322953641414643,
     "turnStartLat": 39.492038632770594,
     "turnStartLon": 2.6390220969915394,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 471.0806593906568,
     "createdAtTurn": 8
   },
   {
