@@ -62,11 +62,11 @@
     "name": "Army of Bohemia",
     "strength": 53500,
     "commander": "",
-    "lat": 47.27550216573706,
-    "lon": 17.841796875000004,
+    "lat": 47.50421439972969,
+    "lon": 18.896484375000004,
     "turnStartLat": 47.27550216573706,
     "turnStartLon": 17.841796875000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 83.49106112759843,
     "createdAtTurn": 7
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of Hungary",
     "strength": 33500,
     "commander": "Prinz Eugen",
-    "lat": 47.76517619125417,
-    "lon": 19.187622070312504,
+    "lat": 47.585789182379905,
+    "lon": 19.176635742187504,
     "turnStartLat": 47.76517619125417,
     "turnStartLon": 19.187622070312504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 19.963877940564647,
     "createdAtTurn": 8
   },
   {
