@@ -4,13 +4,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Army of General Stuart",
-    "strength": 20000,
+    "strength": 26000,
     "commander": "Carl Magnus Stuart",
-    "lat": 53.126998061776156,
-    "lon": 6.701660156250001,
+    "lat": 48.53843177405046,
+    "lon": 17.830810546875004,
     "turnStartLat": 53.126998061776156,
     "turnStartLon": 6.701660156250001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1122.754378937616,
     "createdAtTurn": 8
   },
   {
