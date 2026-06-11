@@ -62,11 +62,11 @@
     "name": "Silesian Landwehr",
     "strength": 10000,
     "commander": "",
-    "lat": 48.79239019646409,
-    "lon": 20.104980468750004,
+    "lat": 48.65468584817256,
+    "lon": 22.164916992187504,
     "turnStartLat": 50.352470894936836,
     "turnStartLon": 17.633056640625004,
-    "kmMovedThisTurn": 248.7001388363443,
+    "kmMovedThisTurn": 477.5155190145352,
     "createdAtTurn": 7
   },
   {
@@ -146,11 +146,11 @@
     "name": "Slovak Landwehr",
     "strength": 5000,
     "commander": "",
-    "lat": 48.516604348867475,
-    "lon": 19.456787109375,
+    "lat": 48.56024979174329,
+    "lon": 21.665039062500004,
     "turnStartLat": 48.516604348867475,
     "turnStartLon": 19.456787109375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 180.96174850939167,
     "createdAtTurn": 7
   },
   {
