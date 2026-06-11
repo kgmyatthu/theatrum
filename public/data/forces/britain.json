@@ -106,9 +106,9 @@
     "commander": "Arthur Herbert",
     "lat": 38.61687046392973,
     "lon": -9.250488281250002,
-    "turnStartLat": 51.42946863998156,
-    "turnStartLon": 0.6600952148437367,
-    "kmMovedThisTurn": 1853.8786948102318,
+    "turnStartLat": 38.61687046392973,
+    "turnStartLon": -9.250488281250002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
