@@ -34,11 +34,11 @@
     "name": "2nd Army of Spain",
     "strength": 30000,
     "commander": "Íñigo Melchor Fernández de Velasco",
-    "lat": 38.88922278034375,
-    "lon": -6.294624879956246,
+    "lat": 37.71690263958915,
+    "lon": -0.9577202796936036,
     "turnStartLat": 38.88922278034375,
     "turnStartLon": -6.294624879956246,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 483.95369642245214,
     "createdAtTurn": 7
   },
   {
@@ -180,5 +180,19 @@
     "turnStartLon": 14.221801757812502,
     "kmMovedThisTurn": 538.2505125678392,
     "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1781219812029-0",
+    "nation": "spain",
+    "branch": "army",
+    "name": "Holy Army of Santiago",
+    "strength": 20000,
+    "commander": "Manuel Oriol el Caballero de La Cruz",
+    "lat": 38.38230288033476,
+    "lon": -0.5108642578125001,
+    "turnStartLat": 38.38230288033476,
+    "turnStartLon": -0.5108642578125001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
