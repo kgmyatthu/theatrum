@@ -4,7 +4,7 @@
     "nation": "denmark",
     "branch": "navy",
     "name": "Danish Royal Navy",
-    "strength": 90,
+    "strength": 80,
     "commander": "Ulrik Christian Gyldenløve",
     "lat": 55.6799073292233,
     "lon": 12.596855163574219,
@@ -292,5 +292,47 @@
     "turnStartLon": -4.148025512695313,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
+  },
+  {
+    "id": "Vancouver1903-1781148674265-0",
+    "nation": "denmark",
+    "branch": "navy",
+    "name": "Danish Holy Fleet",
+    "strength": 10,
+    "commander": "Local Kapitan",
+    "lat": 53.55540232708108,
+    "lon": 9.781951904296877,
+    "turnStartLat": 53.55540232708108,
+    "turnStartLon": 9.781951904296877,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9
+  },
+  {
+    "id": "Vancouver1903-1781148691508-1",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "The Holy Army of Hamburg",
+    "strength": 500,
+    "commander": "Local Kapitan",
+    "lat": 53.55458652225702,
+    "lon": 9.873962402343752,
+    "turnStartLat": 53.55458652225702,
+    "turnStartLon": 9.873962402343752,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9
+  },
+  {
+    "id": "Vancouver1903-1781148733436-2",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Army of Harold",
+    "strength": 3500,
+    "commander": "Prince Charles",
+    "lat": 54.98864593043392,
+    "lon": 12.413177490234377,
+    "turnStartLat": 54.98864593043392,
+    "turnStartLon": 12.413177490234377,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9
   }
 ]
