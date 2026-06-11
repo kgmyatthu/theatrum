@@ -6,11 +6,11 @@
     "name": "Standschutzen",
     "strength": 2500,
     "commander": "",
-    "lat": 47.28575033540949,
-    "lon": 11.427154541015627,
+    "lat": 45.08515722028692,
+    "lon": 15.578613281250002,
     "turnStartLat": 47.28575033540949,
     "turnStartLon": 11.427154541015627,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 406.93087483642114,
     "createdAtTurn": 7
   },
   {
@@ -194,5 +194,33 @@
     "turnStartLon": 17.644042968750004,
     "kmMovedThisTurn": 93.66509106311199,
     "createdAtTurn": 8
+  },
+  {
+    "id": "RadetzkyNTW-1781146020111-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of the HRE",
+    "strength": 15000,
+    "commander": "",
+    "lat": 46.30140615437332,
+    "lon": 16.677246093750004,
+    "turnStartLat": 46.30140615437332,
+    "turnStartLon": 16.677246093750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9
+  },
+  {
+    "id": "RadetzkyNTW-1781146028846-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Bavaria",
+    "strength": 15000,
+    "commander": "",
+    "lat": 47.1075227853425,
+    "lon": 17.017822265625004,
+    "turnStartLat": 47.1075227853425,
+    "turnStartLon": 17.017822265625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9
   }
 ]
