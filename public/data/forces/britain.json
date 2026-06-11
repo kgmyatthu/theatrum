@@ -104,11 +104,11 @@
     "name": "Blue Squadron",
     "strength": 30,
     "commander": "Arthur Herbert",
-    "lat": 38.61687046392973,
-    "lon": -9.250488281250002,
+    "lat": 18.61050214630301,
+    "lon": 72.40403278942294,
     "turnStartLat": 38.61687046392973,
     "turnStartLon": -9.250488281250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 9478.63243625662,
     "createdAtTurn": 8
   },
   {
@@ -124,5 +124,19 @@
     "turnStartLon": 0.48477172851562506,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "yourlocalgeobukseon-1781152888940-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "The Holy Army of His Beautiful Holiness Saint Patrick and Our Lady Saint Mother Mary under the Duke of Ormonde",
+    "strength": 25000,
+    "commander": "Duke of Ormonde",
+    "lat": 53.347716013722454,
+    "lon": -6.65690670949075,
+    "turnStartLat": 53.347716013722454,
+    "turnStartLon": -6.65690670949075,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
