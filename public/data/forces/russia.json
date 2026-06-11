@@ -3,28 +3,28 @@
     "id": "pointerayden-ship-it-1780102844083-1",
     "nation": "russia",
     "branch": "army",
-    "name": "I Host",
+    "name": "I Army",
     "strength": 76000,
     "commander": "Peter I",
-    "lat": 55.30413773740139,
-    "lon": 38.3203125,
+    "lat": 46.73986059969267,
+    "lon": 30.388183593750004,
     "turnStartLat": 55.30413773740139,
     "turnStartLon": 38.3203125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1100.5416688287269,
     "createdAtTurn": 2
   },
   {
     "id": "pointerayden-ship-it-1780102873423-2",
     "nation": "russia",
     "branch": "army",
-    "name": "III Host",
+    "name": "II Army",
     "strength": 48000,
     "commander": "Patrick Gordon",
-    "lat": 55.92458580482951,
-    "lon": 31.420898437500004,
+    "lat": 48.66194284607008,
+    "lon": 26.103515625000004,
     "turnStartLat": 55.92458580482951,
     "turnStartLon": 31.420898437500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 884.2116883546267,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 48000,
     "commander": "Some German Guy",
-    "lat": 46.99524110694596,
-    "lon": 35.13427734375001,
+    "lat": 47.17477833929906,
+    "lon": 39.11132812500001,
     "turnStartLat": 46.99524110694596,
     "turnStartLon": 35.13427734375001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 301.7466279170772,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 58000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 51.01375465718821,
-    "lon": 33.35449218750001,
+    "lat": 47.989921667414194,
+    "lon": 29.157714843750004,
     "turnStartLat": 51.01375465718821,
     "turnStartLon": 33.35449218750001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 714.9896155027391,
     "createdAtTurn": 2
   },
   {
@@ -68,5 +68,19 @@
     "turnStartLon": 33.21716308593751,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 3
+  },
+  {
+    "id": "pointerayden-ship-it-1781189201261-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "V Army (Mountain)",
+    "strength": 50000,
+    "commander": "Some Russian (ill name later)",
+    "lat": 44.715513732021336,
+    "lon": 42.01171875000001,
+    "turnStartLat": 44.715513732021336,
+    "turnStartLon": 42.01171875000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
   }
 ]
