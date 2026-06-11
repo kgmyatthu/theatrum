@@ -62,11 +62,11 @@
     "name": "1st Army of Italy",
     "strength": 20000,
     "commander": "Luigi Vicente de Brommeo",
-    "lat": 45.458674974979566,
-    "lon": 9.192810058593752,
+    "lat": 45.76619559821663,
+    "lon": 16.061059534549717,
     "turnStartLat": 45.458674974979566,
     "turnStartLon": 9.192810058593752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 560.626325889726,
     "createdAtTurn": 7
   },
   {
@@ -76,11 +76,11 @@
     "name": "2nd Army of Italy",
     "strength": 10000,
     "commander": "Pietro Ricardo de Palermo",
-    "lat": 41.10036076651069,
-    "lon": 14.787821033969525,
+    "lat": 37.0277211229173,
+    "lon": 15.185618698596956,
     "turnStartLat": 41.10036076651069,
     "turnStartLon": 14.787821033969525,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 478.3245460588062,
     "createdAtTurn": 7
   },
   {
@@ -174,11 +174,11 @@
     "name": "Italian Fleet",
     "strength": 20,
     "commander": "Luigi Antonio di Potenza",
-    "lat": 40.69680981298295,
-    "lon": 14.221801757812502,
+    "lat": 35.86264844334189,
+    "lon": 14.540094137191774,
     "turnStartLat": 40.69680981298295,
     "turnStartLon": 14.221801757812502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 538.2505125678392,
     "createdAtTurn": 8
   }
 ]
