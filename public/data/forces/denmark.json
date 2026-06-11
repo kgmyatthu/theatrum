@@ -300,11 +300,11 @@
     "name": "Danish Holy Fleet",
     "strength": 10,
     "commander": "Local Kapitan",
-    "lat": 53.55540232708108,
-    "lon": 9.781951904296877,
+    "lat": 50.5064398321055,
+    "lon": 0.15930175781250003,
     "turnStartLat": 53.55540232708108,
     "turnStartLon": 9.781951904296877,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 750.868893415338,
     "createdAtTurn": 9
   },
   {
@@ -314,11 +314,11 @@
     "name": "The Holy Army of Hamburg",
     "strength": 500,
     "commander": "Local Kapitan",
-    "lat": 53.55458652225702,
-    "lon": 9.873962402343752,
+    "lat": 50.499452103967734,
+    "lon": 0.14831542968750003,
     "turnStartLat": 53.55458652225702,
     "turnStartLon": 9.873962402343752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 746.2455381223722,
     "createdAtTurn": 9
   },
   {
@@ -328,11 +328,11 @@
     "name": "Army of Harold",
     "strength": 3500,
     "commander": "Prince Charles",
-    "lat": 54.98864593043392,
-    "lon": 12.413177490234377,
+    "lat": 56.74368684633036,
+    "lon": 23.944702148437504,
     "turnStartLat": 54.98864593043392,
     "turnStartLon": 12.413177490234377,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 744.4924227806239,
     "createdAtTurn": 9
   }
 ]
