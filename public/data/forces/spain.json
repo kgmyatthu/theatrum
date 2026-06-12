@@ -22,9 +22,9 @@
     "commander": "Baltasar de los Cobos y Luna",
     "lat": 35.46879292565789,
     "lon": -0.7811732590198518,
-    "turnStartLat": 42.281836533835516,
-    "turnStartLon": 3.0210553295910363,
-    "kmMovedThisTurn": 825.751884427502,
+    "turnStartLat": 35.46879292565789,
+    "turnStartLon": -0.7811732590198518,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Íñigo Melchor Fernández de Velasco",
     "lat": 37.71690263958915,
     "lon": -0.9577202796936036,
-    "turnStartLat": 38.88922278034375,
-    "turnStartLon": -6.294624879956246,
-    "kmMovedThisTurn": 483.95369642245214,
+    "turnStartLat": 37.71690263958915,
+    "turnStartLon": -0.9577202796936036,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Luigi Vicente de Brommeo",
     "lat": 45.76619559821663,
     "lon": 16.061059534549717,
-    "turnStartLat": 45.458674974979566,
-    "turnStartLon": 9.192810058593752,
-    "kmMovedThisTurn": 560.626325889726,
+    "turnStartLat": 45.76619559821663,
+    "turnStartLon": 16.061059534549717,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Pietro Ricardo de Palermo",
     "lat": 37.0277211229173,
     "lon": 15.185618698596956,
-    "turnStartLat": 41.10036076651069,
-    "turnStartLon": 14.787821033969525,
-    "kmMovedThisTurn": 478.3245460588062,
+    "turnStartLat": 37.0277211229173,
+    "turnStartLon": 15.185618698596956,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -134,9 +134,9 @@
     "commander": "Antonio Merida de La Cruz",
     "lat": 36.207399305069195,
     "lon": -0.765824317932129,
-    "turnStartLat": 36.29801211656896,
-    "turnStartLon": -6.315732859075069,
-    "kmMovedThisTurn": 497.6910022997421,
+    "turnStartLat": 36.207399305069195,
+    "turnStartLon": -0.765824317932129,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Manuel Estaban de Soler y Roca",
     "lat": 36.19557019474847,
     "lon": -0.7322953641414643,
-    "turnStartLat": 39.492038632770594,
-    "turnStartLon": 2.6390220969915394,
-    "kmMovedThisTurn": 471.0806593906568,
+    "turnStartLat": 36.19557019474847,
+    "turnStartLon": -0.7322953641414643,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Luigi Antonio di Potenza",
     "lat": 35.86264844334189,
     "lon": 14.540094137191774,
-    "turnStartLat": 40.69680981298295,
-    "turnStartLon": 14.221801757812502,
-    "kmMovedThisTurn": 538.2505125678392,
+    "turnStartLat": 35.86264844334189,
+    "turnStartLon": 14.540094137191774,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
