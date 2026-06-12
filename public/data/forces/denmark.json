@@ -4,13 +4,13 @@
     "nation": "denmark",
     "branch": "navy",
     "name": "Danish Royal Navy",
-    "strength": 55,
+    "strength": 45,
     "commander": "Christopher Ernst von Stöcken",
-    "lat": 55.6799073292233,
-    "lon": 12.596855163574219,
+    "lat": 51.68617954855624,
+    "lon": 2.2631835937500004,
     "turnStartLat": 55.6799073292233,
     "turnStartLon": 12.596855163574219,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1124.6913893893993,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army at Jylland",
     "strength": 10500,
     "commander": "Christian V",
-    "lat": 32.59773394005744,
-    "lon": 25.0872802734375,
-    "turnStartLat": 32.59773394005744,
-    "turnStartLon": 25.0872802734375,
-    "kmMovedThisTurn": 0,
+    "lat": 37.06339638062874,
+    "lon": 15.254516601562502,
+    "turnStartLat": 35.44277092585766,
+    "turnStartLon": 18.028564453125004,
+    "kmMovedThisTurn": 307.1377318274109,
     "createdAtTurn": 0
   },
   {
@@ -300,10 +300,10 @@
     "name": "Danish Holy Fleet (SOTL Only)",
     "strength": 9,
     "commander": "Christian V",
-    "lat": 32.58384932565662,
-    "lon": 25.136718750000004,
-    "turnStartLat": 32.58384932565662,
-    "turnStartLon": 25.136718750000004,
+    "lat": 37.06723173708531,
+    "lon": 15.269622802734375,
+    "turnStartLat": 37.06723173708531,
+    "turnStartLon": 15.269622802734375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 9
   },
@@ -316,9 +316,9 @@
     "commander": "Prince Charles",
     "lat": 51.17934297928929,
     "lon": 30.333251953125004,
-    "turnStartLat": 56.74368684633036,
-    "turnStartLon": 23.944702148437504,
-    "kmMovedThisTurn": 745.9606657787252,
+    "turnStartLat": 51.17934297928929,
+    "turnStartLon": 30.333251953125004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 9
   },
   {
@@ -348,5 +348,19 @@
     "turnStartLon": 9.367218017578127,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 12
+  },
+  {
+    "id": "Vancouver1903-1781239751154-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Danish Royal Navy (SOTL, no only)",
+    "strength": 9,
+    "commander": "Captain Hans Upperfart Underbeck",
+    "lat": 55.70080738536962,
+    "lon": 12.63702392578125,
+    "turnStartLat": 55.70080738536962,
+    "turnStartLon": 12.63702392578125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 14
   }
 ]
