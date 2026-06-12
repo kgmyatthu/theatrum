@@ -314,11 +314,11 @@
     "name": "Army of Harold",
     "strength": 3500,
     "commander": "Prince Charles",
-    "lat": 56.74368684633036,
-    "lon": 23.944702148437504,
+    "lat": 51.17934297928929,
+    "lon": 30.333251953125004,
     "turnStartLat": 56.74368684633036,
     "turnStartLon": 23.944702148437504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 745.9606657787252,
     "createdAtTurn": 9
   },
   {
