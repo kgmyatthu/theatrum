@@ -76,11 +76,11 @@
     "name": "Red Squadron",
     "strength": 43,
     "commander": "Sir George Rooke",
-    "lat": 53.089625610333634,
-    "lon": -5.595703125000007,
+    "lat": 37.98173159755926,
+    "lon": 15.593261718749988,
     "turnStartLat": 53.089625610333634,
     "turnStartLon": -5.595703125000007,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2366.723750052506,
     "createdAtTurn": 8
   },
   {
@@ -126,17 +126,17 @@
     "createdAtTurn": 8
   },
   {
-    "id": "yourlocalgeobukseon-1781152888940-0",
+    "id": "yourlocalgeobukseon-1781237891722-0",
     "nation": "britain",
     "branch": "army",
-    "name": "The Holy Army of His Beautiful Holiness Saint Patrick and Our Lady Saint Mother Mary",
+    "name": "The Holy Army of His Beautiful Holiness Saint Patrick And Our Lady Saint Mother Mary",
     "strength": 25000,
     "commander": "Duke of Ormonde",
-    "lat": 53.347716013722454,
-    "lon": -6.65690670949075,
-    "turnStartLat": 53.347716013722454,
-    "turnStartLon": -6.65690670949075,
+    "lat": 37.93231353635904,
+    "lon": 15.05172764984766,
+    "turnStartLat": 37.93231353635904,
+    "turnStartLon": 15.05172764984766,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 11
+    "createdAtTurn": 13
   }
 ]
