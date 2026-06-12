@@ -20,11 +20,11 @@
     "name": "Army of Christ",
     "strength": 50000,
     "commander": "Marcin Katski",
-    "lat": 45.74672442367248,
-    "lon": 13.942290729086896,
-    "turnStartLat": 51.74750792322002,
-    "turnStartLon": 19.459306639122957,
-    "kmMovedThisTurn": 779.7779189861792,
+    "lat": 35.50763594703788,
+    "lon": 24.0325927734375,
+    "turnStartLat": 35.50763594703788,
+    "turnStartLon": 24.0325927734375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   }
 ]
