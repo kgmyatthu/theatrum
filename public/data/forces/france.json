@@ -102,7 +102,7 @@
     "nation": "france",
     "branch": "army",
     "name": "France Army Of Rear",
-    "strength": 75000,
+    "strength": 65000,
     "commander": "",
     "lat": 48.50204750525715,
     "lon": 6.5478515625,
@@ -152,5 +152,19 @@
     "turnStartLon": 7.322387695312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "kgmyatthu-1781243959997-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Crusade Detachment of Rear Army",
+    "strength": 10000,
+    "commander": "",
+    "lat": 43.37311218382002,
+    "lon": 5.910644531250001,
+    "turnStartLat": 43.37311218382002,
+    "turnStartLon": 5.910644531250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 14
   }
 ]
