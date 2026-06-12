@@ -78,9 +78,9 @@
     "commander": "Sir George Rooke",
     "lat": 37.98173159755926,
     "lon": 15.593261718749988,
-    "turnStartLat": 53.089625610333634,
-    "turnStartLon": -5.595703125000007,
-    "kmMovedThisTurn": 2366.723750052506,
+    "turnStartLat": 37.98173159755926,
+    "turnStartLon": 15.593261718749988,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
