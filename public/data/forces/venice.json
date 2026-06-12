@@ -1,0 +1,16 @@
+[
+  {
+    "id": "Vancouver1903-1781239056824-0",
+    "nation": "venice",
+    "branch": "navy",
+    "name": "Venetian Navy TEMP",
+    "strength": 20,
+    "commander": "idk",
+    "lat": 35.561277754384555,
+    "lon": 23.928222656250004,
+    "turnStartLat": 35.561277754384555,
+    "turnStartLon": 23.928222656250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 13
+  }
+]
