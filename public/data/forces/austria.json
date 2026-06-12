@@ -124,5 +124,19 @@
     "turnStartLon": 16.298217773437504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 11
+  },
+  {
+    "id": "RadetzkyNTW-1781297138824-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Christ (Austrian)",
+    "strength": 35000,
+    "commander": "",
+    "lat": 46.07323062540835,
+    "lon": 16.633300781250004,
+    "turnStartLat": 46.07323062540835,
+    "turnStartLon": 16.633300781250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 14
   }
 ]
