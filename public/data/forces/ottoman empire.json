@@ -22,9 +22,9 @@
     "commander": "Kapudan of Gelibolu",
     "lat": 32.30284762118707,
     "lon": 33.77197265625001,
-    "turnStartLat": 39.93501296038254,
-    "turnStartLon": 25.959305146184043,
-    "kmMovedThisTurn": 1100.2370861203328,
+    "turnStartLat": 32.30284762118707,
+    "turnStartLon": 33.77197265625001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Deylik Admirals",
     "lat": 36.2476211777631,
     "lon": 0.08514404296875001,
-    "turnStartLat": 37.125286284966805,
-    "turnStartLon": 4.054271980766568,
-    "kmMovedThisTurn": 367.09894842714755,
+    "turnStartLat": 36.2476211777631,
+    "turnStartLon": 0.08514404296875001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Köprülüzade Numan Pasha",
     "lat": 45.04360056696828,
     "lon": 18.764648437500004,
-    "turnStartLat": 41.820069728957776,
-    "turnStartLon": 26.696777343750004,
-    "kmMovedThisTurn": 733.5017214227242,
+    "turnStartLat": 45.04360056696828,
+    "turnStartLon": 18.764648437500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Moralı Hasan Pasha",
     "lat": 45.0443174097706,
     "lon": 27.509765625000004,
-    "turnStartLat": 39.67692946352055,
-    "turnStartLon": 32.98645019531251,
-    "kmMovedThisTurn": 747.061941818143,
+    "turnStartLat": 45.0443174097706,
+    "turnStartLon": 27.509765625000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Hasan Pasha",
     "lat": 39.9287656465865,
     "lon": 36.10107421875001,
-    "turnStartLat": 33.58547699470807,
-    "turnStartLon": 44.46166992187501,
-    "kmMovedThisTurn": 1024.8882469146579,
+    "turnStartLat": 39.9287656465865,
+    "turnStartLon": 36.10107421875001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -134,9 +134,9 @@
     "commander": "Dey Hadj Mustafa",
     "lat": 35.665934812776015,
     "lon": -0.30761718750000006,
-    "turnStartLat": 36.46419424272188,
-    "turnStartLon": 3.3618164062500004,
-    "kmMovedThisTurn": 341.5340560319844,
+    "turnStartLat": 35.665934812776015,
+    "turnStartLon": -0.30761718750000006,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Osman Pasha",
     "lat": 39.861261717498266,
     "lon": 33.06884765625001,
-    "turnStartLat": 33.73172382695707,
-    "turnStartLon": 37.22167968750001,
-    "kmMovedThisTurn": 775.1800124800568,
+    "turnStartLat": 39.861261717498266,
+    "turnStartLon": 33.06884765625001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Murad Bey",
     "lat": 35.43806006419985,
     "lon": -0.27465820312500006,
-    "turnStartLat": 36.57946347027697,
-    "turnStartLon": 10.195312500000002,
-    "kmMovedThisTurn": 950.4579235144083,
+    "turnStartLat": 35.43806006419985,
+    "turnStartLon": -0.27465820312500006,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Khalil Bey",
     "lat": 35.16445460064066,
     "lon": -0.21423339843750003,
-    "turnStartLat": 32.63312639235295,
-    "turnStartLon": 13.381347656250002,
-    "kmMovedThisTurn": 1344.1288138757893,
+    "turnStartLat": 35.16445460064066,
+    "turnStartLon": -0.21423339843750003,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
