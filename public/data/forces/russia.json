@@ -6,11 +6,11 @@
     "name": "I Army",
     "strength": 76000,
     "commander": "Peter I",
-    "lat": 46.73986059969267,
-    "lon": 30.388183593750004,
+    "lat": 53.30462107510271,
+    "lon": 32.67333984375001,
     "turnStartLat": 46.73986059969267,
     "turnStartLon": 30.388183593750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 747.8969665626649,
     "createdAtTurn": 2
   },
   {
@@ -20,11 +20,11 @@
     "name": "II Army",
     "strength": 48000,
     "commander": "Patrick Gordon",
-    "lat": 48.66194284607008,
-    "lon": 26.103515625000004,
+    "lat": 54.41892996865827,
+    "lon": 31.552734375000004,
     "turnStartLat": 48.66194284607008,
     "turnStartLon": 26.103515625000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 742.3348103220525,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 48000,
     "commander": "Some German Guy",
-    "lat": 47.17477833929906,
-    "lon": 39.11132812500001,
+    "lat": 45.19752230305685,
+    "lon": 34.36523437500001,
     "turnStartLat": 47.17477833929906,
     "turnStartLon": 39.11132812500001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 426.30274038815844,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 58000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 47.989921667414194,
-    "lon": 29.157714843750004,
+    "lat": 53.57946149373232,
+    "lon": 35.06835937500001,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 29.157714843750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 747.0704081075951,
     "createdAtTurn": 2
   },
   {
@@ -76,11 +76,11 @@
     "name": "V Army (Mountain)",
     "strength": 50000,
     "commander": "Some Russian (ill name later)",
-    "lat": 44.715513732021336,
-    "lon": 42.01171875000001,
+    "lat": 47.249406957888446,
+    "lon": 40.34179687500001,
     "turnStartLat": 44.715513732021336,
     "turnStartLon": 42.01171875000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 309.8759921148524,
     "createdAtTurn": 11
   },
   {
