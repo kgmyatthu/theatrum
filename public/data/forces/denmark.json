@@ -22,9 +22,9 @@
     "commander": "Christian V",
     "lat": 32.50570830797185,
     "lon": 25.21842956542969,
-    "turnStartLat": 34.82282272723702,
-    "turnStartLon": 18.841552734375,
-    "kmMovedThisTurn": 643.7832333101344,
+    "turnStartLat": 32.50570830797185,
+    "turnStartLon": 25.21842956542969,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
