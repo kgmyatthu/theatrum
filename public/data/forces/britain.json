@@ -92,9 +92,9 @@
     "commander": "Edward Russell",
     "lat": 37.06394430056685,
     "lon": 15.372619628906252,
-    "turnStartLat": 45.35729208828147,
-    "turnStartLon": 12.553710937500014,
-    "kmMovedThisTurn": 951.6779140582972,
+    "turnStartLat": 37.06394430056685,
+    "turnStartLon": 15.372619628906252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
