@@ -6,11 +6,11 @@
     "name": "Danish Royal Navy (SOTL Only)",
     "strength": 24,
     "commander": "Christopher Ernst von Stöcken",
-    "lat": 32.509761735919426,
-    "lon": 25.224609375000004,
+    "lat": 33.669496972795535,
+    "lon": 17.028808593750004,
     "turnStartLat": 32.509761735919426,
     "turnStartLon": 25.224609375000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 774.1222045198023,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army at Jylland",
     "strength": 10500,
     "commander": "Christian V",
-    "lat": 32.50570830797185,
-    "lon": 25.21842956542969,
+    "lat": 33.651208299204995,
+    "lon": 17.314453125000004,
     "turnStartLat": 32.50570830797185,
     "turnStartLon": 25.21842956542969,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 747.1713606408731,
     "createdAtTurn": 0
   },
   {
@@ -300,11 +300,11 @@
     "name": "Army of Harold",
     "strength": 3500,
     "commander": "Prince Charles",
-    "lat": 56.84897198026975,
-    "lon": 24.104003906250004,
+    "lat": 55.7765730186677,
+    "lon": 12.23876953125,
     "turnStartLat": 56.84897198026975,
     "turnStartLon": 24.104003906250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 740.4671973514901,
     "createdAtTurn": 9
   },
   {
