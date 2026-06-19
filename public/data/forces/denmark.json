@@ -8,9 +8,9 @@
     "commander": "Christopher Ernst von Stöcken",
     "lat": 55.67487416557884,
     "lon": 12.642517089843752,
-    "turnStartLat": 33.669496972795535,
-    "turnStartLon": 17.028808593750004,
-    "kmMovedThisTurn": 2470.1526724893383,
+    "turnStartLat": 55.67487416557884,
+    "turnStartLon": 12.642517089843752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Christian V",
     "lat": 56.26776108757582,
     "lon": 9.580078125,
-    "turnStartLat": 33.651208299204995,
-    "turnStartLon": 17.314453125000004,
-    "kmMovedThisTurn": 2583.625178042227,
+    "turnStartLat": 56.26776108757582,
+    "turnStartLon": 9.580078125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
