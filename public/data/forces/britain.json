@@ -90,11 +90,11 @@
     "name": "White Squadron",
     "strength": 36,
     "commander": "Edward Russell",
-    "lat": 36.99816565700228,
-    "lon": 10.502929687500002,
+    "lat": 50.35334713295602,
+    "lon": -4.140472412109376,
     "turnStartLat": 37.06394430056685,
     "turnStartLon": 15.372619628906252,
-    "kmMovedThisTurn": 432.286918944088,
+    "kmMovedThisTurn": 2337.265579925917,
     "createdAtTurn": 8
   },
   {
