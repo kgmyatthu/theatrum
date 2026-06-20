@@ -76,11 +76,11 @@
     "name": "Red Squadron",
     "strength": 44,
     "commander": "Sir George Rooke",
-    "lat": 50.76947080994699,
-    "lon": -1.0491943359375002,
+    "lat": 55.58817647706393,
+    "lon": 12.48321533203125,
     "turnStartLat": 37.98173159755926,
     "turnStartLon": 15.593261718749988,
-    "kmMovedThisTurn": 1948.0672882365327,
+    "kmMovedThisTurn": 3091.619341100175,
     "createdAtTurn": 8
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of Marlborough",
     "strength": 45000,
     "commander": "Duke of Marlborough",
-    "lat": 51.411199044550045,
-    "lon": 0.48477172851562506,
+    "lat": 55.51204516152239,
+    "lon": 11.953125000000002,
     "turnStartLat": 51.411199044550045,
     "turnStartLon": 0.48477172851562506,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 884.0302551027007,
     "createdAtTurn": 8
   },
   {
