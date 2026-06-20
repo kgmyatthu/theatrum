@@ -76,11 +76,11 @@
     "name": "Red Squadron",
     "strength": 44,
     "commander": "Sir George Rooke",
-    "lat": 37.98173159755926,
-    "lon": 15.593261718749988,
+    "lat": 50.76947080994699,
+    "lon": -1.0491943359375002,
     "turnStartLat": 37.98173159755926,
     "turnStartLon": 15.593261718749988,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1948.0672882365327,
     "createdAtTurn": 8
   },
   {
@@ -90,11 +90,11 @@
     "name": "White Squadron",
     "strength": 36,
     "commander": "Edward Russell",
-    "lat": 37.06394430056685,
-    "lon": 15.372619628906252,
+    "lat": 36.99816565700228,
+    "lon": 10.502929687500002,
     "turnStartLat": 37.06394430056685,
     "turnStartLon": 15.372619628906252,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 432.286918944088,
     "createdAtTurn": 8
   },
   {
@@ -132,11 +132,11 @@
     "name": "The Holy Army of His Beautiful Holiness Saint Patrick And Our Lady Saint Mother Mary",
     "strength": 25000,
     "commander": "Duke of Ormonde",
-    "lat": 37.93231353635904,
-    "lon": 15.05172764984766,
+    "lat": 36.89664534784972,
+    "lon": 10.236511230468752,
     "turnStartLat": 37.93231353635904,
     "turnStartLon": 15.05172764984766,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 440.5260540671053,
     "createdAtTurn": 13
   }
 ]
