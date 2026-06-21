@@ -20,11 +20,11 @@
     "name": "1st Army of Spain",
     "strength": 20000,
     "commander": "Baltasar de los Cobos y Luna",
-    "lat": 35.46879292565789,
-    "lon": -0.7811732590198518,
+    "lat": 34.70291527458085,
+    "lon": -1.3530562631785872,
     "turnStartLat": 35.46879292565789,
     "turnStartLon": -0.7811732590198518,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 99.80034799053169,
     "createdAtTurn": 7
   },
   {
@@ -34,11 +34,11 @@
     "name": "2nd Army of Spain",
     "strength": 30000,
     "commander": "Íñigo Melchor Fernández de Velasco",
-    "lat": 37.71690263958915,
-    "lon": -0.9577202796936036,
+    "lat": 36.26283641450795,
+    "lon": 7.402554228901864,
     "turnStartLat": 37.71690263958915,
     "turnStartLon": -0.9577202796936036,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 759.6401328186737,
     "createdAtTurn": 7
   },
   {
@@ -76,11 +76,11 @@
     "name": "2nd Army of Italy",
     "strength": 10000,
     "commander": "Pietro Ricardo de Palermo",
-    "lat": 37.0277211229173,
-    "lon": 15.185618698596956,
+    "lat": 35.17936806484728,
+    "lon": 10.520032793283463,
     "turnStartLat": 37.0277211229173,
     "turnStartLon": 15.185618698596956,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 466.7563439371133,
     "createdAtTurn": 7
   },
   {
@@ -132,11 +132,11 @@
     "name": "Cadiz Fleet",
     "strength": 40,
     "commander": "Antonio Merida de La Cruz",
-    "lat": 36.207399305069195,
-    "lon": -0.765824317932129,
+    "lat": 37.50310786229262,
+    "lon": 5.996882915496827,
     "turnStartLat": 36.207399305069195,
     "turnStartLon": -0.765824317932129,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 618.5515505330281,
     "createdAtTurn": 8
   },
   {
@@ -160,11 +160,11 @@
     "name": "Palma Station",
     "strength": 25,
     "commander": "Manuel Estaban de Soler y Roca",
-    "lat": 36.19557019474847,
-    "lon": -0.7322953641414643,
+    "lat": 37.95424425819618,
+    "lon": 9.379104226827623,
     "turnStartLat": 36.19557019474847,
     "turnStartLon": -0.7322953641414643,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 917.6100310069367,
     "createdAtTurn": 8
   },
   {
@@ -174,11 +174,11 @@
     "name": "Italian Fleet",
     "strength": 20,
     "commander": "Luigi Antonio di Potenza",
-    "lat": 35.86264844334189,
-    "lon": 14.540094137191774,
+    "lat": 37.252829290728386,
+    "lon": 11.47573471069336,
     "turnStartLat": 35.86264844334189,
     "turnStartLon": 14.540094137191774,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 314.3126494511364,
     "createdAtTurn": 8
   },
   {
@@ -188,11 +188,11 @@
     "name": "Holy Army of Santiago",
     "strength": 20000,
     "commander": "Manuel Oriol el Caballero de La Cruz",
-    "lat": 38.38230288033476,
-    "lon": -0.5108642578125001,
+    "lat": 37.02417093182048,
+    "lon": 8.36340665817261,
     "turnStartLat": 38.38230288033476,
     "turnStartLon": -0.5108642578125001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 794.8592348673382,
     "createdAtTurn": 11
   }
 ]
