@@ -20,11 +20,11 @@
     "name": "II Army",
     "strength": 48000,
     "commander": "Patrick Gordon",
-    "lat": 54.41892996865827,
-    "lon": 31.552734375000004,
+    "lat": 58.9528923561716,
+    "lon": 29.871826171875004,
     "turnStartLat": 54.41892996865827,
     "turnStartLon": 31.552734375000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 514.455794539696,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 58000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 53.57946149373232,
-    "lon": 35.06835937500001,
+    "lat": 58.36074952088941,
+    "lon": 34.79644775390626,
     "turnStartLat": 53.57946149373232,
     "turnStartLon": 35.06835937500001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 531.9229716050894,
     "createdAtTurn": 2
   },
   {
