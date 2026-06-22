@@ -42,20 +42,6 @@
     "createdAtTurn": 0
   },
   {
-    "id": "Fouzi-707-1779923416435-10",
-    "nation": "ottoman empire",
-    "branch": "navy",
-    "name": "Cezayir Donanması",
-    "strength": 60,
-    "commander": "Deylik Admirals",
-    "lat": 36.2476211777631,
-    "lon": 0.08514404296875001,
-    "turnStartLat": 36.2476211777631,
-    "turnStartLon": 0.08514404296875001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
     "id": "Fouzi-707-1781027932608-0",
     "nation": "ottoman empire",
     "branch": "army",
@@ -126,20 +112,6 @@
     "createdAtTurn": 8
   },
   {
-    "id": "Fouzi-707-1781028178724-5",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Cezayir Ordusu",
-    "strength": 10000,
-    "commander": "Dey Hadj Mustafa",
-    "lat": 35.665934812776015,
-    "lon": -0.30761718750000006,
-    "turnStartLat": 35.665934812776015,
-    "turnStartLon": -0.30761718750000006,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
     "id": "Fouzi-707-1781028205107-6",
     "nation": "ottoman empire",
     "branch": "army",
@@ -150,34 +122,6 @@
     "lon": 33.06884765625001,
     "turnStartLat": 39.861261717498266,
     "turnStartLon": 33.06884765625001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "Fouzi-707-1781028221327-7",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Tunus Ordusu",
-    "strength": 5000,
-    "commander": "Murad Bey",
-    "lat": 35.43806006419985,
-    "lon": -0.27465820312500006,
-    "turnStartLat": 35.43806006419985,
-    "turnStartLon": -0.27465820312500006,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "Fouzi-707-1781028249569-8",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Trablus Ordusu",
-    "strength": 5000,
-    "commander": "Khalil Bey",
-    "lat": 35.16445460064066,
-    "lon": -0.21423339843750003,
-    "turnStartLat": 35.16445460064066,
-    "turnStartLon": -0.21423339843750003,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
@@ -206,20 +150,6 @@
     "lon": 22.9559326171875,
     "turnStartLat": 40.967106985426604,
     "turnStartLon": 22.9559326171875,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 11
-  },
-  {
-    "id": "Fouzi-707-1781155932541-1",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Erdel Ordusu",
-    "strength": 60000,
-    "commander": "Pasha 2",
-    "lat": 46.99534034449056,
-    "lon": 22.994384765625004,
-    "turnStartLat": 46.99534034449056,
-    "turnStartLon": 22.994384765625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 11
   },
