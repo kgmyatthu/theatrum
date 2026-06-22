@@ -124,19 +124,5 @@
     "turnStartLon": 0.48477172851562506,
     "kmMovedThisTurn": 1777.8819325642849,
     "createdAtTurn": 8
-  },
-  {
-    "id": "yourlocalgeobukseon-1781237891722-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "The Holy Army of His Beautiful Holiness Saint Patrick And Our Lady Saint Mother Mary",
-    "strength": 25000,
-    "commander": "Duke of Ormonde",
-    "lat": 36.89664534784972,
-    "lon": 10.236511230468752,
-    "turnStartLat": 37.93231353635904,
-    "turnStartLon": 15.05172764984766,
-    "kmMovedThisTurn": 440.5260540671053,
-    "createdAtTurn": 13
   }
 ]
