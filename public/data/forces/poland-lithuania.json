@@ -12,19 +12,5 @@
     "turnStartLon": 25.57428896427155,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
-  },
-  {
-    "id": "AceApache-1780418160107-1",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Christ",
-    "strength": 50000,
-    "commander": "Marcin Katski",
-    "lat": 35.50763594703788,
-    "lon": 24.0325927734375,
-    "turnStartLat": 35.50763594703788,
-    "turnStartLon": 24.0325927734375,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 4
   }
 ]
