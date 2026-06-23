@@ -96,5 +96,47 @@
     "turnStartLon": 24.675342007279323,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782234463499-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "1st Grenzer",
+    "strength": 7500,
+    "commander": "",
+    "lat": 45.44857064811582,
+    "lon": 19.594116210937504,
+    "turnStartLat": 45.44857064811582,
+    "turnStartLon": 19.594116210937504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782234483540-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "2nd Grenzer",
+    "strength": 7500,
+    "commander": "",
+    "lat": 45.236217535866025,
+    "lon": 18.720703125000004,
+    "turnStartLat": 45.236217535866025,
+    "turnStartLon": 18.720703125000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782234510684-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "3rd Grenzer",
+    "strength": 7500,
+    "commander": "",
+    "lat": 45.42158812329091,
+    "lon": 16.710205078125004,
+    "turnStartLat": 45.42158812329091,
+    "turnStartLon": 16.710205078125004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
   }
 ]
