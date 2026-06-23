@@ -152,5 +152,19 @@
     "turnStartLon": 9.140625000000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782240254220-4",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Standschutzen",
+    "strength": 5000,
+    "commander": "",
+    "lat": 47.08508535995386,
+    "lon": 11.942138671875,
+    "turnStartLat": 47.08508535995386,
+    "turnStartLon": 11.942138671875,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
   }
 ]
