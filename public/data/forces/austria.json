@@ -138,5 +138,19 @@
     "turnStartLon": 16.710205078125004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782234755135-3",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Milanese Garrison",
+    "strength": 7500,
+    "commander": "",
+    "lat": 45.46783598133375,
+    "lon": 9.140625000000002,
+    "turnStartLat": 45.46783598133375,
+    "turnStartLon": 9.140625000000002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
   }
 ]
