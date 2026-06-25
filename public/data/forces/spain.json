@@ -22,9 +22,9 @@
     "commander": "Baltasar de los Cobos y Luna",
     "lat": 34.70291527458085,
     "lon": -1.3530562631785872,
-    "turnStartLat": 35.46879292565789,
-    "turnStartLon": -0.7811732590198518,
-    "kmMovedThisTurn": 99.80034799053169,
+    "turnStartLat": 34.70291527458085,
+    "turnStartLon": -1.3530562631785872,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Íñigo Melchor Fernández de Velasco",
     "lat": 36.26283641450795,
     "lon": 7.402554228901864,
-    "turnStartLat": 37.71690263958915,
-    "turnStartLon": -0.9577202796936036,
-    "kmMovedThisTurn": 759.6401328186737,
+    "turnStartLat": 36.26283641450795,
+    "turnStartLon": 7.402554228901864,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Pietro Ricardo de Palermo",
     "lat": 35.17936806484728,
     "lon": 10.520032793283463,
-    "turnStartLat": 37.0277211229173,
-    "turnStartLon": 15.185618698596956,
-    "kmMovedThisTurn": 466.7563439371133,
+    "turnStartLat": 35.17936806484728,
+    "turnStartLon": 10.520032793283463,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -134,9 +134,9 @@
     "commander": "Antonio Merida de La Cruz",
     "lat": 37.50310786229262,
     "lon": 5.996882915496827,
-    "turnStartLat": 36.207399305069195,
-    "turnStartLon": -0.765824317932129,
-    "kmMovedThisTurn": 618.5515505330281,
+    "turnStartLat": 37.50310786229262,
+    "turnStartLon": 5.996882915496827,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Manuel Estaban de Soler y Roca",
     "lat": 37.95424425819618,
     "lon": 9.379104226827623,
-    "turnStartLat": 36.19557019474847,
-    "turnStartLon": -0.7322953641414643,
-    "kmMovedThisTurn": 917.6100310069367,
+    "turnStartLat": 37.95424425819618,
+    "turnStartLon": 9.379104226827623,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Luigi Antonio di Potenza",
     "lat": 37.252829290728386,
     "lon": 11.47573471069336,
-    "turnStartLat": 35.86264844334189,
-    "turnStartLon": 14.540094137191774,
-    "kmMovedThisTurn": 314.3126494511364,
+    "turnStartLat": 37.252829290728386,
+    "turnStartLon": 11.47573471069336,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Manuel Oriol el Caballero de La Cruz",
     "lat": 37.02417093182048,
     "lon": 8.36340665817261,
-    "turnStartLat": 38.38230288033476,
-    "turnStartLon": -0.5108642578125001,
-    "kmMovedThisTurn": 794.8592348673382,
+    "turnStartLat": 37.02417093182048,
+    "turnStartLon": 8.36340665817261,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 11
   }
 ]
