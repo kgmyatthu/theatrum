@@ -64,9 +64,9 @@
     "commander": "Köprülüzade Numan Pasha",
     "lat": 44.77013681219717,
     "lon": 20.126953125000004,
-    "turnStartLat": 45.04360056696828,
-    "turnStartLon": 18.764648437500004,
-    "kmMovedThisTurn": 111.51178018788853,
+    "turnStartLat": 44.77013681219717,
+    "turnStartLon": 20.126953125000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
