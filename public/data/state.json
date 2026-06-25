@@ -119,15 +119,15 @@
     ],
     [
       29,
-      "unclaimed"
+      "seic"
     ],
     [
       30,
-      "unclaimed"
+      "seic"
     ],
     [
       31,
-      "unclaimed"
+      "seic"
     ],
     [
       32,
@@ -183,7 +183,7 @@
     ],
     [
       45,
-      "unclaimed"
+      "seic"
     ],
     [
       46,
@@ -4927,11 +4927,11 @@
     ],
     [
       1231,
-      "unclaimed"
+      "seic"
     ],
     [
       1232,
-      "portugal"
+      "unclaimed"
     ],
     [
       1233,
@@ -5639,19 +5639,19 @@
     ],
     [
       1409,
-      "yemen"
+      "seic"
     ],
     [
       1410,
-      "unclaimed"
+      "seic"
     ],
     [
       1411,
-      "yemen"
+      "seic"
     ],
     [
       1412,
-      "oman"
+      "seic"
     ],
     [
       1413,
@@ -5863,7 +5863,7 @@
     ],
     [
       1465,
-      "unclaimed"
+      "seic"
     ],
     [
       1466,
@@ -5887,7 +5887,7 @@
     ],
     [
       1471,
-      "unclaimed"
+      "seic"
     ],
     [
       1472,
@@ -6999,47 +6999,47 @@
     ],
     [
       1749,
-      "unclaimed"
+      "seic"
     ],
     [
       1750,
-      "unclaimed"
+      "seic"
     ],
     [
       1751,
-      "unclaimed"
+      "seic"
     ],
     [
       1752,
-      "unclaimed"
+      "seic"
     ],
     [
       1753,
-      "unclaimed"
+      "seic"
     ],
     [
       1754,
-      "unclaimed"
+      "seic"
     ],
     [
       1755,
-      "unclaimed"
+      "seic"
     ],
     [
       1756,
-      "unclaimed"
+      "seic"
     ],
     [
       1757,
-      "unclaimed"
+      "seic"
     ],
     [
       1758,
-      "unclaimed"
+      "seic"
     ],
     [
       1759,
-      "unclaimed"
+      "seic"
     ],
     [
       1760,
@@ -7103,15 +7103,15 @@
     ],
     [
       1775,
-      "unclaimed"
+      "seic"
     ],
     [
       1776,
-      "unclaimed"
+      "seic"
     ],
     [
       1777,
-      "unclaimed"
+      "seic"
     ],
     [
       1778,
@@ -8111,11 +8111,11 @@
     ],
     [
       2027,
-      "unclaimed"
+      "seic"
     ],
     [
       2028,
-      "unclaimed"
+      "seic"
     ],
     [
       2029,
@@ -8123,7 +8123,7 @@
     ],
     [
       2030,
-      "unclaimed"
+      "seic"
     ],
     [
       2031,
@@ -8175,11 +8175,11 @@
     ],
     [
       2043,
-      "oman"
+      "seic"
     ],
     [
       2044,
-      "oman"
+      "seic"
     ],
     [
       2045,
@@ -10215,7 +10215,7 @@
     ],
     [
       2553,
-      "unclaimed"
+      "seic"
     ],
     [
       2554,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "france"
+      "seic"
     ],
     [
       2558,
@@ -11083,19 +11083,19 @@
     ],
     [
       2770,
-      "unclaimed"
+      "seic"
     ],
     [
       2771,
-      "unclaimed"
+      "seic"
     ],
     [
       2772,
-      "unclaimed"
+      "seic"
     ],
     [
       2773,
-      "unclaimed"
+      "seic"
     ],
     [
       2774,
@@ -11107,23 +11107,23 @@
     ],
     [
       2776,
-      "unclaimed"
+      "seic"
     ],
     [
       2777,
-      "unclaimed"
+      "seic"
     ],
     [
       2778,
-      "unclaimed"
+      "seic"
     ],
     [
       2779,
-      "unclaimed"
+      "seic"
     ],
     [
       2780,
-      "unclaimed"
+      "seic"
     ],
     [
       2781,
@@ -11743,7 +11743,7 @@
     ],
     [
       2935,
-      "unclaimed"
+      "seic"
     ],
     [
       2936,
@@ -12175,7 +12175,7 @@
     ],
     [
       3043,
-      "unclaimed"
+      "seic"
     ],
     [
       3044,
@@ -14431,11 +14431,11 @@
     ],
     [
       3607,
-      "unclaimed"
+      "seic"
     ],
     [
       3608,
-      "unclaimed"
+      "seic"
     ],
     [
       3609,
@@ -16459,7 +16459,7 @@
     ],
     [
       4114,
-      "unclaimed"
+      "seic"
     ],
     [
       4115,
@@ -16735,7 +16735,7 @@
     ],
     [
       4183,
-      "oman"
+      "seic"
     ],
     [
       4184,
@@ -18191,11 +18191,11 @@
     ],
     [
       4547,
-      "unclaimed"
+      "seic"
     ],
     [
       4548,
-      "unclaimed"
+      "seic"
     ],
     [
       4549,
@@ -18602,6 +18602,10 @@
     {
       "name": "saxony",
       "color": "#8bd07c"
+    },
+    {
+      "name": "seic",
+      "color": "#57ddff"
     },
     {
       "name": "siam",
