@@ -1,0 +1,72 @@
+[
+  {
+    "id": "yellowwithblue-1782347078818-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Main Army",
+    "strength": 24000,
+    "commander": "Charles XII",
+    "lat": 57.17794740000722,
+    "lon": 25.773925781250004,
+    "turnStartLat": 57.17794740000722,
+    "turnStartLon": 25.773925781250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "yellowwithblue-1782347095323-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Livonian Army",
+    "strength": 8600,
+    "commander": "Lewenhaupt",
+    "lat": 58.309488840677645,
+    "lon": 26.685791015625004,
+    "turnStartLat": 58.309488840677645,
+    "turnStartLon": 26.685791015625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "yellowwithblue-1782347129895-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Troops in Sweden",
+    "strength": 40000,
+    "commander": "Scattered",
+    "lat": 59.50087955346417,
+    "lon": 14.501953125000002,
+    "turnStartLat": 59.50087955346417,
+    "turnStartLon": 14.501953125000002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "yellowwithblue-1782347172038-4",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Finnish Regiments/Army",
+    "strength": 8000,
+    "commander": "Rehnskiold",
+    "lat": 56.891003302784576,
+    "lon": 24.235839843750004,
+    "turnStartLat": 56.891003302784576,
+    "turnStartLon": 24.235839843750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  },
+  {
+    "id": "yellowwithblue-1782347270994-5",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "SWEDISH BATTLEFLEET",
+    "strength": 62,
+    "commander": "Wachtmeister the Younger",
+    "lat": 56.16390607394954,
+    "lon": 15.479736328125002,
+    "turnStartLat": 56.16390607394954,
+    "turnStartLon": 15.479736328125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 21
+  }
+]
