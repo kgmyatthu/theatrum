@@ -46,12 +46,12 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Army of Magnus Stenbock",
-    "strength": 25000,
-    "commander": "=Magnus Stenbock",
-    "lat": 54.85131525968609,
-    "lon": 9.343872070312502,
-    "turnStartLat": 54.85131525968609,
-    "turnStartLon": 9.343872070312502,
+    "strength": 13000,
+    "commander": "Magnus Stenbock",
+    "lat": 53.38988075156031,
+    "lon": 10.579833984375002,
+    "turnStartLat": 53.38988075156031,
+    "turnStartLon": 10.579833984375002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
@@ -98,20 +98,6 @@
     "createdAtTurn": 21
   },
   {
-    "id": "yellowwithblue-1782373918566-4",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Army of Pomerania",
-    "strength": 21500,
-    "commander": "Carl Gustaf Dücker",
-    "lat": 54.265224078605684,
-    "lon": 13.051757812500002,
-    "turnStartLat": 54.265224078605684,
-    "turnStartLon": 13.051757812500002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 21
-  },
-  {
     "id": "yellowwithblue-1782374001517-5",
     "nation": "sweden",
     "branch": "army",
@@ -124,5 +110,47 @@
     "turnStartLon": 11.744384765625002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
+  },
+  {
+    "id": "yellowwithblue-1782416504072-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Stralsund",
+    "strength": 5000,
+    "commander": "",
+    "lat": 54.3197273165176,
+    "lon": 13.046264648437502,
+    "turnStartLat": 54.3197273165176,
+    "turnStartLon": 13.046264648437502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 22
+  },
+  {
+    "id": "yellowwithblue-1782416517407-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Stettin",
+    "strength": 7000,
+    "commander": "Meijerfeldt",
+    "lat": 53.550099314556185,
+    "lon": 14.095458984375002,
+    "turnStartLat": 53.550099314556185,
+    "turnStartLon": 14.095458984375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 22
+  },
+  {
+    "id": "yellowwithblue-1782416573551-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Army of Carl Gustaf Dücker",
+    "strength": 14000,
+    "commander": "Carl Gustaf Dücker",
+    "lat": 54.0239066230473,
+    "lon": 12.722167968750002,
+    "turnStartLat": 54.0239066230473,
+    "turnStartLon": 12.722167968750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 22
   }
 ]

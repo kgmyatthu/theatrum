@@ -78,9 +78,9 @@
     "commander": "Sir George Rooke",
     "lat": 54.1109429427243,
     "lon": 8.096923828125002,
-    "turnStartLat": 37.98173159755926,
-    "turnStartLon": 15.593261718749988,
-    "kmMovedThisTurn": 4848.1225472282595,
+    "turnStartLat": 54.1109429427243,
+    "turnStartLon": 8.096923828125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Edward Russell",
     "lat": 50.33691497898599,
     "lon": -4.153518676757813,
-    "turnStartLat": 37.06394430056685,
-    "turnStartLon": 15.372619628906252,
-    "kmMovedThisTurn": 7992.873736484583,
+    "turnStartLat": 50.33691497898599,
+    "turnStartLon": -4.153518676757813,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Duke of Marlborough",
     "lat": 51.26191485308451,
     "lon": 0.48339843750000006,
-    "turnStartLat": 51.411199044550045,
-    "turnStartLon": 0.48477172851562506,
-    "kmMovedThisTurn": 1777.8819325642849,
+    "turnStartLat": 51.26191485308451,
+    "turnStartLon": 0.48339843750000006,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   }
 ]

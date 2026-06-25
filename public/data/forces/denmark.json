@@ -22,9 +22,9 @@
     "commander": "Frederick IV",
     "lat": 55.10980079314383,
     "lon": 9.363098144531252,
-    "turnStartLat": 56.26776108757582,
-    "turnStartLon": 9.580078125,
-    "kmMovedThisTurn": 129.4753900330931,
+    "turnStartLat": 55.10980079314383,
+    "turnStartLon": 9.363098144531252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Jørgen Rantzau",
     "lat": 55.67158290073247,
     "lon": 12.532310485839846,
-    "turnStartLat": 55.441479359140686,
-    "turnStartLon": 11.727905273437502,
-    "kmMovedThisTurn": 56.69165954313325,
+    "turnStartLat": 55.67158290073247,
+    "turnStartLon": 12.532310485839846,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
