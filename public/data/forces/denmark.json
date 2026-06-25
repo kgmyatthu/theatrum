@@ -20,11 +20,11 @@
     "name": "Army at Jylland",
     "strength": 40000,
     "commander": "Frederick IV",
-    "lat": 56.26776108757582,
-    "lon": 9.580078125,
+    "lat": 55.10980079314383,
+    "lon": 9.363098144531252,
     "turnStartLat": 56.26776108757582,
     "turnStartLon": 9.580078125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 129.4753900330931,
     "createdAtTurn": 0
   },
   {
