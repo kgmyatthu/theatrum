@@ -56,20 +56,6 @@
     "createdAtTurn": 7
   },
   {
-    "id": "Walrusbear0831-1780787115372-4",
-    "nation": "spain",
-    "branch": "army",
-    "name": "1st Army of Italy",
-    "strength": 20000,
-    "commander": "Luigi Vicente de Brommeo",
-    "lat": 45.76619559821663,
-    "lon": 16.061059534549717,
-    "turnStartLat": 45.76619559821663,
-    "turnStartLon": 16.061059534549717,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 7
-  },
-  {
     "id": "Walrusbear0831-1780787230017-5",
     "nation": "spain",
     "branch": "army",
