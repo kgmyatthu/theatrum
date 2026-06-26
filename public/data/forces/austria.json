@@ -166,5 +166,33 @@
     "turnStartLon": 11.942138671875,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 21
+  },
+  {
+    "id": "RadetzkyNTW-1782501567170-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Czech Reservists",
+    "strength": 25000,
+    "commander": "",
+    "lat": 49.2032427441791,
+    "lon": 16.622314453125004,
+    "turnStartLat": 49.2032427441791,
+    "turnStartLon": 16.622314453125004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
+  },
+  {
+    "id": "RadetzkyNTW-1782501581066-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Austrian Reservists",
+    "strength": 25000,
+    "commander": "",
+    "lat": 47.724544549099676,
+    "lon": 17.259521484375004,
+    "turnStartLat": 47.724544549099676,
+    "turnStartLon": 17.259521484375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
   }
 ]
