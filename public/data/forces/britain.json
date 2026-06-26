@@ -14,20 +14,6 @@
     "createdAtTurn": 8
   },
   {
-    "id": "Celavetex-1780934728318-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "Local New England Militia",
-    "strength": 500,
-    "commander": "John Realmann",
-    "lat": 41.6266680909899,
-    "lon": -76.09460450889665,
-    "turnStartLat": 41.6266680909899,
-    "turnStartLon": -76.09460450889665,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
     "id": "yourlocalgeobukseon-1780936040466-0",
     "nation": "britain",
     "branch": "army",
@@ -124,5 +110,19 @@
     "turnStartLon": 0.48339843750000006,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "Celavetex-1782494238920-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Twin Tower Militia",
+    "strength": 800,
+    "commander": "O. Sam Benleydon",
+    "lat": 40.99929995938327,
+    "lon": -73.4675699174114,
+    "turnStartLat": 40.99929995938327,
+    "turnStartLon": -73.4675699174114,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
   }
 ]
