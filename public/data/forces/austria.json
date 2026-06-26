@@ -20,11 +20,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 48.90089608092412,
-    "lon": 17.951660156250004,
+    "lat": 48.65105695744785,
+    "lon": 19.116210937500004,
     "turnStartLat": 49.106241774469055,
     "turnStartLon": 20.214843750000004,
-    "kmMovedThisTurn": 166.65347182092725,
+    "kmMovedThisTurn": 256.39644592387566,
     "createdAtTurn": 7
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of the Habsburgs (Entrenched)",
     "strength": 40000,
     "commander": "",
-    "lat": 45.4062480722233,
-    "lon": 17.380371093750004,
+    "lat": 46.354510837365254,
+    "lon": 18.682250976562504,
     "turnStartLat": 45.69850658738848,
     "turnStartLon": 20.983886718750004,
-    "kmMovedThisTurn": 282.43882576171126,
+    "kmMovedThisTurn": 428.2913219507012,
     "createdAtTurn": 21
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of Austria",
     "strength": 30000,
     "commander": "",
-    "lat": 48.253912121211904,
-    "lon": 15.402881069779319,
+    "lat": 46.758679967095574,
+    "lon": 19.731445312500004,
     "turnStartLat": 48.253912121211904,
     "turnStartLon": 15.402881069779319,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 367.39957742281507,
     "createdAtTurn": 21
   },
   {
@@ -104,11 +104,11 @@
     "name": "1st Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.683144783166576,
-    "lon": 17.012329101562504,
+    "lat": 45.89000815866184,
+    "lon": 18.204345703125004,
     "turnStartLat": 45.44857064811582,
     "turnStartLon": 19.594116210937504,
-    "kmMovedThisTurn": 202.6589913774029,
+    "kmMovedThisTurn": 297.90600455469166,
     "createdAtTurn": 21
   },
   {
@@ -118,11 +118,11 @@
     "name": "2nd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.409970307491356,
-    "lon": 17.034301757812504,
+    "lat": 47.15236927446393,
+    "lon": 19.671020507812504,
     "turnStartLat": 45.236217535866025,
     "turnStartLon": 18.720703125000004,
-    "kmMovedThisTurn": 133.25181086136078,
+    "kmMovedThisTurn": 413.57088272594626,
     "createdAtTurn": 21
   },
   {
@@ -132,11 +132,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.42158812329091,
-    "lon": 16.710205078125004,
+    "lat": 48.09275716032736,
+    "lon": 18.992614746093754,
     "turnStartLat": 45.42158812329091,
     "turnStartLon": 16.710205078125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 375.3213065689135,
     "createdAtTurn": 21
   },
   {
