@@ -48,11 +48,11 @@
     "name": "Garrison of Wismar",
     "strength": 6350,
     "commander": "Axel Sparre",
-    "lat": 54.08839548669902,
-    "lon": 12.068481445312502,
+    "lat": 53.9017086478655,
+    "lon": 11.447238922119142,
     "turnStartLat": 54.08839548669902,
     "turnStartLon": 12.068481445312502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 50.79433849069388,
     "createdAtTurn": 21
   },
   {
@@ -104,11 +104,11 @@
     "name": "Army of Carl Gustaf Dücker",
     "strength": 11000,
     "commander": "Carl Gustaf Dücker",
-    "lat": 53.86224615767578,
-    "lon": 11.480712890625,
+    "lat": 53.708087916231406,
+    "lon": 11.192321777343752,
     "turnStartLat": 54.0239066230473,
     "turnStartLon": 12.722167968750002,
-    "kmMovedThisTurn": 83.21438033380785,
+    "kmMovedThisTurn": 108.76403325901755,
     "createdAtTurn": 22
   },
   {
