@@ -118,11 +118,11 @@
     "name": "2nd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 47.15236927446393,
-    "lon": 19.671020507812504,
+    "lat": 46.76244305208004,
+    "lon": 20.025329589843754,
     "turnStartLat": 45.236217535866025,
     "turnStartLon": 18.720703125000004,
-    "kmMovedThisTurn": 413.57088272594626,
+    "kmMovedThisTurn": 464.59027094893395,
     "createdAtTurn": 21
   },
   {
