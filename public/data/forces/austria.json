@@ -20,11 +20,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 48.65105695744785,
-    "lon": 19.116210937500004,
+    "lat": 48.87194147722911,
+    "lon": 19.643554687500004,
     "turnStartLat": 49.106241774469055,
     "turnStartLon": 20.214843750000004,
-    "kmMovedThisTurn": 256.39644592387566,
+    "kmMovedThisTurn": 302.193373208298,
     "createdAtTurn": 7
   },
   {
@@ -132,11 +132,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 48.09275716032736,
-    "lon": 18.992614746093754,
+    "lat": 48.48748647988415,
+    "lon": 19.676513671875004,
     "turnStartLat": 45.42158812329091,
     "turnStartLon": 16.710205078125004,
-    "kmMovedThisTurn": 375.3213065689135,
+    "kmMovedThisTurn": 442.3032934275132,
     "createdAtTurn": 21
   },
   {
