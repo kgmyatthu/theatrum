@@ -76,11 +76,11 @@
     "name": "Army of Austria",
     "strength": 30000,
     "commander": "",
-    "lat": 46.758679967095574,
-    "lon": 19.731445312500004,
+    "lat": 46.74738913515841,
+    "lon": 21.088256835937504,
     "turnStartLat": 48.253912121211904,
     "turnStartLon": 15.402881069779319,
-    "kmMovedThisTurn": 367.39957742281507,
+    "kmMovedThisTurn": 470.77403910139856,
     "createdAtTurn": 21
   },
   {
@@ -118,11 +118,11 @@
     "name": "2nd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 46.76244305208004,
-    "lon": 20.025329589843754,
+    "lat": 46.86394700508323,
+    "lon": 21.401367187500004,
     "turnStartLat": 45.236217535866025,
     "turnStartLon": 18.720703125000004,
-    "kmMovedThisTurn": 464.59027094893395,
+    "kmMovedThisTurn": 569.9111581818523,
     "createdAtTurn": 21
   },
   {
