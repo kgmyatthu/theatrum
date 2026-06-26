@@ -98,20 +98,6 @@
     "createdAtTurn": 8
   },
   {
-    "id": "yourlocalgeobukseon-1781103552460-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "Army of Temple",
-    "strength": 45000,
-    "commander": "Richard Temple",
-    "lat": 51.26191485308451,
-    "lon": 0.48339843750000006,
-    "turnStartLat": 51.26191485308451,
-    "turnStartLon": 0.48339843750000006,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
     "id": "Celavetex-1782494238920-0",
     "nation": "britain",
     "branch": "army",
@@ -122,6 +108,20 @@
     "lon": -73.4675699174114,
     "turnStartLat": 40.99929995938327,
     "turnStartLon": -73.4675699174114,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
+  },
+  {
+    "id": "yourlocalgeobukseon-1782500292648-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Army of Temple",
+    "strength": 45000,
+    "commander": "Richard Temple",
+    "lat": 59.69731816925534,
+    "lon": 10.799560546875,
+    "turnStartLat": 59.69731816925534,
+    "turnStartLon": 10.799560546875,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   }
