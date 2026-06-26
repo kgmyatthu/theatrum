@@ -42,20 +42,6 @@
     "createdAtTurn": 23
   },
   {
-    "id": "iiv213-1782499214686-3",
-    "nation": "hungarian rebels",
-    "branch": "army",
-    "name": "Károlyi Sándor's Army",
-    "strength": 12000,
-    "commander": "Károlyi Sándor",
-    "lat": 46.7788629589026,
-    "lon": 20.258789062500004,
-    "turnStartLat": 46.7788629589026,
-    "turnStartLon": 20.258789062500004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 23
-  },
-  {
     "id": "iiv213-1782499232377-4",
     "nation": "hungarian rebels",
     "branch": "army",
@@ -66,6 +52,20 @@
     "lon": 19.215087890625004,
     "turnStartLat": 48.00578180896243,
     "turnStartLon": 19.215087890625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
+  },
+  {
+    "id": "iiv213-1782503817838-0",
+    "nation": "hungarian rebels",
+    "branch": "army",
+    "name": "Károlyi Sándor's Army",
+    "strength": 12000,
+    "commander": "Károlyi Sándor",
+    "lat": 47.040247304779435,
+    "lon": 21.928710937500004,
+    "turnStartLat": 47.040247304779435,
+    "turnStartLon": 21.928710937500004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   }
