@@ -45,7 +45,7 @@
     "id": "RadetzkyNTW-1782179541988-1",
     "nation": "austria",
     "branch": "army",
-    "name": "Army of the Habsburgs (Entrenched)",
+    "name": "Army of the Habsburgs (Entrenched, Occupying Hungary)",
     "strength": 40000,
     "commander": "",
     "lat": 46.354510837365254,
@@ -90,11 +90,11 @@
     "name": "Army of Transylvania",
     "strength": 11000,
     "commander": "",
-    "lat": 45.85200486113122,
-    "lon": 24.521484375000004,
+    "lat": 46.807579571992385,
+    "lon": 24.19189453125,
     "turnStartLat": 46.69463741012488,
     "turnStartLon": 24.675342007279323,
-    "kmMovedThisTurn": 94.43971186120865,
+    "kmMovedThisTurn": 203.66642828639456,
     "createdAtTurn": 21
   },
   {
