@@ -1183,35 +1183,35 @@
     ],
     [
       295,
-      "austria"
+      "hungarian rebels"
     ],
     [
       296,
-      "austria"
+      "hungarian rebels"
     ],
     [
       297,
-      "austria"
+      "hungarian rebels"
     ],
     [
       298,
-      "austria"
+      "hungarian rebels"
     ],
     [
       299,
-      "austria"
+      "hungarian rebels"
     ],
     [
       300,
-      "austria"
+      "hungarian rebels"
     ],
     [
       301,
-      "austria"
+      "hungarian rebels"
     ],
     [
       302,
-      "austria"
+      "hungarian rebels"
     ],
     [
       303,
@@ -1235,7 +1235,7 @@
     ],
     [
       308,
-      "austria"
+      "hungarian rebels"
     ],
     [
       309,
@@ -1247,7 +1247,7 @@
     ],
     [
       311,
-      "austria"
+      "hungarian rebels"
     ],
     [
       312,
@@ -1371,11 +1371,11 @@
     ],
     [
       342,
-      "austria"
+      "hungarian rebels"
     ],
     [
       343,
-      "austria"
+      "hungarian rebels"
     ],
     [
       344,
@@ -1855,7 +1855,7 @@
     ],
     [
       463,
-      "austria"
+      "hungarian rebels"
     ],
     [
       464,
@@ -1863,15 +1863,15 @@
     ],
     [
       465,
-      "austria"
+      "hungarian rebels"
     ],
     [
       466,
-      "austria"
+      "hungarian rebels"
     ],
     [
       467,
-      "austria"
+      "hungarian rebels"
     ],
     [
       468,
@@ -1975,7 +1975,7 @@
     ],
     [
       493,
-      "austria"
+      "hungarian rebels"
     ],
     [
       494,
@@ -3295,7 +3295,7 @@
     ],
     [
       823,
-      "austria"
+      "hungarian rebels"
     ],
     [
       824,
@@ -3331,7 +3331,7 @@
     ],
     [
       832,
-      "austria"
+      "hungarian rebels"
     ],
     [
       833,
@@ -3351,19 +3351,19 @@
     ],
     [
       837,
-      "austria"
+      "hungarian rebels"
     ],
     [
       838,
-      "austria"
+      "hungarian rebels"
     ],
     [
       839,
-      "austria"
+      "hungarian rebels"
     ],
     [
       840,
-      "austria"
+      "hungarian rebels"
     ],
     [
       841,
@@ -3447,7 +3447,7 @@
     ],
     [
       861,
-      "austria"
+      "hungarian rebels"
     ],
     [
       862,
@@ -3455,7 +3455,7 @@
     ],
     [
       863,
-      "austria"
+      "hungarian rebels"
     ],
     [
       864,
@@ -3563,7 +3563,7 @@
     ],
     [
       890,
-      "austria"
+      "hungarian rebels"
     ],
     [
       891,
@@ -13827,15 +13827,15 @@
     ],
     [
       3456,
-      "austria"
+      "hungarian rebels"
     ],
     [
       3457,
-      "austria"
+      "hungarian rebels"
     ],
     [
       3458,
-      "austria"
+      "hungarian rebels"
     ],
     [
       3459,
@@ -13887,11 +13887,11 @@
     ],
     [
       3471,
-      "austria"
+      "hungarian rebels"
     ],
     [
       3472,
-      "austria"
+      "hungarian rebels"
     ],
     [
       3473,
@@ -17155,7 +17155,7 @@
     ],
     [
       4288,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4289,
@@ -17183,19 +17183,19 @@
     ],
     [
       4295,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4296,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4297,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4298,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4299,
@@ -17551,15 +17551,15 @@
     ],
     [
       4387,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4388,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4389,
-      "austria"
+      "hungarian rebels"
     ],
     [
       4390,
@@ -18486,6 +18486,10 @@
     {
       "name": "hre minor states",
       "color": "#9CB4D6"
+    },
+    {
+      "name": "hungarian rebels",
+      "color": "#b3df72"
     },
     {
       "name": "japan",
