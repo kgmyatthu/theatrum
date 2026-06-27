@@ -6,11 +6,11 @@
     "name": "Rákóczi's Army",
     "strength": 30000,
     "commander": "Francis II Rákóczi",
-    "lat": 47.36904925385858,
-    "lon": 23.774414062500004,
+    "lat": 46.819016766809995,
+    "lon": 24.167175292968754,
     "turnStartLat": 47.36904925385858,
     "turnStartLon": 23.774414062500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 68.00466922119047,
     "createdAtTurn": 23
   },
   {
@@ -48,11 +48,11 @@
     "name": "Kuruc Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 48.00578180896243,
-    "lon": 19.215087890625004,
+    "lat": 48.388979962048026,
+    "lon": 17.924194335937504,
     "turnStartLat": 48.00578180896243,
     "turnStartLon": 19.215087890625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 104.73669851303013,
     "createdAtTurn": 23
   },
   {
