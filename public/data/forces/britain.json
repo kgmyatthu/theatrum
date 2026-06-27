@@ -104,11 +104,11 @@
     "name": "Twin Tower Militia",
     "strength": 800,
     "commander": "O. Sam Benleydon",
-    "lat": 40.99929995938327,
-    "lon": -73.4675699174114,
+    "lat": 36.71094743963078,
+    "lon": -81.35723397540717,
     "turnStartLat": 40.99929995938327,
     "turnStartLon": -73.4675699174114,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 953.0169945870377,
     "createdAtTurn": 23
   },
   {
