@@ -8,9 +8,9 @@
     "commander": "Francis II Rákóczi",
     "lat": 46.819016766809995,
     "lon": 24.167175292968754,
-    "turnStartLat": 47.36904925385858,
-    "turnStartLon": 23.774414062500004,
-    "kmMovedThisTurn": 68.00466922119047,
+    "turnStartLat": 46.819016766809995,
+    "turnStartLon": 24.167175292968754,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 48.388979962048026,
     "lon": 17.924194335937504,
-    "turnStartLat": 48.00578180896243,
-    "turnStartLon": 19.215087890625004,
-    "kmMovedThisTurn": 104.73669851303013,
+    "turnStartLat": 48.388979962048026,
+    "turnStartLon": 17.924194335937504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
