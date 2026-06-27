@@ -90,11 +90,11 @@
     "name": "Army of Transylvania",
     "strength": 11000,
     "commander": "",
-    "lat": 46.807579571992385,
-    "lon": 24.19189453125,
+    "lat": 46.47191632087041,
+    "lon": 23.5601806640625,
     "turnStartLat": 46.807579571992385,
     "turnStartLon": 24.19189453125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 60.98341123167079,
     "createdAtTurn": 21
   },
   {
