@@ -4,13 +4,27 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Crown Army",
-    "strength": 35000,
+    "strength": 31000,
     "commander": "Jan III Sobieski",
-    "lat": 56.42401207702885,
-    "lon": 25.57428896427155,
+    "lat": 57.29685437021898,
+    "lon": 25.642089843750004,
     "turnStartLat": 56.42401207702885,
     "turnStartLon": 25.57428896427155,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 97.143091561228,
     "createdAtTurn": 4
+  },
+  {
+    "id": "AceApache-1782570109100-0",
+    "nation": "poland-lithuania",
+    "branch": "navy",
+    "name": "Polish Grand Fleet",
+    "strength": 10,
+    "commander": "",
+    "lat": 54.749824686927546,
+    "lon": 18.673588571620673,
+    "turnStartLat": 54.749824686927546,
+    "turnStartLon": 18.673588571620673,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 23
   }
 ]
