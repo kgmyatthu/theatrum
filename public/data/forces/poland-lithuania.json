@@ -26,5 +26,61 @@
     "turnStartLon": 18.673588571620673,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 23
+  },
+  {
+    "id": "AceApache-1782588073438-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Sanctimonious Pride",
+    "strength": 30000,
+    "commander": "",
+    "lat": 53.969012350740314,
+    "lon": 27.531738281250004,
+    "turnStartLat": 53.969012350740314,
+    "turnStartLon": 27.531738281250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 24
+  },
+  {
+    "id": "AceApache-1782588081032-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Poland",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.1874047455997,
+    "lon": 21.126708984375,
+    "turnStartLat": 52.1874047455997,
+    "turnStartLon": 21.126708984375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 24
+  },
+  {
+    "id": "AceApache-1782588088090-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of the Holy Cross",
+    "strength": 30000,
+    "commander": "",
+    "lat": 50.035973672195496,
+    "lon": 20.148925781250004,
+    "turnStartLat": 50.035973672195496,
+    "turnStartLon": 20.148925781250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 24
+  },
+  {
+    "id": "AceApache-1782588096728-3",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of the Cossacks",
+    "strength": 30000,
+    "commander": "",
+    "lat": 50.38050249104248,
+    "lon": 30.585937500000004,
+    "turnStartLat": 50.38050249104248,
+    "turnStartLon": 30.585937500000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 24
   }
 ]
