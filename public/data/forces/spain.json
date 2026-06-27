@@ -3,8 +3,8 @@
     "id": "Walrusbear0831-1780786772187-0",
     "nation": "spain",
     "branch": "army",
-    "name": "Army of Flanders",
-    "strength": 20000,
+    "name": "Army of Lowlands",
+    "strength": 35000,
     "commander": "Charles Eugène de Croÿ",
     "lat": 51.024320894109074,
     "lon": 3.7618430703878403,
@@ -68,20 +68,6 @@
     "turnStartLon": 10.520032793283463,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7
-  },
-  {
-    "id": "Walrusbear0831-1780938692168-0",
-    "nation": "spain",
-    "branch": "army",
-    "name": "Ligne's Army",
-    "strength": 15000,
-    "commander": "Albert Charles of Ligne",
-    "lat": 51.203486122632356,
-    "lon": 4.432371137717857,
-    "turnStartLat": 51.203486122632356,
-    "turnStartLon": 4.432371137717857,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
   },
   {
     "id": "Walrusbear0831-1780938796586-0",
