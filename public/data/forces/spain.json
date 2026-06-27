@@ -22,9 +22,9 @@
     "commander": "Baltasar de los Cobos y Luna",
     "lat": 38.36545199665852,
     "lon": -6.135779097676278,
-    "turnStartLat": 34.70291527458085,
-    "turnStartLon": -1.3530562631785872,
-    "kmMovedThisTurn": 590.1288363982868,
+    "turnStartLat": 38.36545199665852,
+    "turnStartLon": -6.135779097676278,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Íñigo Melchor Fernández de Velasco",
     "lat": 36.59717611627249,
     "lon": 3.711662963032723,
-    "turnStartLat": 36.26283641450795,
-    "turnStartLon": 7.402554228901864,
-    "kmMovedThisTurn": 1527.0815577431538,
+    "turnStartLat": 36.59717611627249,
+    "turnStartLon": 3.711662963032723,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -106,9 +106,9 @@
     "commander": "Antonio Merida de La Cruz",
     "lat": 36.558072693393946,
     "lon": -6.5861112624406815,
-    "turnStartLat": 37.50310786229262,
-    "turnStartLon": 5.996882915496827,
-    "kmMovedThisTurn": 1122.768342971032,
+    "turnStartLat": 36.558072693393946,
+    "turnStartLon": -6.5861112624406815,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -134,9 +134,9 @@
     "commander": "Manuel Estaban de Soler y Roca",
     "lat": 39.512321195609786,
     "lon": 2.442913725972176,
-    "turnStartLat": 37.95424425819618,
-    "turnStartLon": 9.379104226827623,
-    "kmMovedThisTurn": 625.8992204620623,
+    "turnStartLat": 39.512321195609786,
+    "turnStartLon": 2.442913725972176,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Luigi Antonio di Potenza",
     "lat": 38.43049394536135,
     "lon": 13.675564527511597,
-    "turnStartLat": 37.252829290728386,
-    "turnStartLon": 11.47573471069336,
-    "kmMovedThisTurn": 233.36127859385542,
+    "turnStartLat": 38.43049394536135,
+    "turnStartLon": 13.675564527511597,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
