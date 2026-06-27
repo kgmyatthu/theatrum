@@ -174,11 +174,11 @@
     "name": "Czech Reservists",
     "strength": 25000,
     "commander": "",
-    "lat": 48.74170087976542,
-    "lon": 19.16015625,
+    "lat": 48.58205840283824,
+    "lon": 18.682250976562504,
     "turnStartLat": 49.2032427441791,
     "turnStartLon": 16.622314453125004,
-    "kmMovedThisTurn": 192.20618787280827,
+    "kmMovedThisTurn": 232.67662369514844,
     "createdAtTurn": 23
   },
   {
@@ -188,11 +188,11 @@
     "name": "Austrian Reservists",
     "strength": 25000,
     "commander": "",
-    "lat": 46.475699386607516,
-    "lon": 20.544433593750004,
+    "lat": 46.830133640447414,
+    "lon": 20.703735351562504,
     "turnStartLat": 47.724544549099676,
     "turnStartLon": 17.259521484375004,
-    "kmMovedThisTurn": 284.75782366944486,
+    "kmMovedThisTurn": 326.0020444236089,
     "createdAtTurn": 23
   }
 ]
