@@ -1,61 +1,5 @@
 [
   {
-    "id": "yellowwithblue-1780920781751-1",
-    "nation": "netherlands",
-    "branch": "army",
-    "name": "Anglo-Dutch Main Army",
-    "strength": 50000,
-    "commander": "William III",
-    "lat": 51.45742980658968,
-    "lon": 4.350585937500001,
-    "turnStartLat": 51.45742980658968,
-    "turnStartLon": 4.350585937500001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yellowwithblue-1780921002979-5",
-    "nation": "netherlands",
-    "branch": "army",
-    "name": "Army of the Reserve",
-    "strength": 15000,
-    "commander": "Menno von Coehoorn",
-    "lat": 51.436888577204996,
-    "lon": 5.234985351562501,
-    "turnStartLat": 51.436888577204996,
-    "turnStartLon": 5.234985351562501,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yellowwithblue-1780921045498-6",
-    "nation": "netherlands",
-    "branch": "army",
-    "name": "Army of Maastricht and Venlo",
-    "strength": 10000,
-    "commander": "Athlone",
-    "lat": 51.10697105503078,
-    "lon": 5.855712890625,
-    "turnStartLat": 51.10697105503078,
-    "turnStartLon": 5.855712890625,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yellowwithblue-1780921124468-7",
-    "nation": "netherlands",
-    "branch": "army",
-    "name": "Other Dutch field forces",
-    "strength": 15000,
-    "commander": "Holstein-Plon",
-    "lat": 52.133488040771496,
-    "lon": 5.5426025390625,
-    "turnStartLat": 52.133488040771496,
-    "turnStartLon": 5.5426025390625,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
     "id": "yellowwithblue-1780921966962-10",
     "nation": "netherlands",
     "branch": "navy",
@@ -110,5 +54,19 @@
     "turnStartLon": -68.82934570312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "yellowwithblue-1782648243441-1",
+    "nation": "netherlands",
+    "branch": "army",
+    "name": "Dutch Estates Atmy",
+    "strength": 50000,
+    "commander": "Estates",
+    "lat": 51.590722643120166,
+    "lon": 5.031738281250001,
+    "turnStartLat": 51.590722643120166,
+    "turnStartLon": 5.031738281250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 25
   }
 ]
