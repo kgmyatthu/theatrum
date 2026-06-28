@@ -4,7 +4,7 @@
     "nation": "denmark",
     "branch": "navy",
     "name": "Danish Royal Navy (SOTL Only)",
-    "strength": 33,
+    "strength": 39,
     "commander": "Christopher Ernst von Stöcken",
     "lat": 55.67487416557884,
     "lon": 12.642517089843752,
@@ -20,11 +20,11 @@
     "name": "Army at Jylland",
     "strength": 40000,
     "commander": "Frederick IV",
-    "lat": 55.10980079314383,
-    "lon": 9.363098144531252,
+    "lat": 54.171836830044185,
+    "lon": 9.797851704061033,
     "turnStartLat": 55.10980079314383,
     "turnStartLon": 9.363098144531252,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 107.98309318078226,
     "createdAtTurn": 0
   },
   {
@@ -90,11 +90,11 @@
     "name": "Militia of Denmark (Raised)",
     "strength": 10000,
     "commander": "Local Kapitan",
-    "lat": 57.0138234576524,
-    "lon": 9.95635986328125,
+    "lat": 56.338817405709634,
+    "lon": 9.477050453424456,
     "turnStartLat": 57.0138234576524,
     "turnStartLon": 9.95635986328125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 80.56550471207615,
     "createdAtTurn": 0
   },
   {
