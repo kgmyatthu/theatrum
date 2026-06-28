@@ -48,11 +48,11 @@
     "name": "Army of Poland",
     "strength": 30000,
     "commander": "",
-    "lat": 52.1874047455997,
-    "lon": 21.126708984375,
+    "lat": 55.61558902526749,
+    "lon": 25.86181640625,
     "turnStartLat": 52.1874047455997,
     "turnStartLon": 21.126708984375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 491.23950576409294,
     "createdAtTurn": 24
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of the Holy Cross",
     "strength": 30000,
     "commander": "",
-    "lat": 50.035973672195496,
-    "lon": 20.148925781250004,
+    "lat": 55.801280971180454,
+    "lon": 22.03857421875,
     "turnStartLat": 50.035973672195496,
     "turnStartLon": 20.148925781250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 653.4060648061006,
     "createdAtTurn": 24
   },
   {
