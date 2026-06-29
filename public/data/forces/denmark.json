@@ -22,9 +22,9 @@
     "commander": "Frederick IV",
     "lat": 54.171836830044185,
     "lon": 9.797851704061033,
-    "turnStartLat": 55.10980079314383,
-    "turnStartLon": 9.363098144531252,
-    "kmMovedThisTurn": 107.98309318078226,
+    "turnStartLat": 54.171836830044185,
+    "turnStartLon": 9.797851704061033,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Local Kapitan",
     "lat": 56.338817405709634,
     "lon": 9.477050453424456,
-    "turnStartLat": 57.0138234576524,
-    "turnStartLon": 9.95635986328125,
-    "kmMovedThisTurn": 80.56550471207615,
+    "turnStartLat": 56.338817405709634,
+    "turnStartLon": 9.477050453424456,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
