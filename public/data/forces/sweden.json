@@ -202,11 +202,11 @@
     "name": "Crown Prince Gustav, Carl Gustav Rehnskiöld",
     "strength": 32000,
     "commander": "Carl Gustav Rehnskiöld",
-    "lat": 56.935984453472,
-    "lon": 23.752441406250004,
+    "lat": 59.38917842312835,
+    "lon": 26.806640625000004,
     "turnStartLat": 56.87899917413543,
     "turnStartLon": 23.70849609375,
-    "kmMovedThisTurn": 6.875250253589459,
+    "kmMovedThisTurn": 333.1514015235944,
     "createdAtTurn": 25
   },
   {
