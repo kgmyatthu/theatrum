@@ -20,11 +20,11 @@
     "name": "Magnus Stenbock",
     "strength": 34000,
     "commander": "Magnus Stenbock",
-    "lat": 53.350551318399916,
-    "lon": 10.79132080078125,
+    "lat": 54.03519940151581,
+    "lon": 12.145385742187502,
     "turnStartLat": 53.350551318399916,
     "turnStartLon": 10.79132080078125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 237.33289703639662,
     "createdAtTurn": 21
   },
   {
@@ -70,31 +70,17 @@
     "createdAtTurn": 22
   },
   {
-    "id": "yellowwithblue-1782416517407-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Garrison of Stettin",
-    "strength": 7000,
-    "commander": "Meijerfeldt",
-    "lat": 53.42590083926602,
-    "lon": 14.490966796875002,
-    "turnStartLat": 53.42590083926602,
-    "turnStartLon": 14.490966796875002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 22
-  },
-  {
     "id": "yellowwithblue-1782416573551-2",
     "nation": "sweden",
     "branch": "army",
     "name": "Carl Gustaf Dücker",
     "strength": 11000,
     "commander": "Carl Gustaf Dücker",
-    "lat": 53.261927278592474,
-    "lon": 10.9478759765625,
+    "lat": 54.064223894211956,
+    "lon": 13.224792480468752,
     "turnStartLat": 53.261927278592474,
     "turnStartLon": 10.9478759765625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 186.09349699075753,
     "createdAtTurn": 22
   },
   {
