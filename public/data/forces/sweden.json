@@ -22,9 +22,9 @@
     "commander": "Magnus Stenbock",
     "lat": 54.03519940151581,
     "lon": 12.145385742187502,
-    "turnStartLat": 53.350551318399916,
-    "turnStartLon": 10.79132080078125,
-    "kmMovedThisTurn": 237.33289703639662,
+    "turnStartLat": 54.03519940151581,
+    "turnStartLon": 12.145385742187502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Armfeldt mogging",
     "lat": 59.115358240617745,
     "lon": 11.445007324218752,
-    "turnStartLat": 59.119587533804996,
-    "turnStartLon": 11.744384765625002,
-    "kmMovedThisTurn": 17.093148834574674,
+    "turnStartLat": 59.115358240617745,
+    "turnStartLon": 11.445007324218752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Carl Gustaf Dücker",
     "lat": 54.064223894211956,
     "lon": 13.224792480468752,
-    "turnStartLat": 53.261927278592474,
-    "turnStartLon": 10.9478759765625,
-    "kmMovedThisTurn": 186.09349699075753,
+    "turnStartLat": 54.064223894211956,
+    "turnStartLon": 13.224792480468752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 22
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Carl Gustaf Armfeldt",
     "lat": 59.2700913303328,
     "lon": 11.634521484375,
-    "turnStartLat": 60.673178565817715,
-    "turnStartLon": 12.7880859375,
-    "kmMovedThisTurn": 177.12867106151467,
+    "turnStartLat": 59.2700913303328,
+    "turnStartLon": 11.634521484375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Carl Gustav Rehnskiöld",
     "lat": 59.38917842312835,
     "lon": 26.806640625000004,
-    "turnStartLat": 56.87899917413543,
-    "turnStartLon": 23.70849609375,
-    "kmMovedThisTurn": 333.1514015235944,
+    "turnStartLat": 59.38917842312835,
+    "turnStartLon": 26.806640625000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -204,9 +204,9 @@
     "commander": "Erik Sparre",
     "lat": 59.19281238381205,
     "lon": 26.630859375,
-    "turnStartLat": 60.21799073323445,
-    "turnStartLon": 24.906005859375004,
-    "kmMovedThisTurn": 194.26553501657526,
+    "turnStartLat": 59.19281238381205,
+    "turnStartLon": 26.630859375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Erik Sparre",
     "lat": 58.06625598088457,
     "lon": 25.86181640625,
-    "turnStartLat": 58.03718871323224,
-    "turnStartLon": 25.697021484375004,
-    "kmMovedThisTurn": 180.0642401211246,
+    "turnStartLat": 58.06625598088457,
+    "turnStartLon": 25.86181640625,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
