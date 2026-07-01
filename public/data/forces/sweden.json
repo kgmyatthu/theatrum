@@ -188,11 +188,11 @@
     "name": "Carl Gustav Rehnskiöld",
     "strength": 32000,
     "commander": "Carl Gustav Rehnskiöld",
-    "lat": 57.37986126240442,
-    "lon": 25.026855468750004,
+    "lat": 58.93016945988605,
+    "lon": 25.801391601562504,
     "turnStartLat": 57.37986126240442,
     "turnStartLon": 25.026855468750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 178.27184900246166,
     "createdAtTurn": 25
   },
   {
@@ -202,11 +202,11 @@
     "name": "Erik Sparre",
     "strength": 15001,
     "commander": "Erik Sparre",
-    "lat": 59.19281238381205,
-    "lon": 26.630859375,
+    "lat": 58.95850707383433,
+    "lon": 26.147460937500004,
     "turnStartLat": 59.19281238381205,
     "turnStartLon": 26.630859375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 37.9712373641969,
     "createdAtTurn": 25
   },
   {
@@ -214,13 +214,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Carl Gustaf Örnestedt",
-    "strength": 8000,
-    "commander": "Erik Sparre",
-    "lat": 58.06625598088457,
-    "lon": 25.86181640625,
+    "strength": 4000,
+    "commander": "Carl Gustaf Örnestedt",
+    "lat": 57.707082064445736,
+    "lon": 24.757690429687504,
     "turnStartLat": 58.06625598088457,
     "turnStartLon": 25.86181640625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 76.51448636766955,
     "createdAtTurn": 25
   },
   {
