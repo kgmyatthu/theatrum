@@ -20,11 +20,11 @@
     "name": "Magnus Stenbock",
     "strength": 34000,
     "commander": "Magnus Stenbock",
-    "lat": 53.79983975761748,
-    "lon": 11.773223876953127,
+    "lat": 53.782803690625954,
+    "lon": 11.384582519531252,
     "turnStartLat": 53.79983975761748,
     "turnStartLon": 11.773223876953127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 31.562051858019693,
     "createdAtTurn": 21
   },
   {
@@ -76,11 +76,11 @@
     "name": "Carl Gustaf Dücker",
     "strength": 11000,
     "commander": "Carl Gustaf Dücker",
-    "lat": 53.88410690807865,
-    "lon": 13.6944580078125,
+    "lat": 53.87196345747181,
+    "lon": 11.928405761718752,
     "turnStartLat": 53.88410690807865,
     "turnStartLon": 13.6944580078125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 116.63070105461983,
     "createdAtTurn": 22
   },
   {
@@ -230,11 +230,11 @@
     "name": "Philip Bogislaus von Schwerin",
     "strength": 8000,
     "commander": "Philip Bogislaus von Schwerin",
-    "lat": 54.32613472050531,
-    "lon": 13.268737792968752,
+    "lat": 54.131868892085436,
+    "lon": 12.914428710937502,
     "turnStartLat": 54.32613472050531,
     "turnStartLon": 13.268737792968752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 31.574960584566874,
     "createdAtTurn": 28
   },
   {
@@ -328,11 +328,11 @@
     "name": "Crown Prince Gustav",
     "strength": 8000,
     "commander": "Crown Prince Gustav",
-    "lat": 54.14071899775583,
-    "lon": 12.652130126953127,
+    "lat": 53.81362579235237,
+    "lon": 11.519165039062502,
     "turnStartLat": 54.14071899775583,
     "turnStartLon": 12.652130126953127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 84.43148480204579,
     "createdAtTurn": 29
   }
 ]
