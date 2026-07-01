@@ -31,14 +31,14 @@
     "id": "yourlocalgeobukseon-1780936104527-2",
     "nation": "britain",
     "branch": "army",
-    "name": "Crown Army",
+    "name": "King’s Army",
     "strength": 44000,
     "commander": "Edward VII",
-    "lat": 53.41048189781044,
-    "lon": 9.515689076775345,
+    "lat": 53.184093126101644,
+    "lon": 10.836181640624988,
     "turnStartLat": 53.41048189781044,
     "turnStartLon": 9.515689076775345,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 91.29373638856063,
     "createdAtTurn": 8
   },
   {
