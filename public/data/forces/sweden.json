@@ -144,7 +144,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Garrison of Riga",
-    "strength": 6000,
+    "strength": 15000,
     "commander": "Adam Ludwig Lewenhaupt",
     "lat": 56.9149999944584,
     "lon": 24.071044921875004,
@@ -188,11 +188,11 @@
     "name": "Carl Gustav Rehnskiöld",
     "strength": 32000,
     "commander": "Carl Gustav Rehnskiöld",
-    "lat": 58.93016945988605,
-    "lon": 25.801391601562504,
+    "lat": 58.45348121776238,
+    "lon": 25.466308593750004,
     "turnStartLat": 57.37986126240442,
     "turnStartLon": 25.026855468750004,
-    "kmMovedThisTurn": 178.27184900246166,
+    "kmMovedThisTurn": 234.70245804141857,
     "createdAtTurn": 25
   },
   {
@@ -202,11 +202,11 @@
     "name": "Erik Sparre",
     "strength": 15001,
     "commander": "Erik Sparre",
-    "lat": 58.95850707383433,
-    "lon": 26.147460937500004,
+    "lat": 58.7111891496366,
+    "lon": 25.960693359375004,
     "turnStartLat": 59.19281238381205,
     "turnStartLon": 26.630859375,
-    "kmMovedThisTurn": 37.9712373641969,
+    "kmMovedThisTurn": 67.49718803121033,
     "createdAtTurn": 25
   },
   {
@@ -216,11 +216,11 @@
     "name": "Carl Gustaf Örnestedt",
     "strength": 4000,
     "commander": "Carl Gustaf Örnestedt",
-    "lat": 57.707082064445736,
-    "lon": 24.757690429687504,
+    "lat": 57.856443276115066,
+    "lon": 25.191650390625004,
     "turnStartLat": 58.06625598088457,
     "turnStartLon": 25.86181640625,
-    "kmMovedThisTurn": 76.51448636766955,
+    "kmMovedThisTurn": 107.13603403665257,
     "createdAtTurn": 25
   },
   {
