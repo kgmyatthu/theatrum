@@ -196,16 +196,16 @@
     "createdAtTurn": 23
   },
   {
-    "id": "RadetzkyNTW-1782855454011-0",
+    "id": "RadetzkyNTW-1782867804284-0",
     "nation": "austria",
     "branch": "army",
-    "name": "Reicharmee",
+    "name": "Reichsarmee",
     "strength": 40000,
     "commander": "",
-    "lat": 50.72254683363231,
-    "lon": 11.162109375,
-    "turnStartLat": 50.72254683363231,
-    "turnStartLon": 11.162109375,
+    "lat": 53.067626642387374,
+    "lon": 12.48046875,
+    "turnStartLat": 53.067626642387374,
+    "turnStartLon": 12.48046875,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 29
   }
