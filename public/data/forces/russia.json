@@ -20,11 +20,11 @@
     "name": "II Army",
     "strength": 52000,
     "commander": "Patrick Gordon",
-    "lat": 58.151776926262656,
-    "lon": 26.91422088375235,
+    "lat": 57.69663095838678,
+    "lon": 24.762903794134527,
     "turnStartLat": 58.151776926262656,
     "turnStartLon": 26.91422088375235,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 136.73587712794955,
     "createdAtTurn": 2
   },
   {
@@ -110,5 +110,19 @@
     "turnStartLon": 107.62737519443606,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 11
+  },
+  {
+    "id": "Nindze2009-1782916402592-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "VII Host",
+    "strength": 30000,
+    "commander": "",
+    "lat": 58.53462285574626,
+    "lon": 31.25831003713871,
+    "turnStartLat": 58.53462285574626,
+    "turnStartLon": 31.25831003713871,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 31
   }
 ]
