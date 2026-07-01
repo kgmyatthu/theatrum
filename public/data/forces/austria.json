@@ -188,11 +188,11 @@
     "name": "Reichsarmee",
     "strength": 40000,
     "commander": "",
-    "lat": 53.067626642387374,
-    "lon": 12.48046875,
+    "lat": 53.474969999548556,
+    "lon": 11.683959960937502,
     "turnStartLat": 53.067626642387374,
     "turnStartLon": 12.48046875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 69.69126324572399,
     "createdAtTurn": 29
   }
 ]
