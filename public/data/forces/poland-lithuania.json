@@ -20,11 +20,11 @@
     "name": "Polish Grand Fleet",
     "strength": 10,
     "commander": "",
-    "lat": 54.749824686927546,
-    "lon": 18.673588571620673,
+    "lat": 54.48927688971807,
+    "lon": 14.304706897450881,
     "turnStartLat": 54.749824686927546,
     "turnStartLon": 18.673588571620673,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 282.71955072342894,
     "createdAtTurn": 23
   },
   {
@@ -66,20 +66,6 @@
     "lon": 22.03857421875,
     "turnStartLat": 55.801280971180454,
     "turnStartLon": 22.03857421875,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 24
-  },
-  {
-    "id": "AceApache-1782588096728-3",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of the Cossacks",
-    "strength": 30000,
-    "commander": "",
-    "lat": 50.38050249104248,
-    "lon": 30.585937500000004,
-    "turnStartLat": 50.38050249104248,
-    "turnStartLon": 30.585937500000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 24
   }
