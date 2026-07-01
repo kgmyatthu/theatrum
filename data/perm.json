@@ -43,10 +43,29 @@
   },
   "yourlocalgeobukseon": {
     "role": "player",
-    "nation": "denmark"
+    "nation": "britain"
   },
   "Nindze2009": {
     "role": "player",
-    "nation": "ottoman empire"
+    "nation": "russia"
+  },
+  "Celavetex": {
+    "role": "player",
+    "nation": "britain"
+  },
+  "pointerayden-ship-it": {
+    "role": "admin"
+  },
+  "JimmyTheSturgeon": {
+    "role": "player",
+    "nation": "spain"
+  },
+  "TripleToffical67": {
+    "role": "player",
+    "nation": "netherlands"
+  },
+  "cucumberplane2771": {
+    "role": "player",
+    "nation": "venice"
   }
 }

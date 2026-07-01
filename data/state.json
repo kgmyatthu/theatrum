@@ -3,11 +3,11 @@
   "ownerships": [
     [
       0,
-      "spain"
+      "france"
     ],
     [
       1,
-      "spain"
+      "france"
     ],
     [
       2,
@@ -19,39 +19,39 @@
     ],
     [
       4,
-      "spain"
+      "france"
     ],
     [
       5,
-      "spain"
+      "unclaimed"
     ],
     [
       6,
-      "spain"
+      "france"
     ],
     [
       7,
-      "spain"
+      "france"
     ],
     [
       8,
-      "spain"
+      "france"
     ],
     [
       9,
-      "spain"
+      "france"
     ],
     [
       10,
-      "spain"
+      "france"
     ],
     [
       11,
-      "spain"
+      "france"
     ],
     [
       12,
-      "spain"
+      "france"
     ],
     [
       13,
@@ -67,7 +67,7 @@
     ],
     [
       16,
-      "unclaimed"
+      "yarkent khanate"
     ],
     [
       17,
@@ -119,15 +119,15 @@
     ],
     [
       29,
-      "unclaimed"
+      "oman"
     ],
     [
       30,
-      "unclaimed"
+      "oman"
     ],
     [
       31,
-      "unclaimed"
+      "oman"
     ],
     [
       32,
@@ -183,7 +183,7 @@
     ],
     [
       45,
-      "unclaimed"
+      "oman"
     ],
     [
       46,
@@ -191,11 +191,11 @@
     ],
     [
       47,
-      "netherlands"
+      "unclaimed"
     ],
     [
       48,
-      "netherlands"
+      "unclaimed"
     ],
     [
       49,
@@ -231,11 +231,11 @@
     ],
     [
       57,
-      "spain"
+      "france"
     ],
     [
       58,
-      "spain"
+      "france"
     ],
     [
       59,
@@ -295,7 +295,7 @@
     ],
     [
       73,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       74,
@@ -319,7 +319,7 @@
     ],
     [
       79,
-      "russia"
+      "poland-lithuania"
     ],
     [
       80,
@@ -419,7 +419,7 @@
     ],
     [
       104,
-      "spain"
+      "france"
     ],
     [
       105,
@@ -471,7 +471,7 @@
     ],
     [
       117,
-      "hre minor states"
+      "saxony"
     ],
     [
       118,
@@ -483,7 +483,7 @@
     ],
     [
       120,
-      "hre minor states"
+      "bavaria"
     ],
     [
       121,
@@ -515,7 +515,7 @@
     ],
     [
       128,
-      "sweden"
+      "contested territories"
     ],
     [
       129,
@@ -527,7 +527,7 @@
     ],
     [
       131,
-      "sweden"
+      "contested territories"
     ],
     [
       132,
@@ -575,15 +575,15 @@
     ],
     [
       143,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       144,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       145,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       146,
@@ -591,7 +591,7 @@
     ],
     [
       147,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       148,
@@ -599,15 +599,15 @@
     ],
     [
       149,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       150,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       151,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       152,
@@ -615,35 +615,35 @@
     ],
     [
       153,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       154,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       155,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       156,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       157,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       158,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       159,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       160,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       161,
@@ -691,7 +691,7 @@
     ],
     [
       172,
-      "denmark"
+      "contested territories"
     ],
     [
       173,
@@ -787,15 +787,15 @@
     ],
     [
       196,
-      "spain"
+      "france"
     ],
     [
       197,
-      "spain"
+      "france"
     ],
     [
       198,
-      "hre minor states"
+      "sweden"
     ],
     [
       199,
@@ -803,11 +803,11 @@
     ],
     [
       200,
-      "spain"
+      "france"
     ],
     [
       201,
-      "spain"
+      "france"
     ],
     [
       202,
@@ -815,7 +815,7 @@
     ],
     [
       203,
-      "spain"
+      "france"
     ],
     [
       204,
@@ -823,7 +823,7 @@
     ],
     [
       205,
-      "spain"
+      "france"
     ],
     [
       206,
@@ -835,23 +835,23 @@
     ],
     [
       208,
-      "spain"
+      "austria"
     ],
     [
       209,
-      "spain"
+      "france"
     ],
     [
       210,
-      "ottoman empire"
+      "russia"
     ],
     [
       211,
-      "persia"
+      "caucasian states"
     ],
     [
       212,
-      "russia"
+      "caucasian states"
     ],
     [
       213,
@@ -859,7 +859,7 @@
     ],
     [
       214,
-      "persia"
+      "caucasian states"
     ],
     [
       215,
@@ -867,11 +867,11 @@
     ],
     [
       216,
-      "persia"
+      "caucasian states"
     ],
     [
       217,
-      "persia"
+      "caucasian states"
     ],
     [
       218,
@@ -879,7 +879,7 @@
     ],
     [
       219,
-      "persia"
+      "caucasian states"
     ],
     [
       220,
@@ -887,7 +887,7 @@
     ],
     [
       221,
-      "persia"
+      "caucasian states"
     ],
     [
       222,
@@ -947,7 +947,7 @@
     ],
     [
       236,
-      "persia"
+      "caucasian states"
     ],
     [
       237,
@@ -971,7 +971,7 @@
     ],
     [
       242,
-      "persia"
+      "caucasian states"
     ],
     [
       243,
@@ -979,7 +979,7 @@
     ],
     [
       244,
-      "persia"
+      "caucasian states"
     ],
     [
       245,
@@ -1023,19 +1023,19 @@
     ],
     [
       255,
-      "persia"
+      "caucasian states"
     ],
     [
       256,
-      "persia"
+      "caucasian states"
     ],
     [
       257,
-      "persia"
+      "caucasian states"
     ],
     [
       258,
-      "persia"
+      "ottoman empire"
     ],
     [
       259,
@@ -1055,27 +1055,27 @@
     ],
     [
       263,
-      "netherlands"
+      "unclaimed"
     ],
     [
       264,
-      "portugal"
+      "unclaimed"
     ],
     [
       265,
-      "netherlands"
+      "unclaimed"
     ],
     [
       266,
-      "netherlands"
+      "unclaimed"
     ],
     [
       267,
-      "portugal"
+      "unclaimed"
     ],
     [
       268,
-      "denmark"
+      "holstein-gottorp"
     ],
     [
       269,
@@ -1083,11 +1083,11 @@
     ],
     [
       270,
-      "spain"
+      "unclaimed"
     ],
     [
       271,
-      "portugal"
+      "unclaimed"
     ],
     [
       272,
@@ -1095,11 +1095,11 @@
     ],
     [
       273,
-      "ottoman empire"
+      "france"
     ],
     [
       274,
-      "ottoman empire"
+      "france"
     ],
     [
       275,
@@ -1107,111 +1107,111 @@
     ],
     [
       276,
-      "persia"
+      "caucasian states"
     ],
     [
       277,
-      "persia"
+      "caucasian states"
     ],
     [
       278,
-      "persia"
+      "caucasian states"
     ],
     [
       279,
-      "persia"
+      "caucasian states"
     ],
     [
       280,
-      "persia"
+      "caucasian states"
     ],
     [
       281,
-      "persia"
+      "caucasian states"
     ],
     [
       282,
-      "persia"
+      "ottoman empire"
     ],
     [
       283,
-      "persia"
+      "ottoman empire"
     ],
     [
       284,
-      "persia"
+      "ottoman empire"
     ],
     [
       285,
-      "persia"
+      "ottoman empire"
     ],
     [
       286,
-      "persia"
+      "ottoman empire"
     ],
     [
       287,
-      "persia"
+      "ottoman empire"
     ],
     [
       288,
-      "persia"
+      "ottoman empire"
     ],
     [
       289,
-      "persia"
+      "ottoman empire"
     ],
     [
       290,
-      "persia"
+      "ottoman empire"
     ],
     [
       291,
-      "persia"
+      "ottoman empire"
     ],
     [
       292,
-      "persia"
+      "ottoman empire"
     ],
     [
       293,
-      "persia"
+      "ottoman empire"
     ],
     [
       294,
-      "persia"
+      "ottoman empire"
     ],
     [
       295,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       296,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       297,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       298,
-      "ottoman empire"
+      "austria"
     ],
     [
       299,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       300,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       301,
-      "ottoman empire"
+      "austria"
     ],
     [
       302,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       303,
@@ -1235,7 +1235,7 @@
     ],
     [
       308,
-      "austria"
+      "hungarian rebels"
     ],
     [
       309,
@@ -1243,11 +1243,11 @@
     ],
     [
       310,
-      "austria"
+      "poland-lithuania"
     ],
     [
       311,
-      "austria"
+      "hungarian rebels"
     ],
     [
       312,
@@ -1371,11 +1371,11 @@
     ],
     [
       342,
-      "austria"
+      "hungarian rebels"
     ],
     [
       343,
-      "austria"
+      "hungarian rebels"
     ],
     [
       344,
@@ -1571,11 +1571,11 @@
     ],
     [
       392,
-      "spain"
+      "austria"
     ],
     [
       393,
-      "spain"
+      "austria"
     ],
     [
       394,
@@ -1583,7 +1583,7 @@
     ],
     [
       395,
-      "spain"
+      "switzerland"
     ],
     [
       396,
@@ -1599,7 +1599,7 @@
     ],
     [
       399,
-      "persia"
+      "ottoman empire"
     ],
     [
       400,
@@ -1655,7 +1655,7 @@
     ],
     [
       413,
-      "netherlands"
+      "austria"
     ],
     [
       414,
@@ -1815,35 +1815,35 @@
     ],
     [
       453,
-      "persia"
+      "caucasian states"
     ],
     [
       454,
-      "persia"
+      "caucasian states"
     ],
     [
       455,
-      "persia"
+      "russia"
     ],
     [
       456,
-      "persia"
+      "russia"
     ],
     [
       457,
-      "persia"
+      "caucasian states"
     ],
     [
       458,
-      "persia"
+      "caucasian states"
     ],
     [
       459,
-      "persia"
+      "caucasian states"
     ],
     [
       460,
-      "persia"
+      "caucasian states"
     ],
     [
       461,
@@ -1851,27 +1851,27 @@
     ],
     [
       462,
-      "persia"
+      "caucasian states"
     ],
     [
       463,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       464,
-      "ottoman empire"
+      "austria"
     ],
     [
       465,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       466,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       467,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       468,
@@ -1959,11 +1959,11 @@
     ],
     [
       489,
-      "ottoman empire"
+      "austria"
     ],
     [
       490,
-      "ottoman empire"
+      "austria"
     ],
     [
       491,
@@ -1971,11 +1971,11 @@
     ],
     [
       492,
-      "ottoman empire"
+      "austria"
     ],
     [
       493,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       494,
@@ -1983,7 +1983,7 @@
     ],
     [
       495,
-      "austria"
+      "venice"
     ],
     [
       496,
@@ -2023,7 +2023,7 @@
     ],
     [
       505,
-      "ottoman empire"
+      "unclaimed"
     ],
     [
       506,
@@ -2299,7 +2299,7 @@
     ],
     [
       574,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       575,
@@ -2311,19 +2311,19 @@
     ],
     [
       577,
-      "spain"
+      "france"
     ],
     [
       578,
-      "spain"
+      "france"
     ],
     [
       579,
-      "spain"
+      "france"
     ],
     [
       580,
-      "spain"
+      "france"
     ],
     [
       581,
@@ -2379,7 +2379,7 @@
     ],
     [
       594,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       595,
@@ -2407,7 +2407,7 @@
     ],
     [
       601,
-      "austria"
+      "venice"
     ],
     [
       602,
@@ -2499,15 +2499,15 @@
     ],
     [
       624,
-      "spain"
+      "france"
     ],
     [
       625,
-      "spain"
+      "france"
     ],
     [
       626,
-      "spain"
+      "france"
     ],
     [
       627,
@@ -2515,7 +2515,7 @@
     ],
     [
       628,
-      "spain"
+      "france"
     ],
     [
       629,
@@ -2527,11 +2527,11 @@
     ],
     [
       631,
-      "spain"
+      "france"
     ],
     [
       632,
-      "spain"
+      "france"
     ],
     [
       633,
@@ -2539,23 +2539,23 @@
     ],
     [
       634,
-      "spain"
+      "france"
     ],
     [
       635,
-      "spain"
+      "france"
     ],
     [
       636,
-      "spain"
+      "france"
     ],
     [
       637,
-      "spain"
+      "france"
     ],
     [
       638,
-      "spain"
+      "france"
     ],
     [
       639,
@@ -2735,7 +2735,7 @@
     ],
     [
       683,
-      "austria"
+      "venice"
     ],
     [
       684,
@@ -2851,99 +2851,99 @@
     ],
     [
       712,
-      "spain"
+      "france"
     ],
     [
       713,
-      "spain"
+      "france"
     ],
     [
       714,
-      "spain"
+      "france"
     ],
     [
       715,
-      "spain"
+      "france"
     ],
     [
       716,
-      "spain"
+      "france"
     ],
     [
       717,
-      "spain"
+      "france"
     ],
     [
       718,
-      "spain"
+      "france"
     ],
     [
       719,
-      "spain"
+      "france"
     ],
     [
       720,
-      "spain"
+      "france"
     ],
     [
       721,
-      "spain"
+      "france"
     ],
     [
       722,
-      "spain"
+      "france"
     ],
     [
       723,
-      "spain"
+      "france"
     ],
     [
       724,
-      "spain"
+      "france"
     ],
     [
       725,
-      "spain"
+      "france"
     ],
     [
       726,
-      "spain"
+      "france"
     ],
     [
       727,
-      "spain"
+      "france"
     ],
     [
       728,
-      "spain"
+      "france"
     ],
     [
       729,
-      "spain"
+      "france"
     ],
     [
       730,
-      "spain"
+      "france"
     ],
     [
       731,
-      "spain"
+      "france"
     ],
     [
       732,
-      "spain"
+      "france"
     ],
     [
       733,
-      "spain"
+      "france"
     ],
     [
       734,
-      "spain"
+      "france"
     ],
     [
       735,
-      "spain"
+      "france"
     ],
     [
       736,
@@ -2955,23 +2955,23 @@
     ],
     [
       738,
-      "spain"
+      "unclaimed"
     ],
     [
       739,
-      "spain"
+      "unclaimed"
     ],
     [
       740,
-      "spain"
+      "france"
     ],
     [
       741,
-      "spain"
+      "unclaimed"
     ],
     [
       742,
-      "spain"
+      "france"
     ],
     [
       743,
@@ -2979,55 +2979,55 @@
     ],
     [
       744,
-      "spain"
+      "france"
     ],
     [
       745,
-      "spain"
+      "france"
     ],
     [
       746,
-      "spain"
+      "france"
     ],
     [
       747,
-      "spain"
+      "france"
     ],
     [
       748,
-      "spain"
+      "france"
     ],
     [
       749,
-      "spain"
+      "france"
     ],
     [
       750,
-      "spain"
+      "france"
     ],
     [
       751,
-      "spain"
+      "unclaimed"
     ],
     [
       752,
-      "portugal"
+      "unclaimed"
     ],
     [
       753,
-      "spain"
+      "unclaimed"
     ],
     [
       754,
-      "spain"
+      "unclaimed"
     ],
     [
       755,
-      "spain"
+      "unclaimed"
     ],
     [
       756,
-      "spain"
+      "unclaimed"
     ],
     [
       757,
@@ -3043,7 +3043,7 @@
     ],
     [
       760,
-      "spain"
+      "france"
     ],
     [
       761,
@@ -3051,11 +3051,11 @@
     ],
     [
       762,
-      "spain"
+      "france"
     ],
     [
       763,
-      "spain"
+      "france"
     ],
     [
       764,
@@ -3143,7 +3143,7 @@
     ],
     [
       785,
-      "spain"
+      "france"
     ],
     [
       786,
@@ -3263,7 +3263,7 @@
     ],
     [
       815,
-      "ottoman empire"
+      "austria"
     ],
     [
       816,
@@ -3271,7 +3271,7 @@
     ],
     [
       817,
-      "ottoman empire"
+      "austria"
     ],
     [
       818,
@@ -3283,7 +3283,7 @@
     ],
     [
       820,
-      "austria"
+      "venice"
     ],
     [
       821,
@@ -3291,11 +3291,11 @@
     ],
     [
       822,
-      "ottoman empire"
+      "austria"
     ],
     [
       823,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       824,
@@ -3311,11 +3311,11 @@
     ],
     [
       827,
-      "austria"
+      "venice"
     ],
     [
       828,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       829,
@@ -3331,7 +3331,7 @@
     ],
     [
       832,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       833,
@@ -3351,7 +3351,7 @@
     ],
     [
       837,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       838,
@@ -3359,23 +3359,23 @@
     ],
     [
       839,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       840,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       841,
-      "austria"
+      "hungarian rebels"
     ],
     [
       842,
-      "ottoman empire"
+      "austria"
     ],
     [
       843,
-      "ottoman empire"
+      "austria"
     ],
     [
       844,
@@ -3447,7 +3447,7 @@
     ],
     [
       861,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       862,
@@ -3455,7 +3455,7 @@
     ],
     [
       863,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       864,
@@ -3563,7 +3563,7 @@
     ],
     [
       890,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       891,
@@ -3571,7 +3571,7 @@
     ],
     [
       892,
-      "ottoman empire"
+      "poland-lithuania"
     ],
     [
       893,
@@ -3675,7 +3675,7 @@
     ],
     [
       918,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       919,
@@ -3691,7 +3691,7 @@
     ],
     [
       922,
-      "ottoman empire"
+      "russia"
     ],
     [
       923,
@@ -3699,15 +3699,15 @@
     ],
     [
       924,
-      "ottoman empire"
+      "russia"
     ],
     [
       925,
-      "ottoman empire"
+      "russia"
     ],
     [
       926,
-      "persia"
+      "ottoman empire"
     ],
     [
       927,
@@ -3715,55 +3715,55 @@
     ],
     [
       928,
-      "persia"
+      "ottoman empire"
     ],
     [
       929,
-      "persia"
+      "ottoman empire"
     ],
     [
       930,
-      "persia"
+      "ottoman empire"
     ],
     [
       931,
-      "persia"
+      "caucasian states"
     ],
     [
       932,
-      "persia"
+      "caucasian states"
     ],
     [
       933,
-      "persia"
+      "ottoman empire"
     ],
     [
       934,
-      "persia"
+      "ottoman empire"
     ],
     [
       935,
-      "persia"
+      "ottoman empire"
     ],
     [
       936,
-      "persia"
+      "ottoman empire"
     ],
     [
       937,
-      "persia"
+      "ottoman empire"
     ],
     [
       938,
-      "persia"
+      "caucasian states"
     ],
     [
       939,
-      "persia"
+      "ottoman empire"
     ],
     [
       940,
-      "persia"
+      "ottoman empire"
     ],
     [
       941,
@@ -3807,19 +3807,19 @@
     ],
     [
       951,
-      "russia"
+      "china"
     ],
     [
       952,
-      "russia"
+      "china"
     ],
     [
       953,
-      "russia"
+      "china"
     ],
     [
       954,
-      "russia"
+      "china"
     ],
     [
       955,
@@ -3903,11 +3903,11 @@
     ],
     [
       975,
-      "persia"
+      "contested territories"
     ],
     [
       976,
-      "persia"
+      "contested territories"
     ],
     [
       977,
@@ -3959,11 +3959,11 @@
     ],
     [
       989,
-      "persia"
+      "ottoman empire"
     ],
     [
       990,
-      "persia"
+      "ottoman empire"
     ],
     [
       991,
@@ -3971,7 +3971,7 @@
     ],
     [
       992,
-      "persia"
+      "ottoman empire"
     ],
     [
       993,
@@ -3983,7 +3983,7 @@
     ],
     [
       995,
-      "persia"
+      "ottoman empire"
     ],
     [
       996,
@@ -4927,11 +4927,11 @@
     ],
     [
       1231,
-      "unclaimed"
+      "oman"
     ],
     [
       1232,
-      "portugal"
+      "unclaimed"
     ],
     [
       1233,
@@ -4939,7 +4939,7 @@
     ],
     [
       1234,
-      "spain"
+      "france"
     ],
     [
       1235,
@@ -4959,7 +4959,7 @@
     ],
     [
       1239,
-      "britain"
+      "unclaimed"
     ],
     [
       1240,
@@ -4967,7 +4967,7 @@
     ],
     [
       1241,
-      "unclaimed"
+      "france"
     ],
     [
       1242,
@@ -4975,19 +4975,19 @@
     ],
     [
       1243,
-      "unclaimed"
+      "britain"
     ],
     [
       1244,
-      "france"
+      "britain"
     ],
     [
       1245,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       1246,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       1247,
@@ -4999,7 +4999,7 @@
     ],
     [
       1249,
-      "france"
+      "britain"
     ],
     [
       1250,
@@ -5015,47 +5015,47 @@
     ],
     [
       1253,
-      "france"
+      "britain"
     ],
     [
       1254,
-      "spain"
+      "unclaimed"
     ],
     [
       1255,
-      "spain"
+      "france"
     ],
     [
       1256,
-      "spain"
+      "france"
     ],
     [
       1257,
-      "spain"
+      "unclaimed"
     ],
     [
       1258,
-      "spain"
+      "france"
     ],
     [
       1259,
-      "spain"
+      "france"
     ],
     [
       1260,
-      "spain"
+      "unclaimed"
     ],
     [
       1261,
-      "spain"
+      "france"
     ],
     [
       1262,
-      "spain"
+      "france"
     ],
     [
       1263,
-      "spain"
+      "france"
     ],
     [
       1264,
@@ -5063,7 +5063,7 @@
     ],
     [
       1265,
-      "spain"
+      "france"
     ],
     [
       1266,
@@ -5075,323 +5075,323 @@
     ],
     [
       1268,
-      "spain"
+      "france"
     ],
     [
       1269,
-      "spain"
+      "france"
     ],
     [
       1270,
-      "spain"
+      "france"
     ],
     [
       1271,
-      "spain"
+      "france"
     ],
     [
       1272,
-      "spain"
+      "france"
     ],
     [
       1273,
-      "spain"
+      "france"
     ],
     [
       1274,
-      "spain"
+      "france"
     ],
     [
       1275,
-      "spain"
+      "france"
     ],
     [
       1276,
-      "spain"
+      "france"
     ],
     [
       1277,
-      "spain"
+      "france"
     ],
     [
       1278,
-      "spain"
+      "france"
     ],
     [
       1279,
-      "spain"
+      "france"
     ],
     [
       1280,
-      "spain"
+      "france"
     ],
     [
       1281,
-      "spain"
+      "france"
     ],
     [
       1282,
-      "spain"
+      "france"
     ],
     [
       1283,
-      "spain"
+      "france"
     ],
     [
       1284,
-      "spain"
+      "france"
     ],
     [
       1285,
-      "spain"
+      "france"
     ],
     [
       1286,
-      "spain"
+      "france"
     ],
     [
       1287,
-      "spain"
+      "france"
     ],
     [
       1288,
-      "spain"
+      "france"
     ],
     [
       1289,
-      "spain"
+      "france"
     ],
     [
       1290,
-      "spain"
+      "france"
     ],
     [
       1291,
-      "netherlands"
+      "france"
     ],
     [
       1292,
-      "spain"
+      "france"
     ],
     [
       1293,
-      "spain"
+      "france"
     ],
     [
       1294,
-      "portugal"
+      "unclaimed"
     ],
     [
       1295,
-      "spain"
+      "unclaimed"
     ],
     [
       1296,
-      "spain"
+      "unclaimed"
     ],
     [
       1297,
-      "spain"
+      "unclaimed"
     ],
     [
       1298,
-      "spain"
+      "unclaimed"
     ],
     [
       1299,
-      "spain"
+      "france"
     ],
     [
       1300,
-      "spain"
+      "france"
     ],
     [
       1301,
-      "spain"
+      "france"
     ],
     [
       1302,
-      "spain"
+      "france"
     ],
     [
       1303,
-      "spain"
+      "france"
     ],
     [
       1304,
-      "spain"
+      "france"
     ],
     [
       1305,
-      "spain"
+      "france"
     ],
     [
       1306,
-      "spain"
+      "france"
     ],
     [
       1307,
-      "spain"
+      "france"
     ],
     [
       1308,
-      "spain"
+      "france"
     ],
     [
       1309,
-      "spain"
+      "unclaimed"
     ],
     [
       1310,
-      "spain"
+      "unclaimed"
     ],
     [
       1311,
-      "spain"
+      "unclaimed"
     ],
     [
       1312,
-      "spain"
+      "unclaimed"
     ],
     [
       1313,
-      "portugal"
+      "unclaimed"
     ],
     [
       1314,
-      "spain"
+      "unclaimed"
     ],
     [
       1315,
-      "portugal"
+      "unclaimed"
     ],
     [
       1316,
-      "spain"
+      "unclaimed"
     ],
     [
       1317,
-      "spain"
+      "france"
     ],
     [
       1318,
-      "spain"
+      "france"
     ],
     [
       1319,
-      "spain"
+      "france"
     ],
     [
       1320,
-      "spain"
+      "france"
     ],
     [
       1321,
-      "spain"
+      "france"
     ],
     [
       1322,
-      "spain"
+      "unclaimed"
     ],
     [
       1323,
-      "spain"
+      "france"
     ],
     [
       1324,
-      "spain"
+      "france"
     ],
     [
       1325,
-      "spain"
+      "france"
     ],
     [
       1326,
-      "spain"
+      "france"
     ],
     [
       1327,
-      "spain"
+      "unclaimed"
     ],
     [
       1328,
-      "spain"
+      "unclaimed"
     ],
     [
       1329,
-      "spain"
+      "unclaimed"
     ],
     [
       1330,
-      "spain"
+      "unclaimed"
     ],
     [
       1331,
-      "spain"
+      "unclaimed"
     ],
     [
       1332,
-      "spain"
+      "unclaimed"
     ],
     [
       1333,
-      "spain"
+      "unclaimed"
     ],
     [
       1334,
-      "spain"
+      "unclaimed"
     ],
     [
       1335,
-      "spain"
+      "france"
     ],
     [
       1336,
-      "spain"
+      "unclaimed"
     ],
     [
       1337,
-      "spain"
+      "unclaimed"
     ],
     [
       1338,
-      "spain"
+      "unclaimed"
     ],
     [
       1339,
-      "spain"
+      "france"
     ],
     [
       1340,
-      "spain"
+      "france"
     ],
     [
       1341,
-      "spain"
+      "france"
     ],
     [
       1342,
-      "spain"
+      "france"
     ],
     [
       1343,
-      "spain"
+      "france"
     ],
     [
       1344,
-      "spain"
+      "france"
     ],
     [
       1345,
-      "spain"
+      "france"
     ],
     [
       1346,
-      "spain"
+      "france"
     ],
     [
       1347,
-      "spain"
+      "unclaimed"
     ],
     [
       1348,
@@ -5459,19 +5459,19 @@
     ],
     [
       1364,
-      "persia"
+      "contested territories"
     ],
     [
       1365,
-      "persia"
+      "mughal empire"
     ],
     [
       1366,
-      "persia"
+      "mughal empire"
     ],
     [
       1367,
-      "persia"
+      "contested territories"
     ],
     [
       1368,
@@ -5511,15 +5511,15 @@
     ],
     [
       1377,
-      "persia"
+      "contested territories"
     ],
     [
       1378,
-      "persia"
+      "contested territories"
     ],
     [
       1379,
-      "persia"
+      "mughal empire"
     ],
     [
       1380,
@@ -5563,7 +5563,7 @@
     ],
     [
       1390,
-      "kazakh khanates"
+      "kalmyk khanate"
     ],
     [
       1391,
@@ -5571,7 +5571,7 @@
     ],
     [
       1392,
-      "russia"
+      "kalmyk khanate"
     ],
     [
       1393,
@@ -5579,7 +5579,7 @@
     ],
     [
       1394,
-      "kazakh khanates"
+      "kalmyk khanate"
     ],
     [
       1395,
@@ -5599,7 +5599,7 @@
     ],
     [
       1399,
-      "ottoman empire"
+      "unclaimed"
     ],
     [
       1400,
@@ -5611,7 +5611,7 @@
     ],
     [
       1402,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       1403,
@@ -5627,7 +5627,7 @@
     ],
     [
       1406,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       1407,
@@ -5655,7 +5655,7 @@
     ],
     [
       1413,
-      "ottoman empire"
+      "unclaimed"
     ],
     [
       1414,
@@ -5667,7 +5667,7 @@
     ],
     [
       1416,
-      "yemen"
+      "ottoman empire"
     ],
     [
       1417,
@@ -5703,7 +5703,7 @@
     ],
     [
       1425,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       1426,
@@ -5711,7 +5711,7 @@
     ],
     [
       1427,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       1428,
@@ -5743,7 +5743,7 @@
     ],
     [
       1435,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       1436,
@@ -5763,47 +5763,47 @@
     ],
     [
       1440,
-      "ottoman empire"
+      "france"
     ],
     [
       1441,
-      "ottoman empire"
+      "france"
     ],
     [
       1442,
-      "ottoman empire"
+      "france"
     ],
     [
       1443,
-      "ottoman empire"
+      "france"
     ],
     [
       1444,
-      "ottoman empire"
+      "france"
     ],
     [
       1445,
-      "ottoman empire"
+      "france"
     ],
     [
       1446,
-      "ottoman empire"
+      "france"
     ],
     [
       1447,
-      "ottoman empire"
+      "france"
     ],
     [
       1448,
-      "ottoman empire"
+      "france"
     ],
     [
       1449,
-      "ottoman empire"
+      "france"
     ],
     [
       1450,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       1451,
@@ -5863,7 +5863,7 @@
     ],
     [
       1465,
-      "unclaimed"
+      "oman"
     ],
     [
       1466,
@@ -5887,7 +5887,7 @@
     ],
     [
       1471,
-      "unclaimed"
+      "oman"
     ],
     [
       1472,
@@ -6419,15 +6419,15 @@
     ],
     [
       1604,
-      "sweden"
+      "contested territories"
     ],
     [
       1605,
-      "sweden"
+      "contested territories"
     ],
     [
       1606,
-      "sweden"
+      "contested territories"
     ],
     [
       1607,
@@ -6495,11 +6495,11 @@
     ],
     [
       1623,
-      "ottoman empire"
+      "france"
     ],
     [
       1624,
-      "ottoman empire"
+      "france"
     ],
     [
       1625,
@@ -6523,7 +6523,7 @@
     ],
     [
       1630,
-      "russia"
+      "kazakh khanates"
     ],
     [
       1631,
@@ -6559,11 +6559,11 @@
     ],
     [
       1639,
-      "ottoman empire"
+      "russia"
     ],
     [
       1640,
-      "ottoman empire"
+      "russia"
     ],
     [
       1641,
@@ -6591,27 +6591,27 @@
     ],
     [
       1647,
-      "spain"
+      "france"
     ],
     [
       1648,
-      "spain"
+      "france"
     ],
     [
       1649,
-      "spain"
+      "france"
     ],
     [
       1650,
-      "spain"
+      "france"
     ],
     [
       1651,
-      "spain"
+      "france"
     ],
     [
       1652,
-      "spain"
+      "france"
     ],
     [
       1653,
@@ -6735,7 +6735,7 @@
     ],
     [
       1683,
-      "spain"
+      "france"
     ],
     [
       1684,
@@ -6743,7 +6743,7 @@
     ],
     [
       1685,
-      "spain"
+      "france"
     ],
     [
       1686,
@@ -6755,7 +6755,7 @@
     ],
     [
       1688,
-      "spain"
+      "france"
     ],
     [
       1689,
@@ -6763,7 +6763,7 @@
     ],
     [
       1690,
-      "spain"
+      "france"
     ],
     [
       1691,
@@ -6775,11 +6775,11 @@
     ],
     [
       1693,
-      "spain"
+      "france"
     ],
     [
       1694,
-      "spain"
+      "france"
     ],
     [
       1695,
@@ -6839,15 +6839,15 @@
     ],
     [
       1709,
-      "spain"
+      "france"
     ],
     [
       1710,
-      "spain"
+      "france"
     ],
     [
       1711,
-      "spain"
+      "france"
     ],
     [
       1712,
@@ -6883,7 +6883,7 @@
     ],
     [
       1720,
-      "persia"
+      "caucasian states"
     ],
     [
       1721,
@@ -6903,7 +6903,7 @@
     ],
     [
       1725,
-      "spain"
+      "denmark"
     ],
     [
       1726,
@@ -6955,11 +6955,11 @@
     ],
     [
       1738,
-      "spain"
+      "france"
     ],
     [
       1739,
-      "spain"
+      "france"
     ],
     [
       1740,
@@ -6967,19 +6967,19 @@
     ],
     [
       1741,
-      "spain"
+      "france"
     ],
     [
       1742,
-      "spain"
+      "france"
     ],
     [
       1743,
-      "spain"
+      "france"
     ],
     [
       1744,
-      "spain"
+      "france"
     ],
     [
       1745,
@@ -6999,47 +6999,47 @@
     ],
     [
       1749,
-      "unclaimed"
+      "avic"
     ],
     [
       1750,
-      "unclaimed"
+      "avic"
     ],
     [
       1751,
-      "unclaimed"
+      "avic"
     ],
     [
       1752,
-      "unclaimed"
+      "avic"
     ],
     [
       1753,
-      "unclaimed"
+      "avic"
     ],
     [
       1754,
-      "unclaimed"
+      "avic"
     ],
     [
       1755,
-      "unclaimed"
+      "avic"
     ],
     [
       1756,
-      "unclaimed"
+      "avic"
     ],
     [
       1757,
-      "unclaimed"
+      "avic"
     ],
     [
       1758,
-      "unclaimed"
+      "avic"
     ],
     [
       1759,
-      "unclaimed"
+      "avic"
     ],
     [
       1760,
@@ -7103,15 +7103,15 @@
     ],
     [
       1775,
-      "unclaimed"
+      "oman"
     ],
     [
       1776,
-      "unclaimed"
+      "oman"
     ],
     [
       1777,
-      "unclaimed"
+      "oman"
     ],
     [
       1778,
@@ -7159,7 +7159,7 @@
     ],
     [
       1789,
-      "spain"
+      "france"
     ],
     [
       1790,
@@ -7171,7 +7171,7 @@
     ],
     [
       1792,
-      "spain"
+      "france"
     ],
     [
       1793,
@@ -7227,27 +7227,27 @@
     ],
     [
       1806,
-      "spain"
+      "france"
     ],
     [
       1807,
-      "spain"
+      "france"
     ],
     [
       1808,
-      "spain"
+      "france"
     ],
     [
       1809,
-      "spain"
+      "france"
     ],
     [
       1810,
-      "spain"
+      "france"
     ],
     [
       1811,
-      "spain"
+      "france"
     ],
     [
       1812,
@@ -7255,35 +7255,35 @@
     ],
     [
       1813,
-      "spain"
+      "france"
     ],
     [
       1814,
-      "spain"
+      "france"
     ],
     [
       1815,
-      "spain"
+      "france"
     ],
     [
       1816,
-      "spain"
+      "france"
     ],
     [
       1817,
-      "spain"
+      "france"
     ],
     [
       1818,
-      "spain"
+      "france"
     ],
     [
       1819,
-      "spain"
+      "france"
     ],
     [
       1820,
-      "spain"
+      "france"
     ],
     [
       1821,
@@ -7319,7 +7319,7 @@
     ],
     [
       1829,
-      "netherlands"
+      "france"
     ],
     [
       1830,
@@ -7335,7 +7335,7 @@
     ],
     [
       1833,
-      "spain"
+      "france"
     ],
     [
       1834,
@@ -7539,91 +7539,91 @@
     ],
     [
       1884,
-      "spain"
+      "france"
     ],
     [
       1885,
-      "spain"
+      "france"
     ],
     [
       1886,
-      "spain"
+      "france"
     ],
     [
       1887,
-      "spain"
+      "france"
     ],
     [
       1888,
-      "spain"
+      "france"
     ],
     [
       1889,
-      "spain"
+      "france"
     ],
     [
       1890,
-      "spain"
+      "france"
     ],
     [
       1891,
-      "spain"
+      "france"
     ],
     [
       1892,
-      "spain"
+      "france"
     ],
     [
       1893,
-      "spain"
+      "france"
     ],
     [
       1894,
-      "spain"
+      "france"
     ],
     [
       1895,
-      "spain"
+      "france"
     ],
     [
       1896,
-      "spain"
+      "france"
     ],
     [
       1897,
-      "spain"
+      "france"
     ],
     [
       1898,
-      "spain"
+      "france"
     ],
     [
       1899,
-      "spain"
+      "france"
     ],
     [
       1900,
-      "spain"
+      "france"
     ],
     [
       1901,
-      "spain"
+      "france"
     ],
     [
       1902,
-      "netherlands"
+      "france"
     ],
     [
       1903,
-      "netherlands"
+      "unclaimed"
     ],
     [
       1904,
-      "netherlands"
+      "france"
     ],
     [
       1905,
-      "netherlands"
+      "france"
     ],
     [
       1906,
@@ -7719,95 +7719,95 @@
     ],
     [
       1929,
-      "ottoman empire"
+      "france"
     ],
     [
       1930,
-      "ottoman empire"
+      "france"
     ],
     [
       1931,
-      "ottoman empire"
+      "france"
     ],
     [
       1932,
-      "ottoman empire"
+      "france"
     ],
     [
       1933,
-      "ottoman empire"
+      "france"
     ],
     [
       1934,
-      "ottoman empire"
+      "france"
     ],
     [
       1935,
-      "ottoman empire"
+      "france"
     ],
     [
       1936,
-      "ottoman empire"
+      "france"
     ],
     [
       1937,
-      "ottoman empire"
+      "france"
     ],
     [
       1938,
-      "ottoman empire"
+      "france"
     ],
     [
       1939,
-      "ottoman empire"
+      "france"
     ],
     [
       1940,
-      "ottoman empire"
+      "france"
     ],
     [
       1941,
-      "ottoman empire"
+      "france"
     ],
     [
       1942,
-      "ottoman empire"
+      "france"
     ],
     [
       1943,
-      "ottoman empire"
+      "france"
     ],
     [
       1944,
-      "ottoman empire"
+      "france"
     ],
     [
       1945,
-      "ottoman empire"
+      "france"
     ],
     [
       1946,
-      "ottoman empire"
+      "spain"
     ],
     [
       1947,
-      "ottoman empire"
+      "france"
     ],
     [
       1948,
-      "ottoman empire"
+      "france"
     ],
     [
       1949,
-      "ottoman empire"
+      "france"
     ],
     [
       1950,
-      "ottoman empire"
+      "france"
     ],
     [
       1951,
-      "ottoman empire"
+      "france"
     ],
     [
       1952,
@@ -7855,7 +7855,7 @@
     ],
     [
       1963,
-      "unclaimed"
+      "france"
     ],
     [
       1964,
@@ -7931,7 +7931,7 @@
     ],
     [
       1982,
-      "unclaimed"
+      "denmark"
     ],
     [
       1983,
@@ -7951,7 +7951,7 @@
     ],
     [
       1987,
-      "spain"
+      "france"
     ],
     [
       1988,
@@ -8071,7 +8071,7 @@
     ],
     [
       2017,
-      "spain"
+      "france"
     ],
     [
       2018,
@@ -8107,15 +8107,15 @@
     ],
     [
       2026,
-      "spain"
+      "france"
     ],
     [
       2027,
-      "unclaimed"
+      "oman"
     ],
     [
       2028,
-      "unclaimed"
+      "oman"
     ],
     [
       2029,
@@ -8123,7 +8123,7 @@
     ],
     [
       2030,
-      "unclaimed"
+      "oman"
     ],
     [
       2031,
@@ -8151,7 +8151,7 @@
     ],
     [
       2037,
-      "yemen"
+      "ottoman empire"
     ],
     [
       2038,
@@ -8219,7 +8219,7 @@
     ],
     [
       2054,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       2055,
@@ -8227,7 +8227,7 @@
     ],
     [
       2056,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       2057,
@@ -8295,11 +8295,11 @@
     ],
     [
       2073,
-      "spain"
+      "france"
     ],
     [
       2074,
-      "unclaimed"
+      "france"
     ],
     [
       2075,
@@ -8311,11 +8311,11 @@
     ],
     [
       2077,
-      "spain"
+      "france"
     ],
     [
       2078,
-      "unclaimed"
+      "britain"
     ],
     [
       2079,
@@ -8359,19 +8359,19 @@
     ],
     [
       2089,
-      "spain"
+      "france"
     ],
     [
       2090,
-      "spain"
+      "france"
     ],
     [
       2091,
-      "spain"
+      "france"
     ],
     [
       2092,
-      "spain"
+      "france"
     ],
     [
       2093,
@@ -8383,83 +8383,83 @@
     ],
     [
       2095,
-      "spain"
+      "france"
     ],
     [
       2096,
-      "spain"
+      "france"
     ],
     [
       2097,
-      "spain"
+      "france"
     ],
     [
       2098,
-      "spain"
+      "france"
     ],
     [
       2099,
-      "spain"
+      "france"
     ],
     [
       2100,
-      "spain"
+      "france"
     ],
     [
       2101,
-      "spain"
+      "france"
     ],
     [
       2102,
-      "spain"
+      "france"
     ],
     [
       2103,
-      "spain"
+      "france"
     ],
     [
       2104,
-      "spain"
+      "france"
     ],
     [
       2105,
-      "spain"
+      "france"
     ],
     [
       2106,
-      "spain"
+      "france"
     ],
     [
       2107,
-      "spain"
+      "france"
     ],
     [
       2108,
-      "spain"
+      "france"
     ],
     [
       2109,
-      "spain"
+      "france"
     ],
     [
       2110,
-      "spain"
+      "france"
     ],
     [
       2111,
-      "spain"
+      "france"
     ],
     [
       2112,
-      "spain"
+      "france"
     ],
     [
       2113,
-      "spain"
+      "france"
     ],
     [
       2114,
-      "spain"
+      "france"
     ],
     [
       2115,
@@ -8479,11 +8479,11 @@
     ],
     [
       2119,
-      "persia"
+      "contested territories"
     ],
     [
       2120,
-      "persia"
+      "mughal empire"
     ],
     [
       2121,
@@ -8691,7 +8691,7 @@
     ],
     [
       2172,
-      "britain"
+      "unclaimed"
     ],
     [
       2173,
@@ -8699,7 +8699,7 @@
     ],
     [
       2174,
-      "france"
+      "britain"
     ],
     [
       2175,
@@ -8967,7 +8967,7 @@
     ],
     [
       2241,
-      "mysore"
+      "france"
     ],
     [
       2242,
@@ -8975,7 +8975,7 @@
     ],
     [
       2243,
-      "russia"
+      "unclaimed"
     ],
     [
       2244,
@@ -9087,15 +9087,15 @@
     ],
     [
       2271,
-      "ottoman empire"
+      "russia"
     ],
     [
       2272,
-      "ottoman empire"
+      "russia"
     ],
     [
       2273,
-      "ottoman empire"
+      "poland-lithuania"
     ],
     [
       2274,
@@ -9467,7 +9467,7 @@
     ],
     [
       2366,
-      "britain"
+      "unclaimed"
     ],
     [
       2367,
@@ -9475,47 +9475,47 @@
     ],
     [
       2368,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2369,
-      "sweden"
+      "contested territories"
     ],
     [
       2370,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2371,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2372,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2373,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2374,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2375,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2376,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2377,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2378,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2379,
@@ -9803,7 +9803,7 @@
     ],
     [
       2450,
-      "austria"
+      "venice"
     ],
     [
       2451,
@@ -9855,83 +9855,83 @@
     ],
     [
       2463,
-      "spain"
+      "france"
     ],
     [
       2464,
-      "spain"
+      "france"
     ],
     [
       2465,
-      "spain"
+      "france"
     ],
     [
       2466,
-      "spain"
+      "france"
     ],
     [
       2467,
-      "spain"
+      "france"
     ],
     [
       2468,
-      "spain"
+      "france"
     ],
     [
       2469,
-      "spain"
+      "france"
     ],
     [
       2470,
-      "spain"
+      "france"
     ],
     [
       2471,
-      "spain"
+      "france"
     ],
     [
       2472,
-      "spain"
+      "france"
     ],
     [
       2473,
-      "spain"
+      "france"
     ],
     [
       2474,
-      "spain"
+      "france"
     ],
     [
       2475,
-      "spain"
+      "france"
     ],
     [
       2476,
-      "spain"
+      "france"
     ],
     [
       2477,
-      "spain"
+      "france"
     ],
     [
       2478,
-      "spain"
+      "france"
     ],
     [
       2479,
-      "spain"
+      "france"
     ],
     [
       2480,
-      "spain"
+      "france"
     ],
     [
       2481,
-      "spain"
+      "france"
     ],
     [
       2482,
-      "spain"
+      "france"
     ],
     [
       2483,
@@ -9999,43 +9999,43 @@
     ],
     [
       2499,
-      "spain"
+      "france"
     ],
     [
       2500,
-      "spain"
+      "france"
     ],
     [
       2501,
-      "spain"
+      "france"
     ],
     [
       2502,
-      "spain"
+      "france"
     ],
     [
       2503,
-      "spain"
+      "france"
     ],
     [
       2504,
-      "spain"
+      "france"
     ],
     [
       2505,
-      "spain"
+      "france"
     ],
     [
       2506,
-      "spain"
+      "france"
     ],
     [
       2507,
-      "spain"
+      "france"
     ],
     [
       2508,
-      "spain"
+      "france"
     ],
     [
       2509,
@@ -10067,23 +10067,23 @@
     ],
     [
       2516,
-      "spain"
+      "france"
     ],
     [
       2517,
-      "spain"
+      "france"
     ],
     [
       2518,
-      "spain"
+      "france"
     ],
     [
       2519,
-      "spain"
+      "france"
     ],
     [
       2520,
-      "spain"
+      "france"
     ],
     [
       2521,
@@ -10159,11 +10159,11 @@
     ],
     [
       2539,
-      "sweden"
+      "contested territories"
     ],
     [
       2540,
-      "hre minor states"
+      "denmark"
     ],
     [
       2541,
@@ -10179,11 +10179,11 @@
     ],
     [
       2544,
-      "denmark"
+      "unclaimed"
     ],
     [
       2545,
-      "denmark"
+      "unclaimed"
     ],
     [
       2546,
@@ -10191,7 +10191,7 @@
     ],
     [
       2547,
-      "denmark"
+      "unclaimed"
     ],
     [
       2548,
@@ -10215,7 +10215,7 @@
     ],
     [
       2553,
-      "unclaimed"
+      "seic"
     ],
     [
       2554,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "unclaimed"
+      "seic"
     ],
     [
       2558,
@@ -10247,19 +10247,19 @@
     ],
     [
       2561,
-      "spain"
+      "france"
     ],
     [
       2562,
-      "spain"
+      "france"
     ],
     [
       2563,
-      "spain"
+      "france"
     ],
     [
       2564,
-      "spain"
+      "france"
     ],
     [
       2565,
@@ -10267,51 +10267,51 @@
     ],
     [
       2566,
-      "spain"
+      "france"
     ],
     [
       2567,
-      "spain"
+      "france"
     ],
     [
       2568,
-      "spain"
+      "france"
     ],
     [
       2569,
-      "spain"
+      "france"
     ],
     [
       2570,
-      "spain"
+      "france"
     ],
     [
       2571,
-      "spain"
+      "france"
     ],
     [
       2572,
-      "spain"
+      "france"
     ],
     [
       2573,
-      "spain"
+      "france"
     ],
     [
       2574,
-      "spain"
+      "france"
     ],
     [
       2575,
-      "spain"
+      "france"
     ],
     [
       2576,
-      "spain"
+      "france"
     ],
     [
       2577,
-      "spain"
+      "france"
     ],
     [
       2578,
@@ -10507,7 +10507,7 @@
     ],
     [
       2626,
-      "spain"
+      "france"
     ],
     [
       2627,
@@ -10987,47 +10987,47 @@
     ],
     [
       2746,
-      "persia"
+      "caucasian states"
     ],
     [
       2747,
-      "persia"
+      "russia"
     ],
     [
       2748,
-      "persia"
+      "caucasian states"
     ],
     [
       2749,
-      "persia"
+      "caucasian states"
     ],
     [
       2750,
-      "persia"
+      "caucasian states"
     ],
     [
       2751,
-      "persia"
+      "caucasian states"
     ],
     [
       2752,
-      "persia"
+      "caucasian states"
     ],
     [
       2753,
-      "persia"
+      "ottoman empire"
     ],
     [
       2754,
-      "persia"
+      "ottoman empire"
     ],
     [
       2755,
-      "persia"
+      "ottoman empire"
     ],
     [
       2756,
-      "persia"
+      "ottoman empire"
     ],
     [
       2757,
@@ -11083,19 +11083,19 @@
     ],
     [
       2770,
-      "unclaimed"
+      "seic"
     ],
     [
       2771,
-      "unclaimed"
+      "seic"
     ],
     [
       2772,
-      "unclaimed"
+      "seic"
     ],
     [
       2773,
-      "unclaimed"
+      "seic"
     ],
     [
       2774,
@@ -11107,23 +11107,23 @@
     ],
     [
       2776,
-      "unclaimed"
+      "oman"
     ],
     [
       2777,
-      "unclaimed"
+      "oman"
     ],
     [
       2778,
-      "unclaimed"
+      "oman"
     ],
     [
       2779,
-      "unclaimed"
+      "oman"
     ],
     [
       2780,
-      "unclaimed"
+      "oman"
     ],
     [
       2781,
@@ -11455,7 +11455,7 @@
     ],
     [
       2863,
-      "spain"
+      "france"
     ],
     [
       2864,
@@ -11467,71 +11467,71 @@
     ],
     [
       2866,
-      "ottoman empire"
+      "venice"
     ],
     [
       2867,
-      "spain"
+      "france"
     ],
     [
       2868,
-      "spain"
+      "france"
     ],
     [
       2869,
-      "spain"
+      "france"
     ],
     [
       2870,
-      "spain"
+      "france"
     ],
     [
       2871,
-      "spain"
+      "france"
     ],
     [
       2872,
-      "spain"
+      "france"
     ],
     [
       2873,
-      "spain"
+      "france"
     ],
     [
       2874,
-      "spain"
+      "france"
     ],
     [
       2875,
-      "spain"
+      "france"
     ],
     [
       2876,
-      "spain"
+      "france"
     ],
     [
       2877,
-      "spain"
+      "france"
     ],
     [
       2878,
-      "spain"
+      "france"
     ],
     [
       2879,
-      "spain"
+      "france"
     ],
     [
       2880,
-      "spain"
+      "france"
     ],
     [
       2881,
-      "spain"
+      "france"
     ],
     [
       2882,
-      "spain"
+      "france"
     ],
     [
       2883,
@@ -11675,7 +11675,7 @@
     ],
     [
       2918,
-      "russia"
+      "unclaimed"
     ],
     [
       2919,
@@ -11743,7 +11743,7 @@
     ],
     [
       2935,
-      "unclaimed"
+      "seic"
     ],
     [
       2936,
@@ -12175,7 +12175,7 @@
     ],
     [
       3043,
-      "unclaimed"
+      "seic"
     ],
     [
       3044,
@@ -12839,51 +12839,51 @@
     ],
     [
       3209,
-      "spain"
+      "france"
     ],
     [
       3210,
-      "spain"
+      "france"
     ],
     [
       3211,
-      "spain"
+      "france"
     ],
     [
       3212,
-      "spain"
+      "france"
     ],
     [
       3213,
-      "spain"
+      "france"
     ],
     [
       3214,
-      "spain"
+      "france"
     ],
     [
       3215,
-      "spain"
+      "france"
     ],
     [
       3216,
-      "spain"
+      "france"
     ],
     [
       3217,
-      "spain"
+      "france"
     ],
     [
       3218,
-      "spain"
+      "france"
     ],
     [
       3219,
-      "spain"
+      "france"
     ],
     [
       3220,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       3221,
@@ -12895,31 +12895,31 @@
     ],
     [
       3223,
-      "russia"
+      "zaporozhian hetmanate (rus)"
     ],
     [
       3224,
-      "russia"
+      "poland-lithuania"
     ],
     [
       3225,
-      "russia"
+      "poland-lithuania"
     ],
     [
       3226,
-      "ottoman empire"
+      "france"
     ],
     [
       3227,
-      "ottoman empire"
+      "france"
     ],
     [
       3228,
-      "ottoman empire"
+      "france"
     ],
     [
       3229,
-      "ottoman empire"
+      "france"
     ],
     [
       3230,
@@ -13107,7 +13107,7 @@
     ],
     [
       3276,
-      "unclaimed"
+      "france"
     ],
     [
       3277,
@@ -13115,31 +13115,31 @@
     ],
     [
       3278,
-      "unclaimed"
+      "france"
     ],
     [
       3279,
-      "unclaimed"
+      "france"
     ],
     [
       3280,
-      "unclaimed"
+      "france"
     ],
     [
       3281,
-      "unclaimed"
+      "france"
     ],
     [
       3282,
-      "unclaimed"
+      "france"
     ],
     [
       3283,
-      "unclaimed"
+      "france"
     ],
     [
       3284,
-      "unclaimed"
+      "france"
     ],
     [
       3285,
@@ -13315,11 +13315,11 @@
     ],
     [
       3328,
-      "persia"
+      "ottoman empire"
     ],
     [
       3329,
-      "persia"
+      "ottoman empire"
     ],
     [
       3330,
@@ -13627,7 +13627,7 @@
     ],
     [
       3406,
-      "netherlands"
+      "unclaimed"
     ],
     [
       3407,
@@ -13651,47 +13651,47 @@
     ],
     [
       3412,
-      "spain"
+      "france"
     ],
     [
       3413,
-      "spain"
+      "france"
     ],
     [
       3414,
-      "spain"
+      "france"
     ],
     [
       3415,
-      "spain"
+      "france"
     ],
     [
       3416,
-      "spain"
+      "france"
     ],
     [
       3417,
-      "spain"
+      "france"
     ],
     [
       3418,
-      "spain"
+      "france"
     ],
     [
       3419,
-      "spain"
+      "france"
     ],
     [
       3420,
-      "spain"
+      "france"
     ],
     [
       3421,
-      "spain"
+      "france"
     ],
     [
       3422,
-      "spain"
+      "france"
     ],
     [
       3423,
@@ -13819,7 +13819,7 @@
     ],
     [
       3454,
-      "ottoman empire"
+      "unclaimed"
     ],
     [
       3455,
@@ -13827,15 +13827,15 @@
     ],
     [
       3456,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       3457,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       3458,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       3459,
@@ -13855,7 +13855,7 @@
     ],
     [
       3463,
-      "transylvania"
+      "austria"
     ],
     [
       3464,
@@ -13867,7 +13867,7 @@
     ],
     [
       3466,
-      "transylvania"
+      "austria"
     ],
     [
       3467,
@@ -13879,19 +13879,19 @@
     ],
     [
       3469,
-      "transylvania"
+      "austria"
     ],
     [
       3470,
-      "transylvania"
+      "austria"
     ],
     [
       3471,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       3472,
-      "transylvania"
+      "hungarian rebels"
     ],
     [
       3473,
@@ -13903,7 +13903,7 @@
     ],
     [
       3475,
-      "transylvania"
+      "austria"
     ],
     [
       3476,
@@ -14083,15 +14083,15 @@
     ],
     [
       3520,
-      "persia"
+      "ottoman empire"
     ],
     [
       3521,
-      "persia"
+      "ottoman empire"
     ],
     [
       3522,
-      "persia"
+      "ottoman empire"
     ],
     [
       3523,
@@ -14099,47 +14099,47 @@
     ],
     [
       3524,
-      "persia"
+      "ottoman empire"
     ],
     [
       3525,
-      "persia"
+      "caucasian states"
     ],
     [
       3526,
-      "persia"
+      "caucasian states"
     ],
     [
       3527,
-      "persia"
+      "ottoman empire"
     ],
     [
       3528,
-      "persia"
+      "caucasian states"
     ],
     [
       3529,
-      "persia"
+      "caucasian states"
     ],
     [
       3530,
-      "persia"
+      "caucasian states"
     ],
     [
       3531,
-      "persia"
+      "caucasian states"
     ],
     [
       3532,
-      "persia"
+      "caucasian states"
     ],
     [
       3533,
-      "persia"
+      "caucasian states"
     ],
     [
       3534,
-      "persia"
+      "caucasian states"
     ],
     [
       3535,
@@ -14279,59 +14279,59 @@
     ],
     [
       3569,
-      "spain"
+      "unclaimed"
     ],
     [
       3570,
-      "spain"
+      "france"
     ],
     [
       3571,
-      "spain"
+      "france"
     ],
     [
       3572,
-      "spain"
+      "france"
     ],
     [
       3573,
-      "spain"
+      "france"
     ],
     [
       3574,
-      "spain"
+      "france"
     ],
     [
       3575,
-      "spain"
+      "france"
     ],
     [
       3576,
-      "spain"
+      "france"
     ],
     [
       3577,
-      "spain"
+      "unclaimed"
     ],
     [
       3578,
-      "spain"
+      "france"
     ],
     [
       3579,
-      "spain"
+      "france"
     ],
     [
       3580,
-      "spain"
+      "france"
     ],
     [
       3581,
-      "spain"
+      "france"
     ],
     [
       3582,
-      "spain"
+      "france"
     ],
     [
       3583,
@@ -14339,27 +14339,27 @@
     ],
     [
       3584,
-      "spain"
+      "france"
     ],
     [
       3585,
-      "spain"
+      "france"
     ],
     [
       3586,
-      "spain"
+      "france"
     ],
     [
       3587,
-      "spain"
+      "france"
     ],
     [
       3588,
-      "spain"
+      "france"
     ],
     [
       3589,
-      "spain"
+      "france"
     ],
     [
       3590,
@@ -14431,11 +14431,11 @@
     ],
     [
       3607,
-      "unclaimed"
+      "avic"
     ],
     [
       3608,
-      "unclaimed"
+      "avic"
     ],
     [
       3609,
@@ -14519,7 +14519,7 @@
     ],
     [
       3629,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3630,
@@ -14527,7 +14527,7 @@
     ],
     [
       3631,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3632,
@@ -14587,15 +14587,15 @@
     ],
     [
       3646,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3647,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3648,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3649,
@@ -14619,7 +14619,7 @@
     ],
     [
       3654,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3655,
@@ -14635,7 +14635,7 @@
     ],
     [
       3658,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3659,
@@ -14643,47 +14643,47 @@
     ],
     [
       3660,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3661,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3662,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3663,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3664,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3665,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3666,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3667,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3668,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3669,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3670,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3671,
@@ -14691,7 +14691,7 @@
     ],
     [
       3672,
-      "unclaimed"
+      "ottoman empire"
     ],
     [
       3673,
@@ -14847,15 +14847,15 @@
     ],
     [
       3711,
-      "spain"
+      "france"
     ],
     [
       3712,
-      "spain"
+      "france"
     ],
     [
       3713,
-      "spain"
+      "france"
     ],
     [
       3714,
@@ -14895,39 +14895,39 @@
     ],
     [
       3723,
-      "spain"
+      "france"
     ],
     [
       3724,
-      "spain"
+      "france"
     ],
     [
       3725,
-      "spain"
+      "france"
     ],
     [
       3726,
-      "spain"
+      "france"
     ],
     [
       3727,
-      "spain"
+      "france"
     ],
     [
       3728,
-      "spain"
+      "france"
     ],
     [
       3729,
-      "spain"
+      "france"
     ],
     [
       3730,
-      "spain"
+      "france"
     ],
     [
       3731,
-      "spain"
+      "france"
     ],
     [
       3732,
@@ -14947,7 +14947,7 @@
     ],
     [
       3736,
-      "hre minor states"
+      "brandenburg-prussia"
     ],
     [
       3737,
@@ -14971,11 +14971,11 @@
     ],
     [
       3742,
-      "spain"
+      "france"
     ],
     [
       3743,
-      "spain"
+      "france"
     ],
     [
       3744,
@@ -15023,47 +15023,47 @@
     ],
     [
       3755,
-      "spain"
+      "france"
     ],
     [
       3756,
-      "spain"
+      "france"
     ],
     [
       3757,
-      "spain"
+      "france"
     ],
     [
       3758,
-      "spain"
+      "france"
     ],
     [
       3759,
-      "spain"
+      "france"
     ],
     [
       3760,
-      "spain"
+      "france"
     ],
     [
       3761,
-      "spain"
+      "france"
     ],
     [
       3762,
-      "spain"
+      "france"
     ],
     [
       3763,
-      "spain"
+      "france"
     ],
     [
       3764,
-      "spain"
+      "france"
     ],
     [
       3765,
-      "spain"
+      "france"
     ],
     [
       3766,
@@ -15083,7 +15083,7 @@
     ],
     [
       3770,
-      "ottoman empire"
+      "austria"
     ],
     [
       3771,
@@ -15091,39 +15091,39 @@
     ],
     [
       3772,
-      "ottoman empire"
+      "austria"
     ],
     [
       3773,
-      "spain"
+      "france"
     ],
     [
       3774,
-      "spain"
+      "france"
     ],
     [
       3775,
-      "spain"
+      "unclaimed"
     ],
     [
       3776,
-      "spain"
+      "france"
     ],
     [
       3777,
-      "spain"
+      "unclaimed"
     ],
     [
       3778,
-      "spain"
+      "france"
     ],
     [
       3779,
-      "spain"
+      "france"
     ],
     [
       3780,
-      "spain"
+      "unclaimed"
     ],
     [
       3781,
@@ -15131,23 +15131,23 @@
     ],
     [
       3782,
-      "spain"
+      "france"
     ],
     [
       3783,
-      "spain"
+      "france"
     ],
     [
       3784,
-      "spain"
+      "france"
     ],
     [
       3785,
-      "spain"
+      "france"
     ],
     [
       3786,
-      "spain"
+      "france"
     ],
     [
       3787,
@@ -15255,7 +15255,7 @@
     ],
     [
       3813,
-      "portugal"
+      "unclaimed"
     ],
     [
       3814,
@@ -15267,7 +15267,7 @@
     ],
     [
       3816,
-      "portugal"
+      "unclaimed"
     ],
     [
       3817,
@@ -15283,7 +15283,7 @@
     ],
     [
       3820,
-      "spain"
+      "unclaimed"
     ],
     [
       3821,
@@ -15327,19 +15327,19 @@
     ],
     [
       3831,
-      "persia"
+      "caucasian states"
     ],
     [
       3832,
-      "persia"
+      "caucasian states"
     ],
     [
       3833,
-      "persia"
+      "caucasian states"
     ],
     [
       3834,
-      "persia"
+      "caucasian states"
     ],
     [
       3835,
@@ -15347,47 +15347,47 @@
     ],
     [
       3836,
-      "persia"
+      "caucasian states"
     ],
     [
       3837,
-      "persia"
+      "russia"
     ],
     [
       3838,
-      "persia"
+      "caucasian states"
     ],
     [
       3839,
-      "persia"
+      "caucasian states"
     ],
     [
       3840,
-      "persia"
+      "caucasian states"
     ],
     [
       3841,
-      "persia"
+      "caucasian states"
     ],
     [
       3842,
-      "persia"
+      "caucasian states"
     ],
     [
       3843,
-      "persia"
+      "caucasian states"
     ],
     [
       3844,
-      "persia"
+      "caucasian states"
     ],
     [
       3845,
-      "persia"
+      "caucasian states"
     ],
     [
       3846,
-      "persia"
+      "caucasian states"
     ],
     [
       3847,
@@ -15399,35 +15399,35 @@
     ],
     [
       3849,
-      "persia"
+      "ottoman empire"
     ],
     [
       3850,
-      "persia"
+      "ottoman empire"
     ],
     [
       3851,
-      "spain"
+      "france"
     ],
     [
       3852,
-      "spain"
+      "france"
     ],
     [
       3853,
-      "spain"
+      "france"
     ],
     [
       3854,
-      "spain"
+      "unclaimed"
     ],
     [
       3855,
-      "spain"
+      "unclaimed"
     ],
     [
       3856,
-      "spain"
+      "unclaimed"
     ],
     [
       3857,
@@ -15447,99 +15447,99 @@
     ],
     [
       3861,
-      "ottoman empire"
+      "france"
     ],
     [
       3862,
-      "ottoman empire"
+      "france"
     ],
     [
       3863,
-      "ottoman empire"
+      "france"
     ],
     [
       3864,
-      "ottoman empire"
+      "france"
     ],
     [
       3865,
-      "ottoman empire"
+      "france"
     ],
     [
       3866,
-      "ottoman empire"
+      "france"
     ],
     [
       3867,
-      "ottoman empire"
+      "france"
     ],
     [
       3868,
-      "ottoman empire"
+      "france"
     ],
     [
       3869,
-      "ottoman empire"
+      "france"
     ],
     [
       3870,
-      "ottoman empire"
+      "france"
     ],
     [
       3871,
-      "ottoman empire"
+      "france"
     ],
     [
       3872,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       3873,
-      "ottoman empire"
+      "france"
     ],
     [
       3874,
-      "ottoman empire"
+      "france"
     ],
     [
       3875,
-      "ottoman empire"
+      "france"
     ],
     [
       3876,
-      "ottoman empire"
+      "france"
     ],
     [
       3877,
-      "ottoman empire"
+      "france"
     ],
     [
       3878,
-      "ottoman empire"
+      "france"
     ],
     [
       3879,
-      "ottoman empire"
+      "france"
     ],
     [
       3880,
-      "ottoman empire"
+      "france"
     ],
     [
       3881,
-      "ottoman empire"
+      "france"
     ],
     [
       3882,
-      "ottoman empire"
+      "france"
     ],
     [
       3883,
-      "ottoman empire"
+      "france"
     ],
     [
       3884,
-      "ottoman empire"
+      "france"
     ],
     [
       3885,
@@ -15547,7 +15547,7 @@
     ],
     [
       3886,
-      "persia"
+      "contested territories"
     ],
     [
       3887,
@@ -15591,7 +15591,7 @@
     ],
     [
       3897,
-      "persia"
+      "contested territories"
     ],
     [
       3898,
@@ -15603,7 +15603,7 @@
     ],
     [
       3900,
-      "persia"
+      "contested territories"
     ],
     [
       3901,
@@ -16459,7 +16459,7 @@
     ],
     [
       4114,
-      "unclaimed"
+      "oman"
     ],
     [
       4115,
@@ -16627,7 +16627,7 @@
     ],
     [
       4156,
-      "ottoman empire"
+      "russia"
     ],
     [
       4157,
@@ -16799,43 +16799,43 @@
     ],
     [
       4199,
-      "spain"
+      "france"
     ],
     [
       4200,
-      "spain"
+      "france"
     ],
     [
       4201,
-      "spain"
+      "france"
     ],
     [
       4202,
-      "spain"
+      "france"
     ],
     [
       4203,
-      "spain"
+      "france"
     ],
     [
       4204,
-      "spain"
+      "france"
     ],
     [
       4205,
-      "spain"
+      "france"
     ],
     [
       4206,
-      "spain"
+      "france"
     ],
     [
       4207,
-      "spain"
+      "france"
     ],
     [
       4208,
-      "spain"
+      "france"
     ],
     [
       4209,
@@ -16843,11 +16843,11 @@
     ],
     [
       4210,
-      "spain"
+      "france"
     ],
     [
       4211,
-      "spain"
+      "france"
     ],
     [
       4212,
@@ -17095,7 +17095,7 @@
     ],
     [
       4273,
-      "persia"
+      "ottoman empire"
     ],
     [
       4274,
@@ -17115,15 +17115,15 @@
     ],
     [
       4278,
-      "persia"
+      "contested territories"
     ],
     [
       4279,
-      "persia"
+      "ottoman empire"
     ],
     [
       4280,
-      "persia"
+      "ottoman empire"
     ],
     [
       4281,
@@ -17131,15 +17131,15 @@
     ],
     [
       4282,
-      "persia"
+      "contested territories"
     ],
     [
       4283,
-      "persia"
+      "mughal empire"
     ],
     [
       4284,
-      "persia"
+      "ottoman empire"
     ],
     [
       4285,
@@ -17155,67 +17155,67 @@
     ],
     [
       4288,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4289,
-      "ottoman empire"
+      "austria"
     ],
     [
       4290,
-      "ottoman empire"
+      "austria"
     ],
     [
       4291,
-      "ottoman empire"
+      "austria"
     ],
     [
       4292,
-      "ottoman empire"
+      "austria"
     ],
     [
       4293,
-      "ottoman empire"
+      "austria"
     ],
     [
       4294,
-      "ottoman empire"
+      "austria"
     ],
     [
       4295,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4296,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4297,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4298,
-      "ottoman empire"
+      "austria"
     ],
     [
       4299,
-      "ottoman empire"
+      "austria"
     ],
     [
       4300,
-      "ottoman empire"
+      "austria"
     ],
     [
       4301,
-      "ottoman empire"
+      "austria"
     ],
     [
       4302,
-      "persia"
+      "caucasian states"
     ],
     [
       4303,
-      "persia"
+      "caucasian states"
     ],
     [
       4304,
@@ -17419,19 +17419,19 @@
     ],
     [
       4354,
-      "unclaimed"
+      "contested territories"
     ],
     [
       4355,
-      "unclaimed"
+      "contested territories"
     ],
     [
       4356,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       4357,
-      "unclaimed"
+      "france"
     ],
     [
       4358,
@@ -17439,11 +17439,11 @@
     ],
     [
       4359,
-      "britain"
+      "haudenosaunee confederacy"
     ],
     [
       4360,
-      "unclaimed"
+      "haudenosaunee confederacy"
     ],
     [
       4361,
@@ -17463,7 +17463,7 @@
     ],
     [
       4365,
-      "russia"
+      "poland-lithuania"
     ],
     [
       4366,
@@ -17479,7 +17479,7 @@
     ],
     [
       4369,
-      "persia"
+      "ottoman empire"
     ],
     [
       4370,
@@ -17491,11 +17491,11 @@
     ],
     [
       4372,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       4373,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       4374,
@@ -17511,7 +17511,7 @@
     ],
     [
       4377,
-      "spain"
+      "france"
     ],
     [
       4378,
@@ -17531,35 +17531,35 @@
     ],
     [
       4382,
-      "ottoman empire"
+      "austria"
     ],
     [
       4383,
-      "ottoman empire"
+      "austria"
     ],
     [
       4384,
-      "ottoman empire"
+      "austria"
     ],
     [
       4385,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       4386,
-      "ottoman empire"
+      "austria"
     ],
     [
       4387,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4388,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4389,
-      "ottoman empire"
+      "hungarian rebels"
     ],
     [
       4390,
@@ -17583,7 +17583,7 @@
     ],
     [
       4395,
-      "persia"
+      "caucasian states"
     ],
     [
       4396,
@@ -17635,11 +17635,11 @@
     ],
     [
       4408,
-      "spain"
+      "france"
     ],
     [
       4409,
-      "spain"
+      "france"
     ],
     [
       4410,
@@ -17647,35 +17647,35 @@
     ],
     [
       4411,
-      "spain"
+      "venice"
     ],
     [
       4412,
-      "spain"
+      "venice"
     ],
     [
       4413,
-      "spain"
+      "austria"
     ],
     [
       4414,
-      "spain"
+      "hre minor states"
     ],
     [
       4415,
-      "spain"
+      "austria"
     ],
     [
       4416,
-      "spain"
+      "austria"
     ],
     [
       4417,
-      "spain"
+      "austria"
     ],
     [
       4418,
-      "spain"
+      "austria"
     ],
     [
       4419,
@@ -17695,7 +17695,7 @@
     ],
     [
       4423,
-      "spain"
+      "austria"
     ],
     [
       4424,
@@ -17703,7 +17703,7 @@
     ],
     [
       4425,
-      "savoy"
+      "austria"
     ],
     [
       4426,
@@ -17763,11 +17763,11 @@
     ],
     [
       4440,
-      "spain"
+      "france"
     ],
     [
       4441,
-      "spain"
+      "france"
     ],
     [
       4442,
@@ -17775,7 +17775,7 @@
     ],
     [
       4443,
-      "spain"
+      "france"
     ],
     [
       4444,
@@ -18051,7 +18051,7 @@
     ],
     [
       4512,
-      "persia"
+      "caucasian states"
     ],
     [
       4513,
@@ -18131,7 +18131,7 @@
     ],
     [
       4532,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       4533,
@@ -18155,47 +18155,47 @@
     ],
     [
       4538,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       4539,
-      "spain"
+      "france"
     ],
     [
       4540,
-      "spain"
+      "france"
     ],
     [
       4541,
-      "spain"
+      "france"
     ],
     [
       4542,
-      "spain"
+      "france"
     ],
     [
       4543,
-      "spain"
+      "france"
     ],
     [
       4544,
-      "spain"
+      "france"
     ],
     [
       4545,
-      "spain"
+      "france"
     ],
     [
       4546,
-      "spain"
+      "france"
     ],
     [
       4547,
-      "unclaimed"
+      "avic"
     ],
     [
       4548,
-      "unclaimed"
+      "avic"
     ],
     [
       4549,
@@ -18400,6 +18400,14 @@
       "color": "#FCD840"
     },
     {
+      "name": "avic",
+      "color": "#9f853c"
+    },
+    {
+      "name": "bavaria",
+      "color": "#57beff"
+    },
+    {
       "name": "bhutan",
       "color": "#FFB300"
     },
@@ -18430,6 +18438,10 @@
     {
       "name": "cambodia",
       "color": "#4FB4A3"
+    },
+    {
+      "name": "caucasian states",
+      "color": "#c7c93b"
     },
     {
       "name": "china",
@@ -18464,16 +18476,32 @@
       "color": "#9F2D2D"
     },
     {
+      "name": "haudenosaunee confederacy",
+      "color": "#400e71"
+    },
+    {
       "name": "hausa city-states",
       "color": "#01796F"
+    },
+    {
+      "name": "holstein-gottorp",
+      "color": "#f5b8c4"
     },
     {
       "name": "hre minor states",
       "color": "#9CB4D6"
     },
     {
+      "name": "hungarian rebels",
+      "color": "#b3df72"
+    },
+    {
       "name": "japan",
       "color": "#BC002D"
+    },
+    {
+      "name": "kalmyk khanate",
+      "color": "#94d6ff"
     },
     {
       "name": "kazakh khanates",
@@ -18580,6 +18608,14 @@
       "color": "#7C2128"
     },
     {
+      "name": "saxony",
+      "color": "#8bd07c"
+    },
+    {
+      "name": "seic",
+      "color": "#57ddff"
+    },
+    {
       "name": "siam",
       "color": "#A91101"
     },
@@ -18612,6 +18648,10 @@
       "color": "#A0A0A0"
     },
     {
+      "name": "upper hungary",
+      "color": "#5164c8"
+    },
+    {
       "name": "venice",
       "color": "#5A1F1F"
     },
@@ -18624,8 +18664,16 @@
       "color": "#73fdff"
     },
     {
+      "name": "yarkent khanate",
+      "color": "#c6b790"
+    },
+    {
       "name": "yemen",
       "color": "#800000"
+    },
+    {
+      "name": "zaporozhian hetmanate (rus)",
+      "color": "#437a4a"
     }
   ]
 }

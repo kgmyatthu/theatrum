@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1780037875796-2",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Army of Bavaria",
+    "strength": 30000,
+    "commander": "Maximillian II Emmanuel",
+    "lat": 48.90805939965008,
+    "lon": 11.458740234375002,
+    "turnStartLat": 48.90805939965008,
+    "turnStartLon": 11.458740234375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

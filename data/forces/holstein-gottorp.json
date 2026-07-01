@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1781229600064-0",
+    "nation": "holstein-gottorp",
+    "branch": "army",
+    "name": "Army of Holstein-Gottorp",
+    "strength": 6500,
+    "commander": "Fredrick IV",
+    "lat": 54.0239066230473,
+    "lon": 9.772338867187502,
+    "turnStartLat": 54.0239066230473,
+    "turnStartLon": 9.772338867187502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 11
+  }
+]
