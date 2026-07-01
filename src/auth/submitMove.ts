@@ -1,5 +1,5 @@
 import type { AppSnapshot } from '@/types';
-import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveDataFresh, listForceNations } from '@/utils/liveData';
 import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import { getSession, GitHubAuthError } from './session';
 
@@ -25,7 +25,7 @@ export type UserAdd =
  */
 export async function hasMeaningfulDiff(snapshot: AppSnapshot): Promise<boolean> {
   try {
-    const remote = await fetchLiveSnapshot(fetchLiveDataFresh);
+    const remote = await fetchLiveSnapshot(fetchLiveDataFresh, () => listForceNations(true));
     return JSON.stringify(snapshot) !== JSON.stringify(remote);
   } catch {
     // Couldn't read main — let the caller submit; the validator will sort it out.

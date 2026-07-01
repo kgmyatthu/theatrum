@@ -9,7 +9,7 @@ import {
 } from '@/auth/submitMove';
 import { getPullRequest, listIssueComments, GitHubAuthError } from '@/auth/githubApi';
 import { useAppDispatch } from '@/state/AppContext';
-import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveDataFresh, listForceNations } from '@/utils/liveData';
 import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import {
   syncStateRefreshBaseline,
@@ -195,7 +195,7 @@ export function SubmitMoveModal({
     let cancelled = false;
     (async () => {
       try {
-        const fresh = await fetchLiveSnapshot(fetchLiveDataFresh);
+        const fresh = await fetchLiveSnapshot(fetchLiveDataFresh, () => listForceNations(true));
         if (cancelled || !mountedRef.current) return;
         dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: fresh } });
         syncStateRefreshBaseline(fresh);

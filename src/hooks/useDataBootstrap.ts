@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '@/state/AppContext';
-import { fetchLiveData } from '@/utils/liveData';
+import { fetchLiveData, listForceNations } from '@/utils/liveData';
 import { flagStaleClientFromSnapshot } from '@/hooks/useStateRefresh';
 import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import type { AppSnapshot, City, ProvinceCollection } from '@/types';
@@ -19,7 +19,7 @@ async function fetchManifest(): Promise<Manifest> {
     // Live game state — assembled from state.json (global) + per-nation
     // force files. All SHA-pinned to one main HEAD so the snapshot is
     // consistent across all the files.
-    fetchLiveSnapshot(fetchLiveData),
+    fetchLiveSnapshot(fetchLiveData, listForceNations),
   ]);
   return { provinces, cities, snapshot };
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { AppSnapshot } from '@/types';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { buildSnapshot } from '@/utils/snapshot';
-import { fetchLiveDataFresh } from '@/utils/liveData';
+import { fetchLiveDataFresh, listForceNations } from '@/utils/liveData';
 import { fetchLiveSnapshot } from '@/utils/fetchSnapshot';
 import { SCHEMA_VERSION } from '@/utils/schema';
 
@@ -159,7 +159,7 @@ export function useStateRefresh(): { conflict: boolean; stale: boolean } {
 
       let remote: AppSnapshot;
       try {
-        remote = await fetchLiveSnapshot(fetchLiveDataFresh);
+        remote = await fetchLiveSnapshot(fetchLiveDataFresh, () => listForceNations(true));
       } catch (err) {
         // Transient — try again next tick.
         // eslint-disable-next-line no-console

@@ -95,3 +95,40 @@ export async function fetchLiveDataFresh<T>(filename: string): Promise<T> {
   if (!r.ok) throw new Error(`raw@${sha.slice(0, 7)} ${filename} → ${r.status}`);
   return (await r.json()) as T;
 }
+
+/** Nation names from a GitHub contents-API directory listing (files → name minus `.json`). */
+export function parseForceListing(entries: unknown): string[] {
+  if (!Array.isArray(entries)) return [];
+  return entries
+    .filter(
+      (e): e is { name: string; type: string } =>
+        !!e && e.type === 'file' && typeof e.name === 'string' && e.name.endsWith('.json'),
+    )
+    .map((e) => e.name.slice(0, -'.json'.length));
+}
+
+/**
+ * List nations that actually have a forces/<nation>.json at main HEAD, so
+ * the snapshot fetches only those ~16 files instead of 404-probing all 70+
+ * countries. One contents-API call at the already-pinned SHA (shares the
+ * memoized SHA on the bootstrap path, so it adds no extra round-trip there).
+ * Returns null in local dev (no GitHub API) or on any API error — callers
+ * fall back to probing every country.
+ */
+export async function listForceNations(fresh = false): Promise<string[] | null> {
+  if (!REPO) return null;
+  try {
+    const sha = fresh ? await fetchLatestSha(REPO) : await getLatestSha(REPO);
+    const session = getSession();
+    const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+    if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
+    const r = await fetch(
+      `https://api.github.com/repos/${REPO}/contents/public/data/forces?ref=${sha}`,
+      { headers },
+    );
+    if (!r.ok) return null;
+    return parseForceListing(await r.json());
+  } catch {
+    return null;
+  }
+}

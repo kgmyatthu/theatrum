@@ -22,6 +22,8 @@ interface TurnFile {
 }
 
 type Fetcher = <T>(filename: string) => Promise<T>;
+/** Returns the nations with a force file, or null when unavailable (dev / API error). */
+type Lister = () => Promise<string[] | null>;
 
 /**
  * Reconstruct the unified AppSnapshot from main's split files.
@@ -37,21 +39,21 @@ type Fetcher = <T>(filename: string) => Promise<T>;
  *   - useDataBootstrap (via fetchLiveData — once-per-session SHA cache)
  *   - useStateRefresh  (via fetchLiveDataFresh — every-tick SHA refresh)
  */
-export async function fetchLiveSnapshot(fetcher: Fetcher): Promise<AppSnapshot> {
-  const [state, turn] = await Promise.all([
+export async function fetchLiveSnapshot(fetcher: Fetcher, lister?: Lister): Promise<AppSnapshot> {
+  const [state, turn, listed] = await Promise.all([
     fetcher<StateFile>('state.json'),
     fetcher<TurnFile>('turn.json'),
+    // Directory listing shares the same SHA round-trip as state/turn, so
+    // it costs no extra wall-clock. null → fall back to probing everyone.
+    lister ? lister() : Promise.resolve(null),
   ]);
 
-  const forcePromises = state.countries.map((c) => {
-    const nation = c.name; // already canonical lowercase
-    return fetcher<Force[]>(`forces/${encodeURIComponent(nation)}.json`).catch(() => {
-      // Most countries don't have a force file at all (no forces yet) —
-      // expected 404. Swallow and yield empty so the unified snapshot
-      // just omits them.
-      return [] as Force[];
-    });
-  });
+  // Only fetch nations that actually have a force file. The fallback (dev,
+  // or a listing failure) probes every country — those misses 404 into [].
+  const nations = listed ?? state.countries.map((c) => c.name); // names already canonical lowercase
+  const forcePromises = nations.map((nation) =>
+    fetcher<Force[]>(`forces/${encodeURIComponent(nation)}.json`).catch(() => [] as Force[]),
+  );
   const forcesByCountry = await Promise.all(forcePromises);
   const forces = forcesByCountry.flat();
 
