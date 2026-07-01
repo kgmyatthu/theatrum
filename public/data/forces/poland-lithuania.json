@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 15000,
     "commander": "Jan III Sobieski",
-    "lat": 56.0965557505683,
-    "lon": 23.57666015625,
+    "lat": 56.87897553446643,
+    "lon": 24.00718688964844,
     "turnStartLat": 56.0965557505683,
     "turnStartLon": 23.57666015625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 90.92693233025972,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of Sanctimonious Pride",
     "strength": 30000,
     "commander": "",
-    "lat": 56.21281407174654,
-    "lon": 24.005126953125004,
+    "lat": 56.92882928931933,
+    "lon": 24.252319335937504,
     "turnStartLat": 56.21281407174654,
     "turnStartLon": 24.005126953125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 81.04430505189119,
     "createdAtTurn": 24
   },
   {
