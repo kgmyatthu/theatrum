@@ -20,11 +20,11 @@
     "name": "II Army",
     "strength": 52000,
     "commander": "Patrick Gordon",
-    "lat": 57.69663095838678,
-    "lon": 24.762903794134527,
+    "lat": 56.97870301379333,
+    "lon": 24.15489991598306,
     "turnStartLat": 58.151776926262656,
     "turnStartLon": 26.91422088375235,
-    "kmMovedThisTurn": 136.73587712794955,
+    "kmMovedThisTurn": 224.50795639629052,
     "createdAtTurn": 2
   },
   {
