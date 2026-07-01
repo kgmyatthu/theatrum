@@ -22,9 +22,9 @@
     "commander": "Magnus Stenbock",
     "lat": 53.79983975761748,
     "lon": 11.773223876953127,
-    "turnStartLat": 54.03519940151581,
-    "turnStartLon": 12.145385742187502,
-    "kmMovedThisTurn": 67.03646828118505,
+    "turnStartLat": 53.79983975761748,
+    "turnStartLon": 11.773223876953127,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Carl Gustaf Dücker",
     "lat": 53.88410690807865,
     "lon": 13.6944580078125,
-    "turnStartLat": 54.064223894211956,
-    "turnStartLon": 13.224792480468752,
-    "kmMovedThisTurn": 59.52666045458942,
+    "turnStartLat": 53.88410690807865,
+    "turnStartLon": 13.6944580078125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 22
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Carl Gustav Rehnskiöld",
     "lat": 57.37986126240442,
     "lon": 25.026855468750004,
-    "turnStartLat": 59.38917842312835,
-    "turnStartLon": 26.806640625000004,
-    "kmMovedThisTurn": 246.31578712222193,
+    "turnStartLat": 57.37986126240442,
+    "turnStartLon": 25.026855468750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -232,9 +232,9 @@
     "commander": "Philip Bogislaus von Schwerin",
     "lat": 54.32613472050531,
     "lon": 13.268737792968752,
-    "turnStartLat": 54.183333915776664,
-    "turnStartLon": 12.54638671875,
-    "kmMovedThisTurn": 49.54805507075701,
+    "turnStartLat": 54.32613472050531,
+    "turnStartLon": 13.268737792968752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
