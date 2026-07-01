@@ -194,5 +194,19 @@
     "turnStartLon": 12.48046875,
     "kmMovedThisTurn": 69.69126324572399,
     "createdAtTurn": 29
+  },
+  {
+    "id": "RadetzkyNTW-1782926957713-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Bavarian Force (Commanded by Austrians)",
+    "strength": 20000,
+    "commander": "",
+    "lat": 48.4146186174932,
+    "lon": 14.128417968750002,
+    "turnStartLat": 48.4146186174932,
+    "turnStartLon": 14.128417968750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 31
   }
 ]
