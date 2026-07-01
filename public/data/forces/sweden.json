@@ -6,11 +6,11 @@
     "name": "Karlskrona Battlefleet",
     "strength": 62,
     "commander": "Wachtmeister the Younger",
-    "lat": 56.16390607394954,
-    "lon": 15.479736328125002,
+    "lat": 55.92766341247032,
+    "lon": 15.089721679687502,
     "turnStartLat": 56.16390607394954,
     "turnStartLon": 15.479736328125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 67.3754190261832,
     "createdAtTurn": 21
   },
   {
@@ -90,11 +90,11 @@
     "name": "Axel Sparre",
     "strength": 10000,
     "commander": "Axel Sparre",
-    "lat": 56.03522578369872,
-    "lon": 13.634033203125002,
+    "lat": 55.95842604865925,
+    "lon": 13.458251953125002,
     "turnStartLat": 56.03522578369872,
     "turnStartLon": 13.634033203125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 13.871227560286624,
     "createdAtTurn": 23
   },
   {
