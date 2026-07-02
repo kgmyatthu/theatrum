@@ -32,7 +32,7 @@
     "nation": "britain",
     "branch": "army",
     "name": "Bremen-Verden Garrisons",
-    "strength": 24000,
+    "strength": 13000,
     "commander": "Joseph Wightman",
     "lat": 53.466250736254864,
     "lon": 8.920898437500002,
@@ -62,11 +62,11 @@
     "name": "Red Squadron",
     "strength": 54,
     "commander": "Sir George Rooke",
-    "lat": 55.07836723201515,
-    "lon": 12.7880859375,
+    "lat": 50.75557231232454,
+    "lon": -1.0491943359375002,
     "turnStartLat": 55.07836723201515,
     "turnStartLon": 12.7880859375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1049.9672301116684,
     "createdAtTurn": 8
   },
   {
@@ -112,17 +112,17 @@
     "createdAtTurn": 23
   },
   {
-    "id": "yourlocalgeobukseon-1782500292648-0",
+    "id": "yourlocalgeobukseon-1783029922812-0",
     "nation": "britain",
     "branch": "army",
-    "name": "Dano-Norwegian Foreign Legion",
-    "strength": 23000,
-    "commander": "Richard Temple",
-    "lat": 59.69731816925534,
-    "lon": 10.799560546875,
-    "turnStartLat": 59.69731816925534,
-    "turnStartLon": 10.799560546875,
+    "name": "British Reserve Armies",
+    "strength": 77000,
+    "commander": "None",
+    "lat": 52.67305135923188,
+    "lon": -1.56005859375,
+    "turnStartLat": 52.67305135923188,
+    "turnStartLon": -1.56005859375,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 23
+    "createdAtTurn": 31
   }
 ]
