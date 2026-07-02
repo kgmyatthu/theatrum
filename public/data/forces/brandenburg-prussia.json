@@ -8,9 +8,9 @@
     "commander": "Leopold I, Prince of Anhalt-Dessau",
     "lat": 53.77793497204605,
     "lon": 13.787841796875002,
-    "turnStartLat": 52.429222277955134,
-    "turnStartLon": 13.458251953125002,
-    "kmMovedThisTurn": 160.34580062648874,
+    "turnStartLat": 53.77793497204605,
+    "turnStartLon": 13.787841796875002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   }
 ]

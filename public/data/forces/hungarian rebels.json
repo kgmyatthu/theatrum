@@ -22,9 +22,9 @@
     "commander": "Miklós Bercsényi",
     "lat": 48.72633680904219,
     "lon": 21.165161132812504,
-    "turnStartLat": 48.84350263862016,
-    "turnStartLon": 20.346679687500004,
-    "kmMovedThisTurn": 61.36460938406603,
+    "turnStartLat": 48.72633680904219,
+    "turnStartLon": 21.165161132812504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Károlyi Sándor",
     "lat": 46.38144614990973,
     "lon": 23.961181640625004,
-    "turnStartLat": 47.040247304779435,
-    "turnStartLon": 21.928710937500004,
-    "kmMovedThisTurn": 283.19017617764314,
+    "turnStartLat": 46.38144614990973,
+    "turnStartLon": 23.961181640625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {

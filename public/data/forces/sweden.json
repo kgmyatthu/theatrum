@@ -8,9 +8,9 @@
     "commander": "Wachtmeister the Younger",
     "lat": 55.822887575908794,
     "lon": 15.257263183593752,
-    "turnStartLat": 56.16390607394954,
-    "turnStartLon": 15.479736328125002,
-    "kmMovedThisTurn": 102.84662527449059,
+    "turnStartLat": 55.822887575908794,
+    "turnStartLon": 15.257263183593752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Magnus Stenbock",
     "lat": 53.8812737517025,
     "lon": 10.37040710449219,
-    "turnStartLat": 53.79983975761748,
-    "turnStartLon": 11.773223876953127,
-    "kmMovedThisTurn": 99.01216049326456,
+    "turnStartLat": 53.8812737517025,
+    "turnStartLon": 10.37040710449219,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Prince Frederick",
     "lat": 58.93300426869364,
     "lon": 11.744384765625002,
-    "turnStartLat": 59.115358240617745,
-    "turnStartLon": 11.445007324218752,
-    "kmMovedThisTurn": 56.45714536044241,
+    "turnStartLat": 58.93300426869364,
+    "turnStartLon": 11.744384765625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Carl Gustaf Dücker",
     "lat": 53.85536170451099,
     "lon": 10.316848754882814,
-    "turnStartLat": 53.88410690807865,
-    "turnStartLon": 13.6944580078125,
-    "kmMovedThisTurn": 223.27333964809432,
+    "turnStartLat": 53.85536170451099,
+    "turnStartLon": 10.316848754882814,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 22
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Axel Sparre",
     "lat": 55.95842604865925,
     "lon": 13.458251953125002,
-    "turnStartLat": 56.03522578369872,
-    "turnStartLon": 13.634033203125002,
-    "kmMovedThisTurn": 13.871227560286624,
+    "turnStartLat": 55.95842604865925,
+    "turnStartLon": 13.458251953125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Carl Gustaf Armfeldt",
     "lat": 59.977005492196,
     "lon": 13.128662109375002,
-    "turnStartLat": 59.2700913303328,
-    "turnStartLon": 11.634521484375,
-    "kmMovedThisTurn": 154.4707990731109,
+    "turnStartLat": 59.977005492196,
+    "turnStartLon": 13.128662109375002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -162,9 +162,9 @@
     "commander": "General Delwig",
     "lat": 59.89720326334453,
     "lon": 30.289306640625004,
-    "turnStartLat": 59.84481485969108,
-    "turnStartLon": 30.267333984375004,
-    "kmMovedThisTurn": 5.953018194825119,
+    "turnStartLat": 59.89720326334453,
+    "turnStartLon": 30.289306640625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Berndt Otto Stackelberg",
     "lat": 58.377238469223826,
     "lon": 26.70639038085938,
-    "turnStartLat": 58.19387126497797,
-    "turnStartLon": 27.048339843750004,
-    "kmMovedThisTurn": 28.55268116069591,
+    "turnStartLat": 58.377238469223826,
+    "turnStartLon": 26.70639038085938,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Carl Gustav Rehnskiöld",
     "lat": 57.14965061754591,
     "lon": 24.518737792968754,
-    "turnStartLat": 57.37986126240442,
-    "turnStartLon": 25.026855468750004,
-    "kmMovedThisTurn": 391.0575279963423,
+    "turnStartLat": 57.14965061754591,
+    "turnStartLon": 24.518737792968754,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -204,9 +204,9 @@
     "commander": "Erik Sparre",
     "lat": 57.26567840287639,
     "lon": 24.667053222656254,
-    "turnStartLat": 59.19281238381205,
-    "turnStartLon": 26.630859375,
-    "kmMovedThisTurn": 247.24943036645098,
+    "turnStartLat": 57.26567840287639,
+    "turnStartLon": 24.667053222656254,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Carl Gustaf Örnestedt",
     "lat": 59.15903577213258,
     "lon": 26.685791015625004,
-    "turnStartLat": 58.06625598088457,
-    "turnStartLon": 25.86181640625,
-    "kmMovedThisTurn": 388.05484981673044,
+    "turnStartLat": 59.15903577213258,
+    "turnStartLon": 26.685791015625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 25
   },
   {
@@ -232,9 +232,9 @@
     "commander": "Philip Bogislaus von Schwerin",
     "lat": 54.131868892085436,
     "lon": 12.914428710937502,
-    "turnStartLat": 54.32613472050531,
-    "turnStartLon": 13.268737792968752,
-    "kmMovedThisTurn": 31.574960584566874,
+    "turnStartLat": 54.131868892085436,
+    "turnStartLon": 12.914428710937502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
@@ -246,9 +246,9 @@
     "commander": "Rudolf Horn",
     "lat": 59.37728848935188,
     "lon": 28.18199157714844,
-    "turnStartLat": 59.31076795603884,
-    "turnStartLon": 27.894287109375004,
-    "kmMovedThisTurn": 18.665642426229308,
+    "turnStartLat": 59.37728848935188,
+    "turnStartLon": 28.18199157714844,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
@@ -260,9 +260,9 @@
     "commander": "Unknown",
     "lat": 58.36427519285588,
     "lon": 24.526977539062504,
-    "turnStartLat": 58.41322259056804,
-    "turnStartLon": 24.389648437500004,
-    "kmMovedThisTurn": 9.679182561141525,
+    "turnStartLat": 58.36427519285588,
+    "turnStartLon": 24.526977539062504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
@@ -274,9 +274,9 @@
     "commander": "Unknown",
     "lat": 59.44228245633656,
     "lon": 24.757690429687504,
-    "turnStartLat": 59.450659692819414,
-    "turnStartLon": 24.916992187500004,
-    "kmMovedThisTurn": 9.052610870627468,
+    "turnStartLat": 59.44228245633656,
+    "turnStartLon": 24.757690429687504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
@@ -302,9 +302,9 @@
     "commander": "Crown Prince Gustav",
     "lat": 53.90919219852059,
     "lon": 10.327835083007812,
-    "turnStartLat": 54.14071899775583,
-    "turnStartLon": 12.652130126953127,
-    "kmMovedThisTurn": 163.99296266027397,
+    "turnStartLat": 53.90919219852059,
+    "turnStartLon": 10.327835083007812,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 29
   }
 ]
