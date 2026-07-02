@@ -48,11 +48,11 @@
     "name": "Army of the Habsburgs (Entrenched, Occupying Hungary)",
     "strength": 40000,
     "commander": "",
-    "lat": 46.354510837365254,
-    "lon": 18.682250976562504,
+    "lat": 46.91275095637894,
+    "lon": 19.171142578125004,
     "turnStartLat": 46.354510837365254,
     "turnStartLon": 18.682250976562504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 113.63953132068222,
     "createdAtTurn": 21
   },
   {
@@ -188,11 +188,11 @@
     "name": "Reichsarmee",
     "strength": 40000,
     "commander": "",
-    "lat": 53.474969999548556,
-    "lon": 11.683959960937502,
+    "lat": 53.628353173374194,
+    "lon": 10.78582763671875,
     "turnStartLat": 53.067626642387374,
     "turnStartLon": 12.48046875,
-    "kmMovedThisTurn": 69.69126324572399,
+    "kmMovedThisTurn": 131.42472059384,
     "createdAtTurn": 29
   },
   {
