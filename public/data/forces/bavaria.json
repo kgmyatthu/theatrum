@@ -12,5 +12,19 @@
     "turnStartLon": 11.458740234375002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "KingREN1-Suitman-1782976778816-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Army of the Palatinate",
+    "strength": 20000,
+    "commander": "",
+    "lat": 48.23413299931754,
+    "lon": 11.413562947802445,
+    "turnStartLat": 48.23413299931754,
+    "turnStartLon": 11.413562947802445,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 31
   }
 ]
