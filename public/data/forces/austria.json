@@ -208,5 +208,19 @@
     "turnStartLon": 21.176147460937504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 31
+  },
+  {
+    "id": "RadetzkyNTW-1783017468308-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Liege Garrison",
+    "strength": 8000,
+    "commander": "",
+    "lat": 50.59021193935192,
+    "lon": 5.756835937500001,
+    "turnStartLat": 50.59021193935192,
+    "turnStartLon": 5.756835937500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 31
   }
 ]
