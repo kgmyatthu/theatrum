@@ -34,11 +34,11 @@
     "name": "King’s Army",
     "strength": 44000,
     "commander": "Edward VII",
-    "lat": 53.46434315026852,
-    "lon": 11.564483620927605,
+    "lat": 53.981854773778224,
+    "lon": 13.24127197265625,
     "turnStartLat": 53.41048189781044,
     "turnStartLon": 9.515689076775345,
-    "kmMovedThisTurn": 148.83269236773904,
+    "kmMovedThisTurn": 273.25491278938637,
     "createdAtTurn": 8
   },
   {
