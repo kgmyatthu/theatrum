@@ -18,7 +18,7 @@
     "nation": "britain",
     "branch": "army",
     "name": "Regular Army of America",
-    "strength": 10000,
+    "strength": 5000,
     "commander": "Joseph Dudley",
     "lat": 42.35042512243457,
     "lon": -71.07055664062501,
@@ -39,20 +39,6 @@
     "turnStartLat": 53.41048189781044,
     "turnStartLon": 9.515689076775345,
     "kmMovedThisTurn": 639.2955318252457,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yourlocalgeobukseon-1780938233943-0",
-    "nation": "britain",
-    "branch": "navy",
-    "name": "American Naval Station",
-    "strength": 5,
-    "commander": "Lawrence Washington",
-    "lat": 40.67924942190253,
-    "lon": -74.05883789062501,
-    "turnStartLat": 40.67924942190253,
-    "turnStartLon": -74.05883789062501,
-    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -115,7 +101,7 @@
     "id": "yourlocalgeobukseon-1783029922812-0",
     "nation": "britain",
     "branch": "army",
-    "name": "British Reserve Armies",
+    "name": "British Reserve",
     "strength": 77000,
     "commander": "None",
     "lat": 52.67305135923188,
