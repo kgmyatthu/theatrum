@@ -3,14 +3,14 @@
     "id": "yellowwithblue-1782648195083-0",
     "nation": "brandenburg-prussia",
     "branch": "army",
-    "name": "Prussian Army",
-    "strength": 80000,
-    "commander": "Elector",
-    "lat": 52.429222277955134,
-    "lon": 13.458251953125002,
+    "name": "Leopold I, Prince of Anhalt-Dessau",
+    "strength": 45000,
+    "commander": "Leopold I, Prince of Anhalt-Dessau",
+    "lat": 53.77793497204605,
+    "lon": 13.787841796875002,
     "turnStartLat": 52.429222277955134,
     "turnStartLon": 13.458251953125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 160.34580062648874,
     "createdAtTurn": 25
   }
 ]
