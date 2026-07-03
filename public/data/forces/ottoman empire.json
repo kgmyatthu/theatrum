@@ -222,5 +222,61 @@
     "turnStartLon": 13.639169402461164,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 31
+  },
+  {
+    "id": "Fouzi-707-1783086893711-0",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Yunan Ordusu",
+    "strength": 20000,
+    "commander": "Ioannis Bey",
+    "lat": 40.789316920993244,
+    "lon": 22.955270040555103,
+    "turnStartLat": 40.789316920993244,
+    "turnStartLon": 22.955270040555103,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "Fouzi-707-1783086914736-1",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Tuna Ordusu",
+    "strength": 20000,
+    "commander": "Enver Bey",
+    "lat": 43.72747390236121,
+    "lon": 27.58053860508244,
+    "turnStartLat": 43.72747390236121,
+    "turnStartLon": 27.58053860508244,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "Fouzi-707-1783086970273-2",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Wallachian Army",
+    "strength": 10000,
+    "commander": "Nicolae Mavrocordat",
+    "lat": 44.941526582928255,
+    "lon": 24.970770268430435,
+    "turnStartLat": 44.941526582928255,
+    "turnStartLon": 24.970770268430435,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "Fouzi-707-1783087013546-3",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Moldavian Army",
+    "strength": 10000,
+    "commander": "Grigore II Ghika",
+    "lat": 47.356732162674184,
+    "lon": 27.277578532680646,
+    "turnStartLat": 47.356732162674184,
+    "turnStartLon": 27.277578532680646,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
   }
 ]
