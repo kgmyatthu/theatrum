@@ -26,5 +26,19 @@
     "turnStartLon": 33.86037826538087,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1783079144166-2",
+    "nation": "crimea",
+    "branch": "navy",
+    "name": "Donanma-i Qırım",
+    "strength": 20,
+    "commander": "Mohamed Ben Hassan",
+    "lat": 45.174358072811465,
+    "lon": 33.31405878067016,
+    "turnStartLat": 45.174358072811465,
+    "turnStartLon": 33.31405878067016,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
   }
 ]
