@@ -843,7 +843,7 @@
     ],
     [
       210,
-      "russia"
+      "crimea"
     ],
     [
       211,
@@ -3691,7 +3691,7 @@
     ],
     [
       922,
-      "russia"
+      "crimea"
     ],
     [
       923,
@@ -3699,11 +3699,11 @@
     ],
     [
       924,
-      "russia"
+      "crimea"
     ],
     [
       925,
-      "russia"
+      "crimea"
     ],
     [
       926,
@@ -6559,11 +6559,11 @@
     ],
     [
       1639,
-      "russia"
+      "crimea"
     ],
     [
       1640,
-      "russia"
+      "crimea"
     ],
     [
       1641,
@@ -9087,7 +9087,7 @@
     ],
     [
       2271,
-      "russia"
+      "crimea"
     ],
     [
       2272,
@@ -16627,7 +16627,7 @@
     ],
     [
       4156,
-      "russia"
+      "crimea"
     ],
     [
       4157,
@@ -18450,6 +18450,10 @@
     {
       "name": "contested territories",
       "color": "#ffffff"
+    },
+    {
+      "name": "crimea",
+      "color": "#b8ea7b"
     },
     {
       "name": "dahomey",
