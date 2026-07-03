@@ -12,5 +12,19 @@
     "turnStartLon": 32.90039062499998,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1783067003879-1",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "The Bağçasaray Khans guard",
+    "strength": 2000,
+    "commander": "The Kapıcıbaşı of Bağçasaray",
+    "lat": 44.754819921069334,
+    "lon": 33.86037826538087,
+    "turnStartLat": 44.754819921069334,
+    "turnStartLon": 33.86037826538087,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
   }
 ]
