@@ -1,0 +1,58 @@
+[
+  {
+    "id": "shanesgames5-byte-1783063180940-0",
+    "nation": "korea",
+    "branch": "army",
+    "name": "1st",
+    "strength": 40000,
+    "commander": "",
+    "lat": 35.191766965947394,
+    "lon": 128.51806640625003,
+    "turnStartLat": 35.191766965947394,
+    "turnStartLon": 128.51806640625003,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "shanesgames5-byte-1783063199507-1",
+    "nation": "korea",
+    "branch": "army",
+    "name": "2nd",
+    "strength": 40000,
+    "commander": "",
+    "lat": 35.10193405724608,
+    "lon": 127.79296875000001,
+    "turnStartLat": 35.10193405724608,
+    "turnStartLon": 127.79296875000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "shanesgames5-byte-1783063209332-2",
+    "nation": "korea",
+    "branch": "army",
+    "name": "3rd",
+    "strength": 40000,
+    "commander": "",
+    "lat": 35.55010533588552,
+    "lon": 128.97949218750003,
+    "turnStartLat": 35.55010533588552,
+    "turnStartLon": 128.97949218750003,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "shanesgames5-byte-1783063282027-3",
+    "nation": "korea",
+    "branch": "navy",
+    "name": "Yi Sun-Sin",
+    "strength": 1,
+    "commander": "",
+    "lat": 35.02774729487063,
+    "lon": 129.08111572265628,
+    "turnStartLat": 35.02774729487063,
+    "turnStartLon": 129.08111572265628,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  }
+]
