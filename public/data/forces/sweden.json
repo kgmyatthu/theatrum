@@ -4,7 +4,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Garrison of Wismar",
-    "strength": 6350,
+    "strength": 3350,
     "commander": "Axel Sparre",
     "lat": 53.9017086478655,
     "lon": 11.447238922119142,
@@ -46,7 +46,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Philip Bogislaus von Schwerin",
-    "strength": 8000,
+    "strength": 6000,
     "commander": "Philip Bogislaus von Schwerin",
     "lat": 54.131868892085436,
     "lon": 12.914428710937502,
@@ -136,6 +136,20 @@
     "lon": 11.843261718750002,
     "turnStartLat": 59.49809151947178,
     "turnStartLon": 11.843261718750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "yellowwithblue-1783106117688-7",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Prince Fredrik",
+    "strength": 11000,
+    "commander": "Prince Fredrik",
+    "lat": 55.893796284148955,
+    "lon": 13.183593750000002,
+    "turnStartLat": 55.893796284148955,
+    "turnStartLon": 13.183593750000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   }
