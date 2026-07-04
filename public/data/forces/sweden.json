@@ -36,9 +36,9 @@
     "commander": "Carl Gustaf Armfeldt",
     "lat": 63.268240792181516,
     "lon": 12.678222656250002,
-    "turnStartLat": 59.977005492196,
-    "turnStartLon": 13.128662109375002,
-    "kmMovedThisTurn": 398.87192489634725,
+    "turnStartLat": 63.268240792181516,
+    "turnStartLon": 12.678222656250002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 23
   },
   {
