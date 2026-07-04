@@ -8,9 +8,9 @@
     "commander": "Maximillian II Emmanuel",
     "lat": 49.335776000595835,
     "lon": 12.277200505133113,
-    "turnStartLat": 49.17079390937842,
-    "turnStartLon": 12.216531230590611,
-    "kmMovedThisTurn": 18.866221085757466,
+    "turnStartLat": 49.335776000595835,
+    "turnStartLon": 12.277200505133113,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -22,9 +22,9 @@
     "commander": "",
     "lat": 48.37084390863048,
     "lon": 12.51888624916673,
-    "turnStartLat": 48.36348248875016,
-    "turnStartLon": 12.41969167772612,
-    "kmMovedThisTurn": 7.373363660675344,
+    "turnStartLat": 48.37084390863048,
+    "turnStartLon": 12.51888624916673,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   }
 ]
