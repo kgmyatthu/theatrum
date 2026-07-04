@@ -87,7 +87,7 @@
     "id": "Vancouver1903-1780033149907-8",
     "nation": "denmark",
     "branch": "army",
-    "name": "Militia of Denmark (Not Raised)",
+    "name": "Militia of Denmark (Raised)",
     "strength": 25000,
     "commander": "Local Kapitan",
     "lat": 56.338817405709634,
@@ -269,7 +269,7 @@
     "id": "Vancouver1903-1783033212819-0",
     "nation": "denmark",
     "branch": "army",
-    "name": "Norwegian Militia (Not Raised)",
+    "name": "Norwegian Militia (Raised)",
     "strength": 10000,
     "commander": "Local Kapitan",
     "lat": 59.988359775478294,
@@ -278,5 +278,33 @@
     "turnStartLon": 10.375878812261947,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 31
+  },
+  {
+    "id": "Vancouver1903-1783194003180-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Frederikstad Fortress",
+    "strength": 3500,
+    "commander": "Prince Valdemar",
+    "lat": 59.443987313828515,
+    "lon": 11.347534256055951,
+    "turnStartLat": 59.443987313828515,
+    "turnStartLon": 11.347534256055951,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 35
+  },
+  {
+    "id": "Vancouver1903-1783194020832-1",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "New Fort",
+    "strength": 1500,
+    "commander": "Local Kapitan",
+    "lat": 59.65197034919715,
+    "lon": 10.994506850838663,
+    "turnStartLat": 59.65197034919715,
+    "turnStartLon": 10.994506850838663,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 35
   }
 ]
