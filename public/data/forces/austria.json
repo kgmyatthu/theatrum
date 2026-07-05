@@ -1,19 +1,5 @@
 [
   {
-    "id": "RadetzkyNTW-1780781920875-3",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Silesian Garrison",
-    "strength": 5000,
-    "commander": "",
-    "lat": 50.90303283111257,
-    "lon": 17.973632812500004,
-    "turnStartLat": 50.90303283111257,
-    "turnStartLon": 17.973632812500004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 7
-  },
-  {
     "id": "RadetzkyNTW-1780781949580-4",
     "nation": "austria",
     "branch": "army",
@@ -180,20 +166,6 @@
     "turnStartLon": 23.049316406250004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 23
-  },
-  {
-    "id": "RadetzkyNTW-1782867804284-0",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Reichsarmee",
-    "strength": 40000,
-    "commander": "",
-    "lat": 53.675561346538835,
-    "lon": 10.87921142578125,
-    "turnStartLat": 53.675561346538835,
-    "turnStartLon": 10.87921142578125,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 29
   },
   {
     "id": "iiv213-1782952984735-0",
