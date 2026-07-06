@@ -4,13 +4,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Crown Army",
-    "strength": 80000,
+    "strength": 40000,
     "commander": "Jan III Sobieski",
-    "lat": 52.33699654799357,
-    "lon": 20.929312239020064,
+    "lat": 56.4199784113855,
+    "lon": 23.8623046875,
     "turnStartLat": 52.33699654799357,
     "turnStartLon": 20.929312239020064,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 550.8958390385797,
     "createdAtTurn": 4
   },
   {
@@ -26,5 +26,19 @@
     "turnStartLon": 14.304706897450881,
     "kmMovedThisTurn": 176.18102681940704,
     "createdAtTurn": 23
+  },
+  {
+    "id": "AceApache-1783296660286-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Sanctimonious Pride",
+    "strength": 40000,
+    "commander": "",
+    "lat": 56.33481154165235,
+    "lon": 25.466308593750004,
+    "turnStartLat": 56.33481154165235,
+    "turnStartLon": 25.466308593750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 36
   }
 ]
