@@ -19,12 +19,12 @@
     "branch": "army",
     "name": "II Army",
     "strength": 38000,
-    "commander": "Patrick Gordon",
-    "lat": 57.788943702414855,
-    "lon": 28.40374156334068,
+    "commander": "Menshikov",
+    "lat": 58.13582683375496,
+    "lon": 27.158614773151648,
     "turnStartLat": 57.788943702414855,
     "turnStartLon": 28.40374156334068,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 82.95597282711931,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 48000,
     "commander": "Some German Guy",
-    "lat": 44.95471558088935,
-    "lon": 34.099840706476364,
+    "lat": 44.578832408001034,
+    "lon": 33.52359823488171,
     "turnStartLat": 44.95471558088935,
     "turnStartLon": 34.099840706476364,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 61.77720515015152,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 60000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 56.843440022526764,
-    "lon": 35.96673196330006,
+    "lat": 59.70581205025035,
+    "lon": 30.74148011605255,
     "turnStartLat": 56.843440022526764,
     "turnStartLon": 35.96673196330006,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 440.94496672451874,
     "createdAtTurn": 2
   },
   {
@@ -115,14 +115,14 @@
     "id": "Nindze2009-1782916402592-0",
     "nation": "russia",
     "branch": "army",
-    "name": "VII Host",
+    "name": "VII Army",
     "strength": 30000,
-    "commander": "",
-    "lat": 58.53462285574626,
-    "lon": 31.25831003713871,
+    "commander": "Repnin",
+    "lat": 59.23198922239785,
+    "lon": 27.917367208440094,
     "turnStartLat": 58.53462285574626,
     "turnStartLon": 31.25831003713871,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 207.02296149359918,
     "createdAtTurn": 31
   }
 ]
