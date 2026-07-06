@@ -62,11 +62,11 @@
     "name": "Karlskrona Battlefleet",
     "strength": 66,
     "commander": "Prince Frederick",
-    "lat": 55.600074841258156,
-    "lon": 15.205078125000002,
+    "lat": 56.21281407174654,
+    "lon": 15.314941406250002,
     "turnStartLat": 56.206703980680814,
     "turnStartLon": 15.249023437500002,
-    "kmMovedThisTurn": 67.50967794394481,
+    "kmMovedThisTurn": 135.98639984494227,
     "createdAtTurn": 34
   },
   {
