@@ -34,11 +34,11 @@
     "name": "Army at Zeeland",
     "strength": 14000,
     "commander": "Christian VI",
-    "lat": 56.093300049762135,
-    "lon": 12.69744873046875,
+    "lat": 56.032156723751584,
+    "lon": 12.742767333984375,
     "turnStartLat": 55.67158290073247,
     "turnStartLon": 12.532310485839846,
-    "kmMovedThisTurn": 49.90183884087678,
+    "kmMovedThisTurn": 57.25974325343934,
     "createdAtTurn": 0
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army at Copenhagen",
     "strength": 14000,
     "commander": "Prince Valdemar",
-    "lat": 55.50608308970904,
-    "lon": 12.976226806640625,
+    "lat": 55.60317816902704,
+    "lon": 13.01605224609375,
     "turnStartLat": 55.67293816096564,
     "turnStartLon": 12.567672729492188,
-    "kmMovedThisTurn": 31.675207372838596,
+    "kmMovedThisTurn": 42.75843441942881,
     "createdAtTurn": 0
   },
   {
