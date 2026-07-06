@@ -8,9 +8,9 @@
     "commander": "Christopher Ernst von Stöcken",
     "lat": 55.86298231197633,
     "lon": 14.900207519531252,
-    "turnStartLat": 55.67487416557884,
-    "turnStartLon": 12.642517089843752,
-    "kmMovedThisTurn": 142.7540579031904,
+    "turnStartLat": 55.86298231197633,
+    "turnStartLon": 14.900207519531252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Christian VI",
     "lat": 56.032156723751584,
     "lon": 12.742767333984375,
-    "turnStartLat": 55.67158290073247,
-    "turnStartLon": 12.532310485839846,
-    "kmMovedThisTurn": 57.25974325343934,
+    "turnStartLat": 56.032156723751584,
+    "turnStartLon": 12.742767333984375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Prince Valdemar",
     "lat": 55.60317816902704,
     "lon": 13.01605224609375,
-    "turnStartLat": 55.67293816096564,
-    "turnStartLon": 12.567672729492188,
-    "kmMovedThisTurn": 42.75843441942881,
+    "turnStartLat": 55.60317816902704,
+    "turnStartLon": 13.01605224609375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -274,9 +274,9 @@
     "commander": "Local Kapitan",
     "lat": 59.95501026206206,
     "lon": 10.680084228515625,
-    "turnStartLat": 59.988359775478294,
-    "turnStartLon": 10.375878812261947,
-    "kmMovedThisTurn": 17.328934155511135,
+    "turnStartLat": 59.95501026206206,
+    "turnStartLon": 10.680084228515625,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
