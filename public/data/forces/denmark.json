@@ -272,11 +272,11 @@
     "name": "Norwegian Militia (Raised)",
     "strength": 10000,
     "commander": "Local Kapitan",
-    "lat": 59.988359775478294,
-    "lon": 10.375878812261947,
+    "lat": 59.95501026206206,
+    "lon": 10.680084228515625,
     "turnStartLat": 59.988359775478294,
     "turnStartLon": 10.375878812261947,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 17.328934155511135,
     "createdAtTurn": 31
   },
   {
