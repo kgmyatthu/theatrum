@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "",
-    "lat": 48.100094697973795,
-    "lon": 14.282226562500002,
+    "lat": 53.35710874569601,
+    "lon": 11.206054687500002,
     "turnStartLat": 47.43923470537306,
     "turnStartLon": 23.620605468750004,
-    "kmMovedThisTurn": 708.8266958228241,
+    "kmMovedThisTurn": 1332.0406280377033,
     "createdAtTurn": 21
   },
   {
