@@ -286,11 +286,11 @@
     "name": "Frederikstad Fortress",
     "strength": 3500,
     "commander": "Prince Valdemar",
-    "lat": 59.443987313828515,
-    "lon": 11.347534256055951,
+    "lat": 59.21390582425362,
+    "lon": 10.967102050781252,
     "turnStartLat": 59.443987313828515,
     "turnStartLon": 11.347534256055951,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 33.468905081965346,
     "createdAtTurn": 35
   },
   {
