@@ -34,11 +34,11 @@
     "name": "Army at Zeeland",
     "strength": 28000,
     "commander": "Christian Vi",
-    "lat": 55.67158290073247,
-    "lon": 12.532310485839846,
+    "lat": 56.04021248564851,
+    "lon": 12.593765258789064,
     "turnStartLat": 55.67158290073247,
     "turnStartLon": 12.532310485839846,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 41.168788079809254,
     "createdAtTurn": 0
   },
   {
