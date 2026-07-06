@@ -28,16 +28,16 @@
     "createdAtTurn": 23
   },
   {
-    "id": "AceApache-1783296660286-0",
+    "id": "AceApache-1783296843387-0",
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Sanctimonious Pride",
     "strength": 40000,
     "commander": "",
-    "lat": 56.33481154165235,
-    "lon": 25.466308593750004,
-    "turnStartLat": 56.33481154165235,
-    "turnStartLon": 25.466308593750004,
+    "lat": 52.19413974159753,
+    "lon": 21.071777343750004,
+    "turnStartLat": 52.19413974159753,
+    "turnStartLon": 21.071777343750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   }
