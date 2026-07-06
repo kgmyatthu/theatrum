@@ -20,11 +20,11 @@
     "name": "Polish Grand Fleet",
     "strength": 10,
     "commander": "",
-    "lat": 54.48927688971807,
-    "lon": 14.304706897450881,
+    "lat": 55.893796284148955,
+    "lon": 15.589599609375002,
     "turnStartLat": 54.48927688971807,
     "turnStartLon": 14.304706897450881,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 176.18102681940704,
     "createdAtTurn": 23
   }
 ]
