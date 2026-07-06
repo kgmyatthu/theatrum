@@ -118,11 +118,11 @@
     "name": "Vigo Fleet",
     "strength": 20,
     "commander": "Jose Manuel de Santo Domingo",
-    "lat": 42.32078622908183,
-    "lon": -9.0470427274704,
+    "lat": 51.272075310271966,
+    "lon": 2.1817503869533543,
     "turnStartLat": 42.32078622908183,
     "turnStartLon": -9.0470427274704,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1309.0226691396247,
     "createdAtTurn": 8
   },
   {
