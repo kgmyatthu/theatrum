@@ -160,11 +160,11 @@
     "name": "Erik Sparre",
     "strength": 8000,
     "commander": "Erik Sparre",
-    "lat": 55.99454093080067,
-    "lon": 12.896575927734375,
+    "lat": 56.03522578369872,
+    "lon": 13.40057373046875,
     "turnStartLat": 55.99454093080067,
     "turnStartLon": 12.896575927734375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 31.651119893309176,
     "createdAtTurn": 36
   },
   {
@@ -202,11 +202,11 @@
     "name": "Matthias Alexander von Ungern-Sternberg",
     "strength": 5000,
     "commander": "Matthias Alexander von Ungern-Sternberg",
-    "lat": 56.0474995832989,
-    "lon": 12.874603271484377,
+    "lat": 56.20975914792473,
+    "lon": 13.248138427734377,
     "turnStartLat": 56.0474995832989,
     "turnStartLon": 12.874603271484377,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 29.349516126365685,
     "createdAtTurn": 36
   },
   {
@@ -342,11 +342,11 @@
     "name": "Carl Henrik Wrangel",
     "strength": 12000,
     "commander": "Carl Henrik Wrangel",
-    "lat": 56.09349156919378,
-    "lon": 12.749633789062502,
+    "lat": 56.34698989490647,
+    "lon": 12.992706298828127,
     "turnStartLat": 56.09349156919378,
     "turnStartLon": 12.749633789062502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 31.943411653468907,
     "createdAtTurn": 36
   },
   {
