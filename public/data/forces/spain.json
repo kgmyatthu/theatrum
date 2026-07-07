@@ -120,9 +120,9 @@
     "commander": "Jose Manuel de Santo Domingo",
     "lat": 51.272075310271966,
     "lon": 2.1817503869533543,
-    "turnStartLat": 42.32078622908183,
-    "turnStartLon": -9.0470427274704,
-    "kmMovedThisTurn": 1309.0226691396247,
+    "turnStartLat": 51.272075310271966,
+    "turnStartLon": 2.1817503869533543,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
