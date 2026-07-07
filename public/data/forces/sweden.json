@@ -34,11 +34,11 @@
     "name": "Carl Gustaf Armfeldt",
     "strength": 10000,
     "commander": "Carl Gustaf Armfeldt",
-    "lat": 63.33980806067486,
-    "lon": 10.7281494140625,
+    "lat": 63.421030654064175,
+    "lon": 10.398559570312502,
     "turnStartLat": 63.33980806067486,
     "turnStartLon": 10.7281494140625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 19.19574292806106,
     "createdAtTurn": 23
   },
   {
@@ -48,11 +48,11 @@
     "name": "Philip Bogislaus von Schwerin",
     "strength": 10000,
     "commander": "Philip Bogislaus von Schwerin",
-    "lat": 59.95363507520837,
-    "lon": 11.260986328125,
+    "lat": 59.966009702748345,
+    "lon": 10.829772949218752,
     "turnStartLat": 59.95363507520837,
     "turnStartLon": 11.260986328125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 24.051120223008134,
     "createdAtTurn": 28
   },
   {
@@ -76,11 +76,11 @@
     "name": "Charles XII",
     "strength": 20000,
     "commander": "Charles XII",
-    "lat": 59.36399480528493,
-    "lon": 11.182708740234377,
+    "lat": 59.891692580830366,
+    "lon": 10.813293457031252,
     "turnStartLat": 59.36399480528493,
     "turnStartLon": 11.182708740234377,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 66.00017430484695,
     "createdAtTurn": 34
   },
   {
@@ -118,11 +118,11 @@
     "name": "Crown Prince Gustav",
     "strength": 12000,
     "commander": "Crown Prince Gustav",
-    "lat": 59.62540850658956,
-    "lon": 11.190948486328127,
+    "lat": 59.62610290569049,
+    "lon": 11.140136718750002,
     "turnStartLat": 59.62540850658956,
     "turnStartLon": 11.190948486328127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2.8579484800526918,
     "createdAtTurn": 34
   },
   {
@@ -132,11 +132,11 @@
     "name": "Carl Gustav Rehnskiöld",
     "strength": 10000,
     "commander": "Carl Gustav Rehnskiöld",
-    "lat": 59.49600034283199,
-    "lon": 11.256866455078127,
+    "lat": 59.42133028585328,
+    "lon": 10.681457519531252,
     "turnStartLat": 59.49600034283199,
     "turnStartLon": 11.256866455078127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 33.55666088204116,
     "createdAtTurn": 34
   },
   {
@@ -146,11 +146,11 @@
     "name": "Prince Frederick",
     "strength": 10000,
     "commander": "Prince Fredrik",
-    "lat": 60.073063025173305,
-    "lon": 11.420288085937502,
+    "lat": 60.095664512980804,
+    "lon": 10.498809814453127,
     "turnStartLat": 60.073063025173305,
     "turnStartLon": 11.420288085937502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 51.256900882382126,
     "createdAtTurn": 34
   },
   {
@@ -160,11 +160,11 @@
     "name": "Erik Sparre",
     "strength": 8000,
     "commander": "Erik Sparre",
-    "lat": 56.03522578369872,
-    "lon": 13.40057373046875,
+    "lat": 56.05363501913437,
+    "lon": 13.216552734375002,
     "turnStartLat": 56.03522578369872,
     "turnStartLon": 13.40057373046875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 11.611023398406186,
     "createdAtTurn": 36
   },
   {
@@ -202,11 +202,11 @@
     "name": "Matthias Alexander von Ungern-Sternberg",
     "strength": 5000,
     "commander": "Matthias Alexander von Ungern-Sternberg",
-    "lat": 56.20975914792473,
-    "lon": 13.248138427734377,
+    "lat": 59.833775202184206,
+    "lon": 11.4862060546875,
     "turnStartLat": 56.20975914792473,
     "turnStartLon": 13.248138427734377,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 416.53317204042247,
     "createdAtTurn": 36
   },
   {
@@ -340,13 +340,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Carl Henrik Wrangel",
-    "strength": 12000,
+    "strength": 15000,
     "commander": "Carl Henrik Wrangel",
-    "lat": 56.34698989490647,
-    "lon": 12.992706298828127,
+    "lat": 56.21281407174654,
+    "lon": 13.051757812500002,
     "turnStartLat": 56.34698989490647,
     "turnStartLon": 12.992706298828127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 15.358504428422185,
     "createdAtTurn": 36
   },
   {
@@ -412,11 +412,11 @@
     "name": "Johan August Meijerfeldt",
     "strength": 4000,
     "commander": "Johan August Meijerfeldt",
-    "lat": 60.31062731740045,
-    "lon": 11.3323974609375,
+    "lat": 60.44096253530979,
+    "lon": 10.623779296875002,
     "turnStartLat": 60.31062731740045,
     "turnStartLon": 11.3323974609375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 44.26771263595501,
     "createdAtTurn": 39
   },
   {
@@ -426,11 +426,11 @@
     "name": "Dalecarlian Peasants",
     "strength": 3000,
     "commander": "Holbert Anders Ersson",
-    "lat": 61.29662618671741,
-    "lon": 11.733398437500002,
+    "lat": 61.78870733190915,
+    "lon": 10.887451171875002,
     "turnStartLat": 61.29662618671741,
     "turnStartLon": 11.733398437500002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 77.12646650499308,
     "createdAtTurn": 39
   },
   {
@@ -440,11 +440,11 @@
     "name": "Vermelandian Peasants",
     "strength": 3000,
     "commander": "Johan Israel",
-    "lat": 60.81813803084084,
-    "lon": 11.689453125000002,
+    "lat": 60.994423108456154,
+    "lon": 11.134643554687502,
     "turnStartLat": 60.81813803084084,
     "turnStartLon": 11.689453125000002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 36.28229594444241,
     "createdAtTurn": 39
   }
 ]
