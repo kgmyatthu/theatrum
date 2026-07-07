@@ -18,7 +18,7 @@
     "nation": "denmark",
     "branch": "army",
     "name": "Army at Jylland",
-    "strength": 15000,
+    "strength": 5000,
     "commander": "Haaland",
     "lat": 55.55499278958471,
     "lon": 9.260465940873798,
@@ -318,6 +318,20 @@
     "lon": 5.343475341796876,
     "turnStartLat": 60.37518126453458,
     "turnStartLon": 5.343475341796876,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
+  },
+  {
+    "id": "Vancouver1903-1783451755527-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Army at Copenhagen",
+    "strength": 10000,
+    "commander": "Prince Valdemar",
+    "lat": 55.688423515539995,
+    "lon": 12.562866210937502,
+    "turnStartLat": 55.688423515539995,
+    "turnStartLon": 12.562866210937502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 40
   }
