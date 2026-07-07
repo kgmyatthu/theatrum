@@ -274,16 +274,16 @@
     "commander": "Prince Valdemar",
     "lat": 59.21390582425362,
     "lon": 10.967102050781252,
-    "turnStartLat": 59.443987313828515,
-    "turnStartLon": 11.347534256055951,
-    "kmMovedThisTurn": 33.468905081965346,
+    "turnStartLat": 59.21390582425362,
+    "turnStartLon": 10.967102050781252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 35
   },
   {
     "id": "Vancouver1903-1783194020832-1",
     "nation": "denmark",
     "branch": "army",
-    "name": "New Fort",
+    "name": "Elvestad Fortress",
     "strength": 1500,
     "commander": "Local Kapitan",
     "lat": 59.65197034919715,
@@ -292,5 +292,33 @@
     "turnStartLon": 10.994506850838663,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 35
+  },
+  {
+    "id": "Vancouver1903-1783451127654-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Vadso Fortress",
+    "strength": 300,
+    "commander": "Local Kapitan",
+    "lat": 70.06602360339869,
+    "lon": 29.7635293006897,
+    "turnStartLat": 70.06602360339869,
+    "turnStartLon": 29.7635293006897,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
+  },
+  {
+    "id": "Vancouver1903-1783451174709-1",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Bergenhus Fortress",
+    "strength": 2500,
+    "commander": "Local Kapitan",
+    "lat": 60.37518126453458,
+    "lon": 5.343475341796876,
+    "turnStartLat": 60.37518126453458,
+    "turnStartLon": 5.343475341796876,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
   }
 ]
