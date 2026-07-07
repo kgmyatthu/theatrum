@@ -48,11 +48,11 @@
     "name": "Red Squadron",
     "strength": 54,
     "commander": "Sir George Rooke",
-    "lat": 50.75557231232454,
-    "lon": -1.0491943359375002,
+    "lat": 56.05976947910657,
+    "lon": 18.347167968750004,
     "turnStartLat": 50.75557231232454,
     "turnStartLon": -1.0491943359375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1408.2222725116078,
     "createdAtTurn": 8
   },
   {
