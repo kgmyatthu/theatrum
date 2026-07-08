@@ -6,11 +6,11 @@
     "name": "I Army",
     "strength": 76000,
     "commander": "Peter I",
-    "lat": 53.2619325018413,
-    "lon": 34.43238401687274,
+    "lat": 55.64003992036207,
+    "lon": 31.42178002026727,
     "turnStartLat": 53.2619325018413,
     "turnStartLon": 34.43238401687274,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 328.27322014463465,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 48000,
     "commander": "Some German Guy",
-    "lat": 44.578832408001034,
-    "lon": 33.52359823488171,
+    "lat": 50.68061820251177,
+    "lon": 35.255480314812715,
     "turnStartLat": 44.578832408001034,
     "turnStartLon": 33.52359823488171,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 746.3221991926376,
     "createdAtTurn": 2
   },
   {
@@ -76,11 +76,11 @@
     "name": "V Army (Mountain)",
     "strength": 50000,
     "commander": "Some Russian (ill name later)",
-    "lat": 47.24567903002731,
-    "lon": 39.730885009581705,
+    "lat": 51.27390701748859,
+    "lon": 33.218670253675036,
     "turnStartLat": 47.24567903002731,
     "turnStartLon": 39.730885009581705,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 650.6661760306682,
     "createdAtTurn": 11
   },
   {
