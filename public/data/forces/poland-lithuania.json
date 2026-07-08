@@ -8,9 +8,9 @@
     "commander": "Jan III Sobieski",
     "lat": 56.60212273467285,
     "lon": 24.667790159583095,
-    "turnStartLat": 56.92999009791262,
-    "turnStartLon": 24.0435791015625,
-    "kmMovedThisTurn": 747.3644192021225,
+    "turnStartLat": 56.60212273467285,
+    "turnStartLon": 24.667790159583095,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 51.83688999069459,
     "lon": 31.139179989695553,
-    "turnStartLat": 52.19413974159753,
-    "turnStartLon": 21.071777343750004,
-    "kmMovedThisTurn": 689.5472099541734,
+    "turnStartLat": 51.83688999069459,
+    "turnStartLon": 31.139179989695553,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   }
 ]
