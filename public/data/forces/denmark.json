@@ -334,5 +334,19 @@
     "turnStartLon": 12.562866210937502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 40
+  },
+  {
+    "id": "Vancouver1903-1783473608481-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Norwegian Foreign Legion",
+    "strength": 15000,
+    "commander": "Hans von Middelfart",
+    "lat": 57.04297115765224,
+    "lon": 9.96665954589844,
+    "turnStartLat": 57.04297115765224,
+    "turnStartLon": 9.96665954589844,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
   }
 ]
