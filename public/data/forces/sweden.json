@@ -446,5 +446,47 @@
     "turnStartLon": 11.689453125000002,
     "kmMovedThisTurn": 36.28229594444241,
     "createdAtTurn": 39
+  },
+  {
+    "id": "yellowwithblue-1783475846363-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Militia",
+    "strength": 3000,
+    "commander": "",
+    "lat": 57.18390185831188,
+    "lon": 16.512451171875004,
+    "turnStartLat": 57.18390185831188,
+    "turnStartLon": 16.512451171875004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
+  },
+  {
+    "id": "yellowwithblue-1783475973364-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Militia",
+    "strength": 3000,
+    "commander": "",
+    "lat": 58.47072082411973,
+    "lon": 16.732177734375004,
+    "turnStartLat": 58.47072082411973,
+    "turnStartLon": 16.732177734375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
+  },
+  {
+    "id": "yellowwithblue-1783475977247-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Militia",
+    "strength": 3000,
+    "commander": "",
+    "lat": 56.90900226702048,
+    "lon": 12.810058593750002,
+    "turnStartLat": 56.90900226702048,
+    "turnStartLon": 12.810058593750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 40
   }
 ]
