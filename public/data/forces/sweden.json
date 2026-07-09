@@ -300,11 +300,11 @@
     "name": "Berndt Otto Stackelberg",
     "strength": 42000,
     "commander": "Berndt Otto Stackelberg",
-    "lat": 57.136239319177434,
-    "lon": 24.829101562500004,
+    "lat": 59.24341475839977,
+    "lon": 27.037353515625004,
     "turnStartLat": 57.136239319177434,
     "turnStartLon": 24.829101562500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 267.6446708216098,
     "createdAtTurn": 36
   },
   {
