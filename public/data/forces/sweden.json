@@ -286,11 +286,11 @@
     "name": "Carl Gustaf Örnestedt",
     "strength": 24000,
     "commander": "Carl Gustaf Örnestedt",
-    "lat": 60.45721779774397,
-    "lon": 26.246337890625004,
+    "lat": 59.797871028010384,
+    "lon": 30.926513671875,
     "turnStartLat": 60.45721779774397,
     "turnStartLon": 26.246337890625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 270.71914801935264,
     "createdAtTurn": 36
   },
   {
@@ -300,11 +300,11 @@
     "name": "Berndt Otto Stackelberg",
     "strength": 42000,
     "commander": "Berndt Otto Stackelberg",
-    "lat": 59.24341475839977,
-    "lon": 27.037353515625004,
+    "lat": 59.63998787256213,
+    "lon": 30.54473876953125,
     "turnStartLat": 59.24341475839977,
     "turnStartLon": 27.037353515625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 203.1131377418,
     "createdAtTurn": 36
   },
   {
@@ -312,13 +312,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Garrison of Saint Petersburg",
-    "strength": 5000,
+    "strength": 8000,
     "commander": "Garrison of Saint Petersburg",
-    "lat": 59.87239799228177,
-    "lon": 30.443115234375004,
+    "lat": 59.94950917225228,
+    "lon": 30.316772460937504,
     "turnStartLat": 59.87239799228177,
     "turnStartLon": 30.443115234375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 11.096259056208753,
     "createdAtTurn": 36
   },
   {
@@ -496,11 +496,11 @@
     "name": "Gustaf David Hamilton",
     "strength": 16000,
     "commander": "Gustaf David Hamilton",
-    "lat": 57.097468259301586,
-    "lon": 25.147705078125004,
+    "lat": 57.94401445403342,
+    "lon": 24.774169921875004,
     "turnStartLat": 57.097468259301586,
     "turnStartLon": 25.147705078125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 96.73760798816122,
     "createdAtTurn": 40
   }
 ]
