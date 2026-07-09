@@ -48,11 +48,11 @@
     "name": "Philip Bogislaus von Schwerin",
     "strength": 10000,
     "commander": "Philip Bogislaus von Schwerin",
-    "lat": 59.966009702748345,
-    "lon": 10.829772949218752,
+    "lat": 59.96532234468369,
+    "lon": 10.762481689453125,
     "turnStartLat": 59.966009702748345,
     "turnStartLon": 10.829772949218752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 3.7458854120803786,
     "createdAtTurn": 28
   },
   {
@@ -76,11 +76,11 @@
     "name": "Charles XII",
     "strength": 20000,
     "commander": "Charles XII",
-    "lat": 59.891692580830366,
-    "lon": 10.813293457031252,
+    "lat": 59.90891042881661,
+    "lon": 10.762481689453125,
     "turnStartLat": 59.891692580830366,
     "turnStartLon": 10.813293457031252,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 3.4196873315956897,
     "createdAtTurn": 34
   },
   {
@@ -146,11 +146,11 @@
     "name": "Prince Frederick",
     "strength": 10000,
     "commander": "Prince Fredrik",
-    "lat": 60.095664512980804,
-    "lon": 10.498809814453127,
+    "lat": 60.01134380973523,
+    "lon": 10.611419677734375,
     "turnStartLat": 60.095664512980804,
     "turnStartLon": 10.498809814453127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 11.268589582594796,
     "createdAtTurn": 34
   },
   {
@@ -202,11 +202,11 @@
     "name": "Matthias Alexander von Ungern-Sternberg",
     "strength": 5000,
     "commander": "Matthias Alexander von Ungern-Sternberg",
-    "lat": 59.833775202184206,
-    "lon": 11.4862060546875,
+    "lat": 59.76123656951826,
+    "lon": 10.203552246093752,
     "turnStartLat": 59.833775202184206,
     "turnStartLon": 11.4862060546875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 100.47254135828477,
     "createdAtTurn": 36
   },
   {
