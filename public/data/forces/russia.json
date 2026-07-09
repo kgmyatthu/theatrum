@@ -6,11 +6,11 @@
     "name": "I Army",
     "strength": 76000,
     "commander": "Peter I",
-    "lat": 59.17147283173116,
-    "lon": 27.350463867187504,
+    "lat": 58.56833027244517,
+    "lon": 31.286315917968754,
     "turnStartLat": 55.64003992036207,
     "turnStartLon": 31.42178002026727,
-    "kmMovedThisTurn": 462.0526060304848,
+    "kmMovedThisTurn": 697.9986959827572,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 48000,
     "commander": "Some German Guy",
-    "lat": 57.03540009176533,
-    "lon": 25.19577026367188,
+    "lat": 57.81529466482566,
+    "lon": 28.3172607421875,
     "turnStartLat": 50.68061820251177,
     "turnStartLon": 35.255480314812715,
-    "kmMovedThisTurn": 964.8162861122289,
+    "kmMovedThisTurn": 1170.806390446243,
     "createdAtTurn": 2
   },
   {
@@ -46,7 +46,7 @@
     "nation": "russia",
     "branch": "army",
     "name": "III Army",
-    "strength": 20000,
+    "strength": 60000,
     "commander": "Mikhail Loris-Melikov",
     "lat": 59.70581205025035,
     "lon": 30.74148011605255,
@@ -76,11 +76,11 @@
     "name": "V Army (Mountain)",
     "strength": 50000,
     "commander": "Some Russian (ill name later)",
-    "lat": 57.02715774395693,
-    "lon": 25.084533691406254,
+    "lat": 58.42165795241808,
+    "lon": 24.570922851562504,
     "turnStartLat": 51.27390701748859,
     "turnStartLon": 33.218670253675036,
-    "kmMovedThisTurn": 829.4289057673581,
+    "kmMovedThisTurn": 987.4595360289854,
     "createdAtTurn": 11
   },
   {
@@ -110,19 +110,5 @@
     "turnStartLon": 107.62737519443606,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 11
-  },
-  {
-    "id": "Nindze2009-1783626284311-0",
-    "nation": "russia",
-    "branch": "army",
-    "name": "VII Army (Split from the III Army and became the new VII army)",
-    "strength": 40000,
-    "commander": "",
-    "lat": 59.176228320029885,
-    "lon": 27.800903320312504,
-    "turnStartLat": 59.176228320029885,
-    "turnStartLon": 27.800903320312504,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 42
   }
 ]
