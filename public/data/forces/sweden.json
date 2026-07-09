@@ -50,9 +50,9 @@
     "commander": "Philip Bogislaus von Schwerin",
     "lat": 59.96532234468369,
     "lon": 10.762481689453125,
-    "turnStartLat": 59.966009702748345,
-    "turnStartLon": 10.829772949218752,
-    "kmMovedThisTurn": 3.7458854120803786,
+    "turnStartLat": 59.96532234468369,
+    "turnStartLon": 10.762481689453125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 28
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Charles XII",
     "lat": 59.90891042881661,
     "lon": 10.762481689453125,
-    "turnStartLat": 59.891692580830366,
-    "turnStartLon": 10.813293457031252,
-    "kmMovedThisTurn": 3.4196873315956897,
+    "turnStartLat": 59.90891042881661,
+    "turnStartLon": 10.762481689453125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Prince Fredrik",
     "lat": 60.01134380973523,
     "lon": 10.611419677734375,
-    "turnStartLat": 60.095664512980804,
-    "turnStartLon": 10.498809814453127,
-    "kmMovedThisTurn": 11.268589582594796,
+    "turnStartLat": 60.01134380973523,
+    "turnStartLon": 10.611419677734375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Erik Sparre",
     "lat": 56.029087419764366,
     "lon": 12.860870361328127,
-    "turnStartLat": 56.05363501913437,
-    "turnStartLon": 13.216552734375002,
-    "kmMovedThisTurn": 24.847683111760112,
+    "turnStartLat": 56.029087419764366,
+    "turnStartLon": 12.860870361328127,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -204,9 +204,9 @@
     "commander": "Matthias Alexander von Ungern-Sternberg",
     "lat": 59.76123656951826,
     "lon": 10.203552246093752,
-    "turnStartLat": 59.833775202184206,
-    "turnStartLon": 11.4862060546875,
-    "kmMovedThisTurn": 100.47254135828477,
+    "turnStartLat": 59.76123656951826,
+    "turnStartLon": 10.203552246093752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -302,9 +302,9 @@
     "commander": "Berndt Otto Stackelberg",
     "lat": 59.24341475839977,
     "lon": 27.037353515625004,
-    "turnStartLat": 57.136239319177434,
-    "turnStartLon": 24.829101562500004,
-    "kmMovedThisTurn": 267.6446708216098,
+    "turnStartLat": 59.24341475839977,
+    "turnStartLon": 27.037353515625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -344,9 +344,9 @@
     "commander": "Carl Henrik Wrangel",
     "lat": 56.081998717361955,
     "lon": 12.814178466796875,
-    "turnStartLat": 56.21281407174654,
-    "turnStartLon": 13.051757812500002,
-    "kmMovedThisTurn": 20.957999694637564,
+    "turnStartLat": 56.081998717361955,
+    "turnStartLon": 12.814178466796875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
