@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 60000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 59.70581205025035,
-    "lon": 30.74148011605255,
+    "lat": 58.24594583464165,
+    "lon": 30.761718750000004,
     "turnStartLat": 59.70581205025035,
     "turnStartLon": 30.74148011605255,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 231.64925119774705,
     "createdAtTurn": 2
   },
   {

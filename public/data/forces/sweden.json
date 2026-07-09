@@ -286,11 +286,11 @@
     "name": "Carl Gustaf Örnestedt",
     "strength": 24000,
     "commander": "Carl Gustaf Örnestedt",
-    "lat": 59.797871028010384,
-    "lon": 30.926513671875,
+    "lat": 60.58157148491742,
+    "lon": 26.619873046875004,
     "turnStartLat": 60.45721779774397,
     "turnStartLon": 26.246337890625004,
-    "kmMovedThisTurn": 270.71914801935264,
+    "kmMovedThisTurn": 524.1738602886858,
     "createdAtTurn": 36
   },
   {
@@ -300,11 +300,11 @@
     "name": "Berndt Otto Stackelberg",
     "strength": 42000,
     "commander": "Berndt Otto Stackelberg",
-    "lat": 59.63998787256213,
-    "lon": 30.54473876953125,
+    "lat": 57.76865857271793,
+    "lon": 25.740966796875004,
     "turnStartLat": 59.24341475839977,
     "turnStartLon": 27.037353515625004,
-    "kmMovedThisTurn": 203.1131377418,
+    "kmMovedThisTurn": 549.8005502314717,
     "createdAtTurn": 36
   },
   {
