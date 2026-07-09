@@ -34,10 +34,10 @@
     "name": "Army of Sanctimonious Pride",
     "strength": 40000,
     "commander": "",
-    "lat": 51.83688999069459,
-    "lon": 31.139179989695553,
-    "turnStartLat": 51.83688999069459,
-    "turnStartLon": 31.139179989695553,
+    "lat": 56.54109664579774,
+    "lon": 26.54577970504761,
+    "turnStartLat": 56.54109664579774,
+    "turnStartLon": 26.54577970504761,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   }
