@@ -160,11 +160,11 @@
     "name": "Erik Sparre",
     "strength": 8000,
     "commander": "Erik Sparre",
-    "lat": 56.05363501913437,
-    "lon": 13.216552734375002,
+    "lat": 56.029087419764366,
+    "lon": 12.860870361328127,
     "turnStartLat": 56.05363501913437,
     "turnStartLon": 13.216552734375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 24.847683111760112,
     "createdAtTurn": 36
   },
   {
@@ -340,13 +340,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Carl Henrik Wrangel",
-    "strength": 15000,
+    "strength": 20000,
     "commander": "Carl Henrik Wrangel",
-    "lat": 56.21281407174654,
-    "lon": 13.051757812500002,
+    "lat": 56.081998717361955,
+    "lon": 12.814178466796875,
     "turnStartLat": 56.21281407174654,
     "turnStartLon": 13.051757812500002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 20.957999694637564,
     "createdAtTurn": 36
   },
   {
