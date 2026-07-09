@@ -8,9 +8,9 @@
     "commander": "Peter I",
     "lat": 52.26901005334743,
     "lon": 21.209793090820316,
-    "turnStartLat": 55.64003992036207,
-    "turnStartLon": 31.42178002026727,
-    "kmMovedThisTurn": 2324.7213678882617,
+    "turnStartLat": 52.26901005334743,
+    "turnStartLon": 21.209793090820316,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Some German Guy",
     "lat": 57.81529466482566,
     "lon": 28.3172607421875,
-    "turnStartLat": 50.68061820251177,
-    "turnStartLon": 35.255480314812715,
-    "kmMovedThisTurn": 1170.806390446243,
+    "turnStartLat": 57.81529466482566,
+    "turnStartLon": 28.3172607421875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Some Russian (ill name later)",
     "lat": 58.42165795241808,
     "lon": 24.570922851562504,
-    "turnStartLat": 51.27390701748859,
-    "turnStartLon": 33.218670253675036,
-    "kmMovedThisTurn": 987.4595360289854,
+    "turnStartLat": 58.42165795241808,
+    "turnStartLon": 24.570922851562504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 11
   },
   {
