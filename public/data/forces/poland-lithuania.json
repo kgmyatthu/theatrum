@@ -4,7 +4,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Crown Army",
-    "strength": 32000,
+    "strength": 22000,
     "commander": "Jan III Sobieski",
     "lat": 57.6689107171251,
     "lon": 25.600891113281254,
@@ -40,5 +40,19 @@
     "turnStartLon": 26.54577970504761,
     "kmMovedThisTurn": 158.7547398949594,
     "createdAtTurn": 36
+  },
+  {
+    "id": "AceApache-1783707321299-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Siege Garrison",
+    "strength": 10000,
+    "commander": "",
+    "lat": 56.93898127004867,
+    "lon": 24.230346679687504,
+    "turnStartLat": 56.93898127004867,
+    "turnStartLon": 24.230346679687504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 43
   }
 ]
