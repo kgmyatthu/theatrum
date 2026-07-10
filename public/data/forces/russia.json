@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 32000,
     "commander": "Some German Guy",
-    "lat": 57.157278997765175,
-    "lon": 25.317993164062504,
+    "lat": 57.03774120228207,
+    "lon": 28.547973632812504,
     "turnStartLat": 57.81529466482566,
     "turnStartLon": 28.3172607421875,
-    "kmMovedThisTurn": 193.59493258128916,
+    "kmMovedThisTurn": 389.12699020646824,
     "createdAtTurn": 2
   },
   {
