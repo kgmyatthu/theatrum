@@ -54,5 +54,47 @@
     "turnStartLon": 24.230346679687504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43
+  },
+  {
+    "id": "AceApache-1783732385507-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Lithuania",
+    "strength": 30000,
+    "commander": "",
+    "lat": 54.64205540129178,
+    "lon": 25.383911132812504,
+    "turnStartLat": 54.64205540129178,
+    "turnStartLon": 25.383911132812504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 43
+  },
+  {
+    "id": "AceApache-1783732396428-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Poland",
+    "strength": 30000,
+    "commander": "",
+    "lat": 52.15034402766095,
+    "lon": 21.011352539062504,
+    "turnStartLat": 52.15034402766095,
+    "turnStartLon": 21.011352539062504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 43
+  },
+  {
+    "id": "AceApache-1783732406402-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Silesia",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.02757633780243,
+    "lon": 16.754150390625004,
+    "turnStartLat": 51.02757633780243,
+    "turnStartLon": 16.754150390625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 43
   }
 ]
