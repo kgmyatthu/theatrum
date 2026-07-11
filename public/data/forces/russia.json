@@ -132,11 +132,11 @@
     "name": "I Army (Split)",
     "strength": 35000,
     "commander": "",
-    "lat": 52.244866778582036,
-    "lon": 20.887756347656254,
+    "lat": 52.92215137976296,
+    "lon": 31.794433593750004,
     "turnStartLat": 52.244866778582036,
     "turnStartLon": 20.887756347656254,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 739.9961176656816,
     "createdAtTurn": 42
   }
 ]
