@@ -204,9 +204,9 @@
     "commander": "Matthias Alexander von Ungern-Sternberg",
     "lat": 59.84757420214582,
     "lon": 10.2667236328125,
-    "turnStartLat": 59.76123656951826,
-    "turnStartLon": 10.203552246093752,
-    "kmMovedThisTurn": 10.229728965739852,
+    "turnStartLat": 59.84757420214582,
+    "turnStartLon": 10.2667236328125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -400,9 +400,9 @@
     "commander": "Johan August Meijerfeldt",
     "lat": 60.51675086553633,
     "lon": 10.008544921875002,
-    "turnStartLat": 60.44096253530979,
-    "turnStartLon": 10.623779296875002,
-    "kmMovedThisTurn": 65.7059855855458,
+    "turnStartLat": 60.51675086553633,
+    "turnStartLon": 10.008544921875002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 39
   },
   {
@@ -414,9 +414,9 @@
     "commander": "Holbert Anders Ersson",
     "lat": 61.78351338713721,
     "lon": 10.612792968750002,
-    "turnStartLat": 61.78870733190915,
-    "turnStartLon": 10.887451171875002,
-    "kmMovedThisTurn": 14.450043144046106,
+    "turnStartLat": 61.78351338713721,
+    "turnStartLon": 10.612792968750002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 39
   },
   {
@@ -428,9 +428,9 @@
     "commander": "Johan Israel",
     "lat": 61.04765058603108,
     "lon": 10.283203125000002,
-    "turnStartLat": 60.994423108456154,
-    "turnStartLon": 11.134643554687502,
-    "kmMovedThisTurn": 46.24929220631308,
+    "turnStartLat": 61.04765058603108,
+    "turnStartLon": 10.283203125000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 39
   },
   {

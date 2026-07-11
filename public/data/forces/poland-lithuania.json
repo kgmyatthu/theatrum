@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 58.467848143329725,
     "lon": 21.950683593750004,
-    "turnStartLat": 54.64205540129178,
-    "turnStartLon": 25.383911132812504,
-    "kmMovedThisTurn": 596.3169394976277,
+    "turnStartLat": 58.467848143329725,
+    "turnStartLon": 21.950683593750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -64,9 +64,9 @@
     "commander": "",
     "lat": 54.09806018306312,
     "lon": 18.479003906250004,
-    "turnStartLat": 52.15034402766095,
-    "turnStartLon": 21.011352539062504,
-    "kmMovedThisTurn": 274.6579507352441,
+    "turnStartLat": 54.09806018306312,
+    "turnStartLon": 18.479003906250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -90,10 +90,10 @@
     "name": "Cossack Horde",
     "strength": 10000,
     "commander": "",
-    "lat": 58.47072082411973,
-    "lon": 22.280273437500004,
-    "turnStartLat": 58.47072082411973,
-    "turnStartLon": 22.280273437500004,
+    "lat": 59.32478310834112,
+    "lon": 18.555908203125004,
+    "turnStartLat": 59.32478310834112,
+    "turnStartLon": 18.555908203125004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 44
   }
