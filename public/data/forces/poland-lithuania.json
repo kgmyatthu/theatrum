@@ -46,7 +46,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Lithuania",
-    "strength": 30000,
+    "strength": 20000,
     "commander": "",
     "lat": 58.467848143329725,
     "lon": 21.950683593750004,
@@ -82,5 +82,19 @@
     "turnStartLon": 16.754150390625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43
+  },
+  {
+    "id": "AceApache-1783796215917-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Cossack Horde",
+    "strength": 10000,
+    "commander": "",
+    "lat": 58.47072082411973,
+    "lon": 22.280273437500004,
+    "turnStartLat": 58.47072082411973,
+    "turnStartLon": 22.280273437500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 44
   }
 ]
