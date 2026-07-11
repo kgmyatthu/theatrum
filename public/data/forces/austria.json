@@ -188,11 +188,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 46.78501604269256,
-    "lon": 19.62158203125,
+    "lat": 48.22101291025667,
+    "lon": 17.687988281250004,
     "turnStartLat": 46.44542749723387,
     "turnStartLon": 19.270019531250004,
-    "kmMovedThisTurn": 46.33443205531484,
+    "kmMovedThisTurn": 262.17460066680763,
     "createdAtTurn": 36
   },
   {
