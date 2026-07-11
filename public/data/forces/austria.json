@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "",
-    "lat": 50.324422739309384,
-    "lon": 12.985839843750002,
+    "lat": 49.57510247172322,
+    "lon": 13.0078125,
     "turnStartLat": 49.83798245308486,
     "turnStartLon": 13.326416015625002,
-    "kmMovedThisTurn": 59.297852834665385,
+    "kmMovedThisTurn": 142.63329441287993,
     "createdAtTurn": 21
   },
   {
