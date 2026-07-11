@@ -6,11 +6,11 @@
     "name": "I Army",
     "strength": 35000,
     "commander": "Peter I",
-    "lat": 52.26901005334743,
-    "lon": 21.209793090820316,
+    "lat": 57.553735004214154,
+    "lon": 18.533935546875004,
     "turnStartLat": 52.26901005334743,
     "turnStartLon": 21.209793090820316,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 611.8975181066816,
     "createdAtTurn": 2
   },
   {
@@ -118,11 +118,11 @@
     "name": "IV Army (Split)",
     "strength": 20000,
     "commander": "",
-    "lat": 58.54836047613418,
-    "lon": 31.275329589843754,
+    "lat": 58.65405526378245,
+    "lon": 25.589904785156254,
     "turnStartLat": 58.54836047613418,
     "turnStartLon": 31.275329589843754,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 329.476699835351,
     "createdAtTurn": 42
   },
   {
@@ -132,11 +132,11 @@
     "name": "I Army (Split)",
     "strength": 35000,
     "commander": "",
-    "lat": 52.92215137976296,
-    "lon": 31.794433593750004,
+    "lat": 56.987997120772036,
+    "lon": 24.261245727539062,
     "turnStartLat": 52.92215137976296,
     "turnStartLon": 31.794433593750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 659.423895181593,
     "createdAtTurn": 42
   }
 ]
