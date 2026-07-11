@@ -20,11 +20,11 @@
     "name": "II Army",
     "strength": 40000,
     "commander": "Menshikov",
-    "lat": 58.13582683375496,
-    "lon": 27.158614773151648,
+    "lat": 59.40401672704029,
+    "lon": 24.964370727539066,
     "turnStartLat": 58.13582683375496,
     "turnStartLon": 27.158614773151648,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 189.42285410873077,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 60000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 58.24594583464165,
-    "lon": 30.761718750000004,
+    "lat": 59.281656309077356,
+    "lon": 27.64640808105469,
     "turnStartLat": 58.24594583464165,
     "turnStartLon": 30.761718750000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 213.3497215029688,
     "createdAtTurn": 2
   },
   {
