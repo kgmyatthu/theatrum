@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 49.15296965617039,
-    "lon": 19.346923828125004,
+    "lat": 49.52520834197444,
+    "lon": 18.555908203125004,
     "turnStartLat": 49.15296965617039,
     "turnStartLon": 19.346923828125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 70.69433303701496,
     "createdAtTurn": 7
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of the Habsburgs",
     "strength": 40000,
     "commander": "",
-    "lat": 48.705462895790575,
-    "lon": 15.106201171875002,
+    "lat": 50.61113171332364,
+    "lon": 14.611816406250002,
     "turnStartLat": 48.705462895790575,
     "turnStartLon": 15.106201171875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 214.8667094622129,
     "createdAtTurn": 21
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "",
-    "lat": 49.83798245308486,
-    "lon": 13.326416015625002,
+    "lat": 50.324422739309384,
+    "lon": 12.985839843750002,
     "turnStartLat": 49.83798245308486,
     "turnStartLon": 13.326416015625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 59.297852834665385,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "",
-    "lat": 48.45106561953216,
-    "lon": 13.952636718750002,
+    "lat": 48.21735290928554,
+    "lon": 13.656005859375002,
     "turnStartLat": 48.45106561953216,
     "turnStartLon": 13.952636718750002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 214.68401622353804,
     "createdAtTurn": 21
   },
   {
@@ -188,11 +188,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 46.44542749723387,
-    "lon": 19.270019531250004,
+    "lat": 46.78501604269256,
+    "lon": 19.62158203125,
     "turnStartLat": 46.44542749723387,
     "turnStartLon": 19.270019531250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 46.33443205531484,
     "createdAtTurn": 36
   },
   {
