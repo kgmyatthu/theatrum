@@ -62,11 +62,11 @@
     "name": "Army of Poland",
     "strength": 30000,
     "commander": "",
-    "lat": 52.15034402766095,
-    "lon": 21.011352539062504,
+    "lat": 54.09806018306312,
+    "lon": 18.479003906250004,
     "turnStartLat": 52.15034402766095,
     "turnStartLon": 21.011352539062504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 274.6579507352441,
     "createdAtTurn": 43
   },
   {
