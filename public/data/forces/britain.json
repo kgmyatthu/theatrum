@@ -48,11 +48,11 @@
     "name": "Red Squadron",
     "strength": 54,
     "commander": "Sir George Rooke",
-    "lat": 50.82263785103416,
-    "lon": -1.1185455322265627,
+    "lat": 57.9148477670092,
+    "lon": 21.533203125000004,
     "turnStartLat": 50.82263785103416,
     "turnStartLon": -1.1185455322265627,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1654.6069986907385,
     "createdAtTurn": 8
   },
   {
@@ -76,11 +76,11 @@
     "name": "Blue Squadron",
     "strength": 42,
     "commander": "Arthur Herbert",
-    "lat": 51.45400691005982,
-    "lon": 0.889892578125,
+    "lat": 57.25528054528889,
+    "lon": 19.226074218750004,
     "turnStartLat": 51.45400691005982,
     "turnStartLon": 0.889892578125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1346.0090862761426,
     "createdAtTurn": 8
   },
   {
