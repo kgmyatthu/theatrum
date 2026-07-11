@@ -490,16 +490,30 @@
     "createdAtTurn": 40
   },
   {
-    "id": "yellowwithblue-1783785998298-0",
+    "id": "yellowwithblue-1783795689333-0",
     "nation": "sweden",
     "branch": "army",
-    "name": "Norwegian Army",
+    "name": "Isaac Cronström",
+    "strength": 13000,
+    "commander": "Isaac Cronström",
+    "lat": 58.89045768672168,
+    "lon": 17.506713867187504,
+    "turnStartLat": 58.89045768672168,
+    "turnStartLon": 17.506713867187504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 44
+  },
+  {
+    "id": "yellowwithblue-1783795742720-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Henrik Magnus von Buddenbrock",
     "strength": 8000,
-    "commander": "",
-    "lat": 58.487951979600396,
-    "lon": 22.9669189453125,
-    "turnStartLat": 58.487951979600396,
-    "turnStartLon": 22.9669189453125,
+    "commander": "Henrik Magnus von Buddenbrock",
+    "lat": 58.805207224740826,
+    "lon": 17.221069335937504,
+    "turnStartLat": 58.805207224740826,
+    "turnStartLon": 17.221069335937504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 44
   }
