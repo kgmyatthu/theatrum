@@ -488,5 +488,19 @@
     "turnStartLon": 25.3948974609375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 40
+  },
+  {
+    "id": "yellowwithblue-1783785998298-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Norwegian Army",
+    "strength": 8000,
+    "commander": "",
+    "lat": 58.487951979600396,
+    "lon": 22.9669189453125,
+    "turnStartLat": 58.487951979600396,
+    "turnStartLon": 22.9669189453125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 44
   }
 ]
