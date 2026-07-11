@@ -48,11 +48,11 @@
     "name": "Army of Lithuania",
     "strength": 30000,
     "commander": "",
-    "lat": 58.381558503186966,
-    "lon": 22.576904296875004,
+    "lat": 58.467848143329725,
+    "lon": 21.950683593750004,
     "turnStartLat": 54.64205540129178,
     "turnStartLon": 25.383911132812504,
-    "kmMovedThisTurn": 558.6148248667378,
+    "kmMovedThisTurn": 596.3169394976277,
     "createdAtTurn": 43
   },
   {
