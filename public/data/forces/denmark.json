@@ -330,9 +330,9 @@
     "commander": "Prince Valdemar",
     "lat": 55.7286861443013,
     "lon": 12.93396005406976,
-    "turnStartLat": 55.688423515539995,
-    "turnStartLon": 12.562866210937502,
-    "kmMovedThisTurn": 23.675233327948167,
+    "turnStartLat": 55.7286861443013,
+    "turnStartLon": 12.93396005406976,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 40
   },
   {
@@ -344,9 +344,9 @@
     "commander": "Hans von Middelfart",
     "lat": 59.54591219979268,
     "lon": 9.991943389177324,
-    "turnStartLat": 57.04297115765224,
-    "turnStartLon": 9.96665954589844,
-    "kmMovedThisTurn": 278.31826218296624,
+    "turnStartLat": 59.54591219979268,
+    "turnStartLon": 9.991943389177324,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 40
   },
   {
