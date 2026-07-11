@@ -288,9 +288,9 @@
     "commander": "Carl Gustaf Örnestedt",
     "lat": 58.722598828043395,
     "lon": 25.751953125000004,
-    "turnStartLat": 60.45721779774397,
-    "turnStartLon": 26.246337890625004,
-    "kmMovedThisTurn": 744.0901358362204,
+    "turnStartLat": 58.722598828043395,
+    "turnStartLon": 25.751953125000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -302,9 +302,9 @@
     "commander": "Berndt Otto Stackelberg",
     "lat": 58.77389612171181,
     "lon": 25.576171875,
-    "turnStartLat": 59.24341475839977,
-    "turnStartLon": 27.037353515625004,
-    "kmMovedThisTurn": 662.004014758217,
+    "turnStartLat": 58.77389612171181,
+    "turnStartLon": 25.576171875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -316,9 +316,9 @@
     "commander": "Garrison of Saint Petersburg",
     "lat": 59.94950917225228,
     "lon": 30.316772460937504,
-    "turnStartLat": 59.87239799228177,
-    "turnStartLon": 30.443115234375004,
-    "kmMovedThisTurn": 11.096259056208753,
+    "turnStartLat": 59.94950917225228,
+    "turnStartLon": 30.316772460937504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -498,9 +498,9 @@
     "commander": "Gustaf David Hamilton",
     "lat": 58.76962423741451,
     "lon": 25.3948974609375,
-    "turnStartLat": 57.097468259301586,
-    "turnStartLon": 25.147705078125004,
-    "kmMovedThisTurn": 213.94707518927262,
+    "turnStartLat": 58.76962423741451,
+    "turnStartLon": 25.3948974609375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 40
   }
 ]
