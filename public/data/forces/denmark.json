@@ -1,19 +1,5 @@
 [
   {
-    "id": "Vancouver1903-1780032601482-0",
-    "nation": "denmark",
-    "branch": "navy",
-    "name": "Danish Royal Navy (SOTL Only)",
-    "strength": 42,
-    "commander": "Christopher Ernst von Stöcken",
-    "lat": 55.559552639064314,
-    "lon": 12.535400390625002,
-    "turnStartLat": 55.86298231197633,
-    "turnStartLon": 14.900207519531252,
-    "kmMovedThisTurn": 151.9244459452509,
-    "createdAtTurn": 0
-  },
-  {
     "id": "Vancouver1903-1780032726147-1",
     "nation": "denmark",
     "branch": "army",
@@ -36,9 +22,9 @@
     "commander": "Sir Poul Vendelbo Løvenørn",
     "lat": 55.787258378469254,
     "lon": 12.271728515625002,
-    "turnStartLat": 56.032156723751584,
-    "turnStartLon": 12.742767333984375,
-    "kmMovedThisTurn": 40.0423592366165,
+    "turnStartLat": 55.787258378469254,
+    "turnStartLon": 12.271728515625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -50,9 +36,9 @@
     "commander": "Frederick von Gabel",
     "lat": 57.21889865038407,
     "lon": 10.239257812500002,
-    "turnStartLat": 59.967384376089875,
-    "turnStartLon": 10.667724609375002,
-    "kmMovedThisTurn": 330.19634667083665,
+    "turnStartLat": 57.21889865038407,
+    "turnStartLon": 10.239257812500002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -264,5 +250,19 @@
     "turnStartLon": 12.584350453689696,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43
+  },
+  {
+    "id": "yellowwithblue-1783829484287-0",
+    "nation": "denmark",
+    "branch": "navy",
+    "name": "Danish Royal Navy (SOTL Only)",
+    "strength": 42,
+    "commander": "Christopher Ernst von Stöcken",
+    "lat": 55.62799595426723,
+    "lon": 12.579345703125002,
+    "turnStartLat": 55.62799595426723,
+    "turnStartLon": 12.579345703125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 47
   }
 ]
