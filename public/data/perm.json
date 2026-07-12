@@ -82,5 +82,9 @@
   "ohgizmo": {
     "role": "player",
     "nation": "poland-lithuania"
+  },
+  "Ohgizmo": {
+    "role": "player",
+    "nation": "poland-lithuania"
   }
 }
