@@ -82,5 +82,61 @@
     "turnStartLon": 20.311083973440013,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "Ohgizmo-1783895236710-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Kyiv",
+    "strength": 5000,
+    "commander": "",
+    "lat": 50.40851753069729,
+    "lon": 30.531005859375004,
+    "turnStartLat": 50.40851753069729,
+    "turnStartLon": 30.531005859375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Ohgizmo-1783895246169-3",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Minsk",
+    "strength": 5000,
+    "commander": "",
+    "lat": 53.904338156274704,
+    "lon": 27.641601562500004,
+    "turnStartLat": 53.904338156274704,
+    "turnStartLon": 27.641601562500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Ohgizmo-1783895258479-4",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Lviv",
+    "strength": 5000,
+    "commander": "",
+    "lat": 49.75997752330658,
+    "lon": 24.202880859375,
+    "turnStartLat": 49.75997752330658,
+    "turnStartLon": 24.202880859375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Ohgizmo-1783895268175-5",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Harrison of Vilnius",
+    "strength": 5000,
+    "commander": "",
+    "lat": 54.67383096593116,
+    "lon": 25.367431640625004,
+    "turnStartLat": 54.67383096593116,
+    "turnStartLon": 25.367431640625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
