@@ -42,17 +42,17 @@
     "createdAtTurn": 47
   },
   {
-    "id": "yellowwithblue-1783829665337-3",
+    "id": "yellowwithblue-1783898564612-0",
     "nation": "sweden",
     "branch": "army",
     "name": "Mattias Alexander von Ungern-Sternberg",
-    "strength": 18000,
+    "strength": 20000,
     "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 58.06625598088454,
-    "lon": 25.86181640625,
-    "turnStartLat": 58.06625598088454,
-    "turnStartLon": 25.86181640625,
+    "lat": 54.13025957879545,
+    "lon": 13.084716796875,
+    "turnStartLat": 54.13025957879545,
+    "turnStartLon": 13.084716796875,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 47
+    "createdAtTurn": 49
   }
 ]
