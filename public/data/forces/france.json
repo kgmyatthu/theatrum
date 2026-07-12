@@ -162,9 +162,9 @@
     "commander": "",
     "lat": 45.30285570182102,
     "lon": 9.07074809074402,
-    "turnStartLat": 43.37311218382002,
-    "turnStartLon": 5.910644531250001,
-    "kmMovedThisTurn": 337.28318830571874,
+    "turnStartLat": 45.30285570182102,
+    "turnStartLon": 9.07074809074402,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 14
   },
   {
@@ -174,10 +174,10 @@
     "name": "Bavarian Detachment Army of the Rear",
     "strength": 40000,
     "commander": "",
-    "lat": 48.76503802884129,
-    "lon": 11.857841871678831,
-    "turnStartLat": 48.76503802884129,
-    "turnStartLon": 11.857841871678831,
+    "lat": 48.76343113791796,
+    "lon": 12.252685502171518,
+    "turnStartLat": 48.76343113791796,
+    "turnStartLon": 12.252685502171518,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   }

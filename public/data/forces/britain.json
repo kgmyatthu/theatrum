@@ -50,9 +50,9 @@
     "commander": "Sir George Rooke",
     "lat": 51.20688339486562,
     "lon": 0.19775390625000003,
-    "turnStartLat": 57.9148477670092,
-    "turnStartLon": 21.533203125000004,
-    "kmMovedThisTurn": 1555.3739718912957,
+    "turnStartLat": 51.20688339486562,
+    "turnStartLon": 0.19775390625000003,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Arthur Herbert",
     "lat": 50.94458443495011,
     "lon": -1.4282226562500002,
-    "turnStartLat": 57.25528054528889,
-    "turnStartLon": 19.226074218750004,
-    "kmMovedThisTurn": 1510.2306882344099,
+    "turnStartLat": 50.94458443495011,
+    "turnStartLon": -1.4282226562500002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
