@@ -222,5 +222,19 @@
     "turnStartLon": 120.86059570312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 46
+  },
+  {
+    "id": "Walrusbear0831-1783874067767-1",
+    "nation": "spain",
+    "branch": "army",
+    "name": "3rd Army of Italy",
+    "strength": 25000,
+    "commander": "",
+    "lat": 44.80562791857874,
+    "lon": 9.698692951351404,
+    "turnStartLat": 44.80562791857874,
+    "turnStartLon": 9.698692951351404,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
