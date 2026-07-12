@@ -6,11 +6,11 @@
     "name": "Army of Lowlands",
     "strength": 35000,
     "commander": "Charles Eugène de Croÿ",
-    "lat": 51.024320894109074,
-    "lon": 3.7618430703878403,
+    "lat": 50.59039606835147,
+    "lon": 5.856468938291074,
     "turnStartLat": 51.024320894109074,
     "turnStartLon": 3.7618430703878403,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 154.88434553480297,
     "createdAtTurn": 7
   },
   {
@@ -34,11 +34,11 @@
     "name": "2nd Army of Spain",
     "strength": 30000,
     "commander": "Íñigo Melchor Fernández de Velasco",
-    "lat": 36.59717611627249,
-    "lon": 3.711662963032723,
+    "lat": 36.249566562988406,
+    "lon": 10.063990205526354,
     "turnStartLat": 36.59717611627249,
     "turnStartLon": 3.711662963032723,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 569.5709825505004,
     "createdAtTurn": 7
   },
   {
@@ -62,11 +62,11 @@
     "name": "2nd Army of Italy",
     "strength": 10000,
     "commander": "Pietro Ricardo de Palermo",
-    "lat": 35.17936806484728,
-    "lon": 10.520032793283463,
+    "lat": 40.85406274882947,
+    "lon": 14.775291681289675,
     "turnStartLat": 35.17936806484728,
     "turnStartLon": 10.520032793283463,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 732.6463885962452,
     "createdAtTurn": 7
   },
   {
@@ -160,11 +160,11 @@
     "name": "1st Army of Italy",
     "strength": 15000,
     "commander": "Luigi",
-    "lat": 40.95007966132124,
-    "lon": 14.526414871215822,
+    "lat": 45.32493308327473,
+    "lon": 9.211542606353762,
     "turnStartLat": 40.95007966132124,
     "turnStartLon": 14.526414871215822,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 649.8889323562094,
     "createdAtTurn": 24
   }
 ]
