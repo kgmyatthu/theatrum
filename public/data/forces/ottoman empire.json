@@ -46,13 +46,13 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Mısır Ordusu",
-    "strength": 40000,
+    "strength": 30000,
     "commander": "Abdullah Pasha",
-    "lat": 22.021636504965482,
-    "lon": 31.442871093750004,
+    "lat": 28.731461500968706,
+    "lon": 31.069335937500004,
     "turnStartLat": 22.021636504965482,
     "turnStartLon": 31.442871093750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 747.0398817469948,
     "createdAtTurn": 31
   },
   {
@@ -174,11 +174,11 @@
     "name": "Mısır Filosu",
     "strength": 30,
     "commander": "Hassan Pasha",
-    "lat": 23.096981933618046,
-    "lon": 32.76123046875001,
+    "lat": 31.936546927345045,
+    "lon": 30.476074218750004,
     "turnStartLat": 23.096981933618046,
     "turnStartLon": 32.76123046875001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1008.3259008174224,
     "createdAtTurn": 31
   },
   {
@@ -188,11 +188,11 @@
     "name": "Kızıldeniz Filosu",
     "strength": 25,
     "commander": "Said Pasha",
-    "lat": 19.659901942267492,
-    "lon": 37.63916015625001,
+    "lat": 28.96328843565997,
+    "lon": 34.58496093750001,
     "turnStartLat": 19.659901942267492,
     "turnStartLon": 37.63916015625001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1079.6349823462992,
     "createdAtTurn": 31
   },
   {
@@ -278,5 +278,19 @@
     "turnStartLon": 27.277578532680646,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 34
+  },
+  {
+    "id": "Fouzi-707-1783852882027-0",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Sudan Ordusu",
+    "strength": 10000,
+    "commander": "Hamdi Bey",
+    "lat": 14.976352491440519,
+    "lon": 31.904296875000004,
+    "turnStartLat": 14.976352491440519,
+    "turnStartLon": 31.904296875000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
