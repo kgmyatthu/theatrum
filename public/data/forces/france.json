@@ -102,7 +102,7 @@
     "nation": "france",
     "branch": "army",
     "name": "France Army Of Rear",
-    "strength": 65000,
+    "strength": 25000,
     "commander": "",
     "lat": 48.50204750525715,
     "lon": 6.5478515625,
@@ -160,11 +160,25 @@
     "name": "Crusade Detachment of Rear Army",
     "strength": 10000,
     "commander": "",
-    "lat": 43.37311218382002,
-    "lon": 5.910644531250001,
+    "lat": 45.30285570182102,
+    "lon": 9.07074809074402,
     "turnStartLat": 43.37311218382002,
     "turnStartLon": 5.910644531250001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 337.28318830571874,
     "createdAtTurn": 14
+  },
+  {
+    "id": "Walrusbear0831-1783839882342-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Bavarian Detachment Army of the Rear",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.76503802884129,
+    "lon": 11.857841871678831,
+    "turnStartLat": 48.76503802884129,
+    "turnStartLon": 11.857841871678831,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 47
   }
 ]
