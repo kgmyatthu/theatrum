@@ -26,5 +26,19 @@
     "turnStartLon": 12.51888624916673,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 31
+  },
+  {
+    "id": "KingREN1-Suitman-1783840639874-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Munich Garrison",
+    "strength": 5000,
+    "commander": "",
+    "lat": 48.06339653776214,
+    "lon": 11.661987304687502,
+    "turnStartLat": 48.06339653776214,
+    "turnStartLon": 11.661987304687502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
