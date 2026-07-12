@@ -180,5 +180,19 @@
     "turnStartLon": 12.252685502171518,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47
+  },
+  {
+    "id": "Walrusbear0831-1783873971998-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Army of Lyon",
+    "strength": 40000,
+    "commander": "",
+    "lat": 45.74913669417369,
+    "lon": 4.883422851562501,
+    "turnStartLat": 45.74913669417369,
+    "turnStartLon": 4.883422851562501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
