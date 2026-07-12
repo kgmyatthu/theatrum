@@ -166,5 +166,61 @@
     "turnStartLon": 14.526414871215822,
     "kmMovedThisTurn": 649.8889323562094,
     "createdAtTurn": 24
+  },
+  {
+    "id": "Walrusbear0831-1783816715583-0",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Rio de La Plata Station",
+    "strength": 4,
+    "commander": "Antonio de La Guerra",
+    "lat": -34.56115474650155,
+    "lon": -58.16162109375,
+    "turnStartLat": -34.56115474650155,
+    "turnStartLon": -58.16162109375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 46
+  },
+  {
+    "id": "Walrusbear0831-1783816857246-1",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Lima Station",
+    "strength": 5,
+    "commander": "Marco Clavelo de Cartagena",
+    "lat": -12.117333762317303,
+    "lon": -77.23564691841602,
+    "turnStartLat": -12.117333762317303,
+    "turnStartLon": -77.23564691841602,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 46
+  },
+  {
+    "id": "Walrusbear0831-1783816927095-2",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Acapulco Squadron",
+    "strength": 5,
+    "commander": "Gabrielo Ronaldo del Santiago",
+    "lat": 16.772802816428474,
+    "lon": -100.0747359758502,
+    "turnStartLat": 16.772802816428474,
+    "turnStartLon": -100.0747359758502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 46
+  },
+  {
+    "id": "Walrusbear0831-1783817129800-3",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Manila Squadron",
+    "strength": 5,
+    "commander": "Fernando Gatsu del Vasquez",
+    "lat": 14.497279971077903,
+    "lon": 120.86059570312501,
+    "turnStartLat": 14.497279971077903,
+    "turnStartLon": 120.86059570312501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 46
   }
 ]
