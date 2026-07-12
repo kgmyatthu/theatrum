@@ -208,5 +208,33 @@
     "turnStartLon": 19.105224609375004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 36
+  },
+  {
+    "id": "RadetzkyNTW-1783830423372-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "2nd Army of Austria",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.42920055556841,
+    "lon": 15.721435546875002,
+    "turnStartLat": 48.42920055556841,
+    "turnStartLon": 15.721435546875002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 47
+  },
+  {
+    "id": "RadetzkyNTW-1783830437532-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "2nd Army of Bohemia",
+    "strength": 40000,
+    "commander": "",
+    "lat": 49.603590524348704,
+    "lon": 13.106689453125002,
+    "turnStartLat": 49.603590524348704,
+    "turnStartLon": 13.106689453125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 47
   }
 ]
