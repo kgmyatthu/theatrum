@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 52.22779941887071,
-    "lon": 21.1376953125,
+    "lat": 52.328625488430184,
+    "lon": 16.666259765625004,
     "turnStartLat": 52.22779941887071,
     "turnStartLon": 21.1376953125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 304.359412671193,
     "createdAtTurn": 4
   },
   {
@@ -31,8 +31,8 @@
     "id": "AceApache-1783732396428-1",
     "nation": "poland-lithuania",
     "branch": "army",
-    "name": "Army of Poland",
-    "strength": 30000,
+    "name": "Army of East Prussia",
+    "strength": 70000,
     "commander": "",
     "lat": 54.09806018306312,
     "lon": 18.479003906250004,
@@ -54,5 +54,33 @@
     "turnStartLon": 16.754150390625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43
+  },
+  {
+    "id": "Ohgizmo-1783895147987-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Warsaw",
+    "strength": 5000,
+    "commander": "",
+    "lat": 52.59036035415668,
+    "lon": 21.266894520315013,
+    "turnStartLat": 52.59036035415668,
+    "turnStartLon": 21.266894520315013,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Ohgizmo-1783895170450-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Krakow",
+    "strength": 5000,
+    "commander": "",
+    "lat": 49.99431343251391,
+    "lon": 20.311083973440013,
+    "turnStartLat": 49.99431343251391,
+    "turnStartLon": 20.311083973440013,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
