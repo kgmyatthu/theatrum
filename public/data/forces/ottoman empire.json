@@ -6,11 +6,11 @@
     "name": "Rumeli Ordusu",
     "strength": 60000,
     "commander": "Silahdar Mehmed Pasha",
-    "lat": 41.783871104275796,
-    "lon": 26.605837656082215,
+    "lat": 44.56325101381593,
+    "lon": 19.396362304687504,
     "turnStartLat": 41.783871104275796,
     "turnStartLon": 26.605837656082215,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 660.952138048221,
     "createdAtTurn": 31
   },
   {
@@ -62,11 +62,11 @@
     "name": "Şam Ordusu",
     "strength": 20000,
     "commander": "Osman Pasha",
-    "lat": 33.52455038091028,
-    "lon": 36.28750862979708,
+    "lat": 31.57783191036548,
+    "lon": 29.113769531250004,
     "turnStartLat": 33.52455038091028,
     "turnStartLon": 36.28750862979708,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 706.1721148018844,
     "createdAtTurn": 31
   },
   {
@@ -76,11 +76,11 @@
     "name": "Irak Ordusu",
     "strength": 15000,
     "commander": "Ahmed Pasha",
-    "lat": 33.381693742803776,
-    "lon": 44.35921079640849,
+    "lat": 32.17517978244839,
+    "lon": 36.56250000000001,
     "turnStartLat": 33.381693742803776,
     "turnStartLon": 44.35921079640849,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 740.9611030144417,
     "createdAtTurn": 31
   },
   {
