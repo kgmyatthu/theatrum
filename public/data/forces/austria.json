@@ -104,11 +104,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.506346901083425,
-    "lon": 15.512695312500002,
+    "lat": 45.66780526567164,
+    "lon": 14.403076171875002,
     "turnStartLat": 45.506346901083425,
     "turnStartLon": 15.512695312500002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 90.27101791925013,
     "createdAtTurn": 21
   },
   {
@@ -236,5 +236,19 @@
     "turnStartLon": 13.106689453125002,
     "kmMovedThisTurn": 100.29255153033789,
     "createdAtTurn": 47
+  },
+  {
+    "id": "RadetzkyNTW-1783879550726-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Slovenian and Croatian Reservists",
+    "strength": 40000,
+    "commander": "",
+    "lat": 45.98169518512228,
+    "lon": 14.205322265625002,
+    "turnStartLat": 45.98169518512228,
+    "turnStartLon": 14.205322265625002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
