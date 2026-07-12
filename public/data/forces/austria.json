@@ -188,11 +188,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 48.915279853443806,
-    "lon": 13.996582031250002,
+    "lat": 48.70183766127341,
+    "lon": 12.864990234375,
     "turnStartLat": 48.915279853443806,
     "turnStartLon": 13.996582031250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 86.19776185718493,
     "createdAtTurn": 36
   },
   {
@@ -230,11 +230,11 @@
     "name": "2nd Army of Bohemia",
     "strength": 40000,
     "commander": "",
-    "lat": 49.603590524348704,
-    "lon": 13.106689453125002,
+    "lat": 49.04506962208049,
+    "lon": 12.55462646484375,
     "turnStartLat": 49.603590524348704,
     "turnStartLon": 13.106689453125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 86.33936436421065,
     "createdAtTurn": 47
   }
 ]
