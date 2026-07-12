@@ -216,11 +216,11 @@
     "name": "2nd Army of Austria",
     "strength": 40000,
     "commander": "",
-    "lat": 48.42920055556841,
-    "lon": 15.721435546875002,
+    "lat": 48.89903236496008,
+    "lon": 13.840026855468752,
     "turnStartLat": 48.42920055556841,
     "turnStartLon": 15.721435546875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 147.71444001683096,
     "createdAtTurn": 47
   },
   {
