@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.57510247172322,
-    "lon": 13.0078125,
+    "lat": 49.37522008143603,
+    "lon": 12.348632812500002,
     "turnStartLat": 49.57510247172322,
     "turnStartLon": 13.0078125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 52.55758053495038,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "Charles of Lorraine",
-    "lat": 48.21735290928554,
-    "lon": 13.656005859375002,
+    "lat": 48.36354888898689,
+    "lon": 12.54638671875,
     "turnStartLat": 48.21735290928554,
     "turnStartLon": 13.656005859375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 83.68739351474463,
     "createdAtTurn": 21
   },
   {
