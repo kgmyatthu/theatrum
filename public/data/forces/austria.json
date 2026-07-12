@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 49.52520834197444,
-    "lon": 18.555908203125004,
+    "lat": 50.61810290492478,
+    "lon": 15.369873046875002,
     "turnStartLat": 49.52520834197444,
     "turnStartLon": 18.555908203125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 257.81890020271504,
     "createdAtTurn": 7
   },
   {
