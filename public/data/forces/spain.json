@@ -146,11 +146,11 @@
     "name": "Italian Fleet",
     "strength": 10,
     "commander": "Luigi Antonio di Potenza",
-    "lat": 38.43049394536135,
-    "lon": 13.675564527511597,
+    "lat": 38.318208419996544,
+    "lon": 13.76356177031994,
     "turnStartLat": 38.43049394536135,
     "turnStartLon": 13.675564527511597,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 746.8716084535411,
     "createdAtTurn": 8
   },
   {
