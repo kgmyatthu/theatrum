@@ -258,11 +258,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 47.137424646293866,
-    "lon": 18.303222656250004,
+    "lat": 49.28214015975995,
+    "lon": 12.678222656250002,
     "turnStartLat": 47.137424646293866,
     "turnStartLon": 18.303222656250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 480.03763170662927,
     "createdAtTurn": 49
   },
   {
@@ -272,11 +272,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 47.628380027447164,
-    "lon": 20.445556640625004,
+    "lat": 46.06560846138691,
+    "lon": 13.370361328125002,
     "turnStartLat": 47.628380027447164,
     "turnStartLon": 20.445556640625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 565.2009658695029,
     "createdAtTurn": 49
   },
   {
@@ -286,11 +286,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 48.05605376398125,
-    "lon": 18.709716796875004,
+    "lat": 48.61838518688487,
+    "lon": 12.381591796875002,
     "turnStartLat": 48.05605376398125,
     "turnStartLon": 18.709716796875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 471.771904314516,
     "createdAtTurn": 49
   }
 ]
