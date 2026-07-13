@@ -1,0 +1,44 @@
+[
+  {
+    "id": "Urchinn-sys-1783911572067-0",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Armee of Frederick",
+    "strength": 60000,
+    "commander": "Frederick II",
+    "lat": 52.523867146183015,
+    "lon": 13.425292968750002,
+    "turnStartLat": 52.523867146183015,
+    "turnStartLon": 13.425292968750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Urchinn-sys-1783911694170-1",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Armee of Anhalt-Dessau",
+    "strength": 20000,
+    "commander": "Anhalt-Dessau",
+    "lat": 54.514646979684855,
+    "lon": 20.709228515625004,
+    "turnStartLat": 54.514646979684855,
+    "turnStartLon": 20.709228515625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Urchinn-sys-1783911767955-2",
+    "nation": "brandenburg-prussia",
+    "branch": "navy",
+    "name": "Navy of Prussia",
+    "strength": 11,
+    "commander": "",
+    "lat": 53.898176587885835,
+    "lon": 14.287719726562502,
+    "turnStartLat": 53.898176587885835,
+    "turnStartLon": 14.287719726562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  }
+]
