@@ -8,9 +8,9 @@
     "commander": "Erling Haaland",
     "lat": 52.859180945520855,
     "lon": 8.959350585937502,
-    "turnStartLat": 55.55499278958471,
-    "turnStartLon": 9.260465940873798,
-    "kmMovedThisTurn": 303.0710317148457,
+    "turnStartLat": 52.859180945520855,
+    "turnStartLon": 8.959350585937502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -232,9 +232,9 @@
     "commander": "Charles von Kirke",
     "lat": 52.7728625816634,
     "lon": 9.261474609375002,
-    "turnStartLat": 53.99918690220704,
-    "turnStartLon": 10.122279440725725,
-    "kmMovedThisTurn": 147.82590010580378,
+    "turnStartLat": 52.7728625816634,
+    "turnStartLon": 9.261474609375002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 29
   },
   {
