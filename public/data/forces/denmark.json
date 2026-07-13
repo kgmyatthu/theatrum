@@ -6,11 +6,11 @@
     "name": "Army of South Jutland",
     "strength": 17000,
     "commander": "Erling Haaland",
-    "lat": 55.55499278958471,
-    "lon": 9.260465940873798,
+    "lat": 52.859180945520855,
+    "lon": 8.959350585937502,
     "turnStartLat": 55.55499278958471,
     "turnStartLon": 9.260465940873798,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 303.0710317148457,
     "createdAtTurn": 0
   },
   {
@@ -33,7 +33,7 @@
     "branch": "army",
     "name": "Army of North Jutland (Norway)",
     "strength": 20000,
-    "commander": "Frederick von Gabel",
+    "commander": "Hans Jacob Arnoldt",
     "lat": 57.21889865038407,
     "lon": 10.239257812500002,
     "turnStartLat": 57.21889865038407,
@@ -227,14 +227,14 @@
     "id": "Vancouver1903-1782870064311-0",
     "nation": "denmark",
     "branch": "army",
-    "name": "Army of Schleswig-Holstein",
-    "strength": 12000,
-    "commander": "Poul Vendelbo Løvenørn",
-    "lat": 53.99918690220704,
-    "lon": 10.122279440725725,
+    "name": "Army of Schleswig-Holstein-Hamburg",
+    "strength": 15001,
+    "commander": "Charles von Kirke",
+    "lat": 52.7728625816634,
+    "lon": 9.261474609375002,
     "turnStartLat": 53.99918690220704,
     "turnStartLon": 10.122279440725725,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 147.82590010580378,
     "createdAtTurn": 29
   },
   {
@@ -264,5 +264,33 @@
     "turnStartLon": 12.579345703125002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47
+  },
+  {
+    "id": "Vancouver1903-1783969803401-0",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Muskets of Hamburg",
+    "strength": 2000,
+    "commander": "Local Kapitan",
+    "lat": 53.54357161755108,
+    "lon": 9.997558593750002,
+    "turnStartLat": 53.54357161755108,
+    "turnStartLon": 9.997558593750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Vancouver1903-1783969817507-1",
+    "nation": "denmark",
+    "branch": "army",
+    "name": "Militia of Schleswig-Holstein",
+    "strength": 8000,
+    "commander": "Local Kapitan",
+    "lat": 54.081951104880396,
+    "lon": 9.508666992187502,
+    "turnStartLat": 54.081951104880396,
+    "turnStartLon": 9.508666992187502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
