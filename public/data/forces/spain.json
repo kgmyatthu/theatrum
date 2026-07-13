@@ -230,11 +230,11 @@
     "name": "3rd Army of Italy",
     "strength": 25000,
     "commander": "",
-    "lat": 44.80562791857874,
-    "lon": 9.698692951351404,
+    "lat": 45.30607185959388,
+    "lon": 9.19371295720339,
     "turnStartLat": 44.80562791857874,
     "turnStartLon": 9.698692951351404,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 68.3368871963642,
     "createdAtTurn": 49
   }
 ]
