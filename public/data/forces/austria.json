@@ -50,9 +50,9 @@
     "commander": "Ludwig Khevenhuller",
     "lat": 49.075665114793,
     "lon": 12.535400390625002,
-    "turnStartLat": 49.529468658294164,
-    "turnStartLon": 12.579101538285615,
-    "kmMovedThisTurn": 50.87501735587756,
+    "turnStartLat": 49.075665114793,
+    "turnStartLon": 12.535400390625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -106,9 +106,9 @@
     "commander": "",
     "lat": 45.66780526567164,
     "lon": 14.403076171875002,
-    "turnStartLat": 45.506346901083425,
-    "turnStartLon": 15.512695312500002,
-    "kmMovedThisTurn": 90.27101791925013,
+    "turnStartLat": 45.66780526567164,
+    "turnStartLon": 14.403076171875002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -190,9 +190,9 @@
     "commander": "",
     "lat": 48.8809734038198,
     "lon": 12.63427734375,
-    "turnStartLat": 48.915279853443806,
-    "turnStartLon": 13.996582031250002,
-    "kmMovedThisTurn": 112.32069889664774,
+    "turnStartLat": 48.8809734038198,
+    "turnStartLon": 12.63427734375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -218,9 +218,9 @@
     "commander": "",
     "lat": 46.06560846138691,
     "lon": 14.941406250000002,
-    "turnStartLat": 48.42920055556841,
-    "turnStartLon": 15.721435546875002,
-    "kmMovedThisTurn": 473.4566605142419,
+    "turnStartLat": 46.06560846138691,
+    "turnStartLon": 14.941406250000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -232,9 +232,9 @@
     "commander": "",
     "lat": 48.95497369808868,
     "lon": 12.428283691406252,
-    "turnStartLat": 49.603590524348704,
-    "turnStartLon": 13.106689453125002,
-    "kmMovedThisTurn": 100.29255153033789,
+    "turnStartLat": 48.95497369808868,
+    "turnStartLon": 12.428283691406252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
