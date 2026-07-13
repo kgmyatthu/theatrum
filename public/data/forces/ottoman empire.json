@@ -8,9 +8,9 @@
     "commander": "Silahdar Mehmed Pasha",
     "lat": 44.56325101381593,
     "lon": 19.396362304687504,
-    "turnStartLat": 41.783871104275796,
-    "turnStartLon": 26.605837656082215,
-    "kmMovedThisTurn": 660.952138048221,
+    "turnStartLat": 44.56325101381593,
+    "turnStartLon": 19.396362304687504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Abdullah Pasha",
     "lat": 28.731461500968706,
     "lon": 31.069335937500004,
-    "turnStartLat": 22.021636504965482,
-    "turnStartLon": 31.442871093750004,
-    "kmMovedThisTurn": 747.0398817469948,
+    "turnStartLat": 28.731461500968706,
+    "turnStartLon": 31.069335937500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Osman Pasha",
     "lat": 31.57783191036548,
     "lon": 29.113769531250004,
-    "turnStartLat": 33.52455038091028,
-    "turnStartLon": 36.28750862979708,
-    "kmMovedThisTurn": 706.1721148018844,
+    "turnStartLat": 31.57783191036548,
+    "turnStartLon": 29.113769531250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Ahmed Pasha",
     "lat": 32.17517978244839,
     "lon": 36.56250000000001,
-    "turnStartLat": 33.381693742803776,
-    "turnStartLon": 44.35921079640849,
-    "kmMovedThisTurn": 740.9611030144417,
+    "turnStartLat": 32.17517978244839,
+    "turnStartLon": 36.56250000000001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Hassan Pasha",
     "lat": 31.936546927345045,
     "lon": 30.476074218750004,
-    "turnStartLat": 23.096981933618046,
-    "turnStartLon": 32.76123046875001,
-    "kmMovedThisTurn": 1008.3259008174224,
+    "turnStartLat": 31.936546927345045,
+    "turnStartLon": 30.476074218750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Said Pasha",
     "lat": 28.96328843565997,
     "lon": 34.58496093750001,
-    "turnStartLat": 19.659901942267492,
-    "turnStartLon": 37.63916015625001,
-    "kmMovedThisTurn": 1079.6349823462992,
+    "turnStartLat": 28.96328843565997,
+    "turnStartLon": 34.58496093750001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
