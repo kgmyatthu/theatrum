@@ -54,5 +54,19 @@
     "turnStartLon": 129.08111572265628,
     "kmMovedThisTurn": 302.98719649542215,
     "createdAtTurn": 34
+  },
+  {
+    "id": "shanesgames5-byte-1783972154177-0",
+    "nation": "korea",
+    "branch": "navy",
+    "name": "royal fleet",
+    "strength": 737,
+    "commander": "Kim Park",
+    "lat": 34.831841149828676,
+    "lon": 128.94653320312503,
+    "turnStartLat": 34.831841149828676,
+    "turnStartLon": 128.94653320312503,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
