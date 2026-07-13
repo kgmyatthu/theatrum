@@ -250,5 +250,47 @@
     "turnStartLon": 14.205322265625002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "RadetzkyNTW-1783905605989-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hussar Raiders",
+    "strength": 5000,
+    "commander": "",
+    "lat": 47.137424646293866,
+    "lon": 18.303222656250004,
+    "turnStartLat": 47.137424646293866,
+    "turnStartLon": 18.303222656250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "RadetzkyNTW-1783905611775-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hussar Raiders",
+    "strength": 5000,
+    "commander": "",
+    "lat": 47.628380027447164,
+    "lon": 20.445556640625004,
+    "turnStartLat": 47.628380027447164,
+    "turnStartLon": 20.445556640625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
+  },
+  {
+    "id": "RadetzkyNTW-1783905617599-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hussar Raiders",
+    "strength": 5000,
+    "commander": "",
+    "lat": 48.05605376398125,
+    "lon": 18.709716796875004,
+    "turnStartLat": 48.05605376398125,
+    "turnStartLon": 18.709716796875004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
