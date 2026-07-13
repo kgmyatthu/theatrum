@@ -40,5 +40,19 @@
     "turnStartLon": 11.661987304687502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "KingREN1-Suitman-1783986067446-6",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "2nd Army of Bavaria",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.21939110725795,
+    "lon": 12.09320068359375,
+    "turnStartLat": 49.21939110725795,
+    "turnStartLon": 12.09320068359375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 51
   }
 ]
