@@ -186,13 +186,13 @@
     "nation": "france",
     "branch": "army",
     "name": "Army of Lyon",
-    "strength": 40000,
+    "strength": 60000,
     "commander": "",
-    "lat": 45.74913669417369,
-    "lon": 4.883422851562501,
+    "lat": 49.22900730645444,
+    "lon": 11.379742473363878,
     "turnStartLat": 45.74913669417369,
     "turnStartLon": 4.883422851562501,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 622.5051793654128,
     "createdAtTurn": 49
   }
 ]
