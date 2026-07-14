@@ -76,11 +76,11 @@
     "name": "Army of South Jutland",
     "strength": 17000,
     "commander": "Erling Haaland",
-    "lat": 52.859180945520855,
-    "lon": 8.959350585937502,
+    "lat": 52.73925092413061,
+    "lon": 7.307128943502904,
     "turnStartLat": 52.859180945520855,
     "turnStartLon": 8.959350585937502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 111.89226577679106,
     "createdAtTurn": 0
   },
   {
@@ -188,11 +188,11 @@
     "name": "Army of Schleswig-Holstein-Hamburg",
     "strength": 15001,
     "commander": "Charles von Kirke",
-    "lat": 52.7728625816634,
-    "lon": 9.261474609375002,
+    "lat": 53.50248360925271,
+    "lon": 7.631836161017419,
     "turnStartLat": 52.7728625816634,
     "turnStartLon": 9.261474609375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 135.63714829222306,
     "createdAtTurn": 29
   },
   {
