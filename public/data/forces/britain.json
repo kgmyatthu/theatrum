@@ -28,62 +28,6 @@
     "createdAtTurn": 8
   },
   {
-    "id": "yourlocalgeobukseon-1780936104527-2",
-    "nation": "britain",
-    "branch": "army",
-    "name": "Bremen-Verden Garrisons",
-    "strength": 20000,
-    "commander": "Joseph Wightman",
-    "lat": 53.466250736254864,
-    "lon": 8.920898437500002,
-    "turnStartLat": 53.466250736254864,
-    "turnStartLon": 8.920898437500002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yourlocalgeobukseon-1780938553733-1",
-    "nation": "britain",
-    "branch": "navy",
-    "name": "Red Squadron",
-    "strength": 54,
-    "commander": "Sir George Rooke",
-    "lat": 50.81710695844082,
-    "lon": -1.1151123046875002,
-    "turnStartLat": 51.20688339486562,
-    "turnStartLon": 0.19775390625000003,
-    "kmMovedThisTurn": 107.488073837142,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yourlocalgeobukseon-1780938632207-2",
-    "nation": "britain",
-    "branch": "navy",
-    "name": "White Squadron",
-    "strength": 46,
-    "commander": "Edward Russell",
-    "lat": 50.34283120939227,
-    "lon": -4.150085449218751,
-    "turnStartLat": 50.34283120939227,
-    "turnStartLon": -4.150085449218751,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 8
-  },
-  {
-    "id": "yourlocalgeobukseon-1780938807444-3",
-    "nation": "britain",
-    "branch": "navy",
-    "name": "Blue Squadron",
-    "strength": 42,
-    "commander": "Arthur Herbert",
-    "lat": 51.42768482155713,
-    "lon": 0.6869888305664064,
-    "turnStartLat": 50.94458443495011,
-    "turnStartLon": -1.4282226562500002,
-    "kmMovedThisTurn": 157.13316207622108,
-    "createdAtTurn": 8
-  },
-  {
     "id": "Celavetex-1782494238920-0",
     "nation": "britain",
     "branch": "army",
@@ -96,19 +40,5 @@
     "turnStartLon": -81.35723397540717,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 23
-  },
-  {
-    "id": "yourlocalgeobukseon-1783029922812-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "British Reserve",
-    "strength": 77000,
-    "commander": "None",
-    "lat": 52.67305135923188,
-    "lon": -1.56005859375,
-    "turnStartLat": 52.67305135923188,
-    "turnStartLon": -1.56005859375,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 31
   }
 ]
