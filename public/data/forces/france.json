@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 51.55037502208234,
     "lon": 2.2883413732051854,
-    "turnStartLat": 48.38094996007614,
-    "turnStartLon": -4.473495483398438,
-    "kmMovedThisTurn": 598.0328364299264,
+    "turnStartLat": 51.55037502208234,
+    "turnStartLon": 2.2883413732051854,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -162,9 +162,9 @@
     "commander": "",
     "lat": 44.72715197700698,
     "lon": 9.62133058346808,
-    "turnStartLat": 45.30285570182102,
-    "turnStartLon": 9.07074809074402,
-    "kmMovedThisTurn": 77.27209406668821,
+    "turnStartLat": 44.72715197700698,
+    "turnStartLon": 9.62133058346808,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 14
   },
   {
@@ -176,9 +176,9 @@
     "commander": "",
     "lat": 51.163676903229344,
     "lon": 3.9366082660853867,
-    "turnStartLat": 48.76343113791796,
-    "turnStartLon": 12.252685502171518,
-    "kmMovedThisTurn": 665.4718723236582,
+    "turnStartLat": 51.163676903229344,
+    "turnStartLon": 3.9366082660853867,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -190,9 +190,9 @@
     "commander": "",
     "lat": 51.181107336912774,
     "lon": 4.969210624694825,
-    "turnStartLat": 49.05047019529438,
-    "turnStartLon": 12.027282714843752,
-    "kmMovedThisTurn": 611.5730508415368,
+    "turnStartLat": 51.181107336912774,
+    "turnStartLon": 4.969210624694825,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   },
   {

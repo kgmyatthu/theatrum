@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 34.35250666867596,
     "lon": 129.19647216796878,
-    "turnStartLat": 34.415973384481866,
-    "turnStartLon": 129.08386230468753,
-    "kmMovedThisTurn": 12.513575159284903,
+    "turnStartLat": 34.35250666867596,
+    "turnStartLon": 129.19647216796878,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Kim Park",
     "lat": 34.4861839632883,
     "lon": 129.24316406250003,
-    "turnStartLat": 34.831841149828676,
-    "turnStartLon": 128.94653320312503,
-    "kmMovedThisTurn": 62.03477741998218,
+    "turnStartLat": 34.4861839632883,
+    "turnStartLon": 129.24316406250003,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   }
 ]
