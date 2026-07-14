@@ -6,11 +6,11 @@
     "name": "Rumeli Ordusu",
     "strength": 60000,
     "commander": "Silahdar Mehmed Pasha",
-    "lat": 44.56325101381593,
-    "lon": 19.396362304687504,
+    "lat": 44.8265487882259,
+    "lon": 20.3574324484797,
     "turnStartLat": 44.56325101381593,
     "turnStartLon": 19.396362304687504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 81.41286410152546,
     "createdAtTurn": 31
   },
   {
@@ -20,11 +20,11 @@
     "name": "Bosna Ordusu",
     "strength": 50000,
     "commander": "Köprülüzade Abdullah Pasha",
-    "lat": 43.949635803245364,
-    "lon": 18.453897016801026,
+    "lat": 45.047854725948916,
+    "lon": 16.754563470804822,
     "turnStartLat": 43.949635803245364,
     "turnStartLon": 18.453897016801026,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 181.86357909758345,
     "createdAtTurn": 31
   },
   {
@@ -88,7 +88,7 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Trablus Ordusu",
-    "strength": 10000,
+    "strength": 35000,
     "commander": "Mehmed Pasha",
     "lat": 32.67300488772016,
     "lon": 13.23950485173378,
@@ -174,11 +174,11 @@
     "name": "Mısır Filosu",
     "strength": 30,
     "commander": "Hassan Pasha",
-    "lat": 31.936546927345045,
-    "lon": 30.476074218750004,
+    "lat": 40.61060393348752,
+    "lon": 18.921265175671078,
     "turnStartLat": 31.936546927345045,
     "turnStartLon": 30.476074218750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1413.0088885112184,
     "createdAtTurn": 31
   },
   {
@@ -216,11 +216,11 @@
     "name": "Trablus Filosu",
     "strength": 20,
     "commander": "Abdulmecid Pasha",
-    "lat": 32.90371700738154,
-    "lon": 13.639169402461164,
+    "lat": 41.45589632632946,
+    "lon": 18.983077701341582,
     "turnStartLat": 32.90371700738154,
     "turnStartLon": 13.639169402461164,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1061.729821210586,
     "createdAtTurn": 31
   },
   {
@@ -244,11 +244,11 @@
     "name": "Tuna Ordusu",
     "strength": 20000,
     "commander": "Enver Bey",
-    "lat": 43.72747390236121,
-    "lon": 27.58053860508244,
+    "lat": 48.28140539407343,
+    "lon": 25.928134775820503,
     "turnStartLat": 43.72747390236121,
     "turnStartLon": 27.58053860508244,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 522.1745088951288,
     "createdAtTurn": 34
   },
   {
