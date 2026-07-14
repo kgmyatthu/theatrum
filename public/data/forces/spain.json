@@ -162,9 +162,9 @@
     "commander": "Luigi",
     "lat": 44.88087046669593,
     "lon": 9.940148675814273,
-    "turnStartLat": 45.32493308327473,
-    "turnStartLon": 9.211542606353762,
-    "kmMovedThisTurn": 75.55238899358241,
+    "turnStartLat": 44.88087046669593,
+    "turnStartLon": 9.940148675814273,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 24
   },
   {
@@ -232,9 +232,9 @@
     "commander": "",
     "lat": 44.89369510295296,
     "lon": 9.742837334051728,
-    "turnStartLat": 45.30607185959388,
-    "turnStartLon": 9.19371295720339,
-    "kmMovedThisTurn": 62.930289780269504,
+    "turnStartLat": 44.89369510295296,
+    "turnStartLon": 9.742837334051728,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   }
 ]
