@@ -50,9 +50,9 @@
     "commander": "Ludwig Khevenhuller",
     "lat": 49.154766002922024,
     "lon": 12.78533935546875,
-    "turnStartLat": 49.075665114793,
-    "turnStartLon": 12.535400390625002,
-    "kmMovedThisTurn": 20.205758396406573,
+    "turnStartLat": 49.154766002922024,
+    "turnStartLon": 12.78533935546875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Charles of Lorraine",
     "lat": 48.26491251331118,
     "lon": 12.771606445312502,
-    "turnStartLat": 48.124248105792105,
-    "turnStartLon": 13.151855506002905,
-    "kmMovedThisTurn": 32.23422725545357,
+    "turnStartLat": 48.26491251331118,
+    "turnStartLon": 12.771606445312502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 21
   },
   {
@@ -190,9 +190,9 @@
     "commander": "",
     "lat": 48.88277959345126,
     "lon": 12.983093261718752,
-    "turnStartLat": 48.8809734038198,
-    "turnStartLon": 12.63427734375,
-    "kmMovedThisTurn": 25.50733703056733,
+    "turnStartLat": 48.88277959345126,
+    "turnStartLon": 12.983093261718752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 36
   },
   {
@@ -232,9 +232,9 @@
     "commander": "",
     "lat": 49.041468914058086,
     "lon": 12.94189453125,
-    "turnStartLat": 48.95497369808868,
-    "turnStartLon": 12.428283691406252,
-    "kmMovedThisTurn": 38.68407077224396,
+    "turnStartLat": 49.041468914058086,
+    "turnStartLon": 12.94189453125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -260,9 +260,9 @@
     "commander": "",
     "lat": 49.46990895880499,
     "lon": 12.112426757812502,
-    "turnStartLat": 49.28214015975995,
-    "turnStartLon": 12.678222656250002,
-    "kmMovedThisTurn": 45.97657595722071,
+    "turnStartLat": 49.46990895880499,
+    "turnStartLon": 12.112426757812502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   },
   {
