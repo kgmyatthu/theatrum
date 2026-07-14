@@ -98,20 +98,6 @@
     "createdAtTurn": 11
   },
   {
-    "id": "pointerayden-ship-it-1781189456901-1",
-    "nation": "russia",
-    "branch": "army",
-    "name": "VI Host (East)",
-    "strength": 15000,
-    "commander": "Steppe Man II",
-    "lat": 51.83121668522858,
-    "lon": 107.62737519443606,
-    "turnStartLat": 51.83121668522858,
-    "turnStartLon": 107.62737519443606,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 11
-  },
-  {
     "id": "Nindze2009-1783627211626-1",
     "nation": "russia",
     "branch": "army",
