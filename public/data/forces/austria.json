@@ -258,11 +258,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 49.28214015975995,
-    "lon": 12.678222656250002,
+    "lat": 49.46990895880499,
+    "lon": 12.112426757812502,
     "turnStartLat": 49.28214015975995,
     "turnStartLon": 12.678222656250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 45.97657595722071,
     "createdAtTurn": 49
   },
   {
