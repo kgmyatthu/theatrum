@@ -62,11 +62,11 @@
     "name": "Şam Ordusu",
     "strength": 20000,
     "commander": "Osman Pasha",
-    "lat": 31.57783191036548,
-    "lon": 29.113769531250004,
+    "lat": 33.3756846529913,
+    "lon": 36.60462482343619,
     "turnStartLat": 31.57783191036548,
     "turnStartLon": 29.113769531250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 730.3640345038104,
     "createdAtTurn": 31
   },
   {
@@ -76,11 +76,11 @@
     "name": "Irak Ordusu",
     "strength": 15000,
     "commander": "Ahmed Pasha",
-    "lat": 32.17517978244839,
-    "lon": 36.56250000000001,
+    "lat": 33.24744018814418,
+    "lon": 44.207126515192925,
     "turnStartLat": 32.17517978244839,
     "turnStartLon": 36.56250000000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 724.9240091539198,
     "createdAtTurn": 31
   },
   {
