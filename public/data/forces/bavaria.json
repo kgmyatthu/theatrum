@@ -54,5 +54,19 @@
     "turnStartLon": 12.09320068359375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 51
+  },
+  {
+    "id": "KingREN1-Suitman-1783991555396-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "2nd Army of the Palatinate",
+    "strength": 20000,
+    "commander": "",
+    "lat": 48.491691323781595,
+    "lon": 12.393685134544635,
+    "turnStartLat": 48.491691323781595,
+    "turnStartLon": 12.393685134544635,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 51
   }
 ]
