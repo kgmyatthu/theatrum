@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 50.61810290492478,
-    "lon": 15.369873046875002,
+    "lat": 48.879167148960214,
+    "lon": 21.467285156250004,
     "turnStartLat": 50.61810290492478,
     "turnStartLon": 15.369873046875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 478.6701970148871,
     "createdAtTurn": 7
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.51287991615298,
-    "lon": 13.181056380271913,
+    "lat": 50.387507803003146,
+    "lon": 15.930175781250002,
     "turnStartLat": 49.154766002922024,
     "turnStartLon": 12.78533935546875,
-    "kmMovedThisTurn": 49.06971759688078,
+    "kmMovedThisTurn": 268.476675551704,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "Charles of Lorraine",
-    "lat": 47.73898000760335,
-    "lon": 13.477376103401186,
+    "lat": 49.97242235423708,
+    "lon": 16.754150390625004,
     "turnStartLat": 48.26491251331118,
     "turnStartLon": 12.771606445312502,
-    "kmMovedThisTurn": 78.59533048012293,
+    "kmMovedThisTurn": 486.7682306406368,
     "createdAtTurn": 21
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 48.908991969311025,
-    "lon": 14.415779113769531,
+    "lat": 49.05227025601607,
+    "lon": 20.170898437500004,
     "turnStartLat": 48.88277959345126,
     "turnStartLon": 12.983093261718752,
-    "kmMovedThisTurn": 104.77235620472614,
+    "kmMovedThisTurn": 525.1955117717466,
     "createdAtTurn": 36
   },
   {
@@ -202,11 +202,11 @@
     "name": "2nd Army of Austria",
     "strength": 40000,
     "commander": "",
-    "lat": 46.06560846138691,
-    "lon": 14.941406250000002,
+    "lat": 47.989921667414194,
+    "lon": 14.172363281250002,
     "turnStartLat": 46.06560846138691,
     "turnStartLon": 14.941406250000002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 221.7680631000692,
     "createdAtTurn": 47
   },
   {
@@ -216,11 +216,11 @@
     "name": "2nd Army of Bohemia",
     "strength": 40000,
     "commander": "",
-    "lat": 49.18873250474789,
-    "lon": 13.888177871704102,
+    "lat": 49.58934857766429,
+    "lon": 18.380126953125004,
     "turnStartLat": 49.041468914058086,
     "turnStartLon": 12.94189453125,
-    "kmMovedThisTurn": 70.79147348382551,
+    "kmMovedThisTurn": 410.14572933301685,
     "createdAtTurn": 47
   },
   {
@@ -244,25 +244,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 50.04583152127439,
-    "lon": 12.791910767555239,
+    "lat": 49.703167720179884,
+    "lon": 17.578125000000004,
     "turnStartLat": 49.46990895880499,
     "turnStartLon": 12.112426757812502,
-    "kmMovedThisTurn": 80.51945949242139,
-    "createdAtTurn": 49
-  },
-  {
-    "id": "RadetzkyNTW-1783905611775-1",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Hussar Raiders",
-    "strength": 5000,
-    "commander": "",
-    "lat": 46.06560846138691,
-    "lon": 13.370361328125002,
-    "turnStartLat": 46.06560846138691,
-    "turnStartLon": 13.370361328125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 425.55427731223136,
     "createdAtTurn": 49
   },
   {
@@ -272,11 +258,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 48.26319723568739,
-    "lon": 13.894330523908142,
+    "lat": 50.41551870402678,
+    "lon": 15.161132812500002,
     "turnStartLat": 48.61838518688487,
     "turnStartLon": 12.381591796875002,
-    "kmMovedThisTurn": 118.36935126423778,
+    "kmMovedThisTurn": 374.6823085562869,
     "createdAtTurn": 49
   }
 ]
