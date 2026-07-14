@@ -48,11 +48,11 @@
     "name": "Yi Sun-Sin",
     "strength": 1,
     "commander": "",
-    "lat": 34.415973384481866,
-    "lon": 129.08386230468753,
+    "lat": 34.35250666867596,
+    "lon": 129.19647216796878,
     "turnStartLat": 34.415973384481866,
     "turnStartLon": 129.08386230468753,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 12.513575159284903,
     "createdAtTurn": 34
   },
   {
@@ -62,11 +62,11 @@
     "name": "royal fleet",
     "strength": 737,
     "commander": "Kim Park",
-    "lat": 34.831841149828676,
-    "lon": 128.94653320312503,
+    "lat": 34.4861839632883,
+    "lon": 129.24316406250003,
     "turnStartLat": 34.831841149828676,
     "turnStartLon": 128.94653320312503,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 62.03477741998218,
     "createdAtTurn": 49
   }
 ]
