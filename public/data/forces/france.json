@@ -160,11 +160,11 @@
     "name": "Crusade Detachment of Rear Army",
     "strength": 10000,
     "commander": "",
-    "lat": 45.30285570182102,
-    "lon": 9.07074809074402,
+    "lat": 44.72715197700698,
+    "lon": 9.62133058346808,
     "turnStartLat": 45.30285570182102,
     "turnStartLon": 9.07074809074402,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 77.27209406668821,
     "createdAtTurn": 14
   },
   {
@@ -174,11 +174,11 @@
     "name": "Bavarian Detachment Army of the Rear",
     "strength": 40000,
     "commander": "",
-    "lat": 48.76343113791796,
-    "lon": 12.252685502171518,
+    "lat": 51.163676903229344,
+    "lon": 3.9366082660853867,
     "turnStartLat": 48.76343113791796,
     "turnStartLon": 12.252685502171518,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 665.4718723236582,
     "createdAtTurn": 47
   },
   {
@@ -188,11 +188,25 @@
     "name": "Army of Lyon",
     "strength": 60000,
     "commander": "",
-    "lat": 49.05047019529438,
-    "lon": 12.027282714843752,
+    "lat": 51.181107336912774,
+    "lon": 4.969210624694825,
     "turnStartLat": 49.05047019529438,
     "turnStartLon": 12.027282714843752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 611.5730508415368,
     "createdAtTurn": 49
+  },
+  {
+    "id": "RadetzkyNTW-1783017468308-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Liege Garrison",
+    "strength": 8000,
+    "commander": "",
+    "lat": 50.59021193935192,
+    "lon": 5.756835937500001,
+    "turnStartLat": 50.59021193935192,
+    "turnStartLon": 5.756835937500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 31
   }
 ]

@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.154766002922024,
-    "lon": 12.78533935546875,
+    "lat": 49.51287991615298,
+    "lon": 13.181056380271913,
     "turnStartLat": 49.154766002922024,
     "turnStartLon": 12.78533935546875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 49.06971759688078,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "Charles of Lorraine",
-    "lat": 48.26491251331118,
-    "lon": 12.771606445312502,
+    "lat": 47.73898000760335,
+    "lon": 13.477376103401186,
     "turnStartLat": 48.26491251331118,
     "turnStartLon": 12.771606445312502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 78.59533048012293,
     "createdAtTurn": 21
   },
   {
@@ -140,20 +140,6 @@
     "createdAtTurn": 21
   },
   {
-    "id": "RadetzkyNTW-1783017468308-0",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Liege Garrison",
-    "strength": 8000,
-    "commander": "",
-    "lat": 50.59021193935192,
-    "lon": 5.756835937500001,
-    "turnStartLat": 50.59021193935192,
-    "turnStartLon": 5.756835937500001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 31
-  },
-  {
     "id": "RadetzkyNTW-1783271767641-1",
     "nation": "austria",
     "branch": "army",
@@ -188,11 +174,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 48.88277959345126,
-    "lon": 12.983093261718752,
+    "lat": 48.908991969311025,
+    "lon": 14.415779113769531,
     "turnStartLat": 48.88277959345126,
     "turnStartLon": 12.983093261718752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 104.77235620472614,
     "createdAtTurn": 36
   },
   {
@@ -230,11 +216,11 @@
     "name": "2nd Army of Bohemia",
     "strength": 40000,
     "commander": "",
-    "lat": 49.041468914058086,
-    "lon": 12.94189453125,
+    "lat": 49.18873250474789,
+    "lon": 13.888177871704102,
     "turnStartLat": 49.041468914058086,
     "turnStartLon": 12.94189453125,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 70.79147348382551,
     "createdAtTurn": 47
   },
   {
@@ -258,11 +244,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 49.46990895880499,
-    "lon": 12.112426757812502,
+    "lat": 50.04583152127439,
+    "lon": 12.791910767555239,
     "turnStartLat": 49.46990895880499,
     "turnStartLon": 12.112426757812502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 80.51945949242139,
     "createdAtTurn": 49
   },
   {
@@ -286,11 +272,11 @@
     "name": "Hussar Raiders",
     "strength": 5000,
     "commander": "",
-    "lat": 48.61838518688487,
-    "lon": 12.381591796875002,
+    "lat": 48.26319723568739,
+    "lon": 13.894330523908142,
     "turnStartLat": 48.61838518688487,
     "turnStartLon": 12.381591796875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 118.36935126423778,
     "createdAtTurn": 49
   }
 ]
