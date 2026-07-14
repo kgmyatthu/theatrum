@@ -34,11 +34,11 @@
     "name": "Brest Naval Station (SOTL)",
     "strength": 42,
     "commander": "",
-    "lat": 48.38094996007614,
-    "lon": -4.473495483398438,
+    "lat": 51.55037502208234,
+    "lon": 2.2883413732051854,
     "turnStartLat": 48.38094996007614,
     "turnStartLon": -4.473495483398438,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 598.0328364299264,
     "createdAtTurn": 4
   },
   {
