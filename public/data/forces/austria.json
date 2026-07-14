@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.075665114793,
-    "lon": 12.535400390625002,
+    "lat": 49.154766002922024,
+    "lon": 12.78533935546875,
     "turnStartLat": 49.075665114793,
     "turnStartLon": 12.535400390625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 20.205758396406573,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "Charles of Lorraine",
-    "lat": 48.124248105792105,
-    "lon": 13.151855506002905,
+    "lat": 48.26491251331118,
+    "lon": 12.771606445312502,
     "turnStartLat": 48.124248105792105,
     "turnStartLon": 13.151855506002905,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 32.23422725545357,
     "createdAtTurn": 21
   },
   {
@@ -188,11 +188,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 48.8809734038198,
-    "lon": 12.63427734375,
+    "lat": 48.88277959345126,
+    "lon": 12.983093261718752,
     "turnStartLat": 48.8809734038198,
     "turnStartLon": 12.63427734375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 25.50733703056733,
     "createdAtTurn": 36
   },
   {
@@ -230,11 +230,11 @@
     "name": "2nd Army of Bohemia",
     "strength": 40000,
     "commander": "",
-    "lat": 48.95497369808868,
-    "lon": 12.428283691406252,
+    "lat": 49.041468914058086,
+    "lon": 12.94189453125,
     "turnStartLat": 48.95497369808868,
     "turnStartLon": 12.428283691406252,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 38.68407077224396,
     "createdAtTurn": 47
   },
   {
