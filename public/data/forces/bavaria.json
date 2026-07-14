@@ -48,11 +48,11 @@
     "name": "2nd Army of Bavaria",
     "strength": 30000,
     "commander": "",
-    "lat": 50.09194535447462,
-    "lon": 16.225365132092424,
+    "lat": 49.03841859071883,
+    "lon": 12.448828592580325,
     "turnStartLat": 49.21939110725795,
     "turnStartLon": 12.09320068359375,
-    "kmMovedThisTurn": 312.82919590016473,
+    "kmMovedThisTurn": 609.2702034708522,
     "createdAtTurn": 51
   },
   {
@@ -62,11 +62,11 @@
     "name": "2nd Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 49.94341257246061,
-    "lon": 17.334700571570085,
+    "lat": 48.72060149727126,
+    "lon": 13.283885375062559,
     "turnStartLat": 48.491691323781595,
     "turnStartLon": 12.393685134544635,
-    "kmMovedThisTurn": 393.40380099075065,
+    "kmMovedThisTurn": 716.8429879011876,
     "createdAtTurn": 51
   }
 ]
