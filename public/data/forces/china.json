@@ -160,11 +160,11 @@
     "name": "Green Standard Army I",
     "strength": 100000,
     "commander": "",
-    "lat": 30.44867367928756,
-    "lon": 104.54589843750001,
+    "lat": 27.800209937418252,
+    "lon": 97.86621093750001,
     "turnStartLat": 30.44867367928756,
     "turnStartLon": 104.54589843750001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 712.3625682035612,
     "createdAtTurn": 51
   },
   {
