@@ -76,11 +76,11 @@
     "name": "1st Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.89000815866184,
-    "lon": 18.204345703125004,
+    "lat": 45.583289756006316,
+    "lon": 18.830566406250004,
     "turnStartLat": 45.89000815866184,
     "turnStartLon": 18.204345703125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 59.3731100613743,
     "createdAtTurn": 21
   },
   {
@@ -264,5 +264,19 @@
     "turnStartLon": 15.161132812500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "RadetzkyNTW-1784079677851-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hungarian Diet Army",
+    "strength": 60000,
+    "commander": "",
+    "lat": 45.72152152227956,
+    "lon": 19.797363281250004,
+    "turnStartLat": 45.72152152227956,
+    "turnStartLon": 19.797363281250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
   }
 ]
