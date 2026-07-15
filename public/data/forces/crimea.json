@@ -4,13 +4,13 @@
     "nation": "crimea",
     "branch": "army",
     "name": "The great çapulcu",
-    "strength": 60000,
+    "strength": 45000,
     "commander": "Meñli II Giray",
-    "lat": 47.923704717745686,
-    "lon": 30.845947265625018,
+    "lat": 49.816720843571765,
+    "lon": 30.02929687499999,
     "turnStartLat": 46.674569250276754,
     "turnStartLon": 32.90039062499998,
-    "kmMovedThisTurn": 208.05822178013545,
+    "kmMovedThisTurn": 426.85877815239144,
     "createdAtTurn": 34
   },
   {
@@ -40,5 +40,33 @@
     "turnStartLon": 33.31405878067016,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1784097366696-0",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "3rd host",
+    "strength": 5000,
+    "commander": "",
+    "lat": 46.9446372241817,
+    "lon": 30.4188537597656,
+    "turnStartLat": 46.9446372241817,
+    "turnStartLon": 30.4188537597656,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
+  },
+  {
+    "id": "juliusquick0616-pixel-1784097393424-1",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "2nd host",
+    "strength": 10000,
+    "commander": "",
+    "lat": 48.894518236158234,
+    "lon": 28.574295043945302,
+    "turnStartLat": 48.894518236158234,
+    "turnStartLon": 28.574295043945302,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
   }
 ]
