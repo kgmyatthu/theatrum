@@ -31,8 +31,8 @@
     "id": "yellowwithblue-1783829620969-2",
     "nation": "sweden",
     "branch": "army",
-    "name": "Allotted and Enlisted troops",
-    "strength": 110000,
+    "name": "Indelningsverket",
+    "strength": 50000,
     "commander": "Charles XII",
     "lat": 59.478568831926395,
     "lon": 15.666503906250002,
@@ -42,17 +42,45 @@
     "createdAtTurn": 47
   },
   {
-    "id": "yellowwithblue-1783898564612-0",
+    "id": "yellowwithblue-1784155497471-1",
     "nation": "sweden",
     "branch": "army",
     "name": "Mattias Alexander von Ungern-Sternberg",
-    "strength": 20000,
+    "strength": 15000,
     "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 54.13025957879545,
-    "lon": 13.084716796875,
-    "turnStartLat": 54.13025957879545,
-    "turnStartLon": 13.084716796875,
+    "lat": 58.11271444125315,
+    "lon": 25.839843750000004,
+    "turnStartLat": 58.11271444125315,
+    "turnStartLon": 25.839843750000004,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 49
+    "createdAtTurn": 54
+  },
+  {
+    "id": "yellowwithblue-1784155558875-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Nationalbeväring",
+    "strength": 100000,
+    "commander": "Nationalbeväring",
+    "lat": 59.33318942659219,
+    "lon": 17.863769531250004,
+    "turnStartLat": 59.33318942659219,
+    "turnStartLon": 17.863769531250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
+  },
+  {
+    "id": "yellowwithblue-1784155594473-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Värvade trupper",
+    "strength": 25000,
+    "commander": "Nationalbeväring",
+    "lat": 54.16243396806781,
+    "lon": 12.985839843750002,
+    "turnStartLat": 54.16243396806781,
+    "turnStartLon": 12.985839843750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
   }
 ]
