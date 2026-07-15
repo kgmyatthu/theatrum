@@ -60,7 +60,7 @@
     "nation": "north sea empire",
     "branch": "army",
     "name": "British Reserve",
-    "strength": 47000,
+    "strength": 51000,
     "commander": "None",
     "lat": 52.67305135923188,
     "lon": -1.56005859375,
@@ -404,19 +404,5 @@
     "turnStartLon": 12.579345703125002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47
-  },
-  {
-    "id": "yourlocalgeobukseon-1784056864306-0",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "First Army",
-    "strength": 30000,
-    "commander": "John Ligionier",
-    "lat": 51.36320660581431,
-    "lon": 0.5630493164062501,
-    "turnStartLat": 51.36320660581431,
-    "turnStartLon": 0.5630493164062501,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 54
   }
 ]
