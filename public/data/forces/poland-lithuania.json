@@ -8,9 +8,9 @@
     "commander": "Jan III Sobieski",
     "lat": 51.15178610143037,
     "lon": 15.875244140625002,
-    "turnStartLat": 52.328625488430184,
-    "turnStartLon": 16.666259765625004,
-    "kmMovedThisTurn": 176.13892675982973,
+    "turnStartLat": 51.15178610143037,
+    "turnStartLon": 15.875244140625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 50.90996067566234,
     "lon": 16.627807617187504,
-    "turnStartLat": 54.09806018306312,
-    "turnStartLon": 18.479003906250004,
-    "kmMovedThisTurn": 515.1965873034832,
+    "turnStartLat": 50.90996067566234,
+    "turnStartLon": 16.627807617187504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 50.673835249921346,
     "lon": 17.891235351562504,
-    "turnStartLat": 51.02757633780243,
-    "turnStartLon": 16.754150390625004,
-    "kmMovedThisTurn": 115.74404386609886,
+    "turnStartLat": 50.673835249921346,
+    "turnStartLon": 17.891235351562504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -92,9 +92,9 @@
     "commander": "",
     "lat": 50.37349614430352,
     "lon": 30.585937500000004,
-    "turnStartLat": 50.40851753069729,
-    "turnStartLon": 30.531005859375004,
-    "kmMovedThisTurn": 5.507231023846515,
+    "turnStartLat": 50.37349614430352,
+    "turnStartLon": 30.585937500000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   },
   {
