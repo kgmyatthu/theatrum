@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 48.879167148960214,
-    "lon": 21.467285156250004,
+    "lat": 49.62316641036844,
+    "lon": 21.82159423828125,
     "turnStartLat": 48.879167148960214,
     "turnStartLon": 21.467285156250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 87.13728586682959,
     "createdAtTurn": 7
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Hungary",
     "strength": 25000,
     "commander": "",
-    "lat": 49.05227025601607,
-    "lon": 20.170898437500004,
+    "lat": 49.7173764049358,
+    "lon": 21.65679931640625,
     "turnStartLat": 49.05227025601607,
     "turnStartLon": 20.170898437500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 130.86367556047009,
     "createdAtTurn": 36
   },
   {
