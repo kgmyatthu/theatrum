@@ -208,5 +208,19 @@
     "turnStartLon": 16.424560546875004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 54
+  },
+  {
+    "id": "Ohgizmo-1784121717108-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Ukraine",
+    "strength": 40000,
+    "commander": "",
+    "lat": 50.190967765585604,
+    "lon": 28.948974609375004,
+    "turnStartLat": 50.190967765585604,
+    "turnStartLon": 28.948974609375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
   }
 ]
