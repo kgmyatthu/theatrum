@@ -78,9 +78,9 @@
     "commander": "Erling Haaland",
     "lat": 55.560831318746295,
     "lon": 9.044922441244127,
-    "turnStartLat": 52.859180945520855,
-    "turnStartLon": 8.959350585937502,
-    "kmMovedThisTurn": 495.99101984781703,
+    "turnStartLat": 55.560831318746295,
+    "turnStartLon": 9.044922441244127,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Charles von Kirke",
     "lat": 54.719119961185896,
     "lon": 9.265136495232584,
-    "turnStartLat": 52.7728625816634,
-    "turnStartLon": 9.261474609375002,
-    "kmMovedThisTurn": 307.7805944926563,
+    "turnStartLat": 54.719119961185896,
+    "turnStartLon": 9.265136495232584,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 29
   },
   {
@@ -404,5 +404,19 @@
     "turnStartLon": 12.579345703125002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47
+  },
+  {
+    "id": "Vancouver1903-1784156538269-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Oldenburg Army and Garrison",
+    "strength": 3000,
+    "commander": "Alexander von Wismar",
+    "lat": 53.35954609772338,
+    "lon": 7.699218615889549,
+    "turnStartLat": 53.35954609772338,
+    "turnStartLon": 7.699218615889549,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
   }
 ]
