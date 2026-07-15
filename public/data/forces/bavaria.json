@@ -6,11 +6,11 @@
     "name": "Army of Bavaria",
     "strength": 30000,
     "commander": "Maximillian II Emmanuel",
-    "lat": 50.58259876206622,
-    "lon": 15.2809319608699,
+    "lat": 50.86487543456332,
+    "lon": 15.89168912861892,
     "turnStartLat": 49.335776000595835,
     "turnStartLon": 12.277200505133113,
-    "kmMovedThisTurn": 255.68696542359598,
+    "kmMovedThisTurn": 309.2026792256325,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 49.86555580918864,
-    "lon": 18.048604874533474,
+    "lat": 50.69081559171601,
+    "lon": 17.48493865160088,
     "turnStartLat": 48.37084390863048,
     "turnStartLon": 12.51888624916673,
-    "kmMovedThisTurn": 435.2720576153036,
+    "kmMovedThisTurn": 535.3967349439664,
     "createdAtTurn": 31
   },
   {
