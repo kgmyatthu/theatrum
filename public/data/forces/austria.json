@@ -104,11 +104,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.66780526567164,
-    "lon": 14.403076171875002,
+    "lat": 45.68315803253308,
+    "lon": 15.479736328125002,
     "turnStartLat": 45.66780526567164,
     "turnStartLon": 14.403076171875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 83.6671275228533,
     "createdAtTurn": 21
   },
   {
@@ -202,11 +202,11 @@
     "name": "2nd Army of Austria",
     "strength": 40000,
     "commander": "",
-    "lat": 47.989921667414194,
-    "lon": 14.172363281250002,
+    "lat": 48.21735290928554,
+    "lon": 14.029541015625002,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 14.172363281250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 27.42284829227779,
     "createdAtTurn": 47
   },
   {
@@ -230,11 +230,11 @@
     "name": "Slovenian and Croatian Reservists",
     "strength": 40000,
     "commander": "",
-    "lat": 45.98169518512228,
-    "lon": 14.205322265625002,
+    "lat": 45.767522962149904,
+    "lon": 16.589355468750004,
     "turnStartLat": 45.98169518512228,
     "turnStartLon": 14.205322265625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 187.71647772732354,
     "createdAtTurn": 49
   },
   {
