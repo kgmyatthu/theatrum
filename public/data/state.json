@@ -295,7 +295,7 @@
     ],
     [
       73,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       74,
@@ -3675,7 +3675,7 @@
     ],
     [
       918,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       919,
@@ -12883,7 +12883,7 @@
     ],
     [
       3220,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       3221,
@@ -12895,7 +12895,7 @@
     ],
     [
       3223,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       3224,
@@ -18453,7 +18453,7 @@
     },
     {
       "name": "crimea",
-      "color": "#b8ea7b"
+      "color": "#437a4a"
     },
     {
       "name": "dahomey",
@@ -18681,7 +18681,7 @@
     },
     {
       "name": "zaporozhian hetmanate (rus)",
-      "color": "#437a4a"
+      "color": "#52985b"
     }
   ]
 }
