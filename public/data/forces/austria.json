@@ -168,20 +168,6 @@
     "createdAtTurn": 36
   },
   {
-    "id": "RadetzkyNTW-1783271823018-3",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Army of Hungary",
-    "strength": 25000,
-    "commander": "",
-    "lat": 46.822616668804926,
-    "lon": 19.237060546875004,
-    "turnStartLat": 49.9494526166855,
-    "turnStartLon": 20.368652343750004,
-    "kmMovedThisTurn": 358.65592346886217,
-    "createdAtTurn": 36
-  },
-  {
     "id": "RadetzkyNTW-1783271836501-4",
     "nation": "austria",
     "branch": "army",
