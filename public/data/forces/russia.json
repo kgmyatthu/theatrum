@@ -6,11 +6,11 @@
     "name": "I Army",
     "strength": 35000,
     "commander": "Peter I",
-    "lat": 57.213659759616576,
-    "lon": 29.739990234375004,
+    "lat": 54.1109429427243,
+    "lon": 33.53027343750001,
     "turnStartLat": 57.213659759616576,
     "turnStartLon": 29.739990234375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 418.84322623105817,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "IV Army",
     "strength": 32000,
     "commander": "Some German Guy",
-    "lat": 57.03774120228207,
-    "lon": 28.547973632812504,
+    "lat": 52.29504228453735,
+    "lon": 47.32910156250001,
     "turnStartLat": 57.03774120228207,
     "turnStartLon": 28.547973632812504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1540.576081896078,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "III Army",
     "strength": 60000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 58.44485824469768,
-    "lon": 29.201660156250004,
+    "lat": 58.83649009392136,
+    "lon": 33.44238281250001,
     "turnStartLat": 58.44485824469768,
     "turnStartLon": 29.201660156250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 249.18416464669025,
     "createdAtTurn": 2
   },
   {
@@ -76,11 +76,11 @@
     "name": "V Army (Mountain)",
     "strength": 50000,
     "commander": "Some Russian (ill name later)",
-    "lat": 58.18808048517292,
-    "lon": 29.196166992187504,
+    "lat": 51.01375465718821,
+    "lon": 45.72509765625001,
     "turnStartLat": 58.18808048517292,
     "turnStartLon": 29.196166992187504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1335.2902146324773,
     "createdAtTurn": 11
   },
   {
@@ -90,11 +90,11 @@
     "name": "VI Host (West)",
     "strength": 15000,
     "commander": "Steppe Man",
-    "lat": 51.1827810742169,
-    "lon": 71.43166774386995,
+    "lat": 50.98609893339354,
+    "lon": 67.93945312500001,
     "turnStartLat": 51.1827810742169,
     "turnStartLon": 71.43166774386995,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 244.8855088649693,
     "createdAtTurn": 11
   },
   {
@@ -104,11 +104,11 @@
     "name": "IV Army (Split)",
     "strength": 20000,
     "commander": "",
-    "lat": 57.55710222383965,
-    "lon": 32.57446289062501,
+    "lat": 55.70235509327093,
+    "lon": 37.83691406250001,
     "turnStartLat": 57.55710222383965,
     "turnStartLon": 32.57446289062501,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 382.1109138338674,
     "createdAtTurn": 42
   },
   {
@@ -118,11 +118,11 @@
     "name": "I Army (Split)",
     "strength": 35000,
     "commander": "",
-    "lat": 57.16305705597881,
-    "lon": 28.883056640625004,
+    "lat": 49.35375571830993,
+    "lon": 44.29687500000001,
     "turnStartLat": 57.16305705597881,
     "turnStartLon": 28.883056640625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1580.2466056517544,
     "createdAtTurn": 42
   },
   {
@@ -136,6 +136,20 @@
     "lon": 67.32421875000001,
     "turnStartLat": 55.20395325785898,
     "turnStartLon": 67.32421875000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784173535236-8",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Bashkir Horsemen",
+    "strength": 12000,
+    "commander": "Bashkir Horsemen",
+    "lat": 54.23955053156179,
+    "lon": 63.28125000000001,
+    "turnStartLat": 54.23955053156179,
+    "turnStartLon": 63.28125000000001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   }
