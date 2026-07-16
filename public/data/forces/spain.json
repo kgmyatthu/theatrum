@@ -1,19 +1,5 @@
 [
   {
-    "id": "Walrusbear0831-1780786772187-0",
-    "nation": "spain",
-    "branch": "army",
-    "name": "Army of Lowlands",
-    "strength": 35000,
-    "commander": "Charles Eugène de Croÿ",
-    "lat": 50.59039606835147,
-    "lon": 5.856468938291074,
-    "turnStartLat": 50.59039606835147,
-    "turnStartLon": 5.856468938291074,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 7
-  },
-  {
     "id": "Walrusbear0831-1780786836824-1",
     "nation": "spain",
     "branch": "army",
@@ -32,7 +18,7 @@
     "nation": "spain",
     "branch": "army",
     "name": "2nd Army of Spain",
-    "strength": 30000,
+    "strength": 20000,
     "commander": "Íñigo Melchor Fernández de Velasco",
     "lat": 36.249566562988406,
     "lon": 10.063990205526354,
@@ -118,11 +104,11 @@
     "name": "Vigo Fleet",
     "strength": 20,
     "commander": "Jose Manuel de Santo Domingo",
-    "lat": 51.272075310271966,
-    "lon": 2.1817503869533543,
+    "lat": 42.547595466494656,
+    "lon": -9.742892235517504,
     "turnStartLat": 51.272075310271966,
     "turnStartLon": 2.1817503869533543,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1350.0540366062817,
     "createdAtTurn": 8
   },
   {
@@ -222,19 +208,5 @@
     "turnStartLon": 120.86059570312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 46
-  },
-  {
-    "id": "Walrusbear0831-1783874067767-1",
-    "nation": "spain",
-    "branch": "army",
-    "name": "3rd Army of Italy",
-    "strength": 25000,
-    "commander": "",
-    "lat": 44.89369510295296,
-    "lon": 9.742837334051728,
-    "turnStartLat": 44.89369510295296,
-    "turnStartLon": 9.742837334051728,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 49
   }
 ]
