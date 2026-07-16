@@ -1,7 +1,7 @@
 [
   {
     "id": "iiv213-1780431912423-0",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "army",
     "name": "Armée Royale",
     "strength": 75000,
@@ -15,7 +15,7 @@
   },
   {
     "id": "iiv213-1780432141876-1",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "Toulon Naval Station (SOTL)",
     "strength": 40,
@@ -29,7 +29,7 @@
   },
   {
     "id": "iiv213-1780432184562-2",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "Brest Naval Station (SOTL)",
     "strength": 40,
@@ -43,7 +43,7 @@
   },
   {
     "id": "iiv213-1780432297705-3",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "Rochefort Naval Station (SOTL)",
     "strength": 17,
@@ -57,7 +57,7 @@
   },
   {
     "id": "iiv213-1780432457655-4",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "Dunkirkers (SOTL)",
     "strength": 4,
@@ -71,7 +71,7 @@
   },
   {
     "id": "iiv213-1780432550107-5",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "Caribbean Naval Station (SOTL)",
     "strength": 5,
@@ -85,7 +85,7 @@
   },
   {
     "id": "iiv213-1780432672749-6",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "navy",
     "name": "West African Naval Station (SOTL)",
     "strength": 1,
@@ -99,7 +99,7 @@
   },
   {
     "id": "kgmyatthu-1780922532321-0",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "army",
     "name": "France Army Of Rear",
     "strength": 25000,
@@ -113,7 +113,7 @@
   },
   {
     "id": "iiv213-1780924000648-0",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "army",
     "name": "First Line of Pré Carré Garrisons",
     "strength": 15000,
@@ -127,7 +127,7 @@
   },
   {
     "id": "iiv213-1780924020661-1",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "army",
     "name": "Second Line of Pré Carré Garrisons",
     "strength": 10000,
@@ -141,7 +141,7 @@
   },
   {
     "id": "iiv213-1780924191112-2",
-    "nation": "france",
+    "nation": "latin empire",
     "branch": "army",
     "name": "Ceinture de Fer Garrisons",
     "strength": 10000,
