@@ -34,11 +34,11 @@
     "name": "Anadolu Ordusu",
     "strength": 40000,
     "commander": "Hekimoğlu Ali Pasha",
-    "lat": 39.77998583392796,
-    "lon": 33.13877832482906,
+    "lat": 47.08754332686408,
+    "lon": 30.388183593750004,
     "turnStartLat": 39.77998583392796,
     "turnStartLon": 33.13877832482906,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 842.2211044718911,
     "createdAtTurn": 31
   },
   {
