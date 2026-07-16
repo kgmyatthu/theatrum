@@ -34,11 +34,11 @@
     "name": "Manchu Horde",
     "strength": 20000,
     "commander": "",
-    "lat": 65.10914820386476,
-    "lon": 81.03515625000001,
+    "lat": 55.677584411089526,
+    "lon": 81.38671875000001,
     "turnStartLat": 63.6267446447533,
     "turnStartLon": 102.65625000000001,
-    "kmMovedThisTurn": 1047.6352273713655,
+    "kmMovedThisTurn": 2096.550945560309,
     "createdAtTurn": 51
   },
   {
@@ -104,11 +104,11 @@
     "name": "Bordered Red Banner",
     "strength": 25000,
     "commander": "",
-    "lat": 61.60639637138628,
-    "lon": 80.06835937500001,
+    "lat": 57.610107020683905,
+    "lon": 75.76171875000001,
     "turnStartLat": 58.07787626787517,
     "turnStartLon": 108.80859375000001,
-    "kmMovedThisTurn": 1638.0498846774426,
+    "kmMovedThisTurn": 2143.9195428408384,
     "createdAtTurn": 51
   },
   {
