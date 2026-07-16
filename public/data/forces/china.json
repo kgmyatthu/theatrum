@@ -6,11 +6,11 @@
     "name": "Mongol Horde",
     "strength": 20000,
     "commander": "",
-    "lat": 57.938183012205315,
-    "lon": 85.2099609375,
+    "lat": 53.85401251544761,
+    "lon": 73.14837323718855,
     "turnStartLat": 57.938183012205315,
     "turnStartLon": 85.2099609375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 876.644835572217,
     "createdAtTurn": 51
   },
   {
@@ -20,11 +20,11 @@
     "name": "Mongol Horde",
     "strength": 20000,
     "commander": "",
-    "lat": 54.57206165565852,
-    "lon": 75.05859375000001,
+    "lat": 55.44118237452093,
+    "lon": 70.66457272985015,
     "turnStartLat": 54.57206165565852,
     "turnStartLon": 75.05859375000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 296.3353187109707,
     "createdAtTurn": 51
   },
   {
@@ -34,11 +34,11 @@
     "name": "Manchu Horde",
     "strength": 20000,
     "commander": "",
-    "lat": 55.677584411089526,
-    "lon": 81.38671875000001,
+    "lat": 54.30418701721805,
+    "lon": 71.80775292607326,
     "turnStartLat": 63.6267446447533,
     "turnStartLon": 102.65625000000001,
-    "kmMovedThisTurn": 2096.550945560309,
+    "kmMovedThisTurn": 2725.853770546866,
     "createdAtTurn": 51
   },
   {
@@ -48,11 +48,11 @@
     "name": "Bordered Yellow Banner",
     "strength": 25000,
     "commander": "",
-    "lat": 54.16243396806781,
-    "lon": 105.11718750000001,
+    "lat": 50.34540230278248,
+    "lon": 75.21267021442134,
     "turnStartLat": 54.16243396806781,
     "turnStartLon": 105.11718750000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2085.240778542165,
     "createdAtTurn": 51
   },
   {
@@ -90,11 +90,11 @@
     "name": "Plain White Banner",
     "strength": 25000,
     "commander": "",
-    "lat": 51.17934297928929,
-    "lon": 103.18359375000001,
+    "lat": 51.998130084059476,
+    "lon": 77.83009246373513,
     "turnStartLat": 51.17934297928929,
     "turnStartLon": 103.18359375000001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1745.0255790969977,
     "createdAtTurn": 51
   },
   {
@@ -104,11 +104,11 @@
     "name": "Bordered Red Banner",
     "strength": 25000,
     "commander": "",
-    "lat": 57.610107020683905,
-    "lon": 75.76171875000001,
+    "lat": 57.00506106788016,
+    "lon": 71.23587709924561,
     "turnStartLat": 58.07787626787517,
     "turnStartLon": 108.80859375000001,
-    "kmMovedThisTurn": 2143.9195428408384,
+    "kmMovedThisTurn": 2423.8832396541557,
     "createdAtTurn": 51
   },
   {
@@ -132,11 +132,11 @@
     "name": "Bordered Blue Banner",
     "strength": 25000,
     "commander": "",
-    "lat": 48.80686346108519,
-    "lon": 81.16699218750001,
+    "lat": 48.21023943686319,
+    "lon": 76.77297116735014,
     "turnStartLat": 47.2195681123155,
     "turnStartLon": 97.64648437500001,
-    "kmMovedThisTurn": 1235.965704313415,
+    "kmMovedThisTurn": 1566.340374581714,
     "createdAtTurn": 51
   },
   {
