@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1784173155237-1",
+    "nation": "khiva",
+    "branch": "army",
+    "name": "Khivan Horde",
+    "strength": 20000,
+    "commander": "",
+    "lat": 53.904338156274704,
+    "lon": 68.37890625000001,
+    "turnStartLat": 53.904338156274704,
+    "turnStartLon": 68.37890625000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  }
+]
