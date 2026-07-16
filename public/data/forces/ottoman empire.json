@@ -6,11 +6,11 @@
     "name": "Rumeli Ordusu",
     "strength": 60000,
     "commander": "Silahdar Mehmed Pasha",
-    "lat": 44.8265487882259,
-    "lon": 20.3574324484797,
+    "lat": 49.17141353649775,
+    "lon": 28.520507812500004,
     "turnStartLat": 44.8265487882259,
     "turnStartLon": 20.3574324484797,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1158.3529381271815,
     "createdAtTurn": 31
   },
   {
@@ -160,11 +160,11 @@
     "name": "Ege Filosu",
     "strength": 35,
     "commander": "Abdulah Pasha",
-    "lat": 40.042672763491346,
-    "lon": 26.08052029612174,
+    "lat": 46.067657453405275,
+    "lon": 30.750732421875004,
     "turnStartLat": 40.042672763491346,
     "turnStartLon": 26.08052029612174,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 769.608599765707,
     "createdAtTurn": 31
   },
   {
@@ -244,11 +244,11 @@
     "name": "Tuna Ordusu",
     "strength": 20000,
     "commander": "Enver Bey",
-    "lat": 48.28140539407343,
-    "lon": 25.928134775820503,
+    "lat": 49.08494479333248,
+    "lon": 26.1639404296875,
     "turnStartLat": 48.28140539407343,
     "turnStartLon": 25.928134775820503,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 91.01093550193679,
     "createdAtTurn": 34
   },
   {
@@ -258,11 +258,11 @@
     "name": "Wallachian Army",
     "strength": 10000,
     "commander": "Nicolae Mavrocordat",
-    "lat": 44.941526582928255,
-    "lon": 24.970770268430435,
+    "lat": 49.297966663534424,
+    "lon": 24.411621093750004,
     "turnStartLat": 44.941526582928255,
     "turnStartLon": 24.970770268430435,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 486.25408706203496,
     "createdAtTurn": 34
   },
   {
@@ -272,11 +272,11 @@
     "name": "Moldavian Army",
     "strength": 10000,
     "commander": "Grigore II Ghika",
-    "lat": 47.356732162674184,
-    "lon": 27.277578532680646,
+    "lat": 49.12124450943655,
+    "lon": 26.6363525390625,
     "turnStartLat": 47.356732162674184,
     "turnStartLon": 27.277578532680646,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 201.8677997467264,
     "createdAtTurn": 34
   },
   {
