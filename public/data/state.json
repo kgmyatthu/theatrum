@@ -795,7 +795,7 @@
     ],
     [
       198,
-      "hre minor states"
+      "sweden"
     ],
     [
       199,
@@ -1635,7 +1635,7 @@
     ],
     [
       408,
-      "hre minor states"
+      "hanover"
     ],
     [
       409,
@@ -18474,6 +18474,10 @@
     {
       "name": "genoa",
       "color": "#9F2D2D"
+    },
+    {
+      "name": "hanover",
+      "color": "#ff9eb1"
     },
     {
       "name": "haudenosaunee confederacy",
