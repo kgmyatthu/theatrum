@@ -20,11 +20,11 @@
     "name": "Bosna Ordusu",
     "strength": 50000,
     "commander": "Köprülüzade Abdullah Pasha",
-    "lat": 45.047854725948916,
-    "lon": 16.754563470804822,
+    "lat": 43.88163498928379,
+    "lon": 18.555908203125004,
     "turnStartLat": 45.047854725948916,
     "turnStartLon": 16.754563470804822,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 192.9964882927725,
     "createdAtTurn": 31
   },
   {
@@ -174,11 +174,11 @@
     "name": "Mısır Filosu",
     "strength": 30,
     "commander": "Hassan Pasha",
-    "lat": 40.61060393348752,
-    "lon": 18.921265175671078,
+    "lat": 31.612563576730693,
+    "lon": 30.344238281250004,
     "turnStartLat": 40.61060393348752,
     "turnStartLon": 18.921265175671078,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1430.8005438243672,
     "createdAtTurn": 31
   },
   {
@@ -216,11 +216,11 @@
     "name": "Trablus Filosu",
     "strength": 20,
     "commander": "Abdulmecid Pasha",
-    "lat": 41.45589632632946,
-    "lon": 18.983077701341582,
+    "lat": 33.15281415743522,
+    "lon": 13.820800781250002,
     "turnStartLat": 41.45589632632946,
     "turnStartLon": 18.983077701341582,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1029.481252546606,
     "createdAtTurn": 31
   },
   {
