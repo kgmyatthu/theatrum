@@ -20,11 +20,11 @@
     "name": "Bosna Ordusu",
     "strength": 50000,
     "commander": "Köprülüzade Abdullah Pasha",
-    "lat": 43.88163498928379,
-    "lon": 18.555908203125004,
+    "lat": 44.28468027588078,
+    "lon": 28.311767578125,
     "turnStartLat": 45.047854725948916,
     "turnStartLon": 16.754563470804822,
-    "kmMovedThisTurn": 192.9964882927725,
+    "kmMovedThisTurn": 973.0693778834375,
     "createdAtTurn": 31
   },
   {
@@ -230,11 +230,11 @@
     "name": "Yunan Ordusu",
     "strength": 35000,
     "commander": "Ioannis Bey",
-    "lat": 40.789316920993244,
-    "lon": 22.955270040555103,
+    "lat": 44.5213053483688,
+    "lon": 26.685791015625004,
     "turnStartLat": 40.789316920993244,
     "turnStartLon": 22.955270040555103,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 514.9218876105048,
     "createdAtTurn": 34
   },
   {
