@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.75997752330658,
-    "lon": 17.720947265625004,
+    "lat": 50.42251884281918,
+    "lon": 18.995361328125,
     "turnStartLat": 50.387507803003146,
     "turnStartLon": 15.930175781250002,
-    "kmMovedThisTurn": 567.0502431491348,
+    "kmMovedThisTurn": 684.0646503350748,
     "createdAtTurn": 21
   },
   {
