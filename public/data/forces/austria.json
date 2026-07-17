@@ -34,11 +34,11 @@
     "name": "Army of the Habsburgs",
     "strength": 40000,
     "commander": "Otto Von Traun",
-    "lat": 45.80199916666154,
-    "lon": 12.183837890625002,
+    "lat": 45.48805749706375,
+    "lon": 12.225036621093752,
     "turnStartLat": 50.61113171332364,
     "turnStartLon": 14.611816406250002,
-    "kmMovedThisTurn": 1503.616790793807,
+    "kmMovedThisTurn": 1632.381435074447,
     "createdAtTurn": 21
   },
   {
@@ -118,11 +118,11 @@
     "name": "Standschutzen",
     "strength": 5000,
     "commander": "",
-    "lat": 47.08508535995386,
-    "lon": 11.942138671875,
+    "lat": 45.954968795113395,
+    "lon": 10.393066406250002,
     "turnStartLat": 47.08508535995386,
     "turnStartLon": 11.942138671875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 172.73367934575865,
     "createdAtTurn": 21
   },
   {
