@@ -6,11 +6,11 @@
     "name": "The great çapulcu",
     "strength": 45000,
     "commander": "Meñli II Giray",
-    "lat": 49.816720843571765,
-    "lon": 30.02929687499999,
+    "lat": 51.346626098124005,
+    "lon": 28.80432128906249,
     "turnStartLat": 49.816720843571765,
     "turnStartLon": 30.02929687499999,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 190.83536059966937,
     "createdAtTurn": 34
   },
   {
@@ -48,11 +48,11 @@
     "name": "2nd host",
     "strength": 10000,
     "commander": "",
-    "lat": 50.65990836093939,
-    "lon": 28.108520507812504,
+    "lat": 51.80408603159773,
+    "lon": 28.40881347656249,
     "turnStartLat": 50.65990836093939,
     "turnStartLon": 28.108520507812504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 128.93302926825032,
     "createdAtTurn": 54
   },
   {
@@ -60,13 +60,27 @@
     "nation": "crimea",
     "branch": "army",
     "name": "3rd Host",
-    "strength": 5000,
+    "strength": 10000,
     "commander": "",
-    "lat": 49.088257784724675,
-    "lon": 28.18359374999999,
+    "lat": 48.393649752479995,
+    "lon": 28.867263793945316,
     "turnStartLat": 49.088257784724675,
     "turnStartLon": 28.18359374999999,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 92.07974011876134,
     "createdAtTurn": 54
+  },
+  {
+    "id": "juliusquick0616-pixel-1784324387135-0",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "Han Orda",
+    "strength": 40000,
+    "commander": "",
+    "lat": 46.47065524051864,
+    "lon": 33.29772949218749,
+    "turnStartLat": 46.47065524051864,
+    "turnStartLon": 33.29772949218749,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
   }
 ]
