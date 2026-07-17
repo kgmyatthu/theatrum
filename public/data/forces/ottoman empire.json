@@ -258,11 +258,11 @@
     "name": "Wallachian Army",
     "strength": 10000,
     "commander": "Nicolae Mavrocordat",
-    "lat": 49.65708870595193,
-    "lon": 24.208374023437504,
+    "lat": 47.18880653952971,
+    "lon": 27.114257812500004,
     "turnStartLat": 44.941526582928255,
     "turnStartLon": 24.970770268430435,
-    "kmMovedThisTurn": 528.8009225466169,
+    "kmMovedThisTurn": 877.0384056177329,
     "createdAtTurn": 34
   },
   {
