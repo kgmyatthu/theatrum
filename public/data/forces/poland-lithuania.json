@@ -222,5 +222,19 @@
     "turnStartLon": 16.869506835937504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
+  },
+  {
+    "id": "Ohgizmo-1784251130425-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Poland IV",
+    "strength": 40000,
+    "commander": "",
+    "lat": 51.16556659836182,
+    "lon": 22.873535156250004,
+    "turnStartLat": 51.16556659836182,
+    "turnStartLon": 22.873535156250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
   }
 ]
