@@ -82,5 +82,19 @@
     "turnStartLon": 129.30633544921878,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
+  },
+  {
+    "id": "shanesgames5-byte-1784267932841-0",
+    "nation": "korea",
+    "branch": "navy",
+    "name": "evac fleet",
+    "strength": 20,
+    "commander": "",
+    "lat": 34.96699890670367,
+    "lon": 129.09484863281253,
+    "turnStartLat": 34.96699890670367,
+    "turnStartLon": 129.09484863281253,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
   }
 ]
