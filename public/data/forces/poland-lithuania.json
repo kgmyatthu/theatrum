@@ -48,11 +48,11 @@
     "name": "Army of Belarus",
     "strength": 30000,
     "commander": "",
-    "lat": 50.46449795300867,
-    "lon": 22.357177734375,
+    "lat": 50.72254683363231,
+    "lon": 26.861572265625004,
     "turnStartLat": 50.673835249921346,
     "turnStartLon": 17.891235351562504,
-    "kmMovedThisTurn": 2319.6355638877685,
+    "kmMovedThisTurn": 2638.8360712519866,
     "createdAtTurn": 43
   },
   {
@@ -220,6 +220,20 @@
     "lon": 22.873535156250004,
     "turnStartLat": 51.16556659836182,
     "turnStartLon": 22.873535156250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "Ohgizmo-1784307285255-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Poland II",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.645294049305406,
+    "lon": 28.718261718750004,
+    "turnStartLat": 51.645294049305406,
+    "turnStartLon": 28.718261718750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   }
