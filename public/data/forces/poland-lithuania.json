@@ -48,11 +48,11 @@
     "name": "Army of Belarus",
     "strength": 30000,
     "commander": "",
-    "lat": 55.36662484928637,
-    "lon": 31.541748046875004,
+    "lat": 56.559482483762245,
+    "lon": 30.915527343750004,
     "turnStartLat": 50.673835249921346,
     "turnStartLon": 17.891235351562504,
-    "kmMovedThisTurn": 1257.895095362502,
+    "kmMovedThisTurn": 1396.1410315345734,
     "createdAtTurn": 43
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Poland II",
     "strength": 30000,
     "commander": "",
-    "lat": 57.314657355733274,
-    "lon": 29.146728515625004,
+    "lat": 51.09662294502995,
+    "lon": 19.599609375000004,
     "turnStartLat": 50.2682767372753,
     "turnStartLon": 18.901977539062504,
-    "kmMovedThisTurn": 1356.94797653414,
+    "kmMovedThisTurn": 2284.5377110658596,
     "createdAtTurn": 54
   },
   {
