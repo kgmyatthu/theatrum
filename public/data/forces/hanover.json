@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1784314360895-0",
+    "nation": "hanover",
+    "branch": "army",
+    "name": "Hanoverian Army",
+    "strength": 30000,
+    "commander": "George II",
+    "lat": 52.889020448995225,
+    "lon": 9.481201171875002,
+    "turnStartLat": 52.889020448995225,
+    "turnStartLon": 9.481201171875002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  }
+]
