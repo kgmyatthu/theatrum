@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 49.167338606291075,
-    "lon": 20.895996093750004,
+    "lat": 49.993615462541136,
+    "lon": 22.434082031250004,
     "turnStartLat": 50.00773901463687,
     "turnStartLon": 20.426330566406254,
-    "kmMovedThisTurn": 278.5320376500408,
+    "kmMovedThisTurn": 423.1500645067672,
     "createdAtTurn": 7
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of the Habsburgs",
     "strength": 40000,
     "commander": "Otto Von Traun",
-    "lat": 49.37522008143603,
-    "lon": 17.391357421875004,
+    "lat": 49.94415035164548,
+    "lon": 20.225830078125,
     "turnStartLat": 50.61113171332364,
     "turnStartLon": 14.611816406250002,
-    "kmMovedThisTurn": 477.7315246296384,
+    "kmMovedThisTurn": 691.3223588361399,
     "createdAtTurn": 21
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 49.66051672522669,
-    "lon": 13.480224609375002,
+    "lat": 49.75997752330658,
+    "lon": 17.720947265625004,
     "turnStartLat": 50.387507803003146,
     "turnStartLon": 15.930175781250002,
-    "kmMovedThisTurn": 220.16204122321716,
+    "kmMovedThisTurn": 567.0502431491348,
     "createdAtTurn": 21
   },
   {
