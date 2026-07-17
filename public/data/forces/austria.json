@@ -180,5 +180,19 @@
     "turnStartLon": 19.105224609375004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 36
+  },
+  {
+    "id": "RadetzkyNTW-1784328111174-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Madagascar Korps",
+    "strength": 300,
+    "commander": "",
+    "lat": -21.330315073431787,
+    "lon": 46.494140625,
+    "turnStartLat": -21.330315073431787,
+    "turnStartLon": 46.494140625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
   }
 ]
