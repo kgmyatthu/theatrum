@@ -4,13 +4,13 @@
     "nation": "bavaria",
     "branch": "army",
     "name": "Army of Bavaria",
-    "strength": 30000,
-    "commander": "Maximillian II Emmanuel",
-    "lat": 50.86487543456332,
-    "lon": 15.89168912861892,
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.9163055265693,
+    "lon": 9.088066481134742,
     "turnStartLat": 50.86487543456332,
     "turnStartLon": 15.89168912861892,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 533.1182748591907,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 50.69081559171601,
-    "lon": 17.48493865160088,
+    "lat": 48.16742163880246,
+    "lon": 9.462031022905082,
     "turnStartLat": 50.69081559171601,
     "turnStartLon": 17.48493865160088,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 644.0385378508468,
     "createdAtTurn": 31
   },
   {
@@ -40,33 +40,5 @@
     "turnStartLon": 11.661987304687502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
-  },
-  {
-    "id": "KingREN1-Suitman-1783986067446-6",
-    "nation": "bavaria",
-    "branch": "army",
-    "name": "2nd Army of Bavaria",
-    "strength": 30000,
-    "commander": "",
-    "lat": 49.03841859071883,
-    "lon": 12.448828592580325,
-    "turnStartLat": 49.03841859071883,
-    "turnStartLon": 12.448828592580325,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 51
-  },
-  {
-    "id": "KingREN1-Suitman-1783991555396-0",
-    "nation": "bavaria",
-    "branch": "army",
-    "name": "2nd Army of the Palatinate",
-    "strength": 20000,
-    "commander": "",
-    "lat": 48.72060149727126,
-    "lon": 13.283885375062559,
-    "turnStartLat": 48.72060149727126,
-    "turnStartLon": 13.283885375062559,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 51
   }
 ]
