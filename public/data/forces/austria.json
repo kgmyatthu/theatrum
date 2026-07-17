@@ -6,11 +6,11 @@
     "name": "Army of Slovakia",
     "strength": 15000,
     "commander": "",
-    "lat": 49.710272582105695,
-    "lon": 22.115478515625004,
+    "lat": 49.081062364320736,
+    "lon": 19.434814453125004,
     "turnStartLat": 50.00773901463687,
     "turnStartLon": 20.426330566406254,
-    "kmMovedThisTurn": 462.0654062555808,
+    "kmMovedThisTurn": 668.2794428341421,
     "createdAtTurn": 7
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of the Habsburgs",
     "strength": 40000,
     "commander": "Otto Von Traun",
-    "lat": 49.94415035164548,
-    "lon": 20.225830078125,
+    "lat": 48.80686346108519,
+    "lon": 16.171875000000004,
     "turnStartLat": 50.61113171332364,
     "turnStartLon": 14.611816406250002,
-    "kmMovedThisTurn": 691.3223588361399,
+    "kmMovedThisTurn": 1010.854055067067,
     "createdAtTurn": 21
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "Ludwig Khevenhuller",
-    "lat": 50.792047064406866,
-    "lon": 19.577636718750004,
+    "lat": 49.596470070892686,
+    "lon": 17.951660156250004,
     "turnStartLat": 50.387507803003146,
     "turnStartLon": 15.930175781250002,
-    "kmMovedThisTurn": 798.2828268018771,
+    "kmMovedThisTurn": 974.5429028137063,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Austria",
     "strength": 20000,
     "commander": "Charles of Lorraine",
-    "lat": 51.12421275782688,
-    "lon": 18.193359375000004,
+    "lat": 48.151428143221224,
+    "lon": 14.040527343750002,
     "turnStartLat": 49.97242235423708,
     "turnStartLon": 16.754150390625004,
-    "kmMovedThisTurn": 729.7983604630872,
+    "kmMovedThisTurn": 1175.4162641573748,
     "createdAtTurn": 21
   },
   {
@@ -76,11 +76,11 @@
     "name": "1st Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 50.597186230587035,
-    "lon": 21.401367187500004,
+    "lat": 45.120052841530544,
+    "lon": 21.42333984375,
     "turnStartLat": 45.583289756006316,
     "turnStartLon": 18.830566406250004,
-    "kmMovedThisTurn": 609.2390469353667,
+    "kmMovedThisTurn": 1218.2706908014284,
     "createdAtTurn": 21
   },
   {
@@ -104,11 +104,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 51.44716034698012,
-    "lon": 19.577636718750004,
+    "lat": 45.706179285330855,
+    "lon": 15.534667968750002,
     "turnStartLat": 45.68315803253308,
     "turnStartLon": 15.479736328125002,
-    "kmMovedThisTurn": 732.0248567786241,
+    "kmMovedThisTurn": 1690.1519478458376,
     "createdAtTurn": 21
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of Transylvania",
     "strength": 15000,
     "commander": "",
-    "lat": 48.922499263758255,
-    "lon": 24.543457031250004,
+    "lat": 46.31658418182218,
+    "lon": 24.818115234375004,
     "turnStartLat": 47.204642388766935,
     "turnStartLon": 24.752197265625004,
-    "kmMovedThisTurn": 371.3604589145276,
+    "kmMovedThisTurn": 661.8547433657143,
     "createdAtTurn": 36
   },
   {
