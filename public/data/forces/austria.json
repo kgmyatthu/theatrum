@@ -34,11 +34,11 @@
     "name": "Army of the Habsburgs",
     "strength": 40000,
     "commander": "Otto Von Traun",
-    "lat": 48.80686346108519,
-    "lon": 16.171875000000004,
+    "lat": 46.10370875598026,
+    "lon": 14.08447265625,
     "turnStartLat": 50.61113171332364,
     "turnStartLon": 14.611816406250002,
-    "kmMovedThisTurn": 1010.854055067067,
+    "kmMovedThisTurn": 1349.9050967388075,
     "createdAtTurn": 21
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of Transylvania",
     "strength": 15000,
     "commander": "",
-    "lat": 46.31658418182218,
-    "lon": 24.818115234375004,
+    "lat": 47.15984001304432,
+    "lon": 24.730224609375004,
     "turnStartLat": 47.204642388766935,
     "turnStartLon": 24.752197265625004,
-    "kmMovedThisTurn": 661.8547433657143,
+    "kmMovedThisTurn": 755.859402842584,
     "createdAtTurn": 36
   },
   {
