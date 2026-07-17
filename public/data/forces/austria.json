@@ -62,11 +62,11 @@
     "name": "Army of Austria (split)",
     "strength": 10000,
     "commander": "Charles of Lorraine",
-    "lat": 45.91294412737392,
-    "lon": 14.117431640625002,
+    "lat": 45.213003555993964,
+    "lon": 13.903198242187502,
     "turnStartLat": 49.97242235423708,
     "turnStartLon": 16.754150390625004,
-    "kmMovedThisTurn": 1424.3925230391828,
+    "kmMovedThisTurn": 1503.989194365296,
     "createdAtTurn": 21
   },
   {
