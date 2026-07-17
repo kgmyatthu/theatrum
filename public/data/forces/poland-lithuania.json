@@ -48,11 +48,11 @@
     "name": "Army of Belarus",
     "strength": 23000,
     "commander": "",
-    "lat": 49.55728898983402,
-    "lon": 27.658081054687504,
+    "lat": 46.98399993718925,
+    "lon": 29.558715820312504,
     "turnStartLat": 50.673835249921346,
     "turnStartLon": 17.891235351562504,
-    "kmMovedThisTurn": 2780.909445427076,
+    "kmMovedThisTurn": 3100.189921420723,
     "createdAtTurn": 43
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of the Galician",
     "strength": 20000,
     "commander": "",
-    "lat": 49.42169406084924,
-    "lon": 26.043090820312504,
+    "lat": 47.62097541515849,
+    "lon": 27.026367187500004,
     "turnStartLat": 49.724479188712984,
     "turnStartLon": 21.862792968750004,
-    "kmMovedThisTurn": 365.00314446317697,
+    "kmMovedThisTurn": 606.8716400218416,
     "createdAtTurn": 54
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Poland III",
     "strength": 20000,
     "commander": "",
-    "lat": 49.33944093715546,
-    "lon": 27.196655273437504,
+    "lat": 47.07386310181417,
+    "lon": 28.218383789062504,
     "turnStartLat": 51.80182150078305,
     "turnStartLon": 16.424560546875004,
-    "kmMovedThisTurn": 1032.9264861568972,
+    "kmMovedThisTurn": 1299.5738329373999,
     "createdAtTurn": 54
   },
   {
@@ -186,13 +186,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Ukraine",
-    "strength": 32000,
+    "strength": 40000,
     "commander": "",
-    "lat": 49.55372551347579,
-    "lon": 28.059082031250004,
+    "lat": 47.264320080254805,
+    "lon": 30.421142578125004,
     "turnStartLat": 50.190967765585604,
     "turnStartLon": 28.948974609375004,
-    "kmMovedThisTurn": 628.8871788169537,
+    "kmMovedThisTurn": 937.4024015024142,
     "createdAtTurn": 54
   },
   {
