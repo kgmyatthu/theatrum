@@ -76,11 +76,11 @@
     "name": "1st Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.583289756006316,
-    "lon": 18.830566406250004,
+    "lat": 50.597186230587035,
+    "lon": 21.401367187500004,
     "turnStartLat": 45.583289756006316,
     "turnStartLon": 18.830566406250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 609.2390469353667,
     "createdAtTurn": 21
   },
   {
@@ -90,11 +90,11 @@
     "name": "2nd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.75219336063106,
-    "lon": 20.895996093750004,
+    "lat": 45.6793202356954,
+    "lon": 18.753662109375004,
     "turnStartLat": 45.75219336063106,
     "turnStartLon": 20.895996093750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1097.6112103994685,
     "createdAtTurn": 21
   },
   {
@@ -104,11 +104,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.68315803253308,
-    "lon": 15.479736328125002,
+    "lat": 51.44716034698012,
+    "lon": 19.577636718750004,
     "turnStartLat": 45.68315803253308,
     "turnStartLon": 15.479736328125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 732.0248567786241,
     "createdAtTurn": 21
   },
   {
