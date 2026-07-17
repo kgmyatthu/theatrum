@@ -34,11 +34,11 @@
     "name": "Anadolu Ordusu",
     "strength": 40000,
     "commander": "Hekimoğlu Ali Pasha",
-    "lat": 47.08754332686408,
-    "lon": 30.388183593750004,
+    "lat": 46.602105869327126,
+    "lon": 30.662841796875004,
     "turnStartLat": 39.77998583392796,
     "turnStartLon": 33.13877832482906,
-    "kmMovedThisTurn": 842.2211044718911,
+    "kmMovedThisTurn": 900.1001579574381,
     "createdAtTurn": 31
   },
   {
@@ -160,11 +160,11 @@
     "name": "Ege Filosu",
     "strength": 35,
     "commander": "Abdulah Pasha",
-    "lat": 46.067657453405275,
-    "lon": 30.750732421875004,
+    "lat": 46.42473320814112,
+    "lon": 30.849609375000004,
     "turnStartLat": 40.042672763491346,
     "turnStartLon": 26.08052029612174,
-    "kmMovedThisTurn": 769.608599765707,
+    "kmMovedThisTurn": 810.0350714639546,
     "createdAtTurn": 31
   },
   {
@@ -258,11 +258,11 @@
     "name": "Wallachian Army",
     "strength": 10000,
     "commander": "Nicolae Mavrocordat",
-    "lat": 49.297966663534424,
-    "lon": 24.411621093750004,
+    "lat": 49.65708870595193,
+    "lon": 24.208374023437504,
     "turnStartLat": 44.941526582928255,
     "turnStartLon": 24.970770268430435,
-    "kmMovedThisTurn": 486.25408706203496,
+    "kmMovedThisTurn": 528.8009225466169,
     "createdAtTurn": 34
   },
   {
