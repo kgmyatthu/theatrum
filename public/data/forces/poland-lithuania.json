@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 51.80861475198521,
-    "lon": 22.016601562500004,
+    "lat": 54.213861000644926,
+    "lon": 31.508789062500004,
     "turnStartLat": 51.15178610143037,
     "turnStartLon": 15.875244140625002,
-    "kmMovedThisTurn": 2152.0895049939218,
+    "kmMovedThisTurn": 3157.9572086558996,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of The Baltics",
     "strength": 50000,
     "commander": "",
-    "lat": 55.36662484928637,
-    "lon": 21.972656250000004,
+    "lat": 56.480695390196296,
+    "lon": 25.169677734375004,
     "turnStartLat": 50.90996067566234,
     "turnStartLon": 16.627807617187504,
-    "kmMovedThisTurn": 1600.670468650656,
+    "kmMovedThisTurn": 2006.9736524794866,
     "createdAtTurn": 43
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Belarus",
     "strength": 30000,
     "commander": "",
-    "lat": 50.54136296522163,
-    "lon": 23.928222656250004,
+    "lat": 50.46449795300867,
+    "lon": 22.357177734375,
     "turnStartLat": 50.673835249921346,
     "turnStartLon": 17.891235351562504,
-    "kmMovedThisTurn": 2208.1984046945972,
+    "kmMovedThisTurn": 2319.6355638877685,
     "createdAtTurn": 43
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of the Galician",
     "strength": 20000,
     "commander": "",
-    "lat": 49.210420445650314,
-    "lon": 26.378173828125004,
+    "lat": 49.42169406084924,
+    "lon": 26.043090820312504,
     "turnStartLat": 49.724479188712984,
     "turnStartLon": 21.862792968750004,
-    "kmMovedThisTurn": 331.21188123504214,
+    "kmMovedThisTurn": 365.00314446317697,
     "createdAtTurn": 54
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Poland III",
     "strength": 20000,
     "commander": "",
-    "lat": 50.488968573084406,
-    "lon": 27.811889648437504,
+    "lat": 49.33944093715546,
+    "lon": 27.196655273437504,
     "turnStartLat": 51.80182150078305,
     "turnStartLon": 16.424560546875004,
-    "kmMovedThisTurn": 879.744555006738,
+    "kmMovedThisTurn": 1032.9264861568972,
     "createdAtTurn": 54
   },
   {
@@ -188,11 +188,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 50.190967765585604,
-    "lon": 28.948974609375004,
+    "lat": 49.50024216453777,
+    "lon": 28.608398437500004,
     "turnStartLat": 50.190967765585604,
     "turnStartLon": 28.948974609375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 102.97826796119844,
     "createdAtTurn": 54
   },
   {
