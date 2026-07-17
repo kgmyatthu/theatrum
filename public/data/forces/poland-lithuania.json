@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 54.68653423452972,
-    "lon": 32.01416015625001,
+    "lat": 51.80861475198521,
+    "lon": 22.016601562500004,
     "turnStartLat": 51.15178610143037,
     "turnStartLon": 15.875244140625002,
-    "kmMovedThisTurn": 1414.8247627785297,
+    "kmMovedThisTurn": 2152.0895049939218,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of The Baltics",
     "strength": 50000,
     "commander": "",
-    "lat": 57.66303463288714,
-    "lon": 28.333740234375004,
+    "lat": 55.36662484928637,
+    "lon": 21.972656250000004,
     "turnStartLat": 50.90996067566234,
     "turnStartLon": 16.627807617187504,
-    "kmMovedThisTurn": 1134.5972184355012,
+    "kmMovedThisTurn": 1600.670468650656,
     "createdAtTurn": 43
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Belarus",
     "strength": 30000,
     "commander": "",
-    "lat": 56.559482483762245,
-    "lon": 30.915527343750004,
+    "lat": 50.54136296522163,
+    "lon": 23.928222656250004,
     "turnStartLat": 50.673835249921346,
     "turnStartLon": 17.891235351562504,
-    "kmMovedThisTurn": 1396.1410315345734,
+    "kmMovedThisTurn": 2208.1984046945972,
     "createdAtTurn": 43
   },
   {
@@ -165,20 +165,6 @@
     "turnStartLat": 54.14313233476031,
     "turnStartLon": 18.204345703125004,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 54
-  },
-  {
-    "id": "Ohgizmo-1784063857987-3",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Poland II",
-    "strength": 30000,
-    "commander": "",
-    "lat": 51.09662294502995,
-    "lon": 19.599609375000004,
-    "turnStartLat": 50.2682767372753,
-    "turnStartLon": 18.901977539062504,
-    "kmMovedThisTurn": 2284.5377110658596,
     "createdAtTurn": 54
   },
   {
