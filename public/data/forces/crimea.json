@@ -36,9 +36,9 @@
     "commander": "Mohamed Ben Hassan",
     "lat": 45.979786584921676,
     "lon": 30.749816894531268,
-    "turnStartLat": 45.174358072811465,
-    "turnStartLon": 33.31405878067016,
-    "kmMovedThisTurn": 259.87158901592494,
+    "turnStartLat": 45.979786584921676,
+    "turnStartLon": 30.749816894531268,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 51.67993554065803,
     "lon": 28.314514160156254,
-    "turnStartLat": 51.80408603159773,
-    "turnStartLon": 28.40881347656249,
-    "kmMovedThisTurn": 15.255515267880376,
+    "turnStartLat": 51.67993554065803,
+    "turnStartLon": 28.314514160156254,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -64,9 +64,9 @@
     "commander": "",
     "lat": 51.27279869392247,
     "lon": 28.457336425781254,
-    "turnStartLat": 46.47065524051864,
-    "turnStartLon": 33.29772949218749,
-    "kmMovedThisTurn": 670.2586995619544,
+    "turnStartLat": 51.27279869392247,
+    "turnStartLon": 28.457336425781254,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   }
 ]
