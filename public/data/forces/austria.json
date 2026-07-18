@@ -34,11 +34,11 @@
     "name": "3rd Grenzer",
     "strength": 7500,
     "commander": "",
-    "lat": 45.251688256117646,
-    "lon": 18.094482421875004,
+    "lat": 46.7549166192819,
+    "lon": 17.248535156250004,
     "turnStartLat": 45.251688256117646,
     "turnStartLon": 18.094482421875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 179.465076752181,
     "createdAtTurn": 21
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of Austria (split)",
     "strength": 10000,
     "commander": "",
-    "lat": 45.62172169252446,
-    "lon": 12.0849609375,
+    "lat": 46.50973514453879,
+    "lon": 15.650024414062502,
     "turnStartLat": 45.62172169252446,
     "turnStartLon": 12.0849609375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 294.89536657964425,
     "createdAtTurn": 56
   },
   {
@@ -150,6 +150,34 @@
     "lon": 18.720703125000004,
     "turnStartLat": 47.45780853075031,
     "turnStartLon": 18.720703125000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "yellowwithblue-1784397782704-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Reserve Army",
+    "strength": 21000,
+    "commander": "",
+    "lat": 47.249406957888446,
+    "lon": 15.501708984375002,
+    "turnStartLat": 47.249406957888446,
+    "turnStartLon": 15.501708984375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "yellowwithblue-1784397805221-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Italy (including militia)",
+    "strength": 13000,
+    "commander": "",
+    "lat": 45.74836030216746,
+    "lon": 12.123413085937502,
+    "turnStartLat": 45.74836030216746,
+    "turnStartLon": 12.123413085937502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 59
   }
