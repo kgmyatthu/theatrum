@@ -4,7 +4,7 @@
     "nation": "crimea",
     "branch": "army",
     "name": "The great çapulcu",
-    "strength": 45000,
+    "strength": 60000,
     "commander": "Meñli II Giray",
     "lat": 51.346626098124005,
     "lon": 28.80432128906249,
@@ -34,11 +34,11 @@
     "name": "Donanma-i Qırım",
     "strength": 20,
     "commander": "Mohamed Ben Hassan",
-    "lat": 45.174358072811465,
-    "lon": 33.31405878067016,
+    "lat": 45.979786584921676,
+    "lon": 30.749816894531268,
     "turnStartLat": 45.174358072811465,
     "turnStartLon": 33.31405878067016,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 259.87158901592494,
     "createdAtTurn": 34
   },
   {
@@ -48,25 +48,11 @@
     "name": "2nd host",
     "strength": 10000,
     "commander": "",
-    "lat": 51.80408603159773,
-    "lon": 28.40881347656249,
+    "lat": 51.67993554065803,
+    "lon": 28.314514160156254,
     "turnStartLat": 51.80408603159773,
     "turnStartLon": 28.40881347656249,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 54
-  },
-  {
-    "id": "juliusquick0616-pixel-1784151453148-1",
-    "nation": "crimea",
-    "branch": "army",
-    "name": "3rd Host",
-    "strength": 10000,
-    "commander": "",
-    "lat": 48.393649752479995,
-    "lon": 28.867263793945316,
-    "turnStartLat": 48.393649752479995,
-    "turnStartLon": 28.867263793945316,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 15.255515267880376,
     "createdAtTurn": 54
   },
   {
@@ -76,11 +62,11 @@
     "name": "Han Orda",
     "strength": 40000,
     "commander": "",
-    "lat": 46.47065524051864,
-    "lon": 33.29772949218749,
+    "lat": 51.27279869392247,
+    "lon": 28.457336425781254,
     "turnStartLat": 46.47065524051864,
     "turnStartLon": 33.29772949218749,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 670.2586995619544,
     "createdAtTurn": 56
   }
 ]
