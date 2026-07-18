@@ -174,11 +174,11 @@
     "name": "Army of Poland III",
     "strength": 15000,
     "commander": "",
-    "lat": 48.552978164400734,
-    "lon": 27.894287109375004,
+    "lat": 50.94458443495011,
+    "lon": 28.520507812500004,
     "turnStartLat": 47.07386310181417,
     "turnStartLon": 28.218383789062504,
-    "kmMovedThisTurn": 617.0694859496552,
+    "kmMovedThisTurn": 886.7803119915723,
     "createdAtTurn": 54
   },
   {
