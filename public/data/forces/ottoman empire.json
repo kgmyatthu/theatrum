@@ -8,9 +8,9 @@
     "commander": "Silahdar Mehmed Pasha",
     "lat": 46.662504974850954,
     "lon": 28.992919921875004,
-    "turnStartLat": 44.8265487882259,
-    "turnStartLon": 20.3574324484797,
-    "kmMovedThisTurn": 1439.5486583682791,
+    "turnStartLat": 46.662504974850954,
+    "turnStartLon": 28.992919921875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Köprülüzade Abdullah Pasha",
     "lat": 44.28468027588078,
     "lon": 28.311767578125,
-    "turnStartLat": 45.047854725948916,
-    "turnStartLon": 16.754563470804822,
-    "kmMovedThisTurn": 973.0693778834375,
+    "turnStartLat": 44.28468027588078,
+    "turnStartLon": 28.311767578125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Hekimoğlu Ali Pasha",
     "lat": 46.602105869327126,
     "lon": 30.662841796875004,
-    "turnStartLat": 39.77998583392796,
-    "turnStartLon": 33.13877832482906,
-    "kmMovedThisTurn": 900.1001579574381,
+    "turnStartLat": 46.602105869327126,
+    "turnStartLon": 30.662841796875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -162,9 +162,9 @@
     "commander": "Abdulah Pasha",
     "lat": 46.42473320814112,
     "lon": 30.849609375000004,
-    "turnStartLat": 40.042672763491346,
-    "turnStartLon": 26.08052029612174,
-    "kmMovedThisTurn": 810.0350714639546,
+    "turnStartLat": 46.42473320814112,
+    "turnStartLon": 30.849609375000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Hassan Pasha",
     "lat": 31.612563576730693,
     "lon": 30.344238281250004,
-    "turnStartLat": 40.61060393348752,
-    "turnStartLon": 18.921265175671078,
-    "kmMovedThisTurn": 1430.8005438243672,
+    "turnStartLat": 31.612563576730693,
+    "turnStartLon": 30.344238281250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Abdulmecid Pasha",
     "lat": 33.15281415743522,
     "lon": 13.820800781250002,
-    "turnStartLat": 41.45589632632946,
-    "turnStartLon": 18.983077701341582,
-    "kmMovedThisTurn": 1029.481252546606,
+    "turnStartLat": 33.15281415743522,
+    "turnStartLon": 13.820800781250002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -232,9 +232,9 @@
     "commander": "Ioannis Bey",
     "lat": 44.5213053483688,
     "lon": 26.685791015625004,
-    "turnStartLat": 40.789316920993244,
-    "turnStartLon": 22.955270040555103,
-    "kmMovedThisTurn": 514.9218876105048,
+    "turnStartLat": 44.5213053483688,
+    "turnStartLon": 26.685791015625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -246,9 +246,9 @@
     "commander": "Enver Bey",
     "lat": 46.11784846348399,
     "lon": 27.630615234375004,
-    "turnStartLat": 48.28140539407343,
-    "turnStartLon": 25.928134775820503,
-    "kmMovedThisTurn": 438.7624703848233,
+    "turnStartLat": 46.11784846348399,
+    "turnStartLon": 27.630615234375004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -260,9 +260,9 @@
     "commander": "Nicolae Mavrocordat",
     "lat": 47.18880653952971,
     "lon": 27.114257812500004,
-    "turnStartLat": 44.941526582928255,
-    "turnStartLon": 24.970770268430435,
-    "kmMovedThisTurn": 877.0384056177329,
+    "turnStartLat": 47.18880653952971,
+    "turnStartLon": 27.114257812500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -274,9 +274,9 @@
     "commander": "Grigore II Ghika",
     "lat": 44.901007055155674,
     "lon": 25.543212890625004,
-    "turnStartLat": 47.356732162674184,
-    "turnStartLon": 27.277578532680646,
-    "kmMovedThisTurn": 678.3850157799939,
+    "turnStartLat": 44.901007055155674,
+    "turnStartLon": 25.543212890625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
