@@ -46,13 +46,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Southern Poland",
-    "strength": 25000,
+    "strength": 20000,
     "commander": "",
-    "lat": 49.26780455063753,
-    "lon": 19.632568359375004,
+    "lat": 48.19538740833338,
+    "lon": 17.352905273437504,
     "turnStartLat": 46.98399993718925,
     "turnStartLon": 29.558715820312504,
-    "kmMovedThisTurn": 815.0366568640051,
+    "kmMovedThisTurn": 1040.8577319692024,
     "createdAtTurn": 43
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of the Galician",
     "strength": 20000,
     "commander": "",
-    "lat": 48.980216985374994,
-    "lon": 23.367919921875004,
+    "lat": 47.4355191531953,
+    "lon": 23.994140625000004,
     "turnStartLat": 47.62097541515849,
     "turnStartLon": 27.026367187500004,
-    "kmMovedThisTurn": 340.163707446328,
+    "kmMovedThisTurn": 518.0827666238852,
     "createdAtTurn": 54
   },
   {
@@ -200,13 +200,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Silesia",
-    "strength": 25000,
+    "strength": 18000,
     "commander": "",
-    "lat": 50.25071752130677,
-    "lon": 14.826049804687502,
+    "lat": 48.5493419587775,
+    "lon": 16.094970703125004,
     "turnStartLat": 50.996471761616284,
     "turnStartLon": 16.869506835937504,
-    "kmMovedThisTurn": 166.29316937568447,
+    "kmMovedThisTurn": 387.0072576885652,
     "createdAtTurn": 56
   },
   {
@@ -214,13 +214,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Poland IV",
-    "strength": 45000,
+    "strength": 30000,
     "commander": "",
-    "lat": 49.66407240384585,
-    "lon": 18.347167968750004,
+    "lat": 48.516604348867475,
+    "lon": 16.776123046875004,
     "turnStartLat": 51.16556659836182,
     "turnStartLon": 22.873535156250004,
-    "kmMovedThisTurn": 465.43001572459497,
+    "kmMovedThisTurn": 636.7912563897894,
     "createdAtTurn": 56
   },
   {
@@ -236,5 +236,19 @@
     "turnStartLon": 28.718261718750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
+  },
+  {
+    "id": "Ohgizmo-1784345747471-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Bohemia",
+    "strength": 7000,
+    "commander": "",
+    "lat": 49.96535590991311,
+    "lon": 14.710693359375002,
+    "turnStartLat": 49.96535590991311,
+    "turnStartLon": 14.710693359375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 57
   }
 ]
