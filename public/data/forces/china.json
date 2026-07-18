@@ -236,5 +236,47 @@
     "turnStartLon": 84.28710937500001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 51
+  },
+  {
+    "id": "AceApache-1784412517559-2",
+    "nation": "china",
+    "branch": "army",
+    "name": "Mongol Horde",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.210420445650314,
+    "lon": 94.52636718750001,
+    "turnStartLat": 49.210420445650314,
+    "turnStartLon": 94.52636718750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "AceApache-1784412523467-3",
+    "nation": "china",
+    "branch": "army",
+    "name": "Mongol Horde",
+    "strength": 30000,
+    "commander": "",
+    "lat": 48.80686346108519,
+    "lon": 102.74414062500001,
+    "turnStartLat": 48.80686346108519,
+    "turnStartLon": 102.74414062500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "AceApache-1784412528979-4",
+    "nation": "china",
+    "branch": "army",
+    "name": "Mongol Horde",
+    "strength": 30000,
+    "commander": "",
+    "lat": 45.98169518512228,
+    "lon": 99.58007812500001,
+    "turnStartLat": 45.98169518512228,
+    "turnStartLon": 99.58007812500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
   }
 ]
