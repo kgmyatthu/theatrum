@@ -1235,7 +1235,7 @@
     ],
     [
       308,
-      "contested territories"
+      "austria"
     ],
     [
       309,
@@ -1247,7 +1247,7 @@
     ],
     [
       311,
-      "contested territories"
+      "austria"
     ],
     [
       312,
@@ -1375,7 +1375,7 @@
     ],
     [
       343,
-      "contested territories"
+      "austria"
     ],
     [
       344,
@@ -1511,11 +1511,11 @@
     ],
     [
       377,
-      "austria"
+      "contested territories"
     ],
     [
       378,
-      "austria"
+      "contested territories"
     ],
     [
       379,
@@ -1571,11 +1571,11 @@
     ],
     [
       392,
-      "austria"
+      "latin empire"
     ],
     [
       393,
-      "austria"
+      "latin empire"
     ],
     [
       394,
@@ -1983,7 +1983,7 @@
     ],
     [
       495,
-      "venice"
+      "austria"
     ],
     [
       496,
@@ -2359,7 +2359,7 @@
     ],
     [
       589,
-      "venice"
+      "austria"
     ],
     [
       590,
@@ -2367,7 +2367,7 @@
     ],
     [
       591,
-      "venice"
+      "austria"
     ],
     [
       592,
@@ -2407,7 +2407,7 @@
     ],
     [
       601,
-      "venice"
+      "austria"
     ],
     [
       602,
@@ -2735,7 +2735,7 @@
     ],
     [
       683,
-      "venice"
+      "austria"
     ],
     [
       684,
@@ -3283,7 +3283,7 @@
     ],
     [
       820,
-      "venice"
+      "austria"
     ],
     [
       821,
@@ -3311,7 +3311,7 @@
     ],
     [
       827,
-      "venice"
+      "austria"
     ],
     [
       828,
@@ -3335,15 +3335,15 @@
     ],
     [
       833,
-      "austria"
+      "contested territories"
     ],
     [
       834,
-      "austria"
+      "contested territories"
     ],
     [
       835,
-      "contested territories"
+      "austria"
     ],
     [
       836,
@@ -3355,7 +3355,7 @@
     ],
     [
       838,
-      "contested territories"
+      "austria"
     ],
     [
       839,
@@ -3563,7 +3563,7 @@
     ],
     [
       890,
-      "austria"
+      "contested territories"
     ],
     [
       891,
@@ -9803,7 +9803,7 @@
     ],
     [
       2450,
-      "venice"
+      "austria"
     ],
     [
       2451,
@@ -9819,11 +9819,11 @@
     ],
     [
       2454,
-      "venice"
+      "austria"
     ],
     [
       2455,
-      "venice"
+      "austria"
     ],
     [
       2456,
@@ -11467,7 +11467,7 @@
     ],
     [
       2866,
-      "venice"
+      "austria"
     ],
     [
       2867,
@@ -13831,11 +13831,11 @@
     ],
     [
       3457,
-      "austria"
+      "contested territories"
     ],
     [
       3458,
-      "austria"
+      "contested territories"
     ],
     [
       3459,
@@ -17447,7 +17447,7 @@
     ],
     [
       4361,
-      "austria"
+      "contested territories"
     ],
     [
       4362,
@@ -17655,7 +17655,7 @@
     ],
     [
       4413,
-      "austria"
+      "latin empire"
     ],
     [
       4414,
@@ -17663,19 +17663,19 @@
     ],
     [
       4415,
-      "austria"
+      "latin empire"
     ],
     [
       4416,
-      "austria"
+      "latin empire"
     ],
     [
       4417,
-      "austria"
+      "latin empire"
     ],
     [
       4418,
-      "austria"
+      "latin empire"
     ],
     [
       4419,
@@ -17695,7 +17695,7 @@
     ],
     [
       4423,
-      "austria"
+      "latin empire"
     ],
     [
       4424,
@@ -17703,7 +17703,7 @@
     ],
     [
       4425,
-      "austria"
+      "latin empire"
     ],
     [
       4426,
@@ -17715,15 +17715,15 @@
     ],
     [
       4428,
-      "venice"
+      "austria"
     ],
     [
       4429,
-      "venice"
+      "austria"
     ],
     [
       4430,
-      "venice"
+      "austria"
     ],
     [
       4431,
@@ -17771,7 +17771,7 @@
     ],
     [
       4442,
-      "venice"
+      "austria"
     ],
     [
       4443,
@@ -18533,7 +18533,7 @@
     },
     {
       "name": "latin empire",
-      "color": "#7d0000"
+      "color": "#ff2e2e"
     },
     {
       "name": "malay sultanates",
@@ -18581,7 +18581,7 @@
     },
     {
       "name": "ottoman empire",
-      "color": "#ff1c01"
+      "color": "#990f00"
     },
     {
       "name": "oyo",
@@ -18621,7 +18621,7 @@
     },
     {
       "name": "savoy",
-      "color": "#7C2128"
+      "color": "#a0ff52"
     },
     {
       "name": "saxony",
@@ -18645,7 +18645,7 @@
     },
     {
       "name": "switzerland",
-      "color": "#DA291C"
+      "color": "#ffaea8"
     },
     {
       "name": "tibet",
