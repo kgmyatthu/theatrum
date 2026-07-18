@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 54.213861000644926,
-    "lon": 31.508789062500004,
+    "lat": 47.7885774439662,
+    "lon": 17.325439453125004,
     "turnStartLat": 54.213861000644926,
     "turnStartLon": 31.508789062500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1503.554839339624,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of The Baltics",
     "strength": 50000,
     "commander": "",
-    "lat": 56.480695390196296,
-    "lon": 25.169677734375004,
+    "lat": 48.58910270022312,
+    "lon": 17.443199157714847,
     "turnStartLat": 56.480695390196296,
     "turnStartLon": 25.169677734375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1242.6715157658386,
     "createdAtTurn": 43
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of the Galician",
     "strength": 20000,
     "commander": "",
-    "lat": 47.4355191531953,
-    "lon": 23.994140625000004,
+    "lat": 47.258793376562046,
+    "lon": 22.766418457031254,
     "turnStartLat": 47.62097541515849,
     "turnStartLon": 27.026367187500004,
-    "kmMovedThisTurn": 518.0827666238852,
+    "kmMovedThisTurn": 612.6434175849162,
     "createdAtTurn": 54
   },
   {
