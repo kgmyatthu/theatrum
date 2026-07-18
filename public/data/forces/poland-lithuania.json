@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 47.67648444221321,
-    "lon": 16.567382812500004,
+    "lat": 47.56911375866714,
+    "lon": 15.702209472656252,
     "turnStartLat": 47.7885774439662,
     "turnStartLon": 17.325439453125004,
-    "kmMovedThisTurn": 58.04788897965554,
+    "kmMovedThisTurn": 123.97906822867043,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of The Baltics",
     "strength": 50000,
     "commander": "",
-    "lat": 47.74117041801028,
-    "lon": 16.026306152343754,
+    "lat": 47.53574697823915,
+    "lon": 18.385620117187504,
     "turnStartLat": 48.58910270022312,
     "turnStartLon": 17.443199157714847,
-    "kmMovedThisTurn": 141.17822979082493,
+    "kmMovedThisTurn": 319.40968207010206,
     "createdAtTurn": 43
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Southern Poland",
     "strength": 20000,
     "commander": "",
-    "lat": 47.68203210030429,
-    "lon": 16.229553222656254,
+    "lat": 48.20271028869972,
+    "lon": 16.435546875000004,
     "turnStartLat": 48.19538740833338,
     "turnStartLon": 17.352905273437504,
-    "kmMovedThisTurn": 101.2945636160003,
+    "kmMovedThisTurn": 161.1899918999132,
     "createdAtTurn": 43
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of the Galician",
     "strength": 20000,
     "commander": "",
-    "lat": 47.258793376562046,
-    "lon": 22.766418457031254,
+    "lat": 47.331377157798244,
+    "lon": 21.983642578125004,
     "turnStartLat": 47.258793376562046,
     "turnStartLon": 22.766418457031254,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 59.581892990928175,
     "createdAtTurn": 54
   },
   {
@@ -202,11 +202,11 @@
     "name": "Army of Silesia",
     "strength": 18000,
     "commander": "",
-    "lat": 47.97153658265933,
-    "lon": 15.490722656250002,
+    "lat": 47.67648444221321,
+    "lon": 15.529174804687502,
     "turnStartLat": 48.5493419587775,
     "turnStartLon": 16.094970703125004,
-    "kmMovedThisTurn": 78.28606914744825,
+    "kmMovedThisTurn": 111.21972471952003,
     "createdAtTurn": 56
   },
   {
@@ -216,11 +216,11 @@
     "name": "Army of Poland IV",
     "strength": 30000,
     "commander": "",
-    "lat": 47.82053186746053,
-    "lon": 15.737915039062502,
+    "lat": 48.15509285476017,
+    "lon": 14.057006835937502,
     "turnStartLat": 48.516604348867475,
     "turnStartLon": 16.776123046875004,
-    "kmMovedThisTurn": 109.17124460124083,
+    "kmMovedThisTurn": 239.6781809654979,
     "createdAtTurn": 56
   },
   {
