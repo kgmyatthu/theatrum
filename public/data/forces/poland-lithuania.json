@@ -8,9 +8,9 @@
     "commander": "Jan III Sobieski",
     "lat": 47.7885774439662,
     "lon": 17.325439453125004,
-    "turnStartLat": 54.213861000644926,
-    "turnStartLon": 31.508789062500004,
-    "kmMovedThisTurn": 1503.554839339624,
+    "turnStartLat": 47.7885774439662,
+    "turnStartLon": 17.325439453125004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 48.58910270022312,
     "lon": 17.443199157714847,
-    "turnStartLat": 56.480695390196296,
-    "turnStartLon": 25.169677734375004,
-    "kmMovedThisTurn": 1242.6715157658386,
+    "turnStartLat": 48.58910270022312,
+    "turnStartLon": 17.443199157714847,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 48.19538740833338,
     "lon": 17.352905273437504,
-    "turnStartLat": 46.98399993718925,
-    "turnStartLon": 29.558715820312504,
-    "kmMovedThisTurn": 1040.8577319692024,
+    "turnStartLat": 48.19538740833338,
+    "turnStartLon": 17.352905273437504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43
   },
   {
@@ -148,9 +148,9 @@
     "commander": "",
     "lat": 47.258793376562046,
     "lon": 22.766418457031254,
-    "turnStartLat": 47.62097541515849,
-    "turnStartLon": 27.026367187500004,
-    "kmMovedThisTurn": 612.6434175849162,
+    "turnStartLat": 47.258793376562046,
+    "turnStartLon": 22.766418457031254,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -176,9 +176,9 @@
     "commander": "",
     "lat": 50.94458443495011,
     "lon": 28.520507812500004,
-    "turnStartLat": 47.07386310181417,
-    "turnStartLon": 28.218383789062504,
-    "kmMovedThisTurn": 886.7803119915723,
+    "turnStartLat": 50.94458443495011,
+    "turnStartLon": 28.520507812500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -190,9 +190,9 @@
     "commander": "",
     "lat": 51.382066781130604,
     "lon": 28.3172607421875,
-    "turnStartLat": 47.264320080254805,
-    "turnStartLon": 30.421142578125004,
-    "kmMovedThisTurn": 482.583777585651,
+    "turnStartLat": 51.382066781130604,
+    "turnStartLon": 28.3172607421875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -204,9 +204,9 @@
     "commander": "",
     "lat": 48.5493419587775,
     "lon": 16.094970703125004,
-    "turnStartLat": 50.996471761616284,
-    "turnStartLon": 16.869506835937504,
-    "kmMovedThisTurn": 387.0072576885652,
+    "turnStartLat": 48.5493419587775,
+    "turnStartLon": 16.094970703125004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   },
   {
@@ -218,9 +218,9 @@
     "commander": "",
     "lat": 48.516604348867475,
     "lon": 16.776123046875004,
-    "turnStartLat": 51.16556659836182,
-    "turnStartLon": 22.873535156250004,
-    "kmMovedThisTurn": 636.7912563897894,
+    "turnStartLat": 48.516604348867475,
+    "turnStartLon": 16.776123046875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   },
   {
@@ -244,10 +244,10 @@
     "name": "Garrison of Bohemia",
     "strength": 7000,
     "commander": "",
-    "lat": 49.96535590991311,
-    "lon": 14.710693359375002,
-    "turnStartLat": 49.96535590991311,
-    "turnStartLon": 14.710693359375002,
+    "lat": 50.095917228872004,
+    "lon": 14.408569335937502,
+    "turnStartLat": 50.095917228872004,
+    "turnStartLon": 14.408569335937502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 57
   }

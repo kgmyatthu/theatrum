@@ -8,9 +8,9 @@
     "commander": "",
     "lat": 32.73386252069835,
     "lon": 129.87195968627933,
-    "turnStartLat": 34.53371242139567,
-    "turnStartLon": 129.29809570312503,
-    "kmMovedThisTurn": 207.06467542711468,
+    "turnStartLat": 32.73386252069835,
+    "turnStartLon": 129.87195968627933,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -22,9 +22,9 @@
     "commander": "",
     "lat": 32.7475794711222,
     "lon": 129.84998703002933,
-    "turnStartLat": 34.266296360583574,
-    "turnStartLon": 129.17724609375003,
-    "kmMovedThisTurn": 180.02302687250364,
+    "turnStartLat": 32.7475794711222,
+    "turnStartLon": 129.84998703002933,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 32.82623062784121,
     "lon": 129.9936676025391,
-    "turnStartLat": 34.608345207315786,
-    "turnStartLon": 129.34204101562503,
-    "kmMovedThisTurn": 207.12291784035213,
+    "turnStartLat": 32.82623062784121,
+    "turnStartLon": 129.9936676025391,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 35.081707990840705,
     "lon": 129.07012939453128,
-    "turnStartLat": 34.337766445056694,
-    "turnStartLon": 129.2520904541016,
-    "kmMovedThisTurn": 84.37801951374396,
+    "turnStartLat": 35.081707990840705,
+    "turnStartLon": 129.07012939453128,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Kim Park",
     "lat": 32.84209673599253,
     "lon": 129.9946975708008,
-    "turnStartLat": 34.37404541070583,
-    "turnStartLon": 129.22805786132815,
-    "kmMovedThisTurn": 184.54602327125582,
+    "turnStartLat": 32.84209673599253,
+    "turnStartLon": 129.9946975708008,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 49
   },
   {
@@ -92,9 +92,9 @@
     "commander": "",
     "lat": 32.74079345429909,
     "lon": 129.8618316650391,
-    "turnStartLat": 34.96699890670367,
-    "turnStartLon": 129.09484863281253,
-    "kmMovedThisTurn": 257.4726477060344,
+    "turnStartLat": 32.74079345429909,
+    "turnStartLon": 129.8618316650391,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   }
 ]
