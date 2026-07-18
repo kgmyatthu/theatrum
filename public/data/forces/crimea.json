@@ -8,9 +8,9 @@
     "commander": "Meñli II Giray",
     "lat": 51.346626098124005,
     "lon": 28.80432128906249,
-    "turnStartLat": 49.816720843571765,
-    "turnStartLon": 30.02929687499999,
-    "kmMovedThisTurn": 190.83536059966937,
+    "turnStartLat": 51.346626098124005,
+    "turnStartLon": 28.80432128906249,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 51.80408603159773,
     "lon": 28.40881347656249,
-    "turnStartLat": 50.65990836093939,
-    "turnStartLon": 28.108520507812504,
-    "kmMovedThisTurn": 128.93302926825032,
+    "turnStartLat": 51.80408603159773,
+    "turnStartLon": 28.40881347656249,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -64,9 +64,9 @@
     "commander": "",
     "lat": 48.393649752479995,
     "lon": 28.867263793945316,
-    "turnStartLat": 49.088257784724675,
-    "turnStartLon": 28.18359374999999,
-    "kmMovedThisTurn": 92.07974011876134,
+    "turnStartLat": 48.393649752479995,
+    "turnStartLon": 28.867263793945316,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {

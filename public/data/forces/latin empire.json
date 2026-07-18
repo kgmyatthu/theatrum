@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 48.40041216790074,
     "lon": -5.4156938195228586,
-    "turnStartLat": 51.55037502208234,
-    "turnStartLon": 2.2883413732051854,
-    "kmMovedThisTurn": 652.3274648815259,
+    "turnStartLat": 48.40041216790074,
+    "turnStartLon": -5.4156938195228586,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Íñigo Melchor Fernández de Velasco",
     "lat": 36.20752019135314,
     "lon": 6.846113204956055,
-    "turnStartLat": 36.249566562988406,
-    "turnStartLon": 10.063990205526354,
-    "kmMovedThisTurn": 288.6590406372044,
+    "turnStartLat": 36.20752019135314,
+    "turnStartLon": 6.846113204956055,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7
   },
   {
@@ -232,9 +232,9 @@
     "commander": "Jose Manuel de Santo Domingo",
     "lat": 42.547595466494656,
     "lon": -9.742892235517504,
-    "turnStartLat": 51.272075310271966,
-    "turnStartLon": 2.1817503869533543,
-    "kmMovedThisTurn": 1350.0540366062817,
+    "turnStartLat": 42.547595466494656,
+    "turnStartLon": -9.742892235517504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
