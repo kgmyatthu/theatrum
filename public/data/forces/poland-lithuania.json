@@ -32,13 +32,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of The Baltics",
-    "strength": 40000,
+    "strength": 20000,
     "commander": "",
-    "lat": 47.53574697823915,
-    "lon": 18.385620117187504,
+    "lat": 47.49586436835717,
+    "lon": 18.79623413085938,
     "turnStartLat": 48.58910270022312,
     "turnStartLon": 17.443199157714847,
-    "kmMovedThisTurn": 319.40968207010206,
+    "kmMovedThisTurn": 350.5638401056874,
     "createdAtTurn": 43
   },
   {
