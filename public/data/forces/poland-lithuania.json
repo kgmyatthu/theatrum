@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 80000,
     "commander": "Jan III Sobieski",
-    "lat": 47.7885774439662,
-    "lon": 17.325439453125004,
+    "lat": 47.67648444221321,
+    "lon": 16.567382812500004,
     "turnStartLat": 47.7885774439662,
     "turnStartLon": 17.325439453125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 58.04788897965554,
     "createdAtTurn": 4
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of The Baltics",
     "strength": 50000,
     "commander": "",
-    "lat": 48.58910270022312,
-    "lon": 17.443199157714847,
+    "lat": 47.74117041801028,
+    "lon": 16.026306152343754,
     "turnStartLat": 48.58910270022312,
     "turnStartLon": 17.443199157714847,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 141.17822979082493,
     "createdAtTurn": 43
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of Southern Poland",
     "strength": 20000,
     "commander": "",
-    "lat": 48.19538740833338,
-    "lon": 17.352905273437504,
+    "lat": 47.68203210030429,
+    "lon": 16.229553222656254,
     "turnStartLat": 48.19538740833338,
     "turnStartLon": 17.352905273437504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 101.2945636160003,
     "createdAtTurn": 43
   },
   {
@@ -202,11 +202,11 @@
     "name": "Army of Silesia",
     "strength": 18000,
     "commander": "",
-    "lat": 48.5493419587775,
-    "lon": 16.094970703125004,
+    "lat": 47.97153658265933,
+    "lon": 15.490722656250002,
     "turnStartLat": 48.5493419587775,
     "turnStartLon": 16.094970703125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 78.28606914744825,
     "createdAtTurn": 56
   },
   {
@@ -216,11 +216,11 @@
     "name": "Army of Poland IV",
     "strength": 30000,
     "commander": "",
-    "lat": 48.516604348867475,
-    "lon": 16.776123046875004,
+    "lat": 47.82053186746053,
+    "lon": 15.737915039062502,
     "turnStartLat": 48.516604348867475,
     "turnStartLon": 16.776123046875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 109.17124460124083,
     "createdAtTurn": 56
   },
   {
