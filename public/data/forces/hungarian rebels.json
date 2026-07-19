@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Vancouver1903-1784425270425-0",
+    "nation": "hungarian rebels",
+    "branch": "army",
+    "name": "Pressburg Rebels",
+    "strength": 12000,
+    "commander": "Franciscus Nozdrovitzky",
+    "lat": 48.28246713733947,
+    "lon": 17.182617187500004,
+    "turnStartLat": 48.28246713733947,
+    "turnStartLon": 17.182617187500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "Vancouver1903-1784425402667-1",
+    "nation": "hungarian rebels",
+    "branch": "army",
+    "name": "Kaschau Rebels",
+    "strength": 6000,
+    "commander": "Count Ferenc Barkóczy",
+    "lat": 48.67252972047215,
+    "lon": 21.335449218750004,
+    "turnStartLat": 48.67252972047215,
+    "turnStartLon": 21.335449218750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  }
+]
