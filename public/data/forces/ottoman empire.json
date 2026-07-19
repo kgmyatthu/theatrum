@@ -182,20 +182,6 @@
     "createdAtTurn": 31
   },
   {
-    "id": "Fouzi-707-1783025344763-13",
-    "nation": "ottoman empire",
-    "branch": "navy",
-    "name": "Kızıldeniz Filosu",
-    "strength": 25,
-    "commander": "Said Pasha",
-    "lat": 28.96328843565997,
-    "lon": 34.58496093750001,
-    "turnStartLat": 28.96328843565997,
-    "turnStartLon": 34.58496093750001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 31
-  },
-  {
     "id": "Fouzi-707-1783025372813-14",
     "nation": "ottoman empire",
     "branch": "navy",
@@ -320,5 +306,33 @@
     "turnStartLon": 39.89135742187501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
+  },
+  {
+    "id": "Fouzi-707-1784454477346-0",
+    "nation": "ottoman empire",
+    "branch": "navy",
+    "name": "Aceh Filosu",
+    "strength": 25,
+    "commander": "Ali bey",
+    "lat": 3.683227811903246,
+    "lon": 95.47119140625,
+    "turnStartLat": 3.683227811903246,
+    "turnStartLon": 95.47119140625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "Fouzi-707-1784454531591-1",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Aceh Ordusu",
+    "strength": 20000,
+    "commander": "Said Pasha",
+    "lat": 3.8361873835570983,
+    "lon": 97.66845703125001,
+    "turnStartLat": 3.8361873835570983,
+    "turnStartLon": 97.66845703125001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
   }
 ]
