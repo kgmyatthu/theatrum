@@ -1,19 +1,5 @@
 [
   {
-    "id": "Vancouver1903-1781239056824-0",
-    "nation": "venice",
-    "branch": "navy",
-    "name": "Venetian Navy TEMP",
-    "strength": 30,
-    "commander": "idk",
-    "lat": 45.45749676393493,
-    "lon": 12.392578125,
-    "turnStartLat": 45.45749676393493,
-    "turnStartLon": 12.392578125,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 13
-  },
-  {
     "id": "cucumberplane2771-1782831927942-0",
     "nation": "venice",
     "branch": "navy",
