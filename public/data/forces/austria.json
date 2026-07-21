@@ -62,11 +62,11 @@
     "name": "Eastern Army",
     "strength": 8000,
     "commander": "",
-    "lat": 45.889256906405215,
-    "lon": 22.764920713655812,
+    "lat": 46.28622391806708,
+    "lon": 25.356445312500004,
     "turnStartLat": 45.889256906405215,
     "turnStartLon": 22.764920713655812,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 204.66427769020098,
     "createdAtTurn": 36
   },
   {
@@ -115,14 +115,14 @@
     "id": "yellowwithblue-1784397449035-0",
     "nation": "austria",
     "branch": "army",
-    "name": "Main Army",
-    "strength": 25000,
+    "name": "Army of the Habsburgs",
+    "strength": 30000,
     "commander": "",
-    "lat": 47.39086997933798,
-    "lon": 14.764955332894713,
+    "lat": 47.91634204016118,
+    "lon": 16.864013671875004,
     "turnStartLat": 47.39086997933798,
     "turnStartLon": 14.764955332894713,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 176.61812292993207,
     "createdAtTurn": 59
   },
   {
@@ -152,5 +152,19 @@
     "turnStartLon": 13.552590470290315,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 13
+  },
+  {
+    "id": "RadetzkyNTW-1784655443259-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Bohemia",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.46098385110948,
+    "lon": 17.292480468750004,
+    "turnStartLat": 49.46098385110948,
+    "turnStartLon": 17.292480468750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
   }
 ]
