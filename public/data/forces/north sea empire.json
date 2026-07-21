@@ -446,5 +446,61 @@
     "turnStartLon": -57.50244140625001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
+  },
+  {
+    "id": "yourlocalgeobukseon-1784678181291-0",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "White Squadron (MOTHBALL)",
+    "strength": 30,
+    "commander": "",
+    "lat": 50.33450445163548,
+    "lon": -4.166221618652345,
+    "turnStartLat": 50.33450445163548,
+    "turnStartLon": -4.166221618652345,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
+  },
+  {
+    "id": "yourlocalgeobukseon-1784678193940-1",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "Red Squadron (MOTHBALL)",
+    "strength": 30,
+    "commander": "",
+    "lat": 50.82277340390222,
+    "lon": -1.1125802993774416,
+    "turnStartLat": 50.82277340390222,
+    "turnStartLon": -1.1125802993774416,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
+  },
+  {
+    "id": "yourlocalgeobukseon-1784678220664-2",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "Blue Squadron (MOTHBALL)",
+    "strength": 28,
+    "commander": "",
+    "lat": 51.426400429169846,
+    "lon": 0.6595230102539062,
+    "turnStartLat": 51.426400429169846,
+    "turnStartLon": 0.6595230102539062,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
+  },
+  {
+    "id": "yourlocalgeobukseon-1784678280242-3",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "West Indies Station (MOTHBALL)",
+    "strength": 8,
+    "commander": "",
+    "lat": 17.854597269011563,
+    "lon": -76.71958923339845,
+    "turnStartLat": 17.854597269011563,
+    "turnStartLon": -76.71958923339845,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
   }
 ]
