@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 65000,
     "commander": "Jan III Sobieski",
-    "lat": 48.31973404047173,
-    "lon": 17.951660156250004,
+    "lat": 48.167001359708934,
+    "lon": 17.19497680664063,
     "turnStartLat": 51.44716034698012,
     "turnStartLon": 21.247558593750004,
-    "kmMovedThisTurn": 420.2564105261477,
+    "kmMovedThisTurn": 478.8073591199927,
     "createdAtTurn": 4
   },
   {
@@ -104,11 +104,11 @@
     "name": "Army of Silesia",
     "strength": 45000,
     "commander": "",
-    "lat": 50.14170587960567,
-    "lon": 17.803344726562504,
+    "lat": 49.56085220619185,
+    "lon": 18.654785156250004,
     "turnStartLat": 51.04830113331224,
     "turnStartLon": 16.424560546875004,
-    "kmMovedThisTurn": 142.3052109856642,
+    "kmMovedThisTurn": 231.174967844072,
     "createdAtTurn": 57
   },
   {
