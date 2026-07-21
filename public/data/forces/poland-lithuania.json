@@ -28,20 +28,6 @@
     "createdAtTurn": 23
   },
   {
-    "id": "AceApache-1783732396428-1",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of The Baltics",
-    "strength": 30000,
-    "commander": "",
-    "lat": 57.14816071329835,
-    "lon": 25.070800781250004,
-    "turnStartLat": 56.36525013685609,
-    "turnStartLon": 25.004882812500004,
-    "kmMovedThisTurn": 87.14835345915223,
-    "createdAtTurn": 43
-  },
-  {
     "id": "Ohgizmo-1783895147987-0",
     "nation": "poland-lithuania",
     "branch": "army",
