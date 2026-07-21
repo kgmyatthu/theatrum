@@ -166,5 +166,33 @@
     "turnStartLon": 17.292480468750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
+  },
+  {
+    "id": "Vancouver1903-1784425270425-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hungarian-Slovakian Forcees",
+    "strength": 3000,
+    "commander": "Franciscus Nozdrovitzky",
+    "lat": 47.61322309585046,
+    "lon": 17.677409183121444,
+    "turnStartLat": 47.61322309585046,
+    "turnStartLon": 17.677409183121444,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 59
+  },
+  {
+    "id": "Vancouver1903-1784677488858-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Hungarian Royal Army",
+    "strength": 45000,
+    "commander": "Paul II Anton",
+    "lat": 47.967470966124694,
+    "lon": 19.094238281250004,
+    "turnStartLat": 47.967470966124694,
+    "turnStartLon": 19.094238281250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
   }
 ]
