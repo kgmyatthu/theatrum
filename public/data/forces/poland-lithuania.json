@@ -4,7 +4,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Crown Army",
-    "strength": 80000,
+    "strength": 65000,
     "commander": "Jan III Sobieski",
     "lat": 48.31973404047173,
     "lon": 17.951660156250004,
@@ -116,7 +116,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Bradenburg",
-    "strength": 60000,
+    "strength": 80000,
     "commander": "",
     "lat": 52.4158226123788,
     "lon": 16.314697265625004,
@@ -136,6 +136,20 @@
     "lon": 18.841552734375,
     "turnStartLat": 53.735715745326395,
     "turnStartLon": 18.841552734375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
+  },
+  {
+    "id": "Ohgizmo-1784676705657-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Slovakia",
+    "strength": 8000,
+    "commander": "",
+    "lat": 48.63290858589535,
+    "lon": 22.247314453125004,
+    "turnStartLat": 48.63290858589535,
+    "turnStartLon": 22.247314453125004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   }
