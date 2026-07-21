@@ -17,7 +17,7 @@
     "id": "AceApache-1782570109100-0",
     "nation": "poland-lithuania",
     "branch": "navy",
-    "name": "Polish Grand Fleet",
+    "name": "Polish Grand Fleet (mothballed)",
     "strength": 10,
     "commander": "",
     "lat": 54.37095860924334,
@@ -46,7 +46,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Garrison of Warsaw",
-    "strength": 10000,
+    "strength": 5000,
     "commander": "",
     "lat": 52.59036035415668,
     "lon": 21.266894520315013,
@@ -110,20 +110,6 @@
     "turnStartLon": 24.202880859375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
-  },
-  {
-    "id": "Ohgizmo-1784121717108-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Ukraine",
-    "strength": 20000,
-    "commander": "",
-    "lat": 48.334343174592014,
-    "lon": 28.256835937500004,
-    "turnStartLat": 51.382066781130604,
-    "turnStartLon": 28.3172607421875,
-    "kmMovedThisTurn": 349.50780386115105,
-    "createdAtTurn": 54
   },
   {
     "id": "Ohgizmo-1784345747471-0",
