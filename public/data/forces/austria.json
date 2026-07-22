@@ -143,8 +143,8 @@
     "id": "Vancouver1903-1781239056824-0",
     "nation": "austria",
     "branch": "navy",
-    "name": "Austrian Navy",
-    "strength": 30,
+    "name": "Austrian Naval Group I",
+    "strength": 15,
     "commander": "idk",
     "lat": 54.87976696307156,
     "lon": 19.08050537109375,
@@ -206,6 +206,20 @@
     "lon": 16.380615234375004,
     "turnStartLat": 48.22467264956519,
     "turnStartLon": 16.380615234375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
+  },
+  {
+    "id": "RadetzkyNTW-1784741933385-0",
+    "nation": "austria",
+    "branch": "navy",
+    "name": "Austrian Naval Group II",
+    "strength": 15,
+    "commander": "",
+    "lat": 45.1510532655634,
+    "lon": 13.249511718750002,
+    "turnStartLat": 45.1510532655634,
+    "turnStartLon": 13.249511718750002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   }
