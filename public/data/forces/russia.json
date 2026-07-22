@@ -20,25 +20,11 @@
     "name": "Army of the South",
     "strength": 60000,
     "commander": "Menshikov",
-    "lat": 51.26878915771344,
-    "lon": 30.926513671875,
+    "lat": 50.77815527465925,
+    "lon": 31.453857421875004,
     "turnStartLat": 52.2008737173322,
     "turnStartLon": 32.16796875000001,
-    "kmMovedThisTurn": 147.14955027391835,
-    "createdAtTurn": 2
-  },
-  {
-    "id": "pointerayden-ship-it-1780306124173-0",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the Reserve",
-    "strength": 30000,
-    "commander": "Some German Guy",
-    "lat": 50.708634400828224,
-    "lon": 32.47558593750001,
-    "turnStartLat": 52.29504228453735,
-    "turnStartLon": 47.32910156250001,
-    "kmMovedThisTurn": 1096.6172760744594,
+    "kmMovedThisTurn": 213.00309164663753,
     "createdAtTurn": 2
   },
   {
