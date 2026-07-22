@@ -48,11 +48,11 @@
     "name": "Standschutzen",
     "strength": 5000,
     "commander": "",
-    "lat": 46.358861694509905,
-    "lon": 11.650896906674513,
+    "lat": 46.90524554642923,
+    "lon": 11.62353515625,
     "turnStartLat": 46.358861694509905,
     "turnStartLon": 11.650896906674513,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 60.791022065362355,
     "createdAtTurn": 21
   },
   {
@@ -146,11 +146,11 @@
     "name": "Austrian Navy",
     "strength": 30,
     "commander": "idk",
-    "lat": 54.987070078948804,
-    "lon": 19.138183593750004,
+    "lat": 54.87976696307156,
+    "lon": 19.08050537109375,
     "turnStartLat": 45.637179946570576,
     "turnStartLon": 13.552590470290315,
-    "kmMovedThisTurn": 1115.4306306566361,
+    "kmMovedThisTurn": 1127.9182055461783,
     "createdAtTurn": 13
   },
   {
