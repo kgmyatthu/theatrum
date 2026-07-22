@@ -4,13 +4,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Crown Army",
-    "strength": 70000,
+    "strength": 90000,
     "commander": "Jan III Sobieski",
-    "lat": 48.167001359708934,
-    "lon": 17.19497680664063,
+    "lat": 48.37084770238366,
+    "lon": 18.012084960937504,
     "turnStartLat": 51.44716034698012,
     "turnStartLon": 21.247558593750004,
-    "kmMovedThisTurn": 478.8073591199927,
+    "kmMovedThisTurn": 543.3935100002349,
     "createdAtTurn": 4
   },
   {
