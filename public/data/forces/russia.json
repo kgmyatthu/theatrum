@@ -6,11 +6,11 @@
     "name": "Army of the Center",
     "strength": 80000,
     "commander": "J",
-    "lat": 54.49556752187406,
-    "lon": 31.420898437500004,
+    "lat": 54.20743611987478,
+    "lon": 29.322509765625004,
     "turnStartLat": 53.77468884583577,
     "turnStartLon": 32.56347656250001,
-    "kmMovedThisTurn": 109.38576844214441,
+    "kmMovedThisTurn": 249.0905357711757,
     "createdAtTurn": 2
   },
   {
@@ -48,11 +48,11 @@
     "name": "Army of the North",
     "strength": 40000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 56.401744392758964,
-    "lon": 29.025878906250004,
+    "lat": 54.73730756865752,
+    "lon": 27.685546875000004,
     "turnStartLat": 58.83649009392136,
     "turnStartLon": 33.44238281250001,
-    "kmMovedThisTurn": 410.52343544920575,
+    "kmMovedThisTurn": 619.9221874142377,
     "createdAtTurn": 2
   },
   {
@@ -224,30 +224,30 @@
     "createdAtTurn": 62
   },
   {
-    "id": "yellowwithblue-1784696368085-1",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the Dnieper",
-    "strength": 45000,
-    "commander": "",
-    "lat": 52.96849212681396,
-    "lon": 32.04711914062501,
-    "turnStartLat": 52.96849212681396,
-    "turnStartLon": 32.04711914062501,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
-  },
-  {
     "id": "yellowwithblue-1784696472570-3",
     "nation": "russia",
     "branch": "army",
     "name": "Cossack Host",
-    "strength": 10000,
+    "strength": 20000,
     "commander": "",
     "lat": 54.29088164657006,
     "lon": 33.44238281250001,
     "turnStartLat": 54.29088164657006,
     "turnStartLon": 33.44238281250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
+  },
+  {
+    "id": "yellowwithblue-1784748002579-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of the Dnieper",
+    "strength": 45000,
+    "commander": "",
+    "lat": 52.736291655910925,
+    "lon": 28.718261718750004,
+    "turnStartLat": 52.736291655910925,
+    "turnStartLon": 28.718261718750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   }
