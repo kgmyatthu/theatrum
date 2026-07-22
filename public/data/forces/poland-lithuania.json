@@ -104,11 +104,11 @@
     "name": "Army of Silesia",
     "strength": 50000,
     "commander": "",
-    "lat": 49.56085220619185,
-    "lon": 18.654785156250004,
+    "lat": 49.435984899682005,
+    "lon": 17.789611816406254,
     "turnStartLat": 49.56085220619185,
     "turnStartLon": 18.654785156250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 64.00454254599788,
     "createdAtTurn": 57
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of Bradenburg",
     "strength": 70000,
     "commander": "",
-    "lat": 52.4158226123788,
-    "lon": 16.314697265625004,
+    "lat": 52.43257155802881,
+    "lon": 15.062255859375002,
     "turnStartLat": 52.4158226123788,
     "turnStartLon": 16.314697265625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 84.94469515260613,
     "createdAtTurn": 61
   },
   {
@@ -132,11 +132,11 @@
     "name": "Army of Prussia",
     "strength": 30000,
     "commander": "",
-    "lat": 53.735715745326395,
-    "lon": 18.841552734375,
+    "lat": 54.17529672404642,
+    "lon": 20.115966796875004,
     "turnStartLat": 53.735715745326395,
     "turnStartLon": 18.841552734375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 96.65143614379036,
     "createdAtTurn": 61
   },
   {
