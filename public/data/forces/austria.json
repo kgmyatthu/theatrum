@@ -172,7 +172,7 @@
     "nation": "austria",
     "branch": "army",
     "name": "Hungarian-Slovakian Forcees",
-    "strength": 3000,
+    "strength": 15000,
     "commander": "Franciscus Nozdrovitzky",
     "lat": 47.61322309585046,
     "lon": 17.677409183121444,
@@ -192,6 +192,20 @@
     "lon": 19.094238281250004,
     "turnStartLat": 47.967470966124694,
     "turnStartLon": 19.094238281250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
+  },
+  {
+    "id": "RadetzkyNTW-1784684825856-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Diet Army",
+    "strength": 60000,
+    "commander": "",
+    "lat": 47.724544549099676,
+    "lon": 18.193359375000004,
+    "turnStartLat": 47.724544549099676,
+    "turnStartLon": 18.193359375000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   }
