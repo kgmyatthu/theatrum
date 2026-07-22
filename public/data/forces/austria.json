@@ -6,11 +6,11 @@
     "name": "1st Grenzer",
     "strength": 2500,
     "commander": "",
-    "lat": 45.1433047394883,
-    "lon": 20.192871093750004,
+    "lat": 48.61112192003077,
+    "lon": 17.786865234375004,
     "turnStartLat": 45.1433047394883,
     "turnStartLon": 20.192871093750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 429.42712443561487,
     "createdAtTurn": 21
   },
   {
@@ -20,11 +20,11 @@
     "name": "2nd Grenzer",
     "strength": 1500,
     "commander": "",
-    "lat": 44.84848489699379,
-    "lon": 15.270579814198053,
+    "lat": 48.158757304569235,
+    "lon": 18.489990234375004,
     "turnStartLat": 44.84848489699379,
     "turnStartLon": 15.270579814198053,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 442.8536969981725,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Eastern Army",
     "strength": 8000,
     "commander": "",
-    "lat": 47.91634204016118,
-    "lon": 24.071044921875004,
+    "lat": 48.11476663187632,
+    "lon": 22.401123046875004,
     "turnStartLat": 47.91634204016118,
     "turnStartLon": 24.071044921875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 126.15299531381343,
     "createdAtTurn": 36
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of the Habsburgs",
     "strength": 30000,
     "commander": "",
-    "lat": 47.91634204016118,
-    "lon": 16.864013671875004,
+    "lat": 48.51296552999087,
+    "lon": 20.983886718750004,
     "turnStartLat": 47.91634204016118,
     "turnStartLon": 16.864013671875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 343.8976760990958,
     "createdAtTurn": 59
   },
   {
@@ -132,11 +132,11 @@
     "name": "Franz von Lacy's Flying Column",
     "strength": 5000,
     "commander": "",
-    "lat": 48.26146632320936,
-    "lon": 16.4773112446301,
+    "lat": 48.08174889040687,
+    "lon": 19.802856445312504,
     "turnStartLat": 48.26146632320936,
     "turnStartLon": 16.4773112446301,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 338.29452730832134,
     "createdAtTurn": 59
   },
   {
@@ -160,11 +160,11 @@
     "name": "Army of Bohemia",
     "strength": 30000,
     "commander": "",
-    "lat": 49.46098385110948,
-    "lon": 17.292480468750004,
+    "lat": 49.39309989350566,
+    "lon": 17.561645507812504,
     "turnStartLat": 49.46098385110948,
     "turnStartLon": 17.292480468750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 20.879021042375427,
     "createdAtTurn": 61
   },
   {
@@ -174,11 +174,11 @@
     "name": "Hungarian-Slovakian Forcees",
     "strength": 15000,
     "commander": "Franciscus Nozdrovitzky",
-    "lat": 47.61322309585046,
-    "lon": 17.677409183121444,
+    "lat": 48.45835188280866,
+    "lon": 20.588378906250004,
     "turnStartLat": 47.61322309585046,
     "turnStartLon": 17.677409183121444,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 278.44701749535915,
     "createdAtTurn": 59
   },
   {
@@ -188,11 +188,11 @@
     "name": "Hungarian Royal Army",
     "strength": 45000,
     "commander": "Paul II Anton",
-    "lat": 47.967470966124694,
-    "lon": 19.094238281250004,
+    "lat": 48.28319289548349,
+    "lon": 20.412597656250004,
     "turnStartLat": 47.967470966124694,
     "turnStartLon": 19.094238281250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 151.5449646762049,
     "createdAtTurn": 61
   },
   {
@@ -202,11 +202,25 @@
     "name": "Bohemian Levy",
     "strength": 15000,
     "commander": "",
-    "lat": 49.37522008143603,
-    "lon": 17.089233398437504,
+    "lat": 49.23194729854557,
+    "lon": 17.506713867187504,
     "turnStartLat": 49.37522008143603,
     "turnStartLon": 17.089233398437504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 34.20570766028356,
     "createdAtTurn": 61
+  },
+  {
+    "id": "RadetzkyNTW-1784698187563-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Viennese Garrison",
+    "strength": 10000,
+    "commander": "",
+    "lat": 48.22467264956519,
+    "lon": 16.380615234375004,
+    "turnStartLat": 48.22467264956519,
+    "turnStartLon": 16.380615234375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
