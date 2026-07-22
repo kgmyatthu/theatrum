@@ -6,11 +6,11 @@
     "name": "1st Grenzer",
     "strength": 2500,
     "commander": "",
-    "lat": 48.61112192003077,
-    "lon": 17.786865234375004,
+    "lat": 48.567520373908295,
+    "lon": 17.424316406250004,
     "turnStartLat": 45.1433047394883,
     "turnStartLon": 20.192871093750004,
-    "kmMovedThisTurn": 429.42712443561487,
+    "kmMovedThisTurn": 456.52975627569015,
     "createdAtTurn": 21
   },
   {
@@ -132,11 +132,11 @@
     "name": "Franz von Lacy's Flying Column",
     "strength": 5000,
     "commander": "",
-    "lat": 48.08174889040687,
-    "lon": 19.802856445312504,
+    "lat": 48.531157010976706,
+    "lon": 20.440063476562504,
     "turnStartLat": 48.26146632320936,
     "turnStartLon": 16.4773112446301,
-    "kmMovedThisTurn": 338.29452730832134,
+    "kmMovedThisTurn": 406.98375401403473,
     "createdAtTurn": 59
   },
   {
