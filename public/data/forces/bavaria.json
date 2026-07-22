@@ -6,11 +6,11 @@
     "name": "Army of Bavaria",
     "strength": 40000,
     "commander": "",
-    "lat": 48.9163055265693,
-    "lon": 9.088066481134742,
+    "lat": 48.8286103627178,
+    "lon": 12.43535412871692,
     "turnStartLat": 48.9163055265693,
     "turnStartLon": 9.088066481134742,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 244.9850572324741,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 48.16742163880246,
-    "lon": 9.462031022905082,
+    "lat": 49.42462482955339,
+    "lon": 8.075434230585394,
     "turnStartLat": 48.16742163880246,
     "turnStartLon": 9.462031022905082,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 172.7887774332928,
     "createdAtTurn": 31
   },
   {
@@ -40,5 +40,19 @@
     "turnStartLon": 11.661987304687502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "KingREN1-Suitman-1784763582675-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "Army of Wurttemberg",
+    "strength": 15000,
+    "commander": "",
+    "lat": 48.588961707004756,
+    "lon": 9.153459219382132,
+    "turnStartLat": 48.588961707004756,
+    "turnStartLon": 9.153459219382132,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
