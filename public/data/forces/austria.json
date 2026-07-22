@@ -34,11 +34,11 @@
     "name": "3rd Grenzer",
     "strength": 3000,
     "commander": "",
-    "lat": 50.03054646608786,
-    "lon": 15.72017765866373,
+    "lat": 49.55372551347579,
+    "lon": 17.781372070312504,
     "turnStartLat": 50.03054646608786,
     "turnStartLon": 15.72017765866373,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 157.16566105330156,
     "createdAtTurn": 21
   },
   {
@@ -62,11 +62,11 @@
     "name": "Eastern Army",
     "strength": 8000,
     "commander": "",
-    "lat": 46.28622391806708,
-    "lon": 25.356445312500004,
+    "lat": 47.91634204016118,
+    "lon": 24.071044921875004,
     "turnStartLat": 45.889256906405215,
     "turnStartLon": 22.764920713655812,
-    "kmMovedThisTurn": 204.66427769020098,
+    "kmMovedThisTurn": 410.37858550490785,
     "createdAtTurn": 36
   },
   {
@@ -196,16 +196,16 @@
     "createdAtTurn": 61
   },
   {
-    "id": "RadetzkyNTW-1784684825856-0",
+    "id": "RadetzkyNTW-1784685724910-1",
     "nation": "austria",
     "branch": "army",
-    "name": "Diet Army",
-    "strength": 60000,
+    "name": "Bohemian Levy",
+    "strength": 15000,
     "commander": "",
-    "lat": 47.724544549099676,
-    "lon": 18.193359375000004,
-    "turnStartLat": 47.724544549099676,
-    "turnStartLon": 18.193359375000004,
+    "lat": 49.37522008143603,
+    "lon": 17.089233398437504,
+    "turnStartLat": 49.37522008143603,
+    "turnStartLon": 17.089233398437504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   }
