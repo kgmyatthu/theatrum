@@ -166,5 +166,19 @@
     "turnStartLon": 18.385620117187504,
     "kmMovedThisTurn": 146.44844605259362,
     "createdAtTurn": 61
+  },
+  {
+    "id": "Ohgizmo-1784725147884-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of the Cossaks",
+    "strength": 40000,
+    "commander": "",
+    "lat": 48.658035594598076,
+    "lon": 30.864403675938238,
+    "turnStartLat": 48.658035594598076,
+    "turnStartLon": 30.864403675938238,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
