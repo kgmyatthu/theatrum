@@ -48,11 +48,11 @@
     "name": "Mattias Alexander von Ungern-Sternberg",
     "strength": 15000,
     "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 58.11271444125315,
-    "lon": 25.839843750000004,
+    "lat": 57.87981645527841,
+    "lon": 25.751953125000004,
     "turnStartLat": 58.11271444125315,
     "turnStartLon": 25.839843750000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 26.409935747454796,
     "createdAtTurn": 54
   },
   {
