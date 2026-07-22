@@ -152,5 +152,19 @@
     "turnStartLon": 22.247314453125004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
+  },
+  {
+    "id": "Ohgizmo-1784686845790-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Slovakian Volunteer Army",
+    "strength": 15000,
+    "commander": "",
+    "lat": 49.001843917978526,
+    "lon": 18.385620117187504,
+    "turnStartLat": 49.001843917978526,
+    "turnStartLon": 18.385620117187504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 61
   }
 ]
