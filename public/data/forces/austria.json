@@ -62,11 +62,11 @@
     "name": "Eastern Army",
     "strength": 10000,
     "commander": "",
-    "lat": 48.11476663187632,
-    "lon": 22.401123046875004,
+    "lat": 48.53843177405044,
+    "lon": 22.310485839843754,
     "turnStartLat": 47.91634204016118,
     "turnStartLon": 24.071044921875004,
-    "kmMovedThisTurn": 126.15299531381343,
+    "kmMovedThisTurn": 173.7365936579021,
     "createdAtTurn": 36
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of the Habsburgs",
     "strength": 30000,
     "commander": "",
-    "lat": 48.36354888898689,
-    "lon": 21.7364501953125,
+    "lat": 48.61838518688487,
+    "lon": 22.115478515625004,
     "turnStartLat": 47.91634204016118,
     "turnStartLon": 16.864013671875004,
-    "kmMovedThisTurn": 401.84654897425054,
+    "kmMovedThisTurn": 441.6351635028553,
     "createdAtTurn": 59
   },
   {
@@ -174,11 +174,11 @@
     "name": "Hungarian-Slovakian Forcees",
     "strength": 15000,
     "commander": "Franciscus Nozdrovitzky",
-    "lat": 48.72720881940671,
-    "lon": 21.288757324218754,
+    "lat": 48.982019588328214,
+    "lon": 21.266784667968754,
     "turnStartLat": 47.61322309585046,
     "turnStartLon": 17.677409183121444,
-    "kmMovedThisTurn": 338.00299043842705,
+    "kmMovedThisTurn": 366.38222366932644,
     "createdAtTurn": 59
   },
   {
@@ -188,11 +188,11 @@
     "name": "Hungarian Royal Army",
     "strength": 45000,
     "commander": "Paul II Anton",
-    "lat": 48.257598529149995,
-    "lon": 20.794372558593754,
+    "lat": 48.57842428752037,
+    "lon": 20.860290527343754,
     "turnStartLat": 47.967470966124694,
     "turnStartLon": 19.094238281250004,
-    "kmMovedThisTurn": 179.94424943006229,
+    "kmMovedThisTurn": 233.39595144711774,
     "createdAtTurn": 61
   },
   {
