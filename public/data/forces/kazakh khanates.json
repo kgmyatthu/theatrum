@@ -40,5 +40,19 @@
     "turnStartLon": 59.15039062500001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784696427905-2",
+    "nation": "kazakh khanates",
+    "branch": "army",
+    "name": "Kazakh Horsemen",
+    "strength": 10000,
+    "commander": "",
+    "lat": 51.16556659836182,
+    "lon": 50.25146484375001,
+    "turnStartLat": 51.16556659836182,
+    "turnStartLon": 50.25146484375001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
