@@ -222,5 +222,19 @@
     "turnStartLon": 16.380615234375004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
+  },
+  {
+    "id": "RadetzkyNTW-1784698415005-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Bratislava Korps",
+    "strength": 10000,
+    "commander": "",
+    "lat": 48.122101028190805,
+    "lon": 16.946411132812504,
+    "turnStartLat": 48.122101028190805,
+    "turnStartLon": 16.946411132812504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
