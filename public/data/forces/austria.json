@@ -60,7 +60,7 @@
     "nation": "austria",
     "branch": "army",
     "name": "Eastern Army",
-    "strength": 15000,
+    "strength": 10000,
     "commander": "",
     "lat": 48.11476663187632,
     "lon": 22.401123046875004,
@@ -118,11 +118,11 @@
     "name": "Army of the Habsburgs",
     "strength": 30000,
     "commander": "",
-    "lat": 48.51296552999087,
-    "lon": 20.983886718750004,
+    "lat": 48.36354888898689,
+    "lon": 21.7364501953125,
     "turnStartLat": 47.91634204016118,
     "turnStartLon": 16.864013671875004,
-    "kmMovedThisTurn": 343.8976760990958,
+    "kmMovedThisTurn": 401.84654897425054,
     "createdAtTurn": 59
   },
   {
@@ -174,11 +174,11 @@
     "name": "Hungarian-Slovakian Forcees",
     "strength": 15000,
     "commander": "Franciscus Nozdrovitzky",
-    "lat": 48.45835188280866,
-    "lon": 20.588378906250004,
+    "lat": 48.72720881940671,
+    "lon": 21.288757324218754,
     "turnStartLat": 47.61322309585046,
     "turnStartLon": 17.677409183121444,
-    "kmMovedThisTurn": 278.44701749535915,
+    "kmMovedThisTurn": 338.00299043842705,
     "createdAtTurn": 59
   },
   {
@@ -188,25 +188,11 @@
     "name": "Hungarian Royal Army",
     "strength": 45000,
     "commander": "Paul II Anton",
-    "lat": 48.28319289548349,
-    "lon": 20.412597656250004,
+    "lat": 48.257598529149995,
+    "lon": 20.794372558593754,
     "turnStartLat": 47.967470966124694,
     "turnStartLon": 19.094238281250004,
-    "kmMovedThisTurn": 151.5449646762049,
-    "createdAtTurn": 61
-  },
-  {
-    "id": "RadetzkyNTW-1784685724910-1",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Bohemian Levy",
-    "strength": 15000,
-    "commander": "",
-    "lat": 49.23194729854557,
-    "lon": 17.506713867187504,
-    "turnStartLat": 49.37522008143603,
-    "turnStartLon": 17.089233398437504,
-    "kmMovedThisTurn": 34.20570766028356,
+    "kmMovedThisTurn": 179.94424943006229,
     "createdAtTurn": 61
   },
   {
@@ -220,20 +206,6 @@
     "lon": 16.380615234375004,
     "turnStartLat": 48.22467264956519,
     "turnStartLon": 16.380615234375004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
-  },
-  {
-    "id": "RadetzkyNTW-1784698415005-1",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Bratislava Korps",
-    "strength": 10000,
-    "commander": "",
-    "lat": 48.122101028190805,
-    "lon": 16.946411132812504,
-    "turnStartLat": 48.122101028190805,
-    "turnStartLon": 16.946411132812504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   }
