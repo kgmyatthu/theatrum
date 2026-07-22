@@ -146,11 +146,11 @@
     "name": "Austrian Navy",
     "strength": 30,
     "commander": "idk",
-    "lat": 45.637179946570576,
-    "lon": 13.552590470290315,
+    "lat": 54.987070078948804,
+    "lon": 19.138183593750004,
     "turnStartLat": 45.637179946570576,
     "turnStartLon": 13.552590470290315,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1115.4306306566361,
     "createdAtTurn": 13
   },
   {
