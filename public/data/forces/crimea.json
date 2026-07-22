@@ -34,11 +34,11 @@
     "name": "Donanma-i Qırım",
     "strength": 20,
     "commander": "Mohamed Ben Hassan",
-    "lat": 45.979786584921676,
-    "lon": 30.749816894531268,
+    "lat": 45.158800738352134,
+    "lon": 33.60717773437501,
     "turnStartLat": 45.979786584921676,
     "turnStartLon": 30.749816894531268,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 240.4087428340182,
     "createdAtTurn": 34
   },
   {
