@@ -158,13 +158,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Slovakian Volunteer Army",
-    "strength": 15000,
+    "strength": 25000,
     "commander": "",
-    "lat": 49.18170338770663,
-    "lon": 19.017333984375004,
+    "lat": 48.622016428468406,
+    "lon": 18.012084960937504,
     "turnStartLat": 49.001843917978526,
     "turnStartLon": 18.385620117187504,
-    "kmMovedThisTurn": 50.15824675400804,
+    "kmMovedThisTurn": 146.44844605259362,
     "createdAtTurn": 61
   }
 ]
