@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 50000,
     "commander": "",
-    "lat": 50.37349614430352,
-    "lon": 30.585937500000004,
+    "lat": 49.13859653703879,
+    "lon": 25.510253906250004,
     "turnStartLat": 50.37349614430352,
     "turnStartLon": 30.585937500000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 389.5203835992384,
     "createdAtTurn": 49
   },
   {
@@ -166,20 +166,6 @@
     "turnStartLon": 18.385620117187504,
     "kmMovedThisTurn": 158.99015785727843,
     "createdAtTurn": 61
-  },
-  {
-    "id": "Ohgizmo-1784725147884-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of the Cossaks",
-    "strength": 40000,
-    "commander": "",
-    "lat": 48.658035594598076,
-    "lon": 30.864403675938238,
-    "turnStartLat": 48.658035594598076,
-    "turnStartLon": 30.864403675938238,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
   },
   {
     "id": "Ohgizmo-1784762946637-0",
