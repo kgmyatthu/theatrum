@@ -6,11 +6,11 @@
     "name": "The great çapulcu",
     "strength": 60000,
     "commander": "Meñli II Giray",
-    "lat": 45.920587344733654,
-    "lon": 34.29931640625001,
+    "lat": 47.052659053889315,
+    "lon": 33.91845703124999,
     "turnStartLat": 45.920587344733654,
     "turnStartLon": 34.29931640625001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 129.21317082110144,
     "createdAtTurn": 34
   },
   {
@@ -48,11 +48,11 @@
     "name": "2nd host",
     "strength": 10000,
     "commander": "",
-    "lat": 47.15984001304432,
-    "lon": 35.09033203125001,
+    "lat": 44.954432622651254,
+    "lon": 33.691406250000014,
     "turnStartLat": 47.15984001304432,
     "turnStartLon": 35.09033203125001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 267.924461116728,
     "createdAtTurn": 54
   },
   {
