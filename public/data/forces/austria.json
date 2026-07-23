@@ -208,5 +208,33 @@
     "turnStartLon": 13.249511718750002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
+  },
+  {
+    "id": "yellowwithblue-1784773642284-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Ernst Gideon von Laudon",
+    "strength": 25000,
+    "commander": "Ernst Gideon von Laudon",
+    "lat": 46.619261036171515,
+    "lon": 13.721923828125002,
+    "turnStartLat": 46.619261036171515,
+    "turnStartLon": 13.721923828125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
+  },
+  {
+    "id": "yellowwithblue-1784773664583-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Joseph Maria von Colloredo",
+    "strength": 20000,
+    "commander": "Joseph Maria von Colloredo",
+    "lat": 48.69096039092552,
+    "lon": 14.205322265625002,
+    "turnStartLat": 48.69096039092552,
+    "turnStartLon": 14.205322265625002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
