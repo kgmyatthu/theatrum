@@ -20,11 +20,11 @@
     "name": "Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 49.42462482955339,
-    "lon": 8.075434230585394,
+    "lat": 49.73852025145245,
+    "lon": 11.92980668019965,
     "turnStartLat": 48.16742163880246,
     "turnStartLon": 9.462031022905082,
-    "kmMovedThisTurn": 172.7887774332928,
+    "kmMovedThisTurn": 452.8208486086009,
     "createdAtTurn": 31
   },
   {
