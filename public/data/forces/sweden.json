@@ -70,16 +70,16 @@
     "createdAtTurn": 54
   },
   {
-    "id": "yellowwithblue-1784771682638-0",
+    "id": "yellowwithblue-1784772841434-0",
     "nation": "sweden",
     "branch": "army",
     "name": "Augustin Ehrensvärd",
     "strength": 34000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 52.032218104145315,
-    "lon": 12.535400390625002,
-    "turnStartLat": 52.032218104145315,
-    "turnStartLon": 12.535400390625002,
+    "lat": 54.7595009150459,
+    "lon": 20.720214843750004,
+    "turnStartLat": 54.7595009150459,
+    "turnStartLon": 20.720214843750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   }
