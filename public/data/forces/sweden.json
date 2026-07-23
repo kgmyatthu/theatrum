@@ -32,7 +32,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Indelningsverket",
-    "strength": 50000,
+    "strength": 27000,
     "commander": "Charles XII",
     "lat": 59.478568831926395,
     "lon": 15.666503906250002,
@@ -62,11 +62,25 @@
     "name": "Värvade trupper",
     "strength": 25000,
     "commander": "Charles XII",
-    "lat": 54.16243396806781,
-    "lon": 12.985839843750002,
+    "lat": 58.77959115030064,
+    "lon": 15.732421875000002,
     "turnStartLat": 54.16243396806781,
     "turnStartLon": 12.985839843750002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 540.2936529484892,
     "createdAtTurn": 54
+  },
+  {
+    "id": "yellowwithblue-1784771486029-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Augustin Ehrensvärd",
+    "strength": 34000,
+    "commander": "Augustin Ehrensvärd",
+    "lat": 54.159217654166916,
+    "lon": 12.991333007812502,
+    "turnStartLat": 54.159217654166916,
+    "turnStartLon": 12.991333007812502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
