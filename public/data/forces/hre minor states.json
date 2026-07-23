@@ -26,19 +26,5 @@
     "turnStartLon": 9.381902500828257,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62
-  },
-  {
-    "id": "KingREN1-Suitman-1784771505887-3",
-    "nation": "hre minor states",
-    "branch": "army",
-    "name": "III Reichsarmee",
-    "strength": 60000,
-    "commander": "",
-    "lat": 51.47584484431255,
-    "lon": 7.888283272531511,
-    "turnStartLat": 51.47584484431255,
-    "turnStartLon": 7.888283272531511,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
   }
 ]
