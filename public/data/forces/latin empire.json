@@ -102,7 +102,7 @@
     "nation": "latin empire",
     "branch": "army",
     "name": "France Army Of Rear",
-    "strength": 25000,
+    "strength": 50000,
     "commander": "",
     "lat": 48.50204750525715,
     "lon": 6.5478515625,
@@ -158,7 +158,7 @@
     "nation": "latin empire",
     "branch": "army",
     "name": "2nd Army of Italy",
-    "strength": 10000,
+    "strength": 30000,
     "commander": "Pietro Ricardo de Palermo",
     "lat": 40.85406274882947,
     "lon": 14.775291681289675,
@@ -202,11 +202,11 @@
     "name": "Palma Station",
     "strength": 10,
     "commander": "Manuel Estaban de Soler y Roca",
-    "lat": 39.512321195609786,
-    "lon": 2.442913725972176,
+    "lat": 36.017792724330235,
+    "lon": -4.375915378332139,
     "turnStartLat": 39.512321195609786,
     "turnStartLon": 2.442913725972176,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 713.99695727809,
     "createdAtTurn": 8
   },
   {
@@ -216,11 +216,11 @@
     "name": "Italian Fleet",
     "strength": 10,
     "commander": "Luigi Antonio di Potenza",
-    "lat": 38.318208419996544,
-    "lon": 13.76356177031994,
+    "lat": 38.31552372794366,
+    "lon": 20.10392233729363,
     "turnStartLat": 38.318208419996544,
     "turnStartLon": 13.76356177031994,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 553.0427010049034,
     "createdAtTurn": 8
   },
   {
@@ -228,7 +228,7 @@
     "nation": "latin empire",
     "branch": "army",
     "name": "1st Army of Italy",
-    "strength": 15000,
+    "strength": 40000,
     "commander": "Luigi",
     "lat": 44.88087046669593,
     "lon": 9.940148675814273,
@@ -236,5 +236,19 @@
     "turnStartLon": 9.940148675814273,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 24
+  },
+  {
+    "id": "Walrusbear0831-1784764620780-0",
+    "nation": "latin empire",
+    "branch": "army",
+    "name": "Lowlands Army",
+    "strength": 20000,
+    "commander": "",
+    "lat": 50.89244805666036,
+    "lon": 4.344075713306666,
+    "turnStartLat": 50.89244805666036,
+    "turnStartLon": 4.344075713306666,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
   }
 ]
