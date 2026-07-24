@@ -8,9 +8,9 @@
     "commander": "J",
     "lat": 54.20743611987478,
     "lon": 29.322509765625004,
-    "turnStartLat": 53.77468884583577,
-    "turnStartLon": 32.56347656250001,
-    "kmMovedThisTurn": 249.0905357711757,
+    "turnStartLat": 54.20743611987478,
+    "turnStartLon": 29.322509765625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Menshikov",
     "lat": 50.77815527465925,
     "lon": 31.453857421875004,
-    "turnStartLat": 52.2008737173322,
-    "turnStartLon": 32.16796875000001,
-    "kmMovedThisTurn": 213.00309164663753,
+    "turnStartLat": 50.77815527465925,
+    "turnStartLon": 31.453857421875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Mikhail Loris-Melikov",
     "lat": 54.73730756865752,
     "lon": 27.685546875000004,
-    "turnStartLat": 58.83649009392136,
-    "turnStartLon": 33.44238281250001,
-    "kmMovedThisTurn": 619.9221874142377,
+    "turnStartLat": 54.73730756865752,
+    "turnStartLon": 27.685546875000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
