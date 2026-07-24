@@ -20,11 +20,11 @@
     "name": "Armee of Anhalt-Dessau",
     "strength": 20000,
     "commander": "Anhalt-Dessau",
-    "lat": 54.514646979684855,
-    "lon": 20.709228515625004,
+    "lat": 54.71986140557427,
+    "lon": 20.530700683593754,
     "turnStartLat": 54.514646979684855,
     "turnStartLon": 20.709228515625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 25.55042048554528,
     "createdAtTurn": 49
   },
   {
