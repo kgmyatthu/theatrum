@@ -54,19 +54,5 @@
     "turnStartLon": 33.691406250000014,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 54
-  },
-  {
-    "id": "juliusquick0616-pixel-1784324387135-0",
-    "nation": "crimea",
-    "branch": "army",
-    "name": "Han Orda",
-    "strength": 40000,
-    "commander": "",
-    "lat": 46.800059446787316,
-    "lon": 33.22265625000001,
-    "turnStartLat": 46.800059446787316,
-    "turnStartLon": 33.22265625000001,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 56
   }
 ]
