@@ -6,11 +6,11 @@
     "name": "I Reichsarmee",
     "strength": 60000,
     "commander": "",
-    "lat": 50.76595370857878,
-    "lon": 10.996329166707786,
+    "lat": 50.08763878624423,
+    "lon": 14.179191850125791,
     "turnStartLat": 50.76595370857878,
     "turnStartLon": 10.996329166707786,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 237.72668791445443,
     "createdAtTurn": 62
   },
   {
@@ -20,11 +20,11 @@
     "name": "II Reichsarmee",
     "strength": 60000,
     "commander": "",
-    "lat": 50.74511362053063,
-    "lon": 9.381902500828257,
+    "lat": 52.232590132423944,
+    "lon": 12.602315470576288,
     "turnStartLat": 50.74511362053063,
     "turnStartLon": 9.381902500828257,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 277.5788891667696,
     "createdAtTurn": 62
   }
 ]

@@ -104,11 +104,11 @@
     "name": "France Army Of Rear",
     "strength": 60000,
     "commander": "",
-    "lat": 48.43540828325061,
-    "lon": 12.51179426908493,
+    "lat": 48.54177472059451,
+    "lon": 14.191570580005648,
     "turnStartLat": 48.43540828325061,
     "turnStartLon": 12.51179426908493,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 141.57483027973407,
     "createdAtTurn": 8
   },
   {
@@ -244,11 +244,11 @@
     "name": "Lowlands Army",
     "strength": 45000,
     "commander": "",
-    "lat": 50.89244805666036,
-    "lon": 4.344075713306666,
+    "lat": 50.02630452373943,
+    "lon": 7.223135232925415,
     "turnStartLat": 50.89244805666036,
     "turnStartLon": 4.344075713306666,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 225.39664190443443,
     "createdAtTurn": 62
   }
 ]
