@@ -68,5 +68,33 @@
     "turnStartLon": 13.403320312500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784935792549-0",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Prince Henry",
+    "strength": 25000,
+    "commander": "",
+    "lat": 53.657661020298,
+    "lon": 15.221557617187502,
+    "turnStartLat": 53.657661020298,
+    "turnStartLon": 15.221557617187502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784935834776-1",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Friedrich Wilhelm von Seydlitz",
+    "strength": 6000,
+    "commander": "Friedrich Wilhelm von Seydlitz",
+    "lat": 52.839276537057884,
+    "lon": 11.541137695312502,
+    "turnStartLat": 52.839276537057884,
+    "turnStartLon": 11.541137695312502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
