@@ -76,11 +76,11 @@
     "name": "Augustin Ehrensvärd",
     "strength": 34000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 54.70399473912615,
-    "lon": 20.514221191406254,
+    "lat": 56.225031333026806,
+    "lon": 15.534667968750002,
     "turnStartLat": 54.7595009150459,
     "turnStartLon": 20.720214843750004,
-    "kmMovedThisTurn": 14.594975353457542,
+    "kmMovedThisTurn": 371.0435828389281,
     "createdAtTurn": 62
   }
 ]
