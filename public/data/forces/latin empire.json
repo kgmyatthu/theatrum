@@ -106,9 +106,9 @@
     "commander": "",
     "lat": 48.43540828325061,
     "lon": 12.51179426908493,
-    "turnStartLat": 48.50204750525715,
-    "turnStartLon": 6.5478515625,
-    "kmMovedThisTurn": 439.6452938727608,
+    "turnStartLat": 48.43540828325061,
+    "turnStartLon": 12.51179426908493,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -204,9 +204,9 @@
     "commander": "Manuel Estaban de Soler y Roca",
     "lat": 36.017792724330235,
     "lon": -4.375915378332139,
-    "turnStartLat": 39.512321195609786,
-    "turnStartLon": 2.442913725972176,
-    "kmMovedThisTurn": 713.99695727809,
+    "turnStartLat": 36.017792724330235,
+    "turnStartLon": -4.375915378332139,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Luigi Antonio di Potenza",
     "lat": 38.31552372794366,
     "lon": 20.10392233729363,
-    "turnStartLat": 38.318208419996544,
-    "turnStartLon": 13.76356177031994,
-    "kmMovedThisTurn": 553.0427010049034,
+    "turnStartLat": 38.31552372794366,
+    "turnStartLon": 20.10392233729363,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
