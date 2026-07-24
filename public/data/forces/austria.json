@@ -236,5 +236,33 @@
     "turnStartLon": 23.818359375000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934719590-5",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Landwehr of Bohemia",
+    "strength": 5000,
+    "commander": "",
+    "lat": 49.69606181911566,
+    "lon": 14.743652343750002,
+    "turnStartLat": 49.69606181911566,
+    "turnStartLon": 14.743652343750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934732859-6",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Garrison of Zagreb",
+    "strength": 4000,
+    "commander": "Garrison of Zagreb",
+    "lat": 45.75985868785574,
+    "lon": 16.051025390625004,
+    "turnStartLat": 45.75985868785574,
+    "turnStartLon": 16.051025390625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
   }
 ]

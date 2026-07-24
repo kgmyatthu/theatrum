@@ -70,17 +70,31 @@
     "createdAtTurn": 54
   },
   {
-    "id": "yellowwithblue-1784772841434-0",
+    "id": "yellowwithblue-1784934536500-1",
     "nation": "sweden",
     "branch": "army",
-    "name": "Augustin Ehrensvärd",
+    "name": "Augustin Ehrensvärd (Replenishing)",
     "strength": 34000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 56.225031333026806,
-    "lon": 15.534667968750002,
-    "turnStartLat": 54.7595009150459,
-    "turnStartLon": 20.720214843750004,
-    "kmMovedThisTurn": 371.0435828389281,
-    "createdAtTurn": 62
+    "lat": 56.218923189166624,
+    "lon": 15.644531250000002,
+    "turnStartLat": 56.218923189166624,
+    "turnStartLon": 15.644531250000002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934557582-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Axel von Fersen the Elder",
+    "strength": 14000,
+    "commander": "Axel von Fersen the Elder",
+    "lat": 54.23955053156179,
+    "lon": 13.062744140625002,
+    "turnStartLat": 54.23955053156179,
+    "turnStartLon": 13.062744140625002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
   }
 ]
