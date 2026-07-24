@@ -76,11 +76,11 @@
     "name": "Army of Minsk",
     "strength": 35000,
     "commander": "",
-    "lat": 54.55135864833319,
-    "lon": 21.324462890625004,
+    "lat": 54.648412502316695,
+    "lon": 21.11572265625,
     "turnStartLat": 54.41892996865827,
     "turnStartLon": 22.78564453125,
-    "kmMovedThisTurn": 95.55755707571927,
+    "kmMovedThisTurn": 112.79849875876762,
     "createdAtTurn": 49
   },
   {
