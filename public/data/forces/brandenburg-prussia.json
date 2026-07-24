@@ -14,20 +14,6 @@
     "createdAtTurn": 49
   },
   {
-    "id": "Urchinn-sys-1783911694170-1",
-    "nation": "brandenburg-prussia",
-    "branch": "army",
-    "name": "Armee of Anhalt-Dessau",
-    "strength": 20000,
-    "commander": "Anhalt-Dessau",
-    "lat": 54.71986140557427,
-    "lon": 20.530700683593754,
-    "turnStartLat": 54.514646979684855,
-    "turnStartLon": 20.709228515625004,
-    "kmMovedThisTurn": 25.55042048554528,
-    "createdAtTurn": 49
-  },
-  {
     "id": "Urchinn-sys-1783911767955-2",
     "nation": "brandenburg-prussia",
     "branch": "navy",
