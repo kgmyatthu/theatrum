@@ -96,5 +96,19 @@
     "turnStartLon": 11.541137695312502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784936094044-0",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Garrison of Kolberg",
+    "strength": 5000,
+    "commander": "",
+    "lat": 54.174693871696654,
+    "lon": 15.551490783691408,
+    "turnStartLat": 54.174693871696654,
+    "turnStartLon": 15.551490783691408,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
