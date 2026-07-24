@@ -50,9 +50,9 @@
     "commander": "Mattias Alexander von Ungern-Sternberg",
     "lat": 56.601838481314694,
     "lon": 22.730712890625004,
-    "turnStartLat": 58.11271444125315,
-    "turnStartLon": 25.839843750000004,
-    "kmMovedThisTurn": 539.1106022311935,
+    "turnStartLat": 56.601838481314694,
+    "turnStartLon": 22.730712890625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Charles XII",
     "lat": 58.77959115030064,
     "lon": 15.732421875000002,
-    "turnStartLat": 54.16243396806781,
-    "turnStartLon": 12.985839843750002,
-    "kmMovedThisTurn": 540.2936529484892,
+    "turnStartLat": 58.77959115030064,
+    "turnStartLon": 15.732421875000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
