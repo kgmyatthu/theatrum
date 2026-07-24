@@ -34,11 +34,11 @@
     "name": "Leopold Joseph von Daun",
     "strength": 50000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 48.61112192003077,
-    "lon": 14.260253906250002,
+    "lat": 48.144097934938884,
+    "lon": 15.260009765625002,
     "turnStartLat": 48.61112192003077,
     "turnStartLon": 14.260253906250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 90.27111372277245,
     "createdAtTurn": 64
   },
   {
@@ -104,11 +104,11 @@
     "name": "Ernst Gideon von Laudon (including militia)",
     "strength": 45000,
     "commander": "Ernst Gideon von Laudon",
-    "lat": 46.562637320868376,
-    "lon": 13.897705078125002,
+    "lat": 47.42808726171425,
+    "lon": 14.430541992187502,
     "turnStartLat": 46.562637320868376,
     "turnStartLon": 13.897705078125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 104.373482121556,
     "createdAtTurn": 64
   },
   {
@@ -202,11 +202,11 @@
     "name": "Franz Moritz von Lacy",
     "strength": 45000,
     "commander": "Franz Moritz von Lacy",
-    "lat": 49.14937676724421,
-    "lon": 16.787109375000004,
+    "lat": 49.45027157571992,
+    "lon": 17.155151367187504,
     "turnStartLat": 49.14937676724421,
     "turnStartLon": 16.787109375000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 42.79735416678678,
     "createdAtTurn": 64
   },
   {
@@ -216,11 +216,11 @@
     "name": "John Sigismund Maguire",
     "strength": 40000,
     "commander": "John Sigismund Maguire",
-    "lat": 47.989921667414194,
-    "lon": 20.451049804687504,
+    "lat": 47.885038970041464,
+    "lon": 17.146911621093754,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 20.451049804687504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 251.5407979880373,
     "createdAtTurn": 64
   },
   {
@@ -264,5 +264,19 @@
     "turnStartLon": 16.051025390625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934969645-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of the Hungarian Diet",
+    "strength": 12000,
+    "commander": "Army of the Hungarian Diet",
+    "lat": 47.58393661978137,
+    "lon": 19.429321289062504,
+    "turnStartLat": 47.58393661978137,
+    "turnStartLon": 19.429321289062504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
