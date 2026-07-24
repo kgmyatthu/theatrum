@@ -3,14 +3,14 @@
     "id": "Urchinn-sys-1783911572067-0",
     "nation": "brandenburg-prussia",
     "branch": "army",
-    "name": "Armee of Frederick",
+    "name": "Frederick the Great",
     "strength": 60000,
-    "commander": "Frederick II",
-    "lat": 52.523867146183015,
-    "lon": 13.425292968750002,
+    "commander": "Frederick the Great",
+    "lat": 52.32191088594773,
+    "lon": 13.002319335937502,
     "turnStartLat": 52.523867146183015,
     "turnStartLon": 13.425292968750002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 145.6780104338695,
     "createdAtTurn": 49
   },
   {
@@ -26,5 +26,47 @@
     "turnStartLon": 14.287719726562502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
+  },
+  {
+    "id": "yellowwithblue-1784934451213-0",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Kurt Christoph Graf von Schwerin",
+    "strength": 40000,
+    "commander": "",
+    "lat": 52.47608904123904,
+    "lon": 14.414062500000002,
+    "turnStartLat": 52.47608904123904,
+    "turnStartLon": 14.414062500000002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934592586-3",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Garrison of Magdeburg",
+    "strength": 8000,
+    "commander": "Garrison of Magdeburg",
+    "lat": 52.13180209119313,
+    "lon": 11.651000976562502,
+    "turnStartLat": 52.13180209119313,
+    "turnStartLon": 11.651000976562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1784934640026-4",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Garrison of Berlin",
+    "strength": 5000,
+    "commander": "Garrison of Berlin",
+    "lat": 52.51956352925745,
+    "lon": 13.403320312500002,
+    "turnStartLat": 52.51956352925745,
+    "turnStartLon": 13.403320312500002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 64
   }
 ]
