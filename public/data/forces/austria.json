@@ -168,20 +168,6 @@
     "createdAtTurn": 64
   },
   {
-    "id": "yellowwithblue-1784863232179-10",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Maximilian Ulysses Browne",
-    "strength": 40000,
-    "commander": "Maximilian Ulysses Browne",
-    "lat": 47.95314495015594,
-    "lon": 22.225341796875004,
-    "turnStartLat": 47.95314495015594,
-    "turnStartLon": 22.225341796875004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
     "id": "yellowwithblue-1784863329470-11",
     "nation": "austria",
     "branch": "army",
@@ -228,7 +214,7 @@
     "nation": "austria",
     "branch": "army",
     "name": "John Sigismund Maguire",
-    "strength": 32000,
+    "strength": 40000,
     "commander": "John Sigismund Maguire",
     "lat": 47.989921667414194,
     "lon": 20.451049804687504,
