@@ -6,11 +6,11 @@
     "name": "Army of Bavaria",
     "strength": 40000,
     "commander": "",
-    "lat": 48.8286103627178,
-    "lon": 12.43535412871692,
+    "lat": 48.57486689477139,
+    "lon": 14.103033710271122,
     "turnStartLat": 48.8286103627178,
     "turnStartLon": 12.43535412871692,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 125.5922665697784,
     "createdAtTurn": 0
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the Palatinate",
     "strength": 20000,
     "commander": "",
-    "lat": 49.73852025145245,
-    "lon": 11.92980668019965,
+    "lat": 49.86182083282419,
+    "lon": 14.177260827273134,
     "turnStartLat": 49.73852025145245,
     "turnStartLon": 11.92980668019965,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 161.87831330934983,
     "createdAtTurn": 31
   },
   {
