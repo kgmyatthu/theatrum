@@ -152,5 +152,19 @@
     "turnStartLon": 22.736206054687504,
     "kmMovedThisTurn": 289.0161578057128,
     "createdAtTurn": 62
+  },
+  {
+    "id": "Ohgizmo-1784951067894-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Bradenburg (Forming)",
+    "strength": 60000,
+    "commander": "",
+    "lat": 51.78823192706476,
+    "lon": 18.446044921875004,
+    "turnStartLat": 51.78823192706476,
+    "turnStartLon": 18.446044921875004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
