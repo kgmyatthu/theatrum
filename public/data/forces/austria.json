@@ -216,11 +216,11 @@
     "name": "John Sigismund Maguire",
     "strength": 40000,
     "commander": "John Sigismund Maguire",
-    "lat": 49.10983779052439,
-    "lon": 17.633056640625004,
+    "lat": 48.7996273507997,
+    "lon": 18.995361328125,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 20.451049804687504,
-    "kmMovedThisTurn": 392.3633917558741,
+    "kmMovedThisTurn": 497.6435969366447,
     "createdAtTurn": 64
   },
   {
