@@ -292,5 +292,19 @@
     "turnStartLon": 17.204589843750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784952247739-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Landwehr of Hungary",
+    "strength": 4000,
+    "commander": "",
+    "lat": 48.5275192374508,
+    "lon": 19.857788085937504,
+    "turnStartLat": 48.5275192374508,
+    "turnStartLon": 19.857788085937504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
