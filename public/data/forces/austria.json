@@ -278,5 +278,19 @@
     "turnStartLon": 19.500732421875004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784952028257-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Flying Column (incl. militia)",
+    "strength": 8000,
+    "commander": "",
+    "lat": 48.16974908365419,
+    "lon": 17.204589843750004,
+    "turnStartLat": 48.16974908365419,
+    "turnStartLon": 17.204589843750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
