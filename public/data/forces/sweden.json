@@ -76,11 +76,11 @@
     "name": "Augustin Ehrensvärd (Replenishing)",
     "strength": 34000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 56.218923189166624,
-    "lon": 15.644531250000002,
+    "lat": 56.962947135260585,
+    "lon": 24.158935546875004,
     "turnStartLat": 56.218923189166624,
     "turnStartLon": 15.644531250000002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 527.4626505796531,
     "createdAtTurn": 64
   },
   {
