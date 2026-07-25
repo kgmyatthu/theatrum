@@ -76,11 +76,11 @@
     "name": "Army of Minsk (replenishing)",
     "strength": 22000,
     "commander": "",
-    "lat": 54.584796743678744,
-    "lon": 21.038818359375004,
+    "lat": 54.38695529486881,
+    "lon": 20.797119140625004,
     "turnStartLat": 54.584796743678744,
     "turnStartLon": 21.038818359375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 374.7143028145956,
     "createdAtTurn": 49
   },
   {
@@ -116,13 +116,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Prussia",
-    "strength": 40000,
+    "strength": 45000,
     "commander": "",
-    "lat": 52.46939684276205,
-    "lon": 15.847778320312502,
+    "lat": 52.348763181988105,
+    "lon": 15.820312500000002,
     "turnStartLat": 53.370220573956786,
     "turnStartLon": 17.512207031250004,
-    "kmMovedThisTurn": 278.63769233546566,
+    "kmMovedThisTurn": 1016.5370401552011,
     "createdAtTurn": 61
   },
   {
@@ -146,11 +146,11 @@
     "name": "Army of Lithuania",
     "strength": 15000,
     "commander": "",
-    "lat": 55.02172452153062,
-    "lon": 22.093505859375004,
+    "lat": 56.15166933290848,
+    "lon": 22.862548828125004,
     "turnStartLat": 56.36220737044445,
     "turnStartLon": 22.736206054687504,
-    "kmMovedThisTurn": 154.39990456573463,
+    "kmMovedThisTurn": 289.0161578057128,
     "createdAtTurn": 62
   }
 ]
