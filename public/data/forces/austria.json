@@ -34,11 +34,11 @@
     "name": "Leopold Joseph von Daun",
     "strength": 50000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 48.144097934938884,
-    "lon": 15.260009765625002,
+    "lat": 48.22467264956519,
+    "lon": 14.963378906250002,
     "turnStartLat": 48.61112192003077,
     "turnStartLon": 14.260253906250002,
-    "kmMovedThisTurn": 90.27111372277245,
+    "kmMovedThisTurn": 114.01764921132433,
     "createdAtTurn": 64
   },
   {
@@ -104,11 +104,11 @@
     "name": "Ernst Gideon von Laudon (including militia)",
     "strength": 45000,
     "commander": "Ernst Gideon von Laudon",
-    "lat": 47.42808726171425,
-    "lon": 14.430541992187502,
+    "lat": 47.912660308427654,
+    "lon": 14.249267578125002,
     "turnStartLat": 46.562637320868376,
     "turnStartLon": 13.897705078125002,
-    "kmMovedThisTurn": 104.373482121556,
+    "kmMovedThisTurn": 159.93885924171653,
     "createdAtTurn": 64
   },
   {
