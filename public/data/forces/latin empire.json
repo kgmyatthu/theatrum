@@ -244,11 +244,11 @@
     "name": "Lowlands Army",
     "strength": 60000,
     "commander": "",
-    "lat": 51.888415670111186,
-    "lon": 11.420309543609621,
+    "lat": 52.089832809783914,
+    "lon": 11.64605871308595,
     "turnStartLat": 50.02630452373943,
     "turnStartLon": 7.223135232925415,
-    "kmMovedThisTurn": 359.4847604460103,
+    "kmMovedThisTurn": 386.98312096923155,
     "createdAtTurn": 62
   }
 ]
