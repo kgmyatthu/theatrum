@@ -174,11 +174,11 @@
     "name": "Franz Leopold von Nádasdy",
     "strength": 40000,
     "commander": "Franz Leopold von Nádasdy",
-    "lat": 48.84664340683584,
-    "lon": 16.759643554687504,
+    "lat": 49.03786794532644,
+    "lon": 17.094726562500004,
     "turnStartLat": 48.28319289548349,
     "turnStartLon": 16.907958984375004,
-    "kmMovedThisTurn": 63.65845497579173,
+    "kmMovedThisTurn": 85.02972970528577,
     "createdAtTurn": 64
   },
   {
@@ -216,11 +216,11 @@
     "name": "John Sigismund Maguire",
     "strength": 40000,
     "commander": "John Sigismund Maguire",
-    "lat": 48.22101291025667,
-    "lon": 17.243041992187504,
+    "lat": 49.10983779052439,
+    "lon": 17.633056640625004,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 20.451049804687504,
-    "kmMovedThisTurn": 289.57652984102344,
+    "kmMovedThisTurn": 392.3633917558741,
     "createdAtTurn": 64
   },
   {
