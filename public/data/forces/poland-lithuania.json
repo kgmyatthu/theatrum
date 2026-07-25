@@ -112,31 +112,17 @@
     "createdAtTurn": 57
   },
   {
-    "id": "Ohgizmo-1784676493977-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Bradenburg",
-    "strength": 80000,
-    "commander": "",
-    "lat": 52.43257155802881,
-    "lon": 15.062255859375002,
-    "turnStartLat": 52.43257155802881,
-    "turnStartLon": 15.062255859375002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 61
-  },
-  {
     "id": "Ohgizmo-1784676509217-1",
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Prussia",
-    "strength": 35000,
+    "strength": 40000,
     "commander": "",
-    "lat": 52.63639665997182,
-    "lon": 14.749145507812502,
+    "lat": 52.46939684276205,
+    "lon": 15.847778320312502,
     "turnStartLat": 53.370220573956786,
     "turnStartLon": 17.512207031250004,
-    "kmMovedThisTurn": 202.0742880425024,
+    "kmMovedThisTurn": 278.63769233546566,
     "createdAtTurn": 61
   },
   {
