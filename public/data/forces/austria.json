@@ -34,11 +34,11 @@
     "name": "Leopold Joseph von Daun",
     "strength": 50000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 48.22467264956519,
-    "lon": 14.963378906250002,
+    "lat": 48.31973404047173,
+    "lon": 14.982604980468752,
     "turnStartLat": 48.61112192003077,
     "turnStartLon": 14.260253906250002,
-    "kmMovedThisTurn": 114.01764921132433,
+    "kmMovedThisTurn": 124.75436251586734,
     "createdAtTurn": 64
   },
   {
@@ -76,11 +76,11 @@
     "name": "Landwehr of Tyrol",
     "strength": 5000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 46.13417004624326,
-    "lon": 11.381835937500002,
+    "lat": 46.2330529447983,
+    "lon": 11.162109375,
     "turnStartLat": 46.13417004624326,
     "turnStartLon": 11.381835937500002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 20.1752443537367,
     "createdAtTurn": 64
   },
   {
@@ -160,11 +160,11 @@
     "name": "Landwehr of Slovenia",
     "strength": 5000,
     "commander": "",
-    "lat": 46.31658418182218,
-    "lon": 14.029541015625002,
+    "lat": 46.494610770689384,
+    "lon": 13.732910156250002,
     "turnStartLat": 46.31658418182218,
     "turnStartLon": 14.029541015625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 30.152176432768805,
     "createdAtTurn": 64
   },
   {
@@ -188,11 +188,11 @@
     "name": "Landwehr of Bohemia",
     "strength": 10000,
     "commander": "",
-    "lat": 49.59290945425264,
-    "lon": 16.353149414062504,
+    "lat": 49.27676479458532,
+    "lon": 16.960144042968754,
     "turnStartLat": 49.59290945425264,
     "turnStartLon": 16.353149414062504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 56.23443371768468,
     "createdAtTurn": 64
   },
   {
