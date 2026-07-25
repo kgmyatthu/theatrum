@@ -306,5 +306,33 @@
     "turnStartLon": 19.857788085937504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784952393375-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of the Danube (being raised)",
+    "strength": 30000,
+    "commander": "",
+    "lat": 48.571155273059546,
+    "lon": 16.149902343750004,
+    "turnStartLat": 48.571155273059546,
+    "turnStartLon": 16.149902343750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1784952411111-1",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Second-Rate Grenzer Corps",
+    "strength": 3000,
+    "commander": "",
+    "lat": 48.63290858589535,
+    "lon": 21.187133789062504,
+    "turnStartLat": 48.63290858589535,
+    "turnStartLon": 21.187133789062504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
