@@ -242,13 +242,13 @@
     "nation": "latin empire",
     "branch": "army",
     "name": "Lowlands Army",
-    "strength": 45000,
+    "strength": 60000,
     "commander": "",
-    "lat": 50.02630452373943,
-    "lon": 7.223135232925415,
+    "lat": 51.888415670111186,
+    "lon": 11.420309543609621,
     "turnStartLat": 50.02630452373943,
     "turnStartLon": 7.223135232925415,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 359.4847604460103,
     "createdAtTurn": 62
   }
 ]
