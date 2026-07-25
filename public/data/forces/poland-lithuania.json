@@ -74,7 +74,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Minsk",
-    "strength": 12000,
+    "strength": 22000,
     "commander": "",
     "lat": 54.584796743678744,
     "lon": 21.038818359375004,
@@ -132,11 +132,11 @@
     "name": "Army of Prussia",
     "strength": 35000,
     "commander": "",
-    "lat": 53.370220573956786,
-    "lon": 17.512207031250004,
+    "lat": 52.63639665997182,
+    "lon": 14.749145507812502,
     "turnStartLat": 53.370220573956786,
     "turnStartLon": 17.512207031250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 202.0742880425024,
     "createdAtTurn": 61
   },
   {
