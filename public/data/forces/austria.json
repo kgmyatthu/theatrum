@@ -230,11 +230,11 @@
     "name": "Grenzer Corps",
     "strength": 5000,
     "commander": "",
-    "lat": 47.07760411715964,
-    "lon": 23.818359375000004,
+    "lat": 48.3416461723746,
+    "lon": 23.345947265625004,
     "turnStartLat": 47.07760411715964,
     "turnStartLon": 23.818359375000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 144.9305944205153,
     "createdAtTurn": 64
   },
   {
