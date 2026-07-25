@@ -90,11 +90,11 @@
     "name": "Axel von Fersen the Elder",
     "strength": 10000,
     "commander": "Axel von Fersen the Elder",
-    "lat": 53.47170048572763,
-    "lon": 14.441528320312502,
+    "lat": 54.29088164657006,
+    "lon": 13.095703125,
     "turnStartLat": 54.23955053156179,
     "turnStartLon": 13.062744140625002,
-    "kmMovedThisTurn": 124.36256680156923,
+    "kmMovedThisTurn": 251.159359172081,
     "createdAtTurn": 64
   }
 ]
