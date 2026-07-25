@@ -174,11 +174,11 @@
     "name": "Franz Leopold von Nádasdy",
     "strength": 40000,
     "commander": "Franz Leopold von Nádasdy",
-    "lat": 48.28319289548349,
-    "lon": 16.907958984375004,
+    "lat": 48.84664340683584,
+    "lon": 16.759643554687504,
     "turnStartLat": 48.28319289548349,
     "turnStartLon": 16.907958984375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 63.65845497579173,
     "createdAtTurn": 64
   },
   {
@@ -216,11 +216,11 @@
     "name": "John Sigismund Maguire",
     "strength": 40000,
     "commander": "John Sigismund Maguire",
-    "lat": 47.885038970041464,
-    "lon": 17.146911621093754,
+    "lat": 48.22101291025667,
+    "lon": 17.243041992187504,
     "turnStartLat": 47.989921667414194,
     "turnStartLon": 20.451049804687504,
-    "kmMovedThisTurn": 251.5407979880373,
+    "kmMovedThisTurn": 289.57652984102344,
     "createdAtTurn": 64
   },
   {
@@ -266,16 +266,16 @@
     "createdAtTurn": 64
   },
   {
-    "id": "yellowwithblue-1784934969645-1",
+    "id": "yellowwithblue-1784951835232-0",
     "nation": "austria",
     "branch": "army",
     "name": "Army of the Hungarian Diet",
     "strength": 12000,
     "commander": "Army of the Hungarian Diet",
-    "lat": 47.58393661978137,
-    "lon": 19.429321289062504,
-    "turnStartLat": 47.58393661978137,
-    "turnStartLon": 19.429321289062504,
+    "lat": 48.785151998043155,
+    "lon": 19.500732421875004,
+    "turnStartLat": 48.785151998043155,
+    "turnStartLon": 19.500732421875004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
   }
