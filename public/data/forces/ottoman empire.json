@@ -48,11 +48,11 @@
     "name": "Trablusgarb Ordusu",
     "strength": 30000,
     "commander": "Mehmed Pasha",
-    "lat": 36.608082033686536,
-    "lon": 10.074462890625002,
+    "lat": 32.07370007219891,
+    "lon": 12.376907318830492,
     "turnStartLat": 36.608082033686536,
     "turnStartLon": 10.074462890625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 546.6696873209912,
     "createdAtTurn": 31
   },
   {
