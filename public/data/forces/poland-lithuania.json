@@ -60,13 +60,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Ukraine",
-    "strength": 20000,
+    "strength": 35000,
     "commander": "",
-    "lat": 49.360911547126165,
-    "lon": 20.203857421875004,
+    "lat": 48.8936153614802,
+    "lon": 19.671020507812504,
     "turnStartLat": 47.99727386804474,
     "turnStartLon": 24.78515625,
-    "kmMovedThisTurn": 368.8722024430108,
+    "kmMovedThisTurn": 433.70356243345606,
     "createdAtTurn": 49
   },
   {
@@ -104,11 +104,11 @@
     "name": "Army of Silesia",
     "strength": 65000,
     "commander": "",
-    "lat": 49.435984899682005,
-    "lon": 17.789611816406254,
+    "lat": 49.47704787438876,
+    "lon": 17.355651855468754,
     "turnStartLat": 49.435984899682005,
     "turnStartLon": 17.789611816406254,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 31.696945838974468,
     "createdAtTurn": 57
   },
   {
