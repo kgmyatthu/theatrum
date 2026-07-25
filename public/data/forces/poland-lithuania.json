@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 40000,
     "commander": "Jan III Sobieski",
-    "lat": 51.984880139916626,
-    "lon": 15.919189453125002,
+    "lat": 50.42951794712289,
+    "lon": 17.446289062500004,
     "turnStartLat": 49.37522008143603,
     "turnStartLon": 19.940185546875004,
-    "kmMovedThisTurn": 417.56025306159165,
+    "kmMovedThisTurn": 620.5982581487417,
     "createdAtTurn": 4
   },
   {
@@ -74,13 +74,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Minsk (replenishing)",
-    "strength": 22000,
+    "strength": 30000,
     "commander": "",
-    "lat": 54.38695529486881,
-    "lon": 20.797119140625004,
+    "lat": 56.21281407174654,
+    "lon": 22.082519531250004,
     "turnStartLat": 54.584796743678744,
     "turnStartLon": 21.038818359375004,
-    "kmMovedThisTurn": 374.7143028145956,
+    "kmMovedThisTurn": 593.4288304073066,
     "createdAtTurn": 49
   },
   {
@@ -118,11 +118,11 @@
     "name": "Army of Prussia",
     "strength": 65000,
     "commander": "",
-    "lat": 52.348763181988105,
-    "lon": 15.820312500000002,
+    "lat": 52.3755991766591,
+    "lon": 18.544921875000004,
     "turnStartLat": 53.370220573956786,
     "turnStartLon": 17.512207031250004,
-    "kmMovedThisTurn": 1016.5370401552011,
+    "kmMovedThisTurn": 1201.5598103032528,
     "createdAtTurn": 61
   },
   {
@@ -152,19 +152,5 @@
     "turnStartLon": 22.736206054687504,
     "kmMovedThisTurn": 289.0161578057128,
     "createdAtTurn": 62
-  },
-  {
-    "id": "Ohgizmo-1784951067894-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Bradenburg (Forming)",
-    "strength": 60000,
-    "commander": "",
-    "lat": 51.78823192706476,
-    "lon": 18.446044921875004,
-    "turnStartLat": 51.78823192706476,
-    "turnStartLon": 18.446044921875004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 65
   }
 ]
