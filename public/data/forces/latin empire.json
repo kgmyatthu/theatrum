@@ -6,11 +6,11 @@
     "name": "Armée Royale",
     "strength": 75000,
     "commander": "",
-    "lat": 48.99493047725694,
-    "lon": 2.4829101562500004,
+    "lat": 48.18499249077073,
+    "lon": 14.05566547997296,
     "turnStartLat": 48.99493047725694,
     "turnStartLon": 2.4829101562500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 864.4730548396738,
     "createdAtTurn": 4
   },
   {
@@ -230,11 +230,11 @@
     "name": "1st Army of Italy",
     "strength": 40000,
     "commander": "Luigi",
-    "lat": 44.88087046669593,
-    "lon": 9.940148675814273,
+    "lat": 45.88803866984321,
+    "lon": 13.822737419977784,
     "turnStartLat": 44.88087046669593,
     "turnStartLon": 9.940148675814273,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 369.1687408507574,
     "createdAtTurn": 24
   },
   {
@@ -250,5 +250,33 @@
     "turnStartLon": 7.223135232925415,
     "kmMovedThisTurn": 386.98312096923155,
     "createdAtTurn": 62
+  },
+  {
+    "id": "Walrusbear0831-1784956310174-0",
+    "nation": "latin empire",
+    "branch": "army",
+    "name": "3rd Army of Italy",
+    "strength": 20000,
+    "commander": "",
+    "lat": 45.336241368955314,
+    "lon": 9.391465187072756,
+    "turnStartLat": 45.336241368955314,
+    "turnStartLon": 9.391465187072756,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
+  },
+  {
+    "id": "Walrusbear0831-1784956410033-1",
+    "nation": "latin empire",
+    "branch": "army",
+    "name": "Army of Champagne",
+    "strength": 30000,
+    "commander": "",
+    "lat": 48.94728206144437,
+    "lon": 4.216227717697621,
+    "turnStartLat": 48.94728206144437,
+    "turnStartLon": 4.216227717697621,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
