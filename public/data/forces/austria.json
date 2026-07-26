@@ -34,11 +34,11 @@
     "name": "Leopold Joseph von Daun",
     "strength": 50000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 48.31973404047173,
-    "lon": 14.982604980468752,
+    "lat": 48.402767712529176,
+    "lon": 15.358886718750002,
     "turnStartLat": 48.31973404047173,
     "turnStartLon": 14.982604980468752,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 29.340920805013955,
     "createdAtTurn": 64
   },
   {
@@ -90,11 +90,11 @@
     "name": "Ernst Gideon von Laudon (including militia)",
     "strength": 45000,
     "commander": "Ernst Gideon von Laudon",
-    "lat": 48.227417282332816,
-    "lon": 15.043029785156252,
+    "lat": 48.53024759209485,
+    "lon": 15.317687988281252,
     "turnStartLat": 48.227417282332816,
     "turnStartLon": 15.043029785156252,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 45.70510283423546,
     "createdAtTurn": 64
   },
   {
@@ -188,11 +188,11 @@
     "name": "John Sigismund Maguire",
     "strength": 40000,
     "commander": "John Sigismund Maguire",
-    "lat": 48.42920055556841,
-    "lon": 15.040283203125002,
+    "lat": 48.46836878749394,
+    "lon": 15.338287353515627,
     "turnStartLat": 48.42920055556841,
     "turnStartLon": 15.040283203125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 22.406463676055598,
     "createdAtTurn": 64
   },
   {
@@ -283,14 +283,14 @@
     "id": "yellowwithblue-1784952393375-0",
     "nation": "austria",
     "branch": "army",
-    "name": "Army of the Danube (Assembling)",
+    "name": "Army of the Danube",
     "strength": 30000,
     "commander": "",
-    "lat": 48.571155273059546,
-    "lon": 16.149902343750004,
+    "lat": 48.52388120259336,
+    "lon": 16.08535766601563,
     "turnStartLat": 48.571155273059546,
     "turnStartLon": 16.149902343750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 7.085622266254393,
     "createdAtTurn": 65
   },
   {
