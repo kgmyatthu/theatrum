@@ -4,13 +4,13 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Mısır Ordusu",
-    "strength": 35000,
+    "strength": 5000,
     "commander": "Abdullah Pasha",
-    "lat": 32.0464994430577,
-    "lon": 14.699707031250002,
+    "lat": 43.60691361835132,
+    "lon": 18.80126953124999,
     "turnStartLat": 32.0464994430577,
     "turnStartLon": 14.699707031250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1334.5100036037588,
     "createdAtTurn": 31
   },
   {
@@ -18,7 +18,7 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Şam Ordusu",
-    "strength": 50000,
+    "strength": 5000,
     "commander": "Osman Pasha",
     "lat": 33.45741512587934,
     "lon": 36.58264160156249,
@@ -46,7 +46,7 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Trablusgarb Ordusu",
-    "strength": 30000,
+    "strength": 10000,
     "commander": "Mehmed Pasha",
     "lat": 32.07370007219891,
     "lon": 12.376907318830492,
@@ -194,5 +194,19 @@
     "turnStartLon": 25.542571139136378,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
+  },
+  {
+    "id": "juliusquick0616-pixel-1785041090540-0",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "Ottoman forces of Aceh",
+    "strength": 5000,
+    "commander": "",
+    "lat": 5.025282908609298,
+    "lon": 95.6396484375,
+    "turnStartLat": 5.025282908609298,
+    "turnStartLon": 95.6396484375,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 65
   }
 ]
