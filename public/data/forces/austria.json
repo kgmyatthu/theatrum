@@ -36,22 +36,8 @@
     "commander": "Leopold Joseph von Daun",
     "lat": 48.31973404047173,
     "lon": 14.982604980468752,
-    "turnStartLat": 48.61112192003077,
-    "turnStartLon": 14.260253906250002,
-    "kmMovedThisTurn": 124.75436251586734,
-    "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1784862806633-1",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Garrison of Linz",
-    "strength": 5000,
-    "commander": "Leopold Joseph von Daun",
-    "lat": 48.306947615160205,
-    "lon": 14.304199218750002,
-    "turnStartLat": 48.306947615160205,
-    "turnStartLon": 14.304199218750002,
+    "turnStartLat": 48.31973404047173,
+    "turnStartLon": 14.982604980468752,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
@@ -78,9 +64,9 @@
     "commander": "Leopold Joseph von Daun",
     "lat": 46.2330529447983,
     "lon": 11.162109375,
-    "turnStartLat": 46.13417004624326,
-    "turnStartLon": 11.381835937500002,
-    "kmMovedThisTurn": 20.1752443537367,
+    "turnStartLat": 46.2330529447983,
+    "turnStartLon": 11.162109375,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -106,22 +92,8 @@
     "commander": "Ernst Gideon von Laudon",
     "lat": 48.227417282332816,
     "lon": 15.043029785156252,
-    "turnStartLat": 46.562637320868376,
-    "turnStartLon": 13.897705078125002,
-    "kmMovedThisTurn": 230.45414653878177,
-    "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1784862970314-6",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Garrison of Prague",
-    "strength": 10000,
-    "commander": "Ernst Gideon von Laudon",
-    "lat": 50.07124366044474,
-    "lon": 14.496459960937502,
-    "turnStartLat": 50.07124366044474,
-    "turnStartLon": 14.496459960937502,
+    "turnStartLat": 48.227417282332816,
+    "turnStartLon": 15.043029785156252,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
@@ -162,9 +134,9 @@
     "commander": "",
     "lat": 46.494610770689384,
     "lon": 13.732910156250002,
-    "turnStartLat": 46.31658418182218,
-    "turnStartLon": 14.029541015625002,
-    "kmMovedThisTurn": 30.152176432768805,
+    "turnStartLat": 46.494610770689384,
+    "turnStartLon": 13.732910156250002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -176,9 +148,9 @@
     "commander": "Franz Leopold von Nádasdy",
     "lat": 49.03786794532644,
     "lon": 17.094726562500004,
-    "turnStartLat": 48.28319289548349,
-    "turnStartLon": 16.907958984375004,
-    "kmMovedThisTurn": 85.02972970528577,
+    "turnStartLat": 49.03786794532644,
+    "turnStartLon": 17.094726562500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -190,9 +162,9 @@
     "commander": "",
     "lat": 49.27676479458532,
     "lon": 16.960144042968754,
-    "turnStartLat": 49.59290945425264,
-    "turnStartLon": 16.353149414062504,
-    "kmMovedThisTurn": 56.23443371768468,
+    "turnStartLat": 49.27676479458532,
+    "turnStartLon": 16.960144042968754,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -204,9 +176,9 @@
     "commander": "Franz Moritz von Lacy",
     "lat": 49.45027157571992,
     "lon": 17.155151367187504,
-    "turnStartLat": 49.14937676724421,
-    "turnStartLon": 16.787109375000004,
-    "kmMovedThisTurn": 42.79735416678678,
+    "turnStartLat": 49.45027157571992,
+    "turnStartLon": 17.155151367187504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -218,9 +190,9 @@
     "commander": "John Sigismund Maguire",
     "lat": 48.42920055556841,
     "lon": 15.040283203125002,
-    "turnStartLat": 47.989921667414194,
-    "turnStartLon": 20.451049804687504,
-    "kmMovedThisTurn": 803.3535233397329,
+    "turnStartLat": 48.42920055556841,
+    "turnStartLon": 15.040283203125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -232,9 +204,9 @@
     "commander": "",
     "lat": 48.3416461723746,
     "lon": 23.345947265625004,
-    "turnStartLat": 47.07760411715964,
-    "turnStartLon": 23.818359375000004,
-    "kmMovedThisTurn": 144.9305944205153,
+    "turnStartLat": 48.3416461723746,
+    "turnStartLon": 23.345947265625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -244,10 +216,10 @@
     "name": "Landwehr of Bohemia",
     "strength": 5000,
     "commander": "",
-    "lat": 49.69606181911566,
-    "lon": 14.743652343750002,
-    "turnStartLat": 49.69606181911566,
-    "turnStartLon": 14.743652343750002,
+    "lat": 49.41046858161139,
+    "lon": 16.92263334989548,
+    "turnStartLat": 49.41046858161139,
+    "turnStartLon": 16.92263334989548,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
