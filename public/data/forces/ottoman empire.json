@@ -8,9 +8,9 @@
     "commander": "Abdullah Pasha",
     "lat": 43.60691361835132,
     "lon": 18.80126953124999,
-    "turnStartLat": 32.0464994430577,
-    "turnStartLon": 14.699707031250002,
-    "kmMovedThisTurn": 1334.5100036037588,
+    "turnStartLat": 43.60691361835132,
+    "turnStartLon": 18.80126953124999,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -22,9 +22,9 @@
     "commander": "Osman Pasha",
     "lat": 33.45741512587934,
     "lon": 36.58264160156249,
-    "turnStartLat": 33.3756846529913,
-    "turnStartLon": 36.60462482343619,
-    "kmMovedThisTurn": 9.314233824791256,
+    "turnStartLat": 33.45741512587934,
+    "turnStartLon": 36.58264160156249,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Mehmed Pasha",
     "lat": 32.07370007219891,
     "lon": 12.376907318830492,
-    "turnStartLat": 36.608082033686536,
-    "turnStartLon": 10.074462890625002,
-    "kmMovedThisTurn": 546.6696873209912,
+    "turnStartLat": 32.07370007219891,
+    "turnStartLon": 12.376907318830492,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 31
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Ali Pasha",
     "lat": 47.5394554474239,
     "lon": 26.73339843749999,
-    "turnStartLat": 42.577121739572405,
-    "turnStartLon": 24.916992187500004,
-    "kmMovedThisTurn": 569.887451444634,
+    "turnStartLat": 47.5394554474239,
+    "turnStartLon": 26.73339843749999,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   },
   {
