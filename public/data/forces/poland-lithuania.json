@@ -104,11 +104,11 @@
     "name": "Army of Silesia",
     "strength": 65000,
     "commander": "",
-    "lat": 49.47704787438876,
-    "lon": 17.355651855468754,
+    "lat": 49.459198634468564,
+    "lon": 17.22793579101563,
     "turnStartLat": 49.47704787438876,
     "turnStartLon": 17.355651855468754,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 9.440064166546785,
     "createdAtTurn": 57
   },
   {
@@ -132,11 +132,11 @@
     "name": "Slovakian Army",
     "strength": 60000,
     "commander": "",
-    "lat": 49.20683172516031,
-    "lon": 17.286987304687504,
+    "lat": 49.07386590128542,
+    "lon": 17.16751098632813,
     "turnStartLat": 49.20683172516031,
     "turnStartLon": 17.286987304687504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 17.150445793123804,
     "createdAtTurn": 61
   }
 ]
