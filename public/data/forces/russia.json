@@ -6,11 +6,11 @@
     "name": "Army of the Center",
     "strength": 80000,
     "commander": "J",
-    "lat": 54.20743611987478,
-    "lon": 29.322509765625004,
+    "lat": 54.03358633521085,
+    "lon": 28.212890625000004,
     "turnStartLat": 54.20743611987478,
     "turnStartLon": 29.322509765625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 74.85158323319264,
     "createdAtTurn": 2
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the South",
     "strength": 60000,
     "commander": "Menshikov",
-    "lat": 50.77815527465925,
-    "lon": 31.453857421875004,
+    "lat": 50.757309850294085,
+    "lon": 30.366210937500004,
     "turnStartLat": 50.77815527465925,
     "turnStartLon": 31.453857421875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 76.52530160877747,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of the North",
     "strength": 40000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 54.73730756865752,
-    "lon": 27.685546875000004,
+    "lat": 54.57842969715518,
+    "lon": 26.883544921875004,
     "turnStartLat": 54.73730756865752,
     "turnStartLon": 27.685546875000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 54.526852959482106,
     "createdAtTurn": 2
   },
   {
@@ -132,11 +132,11 @@
     "name": "Cossack Host",
     "strength": 15000,
     "commander": "",
-    "lat": 49.224772722794825,
-    "lon": 34.38720703125001,
+    "lat": 48.545705491847464,
+    "lon": 32.71728515625001,
     "turnStartLat": 49.224772722794825,
     "turnStartLon": 34.38720703125001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 143.5584045740958,
     "createdAtTurn": 62
   },
   {
@@ -146,11 +146,11 @@
     "name": "Cossack Host",
     "strength": 15000,
     "commander": "",
-    "lat": 48.32703913063479,
-    "lon": 33.77197265625001,
+    "lat": 47.76886840424207,
+    "lon": 32.21191406250001,
     "turnStartLat": 48.32703913063479,
     "turnStartLon": 33.77197265625001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 131.527329296199,
     "createdAtTurn": 62
   },
   {
@@ -202,11 +202,11 @@
     "name": "Kalmyk Horsemen",
     "strength": 5000,
     "commander": "",
-    "lat": 49.89463439573421,
-    "lon": 33.00292968750001,
+    "lat": 49.75287993415023,
+    "lon": 31.651611328125004,
     "turnStartLat": 49.89463439573421,
     "turnStartLon": 33.00292968750001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 98.21042316851663,
     "createdAtTurn": 62
   },
   {
@@ -230,11 +230,11 @@
     "name": "Army of the Dnieper",
     "strength": 45000,
     "commander": "",
-    "lat": 52.736291655910925,
-    "lon": 28.718261718750004,
+    "lat": 52.64306343665892,
+    "lon": 27.872314453125004,
     "turnStartLat": 52.736291655910925,
     "turnStartLon": 28.718261718750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 57.950191694628394,
     "createdAtTurn": 62
   },
   {
