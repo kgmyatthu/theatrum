@@ -255,14 +255,14 @@
     "id": "yellowwithblue-1784952028257-0",
     "nation": "austria",
     "branch": "army",
-    "name": "Flying Column (incl. militia) and Pressburg Garrison",
-    "strength": 8000,
+    "name": "Flying Column",
+    "strength": 5000,
     "commander": "",
-    "lat": 48.16974908365419,
-    "lon": 17.204589843750004,
+    "lat": 48.748945343432936,
+    "lon": 19.201354980468754,
     "turnStartLat": 48.16974908365419,
     "turnStartLon": 17.204589843750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 160.70223854392432,
     "createdAtTurn": 65
   },
   {
@@ -334,5 +334,19 @@
     "turnStartLon": 13.789215087890627,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "yellowwithblue-1785100267382-0",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Garrison of Pressburg",
+    "strength": 4000,
+    "commander": "",
+    "lat": 48.133100659448935,
+    "lon": 17.174377441406254,
+    "turnStartLat": 48.133100659448935,
+    "turnStartLon": 17.174377441406254,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 67
   }
 ]
