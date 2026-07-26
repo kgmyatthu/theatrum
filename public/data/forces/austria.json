@@ -311,14 +311,14 @@
     "id": "yellowwithblue-1784958344490-1",
     "nation": "austria",
     "branch": "army",
-    "name": "Army of Croatia (Assembling)",
+    "name": "Army of Croatia",
     "strength": 30000,
     "commander": "Army of Croatia",
-    "lat": 45.68315803253308,
-    "lon": 15.573120117187502,
+    "lat": 45.64860838388028,
+    "lon": 14.438781738281252,
     "turnStartLat": 45.68315803253308,
     "turnStartLon": 15.573120117187502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 88.2296610602937,
     "createdAtTurn": 65
   },
   {
