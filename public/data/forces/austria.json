@@ -62,11 +62,11 @@
     "name": "Landwehr of Tyrol",
     "strength": 5000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 46.37725420510028,
-    "lon": 14.754638671875002,
+    "lat": 46.145588688591985,
+    "lon": 14.891967773437502,
     "turnStartLat": 46.2330529447983,
     "turnStartLon": 11.162109375,
-    "kmMovedThisTurn": 276.4030631138153,
+    "kmMovedThisTurn": 304.24255715650656,
     "createdAtTurn": 64
   },
   {
@@ -76,11 +76,11 @@
     "name": "Standschützen of Tyrol",
     "strength": 5000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 46.44542749723387,
-    "lon": 14.326171875000002,
+    "lat": 46.255846818480336,
+    "lon": 14.337158203125002,
     "turnStartLat": 46.76996843356982,
     "turnStartLon": 12.293701171875002,
-    "kmMovedThisTurn": 159.39369104350038,
+    "kmMovedThisTurn": 192.74929665679167,
     "createdAtTurn": 64
   },
   {
@@ -118,11 +118,11 @@
     "name": "Grenzer Corps",
     "strength": 5000,
     "commander": "Grenzer Corps",
-    "lat": 46.05036097561633,
-    "lon": 13.727416992187502,
+    "lat": 45.916765867649005,
+    "lon": 13.886718750000002,
     "turnStartLat": 46.07323062540835,
     "turnStartLon": 14.024047851562502,
-    "kmMovedThisTurn": 23.02773174265789,
+    "kmMovedThisTurn": 42.319523700437585,
     "createdAtTurn": 64
   },
   {
@@ -132,11 +132,11 @@
     "name": "Landwehr of Slovenia",
     "strength": 5000,
     "commander": "",
-    "lat": 46.29381556233369,
-    "lon": 13.864746093750002,
+    "lat": 46.13417004624326,
+    "lon": 13.941650390625002,
     "turnStartLat": 46.494610770689384,
     "turnStartLon": 13.732910156250002,
-    "kmMovedThisTurn": 24.509910998699954,
+    "kmMovedThisTurn": 43.22192036239453,
     "createdAtTurn": 64
   },
   {
@@ -328,11 +328,11 @@
     "name": "Garrison of Trieste",
     "strength": 4500,
     "commander": "",
-    "lat": 45.66108710567762,
-    "lon": 13.789215087890627,
+    "lat": 45.72727377526009,
+    "lon": 14.191589355468752,
     "turnStartLat": 45.66108710567762,
     "turnStartLon": 13.789215087890627,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 32.17295290202123,
     "createdAtTurn": 65
   },
   {
