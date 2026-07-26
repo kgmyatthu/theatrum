@@ -244,11 +244,11 @@
     "name": "Army of the Hungarian Diet",
     "strength": 15000,
     "commander": "Iiv",
-    "lat": 48.785151998043155,
-    "lon": 19.500732421875004,
+    "lat": 48.5729726246542,
+    "lon": 19.157409667968754,
     "turnStartLat": 48.785151998043155,
     "turnStartLon": 19.500732421875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 34.525458021461304,
     "createdAtTurn": 65
   },
   {
@@ -258,11 +258,11 @@
     "name": "Flying Column",
     "strength": 5000,
     "commander": "",
-    "lat": 48.748945343432936,
-    "lon": 19.201354980468754,
+    "lat": 48.58932584966975,
+    "lon": 19.1546630859375,
     "turnStartLat": 48.16974908365419,
     "turnStartLon": 17.204589843750004,
-    "kmMovedThisTurn": 160.70223854392432,
+    "kmMovedThisTurn": 187.6898417858122,
     "createdAtTurn": 65
   },
   {
@@ -272,11 +272,11 @@
     "name": "Landwehr of Hungary",
     "strength": 4000,
     "commander": "",
-    "lat": 48.753472602916894,
-    "lon": 19.646301269531254,
+    "lat": 48.57842428752037,
+    "lon": 19.193115234375004,
     "turnStartLat": 48.5275192374508,
     "turnStartLon": 19.857788085937504,
-    "kmMovedThisTurn": 29.572920842910673,
+    "kmMovedThisTurn": 68.12811416255387,
     "createdAtTurn": 65
   },
   {
@@ -300,11 +300,11 @@
     "name": "Second-Rate Grenzer Corps",
     "strength": 3000,
     "commander": "",
-    "lat": 48.81048112472012,
-    "lon": 19.778137207031254,
+    "lat": 48.57660713188409,
+    "lon": 19.1656494140625,
     "turnStartLat": 48.63290858589535,
     "turnStartLon": 21.187133789062504,
-    "kmMovedThisTurn": 105.22749243216629,
+    "kmMovedThisTurn": 157.16270751899287,
     "createdAtTurn": 65
   },
   {
