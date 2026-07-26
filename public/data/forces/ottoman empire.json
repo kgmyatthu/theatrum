@@ -118,11 +118,11 @@
     "name": "Rumeli Ordusu",
     "strength": 35000,
     "commander": "Ali Pasha",
-    "lat": 42.577121739572405,
-    "lon": 24.916992187500004,
+    "lat": 47.5394554474239,
+    "lon": 26.73339843749999,
     "turnStartLat": 42.577121739572405,
     "turnStartLon": 24.916992187500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 569.887451444634,
     "createdAtTurn": 61
   },
   {
