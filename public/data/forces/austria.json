@@ -328,11 +328,11 @@
     "name": "Garrison of Trieste",
     "strength": 4500,
     "commander": "",
-    "lat": 45.72727377526009,
-    "lon": 14.191589355468752,
+    "lat": 45.64092778836502,
+    "lon": 13.822174072265627,
     "turnStartLat": 45.66108710567762,
     "turnStartLon": 13.789215087890627,
-    "kmMovedThisTurn": 32.17295290202123,
+    "kmMovedThisTurn": 62.43351206043803,
     "createdAtTurn": 65
   },
   {
