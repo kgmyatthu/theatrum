@@ -62,11 +62,11 @@
     "name": "Landwehr of Tyrol",
     "strength": 5000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 46.2330529447983,
-    "lon": 11.162109375,
+    "lat": 46.37725420510028,
+    "lon": 14.754638671875002,
     "turnStartLat": 46.2330529447983,
     "turnStartLon": 11.162109375,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 276.4030631138153,
     "createdAtTurn": 64
   },
   {
@@ -76,11 +76,11 @@
     "name": "Standschützen of Tyrol",
     "strength": 5000,
     "commander": "Leopold Joseph von Daun",
-    "lat": 46.76996843356982,
-    "lon": 12.293701171875002,
+    "lat": 46.44542749723387,
+    "lon": 14.326171875000002,
     "turnStartLat": 46.76996843356982,
     "turnStartLon": 12.293701171875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 159.39369104350038,
     "createdAtTurn": 64
   },
   {
@@ -118,11 +118,11 @@
     "name": "Grenzer Corps",
     "strength": 5000,
     "commander": "Grenzer Corps",
-    "lat": 46.07323062540835,
-    "lon": 14.024047851562502,
+    "lat": 46.05036097561633,
+    "lon": 13.727416992187502,
     "turnStartLat": 46.07323062540835,
     "turnStartLon": 14.024047851562502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 23.02773174265789,
     "createdAtTurn": 64
   },
   {
@@ -132,11 +132,11 @@
     "name": "Landwehr of Slovenia",
     "strength": 5000,
     "commander": "",
-    "lat": 46.494610770689384,
-    "lon": 13.732910156250002,
+    "lat": 46.29381556233369,
+    "lon": 13.864746093750002,
     "turnStartLat": 46.494610770689384,
     "turnStartLon": 13.732910156250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 24.509910998699954,
     "createdAtTurn": 64
   },
   {
@@ -272,11 +272,11 @@
     "name": "Landwehr of Hungary",
     "strength": 4000,
     "commander": "",
-    "lat": 48.5275192374508,
-    "lon": 19.857788085937504,
+    "lat": 48.753472602916894,
+    "lon": 19.646301269531254,
     "turnStartLat": 48.5275192374508,
     "turnStartLon": 19.857788085937504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 29.572920842910673,
     "createdAtTurn": 65
   },
   {
@@ -300,11 +300,11 @@
     "name": "Second-Rate Grenzer Corps",
     "strength": 3000,
     "commander": "",
-    "lat": 48.63290858589535,
-    "lon": 21.187133789062504,
+    "lat": 48.81048112472012,
+    "lon": 19.778137207031254,
     "turnStartLat": 48.63290858589535,
     "turnStartLon": 21.187133789062504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 105.22749243216629,
     "createdAtTurn": 65
   },
   {
