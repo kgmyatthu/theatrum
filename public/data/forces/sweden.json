@@ -6,11 +6,11 @@
     "name": "Karlskrona Battlefleet",
     "strength": 30,
     "commander": "John Larp",
-    "lat": 54.51470449573694,
-    "lon": 14.447021484375002,
+    "lat": 57.37393841871411,
+    "lon": 23.774414062500004,
     "turnStartLat": 54.51470449573694,
     "turnStartLon": 14.447021484375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 661.3448725704117,
     "createdAtTurn": 34
   },
   {
