@@ -146,11 +146,11 @@
     "name": "Franz Leopold von Nádasdy",
     "strength": 24000,
     "commander": "Franz Leopold von Nádasdy",
-    "lat": 49.03786794532644,
-    "lon": 17.094726562500004,
+    "lat": 48.739889600673365,
+    "lon": 16.534423828125004,
     "turnStartLat": 49.03786794532644,
     "turnStartLon": 17.094726562500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 52.687590080795985,
     "createdAtTurn": 64
   },
   {
@@ -174,11 +174,11 @@
     "name": "Franz Moritz von Lacy",
     "strength": 9000,
     "commander": "Franz Moritz von Lacy",
-    "lat": 49.45027157571992,
-    "lon": 17.155151367187504,
+    "lat": 49.3935468054482,
+    "lon": 17.028808593750004,
     "turnStartLat": 49.45027157571992,
     "turnStartLon": 17.155151367187504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 11.103855332411088,
     "createdAtTurn": 64
   },
   {
@@ -258,11 +258,11 @@
     "name": "Second-Rate Grenzer Corps",
     "strength": 3000,
     "commander": "",
-    "lat": 48.57660713188409,
-    "lon": 19.1656494140625,
+    "lat": 47.593198777144636,
+    "lon": 19.182128906250004,
     "turnStartLat": 48.63290858589535,
     "turnStartLon": 21.187133789062504,
-    "kmMovedThisTurn": 157.16270751899287,
+    "kmMovedThisTurn": 266.5195780859815,
     "createdAtTurn": 65
   },
   {
