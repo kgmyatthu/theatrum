@@ -22,9 +22,9 @@
     "commander": "",
     "lat": 38.70265930723801,
     "lon": 19.830322265625004,
-    "turnStartLat": 45.706179285330855,
-    "turnStartLon": 13.743896484375002,
-    "kmMovedThisTurn": 925.5487905669646,
+    "turnStartLat": 38.70265930723801,
+    "turnStartLon": 19.830322265625004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Leopold Joseph von Daun",
     "lat": 48.402767712529176,
     "lon": 15.358886718750002,
-    "turnStartLat": 48.31973404047173,
-    "turnStartLon": 14.982604980468752,
-    "kmMovedThisTurn": 29.340920805013955,
+    "turnStartLat": 48.402767712529176,
+    "turnStartLon": 15.358886718750002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Leopold Joseph von Daun",
     "lat": 46.145588688591985,
     "lon": 14.891967773437502,
-    "turnStartLat": 46.2330529447983,
-    "turnStartLon": 11.162109375,
-    "kmMovedThisTurn": 304.24255715650656,
+    "turnStartLat": 46.145588688591985,
+    "turnStartLon": 14.891967773437502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -78,9 +78,9 @@
     "commander": "Leopold Joseph von Daun",
     "lat": 46.255846818480336,
     "lon": 14.337158203125002,
-    "turnStartLat": 46.76996843356982,
-    "turnStartLon": 12.293701171875002,
-    "kmMovedThisTurn": 192.74929665679167,
+    "turnStartLat": 46.255846818480336,
+    "turnStartLon": 14.337158203125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Ernst Gideon von Laudon",
     "lat": 48.53024759209485,
     "lon": 15.317687988281252,
-    "turnStartLat": 48.227417282332816,
-    "turnStartLon": 15.043029785156252,
-    "kmMovedThisTurn": 45.70510283423546,
+    "turnStartLat": 48.53024759209485,
+    "turnStartLon": 15.317687988281252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -120,9 +120,9 @@
     "commander": "Grenzer Corps",
     "lat": 45.916765867649005,
     "lon": 13.886718750000002,
-    "turnStartLat": 46.07323062540835,
-    "turnStartLon": 14.024047851562502,
-    "kmMovedThisTurn": 42.319523700437585,
+    "turnStartLat": 45.916765867649005,
+    "turnStartLon": 13.886718750000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -134,9 +134,9 @@
     "commander": "",
     "lat": 46.13417004624326,
     "lon": 13.941650390625002,
-    "turnStartLat": 46.494610770689384,
-    "turnStartLon": 13.732910156250002,
-    "kmMovedThisTurn": 43.22192036239453,
+    "turnStartLat": 46.13417004624326,
+    "turnStartLon": 13.941650390625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -148,9 +148,9 @@
     "commander": "Franz Leopold von Nádasdy",
     "lat": 48.739889600673365,
     "lon": 16.534423828125004,
-    "turnStartLat": 49.03786794532644,
-    "turnStartLon": 17.094726562500004,
-    "kmMovedThisTurn": 52.687590080795985,
+    "turnStartLat": 48.739889600673365,
+    "turnStartLon": 16.534423828125004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Franz Moritz von Lacy",
     "lat": 49.3935468054482,
     "lon": 17.028808593750004,
-    "turnStartLat": 49.45027157571992,
-    "turnStartLon": 17.155151367187504,
-    "kmMovedThisTurn": 11.103855332411088,
+    "turnStartLat": 49.3935468054482,
+    "turnStartLon": 17.028808593750004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -190,9 +190,9 @@
     "commander": "John Sigismund Maguire",
     "lat": 48.46836878749394,
     "lon": 15.338287353515627,
-    "turnStartLat": 48.42920055556841,
-    "turnStartLon": 15.040283203125002,
-    "kmMovedThisTurn": 22.406463676055598,
+    "turnStartLat": 48.46836878749394,
+    "turnStartLon": 15.338287353515627,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -246,9 +246,9 @@
     "commander": "",
     "lat": 48.52388120259336,
     "lon": 16.08535766601563,
-    "turnStartLat": 48.571155273059546,
-    "turnStartLon": 16.149902343750004,
-    "kmMovedThisTurn": 7.085622266254393,
+    "turnStartLat": 48.52388120259336,
+    "turnStartLon": 16.08535766601563,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 65
   },
   {
@@ -260,9 +260,9 @@
     "commander": "",
     "lat": 47.593198777144636,
     "lon": 19.182128906250004,
-    "turnStartLat": 48.63290858589535,
-    "turnStartLon": 21.187133789062504,
-    "kmMovedThisTurn": 266.5195780859815,
+    "turnStartLat": 47.593198777144636,
+    "turnStartLon": 19.182128906250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 65
   },
   {
@@ -274,9 +274,9 @@
     "commander": "Army of Croatia",
     "lat": 45.64860838388028,
     "lon": 14.438781738281252,
-    "turnStartLat": 45.68315803253308,
-    "turnStartLon": 15.573120117187502,
-    "kmMovedThisTurn": 88.2296610602937,
+    "turnStartLat": 45.64860838388028,
+    "turnStartLon": 14.438781738281252,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 65
   },
   {
