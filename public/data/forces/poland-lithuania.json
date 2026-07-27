@@ -118,11 +118,11 @@
     "name": "Army of Prussia",
     "strength": 65000,
     "commander": "",
-    "lat": 53.1072166918934,
-    "lon": 18.577880859375004,
+    "lat": 53.6120622350988,
+    "lon": 23.653564453125004,
     "turnStartLat": 53.1072166918934,
     "turnStartLon": 18.577880859375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 341.39165419929475,
     "createdAtTurn": 61
   },
   {
