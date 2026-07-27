@@ -280,20 +280,6 @@
     "createdAtTurn": 65
   },
   {
-    "id": "yellowwithblue-1784958448279-2",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Garrison of Trieste",
-    "strength": 4500,
-    "commander": "",
-    "lat": 45.64092778836502,
-    "lon": 13.822174072265627,
-    "turnStartLat": 45.66108710567762,
-    "turnStartLon": 13.789215087890627,
-    "kmMovedThisTurn": 62.43351206043803,
-    "createdAtTurn": 65
-  },
-  {
     "id": "yellowwithblue-1785100267382-0",
     "nation": "austria",
     "branch": "army",
