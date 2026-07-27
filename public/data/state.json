@@ -467,7 +467,7 @@
     ],
     [
       116,
-      "contested territories"
+      "bohemia"
     ],
     [
       117,
@@ -475,11 +475,11 @@
     ],
     [
       118,
-      "contested territories"
+      "bohemia"
     ],
     [
       119,
-      "contested territories"
+      "bohemia"
     ],
     [
       120,
@@ -487,11 +487,11 @@
     ],
     [
       121,
-      "contested territories"
+      "bohemia"
     ],
     [
       122,
-      "contested territories"
+      "bohemia"
     ],
     [
       123,
@@ -1303,7 +1303,7 @@
     ],
     [
       325,
-      "contested territories"
+      "bohemia"
     ],
     [
       326,
@@ -1311,15 +1311,15 @@
     ],
     [
       327,
-      "austria"
+      "bohemia"
     ],
     [
       328,
-      "contested territories"
+      "bohemia"
     ],
     [
       329,
-      "austria"
+      "bohemia"
     ],
     [
       330,
@@ -1511,15 +1511,15 @@
     ],
     [
       377,
-      "contested territories"
+      "austrian duchies"
     ],
     [
       378,
-      "austria"
+      "bohemia"
     ],
     [
       379,
-      "contested territories"
+      "austrian duchies"
     ],
     [
       380,
@@ -1587,15 +1587,15 @@
     ],
     [
       396,
-      "austria"
+      "austrian duchies"
     ],
     [
       397,
-      "austria"
+      "austrian duchies"
     ],
     [
       398,
-      "austria"
+      "austrian duchies"
     ],
     [
       399,
@@ -2355,7 +2355,7 @@
     ],
     [
       588,
-      "austria"
+      "austrian duchies"
     ],
     [
       589,
@@ -2363,7 +2363,7 @@
     ],
     [
       590,
-      "austria"
+      "austrian duchies"
     ],
     [
       591,
@@ -2383,15 +2383,15 @@
     ],
     [
       595,
-      "hungary"
+      "venice"
     ],
     [
       596,
-      "hungary"
+      "venice"
     ],
     [
       597,
-      "hungary"
+      "venice"
     ],
     [
       598,
@@ -2399,15 +2399,15 @@
     ],
     [
       599,
-      "hungary"
+      "venice"
     ],
     [
       600,
-      "hungary"
+      "venice"
     ],
     [
       601,
-      "hungary"
+      "venice"
     ],
     [
       602,
@@ -3159,7 +3159,7 @@
     ],
     [
       789,
-      "austria"
+      "austrian duchies"
     ],
     [
       790,
@@ -3347,7 +3347,7 @@
     ],
     [
       836,
-      "austria"
+      "bohemia"
     ],
     [
       837,
@@ -17447,15 +17447,15 @@
     ],
     [
       4361,
-      "contested territories"
+      "bohemia"
     ],
     [
       4362,
-      "contested territories"
+      "bohemia"
     ],
     [
       4363,
-      "contested territories"
+      "bohemia"
     ],
     [
       4364,
@@ -17711,7 +17711,7 @@
     ],
     [
       4427,
-      "austria"
+      "austrian duchies"
     ],
     [
       4428,
@@ -18400,6 +18400,10 @@
       "color": "#FCD840"
     },
     {
+      "name": "austrian duchies",
+      "color": "#ff7e29"
+    },
+    {
       "name": "avic",
       "color": "#9f853c"
     },
@@ -18410,6 +18414,10 @@
     {
       "name": "bhutan",
       "color": "#FFB300"
+    },
+    {
+      "name": "bohemia",
+      "color": "#4beca6"
     },
     {
       "name": "bornu",
