@@ -14,20 +14,6 @@
     "createdAtTurn": 34
   },
   {
-    "id": "yellowwithblue-1783829607186-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Gustaf David Hamilton",
-    "strength": 15000,
-    "commander": "Gustaf David Hamilton",
-    "lat": 59.94400716933027,
-    "lon": 10.56884765625,
-    "turnStartLat": 59.94400716933027,
-    "turnStartLon": 10.56884765625,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 47
-  },
-  {
     "id": "yellowwithblue-1783829620969-2",
     "nation": "sweden",
     "branch": "army",
@@ -48,11 +34,11 @@
     "name": "Mattias Alexander von Ungern-Sternberg",
     "strength": 15000,
     "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 56.93448595488503,
-    "lon": 24.386901855468754,
+    "lat": 57.37245755833189,
+    "lon": 24.925231933593754,
     "turnStartLat": 56.93448595488503,
     "turnStartLon": 24.386901855468754,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 58.53022853956906,
     "createdAtTurn": 54
   },
   {
@@ -76,11 +62,11 @@
     "name": "Augustin Ehrensvärd",
     "strength": 35000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 56.962947135260585,
-    "lon": 24.158935546875004,
+    "lat": 57.37838064115476,
+    "lon": 24.746704101562504,
     "turnStartLat": 56.962947135260585,
     "turnStartLon": 24.158935546875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 58.21771755094112,
     "createdAtTurn": 64
   },
   {
@@ -96,5 +82,47 @@
     "turnStartLon": 13.098449707031252,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
+  },
+  {
+    "id": "yellowwithblue-1785113870349-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Riga",
+    "strength": 10000,
+    "commander": "Johan August Meijerfeldt the Younger",
+    "lat": 56.94909374837349,
+    "lon": 24.106407165527344,
+    "turnStartLat": 56.94909374837349,
+    "turnStartLon": 24.106407165527344,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 67
+  },
+  {
+    "id": "yellowwithblue-1785113904783-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Dünamünde",
+    "strength": 2500,
+    "commander": "Johan August Meijerfeldt the Younger",
+    "lat": 56.93973043656939,
+    "lon": 23.852691650390625,
+    "turnStartLat": 56.93973043656939,
+    "turnStartLon": 23.852691650390625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 67
+  },
+  {
+    "id": "yellowwithblue-1785113920784-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Gustaf David Hamilton",
+    "strength": 15000,
+    "commander": "Gustaf David Hamilton",
+    "lat": 57.715885127745054,
+    "lon": 24.971923828125004,
+    "turnStartLat": 57.715885127745054,
+    "turnStartLon": 24.971923828125004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 67
   }
 ]
