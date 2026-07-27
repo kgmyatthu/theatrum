@@ -230,11 +230,11 @@
     "name": "1st Army of Italy",
     "strength": 40000,
     "commander": "Luigi",
-    "lat": 45.93898547203757,
-    "lon": 14.535127691924576,
+    "lat": 45.6928225759872,
+    "lon": 13.842773437500002,
     "turnStartLat": 45.93898547203757,
     "turnStartLon": 14.535127691924576,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 60.23494348676583,
     "createdAtTurn": 24
   },
   {
@@ -258,11 +258,11 @@
     "name": "3rd Army of Italy",
     "strength": 20000,
     "commander": "",
-    "lat": 45.975755507218956,
-    "lon": 14.083392396569254,
+    "lat": 45.30606047544529,
+    "lon": 9.689941406250002,
     "turnStartLat": 45.975755507218956,
     "turnStartLon": 14.083392396569254,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 349.5306212464925,
     "createdAtTurn": 65
   },
   {
