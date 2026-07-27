@@ -56,34 +56,6 @@
     "createdAtTurn": 64
   },
   {
-    "id": "yellowwithblue-1784862880885-3",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Landwehr of Tyrol",
-    "strength": 5000,
-    "commander": "Leopold Joseph von Daun",
-    "lat": 46.145588688591985,
-    "lon": 14.891967773437502,
-    "turnStartLat": 46.145588688591985,
-    "turnStartLon": 14.891967773437502,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1784862903814-4",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Standschützen of Tyrol",
-    "strength": 5000,
-    "commander": "Leopold Joseph von Daun",
-    "lat": 46.255846818480336,
-    "lon": 14.337158203125002,
-    "turnStartLat": 46.255846818480336,
-    "turnStartLon": 14.337158203125002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
     "id": "yellowwithblue-1784862926605-5",
     "nation": "austria",
     "branch": "army",
@@ -108,34 +80,6 @@
     "lon": 19.061279296875004,
     "turnStartLat": 47.48008846346322,
     "turnStartLon": 19.061279296875004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1784863022897-8",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Grenzer Corps",
-    "strength": 5000,
-    "commander": "Grenzer Corps",
-    "lat": 45.916765867649005,
-    "lon": 13.886718750000002,
-    "turnStartLat": 45.916765867649005,
-    "turnStartLon": 13.886718750000002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1784863099696-9",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Landwehr of Slovenia",
-    "strength": 5000,
-    "commander": "",
-    "lat": 46.13417004624326,
-    "lon": 13.941650390625002,
-    "turnStartLat": 46.13417004624326,
-    "turnStartLon": 13.941650390625002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
@@ -224,20 +168,6 @@
     "createdAtTurn": 64
   },
   {
-    "id": "yellowwithblue-1784934732859-6",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Garrison of Zagreb",
-    "strength": 4000,
-    "commander": "Garrison of Zagreb",
-    "lat": 45.75985868785574,
-    "lon": 16.051025390625004,
-    "turnStartLat": 45.75985868785574,
-    "turnStartLon": 16.051025390625004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 64
-  },
-  {
     "id": "yellowwithblue-1784952393375-0",
     "nation": "austria",
     "branch": "army",
@@ -262,20 +192,6 @@
     "lon": 19.182128906250004,
     "turnStartLat": 47.593198777144636,
     "turnStartLon": 19.182128906250004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 65
-  },
-  {
-    "id": "yellowwithblue-1784958344490-1",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Army of Croatia",
-    "strength": 30000,
-    "commander": "Army of Croatia",
-    "lat": 45.64860838388028,
-    "lon": 14.438781738281252,
-    "turnStartLat": 45.64860838388028,
-    "turnStartLon": 14.438781738281252,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
   },
