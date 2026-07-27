@@ -386,9 +386,9 @@
     "commander": "Frederik Hoppe",
     "lat": 54.93661015660588,
     "lon": 8.536376953125002,
-    "turnStartLat": 55.62799595426723,
-    "turnStartLon": 12.579345703125002,
-    "kmMovedThisTurn": 267.28576066434334,
+    "turnStartLat": 54.93661015660588,
+    "turnStartLon": 8.536376953125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
