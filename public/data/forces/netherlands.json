@@ -6,11 +6,11 @@
     "name": "Admiralty of Amsterdam (SOTLs no. only)",
     "strength": 5,
     "commander": "John Admiral",
-    "lat": 52.342051636387865,
-    "lon": 5.059204101562501,
+    "lat": 55.17259379606185,
+    "lon": 0.46142578125000006,
     "turnStartLat": 52.342051636387865,
     "turnStartLon": 5.059204101562501,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 492.69690951705326,
     "createdAtTurn": 8
   },
   {
@@ -20,11 +20,11 @@
     "name": "Admiralty of Friesland (SOTls no. only)",
     "strength": 5,
     "commander": "John Admiral",
-    "lat": 53.416080203680465,
-    "lon": 6.756591796875001,
+    "lat": 54.482804559582554,
+    "lon": 0.8789062500000001,
     "turnStartLat": 53.416080203680465,
     "turnStartLon": 6.756591796875001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 402.35818626939744,
     "createdAtTurn": 8
   },
   {
@@ -34,11 +34,11 @@
     "name": "Admiralty of Rotterdam (SOTLs no. only)",
     "strength": 5,
     "commander": "Evertsen",
-    "lat": 51.890053935216926,
-    "lon": 4.430236816406251,
+    "lat": 56.15166933290848,
+    "lon": -0.889892578125,
     "turnStartLat": 51.890053935216926,
     "turnStartLon": 4.430236816406251,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 624.5679751477116,
     "createdAtTurn": 8
   },
   {
@@ -76,11 +76,11 @@
     "name": "Admiralty of Rotterdam [MOTHBALLED]",
     "strength": 45,
     "commander": "",
-    "lat": 51.7071623890975,
-    "lon": 3.515477398727356,
+    "lat": 54.09806018306314,
+    "lon": 1.4941406250000002,
     "turnStartLat": 51.7071623890975,
     "turnStartLon": 3.515477398727356,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 555.5984663181578,
     "createdAtTurn": 61
   },
   {
@@ -90,11 +90,25 @@
     "name": "Admiralty of Amsterdam [MOTHBALLED]",
     "strength": 40,
     "commander": "",
-    "lat": 52.59979740239744,
-    "lon": 5.442905152889681,
+    "lat": 55.78892895389265,
+    "lon": -0.49438476562500006,
     "turnStartLat": 52.59979740239744,
     "turnStartLon": 5.442905152889681,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 568.9171351578642,
     "createdAtTurn": 61
+  },
+  {
+    "id": "Vancouver1903-1785191307294-0",
+    "nation": "netherlands",
+    "branch": "navy",
+    "name": "Naval Frigate Levies",
+    "strength": 20,
+    "commander": "",
+    "lat": 53.6120622350988,
+    "lon": 1.5930175781250002,
+    "turnStartLat": 53.6120622350988,
+    "turnStartLon": 1.5930175781250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 67
   }
 ]
