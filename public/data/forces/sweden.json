@@ -8,9 +8,9 @@
     "commander": "Axel Lagerbielke",
     "lat": 57.37393841871411,
     "lon": 23.774414062500004,
-    "turnStartLat": 54.51470449573694,
-    "turnStartLon": 14.447021484375002,
-    "kmMovedThisTurn": 661.3448725704117,
+    "turnStartLat": 57.37393841871411,
+    "turnStartLon": 23.774414062500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 34
   },
   {
@@ -36,9 +36,9 @@
     "commander": "Mattias Alexander von Ungern-Sternberg",
     "lat": 57.37245755833189,
     "lon": 24.925231933593754,
-    "turnStartLat": 56.93448595488503,
-    "turnStartLon": 24.386901855468754,
-    "kmMovedThisTurn": 58.53022853956906,
+    "turnStartLat": 57.37245755833189,
+    "turnStartLon": 24.925231933593754,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Augustin Ehrensvärd",
     "lat": 57.37838064115476,
     "lon": 24.746704101562504,
-    "turnStartLat": 56.962947135260585,
-    "turnStartLon": 24.158935546875004,
-    "kmMovedThisTurn": 58.21771755094112,
+    "turnStartLat": 57.37838064115476,
+    "turnStartLon": 24.746704101562504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
