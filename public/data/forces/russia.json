@@ -4,13 +4,13 @@
     "nation": "russia",
     "branch": "army",
     "name": "Army of the Center",
-    "strength": 80000,
-    "commander": "J",
-    "lat": 54.03358633521085,
-    "lon": 28.212890625000004,
+    "strength": 72000,
+    "commander": "",
+    "lat": 53.90110181472827,
+    "lon": 27.7020263671875,
     "turnStartLat": 54.03358633521085,
     "turnStartLon": 28.212890625000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 36.51871387990895,
     "createdAtTurn": 2
   },
   {
