@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 40000,
     "commander": "Jan III Sobieski",
-    "lat": 56.43820369358167,
-    "lon": 24.455566406250004,
+    "lat": 54.71192884840614,
+    "lon": 24.367675781250004,
     "turnStartLat": 56.43820369358167,
     "turnStartLon": 24.455566406250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 192.03245505067127,
     "createdAtTurn": 4
   },
   {
@@ -60,13 +60,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Ukraine",
-    "strength": 28000,
+    "strength": 30000,
     "commander": "",
-    "lat": 48.8936153614802,
-    "lon": 19.671020507812504,
+    "lat": 51.08282186160978,
+    "lon": 29.168701171875004,
     "turnStartLat": 48.8936153614802,
     "turnStartLon": 19.671020507812504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 786.0940126201842,
     "createdAtTurn": 49
   },
   {
@@ -102,13 +102,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of Silesia",
-    "strength": 52000,
+    "strength": 55000,
     "commander": "",
-    "lat": 48.412795581099964,
-    "lon": 16.347656250000004,
+    "lat": 49.46098385110948,
+    "lon": 23.796386718750004,
     "turnStartLat": 48.412795581099964,
     "turnStartLon": 16.347656250000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 556.1705836008199,
     "createdAtTurn": 57
   },
   {
@@ -132,11 +132,11 @@
     "name": "Slovakian Army",
     "strength": 35000,
     "commander": "",
-    "lat": 48.32703913063479,
-    "lon": 16.542663574218754,
+    "lat": 50.736455137010665,
+    "lon": 29.179687500000004,
     "turnStartLat": 48.32703913063479,
     "turnStartLon": 16.542663574218754,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1003.7353133523957,
     "createdAtTurn": 61
   }
 ]
