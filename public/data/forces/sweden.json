@@ -34,11 +34,11 @@
     "name": "Samuel Gustaf Stierneld",
     "strength": 15000,
     "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 57.37245755833189,
-    "lon": 24.925231933593754,
+    "lat": 57.016814017391134,
+    "lon": 24.774169921875004,
     "turnStartLat": 57.37245755833189,
     "turnStartLon": 24.925231933593754,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 40.5793684286543,
     "createdAtTurn": 54
   },
   {
@@ -62,11 +62,11 @@
     "name": "Augustin Ehrensvärd",
     "strength": 35000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 57.37838064115476,
-    "lon": 24.746704101562504,
+    "lat": 57.07956023442378,
+    "lon": 24.581909179687504,
     "turnStartLat": 57.37838064115476,
     "turnStartLon": 24.746704101562504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 34.67610707373598,
     "createdAtTurn": 64
   },
   {
