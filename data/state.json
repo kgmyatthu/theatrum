@@ -3,11 +3,11 @@
   "ownerships": [
     [
       0,
-      "france"
+      "latin empire"
     ],
     [
       1,
-      "france"
+      "latin empire"
     ],
     [
       2,
@@ -19,39 +19,39 @@
     ],
     [
       4,
-      "france"
+      "latin empire"
     ],
     [
       5,
-      "unclaimed"
+      "latin empire"
     ],
     [
       6,
-      "france"
+      "latin empire"
     ],
     [
       7,
-      "france"
+      "latin empire"
     ],
     [
       8,
-      "france"
+      "latin empire"
     ],
     [
       9,
-      "france"
+      "latin empire"
     ],
     [
       10,
-      "france"
+      "latin empire"
     ],
     [
       11,
-      "france"
+      "latin empire"
     ],
     [
       12,
-      "france"
+      "latin empire"
     ],
     [
       13,
@@ -67,7 +67,7 @@
     ],
     [
       16,
-      "yarkent khanate"
+      "contested territories"
     ],
     [
       17,
@@ -187,7 +187,7 @@
     ],
     [
       46,
-      "france"
+      "latin empire"
     ],
     [
       47,
@@ -231,11 +231,11 @@
     ],
     [
       57,
-      "france"
+      "latin empire"
     ],
     [
       58,
-      "france"
+      "latin empire"
     ],
     [
       59,
@@ -295,11 +295,11 @@
     ],
     [
       73,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       74,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       75,
@@ -319,7 +319,7 @@
     ],
     [
       79,
-      "poland-lithuania"
+      "russia"
     ],
     [
       80,
@@ -351,7 +351,7 @@
     ],
     [
       87,
-      "france"
+      "latin empire"
     ],
     [
       88,
@@ -383,7 +383,7 @@
     ],
     [
       95,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       96,
@@ -395,7 +395,7 @@
     ],
     [
       98,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       99,
@@ -419,7 +419,7 @@
     ],
     [
       104,
-      "france"
+      "latin empire"
     ],
     [
       105,
@@ -463,23 +463,23 @@
     ],
     [
       115,
-      "russia"
+      "contested territories"
     ],
     [
       116,
-      "austria"
+      "bohemia"
     ],
     [
       117,
-      "saxony"
+      "contested territories"
     ],
     [
       118,
-      "austria"
+      "bohemia"
     ],
     [
       119,
-      "austria"
+      "bohemia"
     ],
     [
       120,
@@ -487,11 +487,11 @@
     ],
     [
       121,
-      "austria"
+      "bohemia"
     ],
     [
       122,
-      "austria"
+      "bohemia"
     ],
     [
       123,
@@ -515,7 +515,7 @@
     ],
     [
       128,
-      "contested territories"
+      "sweden"
     ],
     [
       129,
@@ -527,7 +527,7 @@
     ],
     [
       131,
-      "contested territories"
+      "sweden"
     ],
     [
       132,
@@ -575,15 +575,15 @@
     ],
     [
       143,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       144,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       145,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       146,
@@ -591,7 +591,7 @@
     ],
     [
       147,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       148,
@@ -599,15 +599,15 @@
     ],
     [
       149,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       150,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       151,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       152,
@@ -615,39 +615,39 @@
     ],
     [
       153,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       154,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       155,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       156,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       157,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       158,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       159,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       160,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       161,
-      "denmark"
+      "sweden"
     ],
     [
       162,
@@ -655,7 +655,7 @@
     ],
     [
       163,
-      "denmark"
+      "sweden"
     ],
     [
       164,
@@ -667,15 +667,15 @@
     ],
     [
       166,
-      "denmark"
+      "sweden"
     ],
     [
       167,
-      "denmark"
+      "sweden"
     ],
     [
       168,
-      "denmark"
+      "sweden"
     ],
     [
       169,
@@ -687,11 +687,11 @@
     ],
     [
       171,
-      "denmark"
+      "sweden"
     ],
     [
       172,
-      "contested territories"
+      "sweden"
     ],
     [
       173,
@@ -703,7 +703,7 @@
     ],
     [
       175,
-      "denmark"
+      "sweden"
     ],
     [
       176,
@@ -783,15 +783,15 @@
     ],
     [
       195,
-      "hre minor states"
+      "bavaria"
     ],
     [
       196,
-      "france"
+      "latin empire"
     ],
     [
       197,
-      "france"
+      "latin empire"
     ],
     [
       198,
@@ -799,51 +799,51 @@
     ],
     [
       199,
-      "france"
+      "latin empire"
     ],
     [
       200,
-      "france"
+      "latin empire"
     ],
     [
       201,
-      "france"
+      "latin empire"
     ],
     [
       202,
-      "france"
+      "latin empire"
     ],
     [
       203,
-      "france"
+      "latin empire"
     ],
     [
       204,
-      "france"
+      "latin empire"
     ],
     [
       205,
-      "france"
+      "latin empire"
     ],
     [
       206,
-      "france"
+      "latin empire"
     ],
     [
       207,
-      "france"
+      "latin empire"
     ],
     [
       208,
-      "austria"
+      "latin empire"
     ],
     [
       209,
-      "france"
+      "latin empire"
     ],
     [
       210,
-      "russia"
+      "crimea"
     ],
     [
       211,
@@ -983,11 +983,11 @@
     ],
     [
       245,
-      "france"
+      "latin empire"
     ],
     [
       246,
-      "spain"
+      "latin empire"
     ],
     [
       247,
@@ -1075,15 +1075,15 @@
     ],
     [
       268,
-      "holstein-gottorp"
+      "north sea empire"
     ],
     [
       269,
-      "denmark"
+      "north sea empire"
     ],
     [
       270,
-      "unclaimed"
+      "latin empire"
     ],
     [
       271,
@@ -1095,11 +1095,11 @@
     ],
     [
       273,
-      "france"
+      "latin empire"
     ],
     [
       274,
-      "france"
+      "latin empire"
     ],
     [
       275,
@@ -1183,35 +1183,35 @@
     ],
     [
       295,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       296,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       297,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       298,
-      "austria"
+      "hungary"
     ],
     [
       299,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       300,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       301,
-      "austria"
+      "hungary"
     ],
     [
       302,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       303,
@@ -1235,11 +1235,11 @@
     ],
     [
       308,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       309,
-      "austria"
+      "poland-lithuania"
     ],
     [
       310,
@@ -1247,7 +1247,7 @@
     ],
     [
       311,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       312,
@@ -1255,71 +1255,71 @@
     ],
     [
       313,
-      "britain"
+      "north sea empire"
     ],
     [
       314,
-      "britain"
+      "north sea empire"
     ],
     [
       315,
-      "britain"
+      "north sea empire"
     ],
     [
       316,
-      "britain"
+      "north sea empire"
     ],
     [
       317,
-      "britain"
+      "north sea empire"
     ],
     [
       318,
-      "britain"
+      "north sea empire"
     ],
     [
       319,
-      "britain"
+      "north sea empire"
     ],
     [
       320,
-      "britain"
+      "north sea empire"
     ],
     [
       321,
-      "britain"
+      "north sea empire"
     ],
     [
       322,
-      "britain"
+      "north sea empire"
     ],
     [
       323,
-      "britain"
+      "north sea empire"
     ],
     [
       324,
-      "austria"
+      "poland-lithuania"
     ],
     [
       325,
-      "austria"
+      "bohemia"
     ],
     [
       326,
-      "austria"
+      "poland-lithuania"
     ],
     [
       327,
-      "austria"
+      "bohemia"
     ],
     [
       328,
-      "austria"
+      "bohemia"
     ],
     [
       329,
-      "austria"
+      "bohemia"
     ],
     [
       330,
@@ -1371,11 +1371,11 @@
     ],
     [
       342,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       343,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       344,
@@ -1511,15 +1511,15 @@
     ],
     [
       377,
-      "austria"
+      "austrian duchies"
     ],
     [
       378,
-      "austria"
+      "bohemia"
     ],
     [
       379,
-      "austria"
+      "austrian duchies"
     ],
     [
       380,
@@ -1539,19 +1539,19 @@
     ],
     [
       384,
-      "austria"
+      "hungary"
     ],
     [
       385,
-      "austria"
+      "hungary"
     ],
     [
       386,
-      "austria"
+      "hungary"
     ],
     [
       387,
-      "austria"
+      "hungary"
     ],
     [
       388,
@@ -1571,11 +1571,11 @@
     ],
     [
       392,
-      "austria"
+      "latin empire"
     ],
     [
       393,
-      "austria"
+      "latin empire"
     ],
     [
       394,
@@ -1587,15 +1587,15 @@
     ],
     [
       396,
-      "austria"
+      "austrian duchies"
     ],
     [
       397,
-      "austria"
+      "austrian duchies"
     ],
     [
       398,
-      "austria"
+      "austrian duchies"
     ],
     [
       399,
@@ -1635,7 +1635,7 @@
     ],
     [
       408,
-      "hre minor states"
+      "hanover"
     ],
     [
       409,
@@ -1655,7 +1655,7 @@
     ],
     [
       413,
-      "austria"
+      "latin empire"
     ],
     [
       414,
@@ -1735,11 +1735,11 @@
     ],
     [
       433,
-      "france"
+      "latin empire"
     ],
     [
       434,
-      "france"
+      "latin empire"
     ],
     [
       435,
@@ -1779,7 +1779,7 @@
     ],
     [
       444,
-      "sweden"
+      "russia"
     ],
     [
       445,
@@ -1855,23 +1855,23 @@
     ],
     [
       463,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       464,
-      "austria"
+      "hungary"
     ],
     [
       465,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       466,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       467,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       468,
@@ -1951,35 +1951,35 @@
     ],
     [
       487,
-      "austria"
+      "hungary"
     ],
     [
       488,
-      "austria"
+      "hungary"
     ],
     [
       489,
-      "austria"
+      "hungary"
     ],
     [
       490,
-      "austria"
+      "hungary"
     ],
     [
       491,
-      "austria"
+      "hungary"
     ],
     [
       492,
-      "austria"
+      "hungary"
     ],
     [
       493,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       494,
-      "austria"
+      "hungary"
     ],
     [
       495,
@@ -1987,35 +1987,35 @@
     ],
     [
       496,
-      "austria"
+      "hungary"
     ],
     [
       497,
-      "austria"
+      "hungary"
     ],
     [
       498,
-      "austria"
+      "hungary"
     ],
     [
       499,
-      "austria"
+      "hungary"
     ],
     [
       500,
-      "austria"
+      "hungary"
     ],
     [
       501,
-      "austria"
+      "hungary"
     ],
     [
       502,
-      "austria"
+      "hungary"
     ],
     [
       503,
-      "austria"
+      "hungary"
     ],
     [
       504,
@@ -2255,39 +2255,39 @@
     ],
     [
       563,
-      "france"
+      "latin empire"
     ],
     [
       564,
-      "spain"
+      "latin empire"
     ],
     [
       565,
-      "spain"
+      "latin empire"
     ],
     [
       566,
-      "france"
+      "latin empire"
     ],
     [
       567,
-      "spain"
+      "latin empire"
     ],
     [
       568,
-      "spain"
+      "latin empire"
     ],
     [
       569,
-      "france"
+      "latin empire"
     ],
     [
       570,
-      "france"
+      "latin empire"
     ],
     [
       571,
-      "spain"
+      "latin empire"
     ],
     [
       572,
@@ -2311,19 +2311,19 @@
     ],
     [
       577,
-      "france"
+      "latin empire"
     ],
     [
       578,
-      "france"
+      "latin empire"
     ],
     [
       579,
-      "france"
+      "latin empire"
     ],
     [
       580,
-      "france"
+      "latin empire"
     ],
     [
       581,
@@ -2355,7 +2355,7 @@
     ],
     [
       588,
-      "austria"
+      "austrian duchies"
     ],
     [
       589,
@@ -2363,7 +2363,7 @@
     ],
     [
       590,
-      "austria"
+      "austrian duchies"
     ],
     [
       591,
@@ -2371,7 +2371,7 @@
     ],
     [
       592,
-      "france"
+      "latin empire"
     ],
     [
       593,
@@ -2383,27 +2383,27 @@
     ],
     [
       595,
-      "austria"
+      "venice"
     ],
     [
       596,
-      "austria"
+      "venice"
     ],
     [
       597,
-      "austria"
+      "venice"
     ],
     [
       598,
-      "austria"
+      "hungary"
     ],
     [
       599,
-      "austria"
+      "venice"
     ],
     [
       600,
-      "austria"
+      "venice"
     ],
     [
       601,
@@ -2411,35 +2411,35 @@
     ],
     [
       602,
-      "austria"
+      "hungary"
     ],
     [
       603,
-      "austria"
+      "hungary"
     ],
     [
       604,
-      "austria"
+      "hungary"
     ],
     [
       605,
-      "austria"
+      "hungary"
     ],
     [
       606,
-      "austria"
+      "hungary"
     ],
     [
       607,
-      "austria"
+      "hungary"
     ],
     [
       608,
-      "austria"
+      "hungary"
     ],
     [
       609,
-      "austria"
+      "hungary"
     ],
     [
       610,
@@ -2495,67 +2495,67 @@
     ],
     [
       623,
-      "france"
+      "latin empire"
     ],
     [
       624,
-      "france"
+      "latin empire"
     ],
     [
       625,
-      "france"
+      "latin empire"
     ],
     [
       626,
-      "france"
+      "latin empire"
     ],
     [
       627,
-      "france"
+      "latin empire"
     ],
     [
       628,
-      "france"
+      "latin empire"
     ],
     [
       629,
-      "france"
+      "latin empire"
     ],
     [
       630,
-      "france"
+      "latin empire"
     ],
     [
       631,
-      "france"
+      "latin empire"
     ],
     [
       632,
-      "france"
+      "latin empire"
     ],
     [
       633,
-      "france"
+      "latin empire"
     ],
     [
       634,
-      "france"
+      "latin empire"
     ],
     [
       635,
-      "france"
+      "latin empire"
     ],
     [
       636,
-      "france"
+      "latin empire"
     ],
     [
       637,
-      "france"
+      "latin empire"
     ],
     [
       638,
-      "france"
+      "latin empire"
     ],
     [
       639,
@@ -2775,7 +2775,7 @@
     ],
     [
       693,
-      "spain"
+      "latin empire"
     ],
     [
       694,
@@ -2851,99 +2851,99 @@
     ],
     [
       712,
-      "france"
+      "latin empire"
     ],
     [
       713,
-      "france"
+      "latin empire"
     ],
     [
       714,
-      "france"
+      "latin empire"
     ],
     [
       715,
-      "france"
+      "latin empire"
     ],
     [
       716,
-      "france"
+      "latin empire"
     ],
     [
       717,
-      "france"
+      "latin empire"
     ],
     [
       718,
-      "france"
+      "latin empire"
     ],
     [
       719,
-      "france"
+      "latin empire"
     ],
     [
       720,
-      "france"
+      "latin empire"
     ],
     [
       721,
-      "france"
+      "latin empire"
     ],
     [
       722,
-      "france"
+      "latin empire"
     ],
     [
       723,
-      "france"
+      "latin empire"
     ],
     [
       724,
-      "france"
+      "latin empire"
     ],
     [
       725,
-      "france"
+      "latin empire"
     ],
     [
       726,
-      "france"
+      "latin empire"
     ],
     [
       727,
-      "france"
+      "latin empire"
     ],
     [
       728,
-      "france"
+      "latin empire"
     ],
     [
       729,
-      "france"
+      "latin empire"
     ],
     [
       730,
-      "france"
+      "latin empire"
     ],
     [
       731,
-      "france"
+      "latin empire"
     ],
     [
       732,
-      "france"
+      "latin empire"
     ],
     [
       733,
-      "france"
+      "latin empire"
     ],
     [
       734,
-      "france"
+      "latin empire"
     ],
     [
       735,
-      "france"
+      "latin empire"
     ],
     [
       736,
@@ -2955,23 +2955,23 @@
     ],
     [
       738,
-      "unclaimed"
+      "latin empire"
     ],
     [
       739,
-      "unclaimed"
+      "latin empire"
     ],
     [
       740,
-      "france"
+      "latin empire"
     ],
     [
       741,
-      "unclaimed"
+      "latin empire"
     ],
     [
       742,
-      "france"
+      "latin empire"
     ],
     [
       743,
@@ -2979,35 +2979,35 @@
     ],
     [
       744,
-      "france"
+      "latin empire"
     ],
     [
       745,
-      "france"
+      "latin empire"
     ],
     [
       746,
-      "france"
+      "latin empire"
     ],
     [
       747,
-      "france"
+      "latin empire"
     ],
     [
       748,
-      "france"
+      "latin empire"
     ],
     [
       749,
-      "france"
+      "latin empire"
     ],
     [
       750,
-      "france"
+      "latin empire"
     ],
     [
       751,
-      "unclaimed"
+      "latin empire"
     ],
     [
       752,
@@ -3015,19 +3015,19 @@
     ],
     [
       753,
-      "unclaimed"
+      "latin empire"
     ],
     [
       754,
-      "unclaimed"
+      "latin empire"
     ],
     [
       755,
-      "unclaimed"
+      "latin empire"
     ],
     [
       756,
-      "unclaimed"
+      "latin empire"
     ],
     [
       757,
@@ -3043,7 +3043,7 @@
     ],
     [
       760,
-      "france"
+      "latin empire"
     ],
     [
       761,
@@ -3051,15 +3051,15 @@
     ],
     [
       762,
-      "france"
+      "latin empire"
     ],
     [
       763,
-      "france"
+      "latin empire"
     ],
     [
       764,
-      "hre minor states"
+      "bavaria"
     ],
     [
       765,
@@ -3087,11 +3087,11 @@
     ],
     [
       771,
-      "france"
+      "latin empire"
     ],
     [
       772,
-      "france"
+      "latin empire"
     ],
     [
       773,
@@ -3115,11 +3115,11 @@
     ],
     [
       778,
-      "france"
+      "latin empire"
     ],
     [
       779,
-      "france"
+      "latin empire"
     ],
     [
       780,
@@ -3127,7 +3127,7 @@
     ],
     [
       781,
-      "france"
+      "latin empire"
     ],
     [
       782,
@@ -3135,7 +3135,7 @@
     ],
     [
       783,
-      "france"
+      "latin empire"
     ],
     [
       784,
@@ -3143,7 +3143,7 @@
     ],
     [
       785,
-      "france"
+      "latin empire"
     ],
     [
       786,
@@ -3155,91 +3155,91 @@
     ],
     [
       788,
-      "austria"
+      "hungary"
     ],
     [
       789,
-      "austria"
+      "austrian duchies"
     ],
     [
       790,
-      "austria"
+      "hungary"
     ],
     [
       791,
-      "austria"
+      "hungary"
     ],
     [
       792,
-      "austria"
+      "hungary"
     ],
     [
       793,
-      "austria"
+      "hungary"
     ],
     [
       794,
-      "austria"
+      "hungary"
     ],
     [
       795,
-      "austria"
+      "hungary"
     ],
     [
       796,
-      "austria"
+      "hungary"
     ],
     [
       797,
-      "austria"
+      "hungary"
     ],
     [
       798,
-      "austria"
+      "hungary"
     ],
     [
       799,
-      "austria"
+      "hungary"
     ],
     [
       800,
-      "austria"
+      "hungary"
     ],
     [
       801,
-      "austria"
+      "hungary"
     ],
     [
       802,
-      "austria"
+      "hungary"
     ],
     [
       803,
-      "austria"
+      "hungary"
     ],
     [
       804,
-      "austria"
+      "hungary"
     ],
     [
       805,
-      "austria"
+      "hungary"
     ],
     [
       806,
-      "austria"
+      "hungary"
     ],
     [
       807,
-      "austria"
+      "hungary"
     ],
     [
       808,
-      "austria"
+      "hungary"
     ],
     [
       809,
-      "austria"
+      "hungary"
     ],
     [
       810,
@@ -3263,7 +3263,7 @@
     ],
     [
       815,
-      "austria"
+      "hungary"
     ],
     [
       816,
@@ -3271,7 +3271,7 @@
     ],
     [
       817,
-      "austria"
+      "hungary"
     ],
     [
       818,
@@ -3279,7 +3279,7 @@
     ],
     [
       819,
-      "austria"
+      "hungary"
     ],
     [
       820,
@@ -3291,11 +3291,11 @@
     ],
     [
       822,
-      "austria"
+      "hungary"
     ],
     [
       823,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       824,
@@ -3315,11 +3315,11 @@
     ],
     [
       828,
-      "contested territories"
+      "ottoman empire"
     ],
     [
       829,
-      "ottoman empire"
+      "hungary"
     ],
     [
       830,
@@ -3331,51 +3331,51 @@
     ],
     [
       832,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       833,
-      "austria"
+      "hungary"
     ],
     [
       834,
-      "austria"
+      "hungary"
     ],
     [
       835,
-      "austria"
+      "hungary"
     ],
     [
       836,
-      "austria"
+      "bohemia"
     ],
     [
       837,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       838,
-      "austria"
+      "hungary"
     ],
     [
       839,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       840,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       841,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       842,
-      "austria"
+      "hungary"
     ],
     [
       843,
-      "austria"
+      "hungary"
     ],
     [
       844,
@@ -3447,15 +3447,15 @@
     ],
     [
       861,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       862,
-      "ottoman empire"
+      "hungary"
     ],
     [
       863,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       864,
@@ -3499,23 +3499,23 @@
     ],
     [
       874,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       875,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       876,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       877,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       878,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       879,
@@ -3523,15 +3523,15 @@
     ],
     [
       880,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       881,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       882,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       883,
@@ -3539,23 +3539,23 @@
     ],
     [
       884,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       885,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       886,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       887,
-      "wallachia"
+      "moldavia"
     ],
     [
       888,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       889,
@@ -3563,7 +3563,7 @@
     ],
     [
       890,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       891,
@@ -3579,7 +3579,7 @@
     ],
     [
       894,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       895,
@@ -3587,55 +3587,55 @@
     ],
     [
       896,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       897,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       898,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       899,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       900,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       901,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       902,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       903,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       904,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       905,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       906,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       907,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       908,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       909,
@@ -3667,7 +3667,7 @@
     ],
     [
       916,
-      "poland-lithuania"
+      "russia"
     ],
     [
       917,
@@ -3675,7 +3675,7 @@
     ],
     [
       918,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       919,
@@ -3691,7 +3691,7 @@
     ],
     [
       922,
-      "russia"
+      "crimea"
     ],
     [
       923,
@@ -3699,11 +3699,11 @@
     ],
     [
       924,
-      "russia"
+      "crimea"
     ],
     [
       925,
-      "russia"
+      "crimea"
     ],
     [
       926,
@@ -3767,7 +3767,7 @@
     ],
     [
       941,
-      "russia"
+      "contested territories"
     ],
     [
       942,
@@ -3903,11 +3903,11 @@
     ],
     [
       975,
-      "contested territories"
+      "mughal empire"
     ],
     [
       976,
-      "contested territories"
+      "mughal empire"
     ],
     [
       977,
@@ -4939,7 +4939,7 @@
     ],
     [
       1234,
-      "france"
+      "latin empire"
     ],
     [
       1235,
@@ -4963,23 +4963,23 @@
     ],
     [
       1240,
-      "britain"
+      "north sea empire"
     ],
     [
       1241,
-      "france"
+      "latin empire"
     ],
     [
       1242,
-      "britain"
+      "north sea empire"
     ],
     [
       1243,
-      "britain"
+      "north sea empire"
     ],
     [
       1244,
-      "britain"
+      "north sea empire"
     ],
     [
       1245,
@@ -4991,31 +4991,31 @@
     ],
     [
       1247,
-      "britain"
+      "north sea empire"
     ],
     [
       1248,
-      "britain"
+      "north sea empire"
     ],
     [
       1249,
-      "britain"
+      "north sea empire"
     ],
     [
       1250,
-      "britain"
+      "north sea empire"
     ],
     [
       1251,
-      "britain"
+      "north sea empire"
     ],
     [
       1252,
-      "britain"
+      "north sea empire"
     ],
     [
       1253,
-      "britain"
+      "north sea empire"
     ],
     [
       1254,
@@ -5023,23 +5023,23 @@
     ],
     [
       1255,
-      "france"
+      "latin empire"
     ],
     [
       1256,
-      "france"
+      "latin empire"
     ],
     [
       1257,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1258,
-      "france"
+      "latin empire"
     ],
     [
       1259,
-      "france"
+      "latin empire"
     ],
     [
       1260,
@@ -5047,135 +5047,135 @@
     ],
     [
       1261,
-      "france"
+      "latin empire"
     ],
     [
       1262,
-      "france"
+      "latin empire"
     ],
     [
       1263,
-      "france"
+      "latin empire"
     ],
     [
       1264,
-      "britain"
+      "north sea empire"
     ],
     [
       1265,
-      "france"
+      "latin empire"
     ],
     [
       1266,
-      "britain"
+      "north sea empire"
     ],
     [
       1267,
-      "britain"
+      "north sea empire"
     ],
     [
       1268,
-      "france"
+      "latin empire"
     ],
     [
       1269,
-      "france"
+      "latin empire"
     ],
     [
       1270,
-      "france"
+      "latin empire"
     ],
     [
       1271,
-      "france"
+      "latin empire"
     ],
     [
       1272,
-      "france"
+      "latin empire"
     ],
     [
       1273,
-      "france"
+      "latin empire"
     ],
     [
       1274,
-      "france"
+      "latin empire"
     ],
     [
       1275,
-      "france"
+      "latin empire"
     ],
     [
       1276,
-      "france"
+      "latin empire"
     ],
     [
       1277,
-      "france"
+      "latin empire"
     ],
     [
       1278,
-      "france"
+      "latin empire"
     ],
     [
       1279,
-      "france"
+      "latin empire"
     ],
     [
       1280,
-      "france"
+      "latin empire"
     ],
     [
       1281,
-      "france"
+      "latin empire"
     ],
     [
       1282,
-      "france"
+      "latin empire"
     ],
     [
       1283,
-      "france"
+      "latin empire"
     ],
     [
       1284,
-      "france"
+      "latin empire"
     ],
     [
       1285,
-      "france"
+      "latin empire"
     ],
     [
       1286,
-      "france"
+      "latin empire"
     ],
     [
       1287,
-      "france"
+      "latin empire"
     ],
     [
       1288,
-      "france"
+      "latin empire"
     ],
     [
       1289,
-      "france"
+      "latin empire"
     ],
     [
       1290,
-      "france"
+      "latin empire"
     ],
     [
       1291,
-      "france"
+      "latin empire"
     ],
     [
       1292,
-      "france"
+      "latin empire"
     ],
     [
       1293,
-      "france"
+      "latin empire"
     ],
     [
       1294,
@@ -5195,47 +5195,47 @@
     ],
     [
       1298,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1299,
-      "france"
+      "latin empire"
     ],
     [
       1300,
-      "france"
+      "latin empire"
     ],
     [
       1301,
-      "france"
+      "latin empire"
     ],
     [
       1302,
-      "france"
+      "latin empire"
     ],
     [
       1303,
-      "france"
+      "latin empire"
     ],
     [
       1304,
-      "france"
+      "latin empire"
     ],
     [
       1305,
-      "france"
+      "latin empire"
     ],
     [
       1306,
-      "france"
+      "latin empire"
     ],
     [
       1307,
-      "france"
+      "latin empire"
     ],
     [
       1308,
-      "france"
+      "latin empire"
     ],
     [
       1309,
@@ -5243,15 +5243,15 @@
     ],
     [
       1310,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1311,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1312,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1313,
@@ -5259,7 +5259,7 @@
     ],
     [
       1314,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1315,
@@ -5267,27 +5267,27 @@
     ],
     [
       1316,
-      "unclaimed"
+      "latin empire"
     ],
     [
       1317,
-      "france"
+      "latin empire"
     ],
     [
       1318,
-      "france"
+      "latin empire"
     ],
     [
       1319,
-      "france"
+      "latin empire"
     ],
     [
       1320,
-      "france"
+      "latin empire"
     ],
     [
       1321,
-      "france"
+      "latin empire"
     ],
     [
       1322,
@@ -5295,19 +5295,19 @@
     ],
     [
       1323,
-      "france"
+      "latin empire"
     ],
     [
       1324,
-      "france"
+      "latin empire"
     ],
     [
       1325,
-      "france"
+      "latin empire"
     ],
     [
       1326,
-      "france"
+      "latin empire"
     ],
     [
       1327,
@@ -5343,7 +5343,7 @@
     ],
     [
       1335,
-      "france"
+      "latin empire"
     ],
     [
       1336,
@@ -5359,35 +5359,35 @@
     ],
     [
       1339,
-      "france"
+      "latin empire"
     ],
     [
       1340,
-      "france"
+      "latin empire"
     ],
     [
       1341,
-      "france"
+      "latin empire"
     ],
     [
       1342,
-      "france"
+      "latin empire"
     ],
     [
       1343,
-      "france"
+      "latin empire"
     ],
     [
       1344,
-      "france"
+      "latin empire"
     ],
     [
       1345,
-      "france"
+      "latin empire"
     ],
     [
       1346,
-      "france"
+      "latin empire"
     ],
     [
       1347,
@@ -5447,19 +5447,19 @@
     ],
     [
       1361,
-      "persia"
+      "mughal empire"
     ],
     [
       1362,
-      "persia"
+      "mughal empire"
     ],
     [
       1363,
-      "persia"
+      "mughal empire"
     ],
     [
       1364,
-      "contested territories"
+      "mughal empire"
     ],
     [
       1365,
@@ -5471,7 +5471,7 @@
     ],
     [
       1367,
-      "contested territories"
+      "mughal empire"
     ],
     [
       1368,
@@ -5511,11 +5511,11 @@
     ],
     [
       1377,
-      "contested territories"
+      "mughal empire"
     ],
     [
       1378,
-      "contested territories"
+      "mughal empire"
     ],
     [
       1379,
@@ -5523,11 +5523,11 @@
     ],
     [
       1380,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       1381,
-      "russia"
+      "contested territories"
     ],
     [
       1382,
@@ -5535,7 +5535,7 @@
     ],
     [
       1383,
-      "russia"
+      "contested territories"
     ],
     [
       1384,
@@ -5543,11 +5543,11 @@
     ],
     [
       1385,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       1386,
-      "russia"
+      "contested territories"
     ],
     [
       1387,
@@ -5555,7 +5555,7 @@
     ],
     [
       1388,
-      "russia"
+      "contested territories"
     ],
     [
       1389,
@@ -5763,43 +5763,43 @@
     ],
     [
       1440,
-      "france"
+      "latin empire"
     ],
     [
       1441,
-      "france"
+      "latin empire"
     ],
     [
       1442,
-      "france"
+      "latin empire"
     ],
     [
       1443,
-      "france"
+      "latin empire"
     ],
     [
       1444,
-      "france"
+      "latin empire"
     ],
     [
       1445,
-      "france"
+      "latin empire"
     ],
     [
       1446,
-      "france"
+      "latin empire"
     ],
     [
       1447,
-      "france"
+      "latin empire"
     ],
     [
       1448,
-      "france"
+      "latin empire"
     ],
     [
       1449,
-      "france"
+      "latin empire"
     ],
     [
       1450,
@@ -6419,15 +6419,15 @@
     ],
     [
       1604,
-      "contested territories"
+      "sweden"
     ],
     [
       1605,
-      "contested territories"
+      "sweden"
     ],
     [
       1606,
-      "contested territories"
+      "sweden"
     ],
     [
       1607,
@@ -6495,11 +6495,11 @@
     ],
     [
       1623,
-      "france"
+      "latin empire"
     ],
     [
       1624,
-      "france"
+      "latin empire"
     ],
     [
       1625,
@@ -6539,7 +6539,7 @@
     ],
     [
       1634,
-      "britain"
+      "north sea empire"
     ],
     [
       1635,
@@ -6559,11 +6559,11 @@
     ],
     [
       1639,
-      "russia"
+      "crimea"
     ],
     [
       1640,
-      "russia"
+      "crimea"
     ],
     [
       1641,
@@ -6591,139 +6591,139 @@
     ],
     [
       1647,
-      "france"
+      "latin empire"
     ],
     [
       1648,
-      "france"
+      "latin empire"
     ],
     [
       1649,
-      "france"
+      "latin empire"
     ],
     [
       1650,
-      "france"
+      "latin empire"
     ],
     [
       1651,
-      "france"
+      "latin empire"
     ],
     [
       1652,
-      "france"
+      "latin empire"
     ],
     [
       1653,
-      "austria"
+      "hungary"
     ],
     [
       1654,
-      "austria"
+      "hungary"
     ],
     [
       1655,
-      "austria"
+      "hungary"
     ],
     [
       1656,
-      "austria"
+      "hungary"
     ],
     [
       1657,
-      "austria"
+      "hungary"
     ],
     [
       1658,
-      "austria"
+      "hungary"
     ],
     [
       1659,
-      "austria"
+      "hungary"
     ],
     [
       1660,
-      "austria"
+      "hungary"
     ],
     [
       1661,
-      "austria"
+      "hungary"
     ],
     [
       1662,
-      "austria"
+      "hungary"
     ],
     [
       1663,
-      "austria"
+      "hungary"
     ],
     [
       1664,
-      "austria"
+      "hungary"
     ],
     [
       1665,
-      "austria"
+      "hungary"
     ],
     [
       1666,
-      "austria"
+      "hungary"
     ],
     [
       1667,
-      "austria"
+      "hungary"
     ],
     [
       1668,
-      "austria"
+      "hungary"
     ],
     [
       1669,
-      "austria"
+      "hungary"
     ],
     [
       1670,
-      "austria"
+      "hungary"
     ],
     [
       1671,
-      "austria"
+      "hungary"
     ],
     [
       1672,
-      "austria"
+      "hungary"
     ],
     [
       1673,
-      "austria"
+      "hungary"
     ],
     [
       1674,
-      "austria"
+      "hungary"
     ],
     [
       1675,
-      "austria"
+      "hungary"
     ],
     [
       1676,
-      "austria"
+      "hungary"
     ],
     [
       1677,
-      "austria"
+      "hungary"
     ],
     [
       1678,
-      "austria"
+      "hungary"
     ],
     [
       1679,
-      "austria"
+      "hungary"
     ],
     [
       1680,
-      "austria"
+      "hungary"
     ],
     [
       1681,
@@ -6735,7 +6735,7 @@
     ],
     [
       1683,
-      "france"
+      "latin empire"
     ],
     [
       1684,
@@ -6743,7 +6743,7 @@
     ],
     [
       1685,
-      "france"
+      "latin empire"
     ],
     [
       1686,
@@ -6755,7 +6755,7 @@
     ],
     [
       1688,
-      "france"
+      "latin empire"
     ],
     [
       1689,
@@ -6763,7 +6763,7 @@
     ],
     [
       1690,
-      "france"
+      "latin empire"
     ],
     [
       1691,
@@ -6775,11 +6775,11 @@
     ],
     [
       1693,
-      "france"
+      "latin empire"
     ],
     [
       1694,
-      "france"
+      "latin empire"
     ],
     [
       1695,
@@ -6791,63 +6791,63 @@
     ],
     [
       1697,
-      "britain"
+      "north sea empire"
     ],
     [
       1698,
-      "britain"
+      "north sea empire"
     ],
     [
       1699,
-      "britain"
+      "north sea empire"
     ],
     [
       1700,
-      "britain"
+      "north sea empire"
     ],
     [
       1701,
-      "britain"
+      "north sea empire"
     ],
     [
       1702,
-      "britain"
+      "north sea empire"
     ],
     [
       1703,
-      "britain"
+      "north sea empire"
     ],
     [
       1704,
-      "britain"
+      "north sea empire"
     ],
     [
       1705,
-      "britain"
+      "north sea empire"
     ],
     [
       1706,
-      "britain"
+      "north sea empire"
     ],
     [
       1707,
-      "britain"
+      "north sea empire"
     ],
     [
       1708,
-      "britain"
+      "north sea empire"
     ],
     [
       1709,
-      "france"
+      "latin empire"
     ],
     [
       1710,
-      "france"
+      "latin empire"
     ],
     [
       1711,
-      "france"
+      "latin empire"
     ],
     [
       1712,
@@ -6903,7 +6903,7 @@
     ],
     [
       1725,
-      "denmark"
+      "north sea empire"
     ],
     [
       1726,
@@ -6955,11 +6955,11 @@
     ],
     [
       1738,
-      "france"
+      "latin empire"
     ],
     [
       1739,
-      "france"
+      "latin empire"
     ],
     [
       1740,
@@ -6967,19 +6967,19 @@
     ],
     [
       1741,
-      "france"
+      "latin empire"
     ],
     [
       1742,
-      "france"
+      "latin empire"
     ],
     [
       1743,
-      "france"
+      "latin empire"
     ],
     [
       1744,
-      "france"
+      "latin empire"
     ],
     [
       1745,
@@ -7159,7 +7159,7 @@
     ],
     [
       1789,
-      "france"
+      "latin empire"
     ],
     [
       1790,
@@ -7171,7 +7171,7 @@
     ],
     [
       1792,
-      "france"
+      "latin empire"
     ],
     [
       1793,
@@ -7227,27 +7227,27 @@
     ],
     [
       1806,
-      "france"
+      "latin empire"
     ],
     [
       1807,
-      "france"
+      "latin empire"
     ],
     [
       1808,
-      "france"
+      "latin empire"
     ],
     [
       1809,
-      "france"
+      "latin empire"
     ],
     [
       1810,
-      "france"
+      "latin empire"
     ],
     [
       1811,
-      "france"
+      "latin empire"
     ],
     [
       1812,
@@ -7255,35 +7255,35 @@
     ],
     [
       1813,
-      "france"
+      "latin empire"
     ],
     [
       1814,
-      "france"
+      "latin empire"
     ],
     [
       1815,
-      "france"
+      "latin empire"
     ],
     [
       1816,
-      "france"
+      "latin empire"
     ],
     [
       1817,
-      "france"
+      "latin empire"
     ],
     [
       1818,
-      "france"
+      "latin empire"
     ],
     [
       1819,
-      "france"
+      "latin empire"
     ],
     [
       1820,
-      "france"
+      "latin empire"
     ],
     [
       1821,
@@ -7319,7 +7319,7 @@
     ],
     [
       1829,
-      "france"
+      "latin empire"
     ],
     [
       1830,
@@ -7335,7 +7335,7 @@
     ],
     [
       1833,
-      "france"
+      "latin empire"
     ],
     [
       1834,
@@ -7539,79 +7539,79 @@
     ],
     [
       1884,
-      "france"
+      "latin empire"
     ],
     [
       1885,
-      "france"
+      "latin empire"
     ],
     [
       1886,
-      "france"
+      "latin empire"
     ],
     [
       1887,
-      "france"
+      "latin empire"
     ],
     [
       1888,
-      "france"
+      "latin empire"
     ],
     [
       1889,
-      "france"
+      "latin empire"
     ],
     [
       1890,
-      "france"
+      "latin empire"
     ],
     [
       1891,
-      "france"
+      "latin empire"
     ],
     [
       1892,
-      "france"
+      "latin empire"
     ],
     [
       1893,
-      "france"
+      "latin empire"
     ],
     [
       1894,
-      "france"
+      "latin empire"
     ],
     [
       1895,
-      "france"
+      "latin empire"
     ],
     [
       1896,
-      "france"
+      "latin empire"
     ],
     [
       1897,
-      "france"
+      "latin empire"
     ],
     [
       1898,
-      "france"
+      "latin empire"
     ],
     [
       1899,
-      "france"
+      "latin empire"
     ],
     [
       1900,
-      "france"
+      "latin empire"
     ],
     [
       1901,
-      "france"
+      "latin empire"
     ],
     [
       1902,
-      "france"
+      "latin empire"
     ],
     [
       1903,
@@ -7619,11 +7619,11 @@
     ],
     [
       1904,
-      "france"
+      "latin empire"
     ],
     [
       1905,
-      "france"
+      "latin empire"
     ],
     [
       1906,
@@ -7655,7 +7655,7 @@
     ],
     [
       1913,
-      "france"
+      "latin empire"
     ],
     [
       1914,
@@ -7719,71 +7719,71 @@
     ],
     [
       1929,
-      "france"
+      "latin empire"
     ],
     [
       1930,
-      "france"
+      "latin empire"
     ],
     [
       1931,
-      "france"
+      "latin empire"
     ],
     [
       1932,
-      "france"
+      "latin empire"
     ],
     [
       1933,
-      "france"
+      "latin empire"
     ],
     [
       1934,
-      "france"
+      "latin empire"
     ],
     [
       1935,
-      "france"
+      "latin empire"
     ],
     [
       1936,
-      "france"
+      "latin empire"
     ],
     [
       1937,
-      "france"
+      "latin empire"
     ],
     [
       1938,
-      "france"
+      "latin empire"
     ],
     [
       1939,
-      "france"
+      "latin empire"
     ],
     [
       1940,
-      "france"
+      "latin empire"
     ],
     [
       1941,
-      "france"
+      "latin empire"
     ],
     [
       1942,
-      "france"
+      "latin empire"
     ],
     [
       1943,
-      "france"
+      "latin empire"
     ],
     [
       1944,
-      "france"
+      "latin empire"
     ],
     [
       1945,
-      "france"
+      "latin empire"
     ],
     [
       1946,
@@ -7791,23 +7791,23 @@
     ],
     [
       1947,
-      "france"
+      "latin empire"
     ],
     [
       1948,
-      "france"
+      "latin empire"
     ],
     [
       1949,
-      "france"
+      "latin empire"
     ],
     [
       1950,
-      "france"
+      "latin empire"
     ],
     [
       1951,
-      "france"
+      "latin empire"
     ],
     [
       1952,
@@ -7855,7 +7855,7 @@
     ],
     [
       1963,
-      "france"
+      "latin empire"
     ],
     [
       1964,
@@ -7931,7 +7931,7 @@
     ],
     [
       1982,
-      "denmark"
+      "north sea empire"
     ],
     [
       1983,
@@ -7951,11 +7951,11 @@
     ],
     [
       1987,
-      "france"
+      "latin empire"
     ],
     [
       1988,
-      "france"
+      "latin empire"
     ],
     [
       1989,
@@ -8063,7 +8063,7 @@
     ],
     [
       2015,
-      "france"
+      "latin empire"
     ],
     [
       2016,
@@ -8071,35 +8071,35 @@
     ],
     [
       2017,
-      "france"
+      "latin empire"
     ],
     [
       2018,
-      "britain"
+      "north sea empire"
     ],
     [
       2019,
-      "britain"
+      "north sea empire"
     ],
     [
       2020,
-      "britain"
+      "north sea empire"
     ],
     [
       2021,
-      "britain"
+      "north sea empire"
     ],
     [
       2022,
-      "britain"
+      "north sea empire"
     ],
     [
       2023,
-      "britain"
+      "north sea empire"
     ],
     [
       2024,
-      "britain"
+      "north sea empire"
     ],
     [
       2025,
@@ -8107,7 +8107,7 @@
     ],
     [
       2026,
-      "france"
+      "latin empire"
     ],
     [
       2027,
@@ -8295,11 +8295,11 @@
     ],
     [
       2073,
-      "france"
+      "latin empire"
     ],
     [
       2074,
-      "france"
+      "latin empire"
     ],
     [
       2075,
@@ -8311,155 +8311,155 @@
     ],
     [
       2077,
-      "france"
+      "latin empire"
     ],
     [
       2078,
-      "britain"
+      "north sea empire"
     ],
     [
       2079,
-      "britain"
+      "north sea empire"
     ],
     [
       2080,
-      "britain"
+      "north sea empire"
     ],
     [
       2081,
-      "britain"
+      "north sea empire"
     ],
     [
       2082,
-      "britain"
+      "north sea empire"
     ],
     [
       2083,
-      "britain"
+      "north sea empire"
     ],
     [
       2084,
-      "britain"
+      "north sea empire"
     ],
     [
       2085,
-      "britain"
+      "north sea empire"
     ],
     [
       2086,
-      "britain"
+      "north sea empire"
     ],
     [
       2087,
-      "britain"
+      "north sea empire"
     ],
     [
       2088,
-      "britain"
+      "north sea empire"
     ],
     [
       2089,
-      "france"
+      "latin empire"
     ],
     [
       2090,
-      "france"
+      "latin empire"
     ],
     [
       2091,
-      "france"
+      "latin empire"
     ],
     [
       2092,
-      "france"
+      "latin empire"
     ],
     [
       2093,
-      "britain"
+      "north sea empire"
     ],
     [
       2094,
-      "britain"
+      "north sea empire"
     ],
     [
       2095,
-      "france"
+      "latin empire"
     ],
     [
       2096,
-      "france"
+      "latin empire"
     ],
     [
       2097,
-      "france"
+      "latin empire"
     ],
     [
       2098,
-      "france"
+      "latin empire"
     ],
     [
       2099,
-      "france"
+      "latin empire"
     ],
     [
       2100,
-      "france"
+      "latin empire"
     ],
     [
       2101,
-      "france"
+      "latin empire"
     ],
     [
       2102,
-      "france"
+      "latin empire"
     ],
     [
       2103,
-      "france"
+      "latin empire"
     ],
     [
       2104,
-      "france"
+      "latin empire"
     ],
     [
       2105,
-      "france"
+      "latin empire"
     ],
     [
       2106,
-      "france"
+      "latin empire"
     ],
     [
       2107,
-      "france"
+      "latin empire"
     ],
     [
       2108,
-      "france"
+      "latin empire"
     ],
     [
       2109,
-      "france"
+      "latin empire"
     ],
     [
       2110,
-      "france"
+      "latin empire"
     ],
     [
       2111,
-      "france"
+      "latin empire"
     ],
     [
       2112,
-      "france"
+      "latin empire"
     ],
     [
       2113,
-      "france"
+      "latin empire"
     ],
     [
       2114,
-      "france"
+      "latin empire"
     ],
     [
       2115,
@@ -8551,7 +8551,7 @@
     ],
     [
       2137,
-      "japan"
+      "contested territories"
     ],
     [
       2138,
@@ -8695,11 +8695,11 @@
     ],
     [
       2173,
-      "britain"
+      "north sea empire"
     ],
     [
       2174,
-      "britain"
+      "north sea empire"
     ],
     [
       2175,
@@ -8707,11 +8707,11 @@
     ],
     [
       2176,
-      "france"
+      "latin empire"
     ],
     [
       2177,
-      "france"
+      "latin empire"
     ],
     [
       2178,
@@ -8967,11 +8967,11 @@
     ],
     [
       2241,
-      "france"
+      "latin empire"
     ],
     [
       2242,
-      "mysore"
+      "seic"
     ],
     [
       2243,
@@ -8979,115 +8979,115 @@
     ],
     [
       2244,
-      "britain"
+      "north sea empire"
     ],
     [
       2245,
-      "britain"
+      "north sea empire"
     ],
     [
       2246,
-      "britain"
+      "north sea empire"
     ],
     [
       2247,
-      "britain"
+      "north sea empire"
     ],
     [
       2248,
-      "britain"
+      "north sea empire"
     ],
     [
       2249,
-      "britain"
+      "north sea empire"
     ],
     [
       2250,
-      "britain"
+      "north sea empire"
     ],
     [
       2251,
-      "britain"
+      "north sea empire"
     ],
     [
       2252,
-      "britain"
+      "north sea empire"
     ],
     [
       2253,
-      "britain"
+      "north sea empire"
     ],
     [
       2254,
-      "britain"
+      "north sea empire"
     ],
     [
       2255,
-      "britain"
+      "north sea empire"
     ],
     [
       2256,
-      "britain"
+      "north sea empire"
     ],
     [
       2257,
-      "britain"
+      "north sea empire"
     ],
     [
       2258,
-      "britain"
+      "north sea empire"
     ],
     [
       2259,
-      "britain"
+      "north sea empire"
     ],
     [
       2260,
-      "britain"
+      "north sea empire"
     ],
     [
       2261,
-      "britain"
+      "north sea empire"
     ],
     [
       2262,
-      "britain"
+      "north sea empire"
     ],
     [
       2263,
-      "britain"
+      "north sea empire"
     ],
     [
       2264,
-      "britain"
+      "north sea empire"
     ],
     [
       2265,
-      "britain"
+      "north sea empire"
     ],
     [
       2266,
-      "britain"
+      "north sea empire"
     ],
     [
       2267,
-      "britain"
+      "north sea empire"
     ],
     [
       2268,
-      "britain"
+      "north sea empire"
     ],
     [
       2269,
-      "britain"
+      "north sea empire"
     ],
     [
       2270,
-      "britain"
+      "north sea empire"
     ],
     [
       2271,
-      "russia"
+      "crimea"
     ],
     [
       2272,
@@ -9095,7 +9095,7 @@
     ],
     [
       2273,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       2274,
@@ -9115,127 +9115,127 @@
     ],
     [
       2278,
-      "britain"
+      "north sea empire"
     ],
     [
       2279,
-      "britain"
+      "north sea empire"
     ],
     [
       2280,
-      "britain"
+      "north sea empire"
     ],
     [
       2281,
-      "britain"
+      "north sea empire"
     ],
     [
       2282,
-      "britain"
+      "north sea empire"
     ],
     [
       2283,
-      "britain"
+      "north sea empire"
     ],
     [
       2284,
-      "britain"
+      "north sea empire"
     ],
     [
       2285,
-      "britain"
+      "north sea empire"
     ],
     [
       2286,
-      "britain"
+      "north sea empire"
     ],
     [
       2287,
-      "britain"
+      "north sea empire"
     ],
     [
       2288,
-      "britain"
+      "north sea empire"
     ],
     [
       2289,
-      "britain"
+      "north sea empire"
     ],
     [
       2290,
-      "britain"
+      "north sea empire"
     ],
     [
       2291,
-      "britain"
+      "north sea empire"
     ],
     [
       2292,
-      "britain"
+      "north sea empire"
     ],
     [
       2293,
-      "britain"
+      "north sea empire"
     ],
     [
       2294,
-      "britain"
+      "north sea empire"
     ],
     [
       2295,
-      "britain"
+      "north sea empire"
     ],
     [
       2296,
-      "britain"
+      "north sea empire"
     ],
     [
       2297,
-      "britain"
+      "north sea empire"
     ],
     [
       2298,
-      "britain"
+      "north sea empire"
     ],
     [
       2299,
-      "britain"
+      "north sea empire"
     ],
     [
       2300,
-      "britain"
+      "north sea empire"
     ],
     [
       2301,
-      "britain"
+      "north sea empire"
     ],
     [
       2302,
-      "britain"
+      "north sea empire"
     ],
     [
       2303,
-      "britain"
+      "north sea empire"
     ],
     [
       2304,
-      "britain"
+      "north sea empire"
     ],
     [
       2305,
-      "britain"
+      "north sea empire"
     ],
     [
       2306,
-      "britain"
+      "north sea empire"
     ],
     [
       2307,
-      "britain"
+      "north sea empire"
     ],
     [
       2308,
-      "britain"
+      "north sea empire"
     ],
     [
       2309,
@@ -9243,7 +9243,7 @@
     ],
     [
       2310,
-      "britain"
+      "north sea empire"
     ],
     [
       2311,
@@ -9251,171 +9251,171 @@
     ],
     [
       2312,
-      "britain"
+      "north sea empire"
     ],
     [
       2313,
-      "britain"
+      "north sea empire"
     ],
     [
       2314,
-      "britain"
+      "north sea empire"
     ],
     [
       2315,
-      "britain"
+      "north sea empire"
     ],
     [
       2316,
-      "britain"
+      "north sea empire"
     ],
     [
       2317,
-      "britain"
+      "north sea empire"
     ],
     [
       2318,
-      "britain"
+      "north sea empire"
     ],
     [
       2319,
-      "britain"
+      "north sea empire"
     ],
     [
       2320,
-      "britain"
+      "north sea empire"
     ],
     [
       2321,
-      "britain"
+      "north sea empire"
     ],
     [
       2322,
-      "britain"
+      "north sea empire"
     ],
     [
       2323,
-      "britain"
+      "north sea empire"
     ],
     [
       2324,
-      "britain"
+      "north sea empire"
     ],
     [
       2325,
-      "britain"
+      "north sea empire"
     ],
     [
       2326,
-      "britain"
+      "north sea empire"
     ],
     [
       2327,
-      "britain"
+      "north sea empire"
     ],
     [
       2328,
-      "britain"
+      "north sea empire"
     ],
     [
       2329,
-      "britain"
+      "north sea empire"
     ],
     [
       2330,
-      "britain"
+      "north sea empire"
     ],
     [
       2331,
-      "britain"
+      "north sea empire"
     ],
     [
       2332,
-      "britain"
+      "north sea empire"
     ],
     [
       2333,
-      "britain"
+      "north sea empire"
     ],
     [
       2334,
-      "britain"
+      "north sea empire"
     ],
     [
       2335,
-      "britain"
+      "north sea empire"
     ],
     [
       2336,
-      "britain"
+      "north sea empire"
     ],
     [
       2337,
-      "britain"
+      "north sea empire"
     ],
     [
       2338,
-      "britain"
+      "north sea empire"
     ],
     [
       2339,
-      "britain"
+      "north sea empire"
     ],
     [
       2340,
-      "britain"
+      "north sea empire"
     ],
     [
       2341,
-      "britain"
+      "north sea empire"
     ],
     [
       2342,
-      "britain"
+      "north sea empire"
     ],
     [
       2343,
-      "britain"
+      "north sea empire"
     ],
     [
       2344,
-      "britain"
+      "north sea empire"
     ],
     [
       2345,
-      "britain"
+      "north sea empire"
     ],
     [
       2346,
-      "britain"
+      "north sea empire"
     ],
     [
       2347,
-      "britain"
+      "north sea empire"
     ],
     [
       2348,
-      "britain"
+      "north sea empire"
     ],
     [
       2349,
-      "britain"
+      "north sea empire"
     ],
     [
       2350,
-      "britain"
+      "north sea empire"
     ],
     [
       2351,
-      "britain"
+      "north sea empire"
     ],
     [
       2352,
-      "britain"
+      "north sea empire"
     ],
     [
       2353,
-      "britain"
+      "north sea empire"
     ],
     [
       2354,
@@ -9423,39 +9423,39 @@
     ],
     [
       2355,
-      "denmark"
+      "north sea empire"
     ],
     [
       2356,
-      "denmark"
+      "north sea empire"
     ],
     [
       2357,
-      "denmark"
+      "north sea empire"
     ],
     [
       2358,
-      "denmark"
+      "north sea empire"
     ],
     [
       2359,
-      "denmark"
+      "north sea empire"
     ],
     [
       2360,
-      "denmark"
+      "north sea empire"
     ],
     [
       2361,
-      "denmark"
+      "north sea empire"
     ],
     [
       2362,
-      "denmark"
+      "north sea empire"
     ],
     [
       2363,
-      "denmark"
+      "north sea empire"
     ],
     [
       2364,
@@ -9475,47 +9475,47 @@
     ],
     [
       2368,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2369,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2370,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2371,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2372,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2373,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2374,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2375,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2376,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2377,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2378,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       2379,
@@ -9551,7 +9551,7 @@
     ],
     [
       2387,
-      "sweden"
+      "russia"
     ],
     [
       2388,
@@ -9615,43 +9615,43 @@
     ],
     [
       2403,
-      "denmark"
+      "sweden"
     ],
     [
       2404,
-      "denmark"
+      "sweden"
     ],
     [
       2405,
-      "denmark"
+      "sweden"
     ],
     [
       2406,
-      "denmark"
+      "sweden"
     ],
     [
       2407,
-      "denmark"
+      "sweden"
     ],
     [
       2408,
-      "denmark"
+      "sweden"
     ],
     [
       2409,
-      "denmark"
+      "sweden"
     ],
     [
       2410,
-      "denmark"
+      "sweden"
     ],
     [
       2411,
-      "denmark"
+      "sweden"
     ],
     [
       2412,
-      "denmark"
+      "sweden"
     ],
     [
       2413,
@@ -9807,11 +9807,11 @@
     ],
     [
       2451,
-      "austria"
+      "hungary"
     ],
     [
       2452,
-      "austria"
+      "hungary"
     ],
     [
       2453,
@@ -9855,83 +9855,83 @@
     ],
     [
       2463,
-      "france"
+      "latin empire"
     ],
     [
       2464,
-      "france"
+      "latin empire"
     ],
     [
       2465,
-      "france"
+      "latin empire"
     ],
     [
       2466,
-      "france"
+      "latin empire"
     ],
     [
       2467,
-      "france"
+      "latin empire"
     ],
     [
       2468,
-      "france"
+      "latin empire"
     ],
     [
       2469,
-      "france"
+      "latin empire"
     ],
     [
       2470,
-      "france"
+      "latin empire"
     ],
     [
       2471,
-      "france"
+      "latin empire"
     ],
     [
       2472,
-      "france"
+      "latin empire"
     ],
     [
       2473,
-      "france"
+      "latin empire"
     ],
     [
       2474,
-      "france"
+      "latin empire"
     ],
     [
       2475,
-      "france"
+      "latin empire"
     ],
     [
       2476,
-      "france"
+      "latin empire"
     ],
     [
       2477,
-      "france"
+      "latin empire"
     ],
     [
       2478,
-      "france"
+      "latin empire"
     ],
     [
       2479,
-      "france"
+      "latin empire"
     ],
     [
       2480,
-      "france"
+      "latin empire"
     ],
     [
       2481,
-      "france"
+      "latin empire"
     ],
     [
       2482,
-      "france"
+      "latin empire"
     ],
     [
       2483,
@@ -9947,23 +9947,23 @@
     ],
     [
       2486,
-      "tuscany"
+      "latin empire"
     ],
     [
       2487,
-      "tuscany"
+      "latin empire"
     ],
     [
       2488,
-      "tuscany"
+      "latin empire"
     ],
     [
       2489,
-      "tuscany"
+      "latin empire"
     ],
     [
       2490,
-      "tuscany"
+      "latin empire"
     ],
     [
       2491,
@@ -9979,63 +9979,63 @@
     ],
     [
       2494,
-      "france"
+      "latin empire"
     ],
     [
       2495,
-      "france"
+      "latin empire"
     ],
     [
       2496,
-      "france"
+      "latin empire"
     ],
     [
       2497,
-      "france"
+      "latin empire"
     ],
     [
       2498,
-      "france"
+      "latin empire"
     ],
     [
       2499,
-      "france"
+      "latin empire"
     ],
     [
       2500,
-      "france"
+      "latin empire"
     ],
     [
       2501,
-      "france"
+      "latin empire"
     ],
     [
       2502,
-      "france"
+      "latin empire"
     ],
     [
       2503,
-      "france"
+      "latin empire"
     ],
     [
       2504,
-      "france"
+      "latin empire"
     ],
     [
       2505,
-      "france"
+      "latin empire"
     ],
     [
       2506,
-      "france"
+      "latin empire"
     ],
     [
       2507,
-      "france"
+      "latin empire"
     ],
     [
       2508,
-      "france"
+      "latin empire"
     ],
     [
       2509,
@@ -10067,83 +10067,83 @@
     ],
     [
       2516,
-      "france"
+      "latin empire"
     ],
     [
       2517,
-      "france"
+      "latin empire"
     ],
     [
       2518,
-      "france"
+      "latin empire"
     ],
     [
       2519,
-      "france"
+      "latin empire"
     ],
     [
       2520,
-      "france"
+      "latin empire"
     ],
     [
       2521,
-      "france"
+      "latin empire"
     ],
     [
       2522,
-      "france"
+      "latin empire"
     ],
     [
       2523,
-      "france"
+      "latin empire"
     ],
     [
       2524,
-      "france"
+      "latin empire"
     ],
     [
       2525,
-      "france"
+      "latin empire"
     ],
     [
       2526,
-      "france"
+      "latin empire"
     ],
     [
       2527,
-      "france"
+      "latin empire"
     ],
     [
       2528,
-      "france"
+      "latin empire"
     ],
     [
       2529,
-      "france"
+      "latin empire"
     ],
     [
       2530,
-      "france"
+      "latin empire"
     ],
     [
       2531,
-      "france"
+      "latin empire"
     ],
     [
       2532,
-      "france"
+      "latin empire"
     ],
     [
       2533,
-      "france"
+      "latin empire"
     ],
     [
       2534,
-      "france"
+      "latin empire"
     ],
     [
       2535,
-      "france"
+      "latin empire"
     ],
     [
       2536,
@@ -10159,23 +10159,23 @@
     ],
     [
       2539,
-      "contested territories"
+      "north sea empire"
     ],
     [
       2540,
-      "denmark"
+      "north sea empire"
     ],
     [
       2541,
-      "denmark"
+      "north sea empire"
     ],
     [
       2542,
-      "denmark"
+      "north sea empire"
     ],
     [
       2543,
-      "denmark"
+      "north sea empire"
     ],
     [
       2544,
@@ -10195,7 +10195,7 @@
     ],
     [
       2548,
-      "denmark"
+      "north sea empire"
     ],
     [
       2549,
@@ -10247,19 +10247,19 @@
     ],
     [
       2561,
-      "france"
+      "latin empire"
     ],
     [
       2562,
-      "france"
+      "latin empire"
     ],
     [
       2563,
-      "france"
+      "latin empire"
     ],
     [
       2564,
-      "france"
+      "latin empire"
     ],
     [
       2565,
@@ -10267,75 +10267,75 @@
     ],
     [
       2566,
-      "france"
+      "latin empire"
     ],
     [
       2567,
-      "france"
+      "latin empire"
     ],
     [
       2568,
-      "france"
+      "latin empire"
     ],
     [
       2569,
-      "france"
+      "latin empire"
     ],
     [
       2570,
-      "france"
+      "latin empire"
     ],
     [
       2571,
-      "france"
+      "latin empire"
     ],
     [
       2572,
-      "france"
+      "latin empire"
     ],
     [
       2573,
-      "france"
+      "latin empire"
     ],
     [
       2574,
-      "france"
+      "latin empire"
     ],
     [
       2575,
-      "france"
+      "latin empire"
     ],
     [
       2576,
-      "france"
+      "latin empire"
     ],
     [
       2577,
-      "france"
+      "latin empire"
     ],
     [
       2578,
-      "france"
+      "latin empire"
     ],
     [
       2579,
-      "france"
+      "latin empire"
     ],
     [
       2580,
-      "france"
+      "latin empire"
     ],
     [
       2581,
-      "france"
+      "latin empire"
     ],
     [
       2582,
-      "france"
+      "latin empire"
     ],
     [
       2583,
-      "france"
+      "latin empire"
     ],
     [
       2584,
@@ -10347,7 +10347,7 @@
     ],
     [
       2586,
-      "france"
+      "latin empire"
     ],
     [
       2587,
@@ -10415,51 +10415,51 @@
     ],
     [
       2603,
-      "france"
+      "latin empire"
     ],
     [
       2604,
-      "france"
+      "latin empire"
     ],
     [
       2605,
-      "france"
+      "latin empire"
     ],
     [
       2606,
-      "france"
+      "latin empire"
     ],
     [
       2607,
-      "france"
+      "latin empire"
     ],
     [
       2608,
-      "france"
+      "latin empire"
     ],
     [
       2609,
-      "france"
+      "latin empire"
     ],
     [
       2610,
-      "france"
+      "latin empire"
     ],
     [
       2611,
-      "france"
+      "latin empire"
     ],
     [
       2612,
-      "france"
+      "latin empire"
     ],
     [
       2613,
-      "france"
+      "latin empire"
     ],
     [
       2614,
-      "france"
+      "latin empire"
     ],
     [
       2615,
@@ -10503,11 +10503,11 @@
     ],
     [
       2625,
-      "france"
+      "latin empire"
     ],
     [
       2626,
-      "france"
+      "latin empire"
     ],
     [
       2627,
@@ -10615,19 +10615,19 @@
     ],
     [
       2653,
-      "denmark"
+      "north sea empire"
     ],
     [
       2654,
-      "france"
+      "latin empire"
     ],
     [
       2655,
-      "spain"
+      "latin empire"
     ],
     [
       2656,
-      "spain"
+      "latin empire"
     ],
     [
       2657,
@@ -10679,11 +10679,11 @@
     ],
     [
       2669,
-      "denmark"
+      "north sea empire"
     ],
     [
       2670,
-      "denmark"
+      "north sea empire"
     ],
     [
       2671,
@@ -10691,179 +10691,179 @@
     ],
     [
       2672,
-      "britain"
+      "north sea empire"
     ],
     [
       2673,
-      "britain"
+      "north sea empire"
     ],
     [
       2674,
-      "britain"
+      "north sea empire"
     ],
     [
       2675,
-      "britain"
+      "north sea empire"
     ],
     [
       2676,
-      "britain"
+      "north sea empire"
     ],
     [
       2677,
-      "britain"
+      "north sea empire"
     ],
     [
       2678,
-      "britain"
+      "north sea empire"
     ],
     [
       2679,
-      "britain"
+      "north sea empire"
     ],
     [
       2680,
-      "britain"
+      "north sea empire"
     ],
     [
       2681,
-      "britain"
+      "north sea empire"
     ],
     [
       2682,
-      "britain"
+      "north sea empire"
     ],
     [
       2683,
-      "britain"
+      "north sea empire"
     ],
     [
       2684,
-      "britain"
+      "north sea empire"
     ],
     [
       2685,
-      "britain"
+      "north sea empire"
     ],
     [
       2686,
-      "britain"
+      "north sea empire"
     ],
     [
       2687,
-      "spain"
+      "latin empire"
     ],
     [
       2688,
-      "spain"
+      "latin empire"
     ],
     [
       2689,
-      "spain"
+      "latin empire"
     ],
     [
       2690,
-      "spain"
+      "latin empire"
     ],
     [
       2691,
-      "spain"
+      "latin empire"
     ],
     [
       2692,
-      "spain"
+      "latin empire"
     ],
     [
       2693,
-      "france"
+      "latin empire"
     ],
     [
       2694,
-      "france"
+      "latin empire"
     ],
     [
       2695,
-      "france"
+      "latin empire"
     ],
     [
       2696,
-      "spain"
+      "latin empire"
     ],
     [
       2697,
-      "spain"
+      "latin empire"
     ],
     [
       2698,
-      "spain"
+      "latin empire"
     ],
     [
       2699,
-      "spain"
+      "latin empire"
     ],
     [
       2700,
-      "spain"
+      "latin empire"
     ],
     [
       2701,
-      "spain"
+      "latin empire"
     ],
     [
       2702,
-      "spain"
+      "latin empire"
     ],
     [
       2703,
-      "spain"
+      "latin empire"
     ],
     [
       2704,
-      "spain"
+      "latin empire"
     ],
     [
       2705,
-      "spain"
+      "latin empire"
     ],
     [
       2706,
-      "spain"
+      "latin empire"
     ],
     [
       2707,
-      "britain"
+      "north sea empire"
     ],
     [
       2708,
-      "spain"
+      "latin empire"
     ],
     [
       2709,
-      "britain"
+      "north sea empire"
     ],
     [
       2710,
-      "spain"
+      "latin empire"
     ],
     [
       2711,
-      "spain"
+      "latin empire"
     ],
     [
       2712,
-      "spain"
+      "latin empire"
     ],
     [
       2713,
-      "britain"
+      "north sea empire"
     ],
     [
       2714,
-      "britain"
+      "north sea empire"
     ],
     [
       2715,
-      "britain"
+      "north sea empire"
     ],
     [
       2716,
@@ -10871,47 +10871,47 @@
     ],
     [
       2717,
-      "britain"
+      "north sea empire"
     ],
     [
       2718,
-      "britain"
+      "north sea empire"
     ],
     [
       2719,
-      "britain"
+      "north sea empire"
     ],
     [
       2720,
-      "britain"
+      "north sea empire"
     ],
     [
       2721,
-      "britain"
+      "north sea empire"
     ],
     [
       2722,
-      "britain"
+      "north sea empire"
     ],
     [
       2723,
-      "britain"
+      "north sea empire"
     ],
     [
       2724,
-      "britain"
+      "north sea empire"
     ],
     [
       2725,
-      "britain"
+      "north sea empire"
     ],
     [
       2726,
-      "britain"
+      "north sea empire"
     ],
     [
       2727,
-      "britain"
+      "north sea empire"
     ],
     [
       2728,
@@ -10923,23 +10923,23 @@
     ],
     [
       2730,
-      "britain"
+      "north sea empire"
     ],
     [
       2731,
-      "britain"
+      "north sea empire"
     ],
     [
       2732,
-      "britain"
+      "north sea empire"
     ],
     [
       2733,
-      "britain"
+      "north sea empire"
     ],
     [
       2734,
-      "britain"
+      "north sea empire"
     ],
     [
       2735,
@@ -11047,7 +11047,7 @@
     ],
     [
       2761,
-      "france"
+      "latin empire"
     ],
     [
       2762,
@@ -11455,7 +11455,7 @@
     ],
     [
       2863,
-      "france"
+      "latin empire"
     ],
     [
       2864,
@@ -11467,71 +11467,71 @@
     ],
     [
       2866,
-      "venice"
+      "north sea empire"
     ],
     [
       2867,
-      "france"
+      "latin empire"
     ],
     [
       2868,
-      "france"
+      "latin empire"
     ],
     [
       2869,
-      "france"
+      "latin empire"
     ],
     [
       2870,
-      "france"
+      "latin empire"
     ],
     [
       2871,
-      "france"
+      "latin empire"
     ],
     [
       2872,
-      "france"
+      "latin empire"
     ],
     [
       2873,
-      "france"
+      "latin empire"
     ],
     [
       2874,
-      "france"
+      "latin empire"
     ],
     [
       2875,
-      "france"
+      "latin empire"
     ],
     [
       2876,
-      "france"
+      "latin empire"
     ],
     [
       2877,
-      "france"
+      "latin empire"
     ],
     [
       2878,
-      "france"
+      "latin empire"
     ],
     [
       2879,
-      "france"
+      "latin empire"
     ],
     [
       2880,
-      "france"
+      "latin empire"
     ],
     [
       2881,
-      "france"
+      "latin empire"
     ],
     [
       2882,
-      "france"
+      "latin empire"
     ],
     [
       2883,
@@ -11551,27 +11551,27 @@
     ],
     [
       2887,
-      "britain"
+      "north sea empire"
     ],
     [
       2888,
-      "britain"
+      "north sea empire"
     ],
     [
       2889,
-      "britain"
+      "north sea empire"
     ],
     [
       2890,
-      "denmark"
+      "north sea empire"
     ],
     [
       2891,
-      "denmark"
+      "north sea empire"
     ],
     [
       2892,
-      "britain"
+      "north sea empire"
     ],
     [
       2893,
@@ -11579,11 +11579,11 @@
     ],
     [
       2894,
-      "britain"
+      "north sea empire"
     ],
     [
       2895,
-      "britain"
+      "north sea empire"
     ],
     [
       2896,
@@ -11611,7 +11611,7 @@
     ],
     [
       2902,
-      "denmark"
+      "north sea empire"
     ],
     [
       2903,
@@ -11699,7 +11699,7 @@
     ],
     [
       2924,
-      "denmark"
+      "north sea empire"
     ],
     [
       2925,
@@ -12319,35 +12319,35 @@
     ],
     [
       3079,
-      "spain"
+      "latin empire"
     ],
     [
       3080,
-      "spain"
+      "latin empire"
     ],
     [
       3081,
-      "spain"
+      "latin empire"
     ],
     [
       3082,
-      "spain"
+      "latin empire"
     ],
     [
       3083,
-      "spain"
+      "latin empire"
     ],
     [
       3084,
-      "spain"
+      "latin empire"
     ],
     [
       3085,
-      "spain"
+      "latin empire"
     ],
     [
       3086,
-      "spain"
+      "latin empire"
     ],
     [
       3087,
@@ -12371,7 +12371,7 @@
     ],
     [
       3092,
-      "france"
+      "north sea empire"
     ],
     [
       3093,
@@ -12839,51 +12839,51 @@
     ],
     [
       3209,
-      "france"
+      "latin empire"
     ],
     [
       3210,
-      "france"
+      "latin empire"
     ],
     [
       3211,
-      "france"
+      "latin empire"
     ],
     [
       3212,
-      "france"
+      "latin empire"
     ],
     [
       3213,
-      "france"
+      "latin empire"
     ],
     [
       3214,
-      "france"
+      "latin empire"
     ],
     [
       3215,
-      "france"
+      "latin empire"
     ],
     [
       3216,
-      "france"
+      "latin empire"
     ],
     [
       3217,
-      "france"
+      "latin empire"
     ],
     [
       3218,
-      "france"
+      "latin empire"
     ],
     [
       3219,
-      "france"
+      "latin empire"
     ],
     [
       3220,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       3221,
@@ -12895,31 +12895,31 @@
     ],
     [
       3223,
-      "zaporozhian hetmanate (rus)"
+      "russia"
     ],
     [
       3224,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3225,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3226,
-      "france"
+      "latin empire"
     ],
     [
       3227,
-      "france"
+      "latin empire"
     ],
     [
       3228,
-      "france"
+      "latin empire"
     ],
     [
       3229,
-      "france"
+      "latin empire"
     ],
     [
       3230,
@@ -12959,43 +12959,43 @@
     ],
     [
       3239,
-      "austria"
+      "hungary"
     ],
     [
       3240,
-      "austria"
+      "hungary"
     ],
     [
       3241,
-      "austria"
+      "hungary"
     ],
     [
       3242,
-      "austria"
+      "hungary"
     ],
     [
       3243,
-      "austria"
+      "hungary"
     ],
     [
       3244,
-      "austria"
+      "hungary"
     ],
     [
       3245,
-      "austria"
+      "hungary"
     ],
     [
       3246,
-      "austria"
+      "hungary"
     ],
     [
       3247,
-      "austria"
+      "hungary"
     ],
     [
       3248,
-      "austria"
+      "hungary"
     ],
     [
       3249,
@@ -13019,47 +13019,47 @@
     ],
     [
       3254,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3255,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3256,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3257,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3258,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3259,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3260,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3261,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3262,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3263,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3264,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3265,
@@ -13107,7 +13107,7 @@
     ],
     [
       3276,
-      "france"
+      "latin empire"
     ],
     [
       3277,
@@ -13115,31 +13115,31 @@
     ],
     [
       3278,
-      "france"
+      "latin empire"
     ],
     [
       3279,
-      "france"
+      "latin empire"
     ],
     [
       3280,
-      "france"
+      "latin empire"
     ],
     [
       3281,
-      "france"
+      "latin empire"
     ],
     [
       3282,
-      "france"
+      "latin empire"
     ],
     [
       3283,
-      "france"
+      "latin empire"
     ],
     [
       3284,
-      "france"
+      "latin empire"
     ],
     [
       3285,
@@ -13311,7 +13311,7 @@
     ],
     [
       3327,
-      "persia"
+      "mughal empire"
     ],
     [
       3328,
@@ -13335,267 +13335,267 @@
     ],
     [
       3333,
-      "austria"
+      "hungary"
     ],
     [
       3334,
-      "austria"
+      "hungary"
     ],
     [
       3335,
-      "austria"
+      "hungary"
     ],
     [
       3336,
-      "austria"
+      "hungary"
     ],
     [
       3337,
-      "austria"
+      "hungary"
     ],
     [
       3338,
-      "austria"
+      "hungary"
     ],
     [
       3339,
-      "austria"
+      "hungary"
     ],
     [
       3340,
-      "austria"
+      "hungary"
     ],
     [
       3341,
-      "austria"
+      "hungary"
     ],
     [
       3342,
-      "austria"
+      "hungary"
     ],
     [
       3343,
-      "austria"
+      "hungary"
     ],
     [
       3344,
-      "austria"
+      "hungary"
     ],
     [
       3345,
-      "austria"
+      "hungary"
     ],
     [
       3346,
-      "austria"
+      "hungary"
     ],
     [
       3347,
-      "austria"
+      "hungary"
     ],
     [
       3348,
-      "austria"
+      "hungary"
     ],
     [
       3349,
-      "austria"
+      "hungary"
     ],
     [
       3350,
-      "austria"
+      "hungary"
     ],
     [
       3351,
-      "austria"
+      "hungary"
     ],
     [
       3352,
-      "austria"
+      "hungary"
     ],
     [
       3353,
-      "austria"
+      "hungary"
     ],
     [
       3354,
-      "austria"
+      "hungary"
     ],
     [
       3355,
-      "austria"
+      "hungary"
     ],
     [
       3356,
-      "austria"
+      "hungary"
     ],
     [
       3357,
-      "austria"
+      "hungary"
     ],
     [
       3358,
-      "austria"
+      "hungary"
     ],
     [
       3359,
-      "austria"
+      "hungary"
     ],
     [
       3360,
-      "austria"
+      "hungary"
     ],
     [
       3361,
-      "austria"
+      "hungary"
     ],
     [
       3362,
-      "austria"
+      "hungary"
     ],
     [
       3363,
-      "austria"
+      "hungary"
     ],
     [
       3364,
-      "austria"
+      "hungary"
     ],
     [
       3365,
-      "austria"
+      "hungary"
     ],
     [
       3366,
-      "austria"
+      "hungary"
     ],
     [
       3367,
-      "austria"
+      "hungary"
     ],
     [
       3368,
-      "austria"
+      "hungary"
     ],
     [
       3369,
-      "austria"
+      "hungary"
     ],
     [
       3370,
-      "austria"
+      "hungary"
     ],
     [
       3371,
-      "austria"
+      "hungary"
     ],
     [
       3372,
-      "austria"
+      "hungary"
     ],
     [
       3373,
-      "austria"
+      "hungary"
     ],
     [
       3374,
-      "austria"
+      "hungary"
     ],
     [
       3375,
-      "austria"
+      "hungary"
     ],
     [
       3376,
-      "austria"
+      "hungary"
     ],
     [
       3377,
-      "austria"
+      "hungary"
     ],
     [
       3378,
-      "austria"
+      "hungary"
     ],
     [
       3379,
-      "austria"
+      "hungary"
     ],
     [
       3380,
-      "austria"
+      "hungary"
     ],
     [
       3381,
-      "austria"
+      "hungary"
     ],
     [
       3382,
-      "austria"
+      "hungary"
     ],
     [
       3383,
-      "austria"
+      "hungary"
     ],
     [
       3384,
-      "austria"
+      "hungary"
     ],
     [
       3385,
-      "austria"
+      "hungary"
     ],
     [
       3386,
-      "austria"
+      "hungary"
     ],
     [
       3387,
-      "austria"
+      "hungary"
     ],
     [
       3388,
-      "austria"
+      "hungary"
     ],
     [
       3389,
-      "austria"
+      "hungary"
     ],
     [
       3390,
-      "austria"
+      "hungary"
     ],
     [
       3391,
-      "austria"
+      "hungary"
     ],
     [
       3392,
-      "austria"
+      "hungary"
     ],
     [
       3393,
-      "austria"
+      "hungary"
     ],
     [
       3394,
-      "austria"
+      "hungary"
     ],
     [
       3395,
-      "austria"
+      "hungary"
     ],
     [
       3396,
-      "austria"
+      "hungary"
     ],
     [
       3397,
-      "austria"
+      "hungary"
     ],
     [
       3398,
-      "austria"
+      "hungary"
     ],
     [
       3399,
@@ -13651,47 +13651,47 @@
     ],
     [
       3412,
-      "france"
+      "latin empire"
     ],
     [
       3413,
-      "france"
+      "latin empire"
     ],
     [
       3414,
-      "france"
+      "latin empire"
     ],
     [
       3415,
-      "france"
+      "latin empire"
     ],
     [
       3416,
-      "france"
+      "latin empire"
     ],
     [
       3417,
-      "france"
+      "latin empire"
     ],
     [
       3418,
-      "france"
+      "latin empire"
     ],
     [
       3419,
-      "france"
+      "latin empire"
     ],
     [
       3420,
-      "france"
+      "latin empire"
     ],
     [
       3421,
-      "france"
+      "latin empire"
     ],
     [
       3422,
-      "france"
+      "latin empire"
     ],
     [
       3423,
@@ -13699,111 +13699,111 @@
     ],
     [
       3424,
-      "austria"
+      "hungary"
     ],
     [
       3425,
-      "austria"
+      "hungary"
     ],
     [
       3426,
-      "austria"
+      "hungary"
     ],
     [
       3427,
-      "austria"
+      "hungary"
     ],
     [
       3428,
-      "austria"
+      "hungary"
     ],
     [
       3429,
-      "austria"
+      "hungary"
     ],
     [
       3430,
-      "austria"
+      "hungary"
     ],
     [
       3431,
-      "austria"
+      "hungary"
     ],
     [
       3432,
-      "austria"
+      "hungary"
     ],
     [
       3433,
-      "austria"
+      "hungary"
     ],
     [
       3434,
-      "austria"
+      "hungary"
     ],
     [
       3435,
-      "austria"
+      "hungary"
     ],
     [
       3436,
-      "austria"
+      "hungary"
     ],
     [
       3437,
-      "austria"
+      "hungary"
     ],
     [
       3438,
-      "austria"
+      "hungary"
     ],
     [
       3439,
-      "austria"
+      "hungary"
     ],
     [
       3440,
-      "austria"
+      "hungary"
     ],
     [
       3441,
-      "austria"
+      "hungary"
     ],
     [
       3442,
-      "austria"
+      "hungary"
     ],
     [
       3443,
-      "austria"
+      "hungary"
     ],
     [
       3444,
-      "austria"
+      "hungary"
     ],
     [
       3445,
-      "austria"
+      "hungary"
     ],
     [
       3446,
-      "austria"
+      "hungary"
     ],
     [
       3447,
-      "austria"
+      "hungary"
     ],
     [
       3448,
-      "austria"
+      "hungary"
     ],
     [
       3449,
-      "austria"
+      "hungary"
     ],
     [
       3450,
-      "austria"
+      "hungary"
     ],
     [
       3451,
@@ -13827,15 +13827,15 @@
     ],
     [
       3456,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       3457,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       3458,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       3459,
@@ -13855,7 +13855,7 @@
     ],
     [
       3463,
-      "austria"
+      "hungary"
     ],
     [
       3464,
@@ -13867,11 +13867,11 @@
     ],
     [
       3466,
-      "austria"
+      "hungary"
     ],
     [
       3467,
-      "wallachia"
+      "moldavia"
     ],
     [
       3468,
@@ -13879,19 +13879,19 @@
     ],
     [
       3469,
-      "austria"
+      "hungary"
     ],
     [
       3470,
-      "austria"
+      "hungary"
     ],
     [
       3471,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       3472,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       3473,
@@ -13903,95 +13903,95 @@
     ],
     [
       3475,
-      "austria"
+      "hungary"
     ],
     [
       3476,
-      "austria"
+      "hungary"
     ],
     [
       3477,
-      "austria"
+      "hungary"
     ],
     [
       3478,
-      "austria"
+      "hungary"
     ],
     [
       3479,
-      "austria"
+      "hungary"
     ],
     [
       3480,
-      "austria"
+      "hungary"
     ],
     [
       3481,
-      "austria"
+      "hungary"
     ],
     [
       3482,
-      "austria"
+      "hungary"
     ],
     [
       3483,
-      "austria"
+      "hungary"
     ],
     [
       3484,
-      "austria"
+      "hungary"
     ],
     [
       3485,
-      "austria"
+      "hungary"
     ],
     [
       3486,
-      "austria"
+      "hungary"
     ],
     [
       3487,
-      "austria"
+      "hungary"
     ],
     [
       3488,
-      "austria"
+      "hungary"
     ],
     [
       3489,
-      "austria"
+      "hungary"
     ],
     [
       3490,
-      "austria"
+      "hungary"
     ],
     [
       3491,
-      "austria"
+      "hungary"
     ],
     [
       3492,
-      "austria"
+      "hungary"
     ],
     [
       3493,
-      "austria"
+      "hungary"
     ],
     [
       3494,
-      "austria"
+      "hungary"
     ],
     [
       3495,
-      "austria"
+      "hungary"
     ],
     [
       3496,
-      "austria"
+      "hungary"
     ],
     [
       3497,
-      "austria"
+      "hungary"
     ],
     [
       3498,
@@ -14015,7 +14015,7 @@
     ],
     [
       3503,
-      "denmark"
+      "sweden"
     ],
     [
       3504,
@@ -14051,35 +14051,35 @@
     ],
     [
       3512,
-      "spain"
+      "latin empire"
     ],
     [
       3513,
-      "spain"
+      "latin empire"
     ],
     [
       3514,
-      "spain"
+      "latin empire"
     ],
     [
       3515,
-      "spain"
+      "latin empire"
     ],
     [
       3516,
-      "spain"
+      "latin empire"
     ],
     [
       3517,
-      "spain"
+      "latin empire"
     ],
     [
       3518,
-      "spain"
+      "latin empire"
     ],
     [
       3519,
-      "spain"
+      "latin empire"
     ],
     [
       3520,
@@ -14279,59 +14279,59 @@
     ],
     [
       3569,
-      "unclaimed"
+      "latin empire"
     ],
     [
       3570,
-      "france"
+      "latin empire"
     ],
     [
       3571,
-      "france"
+      "latin empire"
     ],
     [
       3572,
-      "france"
+      "latin empire"
     ],
     [
       3573,
-      "france"
+      "latin empire"
     ],
     [
       3574,
-      "france"
+      "latin empire"
     ],
     [
       3575,
-      "france"
+      "latin empire"
     ],
     [
       3576,
-      "france"
+      "latin empire"
     ],
     [
       3577,
-      "unclaimed"
+      "latin empire"
     ],
     [
       3578,
-      "france"
+      "latin empire"
     ],
     [
       3579,
-      "france"
+      "latin empire"
     ],
     [
       3580,
-      "france"
+      "latin empire"
     ],
     [
       3581,
-      "france"
+      "latin empire"
     ],
     [
       3582,
-      "france"
+      "latin empire"
     ],
     [
       3583,
@@ -14339,27 +14339,27 @@
     ],
     [
       3584,
-      "france"
+      "latin empire"
     ],
     [
       3585,
-      "france"
+      "latin empire"
     ],
     [
       3586,
-      "france"
+      "latin empire"
     ],
     [
       3587,
-      "france"
+      "latin empire"
     ],
     [
       3588,
-      "france"
+      "latin empire"
     ],
     [
       3589,
-      "france"
+      "latin empire"
     ],
     [
       3590,
@@ -14399,19 +14399,19 @@
     ],
     [
       3599,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3600,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3601,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3602,
-      "moldavia"
+      "poland-lithuania"
     ],
     [
       3603,
@@ -14519,7 +14519,7 @@
     ],
     [
       3629,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3630,
@@ -14527,7 +14527,7 @@
     ],
     [
       3631,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3632,
@@ -14587,15 +14587,15 @@
     ],
     [
       3646,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3647,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3648,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3649,
@@ -14619,7 +14619,7 @@
     ],
     [
       3654,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3655,
@@ -14635,7 +14635,7 @@
     ],
     [
       3658,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3659,
@@ -14643,47 +14643,47 @@
     ],
     [
       3660,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3661,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3662,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3663,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3664,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3665,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3666,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3667,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3668,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3669,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3670,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       3671,
@@ -14799,63 +14799,63 @@
     ],
     [
       3699,
-      "britain"
+      "north sea empire"
     ],
     [
       3700,
-      "britain"
+      "north sea empire"
     ],
     [
       3701,
-      "britain"
+      "north sea empire"
     ],
     [
       3702,
-      "britain"
+      "north sea empire"
     ],
     [
       3703,
-      "britain"
+      "north sea empire"
     ],
     [
       3704,
-      "britain"
+      "north sea empire"
     ],
     [
       3705,
-      "britain"
+      "north sea empire"
     ],
     [
       3706,
-      "britain"
+      "north sea empire"
     ],
     [
       3707,
-      "britain"
+      "north sea empire"
     ],
     [
       3708,
-      "britain"
+      "north sea empire"
     ],
     [
       3709,
-      "britain"
+      "north sea empire"
     ],
     [
       3710,
-      "britain"
+      "north sea empire"
     ],
     [
       3711,
-      "france"
+      "latin empire"
     ],
     [
       3712,
-      "france"
+      "latin empire"
     ],
     [
       3713,
-      "france"
+      "latin empire"
     ],
     [
       3714,
@@ -14895,39 +14895,39 @@
     ],
     [
       3723,
-      "france"
+      "latin empire"
     ],
     [
       3724,
-      "france"
+      "latin empire"
     ],
     [
       3725,
-      "france"
+      "latin empire"
     ],
     [
       3726,
-      "france"
+      "latin empire"
     ],
     [
       3727,
-      "france"
+      "latin empire"
     ],
     [
       3728,
-      "france"
+      "latin empire"
     ],
     [
       3729,
-      "france"
+      "latin empire"
     ],
     [
       3730,
-      "france"
+      "latin empire"
     ],
     [
       3731,
-      "france"
+      "latin empire"
     ],
     [
       3732,
@@ -14971,11 +14971,11 @@
     ],
     [
       3742,
-      "france"
+      "latin empire"
     ],
     [
       3743,
-      "france"
+      "latin empire"
     ],
     [
       3744,
@@ -15023,91 +15023,91 @@
     ],
     [
       3755,
-      "france"
+      "latin empire"
     ],
     [
       3756,
-      "france"
+      "latin empire"
     ],
     [
       3757,
-      "france"
+      "latin empire"
     ],
     [
       3758,
-      "france"
+      "latin empire"
     ],
     [
       3759,
-      "france"
+      "latin empire"
     ],
     [
       3760,
-      "france"
+      "latin empire"
     ],
     [
       3761,
-      "france"
+      "latin empire"
     ],
     [
       3762,
-      "france"
+      "latin empire"
     ],
     [
       3763,
-      "france"
+      "latin empire"
     ],
     [
       3764,
-      "france"
+      "latin empire"
     ],
     [
       3765,
-      "france"
+      "latin empire"
     ],
     [
       3766,
-      "spain"
+      "latin empire"
     ],
     [
       3767,
-      "spain"
+      "latin empire"
     ],
     [
       3768,
-      "spain"
+      "latin empire"
     ],
     [
       3769,
-      "spain"
+      "latin empire"
     ],
     [
       3770,
-      "austria"
+      "hungary"
     ],
     [
       3771,
-      "austria"
+      "hungary"
     ],
     [
       3772,
-      "austria"
+      "hungary"
     ],
     [
       3773,
-      "france"
+      "latin empire"
     ],
     [
       3774,
-      "france"
+      "latin empire"
     ],
     [
       3775,
-      "unclaimed"
+      "latin empire"
     ],
     [
       3776,
-      "france"
+      "latin empire"
     ],
     [
       3777,
@@ -15115,15 +15115,15 @@
     ],
     [
       3778,
-      "france"
+      "latin empire"
     ],
     [
       3779,
-      "france"
+      "latin empire"
     ],
     [
       3780,
-      "unclaimed"
+      "latin empire"
     ],
     [
       3781,
@@ -15131,23 +15131,23 @@
     ],
     [
       3782,
-      "france"
+      "latin empire"
     ],
     [
       3783,
-      "france"
+      "latin empire"
     ],
     [
       3784,
-      "france"
+      "latin empire"
     ],
     [
       3785,
-      "france"
+      "latin empire"
     ],
     [
       3786,
-      "france"
+      "latin empire"
     ],
     [
       3787,
@@ -15283,7 +15283,7 @@
     ],
     [
       3820,
-      "unclaimed"
+      "latin empire"
     ],
     [
       3821,
@@ -15315,7 +15315,7 @@
     ],
     [
       3828,
-      "poland-lithuania"
+      "russia"
     ],
     [
       3829,
@@ -15395,7 +15395,7 @@
     ],
     [
       3848,
-      "austria"
+      "austrian duchies"
     ],
     [
       3849,
@@ -15407,15 +15407,15 @@
     ],
     [
       3851,
-      "france"
+      "latin empire"
     ],
     [
       3852,
-      "france"
+      "latin empire"
     ],
     [
       3853,
-      "france"
+      "latin empire"
     ],
     [
       3854,
@@ -15447,47 +15447,47 @@
     ],
     [
       3861,
-      "france"
+      "latin empire"
     ],
     [
       3862,
-      "france"
+      "latin empire"
     ],
     [
       3863,
-      "france"
+      "latin empire"
     ],
     [
       3864,
-      "france"
+      "latin empire"
     ],
     [
       3865,
-      "france"
+      "latin empire"
     ],
     [
       3866,
-      "france"
+      "latin empire"
     ],
     [
       3867,
-      "france"
+      "latin empire"
     ],
     [
       3868,
-      "france"
+      "latin empire"
     ],
     [
       3869,
-      "france"
+      "latin empire"
     ],
     [
       3870,
-      "france"
+      "latin empire"
     ],
     [
       3871,
-      "france"
+      "latin empire"
     ],
     [
       3872,
@@ -15495,51 +15495,51 @@
     ],
     [
       3873,
-      "france"
+      "latin empire"
     ],
     [
       3874,
-      "france"
+      "latin empire"
     ],
     [
       3875,
-      "france"
+      "latin empire"
     ],
     [
       3876,
-      "france"
+      "latin empire"
     ],
     [
       3877,
-      "france"
+      "latin empire"
     ],
     [
       3878,
-      "france"
+      "latin empire"
     ],
     [
       3879,
-      "france"
+      "latin empire"
     ],
     [
       3880,
-      "france"
+      "latin empire"
     ],
     [
       3881,
-      "france"
+      "latin empire"
     ],
     [
       3882,
-      "france"
+      "latin empire"
     ],
     [
       3883,
-      "france"
+      "latin empire"
     ],
     [
       3884,
-      "france"
+      "latin empire"
     ],
     [
       3885,
@@ -15547,7 +15547,7 @@
     ],
     [
       3886,
-      "contested territories"
+      "mughal empire"
     ],
     [
       3887,
@@ -15591,7 +15591,7 @@
     ],
     [
       3897,
-      "contested territories"
+      "mughal empire"
     ],
     [
       3898,
@@ -15603,19 +15603,19 @@
     ],
     [
       3900,
-      "contested territories"
+      "mughal empire"
     ],
     [
       3901,
-      "britain"
+      "north sea empire"
     ],
     [
       3902,
-      "britain"
+      "north sea empire"
     ],
     [
       3903,
-      "britain"
+      "north sea empire"
     ],
     [
       3904,
@@ -15727,403 +15727,403 @@
     ],
     [
       3931,
-      "britain"
+      "north sea empire"
     ],
     [
       3932,
-      "britain"
+      "north sea empire"
     ],
     [
       3933,
-      "britain"
+      "north sea empire"
     ],
     [
       3934,
-      "britain"
+      "north sea empire"
     ],
     [
       3935,
-      "britain"
+      "north sea empire"
     ],
     [
       3936,
-      "britain"
+      "north sea empire"
     ],
     [
       3937,
-      "britain"
+      "north sea empire"
     ],
     [
       3938,
-      "britain"
+      "north sea empire"
     ],
     [
       3939,
-      "britain"
+      "north sea empire"
     ],
     [
       3940,
-      "britain"
+      "north sea empire"
     ],
     [
       3941,
-      "britain"
+      "north sea empire"
     ],
     [
       3942,
-      "britain"
+      "north sea empire"
     ],
     [
       3943,
-      "britain"
+      "north sea empire"
     ],
     [
       3944,
-      "britain"
+      "north sea empire"
     ],
     [
       3945,
-      "britain"
+      "north sea empire"
     ],
     [
       3946,
-      "britain"
+      "north sea empire"
     ],
     [
       3947,
-      "britain"
+      "north sea empire"
     ],
     [
       3948,
-      "britain"
+      "north sea empire"
     ],
     [
       3949,
-      "britain"
+      "north sea empire"
     ],
     [
       3950,
-      "britain"
+      "north sea empire"
     ],
     [
       3951,
-      "britain"
+      "north sea empire"
     ],
     [
       3952,
-      "britain"
+      "north sea empire"
     ],
     [
       3953,
-      "britain"
+      "north sea empire"
     ],
     [
       3954,
-      "britain"
+      "north sea empire"
     ],
     [
       3955,
-      "britain"
+      "north sea empire"
     ],
     [
       3956,
-      "britain"
+      "north sea empire"
     ],
     [
       3957,
-      "britain"
+      "north sea empire"
     ],
     [
       3958,
-      "britain"
+      "north sea empire"
     ],
     [
       3959,
-      "britain"
+      "north sea empire"
     ],
     [
       3960,
-      "britain"
+      "north sea empire"
     ],
     [
       3961,
-      "britain"
+      "north sea empire"
     ],
     [
       3962,
-      "britain"
+      "north sea empire"
     ],
     [
       3963,
-      "britain"
+      "north sea empire"
     ],
     [
       3964,
-      "britain"
+      "north sea empire"
     ],
     [
       3965,
-      "britain"
+      "north sea empire"
     ],
     [
       3966,
-      "britain"
+      "north sea empire"
     ],
     [
       3967,
-      "britain"
+      "north sea empire"
     ],
     [
       3968,
-      "britain"
+      "north sea empire"
     ],
     [
       3969,
-      "britain"
+      "north sea empire"
     ],
     [
       3970,
-      "britain"
+      "north sea empire"
     ],
     [
       3971,
-      "britain"
+      "north sea empire"
     ],
     [
       3972,
-      "britain"
+      "north sea empire"
     ],
     [
       3973,
-      "britain"
+      "north sea empire"
     ],
     [
       3974,
-      "britain"
+      "north sea empire"
     ],
     [
       3975,
-      "britain"
+      "north sea empire"
     ],
     [
       3976,
-      "britain"
+      "north sea empire"
     ],
     [
       3977,
-      "britain"
+      "north sea empire"
     ],
     [
       3978,
-      "britain"
+      "north sea empire"
     ],
     [
       3979,
-      "britain"
+      "north sea empire"
     ],
     [
       3980,
-      "britain"
+      "north sea empire"
     ],
     [
       3981,
-      "britain"
+      "north sea empire"
     ],
     [
       3982,
-      "britain"
+      "north sea empire"
     ],
     [
       3983,
-      "britain"
+      "north sea empire"
     ],
     [
       3984,
-      "britain"
+      "north sea empire"
     ],
     [
       3985,
-      "britain"
+      "north sea empire"
     ],
     [
       3986,
-      "britain"
+      "north sea empire"
     ],
     [
       3987,
-      "britain"
+      "north sea empire"
     ],
     [
       3988,
-      "britain"
+      "north sea empire"
     ],
     [
       3989,
-      "britain"
+      "north sea empire"
     ],
     [
       3990,
-      "britain"
+      "north sea empire"
     ],
     [
       3991,
-      "britain"
+      "north sea empire"
     ],
     [
       3992,
-      "britain"
+      "north sea empire"
     ],
     [
       3993,
-      "britain"
+      "north sea empire"
     ],
     [
       3994,
-      "britain"
+      "north sea empire"
     ],
     [
       3995,
-      "britain"
+      "north sea empire"
     ],
     [
       3996,
-      "britain"
+      "north sea empire"
     ],
     [
       3997,
-      "britain"
+      "north sea empire"
     ],
     [
       3998,
-      "britain"
+      "north sea empire"
     ],
     [
       3999,
-      "britain"
+      "north sea empire"
     ],
     [
       4000,
-      "britain"
+      "north sea empire"
     ],
     [
       4001,
-      "britain"
+      "north sea empire"
     ],
     [
       4002,
-      "britain"
+      "north sea empire"
     ],
     [
       4003,
-      "britain"
+      "north sea empire"
     ],
     [
       4004,
-      "britain"
+      "north sea empire"
     ],
     [
       4005,
-      "britain"
+      "north sea empire"
     ],
     [
       4006,
-      "britain"
+      "north sea empire"
     ],
     [
       4007,
-      "britain"
+      "north sea empire"
     ],
     [
       4008,
-      "britain"
+      "north sea empire"
     ],
     [
       4009,
-      "britain"
+      "north sea empire"
     ],
     [
       4010,
-      "britain"
+      "north sea empire"
     ],
     [
       4011,
-      "britain"
+      "north sea empire"
     ],
     [
       4012,
-      "britain"
+      "north sea empire"
     ],
     [
       4013,
-      "britain"
+      "north sea empire"
     ],
     [
       4014,
-      "britain"
+      "north sea empire"
     ],
     [
       4015,
-      "britain"
+      "north sea empire"
     ],
     [
       4016,
-      "britain"
+      "north sea empire"
     ],
     [
       4017,
-      "britain"
+      "north sea empire"
     ],
     [
       4018,
-      "britain"
+      "north sea empire"
     ],
     [
       4019,
-      "britain"
+      "north sea empire"
     ],
     [
       4020,
-      "britain"
+      "north sea empire"
     ],
     [
       4021,
-      "britain"
+      "north sea empire"
     ],
     [
       4022,
-      "britain"
+      "north sea empire"
     ],
     [
       4023,
-      "britain"
+      "north sea empire"
     ],
     [
       4024,
-      "britain"
+      "north sea empire"
     ],
     [
       4025,
-      "britain"
+      "north sea empire"
     ],
     [
       4026,
-      "britain"
+      "north sea empire"
     ],
     [
       4027,
-      "britain"
+      "north sea empire"
     ],
     [
       4028,
-      "britain"
+      "north sea empire"
     ],
     [
       4029,
-      "britain"
+      "north sea empire"
     ],
     [
       4030,
-      "britain"
+      "north sea empire"
     ],
     [
       4031,
@@ -16483,7 +16483,7 @@
     ],
     [
       4120,
-      "russia"
+      "contested territories"
     ],
     [
       4121,
@@ -16507,7 +16507,7 @@
     ],
     [
       4126,
-      "russia"
+      "contested territories"
     ],
     [
       4127,
@@ -16627,7 +16627,7 @@
     ],
     [
       4156,
-      "russia"
+      "crimea"
     ],
     [
       4157,
@@ -16799,43 +16799,43 @@
     ],
     [
       4199,
-      "france"
+      "latin empire"
     ],
     [
       4200,
-      "france"
+      "latin empire"
     ],
     [
       4201,
-      "france"
+      "latin empire"
     ],
     [
       4202,
-      "france"
+      "latin empire"
     ],
     [
       4203,
-      "france"
+      "latin empire"
     ],
     [
       4204,
-      "france"
+      "latin empire"
     ],
     [
       4205,
-      "france"
+      "latin empire"
     ],
     [
       4206,
-      "france"
+      "latin empire"
     ],
     [
       4207,
-      "france"
+      "latin empire"
     ],
     [
       4208,
-      "france"
+      "latin empire"
     ],
     [
       4209,
@@ -16843,11 +16843,11 @@
     ],
     [
       4210,
-      "france"
+      "latin empire"
     ],
     [
       4211,
-      "france"
+      "latin empire"
     ],
     [
       4212,
@@ -17067,11 +17067,11 @@
     ],
     [
       4266,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       4267,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       4268,
@@ -17095,27 +17095,27 @@
     ],
     [
       4273,
-      "ottoman empire"
+      "contested territories"
     ],
     [
       4274,
-      "persia"
+      "contested territories"
     ],
     [
       4275,
-      "persia"
+      "contested territories"
     ],
     [
       4276,
-      "persia"
+      "contested territories"
     ],
     [
       4277,
-      "persia"
+      "mughal empire"
     ],
     [
       4278,
-      "contested territories"
+      "mughal empire"
     ],
     [
       4279,
@@ -17127,7 +17127,7 @@
     ],
     [
       4281,
-      "persia"
+      "mughal empire"
     ],
     [
       4282,
@@ -17135,7 +17135,7 @@
     ],
     [
       4283,
-      "mughal empire"
+      "contested territories"
     ],
     [
       4284,
@@ -17155,59 +17155,59 @@
     ],
     [
       4288,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4289,
-      "austria"
+      "hungary"
     ],
     [
       4290,
-      "austria"
+      "hungary"
     ],
     [
       4291,
-      "austria"
+      "hungary"
     ],
     [
       4292,
-      "austria"
+      "hungary"
     ],
     [
       4293,
-      "austria"
+      "hungary"
     ],
     [
       4294,
-      "austria"
+      "hungary"
     ],
     [
       4295,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4296,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4297,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4298,
-      "austria"
+      "hungary"
     ],
     [
       4299,
-      "austria"
+      "hungary"
     ],
     [
       4300,
-      "austria"
+      "hungary"
     ],
     [
       4301,
-      "austria"
+      "hungary"
     ],
     [
       4302,
@@ -17431,7 +17431,7 @@
     ],
     [
       4357,
-      "france"
+      "latin empire"
     ],
     [
       4358,
@@ -17447,23 +17447,23 @@
     ],
     [
       4361,
-      "austria"
+      "bohemia"
     ],
     [
       4362,
-      "austria"
+      "bohemia"
     ],
     [
       4363,
-      "austria"
+      "bohemia"
     ],
     [
       4364,
-      "poland-lithuania"
+      "russia"
     ],
     [
       4365,
-      "poland-lithuania"
+      "russia"
     ],
     [
       4366,
@@ -17475,7 +17475,7 @@
     ],
     [
       4368,
-      "kazakh khanates"
+      "contested territories"
     ],
     [
       4369,
@@ -17491,11 +17491,11 @@
     ],
     [
       4372,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       4373,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       4374,
@@ -17511,55 +17511,55 @@
     ],
     [
       4377,
-      "france"
+      "latin empire"
     ],
     [
       4378,
-      "austria"
+      "hungary"
     ],
     [
       4379,
-      "austria"
+      "hungary"
     ],
     [
       4380,
-      "austria"
+      "hungary"
     ],
     [
       4381,
-      "austria"
+      "hungary"
     ],
     [
       4382,
-      "austria"
+      "hungary"
     ],
     [
       4383,
-      "austria"
+      "hungary"
     ],
     [
       4384,
-      "austria"
+      "hungary"
     ],
     [
       4385,
-      "contested territories"
+      "hungary"
     ],
     [
       4386,
-      "austria"
+      "hungary"
     ],
     [
       4387,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4388,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4389,
-      "hungarian rebels"
+      "hungary"
     ],
     [
       4390,
@@ -17635,11 +17635,11 @@
     ],
     [
       4408,
-      "france"
+      "latin empire"
     ],
     [
       4409,
-      "france"
+      "latin empire"
     ],
     [
       4410,
@@ -17655,7 +17655,7 @@
     ],
     [
       4413,
-      "austria"
+      "latin empire"
     ],
     [
       4414,
@@ -17663,31 +17663,31 @@
     ],
     [
       4415,
-      "austria"
+      "latin empire"
     ],
     [
       4416,
-      "austria"
+      "latin empire"
     ],
     [
       4417,
-      "austria"
+      "latin empire"
     ],
     [
       4418,
-      "austria"
+      "latin empire"
     ],
     [
       4419,
-      "tuscany"
+      "latin empire"
     ],
     [
       4420,
-      "tuscany"
+      "latin empire"
     ],
     [
       4421,
-      "tuscany"
+      "latin empire"
     ],
     [
       4422,
@@ -17695,7 +17695,7 @@
     ],
     [
       4423,
-      "austria"
+      "latin empire"
     ],
     [
       4424,
@@ -17703,7 +17703,7 @@
     ],
     [
       4425,
-      "austria"
+      "latin empire"
     ],
     [
       4426,
@@ -17711,7 +17711,7 @@
     ],
     [
       4427,
-      "austria"
+      "austrian duchies"
     ],
     [
       4428,
@@ -17727,11 +17727,11 @@
     ],
     [
       4431,
-      "hre minor states"
+      "latin empire"
     ],
     [
       4432,
-      "hre minor states"
+      "latin empire"
     ],
     [
       4433,
@@ -17747,7 +17747,7 @@
     ],
     [
       4436,
-      "tuscany"
+      "latin empire"
     ],
     [
       4437,
@@ -17763,11 +17763,11 @@
     ],
     [
       4440,
-      "france"
+      "latin empire"
     ],
     [
       4441,
-      "france"
+      "latin empire"
     ],
     [
       4442,
@@ -17775,7 +17775,7 @@
     ],
     [
       4443,
-      "france"
+      "latin empire"
     ],
     [
       4444,
@@ -17783,215 +17783,215 @@
     ],
     [
       4445,
-      "tuscany"
+      "latin empire"
     ],
     [
       4446,
-      "france"
+      "latin empire"
     ],
     [
       4447,
-      "france"
+      "latin empire"
     ],
     [
       4448,
-      "france"
+      "latin empire"
     ],
     [
       4449,
-      "france"
+      "latin empire"
     ],
     [
       4450,
-      "france"
+      "latin empire"
     ],
     [
       4451,
-      "france"
+      "latin empire"
     ],
     [
       4452,
-      "france"
+      "latin empire"
     ],
     [
       4453,
-      "france"
+      "latin empire"
     ],
     [
       4454,
-      "france"
+      "latin empire"
     ],
     [
       4455,
-      "france"
+      "latin empire"
     ],
     [
       4456,
-      "france"
+      "latin empire"
     ],
     [
       4457,
-      "france"
+      "latin empire"
     ],
     [
       4458,
-      "france"
+      "latin empire"
     ],
     [
       4459,
-      "france"
+      "latin empire"
     ],
     [
       4460,
-      "france"
+      "latin empire"
     ],
     [
       4461,
-      "france"
+      "latin empire"
     ],
     [
       4462,
-      "france"
+      "latin empire"
     ],
     [
       4463,
-      "france"
+      "latin empire"
     ],
     [
       4464,
-      "france"
+      "latin empire"
     ],
     [
       4465,
-      "france"
+      "latin empire"
     ],
     [
       4466,
-      "france"
+      "latin empire"
     ],
     [
       4467,
-      "france"
+      "latin empire"
     ],
     [
       4468,
-      "france"
+      "latin empire"
     ],
     [
       4469,
-      "france"
+      "latin empire"
     ],
     [
       4470,
-      "france"
+      "latin empire"
     ],
     [
       4471,
-      "france"
+      "latin empire"
     ],
     [
       4472,
-      "france"
+      "latin empire"
     ],
     [
       4473,
-      "france"
+      "latin empire"
     ],
     [
       4474,
-      "france"
+      "latin empire"
     ],
     [
       4475,
-      "france"
+      "latin empire"
     ],
     [
       4476,
-      "france"
+      "latin empire"
     ],
     [
       4477,
-      "france"
+      "latin empire"
     ],
     [
       4478,
-      "france"
+      "latin empire"
     ],
     [
       4479,
-      "france"
+      "latin empire"
     ],
     [
       4480,
-      "france"
+      "latin empire"
     ],
     [
       4481,
-      "france"
+      "latin empire"
     ],
     [
       4482,
-      "france"
+      "latin empire"
     ],
     [
       4483,
-      "france"
+      "latin empire"
     ],
     [
       4484,
-      "france"
+      "latin empire"
     ],
     [
       4485,
-      "france"
+      "latin empire"
     ],
     [
       4486,
-      "france"
+      "latin empire"
     ],
     [
       4487,
-      "france"
+      "latin empire"
     ],
     [
       4488,
-      "france"
+      "latin empire"
     ],
     [
       4489,
-      "france"
+      "latin empire"
     ],
     [
       4490,
-      "france"
+      "latin empire"
     ],
     [
       4491,
-      "france"
+      "latin empire"
     ],
     [
       4492,
-      "france"
+      "latin empire"
     ],
     [
       4493,
-      "france"
+      "latin empire"
     ],
     [
       4494,
-      "france"
+      "latin empire"
     ],
     [
       4495,
-      "france"
+      "latin empire"
     ],
     [
       4496,
-      "france"
+      "latin empire"
     ],
     [
       4497,
-      "france"
+      "latin empire"
     ],
     [
       4498,
@@ -18055,83 +18055,83 @@
     ],
     [
       4513,
-      "britain"
+      "north sea empire"
     ],
     [
       4514,
-      "britain"
+      "north sea empire"
     ],
     [
       4515,
-      "britain"
+      "north sea empire"
     ],
     [
       4516,
-      "britain"
+      "north sea empire"
     ],
     [
       4517,
-      "britain"
+      "north sea empire"
     ],
     [
       4518,
-      "britain"
+      "north sea empire"
     ],
     [
       4519,
-      "britain"
+      "north sea empire"
     ],
     [
       4520,
-      "britain"
+      "north sea empire"
     ],
     [
       4521,
-      "britain"
+      "north sea empire"
     ],
     [
       4522,
-      "britain"
+      "north sea empire"
     ],
     [
       4523,
-      "britain"
+      "north sea empire"
     ],
     [
       4524,
-      "britain"
+      "north sea empire"
     ],
     [
       4525,
-      "britain"
+      "north sea empire"
     ],
     [
       4526,
-      "britain"
+      "north sea empire"
     ],
     [
       4527,
-      "britain"
+      "north sea empire"
     ],
     [
       4528,
-      "britain"
+      "north sea empire"
     ],
     [
       4529,
-      "britain"
+      "north sea empire"
     ],
     [
       4530,
-      "britain"
+      "north sea empire"
     ],
     [
       4531,
-      "britain"
+      "north sea empire"
     ],
     [
       4532,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       4533,
@@ -18155,39 +18155,39 @@
     ],
     [
       4538,
-      "contested territories"
+      "poland-lithuania"
     ],
     [
       4539,
-      "france"
+      "latin empire"
     ],
     [
       4540,
-      "france"
+      "latin empire"
     ],
     [
       4541,
-      "france"
+      "latin empire"
     ],
     [
       4542,
-      "france"
+      "latin empire"
     ],
     [
       4543,
-      "france"
+      "latin empire"
     ],
     [
       4544,
-      "france"
+      "latin empire"
     ],
     [
       4545,
-      "france"
+      "latin empire"
     ],
     [
       4546,
-      "france"
+      "latin empire"
     ],
     [
       4547,
@@ -18400,6 +18400,10 @@
       "color": "#FCD840"
     },
     {
+      "name": "austrian duchies",
+      "color": "#ff7e29"
+    },
+    {
       "name": "avic",
       "color": "#9f853c"
     },
@@ -18410,6 +18414,10 @@
     {
       "name": "bhutan",
       "color": "#FFB300"
+    },
+    {
+      "name": "bohemia",
+      "color": "#4beca6"
     },
     {
       "name": "bornu",
@@ -18452,6 +18460,10 @@
       "color": "#ffffff"
     },
     {
+      "name": "crimea",
+      "color": "#437a4a"
+    },
+    {
       "name": "dahomey",
       "color": "#3F4DBF"
     },
@@ -18464,16 +18476,16 @@
       "color": "#722F37"
     },
     {
-      "name": "france",
-      "color": "#1F4E9C"
-    },
-    {
       "name": "funj sultanate",
       "color": "#A0856B"
     },
     {
       "name": "genoa",
       "color": "#9F2D2D"
+    },
+    {
+      "name": "hanover",
+      "color": "#ff9eb1"
     },
     {
       "name": "haudenosaunee confederacy",
@@ -18494,6 +18506,10 @@
     {
       "name": "hungarian rebels",
       "color": "#b3df72"
+    },
+    {
+      "name": "hungary",
+      "color": "#32da2f"
     },
     {
       "name": "japan",
@@ -18521,11 +18537,15 @@
     },
     {
       "name": "korea",
-      "color": "#F0F0E8"
+      "color": "#e64f0f"
     },
     {
       "name": "laos",
       "color": "#B89D6B"
+    },
+    {
+      "name": "latin empire",
+      "color": "#ff2e2e"
     },
     {
       "name": "malay sultanates",
@@ -18564,12 +18584,16 @@
       "color": "#FF8C42"
     },
     {
+      "name": "north sea empire",
+      "color": "#00035c"
+    },
+    {
       "name": "oman",
       "color": "#8B0000"
     },
     {
       "name": "ottoman empire",
-      "color": "#ff1c01"
+      "color": "#990f00"
     },
     {
       "name": "oyo",
@@ -18578,6 +18602,10 @@
     {
       "name": "papal states",
       "color": "#F0F0E8"
+    },
+    {
+      "name": "peasant revolts",
+      "color": "#a6a0a2"
     },
     {
       "name": "persia",
@@ -18605,7 +18633,7 @@
     },
     {
       "name": "savoy",
-      "color": "#7C2128"
+      "color": "#a0ff52"
     },
     {
       "name": "saxony",
@@ -18621,7 +18649,7 @@
     },
     {
       "name": "spain",
-      "color": "#E48E1B"
+      "color": "#7d0000"
     },
     {
       "name": "sweden",
@@ -18629,7 +18657,7 @@
     },
     {
       "name": "switzerland",
-      "color": "#DA291C"
+      "color": "#ffaea8"
     },
     {
       "name": "tibet",
@@ -18673,7 +18701,7 @@
     },
     {
       "name": "zaporozhian hetmanate (rus)",
-      "color": "#437a4a"
+      "color": "#52985b"
     }
   ]
 }

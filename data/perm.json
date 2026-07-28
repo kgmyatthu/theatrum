@@ -22,8 +22,7 @@
     "nation": "russia"
   },
   "Walrusbear0831": {
-    "role": "player",
-    "nation": "spain"
+    "role": "admin"
   },
   "KingREN1-Suitman": {
     "role": "admin"
@@ -43,7 +42,7 @@
   },
   "yourlocalgeobukseon": {
     "role": "player",
-    "nation": "britain"
+    "nation": "north sea empire"
   },
   "Nindze2009": {
     "role": "player",
@@ -66,6 +65,30 @@
   },
   "cucumberplane2771": {
     "role": "player",
-    "nation": "venice"
+    "nation": "russia"
+  },
+  "Juliusquick0616-pixel": {
+    "role": "player",
+    "nation": "crimea"
+  },
+  "shanesgames5-byte": {
+    "role": "player",
+    "nation": "korea"
+  },
+  "juliusquick0616-pixel": {
+    "role": "player",
+    "nation": "ottoman empire"
+  },
+  "ohgizmo": {
+    "role": "player",
+    "nation": "poland-lithuania"
+  },
+  "Ohgizmo": {
+    "role": "player",
+    "nation": "poland-lithuania"
+  },
+  "Urchinn-sys": {
+    "role": "player",
+    "nation": "brandenburg-prussia"
   }
 }

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "juliusquick0616-pixel-1783065897406-0",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "The great çapulcu",
+    "strength": 60000,
+    "commander": "Meñli II Giray",
+    "lat": 47.052659053889315,
+    "lon": 33.91845703124999,
+    "turnStartLat": 47.052659053889315,
+    "turnStartLon": 33.91845703124999,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1783067003879-1",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "The Bağçasaray Khans guard",
+    "strength": 2000,
+    "commander": "The Kapıcıbaşı of Bağçasaray",
+    "lat": 44.754819921069334,
+    "lon": 33.86037826538087,
+    "turnStartLat": 44.754819921069334,
+    "turnStartLon": 33.86037826538087,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1783079144166-2",
+    "nation": "crimea",
+    "branch": "navy",
+    "name": "Donanma-i Qırım",
+    "strength": 20,
+    "commander": "Mohamed Ben Hassan",
+    "lat": 45.158800738352134,
+    "lon": 33.60717773437501,
+    "turnStartLat": 45.158800738352134,
+    "turnStartLon": 33.60717773437501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 34
+  },
+  {
+    "id": "juliusquick0616-pixel-1784151111816-0",
+    "nation": "crimea",
+    "branch": "army",
+    "name": "2nd host",
+    "strength": 10000,
+    "commander": "",
+    "lat": 44.954432622651254,
+    "lon": 33.691406250000014,
+    "turnStartLat": 44.954432622651254,
+    "turnStartLon": 33.691406250000014,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 54
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "yellowwithblue-1784173326108-4",
+    "nation": "kalmyk khanate",
+    "branch": "army",
+    "name": "Kalmyk Horde",
+    "strength": 8000,
+    "commander": "",
+    "lat": 52.696361078274485,
+    "lon": 69.38964843750001,
+    "turnStartLat": 52.696361078274485,
+    "turnStartLon": 69.38964843750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784173360779-7",
+    "nation": "kalmyk khanate",
+    "branch": "army",
+    "name": "Kalmyk Horde",
+    "strength": 5000,
+    "commander": "Kazakh Horde",
+    "lat": 49.18170338770663,
+    "lon": 60.24902343750001,
+    "turnStartLat": 49.18170338770663,
+    "turnStartLon": 60.24902343750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  }
+]

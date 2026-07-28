@@ -1,0 +1,58 @@
+[
+  {
+    "id": "yellowwithblue-1784173142293-0",
+    "nation": "kazakh khanates",
+    "branch": "army",
+    "name": "Kazakh Horde",
+    "strength": 40000,
+    "commander": "",
+    "lat": 56.46249048388979,
+    "lon": 68.15917968750001,
+    "turnStartLat": 56.46249048388979,
+    "turnStartLon": 68.15917968750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784173338249-5",
+    "nation": "kazakh khanates",
+    "branch": "army",
+    "name": "Kazakh Horde",
+    "strength": 8000,
+    "commander": "Kazakh Horde",
+    "lat": 52.5095347703273,
+    "lon": 71.58691406250001,
+    "turnStartLat": 52.5095347703273,
+    "turnStartLon": 71.58691406250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784173353678-6",
+    "nation": "kazakh khanates",
+    "branch": "army",
+    "name": "Reserve Horde",
+    "strength": 5000,
+    "commander": "Kazakh Horde",
+    "lat": 51.20688339486562,
+    "lon": 59.15039062500001,
+    "turnStartLat": 51.20688339486562,
+    "turnStartLon": 59.15039062500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  },
+  {
+    "id": "yellowwithblue-1784696427905-2",
+    "nation": "kazakh khanates",
+    "branch": "army",
+    "name": "Kazakh Horsemen",
+    "strength": 10000,
+    "commander": "",
+    "lat": 51.16556659836182,
+    "lon": 50.25146484375001,
+    "turnStartLat": 51.16556659836182,
+    "turnStartLon": 50.25146484375001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 62
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "yellowwithblue-1784173238159-3",
+    "nation": "bukhara",
+    "branch": "army",
+    "name": "Bukharan Horde",
+    "strength": 15000,
+    "commander": "",
+    "lat": 49.49667452747045,
+    "lon": 71.71875000000001,
+    "turnStartLat": 49.49667452747045,
+    "turnStartLon": 71.71875000000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 56
+  }
+]

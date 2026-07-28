@@ -1,16 +1,30 @@
 [
   {
-    "id": "yellowwithblue-1782648195083-0",
+    "id": "Urchinn-sys-1783911572067-0",
     "nation": "brandenburg-prussia",
     "branch": "army",
-    "name": "Prussian Army",
+    "name": "Army of Prussia",
     "strength": 80000,
-    "commander": "Elector",
-    "lat": 52.429222277955134,
-    "lon": 13.458251953125002,
-    "turnStartLat": 52.429222277955134,
-    "turnStartLon": 13.458251953125002,
+    "commander": "Frederick the Great",
+    "lat": 51.09317306026892,
+    "lon": 13.211059570312502,
+    "turnStartLat": 51.09317306026892,
+    "turnStartLon": 13.211059570312502,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 25
+    "createdAtTurn": 49
+  },
+  {
+    "id": "Urchinn-sys-1783911767955-2",
+    "nation": "brandenburg-prussia",
+    "branch": "navy",
+    "name": "Navy of Prussia",
+    "strength": 11,
+    "commander": "",
+    "lat": 53.898176587885835,
+    "lon": 14.287719726562502,
+    "turnStartLat": 53.898176587885835,
+    "turnStartLon": 14.287719726562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 49
   }
 ]
