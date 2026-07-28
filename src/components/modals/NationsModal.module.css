@@ -1,0 +1,142 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  background: var(--bg-sidebar);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  width: min(620px, 92vw);
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+  color: var(--warning);
+  font-size: 14px;
+}
+
+.close {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1;
+  padding: 4px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--text-primary);
+}
+
+.scroll {
+  overflow-y: auto;
+  background: var(--bg-list);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg-list);
+  color: var(--text-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: right;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th:first-child {
+  text-align: left;
+}
+
+.table td {
+  padding: 5px 12px;
+  text-align: right;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.table td:first-child {
+  text-align: left;
+  font-family: var(--font-ui);
+  max-width: 0;
+  width: 40%;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nationCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.swatch {
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #000;
+}
+
+.name {
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.count {
+  color: var(--text-secondary);
+}
+
+.zero {
+  color: var(--text-muted);
+}
+
+.table tfoot td {
+  position: sticky;
+  bottom: 0;
+  background: var(--bg-list);
+  border-top: 1px solid var(--border);
+  font-weight: bold;
+  padding: 7px 12px;
+}
+
+.hint {
+  font-size: 10px;
+  color: #678;
+  margin-top: 8px;
+}

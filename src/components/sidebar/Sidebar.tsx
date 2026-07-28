@@ -8,6 +8,7 @@ import { DisplayPanel } from './DisplayPanel';
 import { LayersPanel } from './LayersPanel';
 import { PersistencePanel } from './PersistencePanel';
 import { StatsPanel } from './StatsPanel';
+import { NationsPanel } from './NationsPanel';
 import { TurnPanel } from './TurnPanel';
 import { AccountPanel } from '@/auth/AccountPanel';
 import { useAuth } from '@/auth/AuthContext';
@@ -38,6 +39,7 @@ export function Sidebar() {
       {showGameplayPanels && <DisplayPanel />}
       <LayersPanel />
       <PersistencePanel onStatus={setStatus} />
+      <NationsPanel />
       {showGameplayPanels && <StatsPanel />}
     </div>
   );
