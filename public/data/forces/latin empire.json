@@ -228,7 +228,7 @@
     "nation": "latin empire",
     "branch": "army",
     "name": "1st Army of Italy",
-    "strength": 20000,
+    "strength": 10000,
     "commander": "Luigi",
     "lat": 44.99127689487858,
     "lon": 9.646162390708925,
