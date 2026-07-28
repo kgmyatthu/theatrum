@@ -76,11 +76,11 @@
     "name": "Army at Zeeland",
     "strength": 28000,
     "commander": "Sir Poul Vendelbo Løvenørn",
-    "lat": 55.787258378469254,
-    "lon": 12.271728515625002,
+    "lat": 53.44553530620064,
+    "lon": 10.218658447265627,
     "turnStartLat": 55.787258378469254,
     "turnStartLon": 12.271728515625002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 291.99005357512226,
     "createdAtTurn": 0
   },
   {
@@ -174,11 +174,11 @@
     "name": "Army of Schleswig-Holstein-Hamburg",
     "strength": 10000,
     "commander": "Charles von Kirke",
-    "lat": 54.719119961185896,
-    "lon": 9.265136495232584,
+    "lat": 53.70971358510174,
+    "lon": 9.622650146484377,
     "turnStartLat": 54.719119961185896,
     "turnStartLon": 9.265136495232584,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 116.91530790436134,
     "createdAtTurn": 29
   },
   {
