@@ -118,11 +118,11 @@
     "name": "Rumeli Ordusu",
     "strength": 40000,
     "commander": "Ali Pasha",
-    "lat": 49.50701600557868,
-    "lon": 24.486029962696186,
+    "lat": 48.02551618376934,
+    "lon": 29.79873095439011,
     "turnStartLat": 47.54934341627819,
     "turnStartLon": 26.693115234375018,
-    "kmMovedThisTurn": 271.63752919817085,
+    "kmMovedThisTurn": 720.6525714816893,
     "createdAtTurn": 61
   },
   {
@@ -160,11 +160,11 @@
     "name": "Tuna Ordusu",
     "strength": 20000,
     "commander": "Hayder Pasha",
-    "lat": 46.91400175586063,
-    "lon": 28.961791992187514,
+    "lat": 47.39124272248923,
+    "lon": 30.12092309438258,
     "turnStartLat": 45.14895481042101,
     "turnStartLon": 28.57910156249999,
-    "kmMovedThisTurn": 198.47459722110437,
+    "kmMovedThisTurn": 300.9365091735625,
     "createdAtTurn": 61
   },
   {
@@ -208,19 +208,5 @@
     "turnStartLon": 95.6396484375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
-  },
-  {
-    "id": "juliusquick0616-pixel-1785213008417-0",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "2nd Tuna Ordusa",
-    "strength": 5000,
-    "commander": "",
-    "lat": 46.52989443158422,
-    "lon": 30.56213378906249,
-    "turnStartLat": 46.52989443158422,
-    "turnStartLon": 30.56213378906249,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69
   }
 ]
