@@ -188,11 +188,11 @@
     "name": "İhtiyat Donanması SOL",
     "strength": 37,
     "commander": "ihtiyat",
-    "lat": 40.64166683965711,
-    "lon": 25.542571139136378,
+    "lat": 43.937461690316646,
+    "lon": 29.00756835937499,
     "turnStartLat": 40.64166683965711,
     "turnStartLon": 25.542571139136378,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 464.16749015757495,
     "createdAtTurn": 61
   },
   {
