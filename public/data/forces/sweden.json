@@ -48,11 +48,11 @@
     "name": "Augustin Ehrensvärd",
     "strength": 38000,
     "commander": "Augustin Ehrensvärd",
-    "lat": 57.07956023442378,
-    "lon": 24.581909179687504,
+    "lat": 56.897003921272606,
+    "lon": 24.6368408203125,
     "turnStartLat": 57.37838064115476,
     "turnStartLon": 24.746704101562504,
-    "kmMovedThisTurn": 34.67610707373598,
+    "kmMovedThisTurn": 55.24640117923096,
     "createdAtTurn": 64
   },
   {
@@ -74,7 +74,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Garrison of Riga",
-    "strength": 8000,
+    "strength": 3000,
     "commander": "Johan August Meijerfeldt the Younger",
     "lat": 56.94909374837349,
     "lon": 24.106407165527344,
