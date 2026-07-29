@@ -144,13 +144,13 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Ukrayna Ordusu",
-    "strength": 20000,
+    "strength": 40000,
     "commander": "Ahmed Pasha",
-    "lat": 45.136200998635395,
-    "lon": 28.72467041015624,
+    "lat": 45.01012413452228,
+    "lon": 28.610000610351552,
     "turnStartLat": 30.35038726723987,
     "turnStartLon": 31.267089843750004,
-    "kmMovedThisTurn": 1876.2669331300995,
+    "kmMovedThisTurn": 1893.6503608238595,
     "createdAtTurn": 61
   },
   {
