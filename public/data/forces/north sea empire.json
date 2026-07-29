@@ -412,11 +412,11 @@
     "name": "East India Relief Force",
     "strength": 1500,
     "commander": "Local Kapitan",
-    "lat": -9.37450744298539,
-    "lon": 69.34570312500001,
+    "lat": 10.606619641865391,
+    "lon": 79.44763183593751,
     "turnStartLat": -9.37450744298539,
     "turnStartLon": 69.34570312500001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2487.004369931327,
     "createdAtTurn": 61
   },
   {
@@ -426,11 +426,11 @@
     "name": "East India Relief Force, (SOTL Only)",
     "strength": 3,
     "commander": "Local Kapitan",
-    "lat": -9.547986656477839,
-    "lon": 70.57617187500001,
+    "lat": 10.228437266155955,
+    "lon": 79.51904296875001,
     "turnStartLat": -9.547986656477839,
     "turnStartLon": 70.57617187500001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2415.483236045979,
     "createdAtTurn": 61
   },
   {
