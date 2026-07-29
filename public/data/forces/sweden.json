@@ -73,14 +73,14 @@
     "id": "yellowwithblue-1785113870349-0",
     "nation": "sweden",
     "branch": "army",
-    "name": "Garrison of Riga",
+    "name": "Garrison of Wilno",
     "strength": 3000,
     "commander": "Johan August Meijerfeldt the Younger",
-    "lat": 56.94909374837349,
-    "lon": 24.106407165527344,
+    "lat": 54.68732805684,
+    "lon": 25.282287597656254,
     "turnStartLat": 56.94909374837349,
     "turnStartLon": 24.106407165527344,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 275.3608210165541,
     "createdAtTurn": 67
   },
   {
