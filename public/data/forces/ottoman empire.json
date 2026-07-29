@@ -160,11 +160,11 @@
     "name": "Tuna Ordusu",
     "strength": 20000,
     "commander": "Hayder Pasha",
-    "lat": 47.39124272248923,
-    "lon": 30.12092309438258,
+    "lat": 47.85986003148668,
+    "lon": 28.767700195312504,
     "turnStartLat": 45.14895481042101,
     "turnStartLon": 28.57910156249999,
-    "kmMovedThisTurn": 300.9365091735625,
+    "kmMovedThisTurn": 414.9516491507039,
     "createdAtTurn": 61
   },
   {
