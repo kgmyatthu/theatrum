@@ -56,20 +56,6 @@
     "createdAtTurn": 3
   },
   {
-    "id": "yellowwithblue-1784694248989-0",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Cossack Host",
-    "strength": 20000,
-    "commander": "",
-    "lat": 48.63290858589535,
-    "lon": 31.882324218750004,
-    "turnStartLat": 48.545705491847464,
-    "turnStartLon": 32.71728515625001,
-    "kmMovedThisTurn": 112.44649910387753,
-    "createdAtTurn": 62
-  },
-  {
     "id": "yellowwithblue-1784694527921-4",
     "nation": "russia",
     "branch": "army",
