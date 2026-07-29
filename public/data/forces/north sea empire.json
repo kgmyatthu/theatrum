@@ -20,11 +20,11 @@
     "name": "Red Squadron",
     "strength": 44,
     "commander": "Sir George Rooke",
-    "lat": 51.11559271064121,
-    "lon": 1.3156127929687502,
+    "lat": 51.484803739516046,
+    "lon": 3.1530761718750004,
     "turnStartLat": 50.81710695844082,
     "turnStartLon": -1.1151123046875002,
-    "kmMovedThisTurn": 173.41574513258104,
+    "kmMovedThisTurn": 307.5931007919763,
     "createdAtTurn": 8
   },
   {
@@ -48,11 +48,11 @@
     "name": "Blue Squadron",
     "strength": 36,
     "commander": "Arthur Herbert",
-    "lat": 51.41248386417175,
-    "lon": 0.6375503540039064,
+    "lat": 52.36553758871974,
+    "lon": 4.482421875000001,
     "turnStartLat": 51.41248386417175,
     "turnStartLon": 0.6375503540039064,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 284.30670480366473,
     "createdAtTurn": 8
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Jutland",
     "strength": 15000,
     "commander": "Erling Haaland",
-    "lat": 54.93818798858723,
-    "lon": 8.577575683593752,
+    "lat": 53.22987893393014,
+    "lon": 5.82000732421875,
     "turnStartLat": 55.560831318746295,
     "turnStartLon": 9.044922441244127,
-    "kmMovedThisTurn": 75.30472506770036,
+    "kmMovedThisTurn": 336.8673649751768,
     "createdAtTurn": 0
   },
   {
@@ -384,11 +384,11 @@
     "name": "Danish Royal Navy (SOTL Only)",
     "strength": 41,
     "commander": "Frederik Hoppe",
-    "lat": 54.93661015660588,
-    "lon": 8.536376953125002,
+    "lat": 53.47823926148311,
+    "lon": 6.470947265625,
     "turnStartLat": 54.93661015660588,
     "turnStartLon": 8.536376953125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 210.54941564612153,
     "createdAtTurn": 47
   },
   {
@@ -454,11 +454,11 @@
     "name": "British Royal Army",
     "strength": 25000,
     "commander": "Augustus I",
-    "lat": 51.408629296986234,
-    "lon": 0.6495666503906251,
+    "lat": 52.38901106223456,
+    "lon": 4.680175781250001,
     "turnStartLat": 51.17935892032973,
     "turnStartLon": 0.9997558593750001,
-    "kmMovedThisTurn": 75.5926502601093,
+    "kmMovedThisTurn": 372.80416051384833,
     "createdAtTurn": 62
   },
   {
@@ -496,11 +496,11 @@
     "name": "Third Army",
     "strength": 15000,
     "commander": "British General",
-    "lat": 51.11731684874898,
-    "lon": 1.3252258300781252,
+    "lat": 51.49164465653034,
+    "lon": 3.7380981445312504,
     "turnStartLat": 51.46023806623274,
     "turnStartLon": 0.0054931640625,
-    "kmMovedThisTurn": 101.21393972918834,
+    "kmMovedThisTurn": 274.0279118929934,
     "createdAtTurn": 63
   }
 ]
