@@ -34,11 +34,11 @@
     "name": "Army of the North",
     "strength": 40000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 54.619797717849536,
-    "lon": 25.471801757812504,
+    "lat": 54.64205540129178,
+    "lon": 25.285034179687504,
     "turnStartLat": 54.57842969715518,
     "turnStartLon": 26.883544921875004,
-    "kmMovedThisTurn": 460.90862566051237,
+    "kmMovedThisTurn": 512.2588537339772,
     "createdAtTurn": 2
   },
   {
