@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 30000,
     "commander": "",
-    "lat": 50.597186230587035,
-    "lon": 28.740234375000004,
+    "lat": 50.68775800806201,
+    "lon": 29.882812500000004,
     "turnStartLat": 48.8936153614802,
     "turnStartLon": 19.671020507812504,
-    "kmMovedThisTurn": 2652.312851237026,
+    "kmMovedThisTurn": 2733.508029496907,
     "createdAtTurn": 49
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of the Reserve",
     "strength": 30000,
     "commander": "",
-    "lat": 50.94458443495011,
-    "lon": 29.388427734375,
+    "lat": 50.8822431111397,
+    "lon": 30.113525390625004,
     "turnStartLat": 56.511017504952136,
     "turnStartLon": 23.686523437500004,
-    "kmMovedThisTurn": 2352.7757398294416,
+    "kmMovedThisTurn": 2404.0809477215007,
     "createdAtTurn": 49
   },
   {
