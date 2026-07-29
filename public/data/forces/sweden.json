@@ -28,20 +28,6 @@
     "createdAtTurn": 47
   },
   {
-    "id": "yellowwithblue-1784155497471-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Samuel Gustaf Stierneld",
-    "strength": 15000,
-    "commander": "Mattias Alexander von Ungern-Sternberg",
-    "lat": 57.016814017391134,
-    "lon": 24.774169921875004,
-    "turnStartLat": 57.37245755833189,
-    "turnStartLon": 24.925231933593754,
-    "kmMovedThisTurn": 40.5793684286543,
-    "createdAtTurn": 54
-  },
-  {
     "id": "yellowwithblue-1784155594473-3",
     "nation": "sweden",
     "branch": "army",
@@ -60,7 +46,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Augustin Ehrensvärd",
-    "strength": 35000,
+    "strength": 38000,
     "commander": "Augustin Ehrensvärd",
     "lat": 57.07956023442378,
     "lon": 24.581909179687504,
