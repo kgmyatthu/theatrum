@@ -452,7 +452,7 @@
     "nation": "north sea empire",
     "branch": "army",
     "name": "British Royal Army",
-    "strength": 20000,
+    "strength": 25000,
     "commander": "Augustus I",
     "lat": 51.408629296986234,
     "lon": 0.6495666503906251,
