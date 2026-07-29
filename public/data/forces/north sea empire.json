@@ -174,11 +174,11 @@
     "name": "Army of Schleswig-Holstein-Hamburg (Lowered, On Standby)",
     "strength": 10000,
     "commander": "Sir Poul Vendelbo Løvenørn",
-    "lat": 53.83632232122981,
-    "lon": 9.569091796875002,
+    "lat": 53.41935400090768,
+    "lon": 7.662963867187501,
     "turnStartLat": 54.719119961185896,
     "turnStartLon": 9.265136495232584,
-    "kmMovedThisTurn": 334.9840751167561,
+    "kmMovedThisTurn": 468.9508231652055,
     "createdAtTurn": 29
   },
   {
