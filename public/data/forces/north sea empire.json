@@ -62,11 +62,11 @@
     "name": "Army of Jutland",
     "strength": 15000,
     "commander": "Erling Haaland",
-    "lat": 55.560831318746295,
-    "lon": 9.044922441244127,
+    "lat": 54.93818798858723,
+    "lon": 8.577575683593752,
     "turnStartLat": 55.560831318746295,
     "turnStartLon": 9.044922441244127,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 75.30472506770036,
     "createdAtTurn": 0
   },
   {
