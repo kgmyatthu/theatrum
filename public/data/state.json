@@ -67,11 +67,11 @@
     ],
     [
       16,
-      "contested territories"
+      "china"
     ],
     [
       17,
-      "tibet"
+      "china"
     ],
     [
       18,
@@ -383,7 +383,7 @@
     ],
     [
       95,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       96,
@@ -463,7 +463,7 @@
     ],
     [
       115,
-      "contested territories"
+      "russia"
     ],
     [
       116,
@@ -3767,7 +3767,7 @@
     ],
     [
       941,
-      "contested territories"
+      "russia"
     ],
     [
       942,
@@ -5523,11 +5523,11 @@
     ],
     [
       1380,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       1381,
-      "contested territories"
+      "russia"
     ],
     [
       1382,
@@ -5535,7 +5535,7 @@
     ],
     [
       1383,
-      "contested territories"
+      "russia"
     ],
     [
       1384,
@@ -5543,11 +5543,11 @@
     ],
     [
       1385,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       1386,
-      "contested territories"
+      "russia"
     ],
     [
       1387,
@@ -5555,7 +5555,7 @@
     ],
     [
       1388,
-      "contested territories"
+      "russia"
     ],
     [
       1389,
@@ -6455,7 +6455,7 @@
     ],
     [
       1613,
-      "contested territories"
+      "russia"
     ],
     [
       1614,
@@ -15187,7 +15187,7 @@
     ],
     [
       3796,
-      "tibet"
+      "china"
     ],
     [
       3797,
@@ -16483,7 +16483,7 @@
     ],
     [
       4120,
-      "contested territories"
+      "russia"
     ],
     [
       4121,
@@ -16507,7 +16507,7 @@
     ],
     [
       4126,
-      "contested territories"
+      "russia"
     ],
     [
       4127,
@@ -17067,11 +17067,11 @@
     ],
     [
       4266,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       4267,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       4268,
@@ -17475,7 +17475,7 @@
     ],
     [
       4368,
-      "contested territories"
+      "kazakh khanates"
     ],
     [
       4369,
@@ -18437,7 +18437,7 @@
     },
     {
       "name": "bukhara",
-      "color": "#5F9EA0"
+      "color": "#437a4a"
     },
     {
       "name": "burma",
@@ -18517,15 +18517,15 @@
     },
     {
       "name": "kalmyk khanate",
-      "color": "#94d6ff"
+      "color": "#437a4a"
     },
     {
       "name": "kazakh khanates",
-      "color": "#D2691E"
+      "color": "#437a4a"
     },
     {
       "name": "khiva",
-      "color": "#40826D"
+      "color": "#437a4a"
     },
     {
       "name": "knights of malta",
