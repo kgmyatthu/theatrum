@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 40000,
     "commander": "Jan III Sobieski",
-    "lat": 54.71192884840614,
-    "lon": 24.367675781250004,
+    "lat": 54.55613719840548,
+    "lon": 25.076293945312504,
     "turnStartLat": 56.43820369358167,
     "turnStartLon": 24.455566406250004,
-    "kmMovedThisTurn": 192.03245505067127,
+    "kmMovedThisTurn": 240.81758985495043,
     "createdAtTurn": 4
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of the Reserve",
     "strength": 30000,
     "commander": "",
-    "lat": 55.1286490684888,
-    "lon": 25.290527343750004,
+    "lat": 54.7816821000196,
+    "lon": 25.565185546875,
     "turnStartLat": 56.511017504952136,
     "turnStartLon": 23.686523437500004,
-    "kmMovedThisTurn": 183.4762183216633,
+    "kmMovedThisTurn": 225.8557905069955,
     "createdAtTurn": 49
   },
   {
