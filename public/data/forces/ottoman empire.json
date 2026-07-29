@@ -46,7 +46,7 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Trablusgarb Ordusu",
-    "strength": 20000,
+    "strength": 10000,
     "commander": "Mehmed Pasha",
     "lat": 32.02204906495204,
     "lon": 12.245635986328127,
@@ -210,16 +210,16 @@
     "createdAtTurn": 65
   },
   {
-    "id": "juliusquick0616-pixel-1785290516659-0",
+    "id": "juliusquick0616-pixel-1785291107686-0",
     "nation": "ottoman empire",
     "branch": "army",
     "name": "2nd Tuna Ordusu",
-    "strength": 5000,
+    "strength": 10000,
     "commander": "",
-    "lat": 46.931509883369316,
-    "lon": 29.02404785156249,
-    "turnStartLat": 46.931509883369316,
-    "turnStartLon": 29.02404785156249,
+    "lat": 48.46434708601192,
+    "lon": 29.036922454833974,
+    "turnStartLat": 48.46434708601192,
+    "turnStartLon": 29.036922454833974,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
   }
