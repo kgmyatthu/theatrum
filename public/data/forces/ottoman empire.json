@@ -6,11 +6,11 @@
     "name": "Mısır Ordusu",
     "strength": 1000,
     "commander": "Abdullah Pasha",
-    "lat": 43.60691361835132,
-    "lon": 18.80126953124999,
+    "lat": 44.283225873767854,
+    "lon": 19.381713867187518,
     "turnStartLat": 43.60691361835132,
     "turnStartLon": 18.80126953124999,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 88.40168507596736,
     "createdAtTurn": 31
   },
   {
@@ -174,11 +174,11 @@
     "name": "Yunanistan Ordusu",
     "strength": 500,
     "commander": "Mehmet Pasha",
-    "lat": 38.3215420835537,
-    "lon": 23.367919921875004,
+    "lat": 38.00878754790918,
+    "lon": 23.15185546874999,
     "turnStartLat": 38.3215420835537,
     "turnStartLon": 23.367919921875004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 39.57560981681693,
     "createdAtTurn": 61
   },
   {
@@ -208,5 +208,19 @@
     "turnStartLon": 95.6396484375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 65
+  },
+  {
+    "id": "juliusquick0616-pixel-1785290516659-0",
+    "nation": "ottoman empire",
+    "branch": "army",
+    "name": "2nd Tuna Ordusu",
+    "strength": 5000,
+    "commander": "",
+    "lat": 46.931509883369316,
+    "lon": 29.02404785156249,
+    "turnStartLat": 46.931509883369316,
+    "turnStartLon": 29.02404785156249,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
   }
 ]
