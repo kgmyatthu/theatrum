@@ -132,11 +132,11 @@
     "name": "Slovakian Army",
     "strength": 100000,
     "commander": "",
-    "lat": 54.533832507944304,
-    "lon": 24.763183593750004,
+    "lat": 54.42851751056349,
+    "lon": 24.741210937500004,
     "turnStartLat": 48.32703913063479,
     "turnStartLon": 16.542663574218754,
-    "kmMovedThisTurn": 2485.9918070365634,
+    "kmMovedThisTurn": 2497.7880142098525,
     "createdAtTurn": 61
   }
 ]
