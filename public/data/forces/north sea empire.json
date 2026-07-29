@@ -20,11 +20,11 @@
     "name": "Red Squadron",
     "strength": 44,
     "commander": "Sir George Rooke",
-    "lat": 50.81710695844082,
-    "lon": -1.1151123046875002,
+    "lat": 51.11559271064121,
+    "lon": 1.3156127929687502,
     "turnStartLat": 50.81710695844082,
     "turnStartLon": -1.1151123046875002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 173.41574513258104,
     "createdAtTurn": 8
   },
   {
@@ -454,11 +454,11 @@
     "name": "British Royal Army",
     "strength": 20000,
     "commander": "Augustus I",
-    "lat": 51.17935892032973,
-    "lon": 0.9997558593750001,
+    "lat": 51.408629296986234,
+    "lon": 0.6495666503906251,
     "turnStartLat": 51.17935892032973,
     "turnStartLon": 0.9997558593750001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 75.5926502601093,
     "createdAtTurn": 62
   },
   {
@@ -493,14 +493,14 @@
     "id": "Vancouver1903-1784860560364-1",
     "nation": "north sea empire",
     "branch": "army",
-    "name": "Third Army (Lowered, On Standby)",
+    "name": "Third Army",
     "strength": 15000,
     "commander": "British General",
-    "lat": 51.46023806623274,
-    "lon": 0.0054931640625,
+    "lat": 51.11731684874898,
+    "lon": 1.3252258300781252,
     "turnStartLat": 51.46023806623274,
     "turnStartLon": 0.0054931640625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 101.21393972918834,
     "createdAtTurn": 63
   }
 ]
