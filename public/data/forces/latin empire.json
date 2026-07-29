@@ -34,11 +34,11 @@
     "name": "Brest Naval Station (SOTL MOTHBALLED)",
     "strength": 40,
     "commander": "",
-    "lat": 48.40041216790074,
-    "lon": -5.4156938195228586,
+    "lat": 48.37450406542588,
+    "lon": -4.500274658203126,
     "turnStartLat": 48.40041216790074,
     "turnStartLon": -5.4156938195228586,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 67.65864267201474,
     "createdAtTurn": 4
   },
   {
@@ -174,11 +174,11 @@
     "name": "Cadiz Fleet",
     "strength": 30,
     "commander": "Antonio Merida de La Cruz",
-    "lat": 36.558072693393946,
-    "lon": -6.5861112624406815,
+    "lat": 36.536128980992245,
+    "lon": -6.267700195312501,
     "turnStartLat": 36.558072693393946,
     "turnStartLon": -6.5861112624406815,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 28.54824148153572,
     "createdAtTurn": 8
   },
   {
@@ -188,11 +188,11 @@
     "name": "Vigo Fleet (MOTHBALLED)",
     "strength": 20,
     "commander": "Jose Manuel de Santo Domingo",
-    "lat": 42.547595466494656,
-    "lon": -9.742892235517504,
+    "lat": 42.237285371349984,
+    "lon": -8.746490478515627,
     "turnStartLat": 42.547595466494656,
     "turnStartLon": -9.742892235517504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 88.80367959421307,
     "createdAtTurn": 8
   },
   {
@@ -202,11 +202,11 @@
     "name": "Palma Station (MOTHBALLED)",
     "strength": 10,
     "commander": "Manuel Estaban de Soler y Roca",
-    "lat": 39.21210937905268,
-    "lon": 3.624426126480103,
+    "lat": 39.560077086374,
+    "lon": 2.6683044433593754,
     "turnStartLat": 36.017792724330235,
     "turnStartLon": -4.375915378332139,
-    "kmMovedThisTurn": 788.7156737831175,
+    "kmMovedThisTurn": 879.539184532956,
     "createdAtTurn": 8
   },
   {
@@ -216,11 +216,11 @@
     "name": "Italian Fleet",
     "strength": 10,
     "commander": "Luigi Antonio di Potenza",
-    "lat": 37.7336138668999,
-    "lon": 16.183570772409443,
+    "lat": 38.201453505785175,
+    "lon": 15.574493408203127,
     "turnStartLat": 38.31552372794366,
     "turnStartLon": 20.10392233729363,
-    "kmMovedThisTurn": 349.4109282754962,
+    "kmMovedThisTurn": 423.95587409750806,
     "createdAtTurn": 8
   },
   {
