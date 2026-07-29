@@ -471,7 +471,7 @@
     ],
     [
       117,
-      "contested territories"
+      "saxony"
     ],
     [
       118,
@@ -1239,7 +1239,7 @@
     ],
     [
       309,
-      "poland-lithuania"
+      "brandenburg-prussia"
     ],
     [
       310,
@@ -1299,7 +1299,7 @@
     ],
     [
       324,
-      "poland-lithuania"
+      "brandenburg-prussia"
     ],
     [
       325,
@@ -1307,7 +1307,7 @@
     ],
     [
       326,
-      "poland-lithuania"
+      "brandenburg-prussia"
     ],
     [
       327,
@@ -18637,7 +18637,7 @@
     },
     {
       "name": "saxony",
-      "color": "#8bd07c"
+      "color": "#4f4f4f"
     },
     {
       "name": "seic",
