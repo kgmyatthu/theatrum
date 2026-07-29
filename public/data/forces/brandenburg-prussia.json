@@ -6,11 +6,11 @@
     "name": "Army of Prussia",
     "strength": 80000,
     "commander": "Frederick the Great",
-    "lat": 50.78510168548186,
-    "lon": 17.435302734375004,
+    "lat": 53.648383838004165,
+    "lon": 12.509372569620613,
     "turnStartLat": 51.09317306026892,
     "turnStartLon": 13.211059570312502,
-    "kmMovedThisTurn": 297.922024822628,
+    "kmMovedThisTurn": 760.3090445715081,
     "createdAtTurn": 49
   },
   {
