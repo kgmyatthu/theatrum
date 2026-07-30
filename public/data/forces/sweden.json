@@ -45,9 +45,9 @@
     "id": "yellowwithblue-1784934536500-1",
     "nation": "sweden",
     "branch": "army",
-    "name": "Gustav III",
-    "strength": 40000,
-    "commander": "Co commander: Augustin Ehrensvärd",
+    "name": "Augustin Ehrensvärd",
+    "strength": 10000,
+    "commander": "",
     "lat": 54.63728692308159,
     "lon": 24.491271972656254,
     "turnStartLat": 57.37838064115476,
@@ -96,5 +96,19 @@
     "turnStartLon": 15.595092773437502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 67
+  },
+  {
+    "id": "yellowwithblue-1785389555848-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Gustav III",
+    "strength": 30000,
+    "commander": "Gustav III",
+    "lat": 59.136499487320734,
+    "lon": 17.962646484375004,
+    "turnStartLat": 59.136499487320734,
+    "turnStartLon": 17.962646484375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
   }
 ]
