@@ -6999,55 +6999,55 @@
     ],
     [
       1749,
-      "avic"
+      "madagaskar"
     ],
     [
       1750,
-      "avic"
+      "madagaskar"
     ],
     [
       1751,
-      "avic"
+      "madagaskar"
     ],
     [
       1752,
-      "avic"
+      "madagaskar"
     ],
     [
       1753,
-      "avic"
+      "madagaskar"
     ],
     [
       1754,
-      "avic"
+      "madagaskar"
     ],
     [
       1755,
-      "avic"
+      "madagaskar"
     ],
     [
       1756,
-      "avic"
+      "madagaskar"
     ],
     [
       1757,
-      "avic"
+      "madagaskar"
     ],
     [
       1758,
-      "avic"
+      "madagaskar"
     ],
     [
       1759,
-      "avic"
+      "madagaskar"
     ],
     [
       1760,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       1761,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       1762,
@@ -14415,27 +14415,27 @@
     ],
     [
       3603,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       3604,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       3605,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       3606,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       3607,
-      "avic"
+      "madagaskar"
     ],
     [
       3608,
-      "avic"
+      "madagaskar"
     ],
     [
       3609,
@@ -18191,15 +18191,15 @@
     ],
     [
       4547,
-      "avic"
+      "madagaskar"
     ],
     [
       4548,
-      "avic"
+      "madagaskar"
     ],
     [
       4549,
-      "unclaimed"
+      "madagaskar"
     ],
     [
       4550,
@@ -18558,6 +18558,10 @@
     {
       "name": "latin empire",
       "color": "#ff2e2e"
+    },
+    {
+      "name": "madagaskar",
+      "color": "#ddd622"
     },
     {
       "name": "malay sultanates",
