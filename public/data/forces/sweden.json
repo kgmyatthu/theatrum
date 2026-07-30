@@ -1,24 +1,10 @@
 [
   {
-    "id": "yellowwithblue-1783105398420-0",
-    "nation": "sweden",
-    "branch": "navy",
-    "name": "Axel Lagerbielke",
-    "strength": 5,
-    "commander": "Axel Lagerbielke",
-    "lat": 59.17029835064482,
-    "lon": 18.676757812500004,
-    "turnStartLat": 57.37393841871411,
-    "turnStartLon": 23.774414062500004,
-    "kmMovedThisTurn": 601.5220917223282,
-    "createdAtTurn": 34
-  },
-  {
     "id": "yellowwithblue-1783829620969-2",
     "nation": "sweden",
     "branch": "army",
     "name": "Indelningsverket",
-    "strength": 0,
+    "strength": 30000,
     "commander": "Charles XII",
     "lat": 59.478568831926395,
     "lon": 15.666503906250002,
@@ -74,7 +60,7 @@
     "nation": "sweden",
     "branch": "navy",
     "name": "Karlskrona Battlefleet (MOTHBALLED)",
-    "strength": 25,
+    "strength": 30,
     "commander": "",
     "lat": 56.17002298293205,
     "lon": 15.595092773437502,
@@ -82,19 +68,5 @@
     "turnStartLon": 15.595092773437502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 67
-  },
-  {
-    "id": "yellowwithblue-1785389555848-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Gustav III",
-    "strength": 30000,
-    "commander": "Gustav III",
-    "lat": 59.136499487320734,
-    "lon": 17.962646484375004,
-    "turnStartLat": 59.136499487320734,
-    "turnStartLon": 17.962646484375004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69
   }
 ]
