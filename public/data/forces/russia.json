@@ -1,47 +1,5 @@
 [
   {
-    "id": "pointerayden-ship-it-1780102844083-1",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the Center",
-    "strength": 70000,
-    "commander": "",
-    "lat": 54.85131525968609,
-    "lon": 31.311035156250004,
-    "turnStartLat": 54.03358633521085,
-    "turnStartLon": 28.212890625000004,
-    "kmMovedThisTurn": 292.993462752411,
-    "createdAtTurn": 2
-  },
-  {
-    "id": "pointerayden-ship-it-1780102873423-2",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the South",
-    "strength": 40000,
-    "commander": "Menshikov",
-    "lat": 50.708634400828224,
-    "lon": 31.750488281250004,
-    "turnStartLat": 50.757309850294085,
-    "turnStartLon": 30.366210937500004,
-    "kmMovedThisTurn": 162.2673513099515,
-    "createdAtTurn": 2
-  },
-  {
-    "id": "pointerayden-ship-it-1780306229802-1",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the North",
-    "strength": 40000,
-    "commander": "Mikhail Loris-Melikov",
-    "lat": 56.84897198026978,
-    "lon": 28.894042968750004,
-    "turnStartLat": 54.57842969715518,
-    "turnStartLon": 26.883544921875004,
-    "kmMovedThisTurn": 939.5597451502954,
-    "createdAtTurn": 2
-  },
-  {
     "id": "pointerayden-ship-it-1780307075240-0",
     "nation": "russia",
     "branch": "navy",
@@ -59,28 +17,14 @@
     "id": "yellowwithblue-1784694527921-4",
     "nation": "russia",
     "branch": "army",
-    "name": "Garrison of Moscow",
-    "strength": 7000,
+    "name": "Russian Standing Army",
+    "strength": 50000,
     "commander": "",
     "lat": 55.677584411089526,
     "lon": 37.55126953125001,
     "turnStartLat": 55.677584411089526,
     "turnStartLon": 37.55126953125001,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
-  },
-  {
-    "id": "yellowwithblue-1784748002579-0",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Army of the Dnieper",
-    "strength": 40000,
-    "commander": "",
-    "lat": 52.6030475337285,
-    "lon": 31.860351562500004,
-    "turnStartLat": 52.64306343665892,
-    "turnStartLon": 27.872314453125004,
-    "kmMovedThisTurn": 269.2011514255625,
     "createdAtTurn": 62
   }
 ]
