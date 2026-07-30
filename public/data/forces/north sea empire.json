@@ -84,48 +84,6 @@
     "createdAtTurn": 0
   },
   {
-    "id": "Vancouver1903-1780032956375-3",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Army of North Jutland",
-    "strength": 15000,
-    "commander": "Hans Jacob Arnoldt",
-    "lat": 57.100452089370705,
-    "lon": 10.008544921875002,
-    "turnStartLat": 53.07459246743309,
-    "turnStartLon": -0.03295898437500001,
-    "kmMovedThisTurn": 779.0111645968892,
-    "createdAtTurn": 0
-  },
-  {
-    "id": "Vancouver1903-1780033247078-11",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Torshavn Naval Station",
-    "strength": 160,
-    "commander": "Local Kapitan",
-    "lat": 62.02378303650402,
-    "lon": -6.809463500976563,
-    "turnStartLat": 62.02378303650402,
-    "turnStartLon": -6.809463500976563,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
-    "id": "Vancouver1903-1780033290855-12",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Reykjavik Naval Station",
-    "strength": 400,
-    "commander": "Local Kapitan",
-    "lat": 64.09050744622844,
-    "lon": -21.853179931640625,
-    "turnStartLat": 64.09050744622844,
-    "turnStartLon": -21.853179931640625,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
     "id": "Vancouver1903-1783730696759-0",
     "nation": "north sea empire",
     "branch": "army",
@@ -236,20 +194,6 @@
     "turnStartLon": -57.59033203125001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4
-  },
-  {
-    "id": "Vancouver1903-1780033118530-7",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Bornholm Naval Station",
-    "strength": 350,
-    "commander": "Local Kapitan",
-    "lat": 55.09939116340789,
-    "lon": 14.710693359375002,
-    "turnStartLat": 55.09939116340789,
-    "turnStartLon": 14.710693359375002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
   },
   {
     "id": "Vancouver1903-1780033529562-16",
@@ -390,19 +334,5 @@
     "turnStartLon": 0.9997558593750001,
     "kmMovedThisTurn": 708.0987177100559,
     "createdAtTurn": 62
-  },
-  {
-    "id": "Vancouver1903-1785381546038-0",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Godthab Naval Station",
-    "strength": 25,
-    "commander": "Local Kapitan",
-    "lat": 64.13367829264855,
-    "lon": -51.56501770019531,
-    "turnStartLat": 64.13367829264855,
-    "turnStartLon": -51.56501770019531,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69
   }
 ]
