@@ -48,11 +48,11 @@
     "name": "Augustin Ehrensvärd",
     "strength": 10000,
     "commander": "",
-    "lat": 54.63728692308159,
-    "lon": 24.491271972656254,
+    "lat": 54.68177097461746,
+    "lon": 25.293273925781254,
     "turnStartLat": 57.37838064115476,
     "turnStartLon": 24.746704101562504,
-    "kmMovedThisTurn": 360.19254663298875,
+    "kmMovedThisTurn": 412.01277321258374,
     "createdAtTurn": 64
   },
   {
@@ -68,20 +68,6 @@
     "turnStartLon": 13.098449707031252,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 64
-  },
-  {
-    "id": "yellowwithblue-1785113870349-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Garrison of Wilno",
-    "strength": 3000,
-    "commander": "Johan August Meijerfeldt the Younger",
-    "lat": 54.68732805684,
-    "lon": 25.282287597656254,
-    "turnStartLat": 56.94909374837349,
-    "turnStartLon": 24.106407165527344,
-    "kmMovedThisTurn": 275.3608210165541,
-    "createdAtTurn": 67
   },
   {
     "id": "yellowwithblue-1785116202887-0",
