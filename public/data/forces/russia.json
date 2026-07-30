@@ -6,11 +6,11 @@
     "name": "Army of the Center",
     "strength": 70000,
     "commander": "",
-    "lat": 53.90110181472827,
-    "lon": 27.7020263671875,
+    "lat": 54.85131525968609,
+    "lon": 31.311035156250004,
     "turnStartLat": 54.03358633521085,
     "turnStartLon": 28.212890625000004,
-    "kmMovedThisTurn": 36.51871387990895,
+    "kmMovedThisTurn": 292.993462752411,
     "createdAtTurn": 2
   },
   {
@@ -20,11 +20,11 @@
     "name": "Army of the South",
     "strength": 40000,
     "commander": "Menshikov",
-    "lat": 50.359480346298696,
-    "lon": 30.871582031250004,
+    "lat": 50.708634400828224,
+    "lon": 31.750488281250004,
     "turnStartLat": 50.757309850294085,
     "turnStartLon": 30.366210937500004,
-    "kmMovedThisTurn": 89.01450176084151,
+    "kmMovedThisTurn": 162.2673513099515,
     "createdAtTurn": 2
   },
   {
@@ -34,11 +34,11 @@
     "name": "Army of the North",
     "strength": 40000,
     "commander": "Mikhail Loris-Melikov",
-    "lat": 54.63410762690363,
-    "lon": 24.719238281250004,
+    "lat": 56.84897198026978,
+    "lon": 28.894042968750004,
     "turnStartLat": 54.57842969715518,
     "turnStartLon": 26.883544921875004,
-    "kmMovedThisTurn": 580.590603133529,
+    "kmMovedThisTurn": 939.5597451502954,
     "createdAtTurn": 2
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of the Dnieper",
     "strength": 40000,
     "commander": "",
-    "lat": 52.64306343665892,
-    "lon": 27.872314453125004,
+    "lat": 52.6030475337285,
+    "lon": 31.860351562500004,
     "turnStartLat": 52.64306343665892,
     "turnStartLon": 27.872314453125004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 269.2011514255625,
     "createdAtTurn": 62
   }
 ]
