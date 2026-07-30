@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 50.46100111599232,
-    "lon": 30.492553710937504,
+    "lat": 48.596592251456705,
+    "lon": 29.794921875000004,
     "turnStartLat": 48.8936153614802,
     "turnStartLon": 19.671020507812504,
-    "kmMovedThisTurn": 2783.40537005844,
+    "kmMovedThisTurn": 2996.7421099383755,
     "createdAtTurn": 49
   },
   {
@@ -76,11 +76,11 @@
     "name": "Army of the Reserve",
     "strength": 10000,
     "commander": "",
-    "lat": 53.64463782485651,
-    "lon": 27.366943359375004,
+    "lat": 48.11476663187632,
+    "lon": 28.223876953125004,
     "turnStartLat": 56.511017504952136,
     "turnStartLon": 23.686523437500004,
-    "kmMovedThisTurn": 2960.6795266987847,
+    "kmMovedThisTurn": 3788.838594492613,
     "createdAtTurn": 49
   },
   {
@@ -98,45 +98,17 @@
     "createdAtTurn": 49
   },
   {
-    "id": "Ohgizmo-1784345747471-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Silesia",
-    "strength": 45000,
-    "commander": "",
-    "lat": 52.576349937498875,
-    "lon": 27.647094726562504,
-    "turnStartLat": 48.412795581099964,
-    "turnStartLon": 16.347656250000004,
-    "kmMovedThisTurn": 1876.8372087539287,
-    "createdAtTurn": 57
-  },
-  {
-    "id": "Ohgizmo-1784676509217-1",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of Prussia",
-    "strength": 75000,
-    "commander": "",
-    "lat": 53.85900655610469,
-    "lon": 27.048339843750004,
-    "turnStartLat": 53.6120622350988,
-    "turnStartLon": 23.653564453125004,
-    "kmMovedThisTurn": 1626.528423934735,
-    "createdAtTurn": 61
-  },
-  {
     "id": "Ohgizmo-1784686845790-0",
     "nation": "poland-lithuania",
     "branch": "army",
-    "name": "Slovakian Army",
+    "name": "Northern Army",
     "strength": 80000,
     "commander": "",
-    "lat": 54.213861000644926,
-    "lon": 25.070800781250004,
+    "lat": 56.8429636484013,
+    "lon": 23.961181640625004,
     "turnStartLat": 48.32703913063479,
     "turnStartLon": 16.542663574218754,
-    "kmMovedThisTurn": 3066.875489081763,
+    "kmMovedThisTurn": 3367.4331109910213,
     "createdAtTurn": 61
   }
 ]
