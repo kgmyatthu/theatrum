@@ -1,0 +1,16 @@
+[
+  {
+    "id": "Vancouver1903-1785447208333-0",
+    "nation": "lithuanian duchy",
+    "branch": "army",
+    "name": "Lithuanian Rebels",
+    "strength": 2500,
+    "commander": "John Lithuania",
+    "lat": 55.71782880151228,
+    "lon": 21.362915039062504,
+    "turnStartLat": 55.71782880151228,
+    "turnStartLon": 21.362915039062504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
+  }
+]
