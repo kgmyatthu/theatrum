@@ -308,20 +308,6 @@
     "createdAtTurn": 61
   },
   {
-    "id": "Vancouver1903-1784765363072-0",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "British Royal Army",
-    "strength": 15000,
-    "commander": "Augustus I",
-    "lat": 51.50874245880335,
-    "lon": 0,
-    "turnStartLat": 51.50874245880335,
-    "turnStartLon": 0,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 62
-  },
-  {
     "id": "Vancouver1903-1785447569192-0",
     "nation": "north sea empire",
     "branch": "army",
