@@ -96,5 +96,19 @@
     "turnStartLon": 11.173095703125,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
+  },
+  {
+    "id": "yellowwithblue-1785448651606-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Svea Livgarde (to be subtracted from varvade troop, NOT COUNTED)",
+    "strength": 2500,
+    "commander": "",
+    "lat": 59.909598957088726,
+    "lon": 10.770721435546877,
+    "turnStartLat": 59.909598957088726,
+    "turnStartLon": 10.770721435546877,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
   }
 ]
