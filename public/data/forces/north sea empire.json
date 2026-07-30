@@ -32,7 +32,7 @@
     "nation": "north sea empire",
     "branch": "navy",
     "name": "White Squadron",
-    "strength": 42,
+    "strength": 21,
     "commander": "Edward Russell",
     "lat": 50.34283120939227,
     "lon": -4.150085449218751,
@@ -46,7 +46,7 @@
     "nation": "north sea empire",
     "branch": "navy",
     "name": "Blue Squadron",
-    "strength": 36,
+    "strength": 24,
     "commander": "Arthur Herbert",
     "lat": 51.50532341149335,
     "lon": 0.6427001953125001,
@@ -348,5 +348,33 @@
     "turnStartLon": 10.458984375000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
+  },
+  {
+    "id": "Vancouver1903-1785449591082-0",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "Blue Squadron (MOTHBALLED)",
+    "strength": 12,
+    "commander": "",
+    "lat": 51.47111929452283,
+    "lon": 0.7388309737011279,
+    "turnStartLat": 51.47111929452283,
+    "turnStartLon": 0.7388309737011279,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
+  },
+  {
+    "id": "Vancouver1903-1785449618648-1",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "White Squadron (MOTHBALLED)",
+    "strength": 21,
+    "commander": "",
+    "lat": 50.31916186634034,
+    "lon": -4.248962402343751,
+    "turnStartLat": 50.31916186634034,
+    "turnStartLon": -4.248962402343751,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
