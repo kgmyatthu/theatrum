@@ -12,5 +12,19 @@
     "turnStartLon": -68.82934570312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8
+  },
+  {
+    "id": "Walrusbear0831-1785393661645-0",
+    "nation": "netherlands",
+    "branch": "navy",
+    "name": "VOC Privateers (Seperate from main)",
+    "strength": 25,
+    "commander": "",
+    "lat": -34.81325058705697,
+    "lon": 17.797851562500004,
+    "turnStartLat": -34.81325058705697,
+    "turnStartLon": 17.797851562500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
   }
 ]
