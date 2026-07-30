@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 60000,
     "commander": "Jan III Sobieski",
-    "lat": 48.09275716032736,
-    "lon": 29.157714843750004,
+    "lat": 48.4146186174932,
+    "lon": 29.619140625000004,
     "turnStartLat": 56.43820369358167,
     "turnStartLon": 24.455566406250004,
-    "kmMovedThisTurn": 1853.4754107575113,
+    "kmMovedThisTurn": 1996.6997175957079,
     "createdAtTurn": 4
   },
   {
@@ -62,25 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 48.596592251456705,
-    "lon": 29.794921875000004,
+    "lat": 48.334343174592014,
+    "lon": 28.421630859375004,
     "turnStartLat": 48.8936153614802,
     "turnStartLon": 19.671020507812504,
-    "kmMovedThisTurn": 2996.7421099383755,
-    "createdAtTurn": 49
-  },
-  {
-    "id": "Ohgizmo-1783895246169-3",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army of the Reserve",
-    "strength": 10000,
-    "commander": "",
-    "lat": 48.11476663187632,
-    "lon": 28.223876953125004,
-    "turnStartLat": 56.511017504952136,
-    "turnStartLon": 23.686523437500004,
-    "kmMovedThisTurn": 3788.838594492613,
+    "kmMovedThisTurn": 3177.3967320787006,
     "createdAtTurn": 49
   },
   {
