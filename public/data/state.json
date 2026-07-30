@@ -587,7 +587,7 @@
     ],
     [
       146,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       147,
@@ -595,19 +595,19 @@
     ],
     [
       148,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       149,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       150,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       151,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       152,
@@ -3659,7 +3659,7 @@
     ],
     [
       914,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       915,
@@ -6455,7 +6455,7 @@
     ],
     [
       1613,
-      "contested territories"
+      "lithuanian duchy"
     ],
     [
       1614,
@@ -9475,19 +9475,19 @@
     ],
     [
       2368,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       2369,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       2370,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       2371,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       2372,
@@ -14647,7 +14647,7 @@
     ],
     [
       3661,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3662,
@@ -14655,7 +14655,7 @@
     ],
     [
       3663,
-      "poland-lithuania"
+      "contested territories"
     ],
     [
       3664,
@@ -18131,7 +18131,7 @@
     ],
     [
       4532,
-      "poland-lithuania"
+      "lithuanian duchy"
     ],
     [
       4533,
@@ -18558,6 +18558,10 @@
     {
       "name": "latin empire",
       "color": "#ff2e2e"
+    },
+    {
+      "name": "lithuanian duchy",
+      "color": "#497538"
     },
     {
       "name": "madagaskar",
