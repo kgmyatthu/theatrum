@@ -256,7 +256,7 @@
     "nation": "north sea empire",
     "branch": "navy",
     "name": "Danish Royal Navy (SOTL Only)",
-    "strength": 41,
+    "strength": 36,
     "commander": "Frederik Hoppe",
     "lat": 55.34164183013326,
     "lon": 12.458496093750002,
@@ -346,6 +346,20 @@
     "lon": 10.486450195312502,
     "turnStartLat": 57.441993391526644,
     "turnStartLon": 10.486450195312502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
+  },
+  {
+    "id": "Vancouver1903-1785447932572-0",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "Oslofjord Protection Detachment (No, SOTL Only)",
+    "strength": 5,
+    "commander": "Danish Admiral",
+    "lat": 58.75680543225763,
+    "lon": 10.458984375000002,
+    "turnStartLat": 58.75680543225763,
+    "turnStartLon": 10.458984375000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
   }
