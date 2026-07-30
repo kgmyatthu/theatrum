@@ -8,9 +8,9 @@
     "commander": "",
     "lat": 48.590652657146784,
     "lon": 2.2885546088218693,
-    "turnStartLat": 51.87483758839381,
-    "turnStartLon": 7.551083564758302,
-    "kmMovedThisTurn": 522.6929396312612,
+    "turnStartLat": 48.590652657146784,
+    "turnStartLon": 2.2885546088218693,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 48.37450406542588,
     "lon": -4.500274658203126,
-    "turnStartLat": 48.40041216790074,
-    "turnStartLon": -5.4156938195228586,
-    "kmMovedThisTurn": 67.65864267201474,
+    "turnStartLat": 48.37450406542588,
+    "turnStartLon": -4.500274658203126,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4
   },
   {
@@ -106,9 +106,9 @@
     "commander": "",
     "lat": 48.057008924937705,
     "lon": 6.072118878364563,
-    "turnStartLat": 51.30898570105954,
-    "turnStartLon": 9.537457823753359,
-    "kmMovedThisTurn": 439.1092538864539,
+    "turnStartLat": 48.057008924937705,
+    "turnStartLon": 6.072118878364563,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -176,9 +176,9 @@
     "commander": "Antonio Merida de La Cruz",
     "lat": 36.536128980992245,
     "lon": -6.267700195312501,
-    "turnStartLat": 36.558072693393946,
-    "turnStartLon": -6.5861112624406815,
-    "kmMovedThisTurn": 28.54824148153572,
+    "turnStartLat": 36.536128980992245,
+    "turnStartLon": -6.267700195312501,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -190,9 +190,9 @@
     "commander": "Jose Manuel de Santo Domingo",
     "lat": 42.237285371349984,
     "lon": -8.746490478515627,
-    "turnStartLat": 42.547595466494656,
-    "turnStartLon": -9.742892235517504,
-    "kmMovedThisTurn": 88.80367959421307,
+    "turnStartLat": 42.237285371349984,
+    "turnStartLon": -8.746490478515627,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -204,9 +204,9 @@
     "commander": "Manuel Estaban de Soler y Roca",
     "lat": 39.560077086374,
     "lon": 2.6683044433593754,
-    "turnStartLat": 36.017792724330235,
-    "turnStartLon": -4.375915378332139,
-    "kmMovedThisTurn": 879.539184532956,
+    "turnStartLat": 39.560077086374,
+    "turnStartLon": 2.6683044433593754,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Luigi Antonio di Potenza",
     "lat": 38.201453505785175,
     "lon": 15.574493408203127,
-    "turnStartLat": 38.31552372794366,
-    "turnStartLon": 20.10392233729363,
-    "kmMovedThisTurn": 423.95587409750806,
+    "turnStartLat": 38.201453505785175,
+    "turnStartLon": 15.574493408203127,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
