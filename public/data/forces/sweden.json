@@ -36,9 +36,9 @@
     "commander": "",
     "lat": 56.986897595806504,
     "lon": 24.071044921875004,
-    "turnStartLat": 57.37838064115476,
-    "turnStartLon": 24.746704101562504,
-    "kmMovedThisTurn": 679.4417392844857,
+    "turnStartLat": 56.986897595806504,
+    "turnStartLon": 24.071044921875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
@@ -50,9 +50,9 @@
     "commander": "Axel von Fersen the Elder",
     "lat": 55.844482187588326,
     "lon": 13.535156250000002,
-    "turnStartLat": 54.302903132302816,
-    "turnStartLon": 13.098449707031252,
-    "kmMovedThisTurn": 844.9242183030149,
+    "turnStartLat": 55.844482187588326,
+    "turnStartLon": 13.535156250000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 64
   },
   {
