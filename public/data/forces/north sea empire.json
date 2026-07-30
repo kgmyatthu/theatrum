@@ -22,9 +22,9 @@
     "commander": "Sir George Rooke",
     "lat": 50.79899141148551,
     "lon": -1.2799072265625002,
-    "turnStartLat": 50.81710695844082,
-    "turnStartLon": -1.1151123046875002,
-    "kmMovedThisTurn": 626.059312749408,
+    "turnStartLat": 50.79899141148551,
+    "turnStartLon": -1.2799072265625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
   },
   {
@@ -50,24 +50,10 @@
     "commander": "Arthur Herbert",
     "lat": 51.50532341149335,
     "lon": 0.6427001953125001,
-    "turnStartLat": 51.41248386417175,
-    "turnStartLon": 0.6375503540039064,
-    "kmMovedThisTurn": 564.3440606773845,
+    "turnStartLat": 51.50532341149335,
+    "turnStartLon": 0.6427001953125001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8
-  },
-  {
-    "id": "Vancouver1903-1780032726147-1",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Army of Jutland",
-    "strength": 5000,
-    "commander": "Erling Haaland",
-    "lat": 55.090943622278544,
-    "lon": 8.942871093750002,
-    "turnStartLat": 55.560831318746295,
-    "turnStartLon": 9.044922441244127,
-    "kmMovedThisTurn": 626.9224643512583,
-    "createdAtTurn": 0
   },
   {
     "id": "Vancouver1903-1780032766203-2",
@@ -78,9 +64,9 @@
     "commander": "Charles von Kirke",
     "lat": 55.66519318443606,
     "lon": 12.222290039062502,
-    "turnStartLat": 55.787258378469254,
-    "turnStartLon": 12.271728515625002,
-    "kmMovedThisTurn": 1127.2886210954102,
+    "turnStartLat": 55.66519318443606,
+    "turnStartLon": 12.222290039062502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -260,9 +246,9 @@
     "commander": "Frederik Hoppe",
     "lat": 55.34164183013326,
     "lon": 12.458496093750002,
-    "turnStartLat": 54.93661015660588,
-    "turnStartLon": 8.536376953125002,
-    "kmMovedThisTurn": 649.7394459315274,
+    "turnStartLat": 55.34164183013326,
+    "turnStartLon": 12.458496093750002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -288,9 +274,9 @@
     "commander": "Local Kapitan",
     "lat": 10.606619641865391,
     "lon": 79.44763183593751,
-    "turnStartLat": -9.37450744298539,
-    "turnStartLon": 69.34570312500001,
-    "kmMovedThisTurn": 2487.004369931327,
+    "turnStartLat": 10.606619641865391,
+    "turnStartLon": 79.44763183593751,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   },
   {
@@ -302,9 +288,9 @@
     "commander": "Local Kapitan",
     "lat": 10.228437266155955,
     "lon": 79.51904296875001,
-    "turnStartLat": -9.547986656477839,
-    "turnStartLon": 70.57617187500001,
-    "kmMovedThisTurn": 2415.483236045979,
+    "turnStartLat": 10.228437266155955,
+    "turnStartLon": 79.51904296875001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   },
   {
@@ -330,9 +316,9 @@
     "commander": "Augustus I",
     "lat": 51.50874245880335,
     "lon": 0,
-    "turnStartLat": 51.17935892032973,
-    "turnStartLon": 0.9997558593750001,
-    "kmMovedThisTurn": 708.0987177100559,
+    "turnStartLat": 51.50874245880335,
+    "turnStartLon": 0,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 62
   },
   {
