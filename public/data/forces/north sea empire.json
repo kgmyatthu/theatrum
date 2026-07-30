@@ -334,5 +334,19 @@
     "turnStartLon": 0.9997558593750001,
     "kmMovedThisTurn": 708.0987177100559,
     "createdAtTurn": 62
+  },
+  {
+    "id": "Vancouver1903-1785447569192-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Army of North Jutland",
+    "strength": 10000,
+    "commander": "Jacob Benzon",
+    "lat": 57.441993391526644,
+    "lon": 10.486450195312502,
+    "turnStartLat": 57.441993391526644,
+    "turnStartLon": 10.486450195312502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 69
   }
 ]
