@@ -185,14 +185,14 @@
     "id": "Fouzi-707-1784651175393-0",
     "nation": "ottoman empire",
     "branch": "navy",
-    "name": "İhtiyat Donanması SOL",
+    "name": "İhtiyat Donanması (Mothballed)",
     "strength": 37,
     "commander": "ihtiyat",
-    "lat": 43.937461690316646,
-    "lon": 29.00756835937499,
+    "lat": 40.60978237983301,
+    "lon": 25.175170898437504,
     "turnStartLat": 43.937461690316646,
     "turnStartLon": 29.00756835937499,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 486.0336484794771,
     "createdAtTurn": 61
   },
   {
