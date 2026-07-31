@@ -124,5 +124,19 @@
     "turnStartLon": 5.328369140625001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
+  },
+  {
+    "id": "yellowwithblue-1785462783953-0",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "Axel Lagerbielke",
+    "strength": 12,
+    "commander": "",
+    "lat": 56.09815331912746,
+    "lon": 15.60336623161358,
+    "turnStartLat": 56.09815331912746,
+    "turnStartLon": 15.60336623161358,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
