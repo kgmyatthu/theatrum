@@ -17,14 +17,14 @@
     "id": "AceApache-1782570109100-0",
     "nation": "poland-lithuania",
     "branch": "navy",
-    "name": "Polish Grand Fleet (mothballed)",
+    "name": "Polish Grand Fleet",
     "strength": 10,
     "commander": "",
-    "lat": 54.37095860924334,
-    "lon": 18.660278320312504,
+    "lat": 57.42720958655342,
+    "lon": 23.686523437500004,
     "turnStartLat": 54.37095860924334,
     "turnStartLon": 18.660278320312504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 462.01405210401543,
     "createdAtTurn": 23
   },
   {
