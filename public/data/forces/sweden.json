@@ -126,16 +126,16 @@
     "createdAtTurn": 70
   },
   {
-    "id": "yellowwithblue-1785463439621-2",
+    "id": "yellowwithblue-1785463552355-0",
     "nation": "sweden",
     "branch": "army",
     "name": "Gustav III",
     "strength": 35000,
     "commander": "Gustav III",
-    "lat": 56.83695435196053,
-    "lon": 35.84838867187501,
-    "turnStartLat": 56.83695435196053,
-    "turnStartLon": 35.84838867187501,
+    "lat": 59.33318942659219,
+    "lon": 27.619628906250004,
+    "turnStartLat": 59.33318942659219,
+    "turnStartLon": 27.619628906250004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   }
