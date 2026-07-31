@@ -62,11 +62,11 @@
     "name": "Army at Zeeland",
     "strength": 28000,
     "commander": "Charles von Kirke",
-    "lat": 55.66519318443606,
-    "lon": 12.222290039062502,
+    "lat": 56.08429756206141,
+    "lon": 12.744140625000002,
     "turnStartLat": 55.66519318443606,
     "turnStartLon": 12.222290039062502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 56.845925022914855,
     "createdAtTurn": 0
   },
   {
@@ -314,11 +314,11 @@
     "name": "Army of Norway",
     "strength": 15000,
     "commander": "Jacob Benzon",
-    "lat": 57.441993391526644,
-    "lon": 10.486450195312502,
+    "lat": 60.34122142562033,
+    "lon": 5.313262939453125,
     "turnStartLat": 57.441993391526644,
     "turnStartLon": 10.486450195312502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 438.2208545807691,
     "createdAtTurn": 69
   },
   {
