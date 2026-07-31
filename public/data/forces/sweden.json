@@ -4,7 +4,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Indelningsverket",
-    "strength": 30000,
+    "strength": 0,
     "commander": "Charles XII",
     "lat": 59.478568831926395,
     "lon": 15.666503906250002,
@@ -18,7 +18,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Värvade trupper",
-    "strength": 25000,
+    "strength": 20000,
     "commander": "Charles XII",
     "lat": 58.77959115030064,
     "lon": 15.732421875000002,
@@ -96,5 +96,33 @@
     "turnStartLon": 10.770721435546877,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
+  },
+  {
+    "id": "yellowwithblue-1785460261669-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Gustav III",
+    "strength": 35000,
+    "commander": "",
+    "lat": 58.41034521233622,
+    "lon": 24.356689453125,
+    "turnStartLat": 58.41034521233622,
+    "turnStartLon": 24.356689453125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
+  },
+  {
+    "id": "yellowwithblue-1785460350947-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Gustaf David Hamilton",
+    "strength": 10000,
+    "commander": "",
+    "lat": 56.00759545784287,
+    "lon": 13.128662109375002,
+    "turnStartLat": 56.00759545784287,
+    "turnStartLon": 13.128662109375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
