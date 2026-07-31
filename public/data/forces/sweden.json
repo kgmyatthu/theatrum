@@ -46,13 +46,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Axel von Fersen the Elder",
-    "strength": 10000,
+    "strength": 12000,
     "commander": "Axel von Fersen the Elder",
-    "lat": 60.34869562531865,
-    "lon": 6.152343750000001,
+    "lat": 60.34597793265675,
+    "lon": 5.9326171875,
     "turnStartLat": 55.844482187588326,
     "turnStartLon": 13.535156250000002,
-    "kmMovedThisTurn": 735.0393691912909,
+    "kmMovedThisTurn": 747.1308858729484,
     "createdAtTurn": 64
   },
   {
