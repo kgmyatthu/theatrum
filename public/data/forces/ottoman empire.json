@@ -146,11 +146,11 @@
     "name": "Ukrayna Ordusu",
     "strength": 40000,
     "commander": "Ahmed Pasha",
-    "lat": 45.01012413452228,
-    "lon": 28.610000610351552,
+    "lat": 48.67161828843281,
+    "lon": 27.856902481007886,
     "turnStartLat": 45.01012413452228,
     "turnStartLon": 28.610000610351552,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 411.14325966564314,
     "createdAtTurn": 61
   },
   {
