@@ -48,11 +48,11 @@
     "name": "Axel von Fersen the Elder",
     "strength": 10000,
     "commander": "Axel von Fersen the Elder",
-    "lat": 59.80616004020661,
-    "lon": 10.832519531250002,
+    "lat": 60.34869562531865,
+    "lon": 6.152343750000001,
     "turnStartLat": 55.844482187588326,
     "turnStartLon": 13.535156250000002,
-    "kmMovedThisTurn": 468.5875635587419,
+    "kmMovedThisTurn": 735.0393691912909,
     "createdAtTurn": 64
   },
   {
@@ -84,20 +84,6 @@
     "createdAtTurn": 69
   },
   {
-    "id": "yellowwithblue-1785448651606-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Svea Livgarde (to be subtracted from varvade troop, NOT COUNTED)",
-    "strength": 2500,
-    "commander": "",
-    "lat": 59.909598957088726,
-    "lon": 10.770721435546877,
-    "turnStartLat": 59.909598957088726,
-    "turnStartLon": 10.770721435546877,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69
-  },
-  {
     "id": "yellowwithblue-1785460261669-1",
     "nation": "sweden",
     "branch": "army",
@@ -122,6 +108,20 @@
     "lon": 13.128662109375002,
     "turnStartLat": 56.00759545784287,
     "turnStartLon": 13.128662109375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
+  },
+  {
+    "id": "yellowwithblue-1785460659699-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Bergen + Bergen Regiment (Legd)",
+    "strength": 2800,
+    "commander": "",
+    "lat": 60.38807673063876,
+    "lon": 5.328369140625001,
+    "turnStartLat": 60.38807673063876,
+    "turnStartLon": 5.328369140625001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   }
