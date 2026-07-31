@@ -244,11 +244,11 @@
     "name": "Danish Royal Navy (SOTL Only)",
     "strength": 36,
     "commander": "Frederik Hoppe",
-    "lat": 55.34164183013326,
-    "lon": 12.458496093750002,
+    "lat": 55.33851784425634,
+    "lon": 14.957885742187502,
     "turnStartLat": 55.34164183013326,
     "turnStartLon": 12.458496093750002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 158.04588063843633,
     "createdAtTurn": 47
   },
   {
