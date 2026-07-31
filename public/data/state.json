@@ -6443,7 +6443,7 @@
     ],
     [
       1610,
-      "maratha confederacy"
+      "mughal empire"
     ],
     [
       1611,
@@ -6579,7 +6579,7 @@
     ],
     [
       1644,
-      "durrani empire"
+      "mughal empire"
     ],
     [
       1645,
@@ -8479,7 +8479,7 @@
     ],
     [
       2119,
-      "contested territories"
+      "persia"
     ],
     [
       2120,
@@ -13091,7 +13091,7 @@
     ],
     [
       3272,
-      "minor indian states"
+      "mughal empire"
     ],
     [
       3273,
@@ -17095,19 +17095,19 @@
     ],
     [
       4273,
-      "contested territories"
+      "persia"
     ],
     [
       4274,
-      "contested territories"
+      "persia"
     ],
     [
       4275,
-      "contested territories"
+      "persia"
     ],
     [
       4276,
-      "contested territories"
+      "persia"
     ],
     [
       4277,
@@ -17131,11 +17131,11 @@
     ],
     [
       4282,
-      "contested territories"
+      "persia"
     ],
     [
       4283,
-      "contested territories"
+      "ottoman empire"
     ],
     [
       4284,
@@ -17147,7 +17147,7 @@
     ],
     [
       4286,
-      "durrani empire"
+      "mughal empire"
     ],
     [
       4287,
@@ -18590,6 +18590,10 @@
     {
       "name": "morocco",
       "color": "#C1272D"
+    },
+    {
+      "name": "mughal empire",
+      "color": "#29653b"
     },
     {
       "name": "mysore",
