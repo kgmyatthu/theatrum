@@ -12,19 +12,5 @@
     "turnStartLon": 12.509372569620613,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
-  },
-  {
-    "id": "Urchinn-sys-1783911767955-2",
-    "nation": "brandenburg-prussia",
-    "branch": "navy",
-    "name": "Navy of Prussia",
-    "strength": 11,
-    "commander": "",
-    "lat": 53.898176587885835,
-    "lon": 14.287719726562502,
-    "turnStartLat": 53.898176587885835,
-    "turnStartLon": 14.287719726562502,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 49
   }
 ]
