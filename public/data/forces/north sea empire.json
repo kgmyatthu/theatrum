@@ -64,9 +64,9 @@
     "commander": "Charles von Kirke",
     "lat": 56.08429756206141,
     "lon": 12.744140625000002,
-    "turnStartLat": 55.66519318443606,
-    "turnStartLon": 12.222290039062502,
-    "kmMovedThisTurn": 56.845925022914855,
+    "turnStartLat": 56.08429756206141,
+    "turnStartLon": 12.744140625000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -246,9 +246,9 @@
     "commander": "Frederik Hoppe",
     "lat": 56.00913099463985,
     "lon": 15.589599609375002,
-    "turnStartLat": 55.34164183013326,
-    "turnStartLon": 12.458496093750002,
-    "kmMovedThisTurn": 242.56736739149414,
+    "turnStartLat": 56.00913099463985,
+    "turnStartLon": 15.589599609375002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -288,9 +288,9 @@
     "commander": "Local Kapitan",
     "lat": 10.628216112538693,
     "lon": 79.89807128906251,
-    "turnStartLat": 10.228437266155955,
-    "turnStartLon": 79.51904296875001,
-    "kmMovedThisTurn": 60.7798171306354,
+    "turnStartLat": 10.628216112538693,
+    "turnStartLon": 79.89807128906251,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   },
   {
@@ -316,9 +316,9 @@
     "commander": "Jacob Benzon",
     "lat": 60.34122142562033,
     "lon": 5.313262939453125,
-    "turnStartLat": 57.441993391526644,
-    "turnStartLon": 10.486450195312502,
-    "kmMovedThisTurn": 438.2208545807691,
+    "turnStartLat": 60.34122142562033,
+    "turnStartLon": 5.313262939453125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69
   },
   {
