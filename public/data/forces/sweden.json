@@ -116,13 +116,13 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Gustav III",
-    "strength": 35000,
+    "strength": 50000,
     "commander": "Gustav III",
-    "lat": 59.33318942659219,
-    "lon": 27.619628906250004,
+    "lat": 57.76279865944124,
+    "lon": 25.801391601562504,
     "turnStartLat": 59.33318942659219,
     "turnStartLon": 27.619628906250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 203.99489615210558,
     "createdAtTurn": 70
   },
   {
@@ -130,13 +130,13 @@
     "nation": "sweden",
     "branch": "navy",
     "name": "Axel Lagerbielke",
-    "strength": 4,
+    "strength": 2,
     "commander": "",
-    "lat": 57.75400700732595,
-    "lon": 21.829833984375004,
+    "lat": 58.37003723692555,
+    "lon": 24.548950195312504,
     "turnStartLat": 57.75400700732595,
     "turnStartLon": 21.829833984375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 173.9792958717665,
     "createdAtTurn": 70
   }
 ]
