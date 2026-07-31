@@ -362,5 +362,19 @@
     "turnStartLon": -4.248962402343751,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
+  },
+  {
+    "id": "Vancouver1903-1785459134126-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Norwegian Royal Legion",
+    "strength": 500,
+    "commander": "John Norway",
+    "lat": 60.340541868001225,
+    "lon": 5.410766601562501,
+    "turnStartLat": 60.340541868001225,
+    "turnStartLon": 5.410766601562501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
