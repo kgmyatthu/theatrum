@@ -146,11 +146,11 @@
     "name": "Ukrayna Ordusu",
     "strength": 40000,
     "commander": "Ahmed Pasha",
-    "lat": 48.67161828843281,
-    "lon": 27.856902481007886,
+    "lat": 48.40064033468893,
+    "lon": 28.330078125000014,
     "turnStartLat": 45.01012413452228,
     "turnStartLon": 28.610000610351552,
-    "kmMovedThisTurn": 411.14325966564314,
+    "kmMovedThisTurn": 457.2043199361228,
     "createdAtTurn": 61
   },
   {
@@ -160,11 +160,11 @@
     "name": "Tuna Ordusu",
     "strength": 15000,
     "commander": "Hayder Pasha",
-    "lat": 47.85986003148668,
-    "lon": 28.767700195312504,
+    "lat": 48.25729375709965,
+    "lon": 28.54339599609374,
     "turnStartLat": 47.85986003148668,
     "turnStartLon": 28.767700195312504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 47.2321475017786,
     "createdAtTurn": 61
   },
   {
