@@ -110,5 +110,19 @@
     "turnStartLon": 25.488281250000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
+  },
+  {
+    "id": "Ohgizmo-1785462542915-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Argathan Army",
+    "strength": 20000,
+    "commander": "",
+    "lat": 56.73163543086128,
+    "lon": 24.763183593750004,
+    "turnStartLat": 56.73163543086128,
+    "turnStartLon": 24.763183593750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
