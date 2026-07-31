@@ -40,5 +40,19 @@
     "turnStartLon": 77.30529785156251,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
+  },
+  {
+    "id": "yellowwithblue-1785467186260-0",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "SEIC Sepoy Army",
+    "strength": 3000,
+    "commander": "",
+    "lat": 11.210733765689508,
+    "lon": 79.43664550781251,
+    "turnStartLat": 11.210733765689508,
+    "turnStartLon": 79.43664550781251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
