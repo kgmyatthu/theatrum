@@ -87,8 +87,8 @@
     "id": "Ohgizmo-1784686845790-0",
     "nation": "poland-lithuania",
     "branch": "army",
-    "name": "Northern Army",
-    "strength": 60000,
+    "name": "Northern Army: 1st Division",
+    "strength": 30000,
     "commander": "",
     "lat": 56.8429636484013,
     "lon": 23.961181640625004,
@@ -96,5 +96,19 @@
     "turnStartLon": 23.961181640625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 61
+  },
+  {
+    "id": "yellowwithblue-1785460124679-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Northern Army: 2nd Division",
+    "strength": 30000,
+    "commander": "",
+    "lat": 58.9216636365964,
+    "lon": 25.488281250000004,
+    "turnStartLat": 58.9216636365964,
+    "turnStartLon": 25.488281250000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
   }
 ]
