@@ -112,20 +112,6 @@
     "createdAtTurn": 70
   },
   {
-    "id": "yellowwithblue-1785462783953-0",
-    "nation": "sweden",
-    "branch": "navy",
-    "name": "Axel Lagerbielke",
-    "strength": 12,
-    "commander": "",
-    "lat": 56.09815331912746,
-    "lon": 15.60336623161358,
-    "turnStartLat": 56.09815331912746,
-    "turnStartLon": 15.60336623161358,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 70
-  },
-  {
     "id": "yellowwithblue-1785463552355-0",
     "nation": "sweden",
     "branch": "army",
@@ -136,6 +122,20 @@
     "lon": 27.619628906250004,
     "turnStartLat": 59.33318942659219,
     "turnStartLon": 27.619628906250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 70
+  },
+  {
+    "id": "yellowwithblue-1785475757939-0",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "Axel Lagerbielke",
+    "strength": 4,
+    "commander": "",
+    "lat": 57.75400700732595,
+    "lon": 21.829833984375004,
+    "turnStartLat": 57.75400700732595,
+    "turnStartLon": 21.829833984375004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   }
