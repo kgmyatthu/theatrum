@@ -18,13 +18,13 @@
     "nation": "poland-lithuania",
     "branch": "navy",
     "name": "Polish Grand Fleet",
-    "strength": 10,
+    "strength": 11,
     "commander": "",
-    "lat": 57.42720958655342,
-    "lon": 23.686523437500004,
+    "lat": 58.10110549730587,
+    "lon": 18.995361328125,
     "turnStartLat": 57.42720958655342,
     "turnStartLon": 23.686523437500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 288.0888777067004,
     "createdAtTurn": 23
   },
   {
@@ -118,11 +118,11 @@
     "name": "Argathan Army",
     "strength": 4000,
     "commander": "",
-    "lat": 56.73163543086128,
-    "lon": 24.763183593750004,
+    "lat": 57.69827686055881,
+    "lon": 18.358154296875004,
     "turnStartLat": 56.73163543086128,
     "turnStartLon": 24.763183593750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 400.1775793522033,
     "createdAtTurn": 70
   }
 ]
