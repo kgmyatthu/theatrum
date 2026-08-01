@@ -130,13 +130,13 @@
     "nation": "ottoman empire",
     "branch": "army",
     "name": "Bosna Ordusu",
-    "strength": 0,
+    "strength": 10000,
     "commander": "Cemal Pasha",
-    "lat": 43.846412964702395,
-    "lon": 18.484497070312504,
+    "lat": 43.36545851871468,
+    "lon": 26.222076416015643,
     "turnStartLat": 43.846412964702395,
     "turnStartLon": 18.484497070312504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 625.3076970181214,
     "createdAtTurn": 61
   },
   {
