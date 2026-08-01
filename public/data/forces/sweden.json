@@ -104,11 +104,11 @@
     "name": "Gustav III",
     "strength": 30000,
     "commander": "Gustav III",
-    "lat": 60.5923622983958,
-    "lon": 26.751708984375004,
+    "lat": 59.3051602771705,
+    "lon": 18.204345703125004,
     "turnStartLat": 59.33318942659219,
     "turnStartLon": 27.619628906250004,
-    "kmMovedThisTurn": 523.243753936106,
+    "kmMovedThisTurn": 1019.8349601233725,
     "createdAtTurn": 70
   }
 ]
