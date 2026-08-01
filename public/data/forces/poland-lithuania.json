@@ -118,11 +118,11 @@
     "name": "Argathan Army",
     "strength": 19000,
     "commander": "",
-    "lat": 58.37867853932655,
-    "lon": 26.158447265625004,
+    "lat": 51.93071827931289,
+    "lon": 24.345703125,
     "turnStartLat": 56.73163543086128,
     "turnStartLon": 24.763183593750004,
-    "kmMovedThisTurn": 1036.5907764653098,
+    "kmMovedThisTurn": 1762.692195137635,
     "createdAtTurn": 70
   }
 ]
