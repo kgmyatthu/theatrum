@@ -390,5 +390,19 @@
     "turnStartLon": 14.732666015625002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 71
+  },
+  {
+    "id": "Vancouver1903-1785558342011-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Army of Jutland",
+    "strength": 10000,
+    "commander": "Hans von Jacobsen",
+    "lat": 56.962947135260585,
+    "lon": 10.068969726562502,
+    "turnStartLat": 56.962947135260585,
+    "turnStartLon": 10.068969726562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 71
   }
 ]
