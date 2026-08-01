@@ -132,11 +132,11 @@
     "name": "Bosna Ordusu",
     "strength": 10000,
     "commander": "Cemal Pasha",
-    "lat": 43.36545851871468,
-    "lon": 26.222076416015643,
+    "lat": 46.852678248531106,
+    "lon": 26.85424804687499,
     "turnStartLat": 43.846412964702395,
     "turnStartLon": 18.484497070312504,
-    "kmMovedThisTurn": 625.3076970181214,
+    "kmMovedThisTurn": 1016.2256807716094,
     "createdAtTurn": 61
   },
   {
