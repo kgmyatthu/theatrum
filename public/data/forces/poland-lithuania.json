@@ -90,11 +90,11 @@
     "name": "Northern Army: 1st Division",
     "strength": 30000,
     "commander": "",
-    "lat": 56.8429636484013,
-    "lon": 23.961181640625004,
+    "lat": 58.78528524510292,
+    "lon": 25.136718750000004,
     "turnStartLat": 56.8429636484013,
     "turnStartLon": 23.961181640625004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 226.913157961119,
     "createdAtTurn": 61
   },
   {
@@ -118,11 +118,11 @@
     "name": "Argathan Army",
     "strength": 19000,
     "commander": "",
-    "lat": 56.897003921272606,
-    "lon": 25.136718750000004,
+    "lat": 58.37867853932655,
+    "lon": 26.158447265625004,
     "turnStartLat": 56.73163543086128,
     "turnStartLon": 24.763183593750004,
-    "kmMovedThisTurn": 860.9762795828535,
+    "kmMovedThisTurn": 1036.5907764653098,
     "createdAtTurn": 70
   }
 ]
