@@ -102,13 +102,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Northern Army: 2nd Division",
-    "strength": 30000,
+    "strength": 15000,
     "commander": "",
-    "lat": 56.806893398067466,
-    "lon": 24.488525390625,
+    "lat": 57.80965135970153,
+    "lon": 18.500976562500004,
     "turnStartLat": 58.9216636365964,
     "turnStartLon": 25.488281250000004,
-    "kmMovedThisTurn": 242.46561988301735,
+    "kmMovedThisTurn": 618.8115517273692,
     "createdAtTurn": 70
   },
   {
@@ -116,13 +116,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Argathan Army",
-    "strength": 4000,
+    "strength": 19000,
     "commander": "",
-    "lat": 57.69827686055881,
-    "lon": 18.358154296875004,
+    "lat": 56.897003921272606,
+    "lon": 25.136718750000004,
     "turnStartLat": 56.73163543086128,
     "turnStartLon": 24.763183593750004,
-    "kmMovedThisTurn": 400.1775793522033,
+    "kmMovedThisTurn": 860.9762795828535,
     "createdAtTurn": 70
   }
 ]
