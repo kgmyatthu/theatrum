@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 48.334343174592014,
-    "lon": 28.421630859375004,
+    "lat": 48.58569225688665,
+    "lon": 28.547973632812504,
     "turnStartLat": 48.334343174592014,
     "turnStartLon": 28.421630859375004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 29.460558284305478,
     "createdAtTurn": 49
   },
   {
