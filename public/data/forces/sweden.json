@@ -34,11 +34,11 @@
     "name": "Axel von Fersen the Elder",
     "strength": 12000,
     "commander": "Axel von Fersen the Elder",
-    "lat": 60.34597793265675,
-    "lon": 5.9326171875,
+    "lat": 58.459228692360625,
+    "lon": 14.007568359375,
     "turnStartLat": 60.34597793265675,
     "turnStartLon": 5.9326171875,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 502.44826522133974,
     "createdAtTurn": 64
   },
   {
@@ -76,11 +76,11 @@
     "name": "Gustaf David Hamilton",
     "strength": 10000,
     "commander": "",
-    "lat": 56.00759545784287,
-    "lon": 13.128662109375002,
+    "lat": 55.97379820507658,
+    "lon": 13.7054443359375,
     "turnStartLat": 56.00759545784287,
     "turnStartLon": 13.128662109375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 36.06882100020899,
     "createdAtTurn": 70
   },
   {
@@ -104,11 +104,11 @@
     "name": "Gustav III",
     "strength": 30000,
     "commander": "Gustav III",
-    "lat": 59.097025270871235,
+    "lat": 59.05185617891852,
     "lon": 17.775878906250004,
     "turnStartLat": 59.097025270871235,
     "turnStartLon": 17.775878906250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 5.022573866283499,
     "createdAtTurn": 70
   },
   {
