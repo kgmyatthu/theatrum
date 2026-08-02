@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 85000,
     "commander": "Jan III Sobieski",
-    "lat": 56.668302075770065,
-    "lon": 23.73046875,
+    "lat": 57.397624055000456,
+    "lon": 24.697265625000004,
     "turnStartLat": 56.8129075187002,
     "turnStartLon": 22.5,
-    "kmMovedThisTurn": 620.3802012667295,
+    "kmMovedThisTurn": 720.3718897893568,
     "createdAtTurn": 4
   },
   {
@@ -40,47 +40,5 @@
     "turnStartLon": 21.266894520315013,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 49
-  },
-  {
-    "id": "Ohgizmo-1783895170450-1",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Garrison of Krakow",
-    "strength": 5000,
-    "commander": "",
-    "lat": 49.99431343251391,
-    "lon": 20.311083973440013,
-    "turnStartLat": 49.99431343251391,
-    "turnStartLon": 20.311083973440013,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 49
-  },
-  {
-    "id": "Ohgizmo-1783895258479-4",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Garrison of Lviv",
-    "strength": 5000,
-    "commander": "",
-    "lat": 49.75997752330658,
-    "lon": 24.202880859375,
-    "turnStartLat": 49.75997752330658,
-    "turnStartLon": 24.202880859375,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 49
-  },
-  {
-    "id": "yellowwithblue-1785460124679-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Northern Army: 2nd Division",
-    "strength": 5000,
-    "commander": "",
-    "lat": 57.80965135970153,
-    "lon": 18.500976562500004,
-    "turnStartLat": 57.80965135970153,
-    "turnStartLon": 18.500976562500004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 70
   }
 ]
