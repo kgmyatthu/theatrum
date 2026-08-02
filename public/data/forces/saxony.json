@@ -6,11 +6,11 @@
     "name": "Army of Saxony",
     "strength": 20000,
     "commander": "",
-    "lat": 51.103521942404186,
-    "lon": 13.480224609375002,
+    "lat": 53.657635378209996,
+    "lon": 11.085602045059206,
     "turnStartLat": 51.103521942404186,
     "turnStartLon": 13.480224609375002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 327.18068006491956,
     "createdAtTurn": 50
   }
 ]
