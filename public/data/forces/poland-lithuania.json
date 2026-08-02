@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 60000,
     "commander": "Jan III Sobieski",
-    "lat": 48.4146186174932,
-    "lon": 29.619140625000004,
+    "lat": 51.19999983412071,
+    "lon": 27.443847656250004,
     "turnStartLat": 48.4146186174932,
     "turnStartLon": 29.619140625000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 346.795900740012,
     "createdAtTurn": 4
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 48.58569225688665,
-    "lon": 28.547973632812504,
+    "lat": 51.02757633780243,
+    "lon": 25.927734375000004,
     "turnStartLat": 48.334343174592014,
     "turnStartLon": 28.421630859375004,
-    "kmMovedThisTurn": 29.460558284305478,
+    "kmMovedThisTurn": 359.68907965092467,
     "createdAtTurn": 49
   },
   {
