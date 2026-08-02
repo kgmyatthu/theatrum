@@ -316,9 +316,9 @@
     "commander": "Jacob Benzon",
     "lat": 55.65279803318956,
     "lon": -1.9226074218750002,
-    "turnStartLat": 60.34122142562033,
-    "turnStartLon": 5.313262939453125,
-    "kmMovedThisTurn": 672.7184454428453,
+    "turnStartLat": 55.65279803318956,
+    "turnStartLon": -1.9226074218750002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69
   },
   {
@@ -372,9 +372,9 @@
     "commander": "John Norway",
     "lat": 55.62799595426723,
     "lon": -1.9116210937500002,
-    "turnStartLat": 60.340541868001225,
-    "turnStartLon": 5.410766601562501,
-    "kmMovedThisTurn": 678.1014868695448,
+    "turnStartLat": 55.62799595426723,
+    "turnStartLon": -1.9116210937500002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   },
   {
