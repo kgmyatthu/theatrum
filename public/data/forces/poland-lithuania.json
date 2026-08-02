@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 60000,
     "commander": "Jan III Sobieski",
-    "lat": 56.8129075187002,
-    "lon": 22.5,
+    "lat": 57.36801461845934,
+    "lon": 18.116455078125004,
     "turnStartLat": 56.8129075187002,
     "turnStartLon": 22.5,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 271.8722050193784,
     "createdAtTurn": 4
   },
   {
@@ -62,11 +62,11 @@
     "name": "Army of Ukraine",
     "strength": 40000,
     "commander": "",
-    "lat": 55.825973254619015,
-    "lon": 22.082519531250004,
+    "lat": 58.47072082411973,
+    "lon": 25.180664062500004,
     "turnStartLat": 55.825973254619015,
     "turnStartLon": 22.082519531250004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 348.3550165961627,
     "createdAtTurn": 49
   },
   {
@@ -90,11 +90,11 @@
     "name": "Northern Army: 1st Division",
     "strength": 30000,
     "commander": "",
-    "lat": 58.78528524510292,
-    "lon": 25.136718750000004,
+    "lat": 60.2888540595603,
+    "lon": 24.982910156250004,
     "turnStartLat": 58.78528524510292,
     "turnStartLon": 25.136718750000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 167.41378950342283,
     "createdAtTurn": 61
   },
   {
@@ -102,7 +102,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Northern Army: 2nd Division",
-    "strength": 15000,
+    "strength": 20000,
     "commander": "",
     "lat": 57.80965135970153,
     "lon": 18.500976562500004,
@@ -116,13 +116,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Argathan Army",
-    "strength": 19000,
+    "strength": 14000,
     "commander": "",
-    "lat": 56.992882804633986,
-    "lon": 24.873046875000004,
+    "lat": 55.3541353102106,
+    "lon": 23.57666015625,
     "turnStartLat": 56.992882804633986,
     "turnStartLon": 24.873046875000004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 199.09842545127353,
     "createdAtTurn": 70
   }
 ]
