@@ -20,11 +20,11 @@
     "name": "Värvade trupper",
     "strength": 20000,
     "commander": "Charles XII",
-    "lat": 59.32758544549428,
-    "lon": 18.149414062500004,
+    "lat": 59.271494782025684,
+    "lon": 15.655517578125002,
     "turnStartLat": 59.32758544549428,
     "turnStartLon": 18.149414062500004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 201.00874707598024,
     "createdAtTurn": 54
   },
   {
@@ -34,11 +34,11 @@
     "name": "Axel von Fersen the Elder",
     "strength": 12000,
     "commander": "Axel von Fersen the Elder",
-    "lat": 58.459228692360625,
-    "lon": 14.007568359375,
+    "lat": 57.83890342754204,
+    "lon": 12.030029296875002,
     "turnStartLat": 60.34597793265675,
     "turnStartLon": 5.9326171875,
-    "kmMovedThisTurn": 502.44826522133974,
+    "kmMovedThisTurn": 637.4330931391077,
     "createdAtTurn": 64
   },
   {
@@ -76,11 +76,11 @@
     "name": "Gustaf David Hamilton",
     "strength": 10000,
     "commander": "",
-    "lat": 55.97379820507658,
-    "lon": 13.7054443359375,
+    "lat": 56.76476752576022,
+    "lon": 16.105957031250004,
     "turnStartLat": 56.00759545784287,
     "turnStartLon": 13.128662109375002,
-    "kmMovedThisTurn": 36.06882100020899,
+    "kmMovedThisTurn": 208.07239419580822,
     "createdAtTurn": 70
   },
   {
