@@ -22,9 +22,9 @@
     "commander": "Charles XII",
     "lat": 59.32758544549428,
     "lon": 18.149414062500004,
-    "turnStartLat": 58.77959115030064,
-    "turnStartLon": 15.732421875000002,
-    "kmMovedThisTurn": 151.0300327228623,
+    "turnStartLat": 59.32758544549428,
+    "turnStartLon": 18.149414062500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -106,9 +106,9 @@
     "commander": "Gustav III",
     "lat": 59.097025270871235,
     "lon": 17.775878906250004,
-    "turnStartLat": 59.33318942659219,
-    "turnStartLon": 27.619628906250004,
-    "kmMovedThisTurn": 2336.6859462813336,
+    "turnStartLat": 59.097025270871235,
+    "turnStartLon": 17.775878906250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   },
   {

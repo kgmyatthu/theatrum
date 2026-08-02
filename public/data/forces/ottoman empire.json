@@ -134,9 +134,9 @@
     "commander": "Cemal Pasha",
     "lat": 46.852678248531106,
     "lon": 26.85424804687499,
-    "turnStartLat": 43.846412964702395,
-    "turnStartLon": 18.484497070312504,
-    "kmMovedThisTurn": 1016.2256807716094,
+    "turnStartLat": 46.852678248531106,
+    "turnStartLon": 26.85424804687499,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61
   },
   {
