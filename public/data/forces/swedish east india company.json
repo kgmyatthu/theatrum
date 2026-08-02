@@ -8,9 +8,9 @@
     "commander": "Adolph Hiedler",
     "lat": 11.059820828563412,
     "lon": 79.68383789062501,
-    "turnStartLat": 15.15697371337768,
-    "turnStartLon": 78.93676757812501,
-    "kmMovedThisTurn": 462.707278313988,
+    "turnStartLat": 11.059820828563412,
+    "turnStartLon": 79.68383789062501,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 56
   },
   {
@@ -50,9 +50,9 @@
     "commander": "",
     "lat": 10.916920895841397,
     "lon": 79.66461181640626,
-    "turnStartLat": 11.210733765689508,
-    "turnStartLon": 79.43664550781251,
-    "kmMovedThisTurn": 41.06401555005192,
+    "turnStartLat": 10.916920895841397,
+    "turnStartLon": 79.66461181640626,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   }
 ]
