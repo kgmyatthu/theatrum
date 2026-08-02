@@ -1,0 +1,30 @@
+[
+  {
+    "id": "KingREN1-Suitman-1785668665018-0",
+    "nation": "hungary",
+    "branch": "army",
+    "name": "Budapest Garrison",
+    "strength": 5000,
+    "commander": "",
+    "lat": 47.47266286861342,
+    "lon": 19.116210937500004,
+    "turnStartLat": 47.47266286861342,
+    "turnStartLon": 19.116210937500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 72
+  },
+  {
+    "id": "KingREN1-Suitman-1785668696670-2",
+    "nation": "hungary",
+    "branch": "army",
+    "name": "Army of Hungary",
+    "strength": 60000,
+    "commander": "",
+    "lat": 47.54687159892238,
+    "lon": 20.313720703125004,
+    "turnStartLat": 47.54687159892238,
+    "turnStartLon": 20.313720703125004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 72
+  }
+]
