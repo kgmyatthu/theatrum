@@ -348,5 +348,19 @@
     "turnStartLon": 12.735142353152442,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 72
+  },
+  {
+    "id": "yourlocalgeobukseon-1785739713326-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Muskets of Hamburg",
+    "strength": 2000,
+    "commander": "Hamburger",
+    "lat": 53.55988897245466,
+    "lon": 10.008544921875002,
+    "turnStartLat": 53.55988897245466,
+    "turnStartLon": 10.008544921875002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
