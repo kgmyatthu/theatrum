@@ -68,5 +68,47 @@
     "turnStartLon": 17.523193359375004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785741315379-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of the Reserve",
+    "strength": 15000,
+    "commander": "",
+    "lat": 51.58389660297626,
+    "lon": 19.16015625,
+    "turnStartLat": 51.58389660297626,
+    "turnStartLon": 19.16015625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785741340987-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Cossack Regulars",
+    "strength": 9000,
+    "commander": "",
+    "lat": 50.77815527465925,
+    "lon": 24.971923828125004,
+    "turnStartLat": 50.77815527465925,
+    "turnStartLon": 24.971923828125004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785741347383-2",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Lemberg",
+    "strength": 3000,
+    "commander": "",
+    "lat": 49.78835749241401,
+    "lon": 24.049072265625,
+    "turnStartLat": 49.78835749241401,
+    "turnStartLon": 24.049072265625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
