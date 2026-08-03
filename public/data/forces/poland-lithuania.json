@@ -74,7 +74,7 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army of the Reserve",
-    "strength": 15000,
+    "strength": 10000,
     "commander": "",
     "lat": 51.58389660297626,
     "lon": 19.16015625,
