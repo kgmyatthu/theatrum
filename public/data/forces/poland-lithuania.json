@@ -3,14 +3,14 @@
     "id": "AceApache-1780418121871-0",
     "nation": "poland-lithuania",
     "branch": "army",
-    "name": "Crown Army",
-    "strength": 85000,
+    "name": "Army of the Diet",
+    "strength": 25000,
     "commander": "Jan III Sobieski",
-    "lat": 51.7644403180351,
-    "lon": 21.610107421875,
+    "lat": 49.95121990866204,
+    "lon": 20.006103515625004,
     "turnStartLat": 57.397624055000456,
     "turnStartLon": 24.697265625000004,
-    "kmMovedThisTurn": 725.1200370599072,
+    "kmMovedThisTurn": 956.0324775840528,
     "createdAtTurn": 4
   },
   {
@@ -40,5 +40,33 @@
     "turnStartLon": 21.266894520315013,
     "kmMovedThisTurn": 44.58282049086194,
     "createdAtTurn": 49
+  },
+  {
+    "id": "yellowwithblue-1785740649217-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Danzig",
+    "strength": 5000,
+    "commander": "",
+    "lat": 54.32933804825253,
+    "lon": 18.665771484375004,
+    "turnStartLat": 54.32933804825253,
+    "turnStartLon": 18.665771484375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785740673884-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Garrison of Poznan",
+    "strength": 5000,
+    "commander": "",
+    "lat": 52.549636074382306,
+    "lon": 17.523193359375004,
+    "turnStartLat": 52.549636074382306,
+    "turnStartLon": 17.523193359375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
