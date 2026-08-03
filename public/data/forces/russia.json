@@ -12,5 +12,19 @@
     "turnStartLon": 33.491730216462564,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 3
+  },
+  {
+    "id": "kgmyatthu-1785763002657-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Romanov Guard Army",
+    "strength": 50000,
+    "commander": "",
+    "lat": 54.04648911335576,
+    "lon": 27.487792968750004,
+    "turnStartLat": 54.04648911335576,
+    "turnStartLon": 27.487792968750004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
