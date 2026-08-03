@@ -26,5 +26,19 @@
     "turnStartLon": 17.797851562500004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69
+  },
+  {
+    "id": "kgmyatthu-1785749063335-0",
+    "nation": "netherlands",
+    "branch": "army",
+    "name": "Amsterdam Estate Army",
+    "strength": 7000,
+    "commander": "",
+    "lat": 52.22106952357282,
+    "lon": 5.163574218750001,
+    "turnStartLat": 52.22106952357282,
+    "turnStartLon": 5.163574218750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
