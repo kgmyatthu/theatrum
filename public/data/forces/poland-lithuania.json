@@ -20,11 +20,11 @@
     "name": "Polish Grand Fleet",
     "strength": 11,
     "commander": "",
-    "lat": 54.52745749948722,
-    "lon": 18.874511718750004,
+    "lat": 56.22445764637919,
+    "lon": 20.9177314931197,
     "turnStartLat": 54.52745749948722,
     "turnStartLon": 18.874511718750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 228.60673101890796,
     "createdAtTurn": 23
   },
   {
@@ -40,34 +40,6 @@
     "turnStartLon": 21.266894520315013,
     "kmMovedThisTurn": 44.58282049086194,
     "createdAtTurn": 49
-  },
-  {
-    "id": "yellowwithblue-1785740649217-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Garrison of Danzig",
-    "strength": 5000,
-    "commander": "",
-    "lat": 54.32933804825253,
-    "lon": 18.665771484375004,
-    "turnStartLat": 54.32933804825253,
-    "turnStartLon": 18.665771484375004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 73
-  },
-  {
-    "id": "yellowwithblue-1785740673884-1",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Garrison of Poznan",
-    "strength": 5000,
-    "commander": "",
-    "lat": 52.549636074382306,
-    "lon": 17.523193359375004,
-    "turnStartLat": 52.549636074382306,
-    "turnStartLon": 17.523193359375004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 73
   },
   {
     "id": "yellowwithblue-1785741315379-0",
