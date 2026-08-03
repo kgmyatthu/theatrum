@@ -22,9 +22,9 @@
     "commander": "Charles XII",
     "lat": 59.02924933736396,
     "lon": 15.600585937500002,
-    "turnStartLat": 59.32758544549428,
-    "turnStartLon": 18.149414062500004,
-    "kmMovedThisTurn": 228.12670091681215,
+    "turnStartLat": 59.02924933736396,
+    "turnStartLon": 15.600585937500002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 54
   },
   {
@@ -64,9 +64,9 @@
     "commander": "Gebhard Leberecht von Blücher",
     "lat": 60.28340847828243,
     "lon": 22.03857421875,
-    "turnStartLat": 56.00759545784287,
-    "turnStartLon": 13.128662109375002,
-    "kmMovedThisTurn": 728.945894942667,
+    "turnStartLat": 60.28340847828243,
+    "turnStartLon": 22.03857421875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   },
   {
@@ -92,9 +92,9 @@
     "commander": "Augustin Ehrensvärd",
     "lat": 59.05185617891852,
     "lon": 17.775878906250004,
-    "turnStartLat": 59.097025270871235,
+    "turnStartLat": 59.05185617891852,
     "turnStartLon": 17.775878906250004,
-    "kmMovedThisTurn": 5.022573866283499,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 70
   }
 ]
