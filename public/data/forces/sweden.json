@@ -40,19 +40,5 @@
     "turnStartLon": 15.595092773437502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 67
-  },
-  {
-    "id": "yellowwithblue-1785460350947-2",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Gebhard Leberecht von Blücher",
-    "strength": 10000,
-    "commander": "Gebhard Leberecht von Blücher",
-    "lat": 58.16490792851809,
-    "lon": 25.784912109375004,
-    "turnStartLat": 60.28340847828243,
-    "turnStartLon": 22.03857421875,
-    "kmMovedThisTurn": 317.5921383090966,
-    "createdAtTurn": 70
   }
 ]
