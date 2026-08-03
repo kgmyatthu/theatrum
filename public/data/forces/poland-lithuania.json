@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 85000,
     "commander": "Jan III Sobieski",
-    "lat": 51.964577109947534,
-    "lon": 21.258544921875,
+    "lat": 51.7644403180351,
+    "lon": 21.610107421875,
     "turnStartLat": 57.397624055000456,
     "turnStartLon": 24.697265625000004,
-    "kmMovedThisTurn": 692.2872222449271,
+    "kmMovedThisTurn": 725.1200370599072,
     "createdAtTurn": 4
   },
   {
@@ -32,13 +32,13 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Garrison of Warsaw",
-    "strength": 5000,
+    "strength": 18000,
     "commander": "",
-    "lat": 52.59036035415668,
-    "lon": 21.266894520315013,
+    "lat": 52.214338608258224,
+    "lon": 21.038818359375004,
     "turnStartLat": 52.59036035415668,
     "turnStartLon": 21.266894520315013,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 44.58282049086194,
     "createdAtTurn": 49
   }
 ]
