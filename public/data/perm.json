@@ -28,7 +28,8 @@
     "role": "admin"
   },
   "yellowwithblue": {
-    "role": "admin"
+    "role": "player",
+    "nation": "aceh"
   },
   "AceApache": {
     "role": "admin"
@@ -38,7 +39,8 @@
     "nation": "britain"
   },
   "Vancouver1903": {
-    "role": "admin"
+    "role": "player",
+    "nation": "aceh"
   },
   "yourlocalgeobukseon": {
     "role": "player",
