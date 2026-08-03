@@ -6,11 +6,11 @@
     "name": "Crown Army",
     "strength": 85000,
     "commander": "Jan III Sobieski",
-    "lat": 52.19413509042551,
-    "lon": 20.896067525929013,
+    "lat": 51.964577109947534,
+    "lon": 21.258544921875,
     "turnStartLat": 57.397624055000456,
     "turnStartLon": 24.697265625000004,
-    "kmMovedThisTurn": 656.7184442730356,
+    "kmMovedThisTurn": 692.2872222449271,
     "createdAtTurn": 4
   },
   {
