@@ -50,9 +50,9 @@
     "commander": "Charles von Kirke",
     "lat": 55.78686990345216,
     "lon": 12.258911132812488,
-    "turnStartLat": 56.08429756206141,
-    "turnStartLon": 12.744140625000002,
-    "kmMovedThisTurn": 44.800780403812745,
+    "turnStartLat": 55.78686990345216,
+    "turnStartLon": 12.258911132812488,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -218,9 +218,9 @@
     "commander": "Frederik Hoppe",
     "lat": 55.491895204441064,
     "lon": 12.428692480168172,
-    "turnStartLat": 56.00913099463985,
-    "turnStartLon": 15.589599609375002,
-    "kmMovedThisTurn": 205.980595688907,
+    "turnStartLat": 55.491895204441064,
+    "turnStartLon": 12.428692480168172,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47
   },
   {
@@ -288,9 +288,9 @@
     "commander": "Danish Admiral",
     "lat": 55.403928056857886,
     "lon": 12.537261710679248,
-    "turnStartLat": 58.75680543225763,
-    "turnStartLon": 10.458984375000002,
-    "kmMovedThisTurn": 460.1740543705033,
+    "turnStartLat": 55.403928056857886,
+    "turnStartLon": 12.537261710679248,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69
   },
   {
