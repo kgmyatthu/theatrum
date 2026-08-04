@@ -154,34 +154,6 @@
     "createdAtTurn": 0
   },
   {
-    "id": "Vancouver1903-1780033738188-17",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Danish East India Company",
-    "strength": 150,
-    "commander": "Sir Sivert Cortsen Adeler",
-    "lat": 10.711213301271206,
-    "lon": 79.81018066406251,
-    "turnStartLat": 10.711213301271206,
-    "turnStartLon": 79.81018066406251,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
-    "id": "Vancouver1903-1780033809513-18",
-    "nation": "north sea empire",
-    "branch": "navy",
-    "name": "Danish Navy (East Indies)",
-    "strength": 9,
-    "commander": "Sir Sivert Cortsen Adeler",
-    "lat": 10.705815799595415,
-    "lon": 79.85069274902345,
-    "turnStartLat": 10.705815799595415,
-    "turnStartLon": 79.85069274902345,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
-  },
-  {
     "id": "Vancouver1903-1780782636248-0",
     "nation": "north sea empire",
     "branch": "navy",
@@ -222,34 +194,6 @@
     "turnStartLon": 7.699218615889549,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 54
-  },
-  {
-    "id": "Vancouver1903-1784677649837-1",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "East India Relief Force",
-    "strength": 1500,
-    "commander": "Local Kapitan",
-    "lat": 10.606619641865391,
-    "lon": 79.44763183593751,
-    "turnStartLat": 10.606619641865391,
-    "turnStartLon": 79.44763183593751,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 61
-  },
-  {
-    "id": "Vancouver1903-1784677674102-2",
-    "nation": "north sea empire",
-    "branch": "navy",
-    "name": "East India Relief Force, (SOTL Only)",
-    "strength": 3,
-    "commander": "Local Kapitan",
-    "lat": 10.628216112538693,
-    "lon": 79.89807128906251,
-    "turnStartLat": 10.628216112538693,
-    "turnStartLon": 79.89807128906251,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 61
   },
   {
     "id": "Vancouver1903-1785447932572-0",
