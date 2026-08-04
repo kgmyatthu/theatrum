@@ -1,24 +1,10 @@
 [
   {
-    "id": "yellowwithblue-1784173730986-9",
-    "nation": "swedish east india company",
-    "branch": "army",
-    "name": "Army of SEIC",
-    "strength": 10000,
-    "commander": "Adolph Hiedler",
-    "lat": 11.059820828563412,
-    "lon": 79.68383789062501,
-    "turnStartLat": 11.059820828563412,
-    "turnStartLon": 79.68383789062501,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 56
-  },
-  {
     "id": "yellowwithblue-1785369901276-0",
     "nation": "swedish east india company",
     "branch": "army",
     "name": "Garrison of Madras",
-    "strength": 3000,
+    "strength": 5000,
     "commander": "",
     "lat": 13.07412756381517,
     "lon": 80.22766113281251,
@@ -31,7 +17,7 @@
     "id": "yellowwithblue-1785369917252-1",
     "nation": "swedish east india company",
     "branch": "army",
-    "name": "Scattered garrisons",
+    "name": "Border garrisons",
     "strength": 3000,
     "commander": "",
     "lat": 11.081384602413062,
@@ -42,17 +28,45 @@
     "createdAtTurn": 69
   },
   {
-    "id": "yellowwithblue-1785467186260-0",
+    "id": "yellowwithblue-1785822851308-0",
     "nation": "swedish east india company",
     "branch": "army",
-    "name": "SEIC Sepoy Army",
-    "strength": 3000,
+    "name": "Border garrisons",
+    "strength": 5000,
     "commander": "",
-    "lat": 10.916920895841397,
-    "lon": 79.66461181640626,
-    "turnStartLat": 10.916920895841397,
-    "turnStartLon": 79.66461181640626,
+    "lat": 15.326571801420842,
+    "lon": 77.59643554687501,
+    "turnStartLat": 15.326571801420842,
+    "turnStartLon": 77.59643554687501,
     "kmMovedThisTurn": 0,
-    "createdAtTurn": 70
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785822930859-1",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "Main SEIC Army",
+    "strength": 21000,
+    "commander": "",
+    "lat": 15.178180945596363,
+    "lon": 79.10705566406251,
+    "turnStartLat": 15.178180945596363,
+    "turnStartLon": 79.10705566406251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785822948240-2",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "Southern forts",
+    "strength": 4000,
+    "commander": "",
+    "lat": 9.459898921269597,
+    "lon": 78.46435546875,
+    "turnStartLat": 9.459898921269597,
+    "turnStartLon": 78.46435546875,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
   }
 ]
