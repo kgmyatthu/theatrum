@@ -16639,11 +16639,11 @@
     ],
     [
       4159,
-      "brandenburg-prussia"
+      "grand duchy of posen"
     ],
     [
       4160,
-      "brandenburg-prussia"
+      "grand duchy of posen"
     ],
     [
       4161,
@@ -18482,6 +18482,10 @@
     {
       "name": "genoa",
       "color": "#9F2D2D"
+    },
+    {
+      "name": "grand duchy of posen",
+      "color": "#4f4f4f"
     },
     {
       "name": "hanover",
