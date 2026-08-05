@@ -4,13 +4,13 @@
     "nation": "brandenburg-prussia",
     "branch": "army",
     "name": "Army of Prussia",
-    "strength": 44000,
+    "strength": 80000,
     "commander": "Frederick the Great",
-    "lat": 52.772691589580646,
-    "lon": 19.21523649506883,
+    "lat": 52.45600939264076,
+    "lon": 13.908691406250002,
     "turnStartLat": 52.11172596892053,
     "turnStartLon": 15.417991876602175,
-    "kmMovedThisTurn": 452.4873882493181,
+    "kmMovedThisTurn": 812.4017960546207,
     "createdAtTurn": 49
   }
 ]
