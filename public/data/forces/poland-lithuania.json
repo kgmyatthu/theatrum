@@ -14,20 +14,6 @@
     "createdAtTurn": 23
   },
   {
-    "id": "yellowwithblue-1785744796215-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Crown Army",
-    "strength": 50000,
-    "commander": "",
-    "lat": 52.10650519075632,
-    "lon": 21.42333984375,
-    "turnStartLat": 52.10650519075632,
-    "turnStartLon": 21.42333984375,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 73
-  },
-  {
     "id": "Ohgizmo-1785889291017-0",
     "nation": "poland-lithuania",
     "branch": "army",
@@ -122,6 +108,20 @@
     "lon": 27.268066406250004,
     "turnStartLat": 51.49506473014368,
     "turnStartLon": 27.268066406250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 73
+  },
+  {
+    "id": "yellowwithblue-1785891247726-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Crown Army",
+    "strength": 50000,
+    "commander": "",
+    "lat": 53.81362579235237,
+    "lon": 25.642089843750004,
+    "turnStartLat": 53.81362579235237,
+    "turnStartLon": 25.642089843750004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 73
   }
