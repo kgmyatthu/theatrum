@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-57",
+    "nation": "siam",
+    "branch": "army",
+    "name": "Royal Siamese Army",
+    "strength": 40000,
+    "commander": "Rama I",
+    "lat": 13.75,
+    "lon": 100.5,
+    "turnStartLat": 13.75,
+    "turnStartLon": 100.5,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
