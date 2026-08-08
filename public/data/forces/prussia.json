@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-24",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "Royal Prussian Army",
+    "strength": 70000,
+    "commander": "Brunswick",
+    "lat": 52.5,
+    "lon": 13.4,
+    "turnStartLat": 52.5,
+    "turnStartLon": 13.4,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
