@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-58",
+    "nation": "burma",
+    "branch": "army",
+    "name": "Konbaung Army",
+    "strength": 30000,
+    "commander": "Bodawpaya",
+    "lat": 21.9,
+    "lon": 96.05,
+    "turnStartLat": 21.9,
+    "turnStartLon": 96.05,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
