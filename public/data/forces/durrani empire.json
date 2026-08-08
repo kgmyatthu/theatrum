@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-43",
+    "nation": "durrani empire",
+    "branch": "army",
+    "name": "Army of Zaman Shah",
+    "strength": 40000,
+    "commander": "Zaman Shah",
+    "lat": 34,
+    "lon": 71.5,
+    "turnStartLat": 34,
+    "turnStartLon": 71.5,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
