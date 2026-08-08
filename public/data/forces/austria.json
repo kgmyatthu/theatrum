@@ -1,0 +1,44 @@
+[
+  {
+    "id": "napoleonic1799-17",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Germany",
+    "strength": 80000,
+    "commander": "Kray",
+    "lat": 48,
+    "lon": 8.5,
+    "turnStartLat": 48,
+    "turnStartLon": 8.5,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-18",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Italy",
+    "strength": 85000,
+    "commander": "Melas",
+    "lat": 45.07,
+    "lon": 7.69,
+    "turnStartLat": 45.07,
+    "turnStartLon": 7.69,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-19",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Vienna Garrison",
+    "strength": 10000,
+    "commander": "",
+    "lat": 48.2,
+    "lon": 16.37,
+    "turnStartLat": 48.2,
+    "turnStartLon": 16.37,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
