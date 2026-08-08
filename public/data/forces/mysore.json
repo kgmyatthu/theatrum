@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-49",
+    "nation": "mysore",
+    "branch": "army",
+    "name": "Mysore Army (restored Wodeyar)",
+    "strength": 8000,
+    "commander": "",
+    "lat": 12.3,
+    "lon": 76.65,
+    "turnStartLat": 12.3,
+    "turnStartLon": 76.65,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
