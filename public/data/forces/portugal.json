@@ -1,0 +1,30 @@
+[
+  {
+    "id": "napoleonic1799-32",
+    "nation": "portugal",
+    "branch": "army",
+    "name": "Army of Portugal",
+    "strength": 25000,
+    "commander": "",
+    "lat": 38.7,
+    "lon": -9.14,
+    "turnStartLat": 38.7,
+    "turnStartLon": -9.14,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-33",
+    "nation": "portugal",
+    "branch": "navy",
+    "name": "Lisbon Squadron",
+    "strength": 8,
+    "commander": "",
+    "lat": 38.68,
+    "lon": -9.2,
+    "turnStartLat": 38.68,
+    "turnStartLon": -9.2,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
