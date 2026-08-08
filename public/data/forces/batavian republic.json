@@ -1,0 +1,30 @@
+[
+  {
+    "id": "napoleonic1799-35",
+    "nation": "batavian republic",
+    "branch": "navy",
+    "name": "Batavian Fleet (remnant)",
+    "strength": 8,
+    "commander": "",
+    "lat": 53.05,
+    "lon": 4.8,
+    "turnStartLat": 53.05,
+    "turnStartLon": 4.8,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-36",
+    "nation": "batavian republic",
+    "branch": "army",
+    "name": "Batavian Army",
+    "strength": 15000,
+    "commander": "Daendels",
+    "lat": 52.08,
+    "lon": 4.31,
+    "turnStartLat": 52.08,
+    "turnStartLon": 4.31,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
