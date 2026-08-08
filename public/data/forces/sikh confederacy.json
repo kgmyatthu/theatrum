@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-44",
+    "nation": "sikh confederacy",
+    "branch": "army",
+    "name": "Khalsa of Ranjit Singh",
+    "strength": 15000,
+    "commander": "Ranjit Singh",
+    "lat": 31.58,
+    "lon": 74.31,
+    "turnStartLat": 31.58,
+    "turnStartLon": 74.31,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

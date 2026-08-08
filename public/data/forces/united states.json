@@ -1,0 +1,30 @@
+[
+  {
+    "id": "napoleonic1799-40",
+    "nation": "united states",
+    "branch": "navy",
+    "name": "US Navy Squadron",
+    "strength": 6,
+    "commander": "Truxtun",
+    "lat": 18,
+    "lon": -65,
+    "turnStartLat": 18,
+    "turnStartLon": -65,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-41",
+    "nation": "united states",
+    "branch": "army",
+    "name": "US Army",
+    "strength": 4000,
+    "commander": "Hamilton",
+    "lat": 40,
+    "lon": -75.1,
+    "turnStartLat": 40,
+    "turnStartLon": -75.1,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
