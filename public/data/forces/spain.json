@@ -1,0 +1,58 @@
+[
+  {
+    "id": "napoleonic1799-28",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Cadiz Fleet (blockaded)",
+    "strength": 22,
+    "commander": "Mazarredo",
+    "lat": 36.5,
+    "lon": -6.3,
+    "turnStartLat": 36.5,
+    "turnStartLon": -6.3,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-29",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Ferrol Squadron",
+    "strength": 8,
+    "commander": "",
+    "lat": 43.48,
+    "lon": -8.24,
+    "turnStartLat": 43.48,
+    "turnStartLon": -8.24,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-30",
+    "nation": "spain",
+    "branch": "army",
+    "name": "Army of Spain",
+    "strength": 50000,
+    "commander": "",
+    "lat": 40.4,
+    "lon": -3.7,
+    "turnStartLat": 40.4,
+    "turnStartLon": -3.7,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-31",
+    "nation": "spain",
+    "branch": "navy",
+    "name": "Havana Squadron",
+    "strength": 6,
+    "commander": "",
+    "lat": 23.1,
+    "lon": -82.4,
+    "turnStartLat": 23.1,
+    "turnStartLon": -82.4,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
