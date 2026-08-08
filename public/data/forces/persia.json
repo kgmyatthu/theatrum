@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-42",
+    "nation": "persia",
+    "branch": "army",
+    "name": "Qajar Army",
+    "strength": 50000,
+    "commander": "Fath-Ali Shah",
+    "lat": 35.7,
+    "lon": 51.4,
+    "turnStartLat": 35.7,
+    "turnStartLon": 51.4,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
