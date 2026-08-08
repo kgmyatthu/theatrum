@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-48",
+    "nation": "hyderabad",
+    "branch": "army",
+    "name": "Nizam's Army",
+    "strength": 30000,
+    "commander": "",
+    "lat": 17.38,
+    "lon": 78.48,
+    "turnStartLat": 17.38,
+    "turnStartLon": 78.48,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

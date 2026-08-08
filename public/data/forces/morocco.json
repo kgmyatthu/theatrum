@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-59",
+    "nation": "morocco",
+    "branch": "army",
+    "name": "Sultan's Army",
+    "strength": 20000,
+    "commander": "",
+    "lat": 33.89,
+    "lon": -5.55,
+    "turnStartLat": 33.89,
+    "turnStartLon": -5.55,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "napoleonic1799-45",
+    "nation": "maratha confederacy",
+    "branch": "army",
+    "name": "Sindhia's Army",
+    "strength": 60000,
+    "commander": "Daulat Rao Sindhia",
+    "lat": 26.22,
+    "lon": 78.17,
+    "turnStartLat": 26.22,
+    "turnStartLon": 78.17,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-46",
+    "nation": "maratha confederacy",
+    "branch": "army",
+    "name": "Holkar's Army",
+    "strength": 30000,
+    "commander": "Yashwant Rao Holkar",
+    "lat": 22.72,
+    "lon": 75.85,
+    "turnStartLat": 22.72,
+    "turnStartLon": 75.85,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-47",
+    "nation": "maratha confederacy",
+    "branch": "army",
+    "name": "Peshwa's Army",
+    "strength": 20000,
+    "commander": "Baji Rao II",
+    "lat": 18.52,
+    "lon": 73.86,
+    "turnStartLat": 18.52,
+    "turnStartLon": 73.86,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
