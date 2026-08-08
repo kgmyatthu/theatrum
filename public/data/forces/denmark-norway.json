@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-37",
+    "nation": "denmark-norway",
+    "branch": "navy",
+    "name": "Danish Fleet",
+    "strength": 20,
+    "commander": "",
+    "lat": 55.68,
+    "lon": 12.6,
+    "turnStartLat": 55.68,
+    "turnStartLon": 12.6,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
