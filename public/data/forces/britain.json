@@ -292,5 +292,19 @@
     "turnStartLon": 14.427795410156252,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1786319153150-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "Maltese Uprising",
+    "strength": 10000,
+    "commander": "Emmanuele Vitale",
+    "lat": 35.8562222630588,
+    "lon": 14.494400024414064,
+    "turnStartLat": 35.8562222630588,
+    "turnStartLon": 14.494400024414064,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
   }
 ]
