@@ -18,7 +18,7 @@
     "nation": "france",
     "branch": "army",
     "name": "Armée d'Italie",
-    "strength": 35000,
+    "strength": 15000,
     "commander": "Masséna",
     "lat": 44.41,
     "lon": 8.93,
@@ -124,5 +124,19 @@
     "turnStartLon": 5.050964355468751,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "AceApache-1786315831464-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Armée d'Italie (detachment)",
+    "strength": 20000,
+    "commander": "",
+    "lat": 45.108423337694084,
+    "lon": 9.129638671875002,
+    "turnStartLat": 44.41,
+    "turnStartLon": 8.93,
+    "kmMovedThisTurn": 79.24458075733726,
+    "createdAtTurn": 0
   }
 ]
