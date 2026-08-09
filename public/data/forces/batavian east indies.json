@@ -1,0 +1,72 @@
+[
+  {
+    "id": "yellowwithblue-1786314433218-0",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Java",
+    "strength": 12000,
+    "commander": "",
+    "lat": -6.200629499027861,
+    "lon": 106.87500000000001,
+    "turnStartLat": -6.200629499027861,
+    "turnStartLon": 106.87500000000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "yellowwithblue-1786314460613-1",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Sumatra",
+    "strength": 5000,
+    "commander": "",
+    "lat": -4.937724274302479,
+    "lon": 104.80957031250001,
+    "turnStartLat": -4.937724274302479,
+    "turnStartLon": 104.80957031250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "yellowwithblue-1786314470455-2",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Southern Borneo",
+    "strength": 3000,
+    "commander": "",
+    "lat": -2.6577377901397883,
+    "lon": 112.74169921875001,
+    "turnStartLat": -2.6577377901397883,
+    "turnStartLon": 112.74169921875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "yellowwithblue-1786314486376-3",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Celebes",
+    "strength": 3000,
+    "commander": "",
+    "lat": -5.222246513227375,
+    "lon": 119.75097656250001,
+    "turnStartLat": -5.222246513227375,
+    "turnStartLon": 119.75097656250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  },
+  {
+    "id": "yellowwithblue-1786314601113-4",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "Garrison of Surabaya",
+    "strength": 2000,
+    "commander": "",
+    "lat": -7.297087564171992,
+    "lon": 112.75268554687501,
+    "turnStartLat": -7.297087564171992,
+    "turnStartLon": 112.75268554687501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
+  }
+]
