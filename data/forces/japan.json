@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-52",
+    "nation": "japan",
+    "branch": "army",
+    "name": "Shogunate Army",
+    "strength": 30000,
+    "commander": "",
+    "lat": 35.68,
+    "lon": 139.75,
+    "turnStartLat": 35.68,
+    "turnStartLon": 139.75,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

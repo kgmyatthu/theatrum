@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-54",
+    "nation": "vietnam (tay son)",
+    "branch": "army",
+    "name": "Tay Son Army",
+    "strength": 50000,
+    "commander": "Nguyen Quang Toan",
+    "lat": 16.47,
+    "lon": 107.59,
+    "turnStartLat": 16.47,
+    "turnStartLon": 107.59,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

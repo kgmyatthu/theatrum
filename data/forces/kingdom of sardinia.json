@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-60",
+    "nation": "kingdom of sardinia",
+    "branch": "army",
+    "name": "Cagliari Garrison",
+    "strength": 5000,
+    "commander": "",
+    "lat": 39.22,
+    "lon": 9.1,
+    "turnStartLat": 39.22,
+    "turnStartLon": 9.1,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

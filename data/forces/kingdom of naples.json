@@ -1,0 +1,16 @@
+[
+  {
+    "id": "napoleonic1799-34",
+    "nation": "kingdom of naples",
+    "branch": "army",
+    "name": "Royal Neapolitan Army",
+    "strength": 25000,
+    "commander": "",
+    "lat": 40.85,
+    "lon": 14.27,
+    "turnStartLat": 40.85,
+    "turnStartLon": 14.27,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]

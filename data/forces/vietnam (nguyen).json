@@ -1,0 +1,30 @@
+[
+  {
+    "id": "napoleonic1799-55",
+    "nation": "vietnam (nguyen)",
+    "branch": "army",
+    "name": "Nguyen Army",
+    "strength": 30000,
+    "commander": "Nguyen Anh",
+    "lat": 10.78,
+    "lon": 106.7,
+    "turnStartLat": 10.78,
+    "turnStartLon": 106.7,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "napoleonic1799-56",
+    "nation": "vietnam (nguyen)",
+    "branch": "navy",
+    "name": "Nguyen Fleet",
+    "strength": 10,
+    "commander": "",
+    "lat": 10.6,
+    "lon": 107,
+    "turnStartLat": 10.6,
+    "turnStartLon": 107,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  }
+]
