@@ -17,6 +17,18 @@
 // the PR body. The validator workflow then trusts that marker because
 // it came from a PR authored by our specific bot.
 //
+// Commit strategy: all file changes for a submit are batched into ONE
+// git tree + ONE commit via the Git Data API (git/trees with inline
+// content), instead of one Contents API round-trip per file. Workers
+// caps subrequests per invocation (50 on the free plan), and a large
+// admin submit — e.g. a scenario import touching dozens of per-nation
+// force files — blew straight through that cap under the per-file
+// scheme. The batched path costs a fixed ~12 subrequests no matter how
+// many files change: per-file existence/staleness questions are
+// answered locally by comparing git blob SHAs (computed in the Worker)
+// against main's tree listing, and blob contents are only fetched for
+// the rare true concurrent-edit rebase.
+//
 // Deploy with `wrangler deploy`. Configure secrets:
 //   wrangler secret put GITHUB_CLIENT_ID
 //   wrangler secret put GITHUB_CLIENT_SECRET
@@ -71,13 +83,6 @@ function jsonResponse(body: string, status: number, origin: string): Response {
 
 function errorJson(origin: string, status: number, message: string): Response {
   return jsonResponse(JSON.stringify({ error: message }), status, origin);
-}
-
-function utf8ToBase64(s: string): string {
-  const bytes = new TextEncoder().encode(s);
-  let bin = '';
-  for (const b of bytes) bin += String.fromCharCode(b);
-  return btoa(bin);
 }
 
 function base64ToUtf8(b64: string): string {
@@ -355,7 +360,7 @@ function summaryParts(
 }
 
 // ────────────────────────────────────────────────────────────────────
-// Per-file commit helpers
+// Batched-commit helpers (Git Data API)
 // ────────────────────────────────────────────────────────────────────
 
 interface ForceLike {
@@ -375,121 +380,63 @@ function groupForcesByNation(forces: ForceLike[]): Map<string, ForceLike[]> {
   return m;
 }
 
-/** Per-segment URL-encode a repo path so file names with spaces survive. */
-function encodeRepoPath(path: string): string {
-  return path.split('/').map(encodeURIComponent).join('/');
+/**
+ * Git blob SHA-1 of a candidate file body ("blob <len>\0<content>").
+ * Lets us decide identical / changed against a tree entry entirely
+ * locally — no subrequest — which is what keeps big submits inside the
+ * Workers subrequest budget.
+ */
+async function gitBlobSha(content: string): Promise<string> {
+  const body = new TextEncoder().encode(content);
+  const header = new TextEncoder().encode(`blob ${body.length}\0`);
+  const buf = new Uint8Array(header.length + body.length);
+  buf.set(header, 0);
+  buf.set(body, header.length);
+  const digest = await crypto.subtle.digest('SHA-1', buf);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-type MainFile =
-  | { exists: true; sha: string; content: string }
-  | { exists: false };
-
-async function readFileOnMain(
-  repo: string,
-  path: string,
-  token: string,
-): Promise<MainFile> {
-  try {
-    const f = await gh<{ sha: string; content: string }>(
-      `/repos/${repo}/contents/${encodeRepoPath(path)}?ref=main`,
-      { method: 'GET' },
-      token,
-    );
-    return { exists: true, sha: f.sha, content: base64ToUtf8(f.content) };
-  } catch (e) {
-    if (e instanceof HttpError && e.status === 404) return { exists: false };
-    throw e;
-  }
-}
-
-async function commitFile(
-  repo: string,
-  path: string,
-  branch: string,
-  content: string,
-  message: string,
-  token: string,
-  existingSha: string | undefined,
-): Promise<void> {
-  await gh<unknown>(
-    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
-    {
-      method: 'PUT',
-      body: {
-        message,
-        content: utf8ToBase64(content),
-        branch,
-        ...(existingSha ? { sha: existingSha } : {}),
-      },
-    },
+async function readBlob(repo: string, sha: string, token: string): Promise<string> {
+  const b = await gh<{ content: string }>(
+    `/repos/${repo}/git/blobs/${sha}`,
+    { method: 'GET' },
     token,
   );
-}
-
-async function deleteFile(
-  repo: string,
-  path: string,
-  branch: string,
-  sha: string,
-  message: string,
-  token: string,
-): Promise<void> {
-  await gh<unknown>(
-    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
-    {
-      method: 'DELETE',
-      body: { message, sha, branch },
-    },
-    token,
-  );
+  return base64ToUtf8(b.content);
 }
 
 /**
- * Apply an incoming forces array for one nation against main's
- * forces/<nation>.json. Creates / updates / deletes the file as needed
- * and returns whether a commit was made. Empty incoming + existing file
- * → delete; empty incoming + no file → no-op (the common case).
+ * path → blob sha for every file reachable from a commit, in two API
+ * calls (commit → tree sha, then one recursive tree listing).
  */
-async function syncNationForces(
+async function fetchTreeMap(
   repo: string,
-  branch: string,
-  nation: string,
-  incomingForces: ForceLike[],
-  login: string,
-  ts: string,
+  commitSha: string,
   token: string,
-): Promise<boolean> {
-  const path = `public/data/forces/${nation}.json`;
-  const onMain = await readFileOnMain(repo, path, token);
-
-  const incomingJson = JSON.stringify(incomingForces, null, 2) + '\n';
-  const mainJson = onMain.exists ? onMain.content : '';
-
-  if (incomingJson === mainJson) return false; // identical
-  if (incomingForces.length === 0) {
-    // Nation no longer has any forces — drop the file if it exists.
-    if (!onMain.exists) return false;
-    await deleteFile(
-      repo,
-      path,
-      branch,
-      onMain.sha,
-      `forces: @${login} clear ${nation} ${ts}`,
-      token,
-    );
-    return true;
-  }
-  await commitFile(
-    repo,
-    path,
-    branch,
-    incomingJson,
-    `move: @${login} ${nation} ${ts}`,
+): Promise<Map<string, string>> {
+  const commit = await gh<{ tree: { sha: string } }>(
+    `/repos/${repo}/git/commits/${commitSha}`,
+    { method: 'GET' },
     token,
-    onMain.exists ? onMain.sha : undefined,
   );
-  return true;
+  const t = await gh<{
+    tree: Array<{ path: string; type: string; sha: string }>;
+    truncated: boolean;
+  }>(`/repos/${repo}/git/trees/${commit.tree.sha}?recursive=1`, { method: 'GET' }, token);
+  if (t.truncated) {
+    // ~100k entries before GitHub truncates; this repo is a few hundred.
+    // Fail loudly rather than risk missing a deletion.
+    throw new HttpError(502, 'repo tree listing truncated — cannot batch submit safely');
+  }
+  const m = new Map<string, string>();
+  for (const e of t.tree) if (e.type === 'blob') m.set(e.path, e.sha);
+  return m;
 }
+
+/** One planned file change, applied later as a single tree + commit. */
+type PlannedChange =
+  | { path: string; content: string }
+  | { path: string; delete: true };
 
 // ────────────────────────────────────────────────────────────────────
 // Submit handler
@@ -601,15 +548,19 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
 
   // Read perm.json with the install token to determine the submitter's role.
   // The validator does the same thing in CI, but we mirror it here so we can
-  // fail fast and so non-admins can never bundle perm.json edits.
+  // fail fast and so non-admins can never bundle perm.json edits. The raw
+  // content is kept so an admin perm edit below can diff against it without
+  // a second read.
   let perms: PermFile;
+  let permContentOnMain: string;
   try {
     const f = await gh<{ content: string }>(
       `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
       { method: 'GET' },
       installToken,
     );
-    perms = JSON.parse(base64ToUtf8(f.content)) as PermFile;
+    permContentOnMain = base64ToUtf8(f.content);
+    perms = JSON.parse(permContentOnMain) as PermFile;
   } catch (e) {
     return errorJson(origin, 502, `couldn't read perm.json: ${(e as Error).message}`);
   }
@@ -628,8 +579,13 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   const ts = new Date().toISOString().replace(/[:.]/g, '-');
   const branchName = `move/${login}-${ts}`;
 
-  // 1. Get main HEAD SHA, create branch.
+  // 1. Resolve main HEAD and load its full tree once. Every per-file
+  //    existence / staleness question below is answered from this single
+  //    listing plus local blob-sha math — not a Contents round-trip per
+  //    file. The branch is only created at the very end, once the whole
+  //    submit has passed validation, so rejections leave no debris.
   let baseSha: string;
+  let mainTree: Map<string, string>;
   try {
     const ref = await gh<{ object: { sha: string } }>(
       `/repos/${env.GITHUB_REPO}/git/ref/heads/main`,
@@ -637,48 +593,26 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       installToken,
     );
     baseSha = ref.object.sha;
-    await gh<unknown>(
-      `/repos/${env.GITHUB_REPO}/git/refs`,
-      { method: 'POST', body: { ref: `refs/heads/${branchName}`, sha: baseSha } },
-      installToken,
-    );
+    mainTree = await fetchTreeMap(env.GITHUB_REPO, baseSha, installToken);
   } catch (e) {
     const msg = (e as Error).message;
     return errorJson(origin, e instanceof HttpError ? e.status : 502, msg);
   }
 
+  const changes: PlannedChange[] = [];
+
   // 2. perm.json (admin only, when there's an effective change).
   if (renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0) {
-    try {
-      const permFile = await gh<{ sha: string; content: string }>(
-        `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
-        { method: 'GET' },
-        installToken,
-      );
-      const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
-      const permAfter = rewritePerm(permBefore, renames, userAdds, userRemoves);
-      if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
-        const json = JSON.stringify(permAfter, null, 2) + '\n';
-        await gh<unknown>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json`,
-          {
-            method: 'PUT',
-            body: {
-              message: `perm: ${summaryParts(renames, userAdds, userRemoves)}`,
-              content: utf8ToBase64(json),
-              sha: permFile.sha,
-              branch: branchName,
-            },
-          },
-          installToken,
-        );
+    const permAfter = rewritePerm(perms, renames, userAdds, userRemoves);
+    if (JSON.stringify(perms) !== JSON.stringify(permAfter)) {
+      const json = JSON.stringify(permAfter, null, 2) + '\n';
+      if (json !== permContentOnMain) {
+        changes.push({ path: 'public/data/perm.json', content: json });
       }
-    } catch (e) {
-      return errorJson(origin, 502, `perm.json commit: ${(e as Error).message}`);
     }
   }
 
-  // 3. Commit per-file content. The on-disk layout is:
+  // 3. Plan per-file content changes. The on-disk layout is:
   //      public/data/state.json            — { appVersion, ownerships, countries }
   //      public/data/forces/<nation>.json  — Force[]
   //    Non-admin players only touch their own nation's force file; the
@@ -691,81 +625,91 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   //    file no-ops for unchanged forces — exactly the rollback failure
   //    mode the v6 schema couldn't dodge. Older cached clients that
   //    don't send a baseline fall back to blind commit (v7 behavior).
+  //
+  //    Nothing is written here — changes accumulate into `changes` and
+  //    land as one tree + one commit in step 4.
   const incomingByNation = groupForcesByNation(snapshot.forces);
   const baselineByNation = baseline ? groupForcesByNation(baseline.forces) : null;
+  const FORCES_PREFIX = 'public/data/forces/';
 
-  /** Read main's per-nation file, rebase against baseline if we have one,
-   *  and commit the result. The rebase falls back to incoming-as-is when
-   *  baseline is absent or has no entry for this nation. */
-  async function commitNation(nation: string): Promise<void> {
+  /** Decide what (if anything) to write for one nation's force file.
+   *  Blob shas answer "identical?" locally; main's content is only
+   *  fetched for a true concurrent-edit rebase (baseline present, main
+   *  moved since the client loaded, and the submitter touched this
+   *  nation). The rebase falls back to incoming-as-is when baseline is
+   *  absent or has no entry for this nation. */
+  async function planNation(nation: string): Promise<void> {
+    const path = `${FORCES_PREFIX}${nation}.json`;
     const incoming = incomingByNation.get(nation) ?? [];
-    const path = `public/data/forces/${nation}.json`;
+    const mainSha = mainTree.get(path) ?? null;
+    const incomingJson =
+      incoming.length > 0 ? JSON.stringify(incoming, null, 2) + '\n' : '';
+
     if (!baselineByNation) {
       // Legacy / no-baseline path — preserve v7's blind-commit semantics.
-      await syncNationForces(
-        env.GITHUB_REPO,
-        branchName,
-        nation,
-        incoming,
-        login,
-        ts,
-        installToken,
-      );
+      if (incoming.length === 0) {
+        // Nation no longer has any forces — drop the file if it exists.
+        if (mainSha) changes.push({ path, delete: true });
+        return;
+      }
+      if (mainSha && (await gitBlobSha(incomingJson)) === mainSha) return; // identical
+      changes.push({ path, content: incomingJson });
       return;
     }
-    const onMain = await readFileOnMain(env.GITHUB_REPO, path, installToken);
-    const mainForces = onMain.exists ? (JSON.parse(onMain.content) as ForceLike[]) : [];
+
     const baselineForces = baselineByNation.get(nation) ?? [];
+    const baselineJson =
+      baselineForces.length > 0 ? JSON.stringify(baselineForces, null, 2) + '\n' : '';
+    const baselineSha = baselineForces.length > 0 ? await gitBlobSha(baselineJson) : null;
+
+    let mainForces: ForceLike[];
+    if (mainSha === baselineSha) {
+      // Main hasn't moved since the client loaded — rebase against the
+      // baseline we already hold instead of re-downloading it.
+      mainForces = baselineForces;
+    } else if (!mainSha) {
+      mainForces = [];
+    } else {
+      mainForces = JSON.parse(
+        await readBlob(env.GITHUB_REPO, mainSha, installToken),
+      ) as ForceLike[];
+    }
     const merged = rebaseForceFile(baselineForces, incoming, mainForces) as ForceLike[];
 
-    const newJson = merged.length > 0 ? JSON.stringify(merged, null, 2) + '\n' : '';
-    const mainJson = onMain.exists ? onMain.content : '';
-    if (newJson === mainJson) return; // no-op after rebase
-    if (merged.length === 0 && onMain.exists) {
-      await deleteFile(
-        env.GITHUB_REPO,
-        path,
-        branchName,
-        onMain.sha,
-        `forces: @${login} clear ${nation} ${ts}`,
-        installToken,
-      );
+    if (merged.length === 0) {
+      if (mainSha) changes.push({ path, delete: true });
       return;
     }
-    if (merged.length > 0) {
-      await commitFile(
-        env.GITHUB_REPO,
-        path,
-        branchName,
-        newJson,
-        `move: @${login} ${nation} ${ts}`,
-        installToken,
-        onMain.exists ? onMain.sha : undefined,
-      );
-    }
+    const newJson = JSON.stringify(merged, null, 2) + '\n';
+    if (mainSha && (await gitBlobSha(newJson)) === mainSha) return; // no-op after rebase
+    changes.push({ path, content: newJson });
   }
 
   try {
-    // Read mainState AND mainTurn in parallel — state.json carries
-    // appVersion/ownerships/countries; turn.json carries the time fields.
-    // Splitting them by file means an admin advancing the turn doesn't
-    // create merge contention with concurrent state-only edits.
-    const [stateOnMain, turnOnMain] = await Promise.all([
-      readFileOnMain(env.GITHUB_REPO, 'public/data/state.json', installToken),
-      readFileOnMain(env.GITHUB_REPO, 'public/data/turn.json', installToken),
-    ]);
-    if (!stateOnMain.exists) {
+    // Read mainState AND mainTurn in parallel via their tree blobs —
+    // state.json carries appVersion/ownerships/countries; turn.json
+    // carries the time fields. Splitting them by file means an admin
+    // advancing the turn doesn't create merge contention with concurrent
+    // state-only edits. Reading by blob sha (from the step-1 listing)
+    // keeps every read consistent with the same main snapshot.
+    const stateSha = mainTree.get('public/data/state.json');
+    const turnSha = mainTree.get('public/data/turn.json');
+    if (!stateSha) {
       return errorJson(origin, 502, 'state.json missing on main — repo is broken');
     }
-    if (!turnOnMain.exists) {
+    if (!turnSha) {
       return errorJson(origin, 502, 'turn.json missing on main — repo is broken');
     }
-    const mainState = JSON.parse(stateOnMain.content) as {
+    const [stateContent, turnContent] = await Promise.all([
+      readBlob(env.GITHUB_REPO, stateSha, installToken),
+      readBlob(env.GITHUB_REPO, turnSha, installToken),
+    ]);
+    const mainState = JSON.parse(stateContent) as {
       appVersion: string;
       ownerships: Array<[number, string]>;
       countries: Array<{ name: string; color: string }>;
     };
-    const mainTurn = JSON.parse(turnOnMain.content) as {
+    const mainTurn = JSON.parse(turnContent) as {
       appVersion: string;
       currentDate: string;
       lastTurnDays: number;
@@ -867,7 +811,7 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       if (!entry.nation) {
         return errorJson(origin, 403, `@${login} has no nation assigned in perm.json`);
       }
-      await commitNation(normalizeNation(entry.nation));
+      await planNation(normalizeNation(entry.nation));
     } else {
       // Admin: state.json + every force file that differs. We need the
       // union of (nations that already have a force file on main) and
@@ -910,21 +854,10 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           null,
           2,
         ) + '\n';
-      if (newStateJson !== stateOnMain.content) {
-        await commitFile(
-          env.GITHUB_REPO,
-          'public/data/state.json',
-          branchName,
-          newStateJson,
-          `state: @${login} ${ts}`,
-          installToken,
-          stateOnMain.sha,
-        );
+      if (newStateJson !== stateContent) {
+        changes.push({ path: 'public/data/state.json', content: newStateJson });
       }
 
-      // turn.json is its own commit so a turn-advance PR doesn't churn
-      // the (much larger) state.json blob; merge contention drops as a
-      // result. Skipped when nothing changed.
       const newTurnJson =
         JSON.stringify(
           {
@@ -936,38 +869,22 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           null,
           2,
         ) + '\n';
-      if (newTurnJson !== turnOnMain.content) {
-        await commitFile(
-          env.GITHUB_REPO,
-          'public/data/turn.json',
-          branchName,
-          newTurnJson,
-          `turn: @${login} → ${String(snapshot.currentDate)} (${String(snapshot.lastTurnDays)} days)`,
-          installToken,
-          turnOnMain.sha,
-        );
+      if (newTurnJson !== turnContent) {
+        changes.push({ path: 'public/data/turn.json', content: newTurnJson });
       }
 
-      // Discover existing nation files via one Contents API listing —
-      // saves us probing every country in the world with a 404.
-      let existingNations: string[] = [];
-      try {
-        const dir = await gh<Array<{ name: string; type: string }>>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/forces?ref=main`,
-          { method: 'GET' },
-          installToken,
-        );
-        existingNations = dir
-          .filter((e) => e.type === 'file' && e.name.endsWith('.json'))
-          .map((e) => e.name.slice(0, -'.json'.length));
-      } catch (e) {
-        if (!(e instanceof HttpError && e.status === 404)) throw e;
-        // 404 means forces/ directory doesn't exist yet — first ever bake.
-      }
+      // Union of (nations that already have a force file on main) and
+      // (nations with forces in the incoming snapshot) so deletions
+      // (e.g. a country rename's old name) are caught too. The step-1
+      // tree listing already names every existing file — no directory
+      // listing call needed.
+      const existingNations = [...mainTree.keys()]
+        .filter((p) => p.startsWith(FORCES_PREFIX) && p.endsWith('.json'))
+        .map((p) => p.slice(FORCES_PREFIX.length, -'.json'.length));
 
       const allNations = new Set([...existingNations, ...incomingByNation.keys()]);
       for (const nation of allNations) {
-        await commitNation(nation);
+        await planNation(nation);
       }
     }
   } catch (e) {
@@ -975,7 +892,53 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     return errorJson(origin, e instanceof HttpError ? e.status : 502, `commit: ${msg}`);
   }
 
-  // 4. Open the PR — body carries the verified submitter marker.
+  if (changes.length === 0) {
+    return errorJson(origin, 400, 'no changes to submit — everything already matches main');
+  }
+
+  // 4. Apply the plan: one tree, one commit, one branch ref. Fixed cost
+  //    regardless of how many files changed.
+  const permSummary = summaryParts(renames, userAdds, userRemoves);
+  const commitMessage =
+    `move: @${login} ${ts}` +
+    (permSummary ? ` (${permSummary})` : '') +
+    '\n\n' +
+    changes.map((c) => `${'delete' in c ? '-' : '+'} ${c.path}`).join('\n');
+  try {
+    const tree = await gh<{ sha: string }>(
+      `/repos/${env.GITHUB_REPO}/git/trees`,
+      {
+        method: 'POST',
+        body: {
+          base_tree: baseSha,
+          tree: changes.map((c) =>
+            'delete' in c
+              ? { path: c.path, mode: '100644', type: 'blob', sha: null }
+              : { path: c.path, mode: '100644', type: 'blob', content: c.content },
+          ),
+        },
+      },
+      installToken,
+    );
+    const commit = await gh<{ sha: string }>(
+      `/repos/${env.GITHUB_REPO}/git/commits`,
+      {
+        method: 'POST',
+        body: { message: commitMessage, tree: tree.sha, parents: [baseSha] },
+      },
+      installToken,
+    );
+    await gh<unknown>(
+      `/repos/${env.GITHUB_REPO}/git/refs`,
+      { method: 'POST', body: { ref: `refs/heads/${branchName}`, sha: commit.sha } },
+      installToken,
+    );
+  } catch (e) {
+    const msg = (e as Error).message;
+    return errorJson(origin, e instanceof HttpError ? e.status : 502, `commit: ${msg}`);
+  }
+
+  // 5. Open the PR — body carries the verified submitter marker.
   const description = (body.description ?? '').trim();
   const prBody =
     (description ? `${description}\n\n` : '') +
