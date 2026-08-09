@@ -11,7 +11,7 @@
     ],
     [
       2,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       3,
@@ -7123,7 +7123,7 @@
     ],
     [
       1780,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1781,
@@ -7147,11 +7147,11 @@
     ],
     [
       1786,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1787,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1788,
@@ -7163,7 +7163,7 @@
     ],
     [
       1790,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1791,
@@ -7207,11 +7207,11 @@
     ],
     [
       1801,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1802,
-      "batavian republic"
+      "aceh"
     ],
     [
       1803,
@@ -7223,7 +7223,7 @@
     ],
     [
       1805,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1806,
@@ -7291,7 +7291,7 @@
     ],
     [
       1822,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1823,
@@ -7303,15 +7303,15 @@
     ],
     [
       1825,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1826,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1827,
-      "batavian republic"
+      "aceh"
     ],
     [
       1828,
@@ -7327,7 +7327,7 @@
     ],
     [
       1831,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       1832,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "unclaimed"
+      "other indonesian states"
     ],
     [
       2558,
@@ -11623,7 +11623,7 @@
     ],
     [
       2905,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       2906,
@@ -18598,6 +18598,10 @@
     {
       "name": "oman",
       "color": "#8B0000"
+    },
+    {
+      "name": "other indonesian states",
+      "color": "#90898a"
     },
     {
       "name": "ottoman empire",
