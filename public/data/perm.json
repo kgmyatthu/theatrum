@@ -1,8 +1,8 @@
 {
   "AceApache": {
-    "role": "master"
+    "role": "admin"
   },
   "kgmyatthu": {
-    "role": "master"
+    "role": "admin"
   }
 }
