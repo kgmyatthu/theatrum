@@ -877,3 +877,104 @@ test('pass: tolerance absorbs sub-100m float drift on displacement check', () =>
     ),
   );
 });
+
+// ────────────────────────────────────────────────────────────────────
+// Force splitting (SPLIT_FORCE in the app)
+//
+// A split detachment is a NEW force id that inherits the parent's
+// turn-tracking fields verbatim: same turnStart anchor, same
+// kmMovedThisTurn, same createdAtTurn. These tests pin down that the
+// validator accepts that shape — and that the inheritance is exactly
+// what stops a split from minting free movement or dodging the
+// newly-raised lock.
+// ────────────────────────────────────────────────────────────────────
+
+test('pass: mid-turn split — detachment inherits turn-tracking fields', () => {
+  // Parent marched ~122 km (budget 750 for 30 days), then split 15k off.
+  // No createdAtTurn — a primordial force, movable this turn (the default
+  // turn fixture has turnNumber 0, so stamping 0 here would mean "raised
+  // this turn" and lock it; the lock-inheritance case is the third test).
+  const marched = {
+    lat: 41.5,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 200,
+  };
+  const parent = force({ id: 'spain-1', nation: 'spain', strength: 25000, ...marched });
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: '1st Corps (detachment)',
+    strength: 15000,
+    commander: '',
+    ...marched,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [parent, child] }) },
+      }),
+    ),
+  );
+});
+
+test('pass: detachment keeps marching after the split within remaining budget', () => {
+  const parent = force({
+    id: 'spain-1',
+    nation: 'spain',
+    strength: 25000,
+    lat: 41.5,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 200,
+  });
+  // Child carried the parent's 200 km, then walked ~167 km more on its
+  // own: displacement (turnStart → here) ≈ 289 km ≤ 367 km reported,
+  // and 367 ≤ 750 budget.
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: '1st Corps (detachment)',
+    strength: 15000,
+    lat: 43.0,
+    lon: -3.7,
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 367,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [parent, child] }) },
+      }),
+    ),
+  );
+});
+
+test('reject: detachment split off a just-raised force inherits the movement lock', () => {
+  // Parent was raised this turn (createdAtTurn === turnNumber === 0) and
+  // is locked. The child inherits that stamp — moving it is the dodge
+  // this test pins down.
+  const parent = force({ id: 'spain-1', nation: 'spain', strength: 25000, createdAtTurn: 0 });
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: '1st Corps (detachment)',
+    strength: 15000,
+    createdAtTurn: 0,
+    lat: 41.9, // ~167 km north of the raise point
+    turnStartLat: 40.4,
+    turnStartLon: -3.7,
+    kmMovedThisTurn: 170,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { state: stateFile(), forces: forcesMap({ spain: [parent, child] }) },
+      }),
+    ),
+    /raised this turn/,
+  );
+});

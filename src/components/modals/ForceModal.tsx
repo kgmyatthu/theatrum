@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
+import { useAuth } from '@/auth/AuthContext';
 import { Button } from '@/components/ui/Button';
+import { mintForceId } from '@/utils/forceId';
 import type { Force, ForceBranch } from '@/types';
 import styles from './ForceModal.module.css';
 
@@ -12,6 +14,7 @@ interface ForceModalProps {
 export function ForceModal({ force, onDismiss }: ForceModalProps) {
   const dispatch = useAppDispatch();
   const { owners } = useAppState();
+  const auth = useAuth();
 
   const [name, setName] = useState(force.name);
   const [nation, setNation] = useState(force.nation);
@@ -19,6 +22,11 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
   const [strength, setStrength] = useState(String(force.strength));
   const [commander, setCommander] = useState(force.commander);
   const [confirmingDelete, setConfirmingDelete] = useState(false);
+  const [splitting, setSplitting] = useState(false);
+  const [splitName, setSplitName] = useState(`${force.name} (detachment)`);
+  const [splitStrength, setSplitStrength] = useState(
+    String(Math.floor(force.strength / 2)),
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -46,7 +54,29 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
     onDismiss();
   };
 
+  // This modal is only reachable via the forces layer's `editable` gate
+  // (admin, or player right-clicking their own force), so auth.login is
+  // set in practice; the 'local' fallback is type-narrowing safety only.
+  const parsedSplit = parseInt(splitStrength, 10);
+  const splitValid =
+    Number.isFinite(parsedSplit) && parsedSplit >= 1 && parsedSplit < force.strength;
+
+  const handleConfirmSplit = (): void => {
+    if (!splitValid) return;
+    dispatch({
+      type: 'SPLIT_FORCE',
+      payload: {
+        id: force.id,
+        newId: mintForceId(auth.login ?? 'local'),
+        name: splitName,
+        strength: parsedSplit,
+      },
+    });
+    onDismiss();
+  };
+
   const strengthLabel = branch === 'navy' ? 'Fleet size (ships)' : 'Strength (men)';
+  const splitUnit = force.branch === 'navy' ? 'ships' : 'men';
 
   return (
     <div className={styles.backdrop} onClick={(e) => e.target === e.currentTarget && onDismiss()}>
@@ -100,7 +130,43 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
           onChange={(e) => setCommander(e.target.value)}
         />
 
-        {confirmingDelete ? (
+        {splitting ? (
+          <>
+            <label className={styles.label}>Detachment name</label>
+            <input
+              className={styles.input}
+              type="text"
+              value={splitName}
+              onChange={(e) => setSplitName(e.target.value)}
+            />
+
+            <label className={styles.label}>
+              Detachment {splitUnit} (of {force.strength})
+            </label>
+            <input
+              className={styles.input}
+              type="number"
+              min={1}
+              max={force.strength - 1}
+              value={splitStrength}
+              onChange={(e) => setSplitStrength(e.target.value)}
+            />
+
+            <div className={styles.buttons}>
+              <span className={styles.confirmText}>
+                {splitValid
+                  ? `${force.name} keeps ${force.strength - parsedSplit} ${splitUnit}. The detachment shares this turn's already-used movement.`
+                  : `Enter 1–${force.strength - 1}.`}
+              </span>
+              <div className={styles.right}>
+                <Button onClick={() => setSplitting(false)}>Cancel</Button>
+                <Button variant="primary" disabled={!splitValid} onClick={handleConfirmSplit}>
+                  Confirm Split
+                </Button>
+              </div>
+            </div>
+          </>
+        ) : confirmingDelete ? (
           <div className={styles.buttons}>
             <span className={styles.confirmText}>
               Delete &ldquo;{force.name}&rdquo;?
@@ -118,6 +184,9 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
               <Button variant="danger" onClick={() => setConfirmingDelete(true)}>
                 Delete
               </Button>
+              {force.strength > 1 && (
+                <Button onClick={() => setSplitting(true)}>Split…</Button>
+              )}
             </div>
             <div className={styles.right}>
               <Button onClick={onDismiss}>Cancel</Button>

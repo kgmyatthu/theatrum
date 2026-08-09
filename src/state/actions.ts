@@ -17,6 +17,16 @@ export type Action =
   | { type: 'SET_ICON_SCALE'; payload: { scale: number } }
   | { type: 'ADD_FORCE'; payload: { force: Force } }
   | { type: 'UPDATE_FORCE'; payload: { force: Force } }
+  /**
+   * Split `strength` off force `id` into a new sibling force `newId`.
+   * The detachment inherits the parent's position and every turn-tracking
+   * field (turnStart*, kmMovedThisTurn, createdAtTurn) — see the reducer
+   * for why anything fresher would mint free movement.
+   */
+  | {
+      type: 'SPLIT_FORCE';
+      payload: { id: string; newId: string; name: string; strength: number };
+    }
   | { type: 'DELETE_FORCE'; payload: { id: string } }
   | { type: 'MOVE_FORCE'; payload: { id: string; lat: number; lon: number } }
   | { type: 'ADVANCE_TURN'; payload: { newDate: string } }
