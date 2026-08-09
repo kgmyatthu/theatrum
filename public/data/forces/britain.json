@@ -124,5 +124,19 @@
     "turnStartLon": -71.2,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "Vancouver1903-1786301661719-0",
+    "nation": "britain",
+    "branch": "army",
+    "name": "New South Wales Corp",
+    "strength": 700,
+    "commander": "",
+    "lat": -33.88865750124074,
+    "lon": 151.13891601562503,
+    "turnStartLat": -33.88865750124074,
+    "turnStartLon": 151.13891601562503,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 1
   }
 ]
