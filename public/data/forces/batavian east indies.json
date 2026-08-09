@@ -68,5 +68,19 @@
     "turnStartLon": 112.75268554687501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "yellowwithblue-1786315409911-1",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Spice Islands",
+    "strength": 4000,
+    "commander": "",
+    "lat": -3.1182919801106546,
+    "lon": 128.40777613771857,
+    "turnStartLat": -3.1182919801106546,
+    "turnStartLon": 128.40777613771857,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
   }
 ]
