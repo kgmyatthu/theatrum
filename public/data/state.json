@@ -1555,7 +1555,7 @@
     ],
     [
       388,
-      "austria"
+      "contested territories"
     ],
     [
       389,
@@ -1563,7 +1563,7 @@
     ],
     [
       390,
-      "austria"
+      "contested territories"
     ],
     [
       391,
@@ -1571,11 +1571,11 @@
     ],
     [
       392,
-      "austria"
+      "contested territories"
     ],
     [
       393,
-      "austria"
+      "contested territories"
     ],
     [
       394,
@@ -1583,7 +1583,7 @@
     ],
     [
       395,
-      "austria"
+      "contested territories"
     ],
     [
       396,
@@ -1731,7 +1731,7 @@
     ],
     [
       432,
-      "austria"
+      "contested territories"
     ],
     [
       433,
@@ -1743,7 +1743,7 @@
     ],
     [
       435,
-      "austria"
+      "contested territories"
     ],
     [
       436,
@@ -2215,7 +2215,7 @@
     ],
     [
       553,
-      "austria"
+      "contested territories"
     ],
     [
       554,
@@ -5595,7 +5595,7 @@
     ],
     [
       1398,
-      "france"
+      "contested territories"
     ],
     [
       1399,
@@ -5723,7 +5723,7 @@
     ],
     [
       1430,
-      "france"
+      "contested territories"
     ],
     [
       1431,
@@ -5831,7 +5831,7 @@
     ],
     [
       1457,
-      "france"
+      "contested territories"
     ],
     [
       1458,
@@ -5839,7 +5839,7 @@
     ],
     [
       1459,
-      "france"
+      "contested territories"
     ],
     [
       1460,
@@ -8131,11 +8131,11 @@
     ],
     [
       2032,
-      "france"
+      "contested territories"
     ],
     [
       2033,
-      "france"
+      "contested territories"
     ],
     [
       2034,
@@ -8491,27 +8491,27 @@
     ],
     [
       2122,
-      "france"
+      "contested territories"
     ],
     [
       2123,
-      "france"
+      "contested territories"
     ],
     [
       2124,
-      "france"
+      "contested territories"
     ],
     [
       2125,
-      "france"
+      "contested territories"
     ],
     [
       2126,
-      "france"
+      "contested territories"
     ],
     [
       2127,
-      "france"
+      "contested territories"
     ],
     [
       2128,
@@ -8519,7 +8519,7 @@
     ],
     [
       2129,
-      "france"
+      "contested territories"
     ],
     [
       2130,
@@ -9823,19 +9823,19 @@
     ],
     [
       2455,
-      "austria"
+      "contested territories"
     ],
     [
       2456,
-      "austria"
+      "contested territories"
     ],
     [
       2457,
-      "austria"
+      "contested territories"
     ],
     [
       2458,
-      "austria"
+      "contested territories"
     ],
     [
       2459,
@@ -14979,47 +14979,47 @@
     ],
     [
       3744,
-      "france"
+      "contested territories"
     ],
     [
       3745,
-      "france"
+      "contested territories"
     ],
     [
       3746,
-      "france"
+      "contested territories"
     ],
     [
       3747,
-      "france"
+      "contested territories"
     ],
     [
       3748,
-      "france"
+      "contested territories"
     ],
     [
       3749,
-      "france"
+      "contested territories"
     ],
     [
       3750,
-      "france"
+      "contested territories"
     ],
     [
       3751,
-      "france"
+      "contested territories"
     ],
     [
       3752,
-      "france"
+      "contested territories"
     ],
     [
       3753,
-      "france"
+      "contested territories"
     ],
     [
       3754,
-      "france"
+      "contested territories"
     ],
     [
       3755,
@@ -17643,39 +17643,39 @@
     ],
     [
       4410,
-      "austria"
+      "contested territories"
     ],
     [
       4411,
-      "austria"
+      "contested territories"
     ],
     [
       4412,
-      "austria"
+      "contested territories"
     ],
     [
       4413,
-      "austria"
+      "contested territories"
     ],
     [
       4414,
-      "austria"
+      "contested territories"
     ],
     [
       4415,
-      "austria"
+      "contested territories"
     ],
     [
       4416,
-      "austria"
+      "contested territories"
     ],
     [
       4417,
-      "austria"
+      "contested territories"
     ],
     [
       4418,
-      "austria"
+      "contested territories"
     ],
     [
       4419,
@@ -17691,11 +17691,11 @@
     ],
     [
       4422,
-      "austria"
+      "contested territories"
     ],
     [
       4423,
-      "austria"
+      "contested territories"
     ],
     [
       4424,
@@ -17703,11 +17703,11 @@
     ],
     [
       4425,
-      "austria"
+      "contested territories"
     ],
     [
       4426,
-      "austria"
+      "contested territories"
     ],
     [
       4427,
@@ -17735,15 +17735,15 @@
     ],
     [
       4433,
-      "austria"
+      "contested territories"
     ],
     [
       4434,
-      "austria"
+      "contested territories"
     ],
     [
       4435,
-      "austria"
+      "contested territories"
     ],
     [
       4436,
@@ -17779,7 +17779,7 @@
     ],
     [
       4444,
-      "austria"
+      "contested territories"
     ],
     [
       4445,
@@ -17999,7 +17999,7 @@
     ],
     [
       4499,
-      "france"
+      "contested territories"
     ],
     [
       4500,
@@ -18438,6 +18438,10 @@
     {
       "name": "china",
       "color": "#E8A317"
+    },
+    {
+      "name": "contested territories",
+      "color": "#ffffff"
     },
     {
       "name": "dahomey",
