@@ -174,6 +174,38 @@ export function reducer(state: AppState, action: Action): AppState {
       };
     }
 
+    case 'SPLIT_FORCE': {
+      const { id, newId, name, strength } = action.payload;
+      const parent = state.forces.find((f) => f.id === id);
+      if (!parent) return state;
+      const detached = Math.floor(strength);
+      // Both halves must remain real forces — reject a split that would
+      // zero out either side. UI gates this too; keep the reducer safe.
+      if (!Number.isFinite(detached) || detached < 1 || detached >= parent.strength) {
+        return state;
+      }
+      if (state.forces.some((f) => f.id === newId)) return state;
+      // The detachment spawns at the parent's position and inherits the
+      // turn-tracking fields verbatim: it has marched wherever the parent
+      // marched this turn, so it keeps the same turnStart anchor, the
+      // same spent budget, and the same raise-turn lock. Fresh values
+      // here would conjure movement out of thin air (or dodge the
+      // newly-raised lock by "splitting" a just-raised army).
+      const detachment: Force = {
+        ...parent,
+        id: newId,
+        name: name.trim() || `${parent.name} (detachment)`,
+        strength: detached,
+        commander: '',
+      };
+      return {
+        ...state,
+        forces: state.forces.flatMap((f) =>
+          f.id === id ? [{ ...f, strength: f.strength - detached }, detachment] : [f],
+        ),
+      };
+    }
+
     case 'DELETE_FORCE': {
       const { id } = action.payload;
       return {
