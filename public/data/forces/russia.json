@@ -18,7 +18,7 @@
     "nation": "russia",
     "branch": "army",
     "name": "Army of the West",
-    "strength": 60000,
+    "strength": 30000,
     "commander": "",
     "lat": 52.1,
     "lon": 23.7,
@@ -53,6 +53,20 @@
     "turnStartLat": 39.62,
     "turnStartLon": 19.92,
     "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "kgmyatthu-1786295296044-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of the West (detachment)",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.22064743038333,
+    "lon": 24.19189453125,
+    "turnStartLat": 52.1,
+    "turnStartLon": 23.7,
+    "kmMovedThisTurn": 103.49830253583914,
     "createdAtTurn": 0
   }
 ]
