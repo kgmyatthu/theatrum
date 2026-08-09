@@ -2327,7 +2327,7 @@
     ],
     [
       581,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       582,
@@ -2351,7 +2351,7 @@
     ],
     [
       587,
-      "batavian republic"
+      "other indonesian states"
     ],
     [
       588,
@@ -5331,31 +5331,31 @@
     ],
     [
       1332,
-      "spain"
+      "unclaimed"
     ],
     [
       1333,
-      "spain"
+      "unclaimed"
     ],
     [
       1334,
-      "spain"
+      "unclaimed"
     ],
     [
       1335,
-      "spain"
+      "unclaimed"
     ],
     [
       1336,
-      "spain"
+      "unclaimed"
     ],
     [
       1337,
-      "spain"
+      "unclaimed"
     ],
     [
       1338,
-      "spain"
+      "unclaimed"
     ],
     [
       1339,
@@ -7115,11 +7115,11 @@
     ],
     [
       1778,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1779,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1780,
@@ -7127,15 +7127,15 @@
     ],
     [
       1781,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1782,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1783,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1784,
@@ -7143,7 +7143,7 @@
     ],
     [
       1785,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1786,
@@ -7167,7 +7167,7 @@
     ],
     [
       1791,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1792,
@@ -7215,11 +7215,11 @@
     ],
     [
       1803,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1804,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1805,
@@ -7295,15 +7295,15 @@
     ],
     [
       1823,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1824,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1825,
-      "other indonesian states"
+      "batavian east indies"
     ],
     [
       1826,
@@ -7323,7 +7323,7 @@
     ],
     [
       1830,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1831,
@@ -18398,6 +18398,10 @@
     {
       "name": "austria",
       "color": "#FCD840"
+    },
+    {
+      "name": "batavian east indies",
+      "color": "#FF8C42"
     },
     {
       "name": "batavian republic",
