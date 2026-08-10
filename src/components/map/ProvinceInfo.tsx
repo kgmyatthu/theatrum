@@ -1,5 +1,6 @@
 import { useAppState } from '@/state/AppContext';
 import type { ProvinceFeature } from '@/types';
+import { NationPower } from './NationPower';
 import styles from './ProvinceInfo.module.css';
 
 interface ProvinceInfoProps {
@@ -40,6 +41,13 @@ export function ProvinceInfo({ feature }: ProvinceInfoProps) {
           {typeof population1800 === 'number' ? population1800.toLocaleString('en-US') : '—'}
         </span>
       </div>
+      {/* Nested, not a sibling in MapView. A sibling would need its own
+          absolute anchor whose `top` is this card's rendered height — a
+          number that changes with every province name's wrapping and that
+          CSS cannot ask for. As a child, "directly below the rows" is just
+          document order, and the anchor, the surface, the border and
+          pointer-events:none are all inherited rather than re-derived. */}
+      <NationPower nation={owner} />
     </div>
   );
 }

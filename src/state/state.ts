@@ -31,8 +31,13 @@ export interface AppState {
   /**
    * People each nation ruled when this turn began, summed off province
    * ownership at ADVANCE_TURN and carried in turn.json. Drives both
-   * recruitment limits: the monthly cap scales with the square root of it,
-   * and the standing-army ceiling is a flat share of it.
+   * recruitment limits: the monthly cap scales with the cube root of it,
+   * and the standing-army ceiling is a flat share of it
+   * (MAX_ARMY_POP_SHARE, 3.5%). The contrast is the point — one is curved
+   * and one is not, so the two limits answer different questions and a
+   * nation can be comfortably inside one while the other refuses it, and
+   * the two are re-priced by separate knobs: the 4% → 3.5% cut moved every
+   * ceiling by 0.875 and left every monthly cap untouched.
    *
    * `undefined` is a real, load-bearing value — "no table available" — and
    * is what the client boots with before turn.json lands. It fails OPEN:

@@ -1,0 +1,234 @@
+/* Styles for the manpower block that hangs under the province hover card.
+   It is a CHILD of .info (ProvinceInfo.module.css), so the absolute
+   top/right anchor, the surface, the border and pointer-events:none all
+   arrive by inheritance — nothing here re-states them. */
+
+.power {
+  /* The only separation the block needs from the card's rows above it:
+     one hairline, the same one the rest of the app uses for divisions. */
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  padding-top: 6px;
+
+  /* Local, deliberately NOT a token. #3987e5 is the one blue validated
+     against this card's real surface (#141926): it clears the dark
+     lightness band, the chroma floor, and >= 3:1 contrast. The app's own
+     --accent-light (#6ba3ff) FAILS the band at L 0.717, which is exactly
+     why the accent is not reused here — a token is not a license to be
+     illegible. */
+  --series: #3987e5;
+
+  /* The unfilled half of the meter: a darker step of the SAME blue. Never
+     a second hue and never a traffic-light — the meter must read as one
+     bar with a filled portion, not as two states arguing about severity.
+
+     Step 600 of the documented blue ramp, and it has to be a documented
+     step rather than an eyeballed one: the ramp's dark end is bounded by
+     the surface it sits on, and the invented #22406e this replaced
+     measured 1.69:1 against #141926 — under the 2:1 an ordinal step
+     nearest the surface must clear, which is the difference between an
+     empty meter reading as a track with nothing in it and reading as no
+     meter at all. #184f95 is 2.17:1 and is also the darkest step the ramp
+     allows on a dark surface, so it keeps the widest gap from the fill
+     (#3987e5, step 400) that legibility leaves available. */
+  --series-track: #184f95;
+
+  /* The card's background with its 0.92 alpha resolved. Marker rings are
+     cut in the surface color; a transparent "ring" would show the very
+     line it exists to hide. */
+  --surface: #141926;
+}
+
+/* A FIXED width, in the same units the viewBox is authored in, and this is
+   load-bearing three times over.
+
+   It is what sizes the card: the y ticks are six-character thousands
+   ("20,000", the widest label the axis can now produce — it was "40,000"
+   while MEN_PER_MONTH was 15000, and this width did not have to move with
+   it because the two are the same six characters) at 8px, and they need a
+   gutter the card's own 200px min-width cannot pay for. The quoted figure
+   still has to be one a reader will actually see on the chart, which is
+   why it tracks PLOT_X0's own note in NationPower.tsx rather than the
+   number that happened to be there when the gutter was measured. Sitting
+   here rather than on .info keeps the cost
+   attached to the thing that spends it, and 280 + the card's 24px of
+   horizontal padding is 304px, inside the ~320px this card must not
+   exceed. The fail-open render drops both SVGs and falls back to .note's
+   matching max-width, so the two renders agree on how wide this card gets.
+
+   It also PINS the width, and the number here MUST stay equal to VB_W in
+   NationPower.tsx. `width: 100%` looks like the friendlier choice and is a
+   trap this file has already been bitten by: an <svg> carrying only a
+   viewBox has no intrinsic width, so its max-content contribution falls
+   back to the CSS default object size of 300px and the shrink-to-fit card
+   inflates past the limit while every label silently scales up with it.
+   That is also why growing this card meant re-authoring the viewBox and
+   every geometry constant behind it rather than just raising the px here —
+   a bigger CSS width over an unchanged viewBox does not enlarge a chart,
+   it magnifies one.
+
+   height:auto then takes the height from the viewBox ratio, and that
+   viewBox INCLUDES the x-axis label band: a fixed height cropped to the
+   plot is exactly what gives a card a 4px nested scrollbar. */
+.chart {
+  display: block;
+  width: 280px;
+  height: auto;
+  margin: 5px 0 3px;
+}
+
+.meter {
+  display: block;
+  width: 280px;
+  height: auto;
+  margin: 4px 0 3px;
+}
+
+/* Gridlines double as the axis rules — one hairline family is all the
+   chrome a 222px-wide plot can carry. SOLID, never dashed: a dashed rule
+   reads as "threshold" or "projection", and this one is only a grid.
+   Still ONE pixel at the card's larger size: a hairline is a hairline at
+   any plot width, and thickening it with everything else would promote the
+   grid from chrome to content. */
+.grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.curve {
+  fill: none;
+  stroke: var(--series);
+  /* Non-scaling, so this is CSS px: 2.5 keeps the series reading as the
+     card's heaviest mark now that the plot around it is a quarter wider. */
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The 2px surface ring under the nation's marker, drawn as its own circle
+   rather than a stroke so the full 2px sits OUTSIDE the dot (a centered
+   stroke would give away half of it to the fill). */
+.dotRing {
+  fill: var(--surface);
+}
+
+.dot {
+  fill: var(--series);
+}
+
+/* The calibration point (REFERENCE_POP -> MEN_PER_MONTH). Hollow and in
+   muted ink so it is findable but never competes with the nation's own
+   marker; the filled centre punches the curve so the ring reads as a mark
+   ON the line rather than a bead beside it. */
+.refRing {
+  fill: var(--surface);
+  stroke: var(--text-muted);
+  stroke-width: 1;
+}
+
+/* Axis ticks are a COLUMN of numbers, so they get tabular figures — the
+   one place in this block where equal-width digits are right. */
+.tick {
+  fill: var(--text-muted);
+  font-size: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The single direct label on the chart. Text token, never the series
+   color: identity comes from the colored dot beside it.
+
+   The stroke is not an outline, it is the surface gap — the same 2px of
+   background that rings the marker, here painted UNDER the glyphs
+   (paint-order) so it cuts a hole rather than fattening them. It has to be
+   here: the curve rises to the right, so the label of a nation low on the
+   curve necessarily lies across the line it is labelling, and for a
+   3.2M-person nation it lands on the calibration mark as well. Nudging the
+   label off them instead would detach it from its own dot. */
+.pointLabel {
+  fill: var(--text-primary);
+  font-size: 10px;
+  font-weight: 600;
+  stroke: var(--surface);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+
+.meterTrack {
+  fill: var(--series-track);
+}
+
+.meterFill {
+  fill: var(--series);
+}
+
+/* Right-hand side of a heading row — a subtitle, not a value, so it sits
+   one ink step below the card's .value. */
+.headVal {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+/* Names a mark in the plot in words, because the marks themselves carry no
+   labels — a second and third number floating in an 83px-tall plot would
+   collide with the nation's own.
+
+   flex-start, not center: a long nation name ("british colonies, all
+   provinces: 87,452,671 people") runs past 280px and wraps, and a centred
+   swatch would then float against the middle of a two-line block instead
+   of sitting beside the line it belongs to. min-width:0 on the text is
+   what lets that wrap happen at all — a flex item's automatic minimum is
+   its min-content width, which would otherwise push the card wider than
+   the chart it is captioning. */
+.caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.35;
+  max-width: 280px;
+  margin: 0 0 4px;
+}
+
+.caption > span:last-child {
+  min-width: 0;
+}
+
+/* Same swatch idiom the card uses for the owner color. Hollow, so it is
+   the same mark as .refRing in the plot. */
+.refSwatch {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 3px;
+  border: 1px solid var(--text-muted);
+  border-radius: 50%;
+}
+
+/* The nation's own marker, restated at caption size: FILLED and in the
+   series color, because that is what distinguishes the dot on the curve
+   from the hollow calibration ring. This is not a legend — there is one
+   series and it needs no swatch box to tell it from itself — it is the
+   name of a single mark, the same job .refSwatch already does. */
+.dotSwatch {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 3px;
+  background: var(--series);
+  border-radius: 50%;
+}
+
+/* The fail-open branch renders no SVG, so nothing else here bounds the
+   card's width — and the card is shrink-to-fit against a whole map's worth
+   of available space, which means an unbounded sentence lays itself out on
+   one very long line. 280px is the same measure the charts occupy, so the
+   two renders agree on how wide this card gets. */
+.note {
+  max-width: 280px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.35;
+  margin-top: 4px;
+}

@@ -89,7 +89,7 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
   // absence); a table that simply doesn't list this nation → 0 → the 3,000
   // floor on both figures (fail closed on contents). The tempting
   // `populationByNation?.[nation]` collapses those two into one and would
-  // promise a stateless nation 15,000 men a month.
+  // promise a stateless nation the flat 10,000 men a month.
   const pop =
     populationByNation === undefined ? undefined : (populationByNation[nation] ?? 0);
   const cap = raiseBudget(branch, lastTurnDays, pop);

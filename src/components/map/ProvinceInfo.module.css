@@ -7,37 +7,62 @@
   border: 1px solid var(--border);
   padding: 8px 12px;
   border-radius: 4px;
-  font-size: 12px;
+  /* Sets .value, which carries no size of its own — the two move together
+     on purpose, so the 12px key keeps its one-step-below relationship to
+     the number it labels. */
+  font-size: 14px;
   font-family: var(--font-ui);
   pointer-events: none;
   z-index: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   min-width: 200px;
+  /* The card is shrink-to-fit against a whole map's worth of space, so
+     nothing but content bounds it, and the widest content is the 280px
+     chart plus 24px of padding = 304px. A province with a long name
+     ("Provincia de Santiago del Estero") would push past that on its own,
+     and at 14px it does so a third sooner than it used to. The cap is the
+     ceiling this card was signed off against; .value wraps to respect it
+     rather than the card growing over the map. */
+  max-width: 320px;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  margin: 2px 0;
+  margin: 3px 0;
 }
 
 .key {
   color: var(--text-muted);
   text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 0.4px;
+  font-size: 12px;
+  /* Tracking scales with the size it opens up — 0.4px was tuned to 10px
+     caps, and left alone it would read tighter at 12px, not the same. */
+  letter-spacing: 0.5px;
+  /* The keys are fixed short labels; the VALUES are what should give way
+     when a row runs long, so the label never breaks mid-word. */
+  flex: none;
 }
 
 .value {
   color: var(--text-primary);
   font-weight: 500;
+  /* A flex item's automatic minimum is its min-content width, so without
+     min-width:0 a long value refuses to shrink and blows past .info's
+     max-width instead of wrapping inside it. break-word (not `anywhere`)
+     so multi-word names wrap at their spaces and only a single
+     unbreakable token is ever cut — the numbers in this column must never
+     break mid-figure. */
+  min-width: 0;
+  overflow-wrap: break-word;
+  text-align: right;
 }
 
 .swatch {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border: 1px solid #000;
   margin-right: 4px;
   vertical-align: middle;

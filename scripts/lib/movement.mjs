@@ -45,41 +45,90 @@ export const MOVEMENT_TOLERANCE_KM = 0.1;
 // no new build surface. Split it out if the raise rules outgrow this block.
 
 /** Men (army) and ships (navy) a nation may raise per whole month of
- *  turn length. MEN_PER_MONTH now wears two hats: it is the men-per-month
- *  AT the reference population (see menPerMonth), and it is the fail-open
- *  fallback used when no population is supplied at all — so every caller
- *  that passes no population still gets exactly today's flat 15000.
+ *  turn length. MEN_PER_MONTH wears two hats: it is the men-per-month AT
+ *  the reference population (see menPerMonth), and it is the fail-open
+ *  fallback used when no population is supplied at all.
+ *
+ *  Both hats move together when the number does, and that is the whole
+ *  content of the 15000 → 10000 cut: it is a LINEAR multiplier on the
+ *  curve, so every nation not sitting on the floor scaled by exactly 2/3
+ *  (china 40,433 → 26,956, sweden 8,991 → 5,994) while REFERENCE_POP,
+ *  MIN_MEN_PER_MONTH, MAX_ARMY_POP_SHARE, the cube root and the flat navy
+ *  rate were all left alone. The fallback re-priced to 10000 along with
+ *  it, deliberately: the fail-open answer is "this rule with no
+ *  population term", not "the rate as it stood before populations
+ *  existed", and freezing it at the old 15000 would have made a missing
+ *  table the most generous thing that can happen to a nation.
+ *
  *  SHIPS_PER_MONTH stays genuinely flat: the navy is hull-limited by
  *  yards and timber, not by how many men a country has. */
-export const MEN_PER_MONTH = 15000;
+export const MEN_PER_MONTH = 10000;
 export const SHIPS_PER_MONTH = 1;
 
 /** The population MEN_PER_MONTH is quoted at. A nation of exactly this
  *  many people raises exactly MEN_PER_MONTH per month; everyone else
- *  scales off it. Chosen so the historical mid-sized power sits near the
- *  old flat rate and nothing in the existing order of battle lurches. */
+ *  scales off it. Chosen as the historical mid-sized power, and it is the
+ *  PIVOT rather than a rate: re-pricing MEN_PER_MONTH turns the curve
+ *  about this population without moving it, which is why the cut to
+ *  10000 changed every nation's figure and no nation's ordering. */
 export const REFERENCE_POP = 15_000_000;
 
 /** Floor under the monthly rate AND under the standing-army ceiling. A
  *  microstate must still be able to field and replace a garrison, or it
  *  is a nation that cannot play. Deliberately the same number for both:
  *  the floor exists to keep a small nation viable, and viability means
- *  both raising men and being allowed to keep them. */
+ *  both raising men and being allowed to keep them.
+ *
+ *  Held at 3000 while MEN_PER_MONTH fell to 10000, so the floor is no
+ *  longer the rare edge it was: it is now 30% of the pivot rate rather
+ *  than 20%, it meets the curve at a population 405,000 rather than
+ *  120,000 (see the crossover derivation in movement.test.mjs), and 9 of
+ *  the 82 nations in the shipped table sit on it rather than 5. It is a
+ *  genuine mechanic for the small end of the board, not a guard rail
+ *  nothing touches. */
 export const MIN_MEN_PER_MONTH = 3000;
 
 /** Hard share of a nation's people that may be under arms at once. Not a
- *  rate — a stock. 4% is already extraordinary by the period's standards
+ *  rate — a stock. 3.5% is already extraordinary by the period's standards
  *  (levée-en-masse France peaked near it) so it binds only the nations
- *  that have genuinely over-mobilised. */
-export const MAX_ARMY_POP_SHARE = 0.04;
+ *  that have genuinely over-mobilised.
+ *
+ *  The 4% → 3.5% tightening is a flat 0.875 multiplier on every nation's
+ *  ceiling at once — nothing else about the rule moved, so it cannot
+ *  reorder anybody — and on the shipped table it breaches nobody new:
+ *  sweden is the tightest nation on the board and goes from 77.4% of its
+ *  ceiling to 88.5% (100,000 standing against 113,043). mysore was
+ *  already over on the floor (8,000 men, no provinces, so 0 people and a
+ *  3000 ceiling) and is untouched by this — the floor is where it sits,
+ *  and the floor did not move.
+ *
+ *  Two things this share does NOT reach, both deliberate. The recruitment
+ *  curve never reads it: menPerMonth is a flow and this is a stock, so
+ *  re-pricing one leaves the other exactly where it was. And its own
+ *  floor crossover is MIN_MEN_PER_MONTH / MAX_ARMY_POP_SHARE, which was a
+ *  clean 75,000 people at 0.04 and is 85,714.285… at 0.035 — no
+ *  population lands exactly on it any more (see the derivation in
+ *  movement.test.mjs, which pins the integers either side). */
+export const MAX_ARMY_POP_SHARE = 0.035;
 
-/** Men per whole month for a nation of `pop` people. Square root, not
- *  linear: recruitment scales with the population a state can actually
- *  reach and administer, so doubling the people does not double the
- *  regiments — it multiplies them by ~1.41. That keeps the largest
- *  populations from simply out-typing everyone (britain's 105.6M buys
- *  39,792/mo, not 105,562) while a small nation is not reduced to a
- *  trickle (sweden's 3.2M buys 6,960/mo).
+/** Men per whole month for a nation of `pop` people. CUBE root, not
+ *  linear and no longer square: recruitment scales with the population a
+ *  state can actually reach and administer, so doubling the people does
+ *  not double the regiments — it multiplies them by ~1.26, and it takes
+ *  EIGHT times the people to buy twice the men (under the square root it
+ *  was four). That keeps the largest populations from simply out-typing
+ *  everyone (china's 293.8M buys 26,956/mo, not 195,860) while a small
+ *  nation is not reduced to a trickle (sweden's 3.2M buys 5,994/mo).
+ *
+ *  The move from square to cube root is a deliberate flattening of the
+ *  board, not a retune of one number: scored at today's MEN_PER_MONTH,
+ *  the shipped table's top-to-bottom spread falls from 14.8× to 9.0×, and
+ *  the nations pinned flat on the MIN_MEN_PER_MONTH floor — nations whose
+ *  recruitment is no longer a function of their people at all — drop from
+ *  25 to 9. The reference POPULATION is untouched by either change, so
+ *  REFERENCE_POP still buys exactly MEN_PER_MONTH and only the curvature
+ *  either side of it moved; re-pricing MEN_PER_MONTH is the orthogonal
+ *  knob, scaling every unfloored nation by the same factor at once.
  *
  *  FAILS OPEN ON ABSENCE: `undefined` means the population table was not
  *  supplied — not that the nation has no people — and yields the flat
@@ -93,10 +142,15 @@ export const MAX_ARMY_POP_SHARE = 0.04;
  *  case and is resolved to 0 by the caller, which lands on the floor. */
 export function menPerMonth(pop) {
   if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;
-  // Clamp before the sqrt: a negative population is nonsense, and
-  // sqrt(negative) is NaN, which is the exact failure the guard above
-  // exists to prevent.
-  const scaled = MEN_PER_MONTH * Math.sqrt(Math.max(0, pop) / REFERENCE_POP);
+  // Clamp before the root. Note this clamp changed JOB when the curve did:
+  // Math.sqrt(negative) was NaN — the exact failure the guard above exists
+  // to prevent — whereas Math.cbrt(negative) is a perfectly ordinary
+  // NEGATIVE number (cbrt(-5/15e6)·10000 is -69), so the clamp is no
+  // longer NaN defence. It is kept because a negative rate is nonsense
+  // that only the floor below would hide: clamping makes "negative
+  // population" mean "nobody", which is the sole reading that is true,
+  // rather than leaving Math.max to launder -69 men into 3000.
+  const scaled = MEN_PER_MONTH * Math.cbrt(Math.max(0, pop) / REFERENCE_POP);
   return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));
 }
 
@@ -107,7 +161,7 @@ export function menPerMonth(pop) {
  *  walk into this one.
  *
  *  Floored, never rounded: the rule is "may never exceed", so a ceiling
- *  of 129,192.08 men is 129,192 men.
+ *  of 113,043.07 men is 113,043 men.
  *
  *  FAILS OPEN ON ABSENCE by returning Infinity, which is the
  *  one-expression spelling of "unenforced" — `standing > Infinity` is
@@ -134,10 +188,13 @@ export function turnMonths(lastTurnDays) {
  *
  *  `pop` is OPTIONAL and that is load-bearing, not politeness: every
  *  caller that predates the population rule passes nothing, menPerMonth
- *  answers MEN_PER_MONTH, and the returned cap is bit-for-bit what it was
- *  before this parameter existed. The whole existing test suite therefore
- *  keeps passing untouched and becomes the regression suite for the
- *  fail-open path for free.
+ *  answers MEN_PER_MONTH, and the returned cap is the flat one this
+ *  parameter is absent from — bit-for-bit the population-free rule at
+ *  whatever rate MEN_PER_MONTH currently names. That makes the
+ *  pre-population tests the standing regression suite for the fail-open
+ *  path; they track the constant's VALUE, not its history, which is why
+ *  the 15000 → 10000 cut moved their expected numbers rather than leaving
+ *  them alone — the flat cap IS MEN_PER_MONTH.
  *
  *  The navy is untouched by population: SHIPS_PER_MONTH is flat, and
  *  `pop` never reaches this branch at all. */
@@ -280,15 +337,28 @@ export function checkRaiseBudgets(forcesByNation, lastTurnDays, popByNation) {
       //
       // What that buys is the case this rule must not break: a nation
       // that loses territory can fall UNDER its own ceiling having done
-      // nothing wrong (sweden without Finland: 100,000 standing against a
-      // 94,433 ceiling). It is over, it cannot recruit — and it can still
+      // nothing wrong (sweden without Finland: 100,000 standing against an
+      // 82,629 ceiling). It is over, it cannot recruit — and it can still
       // move, split, disband, take losses and advance the turn, because
       // none of those spend army budget and so none of them reach here.
       // Shrinking back into compliance is possible; being bricked is not.
       if (branch === 'army') {
         const ceiling = standingArmyCeiling(pop);
         if (standing > ceiling) {
-          return `${nation} exceeded its standing army ceiling: ${standing} men under arms, but a population of ${pop} supports at most ${ceiling} — an army may never exceed ${MAX_ARMY_POP_SHARE * 100}% of the nation it is raised from`;
+          // The percent is DERIVED from the constant, never spelled out:
+          // a hardcoded "3.5" silently lies the next time the share moves,
+          // and this sentence is what a player reads in a PR rejection.
+          //
+          // But not the bare `MAX_ARMY_POP_SHARE * 100` this used to
+          // interpolate, because that was only ever correct by luck of the
+          // binary representation: 0.04·100 is exactly 4, while 0.035·100
+          // is 3.5000000000000004 and the rejection would have read "may
+          // never exceed 3.5000000000000004%". toFixed(4) rounds the dust
+          // away with four decimal places of percent (six of share) still
+          // in hand, and the unary + drops the zeros toFixed pads with, so
+          // a whole-number share renders "4%" rather than "4.0000%" — the
+          // reason a plain toFixed(1) is not enough on its own.
+          return `${nation} exceeded its standing army ceiling: ${standing} men under arms, but a population of ${pop} supports at most ${ceiling} — an army may never exceed ${+(MAX_ARMY_POP_SHARE * 100).toFixed(4)}% of the nation it is raised from`;
         }
       }
       const cap = raiseBudget(branch, lastTurnDays, pop);

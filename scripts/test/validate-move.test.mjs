@@ -340,7 +340,7 @@ test('pass: player legitimately moves their own force', () => {
 
 test('pass: player adds a new force of their own nation', () => {
   // A force raised this turn carries a zero anchor: it charges its whole
-  // strength against the cap (15000 is exactly one month) and adds
+  // strength against the cap (10000 is exactly one month) and adds
   // nothing to the nation's anchor sum, so both gates are satisfied.
   const head = {
     state: stateFile(),
@@ -350,7 +350,7 @@ test('pass: player adds a new force of their own nation', () => {
         force({ id: 'spain-1', nation: 'spain' }),
         force({
           id: 'alice-123-0', nation: 'spain', name: '2nd Corps',
-          strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+          strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
         }),
       ],
     },
@@ -376,7 +376,7 @@ test('pass: case-insensitive nation match (perm.json has TitleCase)', () => {
 test('pass: deterministic string IDs from multiple players in same nation', () => {
   // Two spain players added forces — both ids namespaced by their own
   // login, so no collision. Both are raises (anchor 0) and together they
-  // come to exactly the 15000 the 30-day turn allows.
+  // come to exactly the 10000 the 30-day turn allows.
   const head = {
     state: stateFile(),
     forces: {
@@ -385,11 +385,11 @@ test('pass: deterministic string IDs from multiple players in same nation', () =
         force({ id: 'spain-1', nation: 'spain' }),
         force({
           id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve',
-          strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+          strength: 6000, turnStartStrength: 0, createdAtTurn: 0,
         }),
         force({
           id: 'carol-1715551200001-0', nation: 'spain', name: 'Aragón',
-          strength: 5000, turnStartStrength: 0, createdAtTurn: 0,
+          strength: 4000, turnStartStrength: 0, createdAtTurn: 0,
         }),
       ],
     },
@@ -846,7 +846,7 @@ test('pass: newly raised force that stays put is fine', () => {
     // Raised this turn, so its anchor is 0 and its whole strength charges
     // the raise budget: exactly one month's worth on the 30-day default
     // turn. This test is about the movement lock, not the cap.
-    strength: 15000,
+    strength: 10000,
     turnStartStrength: 0,
     lat: 40.4,
     lon: -3.7,
@@ -1038,20 +1038,20 @@ test('pass: split of an existing force nets zero recruitment cost', () => {
 });
 
 test('pass: split of a force raised THIS turn still costs its original strength once', () => {
-  // 15000 men raised this turn fills a 30-day cap exactly. Splitting them
-  // 10000/5000 must not re-bill either half: the parent's zero anchor
+  // 10000 men raised this turn fills a 30-day cap exactly. Splitting them
+  // 6000/4000 must not re-bill either half: the parent's zero anchor
   // partitions into 0/0, so each half charges its own strength and the
-  // sum is still 15000. If the parent kept its pre-split strength — or
+  // sum is still 10000. If the parent kept its pre-split strength — or
   // the child were billed on top of an unreduced parent — the sum would
   // blow the cap.
   const parent = force({
-    id: 'spain-new-1', nation: 'spain', strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+    id: 'spain-new-1', nation: 'spain', strength: 6000, turnStartStrength: 0, createdAtTurn: 0,
   });
   const child = force({
     id: 'alice-1700000000000-0',
     nation: 'spain',
     name: 'Levy (detachment)',
-    strength: 5000,
+    strength: 4000,
     turnStartStrength: 0,
     createdAtTurn: 0,
   });
@@ -1065,15 +1065,17 @@ test('pass: split of a force raised THIS turn still costs its original strength 
 test('reject: detachment split off a just-raised force inherits the movement lock', () => {
   // Parent was raised this turn (createdAtTurn === turnNumber === 0) and
   // is locked. The child inherits that stamp — moving it is the dodge
-  // this test pins down.
+  // this test pins down. The 6000/4000 split fills the 30-day cap exactly
+  // rather than busting it, so the ONLY thing wrong with this submission
+  // is the movement, which is what the assertion below reads.
   const parent = force({
-    id: 'spain-1', nation: 'spain', strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+    id: 'spain-1', nation: 'spain', strength: 6000, turnStartStrength: 0, createdAtTurn: 0,
   });
   const child = force({
     id: 'alice-1700000000000-0',
     nation: 'spain',
     name: '1st Corps (detachment)',
-    strength: 5000,
+    strength: 4000,
     turnStartStrength: 0,
     createdAtTurn: 0,
     lat: 41.9, // ~167 km north of the raise point
@@ -1092,7 +1094,7 @@ test('reject: detachment split off a just-raised force inherits the movement loc
 });
 
 // ────────────────────────────────────────────────────────────────────
-// Per-nation recruitment cap (15000 men / 1 ship per whole month)
+// Per-nation recruitment cap (10000 men / 1 ship per whole month)
 //
 // The rule arithmetic is unit-tested in movement.test.mjs; these pin the
 // wiring: the gate runs over the whole Record<nation, Force[]> (so it
@@ -1105,10 +1107,10 @@ test('reject: detachment split off a just-raised force inherits the movement loc
 // movement lock now and buys the cap model nothing.
 // ────────────────────────────────────────────────────────────────────
 
-test('pass: raising exactly one month of men (15000 on the 30-day turn)', () => {
+test('pass: raising exactly one month of men (10000 on the 30-day turn)', () => {
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
   });
   expectPass(
     validateMove(defaults({ head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) } })),
@@ -1118,18 +1120,18 @@ test('pass: raising exactly one month of men (15000 on the 30-day turn)', () => 
 test('reject: raising one man over the cap', () => {
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 15001, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 10001, turnStartStrength: 0, createdAtTurn: 0,
   });
   expectReject(
     validateMove(defaults({ head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) } })),
-    /spain exceeded its army recruitment cap: 15001 men .* cap is 15000 men for a 1-month turn/,
+    /spain exceeded its army recruitment cap: 10001 men .* cap is 10000 men for a 1-month turn/,
   );
 });
 
-test('pass: a 60-day turn buys two months of recruits (30000 men)', () => {
+test('pass: a 60-day turn buys two months of recruits (20000 men)', () => {
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 30000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 20000, turnStartStrength: 0, createdAtTurn: 0,
   });
   expectPass(
     validateMove(
@@ -1166,7 +1168,7 @@ test('reject: a 29-day turn is shorter than a month, so nothing can be raised', 
 test('pass: the navy pool is separate — a full army raise plus a ship both fit', () => {
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
   });
   const ship = force({
     id: 'alice-1700000000000-1', nation: 'spain', branch: 'navy', name: 'San Juan',
@@ -1220,7 +1222,7 @@ test('reject: reinforcing an existing force over the cap', () => {
 
 test('pass: reinforcing an existing force up to exactly the cap', () => {
   const reinforced = force({
-    id: 'spain-1', nation: 'spain', strength: 55000, turnStartStrength: 40000,
+    id: 'spain-1', nation: 'spain', strength: 50000, turnStartStrength: 40000,
   });
   expectPass(validateMove(defaults({ head: { forces: forcesMap({ spain: [reinforced] }) } })));
 });
@@ -1313,7 +1315,7 @@ test('reject: an army re-branded into the navy lands its hulls in the navy pool'
 });
 
 test('pass: an honest re-brand inside the cap is billed, not blocked', () => {
-  // One ship's crew becomes a 15000-man corps: billed in full against the
+  // One ship's crew becomes a 10000-man corps: billed in full against the
   // army pool (exactly one month) and the navy anchor it left behind
   // stays in the navy bucket, so conservation sees no movement at all.
   const wasAShip = force({
@@ -1322,7 +1324,7 @@ test('pass: an honest re-brand inside the cap is billed, not blocked', () => {
   });
   const nowACorps = force({
     id: 'spain-1', nation: 'spain', branch: 'army', name: 'San Juan Marines',
-    strength: 15000, turnStartStrength: 1, turnStartBranch: 'navy',
+    strength: 10000, turnStartStrength: 1, turnStartBranch: 'navy',
   });
   expectPass(
     validateMove(
@@ -1345,9 +1347,18 @@ test('pass: an honest re-brand inside the cap is billed, not blocked', () => {
 // The default fixtures are unusually convenient here and the tests lean
 // on it: stateFile() hands spain fids 0 and 2, and force() is 40,000 men
 // anchored at 40,000 (so it spends nothing). A table putting spain at
-// exactly 1,000,000 people therefore sets its ceiling to exactly 40,000 —
-// the nation sits precisely ON its ceiling, and every case below is one
-// man either side of that line.
+// 1,142,858 people therefore sets its ceiling to exactly 40,000 — the
+// nation sits precisely ON its ceiling, and every case below is one man
+// either side of that line.
+//
+// That population is DERIVED, not decorative, and it has to be re-derived
+// whenever MAX_ARMY_POP_SHARE moves or these tests stop testing a
+// boundary at all. At 4% the arithmetic was clean (40,000/0.04 = exactly
+// 1,000,000); at 3.5% it is not (40,000/0.035 = 1,142,857.14…, and there
+// is no such thing as 0.14 of a person), so the fixture is the smallest
+// INTEGER population whose floored ceiling is 40,000. One person fewer
+// floors to 39,999, which is exactly what POP_ONE_SHORT wants and is why
+// the pair below still differs by a single person.
 //
 // Two traps worth naming, because the next person to write a fixture here
 // will hit both:
@@ -1379,12 +1390,18 @@ function withPopulation(populationByNation, overrides = {}) {
   });
 }
 
-// spain at exactly 1,000,000 people: ceiling exactly 40,000, which is
-// exactly what the default spain-1 already stands at.
-const POP_AT_CEILING = { spain: 1_000_000, france: 1_000_000 };
-// One person fewer: ceiling 39,999, and spain is over by a single man
-// without having done anything at all.
-const POP_ONE_SHORT = { spain: 999_999, france: 1_000_000 };
+// spain at 1,142,858 people: 0.035 × that is 40,000.03, so the ceiling is
+// exactly 40,000, which is exactly what the default spain-1 already stands
+// at. france is given the same figure rather than a round number because
+// the admin-exemption test below leans on france's ceiling being 40,000
+// too.
+const POP_AT_CEILING = { spain: 1_142_858, france: 1_142_858 };
+// One person fewer: 0.035 × 1,142,857 is 39,999.995, so the ceiling is
+// 39,999 and spain is over by a single man without having done anything at
+// all. (That the crossover falls between two adjacent people is luck of
+// this particular share, not a property of the rule — check it, don't
+// assume it, the next time the share moves.)
+const POP_ONE_SHORT = { spain: 1_142_857, france: 1_142_858 };
 
 test('pass: a nation standing exactly on its ceiling, spending nothing', () => {
   // 40,000 men against a 40,000 ceiling. Nothing is raised, so the ceiling
@@ -1406,7 +1423,7 @@ test('pass: recruiting the last man the population supports lands exactly on the
 });
 
 test('reject: one man past the ceiling, even though the monthly cap had room', () => {
-  // The raise is 1 man against a monthly cap of 3,873 — comfortably
+  // The raise is 1 man against a monthly cap of 4,239 — comfortably
   // inside the flow rule, and rejected anyway on the stock rule. That
   // asymmetry is the operative UX fact: over the ceiling means no men at
   // all, not "recruit up to the ceiling", because trimming the raise
@@ -1421,13 +1438,13 @@ test('reject: one man past the ceiling, even though the monthly cap had room', (
         head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
       }),
     ),
-    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from$/,
+    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1142858 supports at most 40000 — an army may never exceed 3\.5% of the nation it is raised from$/,
   );
 });
 
 test('pass: NO BRICK — a nation already over its ceiling can still move, split and disband', () => {
   // The case the whole design bends around, at the wiring level. spain's
-  // population slipped to 999,999 so its ceiling is 39,999 and its
+  // population slipped to 1,142,857 so its ceiling is 39,999 and its
   // untouched 40,000-man army is over it, having done nothing. If the
   // gate rejected on the stock alone, an ownership edit spain did not
   // make would delete spain from the game — no moves, no reorganisation,
@@ -1473,7 +1490,7 @@ test('reject: over the ceiling, raising one man is the thing that is actually re
         head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
       }),
     ),
-    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 999999 supports at most 39999 —/,
+    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1142857 supports at most 39999 —/,
   );
 });
 
@@ -1495,15 +1512,16 @@ test('pass: the navy pool ignores the army ceiling entirely', () => {
   );
 });
 
-test('reject: the population-derived cap really replaces the flat 15000', () => {
+test('reject: the population-derived cap really replaces the flat 10000', () => {
   // sweden's real population on spain, to use a figure the shipped table
-  // actually contains: 3,229,802 people buy 6,960 men a month, not 15,000.
-  // A 7,000-man levy was legal yesterday and is not today — and the stock
-  // is nowhere near the 129,192 ceiling, so this is the FLOW rule firing
-  // in its own unchanged sentence with a new number in it.
+  // actually contains: 3,229,802 people buy 5,994 men a month under the
+  // cube root, not the flat 10,000. A 9,000-man levy is legal without a
+  // table and is not with one — and the stock is nowhere near the 113,043
+  // ceiling, so this is the FLOW rule firing in its own unchanged
+  // sentence with a new number in it.
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 7000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 9000, turnStartStrength: 0, createdAtTurn: 0,
   });
   expectReject(
     validateMove(
@@ -1511,14 +1529,14 @@ test('reject: the population-derived cap really replaces the flat 15000', () => 
         head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
       }),
     ),
-    /^spain exceeded its army recruitment cap: 7000 men raised or reinforced this turn, cap is 6960 men for a 1-month turn$/,
+    /^spain exceeded its army recruitment cap: 9000 men raised or reinforced this turn, cap is 5994 men for a 1-month turn$/,
   );
 });
 
 test('pass: raising exactly the population-derived cap', () => {
   const levy = force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 6960, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 5994, turnStartStrength: 0, createdAtTurn: 0,
   });
   expectPass(
     validateMove(
@@ -1538,18 +1556,18 @@ test('pass: a turn.json with no populationByNation behaves exactly as it did bef
   // the table exists.
   const levy = () => force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
   });
   const forces = () => forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy()] });
-  // No table: the flat 15000 is intact, and the 55,000 men spain ends up
-  // standing — which would break any plausible ceiling — go unremarked,
-  // because an absent table means the rule is unenforced, not that spain
-  // has no people.
+  // No table: the flat MEN_PER_MONTH is intact, and the 50,000 men spain
+  // ends up standing — which would break any plausible ceiling — go
+  // unremarked, because an absent table means the rule is unenforced, not
+  // that spain has no people.
   expectPass(validateMove(defaults({ head: { forces: forces() } })));
   // The same submission with a table present is scored on it.
   expectReject(
     validateMove(withPopulation({ spain: 3229802, france: 3229802 }, { head: { forces: forces() } })),
-    /^spain exceeded its army recruitment cap: 15000 men raised or reinforced this turn, cap is 6960 men/,
+    /^spain exceeded its army recruitment cap: 10000 men raised or reinforced this turn, cap is 5994 men/,
   );
 });
 
@@ -1572,7 +1590,7 @@ test('pass: a populationByNation that is not a table at all is absence, not zero
   // anyone's population, so both land where the worker lands: unenforced.
   const levy = () => force({
     id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
   });
   const forces = () => forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy()] });
   for (const notATable of [null, 'sweden', 42, [['spain', 1000000]], true]) {
@@ -1597,7 +1615,7 @@ test('reject: admins are not exempt from the standing army ceiling', () => {
         head: { forces: forcesMap({ france: [force({ id: 'france-1', nation: 'france' }), levy] }) },
       }),
     ),
-    /^france exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 —/,
+    /^france exceeded its standing army ceiling: 40001 men under arms, but a population of 1142858 supports at most 40000 —/,
   );
 });
 
@@ -1605,12 +1623,15 @@ test('reject: the table is read from HEAD, so an admin is scored on the table th
   // head is refs/pull/N/merge — this PR already merged into main — so it
   // is the frame that will actually land, and a submission has to be
   // judged by the rules that will be in force once it does. Main still
-  // says 3,229,802 (cap 6,960, which would have allowed this 5,000-man
-  // levy); the submission rewrites the table to 1,500,000 (cap 4,743,
-  // ceiling 60,000, which the 45,000 standing clears) and is refused on
-  // its own new number. Same reasoning the file already applies to
-  // lastTurnDays and turnNumber, and it costs no extra file read — the
-  // CLI already parses turn.json whole.
+  // says 3,229,802 (cap 5,994, which would have allowed this 5,000-man
+  // levy); the submission rewrites the table to 1,500,000 (cap 4,642,
+  // ceiling 52,500, which the 45,000 standing clears) and is refused on
+  // its own new number. The levy has to sit strictly BETWEEN the two caps
+  // or the test proves nothing — above 5,994 and both tables reject it,
+  // at or below 4,642 and neither does — so 5,000 is chosen for the
+  // window (4,643–5,994), not decoratively. Same reasoning the file
+  // already applies to lastTurnDays and turnNumber, and it costs no extra
+  // file read — the CLI already parses turn.json whole.
   const levy = force({
     id: 'master-1700000000000-0', nation: 'spain', name: 'Levy',
     strength: 5000, turnStartStrength: 0, createdAtTurn: 0,
@@ -1627,7 +1648,7 @@ test('reject: the table is read from HEAD, so an admin is scored on the table th
         changedFiles: ['public/data/turn.json', 'public/data/forces/spain.json'],
       }),
     ),
-    /^spain exceeded its army recruitment cap: 5000 men raised or reinforced this turn, cap is 4743 men for a 1-month turn$/,
+    /^spain exceeded its army recruitment cap: 5000 men raised or reinforced this turn, cap is 4642 men for a 1-month turn$/,
   );
 });
 

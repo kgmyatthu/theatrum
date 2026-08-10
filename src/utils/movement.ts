@@ -54,35 +54,58 @@ export function daysBetween(isoFrom: string, isoTo: string): number {
 
 /** Men (army) and ships (navy) a nation may raise per whole month of
  *  turn length. MEN_PER_MONTH is both the men-per-month AT
- *  REFERENCE_POP and the fail-open fallback when no population is given.
+ *  REFERENCE_POP and the fail-open fallback when no population is given,
+ *  and both hats moved together on the 15000 → 10000 cut: a linear
+ *  multiplier on the curve, so every unfloored nation scaled by exactly
+ *  2/3 and a nation with no table on file is now quoted 10000, which is
+ *  intended — the fallback is this rule without a population term, not
+ *  the rate as it stood before populations existed.
  *  SHIPS_PER_MONTH stays flat: hulls are limited by yards, not people. */
-export const MEN_PER_MONTH = 15000;
+export const MEN_PER_MONTH = 10000;
 export const SHIPS_PER_MONTH = 1;
 
 /** The population MEN_PER_MONTH is quoted at — a nation of exactly this
- *  size raises exactly MEN_PER_MONTH per month, everyone else scales. */
+ *  size raises exactly MEN_PER_MONTH per month, everyone else scales. The
+ *  pivot, not a rate: re-pricing MEN_PER_MONTH turns the curve about this
+ *  population rather than moving it. */
 export const REFERENCE_POP = 15_000_000;
 
 /** Floor under both the monthly rate and the standing ceiling, so a
  *  microstate can still field and keep a garrison rather than being a
- *  nation that cannot play. */
+ *  nation that cannot play. Held at 3000 while MEN_PER_MONTH fell to
+ *  10000, so it is 30% of the pivot rate rather than 20%: it now meets
+ *  the curve at 405,000 people, not 120,000, and binds 9 of the 82
+ *  shipped nations rather than 5. */
 export const MIN_MEN_PER_MONTH = 3000;
 
-/** Hard share of a nation's people that may be under arms at once. */
-export const MAX_ARMY_POP_SHARE = 0.04;
+/** Hard share of a nation's people that may be under arms at once. A
+ *  stock, not a rate, and 3.5% is already extraordinary for the period.
+ *  The 4% → 3.5% tightening is a flat 0.875 multiplier on every ceiling
+ *  at once, so it reorders nobody and breaches nobody new on the shipped
+ *  table — sweden, the tightest nation, moves from 77.4% of its ceiling
+ *  to 88.5%. The recruitment curve does not read this constant: flow and
+ *  stock are re-priced independently. */
+export const MAX_ARMY_POP_SHARE = 0.035;
 
-/** Men per whole month for a nation of `pop` people. Square root, not
- *  linear: doubling the people multiplies the regiments by ~1.41, which
- *  stops the largest populations out-typing everyone without starving
- *  the small ones. `pop` undefined (or non-finite) means the population
- *  table was not supplied — not that the nation has none — so it fails
- *  OPEN to the flat MEN_PER_MONTH this rule replaced. The non-finite
- *  half of that guard is load-bearing: Math.max(3000, NaN) is NaN, which
- *  loses every comparison and would render a cap of "NaN men". */
+/** Men per whole month for a nation of `pop` people. CUBE root, not
+ *  linear and no longer square: doubling the people multiplies the
+ *  regiments by ~1.26 and it takes EIGHT times the people to buy twice
+ *  the men, which stops the largest populations out-typing everyone
+ *  without starving the small ones — china's 293.8M buys 26,956/mo
+ *  against sweden's 5,994, a 4.5× spread over 91× the people (the spread
+ *  is a ratio, so re-pricing MEN_PER_MONTH leaves it alone). `pop`
+ *  undefined (or non-finite) means the population table was not supplied
+ *  — not that the nation has none — so it fails OPEN to the flat
+ *  MEN_PER_MONTH this rule replaced. The non-finite half of that guard is
+ *  load-bearing: Math.max(3000, NaN) is NaN, which loses every comparison
+ *  and would render a cap of "NaN men". */
 export function menPerMonth(pop?: number): number {
   if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;
-  // Clamp before the sqrt — sqrt(negative) is the NaN we just guarded.
-  const scaled = MEN_PER_MONTH * Math.sqrt(Math.max(0, pop) / REFERENCE_POP);
+  // Clamp before the root. It is no longer NaN defence the way it was
+  // under sqrt — Math.cbrt(negative) is an ordinary negative number, not
+  // NaN — but a negative rate is nonsense the floor below would merely
+  // hide, so "negative population" is pinned to "nobody" here instead.
+  const scaled = MEN_PER_MONTH * Math.cbrt(Math.max(0, pop) / REFERENCE_POP);
   return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));
 }
 
@@ -111,9 +134,10 @@ function turnMonths(lastTurnDays: number): number {
 
 /** Per-nation, per-turn recruitment cap for a branch. `pop` is OPTIONAL
  *  and that is load-bearing: omitted, menPerMonth answers MEN_PER_MONTH
- *  and the cap is bit-for-bit the flat one this parameter replaced, so
- *  every call site that predates population is unchanged. The navy never
- *  consults it. */
+ *  and the cap is the flat one this parameter is absent from — the
+ *  population-free rule at whatever rate MEN_PER_MONTH currently names,
+ *  so every call site that predates population still needs no argument.
+ *  The navy never consults it. */
 export function raiseBudget(
   branch: ForceBranch,
   lastTurnDays: number,

@@ -2,6 +2,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import {
   ARMY_KM_PER_DAY,
   NAVY_KM_PER_DAY,
@@ -141,15 +142,15 @@ test('turnMonths: negative days clamp to zero (no negative cap)', () => {
 // to keep passing. Do not "modernise" these by threading a population
 // through: that would delete the only coverage of the path every
 // pre-population caller still takes.
-test('raiseBudget: a 30-day turn buys 15000 men or 1 ship', () => {
+test('raiseBudget: a 30-day turn buys 10000 men or 1 ship', () => {
   assert.equal(raiseBudget('army', 30), MEN_PER_MONTH);
   assert.equal(raiseBudget('navy', 30), SHIPS_PER_MONTH);
-  assert.equal(MEN_PER_MONTH, 15000);
+  assert.equal(MEN_PER_MONTH, 10000);
   assert.equal(SHIPS_PER_MONTH, 1);
 });
 
 test('raiseBudget: a 60-day turn doubles both pools', () => {
-  assert.equal(raiseBudget('army', 60), 30000);
+  assert.equal(raiseBudget('army', 60), 20000);
   assert.equal(raiseBudget('navy', 60), 2);
 });
 
@@ -216,11 +217,11 @@ test('checkRaiseBudgets: an empty record is always inside budget', () => {
 });
 
 test('checkRaiseBudgets: army and navy are independent pools', () => {
-  // A 30-day turn buys 15000 men AND 1 ship — spending one pool to the
+  // A 30-day turn buys 10000 men AND 1 ship — spending one pool to the
   // last man must not eat into the other.
   const forces = {
     spain: [
-      unit({ branch: 'army', strength: 15000, turnStartStrength: 0 }),
+      unit({ branch: 'army', strength: 10000, turnStartStrength: 0 }),
       unit({ branch: 'navy', strength: 1, turnStartStrength: 0 }),
     ],
   };
@@ -260,7 +261,7 @@ test('checkRaiseBudgets: cumulative — separate forces sum against one cap', ()
   };
   assert.equal(
     checkRaiseBudgets(forces, 30),
-    'spain exceeded its army recruitment cap: 16000 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+    'spain exceeded its army recruitment cap: 16000 men raised or reinforced this turn, cap is 10000 men for a 1-month turn',
   );
 });
 
@@ -273,7 +274,7 @@ test('checkRaiseBudgets: raising and reinforcing draw on the same pool', () => {
   };
   assert.equal(
     checkRaiseBudgets(forces, 30),
-    'spain exceeded its army recruitment cap: 16000 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+    'spain exceeded its army recruitment cap: 16000 men raised or reinforced this turn, cap is 10000 men for a 1-month turn',
   );
 });
 
@@ -326,13 +327,20 @@ test('checkRaiseBudgets: first offender is deterministic (nations sorted, army f
 //
 // Two different quantities, and keeping them apart is the whole design.
 // menPerMonth is a FLOW — men a nation may raise per whole month — and it
-// scales with sqrt(pop), so britain's 105.6M buys 39,792/mo instead of
-// out-typing the board 7:1 over sweden. standingArmyCeiling is a STOCK —
-// men under arms at once, whenever they were raised — and it is a flat 4%
-// share. A nation can sit inside its monthly flow every single turn and
-// still walk into the stock ceiling; and it can be OVER the stock ceiling
-// having raised nothing at all, because losing provinces moves the
-// ceiling and not the army.
+// scales with cbrt(pop), so china's 293.8M buys 26,956/mo rather than
+// out-typing the board 91:1 over sweden — it settles for 4.5:1. (That
+// ratio is the curve's, not the rate's: MEN_PER_MONTH is a linear
+// multiplier, so cutting it 15000 → 10000 moved both ends by 2/3 and left
+// the 4.5:1 between them exactly where it was.)
+// standingArmyCeiling is a STOCK — men under arms at once, whenever they
+// were raised — and it is a flat 3.5% share, untouched by the curve moving
+// from square to cube root and re-priced independently of it (the 4% →
+// 3.5% cut multiplied every ceiling by 0.875 and left menPerMonth, which
+// never reads the share at all, bit for bit where it was). A nation can
+// sit inside its monthly flow
+// every single turn and still walk into the stock ceiling; and it can be
+// OVER the stock ceiling having raised nothing at all, because losing
+// provinces moves the ceiling and not the army.
 //
 // The two absences are not the same absence, and every gate in the game
 // leans on the difference:
@@ -347,45 +355,218 @@ test('checkRaiseBudgets: first offender is deterministic (nations sorted, army f
 // The shipped figures are asserted as literals on purpose. They are what
 // public/data/turn.json actually contains today, so a re-bake that moves
 // a population fails loudly right here instead of quietly handing a
-// player a different army.
+// player a different army — and SHIPPED_POP below is what makes that
+// claim true rather than merely stated.
 // ────────────────────────────────────────────────────────────────────
 
+// ponytail: a bare readFileSync, no fixture harness and no helper, because
+// the literals below are the point and this only has to prove they are
+// still real. It exists because the claim above was false for as long as
+// nothing checked it: the literals asserted f(105562162) === 39792 and
+// labelled it "britain", but no nation in the table has ever had that
+// population (britain is 18,082,841; 105.5M was closest to britain plus
+// its colonies, and drifted). f(literal) === literal passes forever
+// however far the bake moves, so the coupling to production data needs one
+// assertion on the INPUT to bite. Cheapest thing that bites: read the file.
+const SHIPPED_POP = JSON.parse(
+  readFileSync(new URL('../../public/data/turn.json', import.meta.url), 'utf8'),
+).populationByNation;
+
+test('the client mirror is still a mirror — constants and bodies, character for character', () => {
+  // src/utils/movement.ts is a hand-maintained COPY of the block above it,
+  // and its own header has always claimed "the test suite covers the
+  // equivalence". That claim was false in exactly the way the SHIPPED_POP
+  // one was: nothing read the other file, so nothing could see it drift.
+  //
+  // The drift this catches is a constant re-priced on one side only, and
+  // MAX_ARMY_POP_SHARE is the case that motivated it — 0.04 → 0.035 had to
+  // be typed into two files, and a gate that refuses at 3.5% while the
+  // panel and the hover card size their promises at 4% is a player told he
+  // may raise men the server will bounce. The mirror is what the CLIENT
+  // predicts a refusal with; the file above is what actually refuses.
+  //
+  // TEXTUAL, not behavioural, and deliberately: this is a .mjs runner with
+  // no TypeScript in it, so importing the mirror would cost a transpile
+  // step and a build dependency to check four constants and five
+  // expressions. Reading the source needs neither and bites on precisely
+  // the edit that matters. It cannot prove the two files COMPUTE the same
+  // thing — only that the lines that do the computing are identical, which
+  // is the property a copy has to hold.
+  const RULE = readFileSync(new URL('../lib/movement.mjs', import.meta.url), 'utf8');
+  const MIRROR = readFileSync(new URL('../../src/utils/movement.ts', import.meta.url), 'utf8');
+  // Compared as SOURCE TEXT on both sides rather than against the values
+  // imported at the top of this file: only one of the two is importable
+  // here, and asserting the mirror against this file's own imports would
+  // just be re-checking the side that is already covered.
+  const constOf = (src, where, name) => {
+    const m = new RegExp(`^export const ${name} = (.+);$`, 'm').exec(src);
+    assert.ok(m, `${name} is not declared in ${where}`);
+    return m[1];
+  };
+  for (const name of [
+    'ARMY_KM_PER_DAY',
+    'NAVY_KM_PER_DAY',
+    'MOVEMENT_TOLERANCE_KM',
+    'MEN_PER_MONTH',
+    'SHIPS_PER_MONTH',
+    'REFERENCE_POP',
+    'MIN_MEN_PER_MONTH',
+    'MAX_ARMY_POP_SHARE',
+  ]) {
+    assert.equal(
+      constOf(MIRROR, 'src/utils/movement.ts', name),
+      constOf(RULE, 'scripts/lib/movement.mjs', name),
+      `${name} has drifted between the rule and its client mirror`,
+    );
+  }
+  // The two bodies the constants feed. Both guards are included because
+  // the fail-open branches are rules in their own right — a mirror that
+  // returned 0 instead of Infinity would size a panel against a ceiling
+  // the gate is not enforcing.
+  for (const line of [
+    'if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;',
+    'const scaled = MEN_PER_MONTH * Math.cbrt(Math.max(0, pop) / REFERENCE_POP);',
+    'return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));',
+    'if (pop === undefined || !Number.isFinite(pop)) return Infinity;',
+    'return Math.max(MIN_MEN_PER_MONTH, Math.floor(MAX_ARMY_POP_SHARE * Math.max(0, pop)));',
+  ]) {
+    assert.ok(RULE.includes(line), `scripts/lib/movement.mjs no longer contains: ${line}`);
+    assert.ok(MIRROR.includes(line), `src/utils/movement.ts no longer contains: ${line}`);
+  }
+  // And the asymmetry that is NOT drift: checkRaiseBudgets is a gate, so it
+  // belongs to the servers that can refuse a submission and is deliberately
+  // absent from the client. Pinned so that "the mirror is missing a
+  // function" reads as intended rather than as something to go and fix —
+  // and so the reason string, which is a contract, cannot acquire a second
+  // copy that drifts from the first. Matched on the DECLARATION, not on the
+  // name: the mirror's header discusses the gate at length, and prose about
+  // a function is not a second implementation of it.
+  assert.ok(
+    !/^export function checkRaiseBudgets/m.test(MIRROR),
+    'the gate must not be mirrored into the client',
+  );
+  // Matched on the sentence's own tail rather than on "may never exceed",
+  // which the mirror quotes as PROSE for the same reason the rule does —
+  // it is why the ceiling floors instead of rounding.
+  assert.ok(
+    !MIRROR.includes('of the nation it is raised from'),
+    'the reason string must have exactly one home',
+  );
+  assert.ok(RULE.includes('of the nation it is raised from'), 'and that home is the rule');
+});
+
 test('menPerMonth: the reference population raises exactly MEN_PER_MONTH', () => {
-  // The calibration point the whole curve hangs off: a nation of exactly
-  // REFERENCE_POP people is the one nation whose rate is unchanged by this
-  // feature, which is why MEN_PER_MONTH could keep its value and its name.
+  // The calibration point the whole curve hangs off, and the reason it is
+  // written against the CONSTANT and not against a literal: REFERENCE_POP
+  // is the pivot the curve turns about, so re-pricing MEN_PER_MONTH moves
+  // the rate here and nothing else about the shape. This identity has to
+  // survive that, and it did — only the second line below moved.
   assert.equal(REFERENCE_POP, 15_000_000);
   assert.equal(menPerMonth(REFERENCE_POP), MEN_PER_MONTH);
-  assert.equal(menPerMonth(15_000_000), 15000);
-  // Square root, not linear: 4× the people is 2× the men. Assert it at a
-  // round multiple so a future edit to linear scaling (which would give
-  // 60000 here) cannot slip through looking plausible.
-  assert.equal(menPerMonth(60_000_000), 30000);
+  assert.equal(menPerMonth(15_000_000), 10000);
+  // CUBE root, not square and not linear: it takes 8× the people to buy
+  // 2× the men, where the square root took 4×. Asserted at the exact
+  // multiple of REFERENCE_POP where the answer is a round number, so a
+  // regression to either neighbour is unmistakable — 120M under linear
+  // scaling would be 80000, and under the old sqrt 28284.
+  assert.equal(menPerMonth(8 * REFERENCE_POP), 20000);
+  assert.equal(menPerMonth(120_000_000), 20000);
+  // And the proof point that used to read "60e6 → 2× proves sqrt, not
+  // linear" is now the proof that it is NOT sqrt either: 4× the people
+  // buys 1.587× the men (cbrt(4)), not 2×. This single number separates
+  // all three candidate curves at once — linear says 40000, sqrt says
+  // 20000, cbrt says 15874.
+  assert.equal(menPerMonth(4 * REFERENCE_POP), 15874);
+  assert.equal(menPerMonth(60_000_000), 15874);
 });
 
 test('menPerMonth: the real shipped populations — a re-bake must fail here, loudly', () => {
-  // These three are the spread the curve has to survive: britain is the
-  // largest population in the game, austria a great power, sweden the
-  // tightest-squeezed nation on the board. 32× britain's population over
-  // sweden's buys only 5.7× the men.
-  assert.equal(menPerMonth(105562162), 39792); // britain
-  assert.equal(menPerMonth(21222995), 17842); // austria
-  assert.equal(menPerMonth(3229802), 6960); // sweden
+  // These four are the spread the curve has to survive, every figure read
+  // off public/data/turn.json: china is the largest population in the
+  // game, austria a great power, britain a great power that is mostly
+  // colonies (18.1M at home, filed apart from "british colonies"), and
+  // sweden the tightest-squeezed nation on the board. 91× china's
+  // population over sweden's buys only 4.5× the men — under the square
+  // root the same 91× bought 9.5×, which is the whole reason the curve
+  // moved.
+  //
+  // The input half is what makes this test the re-bake tripwire the
+  // section header claims: assert the population IS the shipped one, then
+  // assert what the curve does with it.
+  assert.equal(SHIPPED_POP.china, 293790263);
+  assert.equal(SHIPPED_POP.austria, 21222995);
+  assert.equal(SHIPPED_POP.britain, 18082841);
+  assert.equal(SHIPPED_POP.sweden, 3229802);
+  assert.equal(menPerMonth(293790263), 26956); // china
+  assert.equal(menPerMonth(21222995), 11226); // austria
+  assert.equal(menPerMonth(18082841), 10643); // britain
+  assert.equal(menPerMonth(3229802), 5994); // sweden
+  // The direction of the change is itself the feature: the cube root
+  // pulls the top DOWN and pushes the bottom UP, both against the same
+  // untouched reference point. china loses 39%, sweden gains 29% — and
+  // both percentages are unmoved by the 15000 → 10000 re-pricing, because
+  // the sqrt rates it is compared against scaled by the same 2/3 (china
+  // 66,384 → 44,256, sweden 6,960 → 4,640).
+  assert.ok(menPerMonth(293790263) < 44256, 'china must fall from its sqrt rate');
+  assert.ok(menPerMonth(3229802) > 4640, 'sweden must rise from its sqrt rate');
 });
 
 test('menPerMonth: the floor, and the exact crossover where both branches agree', () => {
-  // 600000 is where the curve meets the floor exactly — 15000·sqrt(0.04)
-  // is 3000 on the nose, so this is the one population at which the
-  // scaled branch and the clamped branch cannot disagree. Asserting the
-  // raw arithmetic alongside the result pins WHY it is the crossover, so
-  // moving MIN_MEN_PER_MONTH or REFERENCE_POP without moving this test
-  // becomes impossible.
-  assert.equal(MEN_PER_MONTH * Math.sqrt(600_000 / REFERENCE_POP), MIN_MEN_PER_MONTH);
-  assert.equal(menPerMonth(600_000), 3000);
-  // Below it the floor is doing the work, all the way down to nobody.
-  assert.equal(menPerMonth(500_000), 3000);
+  // 405,000 is where the curve meets the floor exactly. Solved, not
+  // quoted: the two branches agree when MEN_PER_MONTH·cbrt(pop/
+  // REFERENCE_POP) equals MIN_MEN_PER_MONTH, i.e. at the population
+  // REFERENCE_POP/(MEN_PER_MONTH/MIN_MEN_PER_MONTH)³. The reference rate
+  // is 10/3× the floor (10000/3000), so the crossover sits at the
+  // population (10/3)-CUBED = 1000/27 ≈ 37.04 times smaller than
+  // REFERENCE_POP: 15e6 × 27/1000 = 405,000. The square root wanted
+  // (10/3)-SQUARED = 100/9 times smaller — 15e6 × 9/100 = 1,350,000 — so
+  // raising the root still divides the crossover by another 10/3, and
+  // with it the count of nations pinned flat on the floor with no
+  // population term left in their recruitment at all (25 → 9 across the
+  // shipped table, scored at today's MEN_PER_MONTH).
+  //
+  // The crossover moves with the RATE as hard as it moves with the root:
+  // cutting MEN_PER_MONTH 15000 → 10000 while the floor stayed at 3000
+  // raised it from 120,000 to 405,000, because the floor went from 20% to
+  // 30% of the pivot rate and a cube amplifies that 1.5× into 3.375×.
+  //
+  // Asserting the raw arithmetic alongside the result pins WHY it is the
+  // crossover, so moving MEN_PER_MONTH, MIN_MEN_PER_MONTH, REFERENCE_POP
+  // or the root itself without moving this test becomes impossible. Every
+  // constant in the derivation is imported, and the exponent is the
+  // literal 3 that makes it a cube — write 2 and it is 1,350,000 again.
+  //
+  // Spelled as one integer ratio rather than the arithmetically identical
+  // REFERENCE_POP / (MEN_PER_MONTH / MIN_MEN_PER_MONTH) ** 3, and that is
+  // a float fact, not a style choice: 10/3 has no binary representation,
+  // cubing it compounds the error, and the division lands on
+  // 404999.9999999999 — an assert.equal that fails on a derivation that
+  // is correct. Cubing the two integer constants separately keeps every
+  // intermediate exact (3000³ = 2.7e10, 10000³ = 1e12, both integers).
+  assert.equal((REFERENCE_POP * MIN_MEN_PER_MONTH ** 3) / MEN_PER_MONTH ** 3, 405_000);
+  assert.equal((REFERENCE_POP * MIN_MEN_PER_MONTH ** 2) / MEN_PER_MONTH ** 2, 1_350_000); // what sqrt gave
+  // The floor's height as a fraction of the pivot rate — 30% now, 20%
+  // when MEN_PER_MONTH was 15000 — which is the one number the whole
+  // derivation above turns on. Written this way up on purpose: 3000/10000
+  // rounds to exactly the double the literal 0.3 parses to, where
+  // 10000/3000 is the recurring 10/3 that costs the derivation its
+  // exactness the moment it is cubed.
+  assert.equal(MIN_MEN_PER_MONTH / MEN_PER_MONTH, 0.3);
+  assert.equal(MEN_PER_MONTH * Math.cbrt(405_000 / REFERENCE_POP), MIN_MEN_PER_MONTH);
+  assert.equal(menPerMonth(405_000), 3000);
+  // Below it the floor is doing the work, all the way down to nobody —
+  // including at 120,000, which WAS the crossover at the old rate and is
+  // now well under the floor (the curve offers it 2000).
+  assert.equal(menPerMonth(120_000), 3000);
+  assert.equal(Math.round(MEN_PER_MONTH * Math.cbrt(120_000 / REFERENCE_POP)), 2000);
+  assert.equal(menPerMonth(100_000), 3000);
   assert.equal(menPerMonth(0), 3000);
   assert.equal(MIN_MEN_PER_MONTH, 3000);
+  // And the sqrt crossover is firmly ON the curve rather than under the
+  // floor — the tell that the floor really did move and that a population
+  // 10/3 times smaller is now the one being rescued.
+  assert.equal(menPerMonth(1_350_000), 4481);
+  assert.ok(menPerMonth(1_350_000) > MIN_MEN_PER_MONTH);
 });
 
 test('menPerMonth: absence fails OPEN — no population means the flat rate, not no men', () => {
@@ -400,36 +581,81 @@ test('menPerMonth: absence fails OPEN — no population means the flat rate, not
   assert.equal(menPerMonth(NaN), MEN_PER_MONTH);
   assert.equal(menPerMonth(Infinity), MEN_PER_MONTH);
   // A negative population is nonsense but it is FINITE, so it does not
-  // take the branch above — it is clamped to 0 before the sqrt instead,
-  // because sqrt(negative) is the very NaN that guard exists to prevent.
+  // take the branch above — it is clamped to 0 before the root instead.
+  // Note the clamp changed job with the curve and this test did not:
+  // sqrt(negative) was NaN, the very failure the guard above exists to
+  // prevent, whereas cbrt(negative) is an ordinary negative number, so
+  // the clamp now stops a negative RATE rather than a NaN one. Both roads
+  // end at the floor, which is exactly why the clamp needs its own
+  // assertion — delete it and this still reads 3000, silently, off
+  // Math.max(3000, -69) instead of off a population of nobody.
   assert.equal(menPerMonth(-5), MIN_MEN_PER_MONTH);
+  assert.ok(Number.isFinite(Math.cbrt(-5)), 'cbrt(negative) is a number, not NaN');
+  assert.equal(Math.round(MEN_PER_MONTH * Math.cbrt(-5 / REFERENCE_POP)), -69);
 });
 
-test('standingArmyCeiling: 4% of the shipped populations', () => {
-  assert.equal(MAX_ARMY_POP_SHARE, 0.04);
-  assert.equal(standingArmyCeiling(3229802), 129192); // sweden
-  assert.equal(standingArmyCeiling(21222995), 848919); // austria
-  assert.equal(standingArmyCeiling(105562162), 4222486); // britain
+test('standingArmyCeiling: 3.5% of the shipped populations, unmoved by the curve', () => {
+  // Same four nations as the flow test, and the point of repeating them is
+  // that these numbers do not answer to the root. The ceiling is a flat
+  // share of a population, never a function of the recruitment curve, so
+  // swapping sqrt for cbrt left every figure here alone — and when the
+  // share itself moved 4% → 3.5%, all four scaled by exactly 0.875 while
+  // the menPerMonth figures above did not move at all. Recomputed from the
+  // shipped populations rather than hand-scaled from the old literals: a
+  // ×0.875 on a FLOORED number is not the floor of a ×0.875 (britain's old
+  // 723,313 × 0.875 is 632,898.9, the true figure is 632,899).
+  assert.equal(MAX_ARMY_POP_SHARE, 0.035);
+  assert.equal(standingArmyCeiling(3229802), 113043); // sweden
+  assert.equal(standingArmyCeiling(18082841), 632899); // britain
+  assert.equal(standingArmyCeiling(21222995), 742804); // austria
+  assert.equal(standingArmyCeiling(293790263), 10282659); // china
 });
 
 test('standingArmyCeiling: floors, never rounds — "may never exceed"', () => {
-  // 0.04 × 1000013 is 40000.52. Rounded that is 40001 and the nation gets
+  // 0.035 × 1142872 is 40000.52. Rounded that is 40001 and the nation gets
   // a man its people do not support; floored it is 40000. The rule is a
-  // hard ceiling, so the fractional man is always lost.
-  assert.equal(Math.round(MAX_ARMY_POP_SHARE * 1000013), 40001);
-  assert.equal(standingArmyCeiling(1000013), 40000);
+  // hard ceiling, so the fractional man is always lost. (The population
+  // moved with the share — 1000013 landed on 35000.455 at 0.035, where
+  // floor and round agree and the test proves nothing — but the .52 it is
+  // chosen for did not, so the two arms below still differ by a man.)
+  assert.equal(Math.round(MAX_ARMY_POP_SHARE * 1142872), 40001);
+  assert.equal(standingArmyCeiling(1142872), 40000);
 });
 
 test('standingArmyCeiling: the same floor as the monthly rate, for the same reason', () => {
   // A microstate must be able to KEEP a garrison, not merely to raise one
-  // — a 3000/month rate over a 40-man ceiling would be a nation that
+  // — a 3000/month rate over a 35-man ceiling would be a nation that
   // cannot play. Hence one shared floor.
   assert.equal(standingArmyCeiling(0), MIN_MEN_PER_MONTH);
   assert.equal(standingArmyCeiling(100), MIN_MEN_PER_MONTH);
-  assert.equal(standingArmyCeiling(74_999), MIN_MEN_PER_MONTH);
-  // 75000 × 0.04 is exactly 3000, so this is the ceiling's own crossover.
-  assert.equal(standingArmyCeiling(75_000), MIN_MEN_PER_MONTH);
-  assert.equal(standingArmyCeiling(75_025), 3001);
+  assert.equal(standingArmyCeiling(85_713), MIN_MEN_PER_MONTH);
+  // The ceiling's own crossover — the population at which the share first
+  // buys as many men as the floor hands out — is MIN_MEN_PER_MONTH /
+  // MAX_ARMY_POP_SHARE. At 0.04 that was a clean 75,000 and a literal
+  // could sit exactly on it; at 0.035 it is 85,714.285…, because the share
+  // is 7/200 and 3000·200/7 does not divide. So there is no population ON
+  // the crossover to assert, and asserting the fraction itself would test
+  // arithmetic rather than the rule.
+  //
+  // Pin the integers either side instead, and pin them on the RAW product
+  // rather than on the ceiling: the two answers are the same 3000 (below
+  // the line the floor is rescuing the nation, above it the share has
+  // caught up and the floor has stopped doing any work), so only the
+  // product shows the line being crossed at all. Written as the exact
+  // rational 3000·200/7, which is bit-identical to the division and says
+  // out loud where the non-integer comes from.
+  assert.equal(MIN_MEN_PER_MONTH / MAX_ARMY_POP_SHARE, (MIN_MEN_PER_MONTH * 200) / 7);
+  assert.equal(MIN_MEN_PER_MONTH / MAX_ARMY_POP_SHARE, 85_714.28571428571);
+  assert.equal(Math.floor(MAX_ARMY_POP_SHARE * 85_714), 2999);
+  assert.equal(Math.floor(MAX_ARMY_POP_SHARE * 85_715), 3000);
+  assert.equal(standingArmyCeiling(85_714), MIN_MEN_PER_MONTH);
+  assert.equal(standingArmyCeiling(85_715), MIN_MEN_PER_MONTH);
+  // And the first population the floor is genuinely off, which is the
+  // observable half of the crossover: a whole man ABOVE the floor needs
+  // 3001/0.035 = 85,742.857… people, so 85,742 still reads 3000 and 85,743
+  // is the first ceiling the share alone decides.
+  assert.equal(standingArmyCeiling(85_742), MIN_MEN_PER_MONTH);
+  assert.equal(standingArmyCeiling(85_743), 3001);
   assert.equal(standingArmyCeiling(-5), MIN_MEN_PER_MONTH);
 });
 
@@ -449,29 +675,32 @@ test('raiseBudget: population scales the army pool and never the navy', () => {
   // are limited by yards and timber rather than by how many people a
   // country has. The third argument reaching the navy branch at all would
   // be the bug.
-  assert.equal(raiseBudget('army', 30, 3229802), 6960);
-  assert.equal(raiseBudget('army', 60, 3229802), 13920);
+  assert.equal(raiseBudget('army', 30, 3229802), 5994);
+  assert.equal(raiseBudget('army', 60, 3229802), 11988);
   assert.equal(raiseBudget('navy', 30, 3229802), SHIPS_PER_MONTH);
   assert.equal(raiseBudget('navy', 60, 3229802), 2);
   // Unknown branches still fall back to the army rate — now the
   // population-derived one, matching menPerMonth rather than the flat cap.
-  assert.equal(raiseBudget('cavalry', 30, 3229802), 6960);
-  // And a sub-month turn buys nothing however many people you have.
-  assert.equal(raiseBudget('army', 29, 105562162), 0);
+  assert.equal(raiseBudget('cavalry', 30, 3229802), 5994);
+  // And a sub-month turn buys nothing however many people you have —
+  // china's 293.8M included.
+  assert.equal(raiseBudget('army', 29, 293790263), 0);
 });
 
 test('checkRaiseBudgets: a population table replaces the flat cap in the same message', () => {
   // The cap message is unchanged prose with a different number
   // interpolated — no new string, no new shape for a player to learn.
-  const forces = { sweden: [unit({ strength: 7000, turnStartStrength: 0 })] };
+  // sweden's shipped 3,229,802 people buy 5,994 men a month under the cube
+  // root, so 6,000 is a raise of six men too many.
+  const forces = { sweden: [unit({ strength: 6000, turnStartStrength: 0 })] };
   assert.equal(
     checkRaiseBudgets(forces, 30, { sweden: 3229802 }),
-    'sweden exceeded its army recruitment cap: 7000 men raised or reinforced this turn, cap is 6960 men for a 1-month turn',
+    'sweden exceeded its army recruitment cap: 6000 men raised or reinforced this turn, cap is 5994 men for a 1-month turn',
   );
 });
 
 test('checkRaiseBudgets: raising exactly the population-derived cap passes', () => {
-  const forces = { sweden: [unit({ strength: 6960, turnStartStrength: 0 })] };
+  const forces = { sweden: [unit({ strength: 5994, turnStartStrength: 0 })] };
   assert.equal(checkRaiseBudgets(forces, 30, { sweden: 3229802 }), null);
 });
 
@@ -484,7 +713,7 @@ test('checkRaiseBudgets: a nation missing from a supplied table is 0 people, not
   const table = { france: 15_000_000 };
   assert.equal(
     checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, table),
-    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 4% of the nation it is raised from',
+    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 3.5% of the nation it is raised from',
   );
   // And the floor really is usable rather than merely present: 3000 men
   // clears the ceiling (not >) and exactly fills the floored monthly cap.
@@ -495,7 +724,7 @@ test('checkRaiseBudgets: a nation missing from a supplied table is 0 people, not
   // An empty table is still a table — present, and silent about everyone.
   assert.equal(
     checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, {}),
-    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 4% of the nation it is raised from',
+    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 3.5% of the nation it is raised from',
   );
 });
 
@@ -503,9 +732,11 @@ test('checkRaiseBudgets: a garbage population fails OPEN for that nation, not "N
   // ?? only catches null and undefined, so a NaN sitting in the table
   // reaches menPerMonth/standingArmyCeiling as a real value. Both fold it
   // into their absence branch, so this nation lands on exactly the
-  // no-table behaviour — the flat 15000 and no ceiling — rather than
-  // being told its cap is NaN, a message no player could act on. Note
-  // that fail OPEN means "the rule this replaced", not "no rule at all".
+  // no-table behaviour — the flat MEN_PER_MONTH (10000 today) and no
+  // ceiling — rather than being told its cap is NaN, a message no player
+  // could act on. Note that fail OPEN means "this rule with no population
+  // term", not "no rule at all", which is why the numbers here track
+  // MEN_PER_MONTH and moved with it.
   const forces = (raised) => ({
     spain: [
       unit({ strength: 900000, turnStartStrength: 900000 }),
@@ -514,11 +745,11 @@ test('checkRaiseBudgets: a garbage population fails OPEN for that nation, not "N
   });
   // 900,000 standing would break any real ceiling; NaN yields Infinity, so
   // nothing catches it, and the flat monthly cap is what remains in force.
-  assert.equal(checkRaiseBudgets(forces(15000), 30, { spain: NaN }), null);
-  const overFlat = checkRaiseBudgets(forces(15001), 30, { spain: NaN });
+  assert.equal(checkRaiseBudgets(forces(10000), 30, { spain: NaN }), null);
+  const overFlat = checkRaiseBudgets(forces(10001), 30, { spain: NaN });
   assert.equal(
     overFlat,
-    'spain exceeded its army recruitment cap: 15001 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+    'spain exceeded its army recruitment cap: 10001 men raised or reinforced this turn, cap is 10000 men for a 1-month turn',
   );
   // The whole point of folding non-finite into the absence branch: no
   // arithmetic on NaN ever reaches a player's rejection comment.
@@ -539,7 +770,7 @@ test('checkRaiseBudgets: NO BRICK — a nation that loses land is over its ceili
   // The case this rule must not break, and the reason the ceiling test
   // sits AFTER the `total <= 0` guard rather than before it. Sweden loses
   // Finland: its population drops to 2,360,845, its ceiling drops with it
-  // to 94,433, and its 100,000 standing men are suddenly illegal having
+  // to 82,629, and its 100,000 standing men are suddenly illegal having
   // done nothing whatsoever. Hard-rejecting there would mean sweden can no
   // longer move, split, disband, take losses, or advance the turn — a
   // nation deleted from the game by an ownership edit it did not make.
@@ -591,14 +822,19 @@ test('checkRaiseBudgets: over the ceiling, raising even one man is refused', () 
   };
   assert.equal(
     checkRaiseBudgets(forces, 30, { sweden: 2360845 }),
-    'sweden exceeded its standing army ceiling: 100001 men under arms, but a population of 2360845 supports at most 94433 — an army may never exceed 4% of the nation it is raised from',
+    'sweden exceeded its standing army ceiling: 100001 men under arms, but a population of 2360845 supports at most 82629 — an army may never exceed 3.5% of the nation it is raised from',
   );
 });
 
 test('checkRaiseBudgets: the ceiling is strict > — you may recruit up TO it, never past it', () => {
-  // pop 1,000,000 puts the ceiling at exactly 40000, so all three cases
-  // below turn on the comparison operator alone.
-  const pop = { spain: 1_000_000 };
+  // pop 1,142,858 puts the ceiling at exactly 40000, so all three cases
+  // below turn on the comparison operator alone. Re-derived when the share
+  // moved, not scaled: the exact population is 40000/0.035 = 1,142,857.14…,
+  // which is not a person, so the fixture is the smallest INTEGER whose
+  // floored ceiling is 40000 — 1,142,857 lands on 39,999.995 and floors to
+  // 39,999, one short, and the boundary these three cases test would have
+  // quietly stopped being a boundary.
+  const pop = { spain: 1_142_858 };
   // Sitting exactly on the ceiling, spending nothing: legal.
   assert.equal(
     checkRaiseBudgets({ spain: [unit({ strength: 40000, turnStartStrength: 40000 })] }, 30, pop),
@@ -613,8 +849,33 @@ test('checkRaiseBudgets: the ceiling is strict > — you may recruit up TO it, n
   // One man past it: refused.
   assert.equal(
     checkRaiseBudgets({ spain: [unit({ strength: 40001, turnStartStrength: 40000 })] }, 30, pop),
-    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from',
+    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1142858 supports at most 40000 — an army may never exceed 3.5% of the nation it is raised from',
   );
+});
+
+test('checkRaiseBudgets: the ceiling reason renders a clean percent, never float dust', () => {
+  // The one place a float reaches a player's prose, and it was correct only
+  // by luck until now: `MAX_ARMY_POP_SHARE * 100` is exactly 4 at 0.04 and
+  // 3.5000000000000004 at 0.035, so the rejection comment would have read
+  // "may never exceed 3.5000000000000004% of the nation it is raised from"
+  // — a regression nothing else in this suite can see, because every other
+  // assertion in the file quotes the sentence rather than deriving it.
+  const reason = checkRaiseBudgets(
+    { spain: [unit({ strength: 40001, turnStartStrength: 40000 })] },
+    30,
+    { spain: 1_142_858 },
+  );
+  assert.ok(reason.includes('3.5%'), reason);
+  assert.ok(!reason.includes('3.5000000000000004'), reason);
+  // No dust at all, whatever shape it takes: the percent is one or two
+  // characters of digits, nothing longer.
+  assert.match(reason, /may never exceed \d+(\.\d)?% of the nation/);
+  // And the formatting has to survive the share moving BACK to a whole
+  // number: `+(x).toFixed(4)` renders 0.04 as "4%", where the toFixed(1)
+  // that would also have killed the dust ships "4.0%" at a player.
+  assert.equal(`${+(MAX_ARMY_POP_SHARE * 100).toFixed(4)}%`, '3.5%');
+  assert.equal(`${+(0.04 * 100).toFixed(4)}%`, '4%');
+  assert.equal((0.04 * 100).toFixed(1), '4.0');
 });
 
 test('checkRaiseBudgets: the ceiling is army-only — the navy sails over it', () => {
@@ -641,7 +902,7 @@ test('checkRaiseBudgets: the ceiling is army-only — the navy sails over it', (
         unit({ branch: 'navy', strength: 900000, turnStartStrength: 900000 }),
         unit({ branch: 'army', strength: 1, turnStartStrength: 0 }),
       ],
-    }, 30, { spain: 1_000_000 }),
+    }, 30, { spain: 1_142_858 }),
     null,
   );
 });
@@ -656,49 +917,69 @@ test('checkRaiseBudgets: a force that bills the army pool is always also counted
     spain: [unit({ branch: 'army', turnStartBranch: 'navy', strength: 40001, turnStartStrength: 40 })],
   };
   assert.equal(
-    checkRaiseBudgets(forces, 30, { spain: 1_000_000 }),
-    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from',
+    checkRaiseBudgets(forces, 30, { spain: 1_142_858 }),
+    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1142858 supports at most 40000 — an army may never exceed 3.5% of the nation it is raised from',
   );
 });
 
 test('checkRaiseBudgets: PRECEDENCE — busting both the ceiling and the cap reports the ceiling', () => {
-  // sweden's cap is 5951/month and its ceiling 94,433; this submission
-  // breaks both. The ceiling wins because trimming to the monthly cap
-  // would not fix it — the nation is over on STOCK, and reporting a flow
-  // number would send the player to shave 4049 men off a raise that is
-  // not the problem. The operative rule is "over the ceiling ⇒ no men at
-  // all", not "recruit up to the ceiling", and the message has to say so.
+  // sweden's cap is 5,399/month (2,360,845 people through the cube root)
+  // and its ceiling 82,629; this submission breaks both. The ceiling wins
+  // because trimming to the monthly cap would not fix it — the nation is
+  // over on STOCK, and reporting a flow number would send the player to
+  // shave 4,601 men off a raise that is not the problem. The two numbers
+  // are re-priced by different knobs and neither knob touches the other:
+  // the flow moves with the curve and with MEN_PER_MONTH, the ceiling only
+  // ever with MAX_ARMY_POP_SHARE — the share of a population is that share
+  // of it whatever root scales the raising and whatever rate the curve is
+  // quoted at, which is why the 4% → 3.5% cut moved the 82,629 here and
+  // left the 5,399 exactly alone. The operative rule is "over the ceiling ⇒
+  // no men at all", not "recruit up to the ceiling", and the message has
+  // to say so.
   const forces = {
     sweden: [
       unit({ strength: 100000, turnStartStrength: 100000 }),
       unit({ strength: 10000, turnStartStrength: 0 }),
     ],
   };
+  // "breaks BOTH" asserted rather than asserted-in-prose, because it is
+  // the precondition the whole test rests on and it is invisible in the
+  // expected message: the ceiling reason is the only output, so if the cap
+  // ever stopped being broken — MEN_PER_MONTH rising past the 10,000 men
+  // raised here would do it, and nothing else in this file would notice —
+  // this would silently degrade into an ordinary over-ceiling test that
+  // proves no precedence at all. Derived from raiseBudget rather than
+  // quoted, so the two figures in the comment above cannot rot apart from
+  // the rule the way a hand-copied 5,400 already did once.
+  assert.equal(raiseBudget('army', 30, 2360845), 5399);
+  assert.ok(10000 > raiseBudget('army', 30, 2360845), 'the raise must also bust the monthly cap');
+  assert.ok(100000 + 10000 > standingArmyCeiling(2360845), 'and the standing ceiling');
   assert.equal(
     checkRaiseBudgets(forces, 30, { sweden: 2360845 }),
-    'sweden exceeded its standing army ceiling: 110000 men under arms, but a population of 2360845 supports at most 94433 — an army may never exceed 4% of the nation it is raised from',
+    'sweden exceeded its standing army ceiling: 110000 men under arms, but a population of 2360845 supports at most 82629 — an army may never exceed 3.5% of the nation it is raised from',
   );
 });
 
 test('checkRaiseBudgets: omitting the population argument switches BOTH rules off', () => {
   // FAIL OPEN ON ABSENCE, at the gate rather than at the helper. The same
-  // sweden that is 15,567 men over its ceiling two tests up is simply
-  // uncapped here, and the flat 15000 is back — which is precisely the
-  // behaviour every one of this file's pre-population tests relies on.
+  // sweden that is 17,371 men over its ceiling two tests up is simply
+  // uncapped here, and the flat MEN_PER_MONTH is back — which is
+  // precisely the behaviour every one of this file's pre-population tests
+  // relies on, at whatever value that constant currently holds (10000).
   const overCeiling = (raised) => ({
     sweden: [
       unit({ strength: 100000, turnStartStrength: 100000 }),
       unit({ strength: raised, turnStartStrength: 0 }),
     ],
   });
-  assert.equal(checkRaiseBudgets(overCeiling(15000), 30), null);
+  assert.equal(checkRaiseBudgets(overCeiling(10000), 30), null);
   assert.equal(
-    checkRaiseBudgets(overCeiling(15001), 30),
-    'sweden exceeded its army recruitment cap: 15001 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+    checkRaiseBudgets(overCeiling(10001), 30),
+    'sweden exceeded its army recruitment cap: 10001 men raised or reinforced this turn, cap is 10000 men for a 1-month turn',
   );
   // Explicit undefined is the same absence as no argument — the value the
   // callers actually pass when turn.json carries no table.
-  assert.equal(checkRaiseBudgets(overCeiling(15000), 30, undefined), null);
+  assert.equal(checkRaiseBudgets(overCeiling(10000), 30, undefined), null);
 });
 
 // ────────────────────────────────────────────────────────────────────
