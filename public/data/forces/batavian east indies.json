@@ -1,0 +1,34 @@
+[
+  {
+    "id": "yellowwithblue-1786325761444-0",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Java",
+    "strength": 10000,
+    "commander": "",
+    "lat": -6.18424616128059,
+    "lon": 106.76513671875001,
+    "turnStartLat": -6.18424616128059,
+    "turnStartLon": 106.76513671875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1786325880930-1",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Spice Islands",
+    "strength": 5000,
+    "commander": "",
+    "lat": -3.2063329870791315,
+    "lon": 128.32031250000003,
+    "turnStartLat": -3.2063329870791315,
+    "turnStartLon": 128.32031250000003,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
