@@ -10,6 +10,8 @@
     "lon": -65,
     "turnStartLat": 18,
     "turnStartLon": -65,
+    "turnStartStrength": 6,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -24,6 +26,8 @@
     "lon": -75.1,
     "turnStartLat": 40,
     "turnStartLon": -75.1,
+    "turnStartStrength": 4000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }

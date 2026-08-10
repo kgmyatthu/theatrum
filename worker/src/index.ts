@@ -39,6 +39,8 @@ interface Env {
 import { rebaseForceFile } from '../../scripts/lib/rebase-forces.mjs';
 import {
   budgetForBranch,
+  checkAnchorConservation,
+  checkRaiseBudgets,
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
 } from '../../scripts/lib/movement.mjs';
@@ -444,53 +446,6 @@ async function deleteFile(
   );
 }
 
-/**
- * Apply an incoming forces array for one nation against main's
- * forces/<nation>.json. Creates / updates / deletes the file as needed
- * and returns whether a commit was made. Empty incoming + existing file
- * → delete; empty incoming + no file → no-op (the common case).
- */
-async function syncNationForces(
-  repo: string,
-  branch: string,
-  nation: string,
-  incomingForces: ForceLike[],
-  login: string,
-  ts: string,
-  token: string,
-): Promise<boolean> {
-  const path = `public/data/forces/${nation}.json`;
-  const onMain = await readFileOnMain(repo, path, token);
-
-  const incomingJson = JSON.stringify(incomingForces, null, 2) + '\n';
-  const mainJson = onMain.exists ? onMain.content : '';
-
-  if (incomingJson === mainJson) return false; // identical
-  if (incomingForces.length === 0) {
-    // Nation no longer has any forces — drop the file if it exists.
-    if (!onMain.exists) return false;
-    await deleteFile(
-      repo,
-      path,
-      branch,
-      onMain.sha,
-      `forces: @${login} clear ${nation} ${ts}`,
-      token,
-    );
-    return true;
-  }
-  await commitFile(
-    repo,
-    path,
-    branch,
-    incomingJson,
-    `move: @${login} ${nation} ${ts}`,
-    token,
-    onMain.exists ? onMain.sha : undefined,
-  );
-  return true;
-}
-
 // ────────────────────────────────────────────────────────────────────
 // Submit handler
 // ────────────────────────────────────────────────────────────────────
@@ -647,38 +602,7 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     return errorJson(origin, e instanceof HttpError ? e.status : 502, msg);
   }
 
-  // 2. perm.json (admin only, when there's an effective change).
-  if (renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0) {
-    try {
-      const permFile = await gh<{ sha: string; content: string }>(
-        `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
-        { method: 'GET' },
-        installToken,
-      );
-      const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
-      const permAfter = rewritePerm(permBefore, renames, userAdds, userRemoves);
-      if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
-        const json = JSON.stringify(permAfter, null, 2) + '\n';
-        await gh<unknown>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json`,
-          {
-            method: 'PUT',
-            body: {
-              message: `perm: ${summaryParts(renames, userAdds, userRemoves)}`,
-              content: utf8ToBase64(json),
-              sha: permFile.sha,
-              branch: branchName,
-            },
-          },
-          installToken,
-        );
-      }
-    } catch (e) {
-      return errorJson(origin, 502, `perm.json commit: ${(e as Error).message}`);
-    }
-  }
-
-  // 3. Commit per-file content. The on-disk layout is:
+  // 2. Commit per-file content. The on-disk layout is:
   //      public/data/state.json            — { appVersion, ownerships, countries }
   //      public/data/forces/<nation>.json  — Force[]
   //    Non-admin players only touch their own nation's force file; the
@@ -694,55 +618,72 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   const incomingByNation = groupForcesByNation(snapshot.forces);
   const baselineByNation = baseline ? groupForcesByNation(baseline.forces) : null;
 
-  /** Read main's per-nation file, rebase against baseline if we have one,
-   *  and commit the result. The rebase falls back to incoming-as-is when
-   *  baseline is absent or has no entry for this nation. */
-  async function commitNation(nation: string): Promise<void> {
+  /** What this submission would leave in one nation's file, plus what is
+   *  in there right now. Computed for every nation we intend to write
+   *  BEFORE anything is committed, because the recruitment gates are
+   *  per-nation SUMS and a sum is only meaningful over the array that
+   *  actually lands on main. The old code summed the raw snapshot, which
+   *  is scored against a client-supplied `baseline`: sending
+   *  `baseline: []` next to one at-cap force passed the worker every
+   *  time while CI — which diffs the PR against main — rejected it. The
+   *  per-force checks were rebase-invariant, so the split only starts to
+   *  matter now. */
+  interface NationPlan {
+    path: string;
+    onMain: MainFile;
+    /** forces/<nation>.json as it stands on main: the base side of the
+     *  anchor-conservation comparison. */
+    mainForces: ForceLike[];
+    /** post-rebase result: what the gates score and what we commit. */
+    merged: ForceLike[];
+  }
+
+  async function planNation(nation: string): Promise<NationPlan> {
     const incoming = incomingByNation.get(nation) ?? [];
     const path = `public/data/forces/${nation}.json`;
-    if (!baselineByNation) {
-      // Legacy / no-baseline path — preserve v7's blind-commit semantics.
-      await syncNationForces(
-        env.GITHUB_REPO,
-        branchName,
-        nation,
-        incoming,
-        login,
-        ts,
-        installToken,
-      );
-      return;
-    }
     const onMain = await readFileOnMain(env.GITHUB_REPO, path, installToken);
     const mainForces = onMain.exists ? (JSON.parse(onMain.content) as ForceLike[]) : [];
-    const baselineForces = baselineByNation.get(nation) ?? [];
-    const merged = rebaseForceFile(baselineForces, incoming, mainForces) as ForceLike[];
+    // Legacy / no-baseline clients keep v7's blind-commit semantics: with
+    // nothing to diff against, their snapshot IS the merge result.
+    const merged = baselineByNation
+      ? (rebaseForceFile(
+          baselineByNation.get(nation) ?? [],
+          incoming,
+          mainForces,
+        ) as ForceLike[])
+      : incoming;
+    return { path, onMain, mainForces, merged };
+  }
 
-    const newJson = merged.length > 0 ? JSON.stringify(merged, null, 2) + '\n' : '';
-    const mainJson = onMain.exists ? onMain.content : '';
+  /** Write a plan out. Deliberately does not re-read main — the sha here
+   *  is the one the gates scored, so anything that landed in the meantime
+   *  fails the PUT instead of slipping in unscored. */
+  async function commitPlan(nation: string, plan: NationPlan): Promise<void> {
+    const newJson = plan.merged.length > 0 ? JSON.stringify(plan.merged, null, 2) + '\n' : '';
+    const mainJson = plan.onMain.exists ? plan.onMain.content : '';
     if (newJson === mainJson) return; // no-op after rebase
-    if (merged.length === 0 && onMain.exists) {
-      await deleteFile(
-        env.GITHUB_REPO,
-        path,
-        branchName,
-        onMain.sha,
-        `forces: @${login} clear ${nation} ${ts}`,
-        installToken,
-      );
+    if (plan.merged.length === 0) {
+      if (plan.onMain.exists) {
+        await deleteFile(
+          env.GITHUB_REPO,
+          plan.path,
+          branchName,
+          plan.onMain.sha,
+          `forces: @${login} clear ${nation} ${ts}`,
+          installToken,
+        );
+      }
       return;
     }
-    if (merged.length > 0) {
-      await commitFile(
-        env.GITHUB_REPO,
-        path,
-        branchName,
-        newJson,
-        `move: @${login} ${nation} ${ts}`,
-        installToken,
-        onMain.exists ? onMain.sha : undefined,
-      );
-    }
+    await commitFile(
+      env.GITHUB_REPO,
+      plan.path,
+      branchName,
+      newJson,
+      `move: @${login} ${nation} ${ts}`,
+      installToken,
+      plan.onMain.exists ? plan.onMain.sha : undefined,
+    );
   }
 
   try {
@@ -804,11 +745,21 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     const effectiveLastTurnDays = isAdmin
       ? (snapshot.lastTurnDays as number)
       : mainTurn.lastTurnDays;
-    // For "newly raised this turn" purposes we use main's turnNumber.
-    // The permission gate above already proved snapshot/baseline matches
-    // main, and an admin advancing turn in this same PR has snapshot ==
-    // baseline pre-advance, so this is the right reference frame either way.
-    const effectiveTurnNumber = mainTurn.turnNumber;
+    // Turn-number basis: the same rule as the days above, and it has to
+    // be, because the two are read together. For non-admins the gate above
+    // proved snapshot == main, so they are interchangeable. The admin
+    // advancing the turn in this same PR is the case that matters: that
+    // gate compared their *baseline* to main, so their snapshot carries
+    // the new turnNumber, turn.json on the branch gets that same number,
+    // and the CI validator scores the PR against it (head.turn.turnNumber)
+    // alongside the new lastTurnDays. Reading main's stale number here
+    // would mix frames — last turn's recruits billed against the new
+    // turn's cap — and bounce the admin's own turn advance for a PR the
+    // validator would have passed. snapshot.turnNumber is already proven
+    // to be a number by the body check near the top of this handler.
+    const effectiveTurnNumber = isAdmin
+      ? (snapshot.turnNumber as number)
+      : mainTurn.turnNumber;
     for (const f of snapshot.forces!) {
       const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
       const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;
@@ -817,18 +768,39 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       const branch = (f as { branch?: unknown }).branch;
       const lat = (f as { lat?: unknown }).lat;
       const lon = (f as { lon?: unknown }).lon;
+      const strength = (f as { strength?: unknown }).strength;
+      const turnStartStrength = (f as { turnStartStrength?: unknown }).turnStartStrength;
+      const turnStartBranch = (f as { turnStartBranch?: unknown }).turnStartBranch;
+      // strength was never validated server-side until the recruitment cap
+      // landed — this is the trust boundary that whole feature stands on.
+      // Both strength fields are mandatory for the same reason the position
+      // anchors are: the per-nation gate below subtracts them, and a missing
+      // or NaN operand would silently price recruitment at zero (NaN fails
+      // every `<= cap` comparison, so an over-cap raise would slip through).
+      // Negative values are rejected too — claiming a debt would otherwise
+      // bank free headroom for the rest of the nation's forces.
+      // turnStartBranch is mandatory on the same grounds: raiseCost reads
+      // it to decide whether the anchor was earned in the branch the force
+      // is billed against, and a missing one makes every force look
+      // re-branded (undefined !== 'army') — which would bill the entire
+      // standing order of battle against this turn's cap.
       if (
         typeof turnStartLon !== 'number' ||
         typeof turnStartLat !== 'number' ||
         typeof kmMovedThisTurn !== 'number' ||
         typeof lat !== 'number' ||
         typeof lon !== 'number' ||
+        !Number.isFinite(strength) ||
+        (strength as number) < 0 ||
+        !Number.isFinite(turnStartStrength) ||
+        (turnStartStrength as number) < 0 ||
+        (turnStartBranch !== 'army' && turnStartBranch !== 'navy') ||
         (branch !== 'army' && branch !== 'navy')
       ) {
         return errorJson(
           origin,
           400,
-          `force ${String(f.id)} is missing turn-tracking fields. Hard-refresh the page.`,
+          `force ${String(f.id)} is missing turn-tracking fields (turnStartLon, turnStartLat, kmMovedThisTurn, strength, turnStartStrength, turnStartBranch). Hard-refresh the page.`,
         );
       }
       // Newly raised forces (createdAtTurn === current turnNumber) are
@@ -863,43 +835,179 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       }
     }
 
+    // Stale-baseline gate for state.json fields. Per the design call,
+    // admin must operate against fresh main for ownerships / countries —
+    // a 3-way merge of these arrays is ambiguous (e.g. an ownership
+    // pair flip is indistinguishable from a stale value), so we reject
+    // and force the admin to refresh + redo when concurrent edits
+    // landed for those fields. Pure force edits are still rebased.
+    // Checked here, ahead of the per-nation reads below, so a submission
+    // that is doomed anyway doesn't spend a file read per nation first.
+    if (isAdmin && baseline) {
+      const baselineOwnershipsJson = JSON.stringify(baseline.ownerships);
+      const mainOwnershipsJson = JSON.stringify(mainState.ownerships);
+      if (baselineOwnershipsJson !== mainOwnershipsJson) {
+        return errorJson(
+          origin,
+          409,
+          'main moved while you were editing: province ownerships changed. Refresh the page and redo any ownership edits.',
+        );
+      }
+      const baselineCountriesJson = JSON.stringify(baseline.countries);
+      const mainCountriesJson = JSON.stringify(mainState.countries);
+      if (baselineCountriesJson !== mainCountriesJson) {
+        return errorJson(
+          origin,
+          409,
+          'main moved while you were editing: country list changed. Refresh the page and redo any country edits.',
+        );
+      }
+    }
+
+    // ── What this submission would write ───────────────────────────────
+    // The exact set of nation files we are about to touch: a player's own
+    // nation, or for an admin the union of (nations that already have a
+    // force file on main) and (nations with forces in the incoming
+    // snapshot) so deletions (e.g. a country rename's old name) are
+    // caught too. Resolved and merged here rather than at commit time
+    // because the gates below have to score the post-rebase arrays, and
+    // they have to do it before a single byte is written.
+    // The admin union is load-bearing twice over: it is also the base
+    // index for anchor conservation, which pairs forces BY ID across
+    // nation files. Narrowing it to "only the files we rewrite" would
+    // save reads and silently reject every rename — see the gate below.
+    let targetNations: string[];
     if (!isAdmin) {
       if (!entry.nation) {
         return errorJson(origin, 403, `@${login} has no nation assigned in perm.json`);
       }
-      await commitNation(normalizeNation(entry.nation));
+      targetNations = [normalizeNation(entry.nation)];
     } else {
-      // Admin: state.json + every force file that differs. We need the
-      // union of (nations that already have a force file on main) and
-      // (nations with forces in the incoming snapshot) so deletions
-      // (e.g. a country rename's old name) are caught too.
-      // Stale-baseline gate for state.json fields. Per the design call,
-      // admin must operate against fresh main for ownerships / countries —
-      // a 3-way merge of these arrays is ambiguous (e.g. an ownership
-      // pair flip is indistinguishable from a stale value), so we reject
-      // and force the admin to refresh + redo when concurrent edits
-      // landed for those fields. Pure force edits are still rebased.
-      if (baseline) {
-        const baselineOwnershipsJson = JSON.stringify(baseline.ownerships);
-        const mainOwnershipsJson = JSON.stringify(mainState.ownerships);
-        if (baselineOwnershipsJson !== mainOwnershipsJson) {
-          return errorJson(
-            origin,
-            409,
-            'main moved while you were editing: province ownerships changed. Refresh the page and redo any ownership edits.',
-          );
-        }
-        const baselineCountriesJson = JSON.stringify(baseline.countries);
-        const mainCountriesJson = JSON.stringify(mainState.countries);
-        if (baselineCountriesJson !== mainCountriesJson) {
-          return errorJson(
-            origin,
-            409,
-            'main moved while you were editing: country list changed. Refresh the page and redo any country edits.',
-          );
-        }
+      // Discover existing nation files via one Contents API listing —
+      // saves us probing every country in the world with a 404.
+      let existingNations: string[] = [];
+      try {
+        const dir = await gh<Array<{ name: string; type: string }>>(
+          `/repos/${env.GITHUB_REPO}/contents/public/data/forces?ref=main`,
+          { method: 'GET' },
+          installToken,
+        );
+        existingNations = dir
+          .filter((e) => e.type === 'file' && e.name.endsWith('.json'))
+          .map((e) => e.name.slice(0, -'.json'.length));
+      } catch (e) {
+        if (!(e instanceof HttpError && e.status === 404)) throw e;
+        // 404 means forces/ directory doesn't exist yet — first ever bake.
       }
+      targetNations = [...new Set([...existingNations, ...incomingByNation.keys()])];
+    }
+    const plans = new Map<string, NationPlan>();
+    const mergedByNation: Record<string, ForceLike[]> = {};
+    const mainByNation: Record<string, ForceLike[]> = {};
+    for (const nation of targetNations) {
+      const plan = await planNation(nation);
+      plans.set(nation, plan);
+      mergedByNation[nation] = plan.merged;
+      mainByNation[nation] = plan.mainForces;
+    }
 
+    // ── Per-nation recruitment budget (universal) ──────────────────────
+    // Unlike the movement checks this is a nation-level sum, so it runs
+    // once over the whole record instead of per force: a partial view
+    // would under-count a nation's spend and let a second force sneak the
+    // overage through. It must run *after* the loop above, which is what
+    // proves strength / turnStartStrength / turnStartBranch are real on
+    // the forces the client sent — the checker does arithmetic on them
+    // without re-validating. The rest of `merged` comes from main, where
+    // this same gate (or the backfill) already vetted it.
+    // Scored over the MERGED record, which is both what lands on main and
+    // what CI re-scores from the base checkout. No counter is stored, so
+    // the cap is cumulative across however many PRs a nation lands inside
+    // one turn: main's forces are already in the sum, and each new PR
+    // only adds its own growth on top. Only the nations we write are
+    // scored — deliberately, so one nation sitting over cap on main can't
+    // bounce every other nation's moves. Same reference frame as the
+    // movement budget (effectiveLastTurnDays).
+    const overBudget = checkRaiseBudgets(mergedByNation, effectiveLastTurnDays);
+    if (overBudget) {
+      // Already a finished sentence naming the nation and the branch —
+      // no force id or file path to prefix, since the violation is a sum.
+      return errorJson(origin, 422, overBudget);
+    }
+
+    // ── Anchor conservation ────────────────────────────────────────────
+    // The cap above is only as honest as turnStartStrength, which the
+    // client asserts. This is what makes that assertion safe: every head
+    // force is paired to its base self BY ID, and a nation's per-branch
+    // anchor total may not exceed what exactly those forces were anchored
+    // at on main. A force main never saw funds none of it, so a fabricated
+    // anchor — invented to zero out a force's growth, or smuggled in with
+    // a force lifted from another nation's file — has nowhere to come
+    // from. (A nation's raw anchor sum is free to RISE, which is the whole
+    // point of pairing: a rename fills a file that had no anchors at all.)
+    // Skipped when the turn is
+    // being advanced (admin-only, and the gate above already proved they
+    // were operating against fresh main): the anchors legitimately reset
+    // up to current strengths at a turn boundary. Same exception the CI
+    // validator makes, for the same reason.
+    // Base scope is the subtle half: the pairing is by id ALONE, so a
+    // RENAME_COUNTRY — which rewrites force.nation and carries whole ids
+    // from forces/spain.json into forces/hispania.json — passes only
+    // while base still holds spain's copy. It does: the forces/ listing
+    // puts the old name into targetNations and the snapshot puts the new
+    // one there, so an admin's mainByNation spans every force file on
+    // main. A player's stays scoped to their own nation on purpose — the
+    // only ids their merge can name are main's copy of that same file
+    // plus their own snapshot, so an id living in someone else's file is
+    // a theft, and this 0 allowance is the only thing here that catches
+    // it (the duplicate-id check lives in the CI validator, not here).
+    if (effectiveTurnNumber === mainTurn.turnNumber) {
+      const inflated = checkAnchorConservation(mainByNation, mergedByNation);
+      if (inflated) {
+        return errorJson(origin, 422, inflated);
+      }
+    }
+
+    // ── Everything below this line writes ──────────────────────────────
+    // Nothing above it has committed, so any rejection leaves the branch
+    // exactly as the ref-create left it: no commits, no PR.
+    //
+    // perm.json (admin only, when there's an effective change) is the
+    // reason this block moved down here from step 1½ — it used to be
+    // committed before a single rule had been checked, so an admin whose
+    // moves then failed a gate left a stranded branch carrying a perm
+    // commit and no PR.
+    if (renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0) {
+      try {
+        const permFile = await gh<{ sha: string; content: string }>(
+          `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
+          { method: 'GET' },
+          installToken,
+        );
+        const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
+        const permAfter = rewritePerm(permBefore, renames, userAdds, userRemoves);
+        if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
+          const json = JSON.stringify(permAfter, null, 2) + '\n';
+          await gh<unknown>(
+            `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json`,
+            {
+              method: 'PUT',
+              body: {
+                message: `perm: ${summaryParts(renames, userAdds, userRemoves)}`,
+                content: utf8ToBase64(json),
+                sha: permFile.sha,
+                branch: branchName,
+              },
+            },
+            installToken,
+          );
+        }
+      } catch (e) {
+        return errorJson(origin, 502, `perm.json commit: ${(e as Error).message}`);
+      }
+    }
+
+    if (isAdmin) {
       const newStateJson =
         JSON.stringify(
           {
@@ -947,35 +1055,20 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           turnOnMain.sha,
         );
       }
+    }
 
-      // Discover existing nation files via one Contents API listing —
-      // saves us probing every country in the world with a 404.
-      let existingNations: string[] = [];
-      try {
-        const dir = await gh<Array<{ name: string; type: string }>>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/forces?ref=main`,
-          { method: 'GET' },
-          installToken,
-        );
-        existingNations = dir
-          .filter((e) => e.type === 'file' && e.name.endsWith('.json'))
-          .map((e) => e.name.slice(0, -'.json'.length));
-      } catch (e) {
-        if (!(e instanceof HttpError && e.status === 404)) throw e;
-        // 404 means forces/ directory doesn't exist yet — first ever bake.
-      }
-
-      const allNations = new Set([...existingNations, ...incomingByNation.keys()]);
-      for (const nation of allNations) {
-        await commitNation(nation);
-      }
+    // Force files last, straight from the plans the gates scored — one
+    // nation for a player, every nation the listing turned up for an
+    // admin. Unchanged files short-circuit inside commitPlan.
+    for (const [nation, plan] of plans) {
+      await commitPlan(nation, plan);
     }
   } catch (e) {
     const msg = (e as Error).message;
     return errorJson(origin, e instanceof HttpError ? e.status : 502, `commit: ${msg}`);
   }
 
-  // 4. Open the PR — body carries the verified submitter marker.
+  // 3. Open the PR — body carries the verified submitter marker.
   const description = (body.description ?? '').trim();
   const prBody =
     (description ? `${description}\n\n` : '') +

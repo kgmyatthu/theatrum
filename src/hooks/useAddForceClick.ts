@@ -65,6 +65,19 @@ export function useAddForceClick({ mapRef, onStatus }: UseAddForceClickOptions):
             turnStartLon: e.latlng.lng,
             kmMovedThisTurn: 0,
             createdAtTurn: turnNumber,
+            // 0, not draft.strength: the anchor means "strength at the START
+            // of this turn", and at turn start this force did not exist. That
+            // one zero is what makes the whole strength bill against the
+            // recruitment cap — the cost model reads only the anchor, never
+            // createdAtTurn (which is purely the movement lock above). It also
+            // adds nothing to the nation's anchor sum, so the conservation
+            // gate passes. Stamping draft.strength here would silently make
+            // every new force free.
+            turnStartStrength: 0,
+            // Anchors carry no branch of their own, so the pool this force was
+            // raised into has to be recorded alongside; equal to branch means
+            // "not re-branded", which is true of a force born this instant.
+            turnStartBranch: draft.branch,
           },
         },
       });

@@ -10,6 +10,8 @@
     "lon": -5.5,
     "turnStartLat": 48.5,
     "turnStartLon": -5.5,
+    "turnStartStrength": 60,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -24,6 +26,8 @@
     "lon": 14.2,
     "turnStartLat": 35.8,
     "turnStartLon": 14.2,
+    "turnStartStrength": 15,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -38,6 +42,8 @@
     "lon": 1.9,
     "turnStartLat": 52.6,
     "turnStartLon": 1.9,
+    "turnStartStrength": 10,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -52,6 +58,8 @@
     "lon": -0.3,
     "turnStartLat": 51.4,
     "turnStartLon": -0.3,
+    "turnStartStrength": 40000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -66,6 +74,8 @@
     "lon": -6.26,
     "turnStartLat": 53.35,
     "turnStartLon": -6.26,
+    "turnStartStrength": 25000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -80,6 +90,8 @@
     "lon": 76.69,
     "turnStartLat": 12.42,
     "turnStartLon": 76.69,
+    "turnStartStrength": 24000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -94,6 +106,8 @@
     "lon": 88.36,
     "turnStartLat": 22.57,
     "turnStartLon": 88.36,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -108,6 +122,8 @@
     "lon": 18.4,
     "turnStartLat": -33.9,
     "turnStartLon": 18.4,
+    "turnStartStrength": 4000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -122,6 +138,8 @@
     "lon": -71.2,
     "turnStartLat": 46.8,
     "turnStartLon": -71.2,
+    "turnStartStrength": 5000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -136,6 +154,8 @@
     "lon": 151.13891601562503,
     "turnStartLat": -33.88865750124074,
     "turnStartLon": 151.13891601562503,
+    "turnStartStrength": 700,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 1
   },
@@ -150,6 +170,8 @@
     "lon": -7.154159545898438,
     "turnStartLat": 52.12758693811189,
     "turnStartLon": -7.154159545898438,
+    "turnStartStrength": 5,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -164,6 +186,8 @@
     "lon": -76.7889404296875,
     "turnStartLat": 17.986570330361634,
     "turnStartLon": -76.7889404296875,
+    "turnStartStrength": 12,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -178,6 +202,8 @@
     "lon": -9.297180175781252,
     "turnStartLat": 38.666211605156704,
     "turnStartLon": -9.297180175781252,
+    "turnStartStrength": 5,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -192,6 +218,8 @@
     "lon": -63.380126953125,
     "turnStartLat": 44.535674532413196,
     "turnStartLon": -63.380126953125,
+    "turnStartStrength": 5,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -206,6 +234,8 @@
     "lon": 79.81567382812501,
     "turnStartLat": 6.850077654785543,
     "turnStartLon": 79.81567382812501,
+    "turnStartStrength": 8,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -220,6 +250,8 @@
     "lon": 18.544921875000004,
     "turnStartLat": -34.56085936708385,
     "turnStartLon": 18.544921875000004,
+    "turnStartStrength": 3,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
@@ -234,6 +266,8 @@
     "lon": -1.0519409179687502,
     "turnStartLat": 50.78162860906095,
     "turnStartLon": -1.0519409179687502,
+    "turnStartStrength": 5,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   }

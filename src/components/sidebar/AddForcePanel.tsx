@@ -3,6 +3,7 @@ import { useAppState } from '@/state/AppContext';
 import { useForceDraft } from '@/state/ForceDraftContext';
 import { useAuth } from '@/auth/AuthContext';
 import { Panel } from '@/components/ui/Panel';
+import { raiseBudget, raiseCost } from '@/utils/movement';
 import type { ForceBranch } from '@/types';
 import styles from './NewCountryPanel.module.css';
 
@@ -18,7 +19,7 @@ interface AddForcePanelProps {
  * assigned nation. Admins can pick any nation.
  */
 export function AddForcePanel({ onStatus }: AddForcePanelProps) {
-  const { mode, owners, forces } = useAppState();
+  const { mode, owners, forces, lastTurnDays } = useAppState();
   const { draftRef } = useForceDraft();
   const auth = useAuth();
   const lockedNation = auth.role === 'player' ? auth.nation : null;
@@ -71,6 +72,19 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
 
   const strengthLabel = branch === 'navy' ? 'Fleet size (ships)' : 'Strength (men)';
 
+  // Recruitment headroom, same sums the worker runs on submit: cap for the
+  // branch minus what this nation already raised or reinforced this turn.
+  // Read-only preview — the worker is the real gate, so we don't disable
+  // anything here, we just tell the player what will bounce.
+  const unit = branch === 'navy' ? 'ships' : 'men';
+  const cap = raiseBudget(branch, lastTurnDays);
+  // Bucketed by CURRENT branch, matching checkRaiseBudgets: a force re-branded
+  // this turn bills the pool it moved into, which is the pool shown here.
+  const spent = forces
+    .filter((f) => f.nation === nation && f.branch === branch)
+    .reduce((sum, f) => sum + raiseCost(f), 0);
+  const remaining = Math.max(0, cap - spent);
+
   return (
     <Panel title="New Force">
       <label className={styles.label}>Nation</label>
@@ -119,6 +133,18 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
         value={strength}
         onChange={(e) => setStrength(e.target.value)}
       />
+      <div className={styles.helper}>
+        {cap === 0 ? (
+          <>
+            Turn is only {Math.max(0, lastTurnDays)} days — shorter than a month, so no {unit} can
+            be raised or reinforced.
+          </>
+        ) : (
+          <>
+            Recruitment this turn: {spent} / {cap} {unit} — <b>{remaining} {unit}</b> left.
+          </>
+        )}
+      </div>
       <label className={styles.label}>Commander</label>
       <input
         type="text"

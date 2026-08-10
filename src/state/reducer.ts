@@ -29,7 +29,9 @@ function normalizeForce(f: Force): Force {
   const needsTurnFields =
     typeof f.turnStartLon !== 'number' ||
     typeof f.turnStartLat !== 'number' ||
-    typeof f.kmMovedThisTurn !== 'number';
+    typeof f.kmMovedThisTurn !== 'number' ||
+    typeof f.turnStartStrength !== 'number' ||
+    !f.turnStartBranch;
   if (n === f.nation && !needsTurnFields) return f;
   return {
     ...f,
@@ -37,6 +39,15 @@ function normalizeForce(f: Force): Force {
     turnStartLon: typeof f.turnStartLon === 'number' ? f.turnStartLon : f.lon,
     turnStartLat: typeof f.turnStartLat === 'number' ? f.turnStartLat : f.lat,
     kmMovedThisTurn: typeof f.kmMovedThisTurn === 'number' ? f.kmMovedThisTurn : 0,
+    // Backfilling from current strength means a pre-recruitment-cap force
+    // reads as "no growth yet this turn" rather than as a free raise of its
+    // whole strength — the server would otherwise bill an untouched army.
+    turnStartStrength:
+      typeof f.turnStartStrength === 'number' ? f.turnStartStrength : f.strength,
+    // Twin backfill: a legacy force has not switched branch this turn, so its
+    // turn-start branch is whatever it is now. Anything else would read as a
+    // re-brand and bill the force's whole strength against the wrong pool.
+    turnStartBranch: f.turnStartBranch ?? f.branch,
   };
 }
 
@@ -191,17 +202,45 @@ export function reducer(state: AppState, action: Action): AppState {
       // same spent budget, and the same raise-turn lock. Fresh values
       // here would conjure movement out of thin air (or dodge the
       // newly-raised lock by "splitting" a just-raised army).
+      // ...except turnStartStrength, which must be partitioned rather than
+      // inherited: the spread would hand the detachment the parent's whole
+      // turn-start figure, and both halves would then look like they had
+      // shrunk — free recruitment headroom on each side. Splitting the
+      // anchor the same way we split the strength nets zero growth.
+      // turnStartBranch, by contrast, is right to inherit verbatim off the
+      // spread below: a split never changes branch, so the detachment began
+      // the turn in the same pool as its parent and needs no override.
+      //
+      // The anchor is a fixed pot to divide, never to mint, so the
+      // detachment carries away at most what the parent actually had.
+      // Handing it `detached` outright mints anchor whenever the parent
+      // was reinforced this turn: anchor 10000 / strength 25000, detach
+      // 24999, and the two halves hold 24999 + 0 of an original 10000.
+      // The 14999 minted there is recruitment the nation never paid for,
+      // and reinforce-split-reinforce turns that into an unbounded cap
+      // bypass. The parent's share is unchanged by the clamp —
+      // parentAnchor - min(detached, parentAnchor) is exactly the
+      // Math.max(0, parentAnchor - detached) it was before.
+      const parentAnchor = parent.turnStartStrength ?? parent.strength;
+      const detachedAnchor = Math.min(detached, parentAnchor);
       const detachment: Force = {
         ...parent,
         id: newId,
         name: name.trim() || `${parent.name} (detachment)`,
         strength: detached,
         commander: '',
+        turnStartStrength: detachedAnchor,
       };
+      const parentTurnStart = parentAnchor - detachedAnchor;
       return {
         ...state,
         forces: state.forces.flatMap((f) =>
-          f.id === id ? [{ ...f, strength: f.strength - detached }, detachment] : [f],
+          f.id === id
+            ? [
+                { ...f, strength: f.strength - detached, turnStartStrength: parentTurnStart },
+                detachment,
+              ]
+            : [f],
         ),
       };
     }
@@ -247,6 +286,12 @@ export function reducer(state: AppState, action: Action): AppState {
           turnStartLon: f.lon,
           turnStartLat: f.lat,
           kmMovedThisTurn: 0,
+          // Same idea as the position anchors: whatever a force ended the
+          // turn as becomes its baseline, so next turn's recruitment cap only
+          // bills growth from here — and a branch switch made last turn is
+          // settled, not charged again.
+          turnStartStrength: f.strength,
+          turnStartBranch: f.branch,
         })),
       };
     }

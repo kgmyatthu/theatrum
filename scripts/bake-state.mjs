@@ -55,12 +55,23 @@ const ownerships = provinces.features.map((f, i) => [i, lc(f.properties.owner)])
 // be strings" gate is never tripped on a fresh bake. Also seed the
 // turn-tracking fields: a fresh force sits at its placement spot with
 // a full movement budget, so turnStart == current and kmMovedThisTurn = 0.
+// turnStartStrength is the recruitment analogue of the turnStartLon/Lat
+// movement anchors — seeding it to the force's own strength means the
+// primordial order of battle counts as zero growth against the raising
+// cap, rather than reading as if every seed force were recruited on
+// turn 0. The server rejects any force missing it, so a re-bake must
+// emit it or the baked files are dead on arrival. turnStartBranch is its
+// twin — the pool that anchor was earned in — and seeds to the force's own
+// branch, i.e. "has not been re-branded this turn"; it is equally mandatory
+// server-side.
 let seedSeq = 0;
 for (const f of seedForces) {
   f.id = `seed-0-${seedSeq++}`;
   f.nation = lc(f.nation);
   f.turnStartLon = f.lon;
   f.turnStartLat = f.lat;
+  f.turnStartStrength = f.strength;
+  f.turnStartBranch = f.branch;
   f.kmMovedThisTurn = 0;
 }
 

@@ -18,12 +18,14 @@ import { validateMove } from '../lib/validate-move-core.mjs';
 function force(overrides = {}) {
   const lon = overrides.lon ?? -3.7;
   const lat = overrides.lat ?? 40.4;
+  const strength = overrides.strength ?? 40000;
+  const branch = overrides.branch ?? 'army';
   return {
     id: 'seed-0-0',
     nation: 'spain',
-    branch: 'army',
+    branch,
     name: '1st Corps',
-    strength: 40000,
+    strength,
     commander: 'Castaños',
     lon,
     lat,
@@ -31,6 +33,16 @@ function force(overrides = {}) {
     turnStartLon: overrides.turnStartLon ?? lon,
     turnStartLat: overrides.turnStartLat ?? lat,
     kmMovedThisTurn: overrides.kmMovedThisTurn ?? 0,
+    // Same idea for strength: unchanged since turn start, so the force
+    // has recruited nothing and passes the raise-budget gate. That is the
+    // shape of an EXISTING force (and of every backfilled legacy one) —
+    // a force meant to read as "raised this turn" must pass
+    // turnStartStrength: 0 explicitly, because a zero anchor is now the
+    // only thing that makes a force bill its whole strength.
+    turnStartStrength: overrides.turnStartStrength ?? strength,
+    // The anchor's branch identity. Defaults to the current branch: a
+    // force that has not re-branded started the turn where it is now.
+    turnStartBranch: overrides.turnStartBranch ?? branch,
     ...overrides,
   };
 }
@@ -327,13 +339,19 @@ test('pass: player legitimately moves their own force', () => {
 });
 
 test('pass: player adds a new force of their own nation', () => {
+  // A force raised this turn carries a zero anchor: it charges its whole
+  // strength against the cap (15000 is exactly one month) and adds
+  // nothing to the nation's anchor sum, so both gates are satisfied.
   const head = {
     state: stateFile(),
     forces: {
       ...forcesMap(),
       spain: [
         force({ id: 'spain-1', nation: 'spain' }),
-        force({ id: 'alice-123-0', nation: 'spain', name: '2nd Corps' }),
+        force({
+          id: 'alice-123-0', nation: 'spain', name: '2nd Corps',
+          strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+        }),
       ],
     },
   };
@@ -357,15 +375,22 @@ test('pass: case-insensitive nation match (perm.json has TitleCase)', () => {
 
 test('pass: deterministic string IDs from multiple players in same nation', () => {
   // Two spain players added forces — both ids namespaced by their own
-  // login, so no collision.
+  // login, so no collision. Both are raises (anchor 0) and together they
+  // come to exactly the 15000 the 30-day turn allows.
   const head = {
     state: stateFile(),
     forces: {
       ...forcesMap(),
       spain: [
         force({ id: 'spain-1', nation: 'spain' }),
-        force({ id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve' }),
-        force({ id: 'carol-1715551200001-0', nation: 'spain', name: 'Aragón' }),
+        force({
+          id: 'alice-1715551200000-0', nation: 'spain', name: 'Reserve',
+          strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+        }),
+        force({
+          id: 'carol-1715551200001-0', nation: 'spain', name: 'Aragón',
+          strength: 5000, turnStartStrength: 0, createdAtTurn: 0,
+        }),
       ],
     },
   };
@@ -407,30 +432,52 @@ test('pass: admin changes ownership', () => {
   );
 });
 
-test('pass: admin renames a country (state.json + force file moved)', () => {
-  const head = {
-    state: stateFile({
-      countries: [
-        { name: 'spain-empire', color: '#1F4E9C' },
-        { name: 'france', color: '#D7837F' },
-      ],
-    }),
-    forces: {
-      // forces/spain.json deleted; forces/spain-empire.json created with renamed nation
-      'spain-empire': [force({ id: 'spain-1', nation: 'spain-empire', name: '1st Corps' })],
-      france: forcesMap().france,
-    },
-  };
+// A country rename empties one force file and fills another: RENAME_COUNTRY
+// rewrites force.nation, so whole ids move from forces/spain.json into
+// forces/spain-empire.json and the receiving file had no anchors at base.
+// Anchor conservation pairs base to head BY ID across every nation file,
+// never by nation+id, which is exactly what lets these two tests both
+// pass — mid-turn and on the turn advance alike.
+const RENAME = {
+  state: stateFile({
+    countries: [
+      { name: 'spain-empire', color: '#1F4E9C' },
+      { name: 'france', color: '#D7837F' },
+    ],
+  }),
+  forces: {
+    // forces/spain.json deleted; forces/spain-empire.json created with renamed nation
+    'spain-empire': [force({ id: 'spain-1', nation: 'spain-empire', name: '1st Corps' })],
+    france: forcesMap().france,
+  },
+};
+const RENAME_FILES = [
+  'public/data/state.json',
+  'public/data/forces/spain.json',
+  'public/data/forces/spain-empire.json',
+];
+
+test('pass: admin renames a country mid-turn (anchors follow their ids into the new file)', () => {
+  // The case id-pairing exists for. forces/spain-empire.json holds anchors
+  // its own nation never had at base, so a per-nation anchor SUM rejects
+  // it and a shipped admin feature becomes unsubmittable until the next
+  // turn advance. Paired by id, spain-1 funds itself wherever its file
+  // now lives. Note that spain never appears in the head scope at all —
+  // its file is gone — so this only works because BASE is indexed whole.
+  expectPass(
+    validateMove(defaults({ head: RENAME, prAuthor: 'master', changedFiles: RENAME_FILES })),
+  );
+});
+
+test('pass: admin renames a country on the turn advance (conservation skipped)', () => {
+  // turnNumber moves, so every anchor is expected to reset — the gate
+  // does not run and the rename goes through. Admin-only by file scope.
   expectPass(
     validateMove(
       defaults({
-        head,
+        head: { ...RENAME, turn: turnFile({ turnNumber: 1 }) },
         prAuthor: 'master',
-        changedFiles: [
-          'public/data/state.json',
-          'public/data/forces/spain.json',
-          'public/data/forces/spain-empire.json',
-        ],
+        changedFiles: [...RENAME_FILES, 'public/data/turn.json'],
       }),
     ),
   );
@@ -638,11 +685,9 @@ test('reject: navy exceeds budget at navy rate (7000 km on a 30-day turn)', () =
 });
 
 test('pass: navy covers 6000 km on a 30-day turn (under navy budget of 6000)', () => {
+  const atlantic = { id: 'spain-1', nation: 'spain', branch: 'navy', name: 'Atlantic Fleet' };
   const fleet = force({
-    id: 'spain-1',
-    nation: 'spain',
-    branch: 'navy',
-    name: 'Atlantic Fleet',
+    ...atlantic,
     lat: 40.4,
     lon: -3.7,
     turnStartLat: 40.4,
@@ -652,6 +697,11 @@ test('pass: navy covers 6000 km on a 30-day turn (under navy budget of 6000)', (
   expectPass(
     validateMove(
       defaults({
+        // spain-1 is a fleet in base as well: leaving base's default army
+        // in place would make this submission a re-brand, moving 40000 of
+        // anchor into a navy pool that had none — a conservation
+        // violation, and rightly so. This test is about the km budget.
+        base: { forces: forcesMap({ spain: [force(atlantic)] }) },
         head: { state: stateFile(), forces: forcesMap({ spain: [fleet] }) },
       }),
     ),
@@ -793,6 +843,11 @@ test('pass: newly raised force that stays put is fine', () => {
   const placed = force({
     id: 'spain-new-2',
     nation: 'spain',
+    // Raised this turn, so its anchor is 0 and its whole strength charges
+    // the raise budget: exactly one month's worth on the 30-day default
+    // turn. This test is about the movement lock, not the cap.
+    strength: 15000,
+    turnStartStrength: 0,
     lat: 40.4,
     lon: -3.7,
     turnStartLat: 40.4,
@@ -852,6 +907,11 @@ test('pass: legacy seed force without createdAtTurn is treated as primordial (mo
   expectPass(
     validateMove(
       defaults({
+        // The seed force has to be in base under the same id: anchor
+        // conservation pairs by id, and a 40000-man anchor on an id base
+        // never saw is an injected anchor no matter how primordial the
+        // force claims to be. This test is about the movement lock.
+        base: { forces: forcesMap({ spain: [force({ id: 'seed-0-0', nation: 'spain' })] }) },
         head: { state: stateFile(), forces: forcesMap({ spain: [seed] }) },
       }),
     ),
@@ -953,16 +1013,68 @@ test('pass: detachment keeps marching after the split within remaining budget', 
   );
 });
 
-test('reject: detachment split off a just-raised force inherits the movement lock', () => {
-  // Parent was raised this turn (createdAtTurn === turnNumber === 0) and
-  // is locked. The child inherits that stamp — moving it is the dodge
-  // this test pins down.
-  const parent = force({ id: 'spain-1', nation: 'spain', strength: 25000, createdAtTurn: 0 });
+test('pass: split of an existing force nets zero recruitment cost', () => {
+  // Scored on a 29-day turn, where the cap is exactly 0 — so this passes
+  // only if the split really costs nothing, not merely "little". The
+  // anchors partition: parent 40000/40000 detaches 15000, leaving
+  // 25000/25000, and the child carries 15000/15000. Neither half shows
+  // growth, and neither gained free headroom.
+  const parent = force({ id: 'spain-1', nation: 'spain', strength: 25000, turnStartStrength: 25000 });
   const child = force({
     id: 'alice-1700000000000-0',
     nation: 'spain',
     name: '1st Corps (detachment)',
     strength: 15000,
+    turnStartStrength: 15000,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        base: { turn: turnFile({ lastTurnDays: 29 }) },
+        head: { turn: turnFile({ lastTurnDays: 29 }), forces: forcesMap({ spain: [parent, child] }) },
+      }),
+    ),
+  );
+});
+
+test('pass: split of a force raised THIS turn still costs its original strength once', () => {
+  // 15000 men raised this turn fills a 30-day cap exactly. Splitting them
+  // 10000/5000 must not re-bill either half: the parent's zero anchor
+  // partitions into 0/0, so each half charges its own strength and the
+  // sum is still 15000. If the parent kept its pre-split strength — or
+  // the child were billed on top of an unreduced parent — the sum would
+  // blow the cap.
+  const parent = force({
+    id: 'spain-new-1', nation: 'spain', strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: 'Levy (detachment)',
+    strength: 5000,
+    turnStartStrength: 0,
+    createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      defaults({ head: { forces: forcesMap({ spain: [parent, child] }) } }),
+    ),
+  );
+});
+
+test('reject: detachment split off a just-raised force inherits the movement lock', () => {
+  // Parent was raised this turn (createdAtTurn === turnNumber === 0) and
+  // is locked. The child inherits that stamp — moving it is the dodge
+  // this test pins down.
+  const parent = force({
+    id: 'spain-1', nation: 'spain', strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: '1st Corps (detachment)',
+    strength: 5000,
+    turnStartStrength: 0,
     createdAtTurn: 0,
     lat: 41.9, // ~167 km north of the raise point
     turnStartLat: 40.4,
@@ -976,5 +1088,450 @@ test('reject: detachment split off a just-raised force inherits the movement loc
       }),
     ),
     /raised this turn/,
+  );
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Per-nation recruitment cap (15000 men / 1 ship per whole month)
+//
+// The rule arithmetic is unit-tested in movement.test.mjs; these pin the
+// wiring: the gate runs over the whole Record<nation, Force[]> (so it
+// sums), it runs for admins too, and it fires on the fields the client
+// actually writes. The default fixture force is 40000/40000 — unchanged
+// since turn start, so it costs nothing and every raise below is
+// attributable to the force the test adds. A raise is written as
+// turnStartStrength: 0 (nothing at turn start, so all of it is new);
+// createdAtTurn rides along because the client stamps it, but it is the
+// movement lock now and buys the cap model nothing.
+// ────────────────────────────────────────────────────────────────────
+
+test('pass: raising exactly one month of men (15000 on the 30-day turn)', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) } })),
+  );
+});
+
+test('reject: raising one man over the cap', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 15001, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) } })),
+    /spain exceeded its army recruitment cap: 15001 men .* cap is 15000 men for a 1-month turn/,
+  );
+});
+
+test('pass: a 60-day turn buys two months of recruits (30000 men)', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 30000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        base: { turn: turnFile({ lastTurnDays: 60 }) },
+        head: {
+          turn: turnFile({ lastTurnDays: 60 }),
+          forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }),
+        },
+      }),
+    ),
+  );
+});
+
+test('reject: a 29-day turn is shorter than a month, so nothing can be raised', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        base: { turn: turnFile({ lastTurnDays: 29 }) },
+        head: {
+          turn: turnFile({ lastTurnDays: 29 }),
+          forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }),
+        },
+      }),
+    ),
+    /spain cannot raise or reinforce its army this turn: 1 men requested but the turn is only 29 days/,
+  );
+});
+
+test('pass: the navy pool is separate — a full army raise plus a ship both fit', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const ship = force({
+    id: 'alice-1700000000000-1', nation: 'spain', branch: 'navy', name: 'San Juan',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [levy, ship] }) } })),
+  );
+});
+
+test('reject: two ships on a one-month turn (navy cap is 1)', () => {
+  const fleet = force({
+    id: 'alice-1700000000000-1', nation: 'spain', branch: 'navy', name: 'Squadron',
+    strength: 2, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [fleet] }) } })),
+    /spain exceeded its navy recruitment cap: 2 ships .* cap is 1 ships/,
+  );
+});
+
+test('reject: cumulative across submissions — a second raise sums with the first', () => {
+  // The multi-PR dodge: 10000 landed in an earlier PR this turn, so it is
+  // already sitting in spain.json when the 6000 arrives. The gate sums the
+  // whole file every time, so the second submission is the one rejected.
+  const first = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const second = force({
+    id: 'alice-1700000000001-0', nation: 'spain', name: 'Second Levy',
+    strength: 6000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [first, second] }) } })),
+    /spain exceeded its army recruitment cap: 16000 men/,
+  );
+});
+
+test('reject: reinforcing an existing force over the cap', () => {
+  // The hole this feature exists to close — a veteran force that quietly
+  // grows 40000 → 60000 is a 20000-man raise, not a rename.
+  const reinforced = force({
+    id: 'spain-1', nation: 'spain', strength: 60000, turnStartStrength: 40000,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [reinforced] }) } })),
+    /spain exceeded its army recruitment cap: 20000 men/,
+  );
+});
+
+test('pass: reinforcing an existing force up to exactly the cap', () => {
+  const reinforced = force({
+    id: 'spain-1', nation: 'spain', strength: 55000, turnStartStrength: 40000,
+  });
+  expectPass(validateMove(defaults({ head: { forces: forcesMap({ spain: [reinforced] }) } })));
+});
+
+test('reject: admins are not exempt from the recruitment cap', () => {
+  const levy = force({
+    id: 'master-1700000000000-0', nation: 'france', name: 'Conscripts',
+    strength: 40000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        prAuthor: 'master',
+        changedFiles: ['public/data/forces/france.json'],
+        head: { forces: forcesMap({ france: [levy] }) },
+      }),
+    ),
+    /france exceeded its army recruitment cap/,
+  );
+});
+
+test('reject: force missing turnStartStrength (stale client bundle)', () => {
+  // Without the anchor the cost model has nothing to subtract, so it is
+  // mandatory server-side exactly like the turnStartLon/Lat anchors.
+  const stale = force({ id: 'spain-1', nation: 'spain' });
+  delete stale.turnStartStrength;
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [stale] }) } })),
+    /missing turn-tracking fields \(.*turnStartStrength/,
+  );
+});
+
+test('reject: negative strength (banking headroom by claiming a debt)', () => {
+  const debt = force({ id: 'spain-1', nation: 'spain', strength: -50000, turnStartStrength: 40000 });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [debt] }) } })),
+    /missing turn-tracking fields/,
+  );
+});
+
+test('reject: force missing turnStartBranch (stale client bundle)', () => {
+  // The anchor is a bare number with no branch identity. Without
+  // turnStartBranch every force reads as re-branded and bills its whole
+  // strength — the entire standing order of battle charged to the cap —
+  // so it is mandatory server-side exactly like the anchor itself.
+  const stale = force({ id: 'spain-1', nation: 'spain' });
+  delete stale.turnStartBranch;
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [stale] }) } })),
+    /missing turn-tracking fields \(.*turnStartBranch\)/,
+  );
+});
+
+test('reject: turnStartBranch that is not one of the two real branches', () => {
+  // 'cavalry' buckets into the army pool by fallback, which silently
+  // moves a navy anchor across pools. Only 'army' and 'navy' are taken.
+  const bogus = force({ id: 'spain-1', nation: 'spain', turnStartBranch: 'cavalry' });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [bogus] }) } })),
+    /missing turn-tracking fields/,
+  );
+});
+
+test('reject: turn.json missing turnNumber (both turn rules would fail open)', () => {
+  // Read raw and left undefined, turnNumber fails open twice: nothing
+  // ever equals it, so no force is "raised this turn" and every levy is
+  // free to march; and it can never equal base's turnNumber, so anchor
+  // conservation is skipped for every submission. Demand a real number.
+  const turn = turnFile();
+  delete turn.turnNumber;
+  expectReject(
+    validateMove(defaults({ head: { state: stateFile(), turn, forces: forcesMap() } })),
+    /turn\.turnNumber is missing or invalid/,
+  );
+});
+
+test('reject: an army re-branded into the navy lands its hulls in the navy pool', () => {
+  // 40000 men "become" 40 ships. The bare subtraction scores
+  // max(0, 40 - 40000) = 0 and hands spain 40 hulls against a cap of 1;
+  // turnStartBranch says the anchor was earned in the army, so against
+  // the navy this force is brand new and pays all 40.
+  const rebranded = force({
+    id: 'spain-1', nation: 'spain', branch: 'navy', name: 'Ex-1st Corps',
+    strength: 40, turnStartStrength: 40000, turnStartBranch: 'army',
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [rebranded] }) } })),
+    /spain exceeded its navy recruitment cap: 40 ships raised or reinforced this turn, cap is 1 ships/,
+  );
+});
+
+test('pass: an honest re-brand inside the cap is billed, not blocked', () => {
+  // One ship's crew becomes a 15000-man corps: billed in full against the
+  // army pool (exactly one month) and the navy anchor it left behind
+  // stays in the navy bucket, so conservation sees no movement at all.
+  const wasAShip = force({
+    id: 'spain-1', nation: 'spain', branch: 'navy', name: 'San Juan',
+    strength: 1, turnStartStrength: 1,
+  });
+  const nowACorps = force({
+    id: 'spain-1', nation: 'spain', branch: 'army', name: 'San Juan Marines',
+    strength: 15000, turnStartStrength: 1, turnStartBranch: 'navy',
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        base: { forces: forcesMap({ spain: [wasAShip] }) },
+        head: { forces: forcesMap({ spain: [nowACorps] }) },
+      }),
+    ),
+  );
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Anchor conservation — the gate that makes the client-asserted anchor
+// safe. base.forces is main right now, head.forces the merged result, and
+// every head force is paired to its base self BY ID: a nation's
+// per-branch anchor total may not exceed what exactly those same forces
+// were anchored at in base. Without this, every cap test above is
+// advisory — the client picks the number the cap subtracts from.
+//
+// The scope is asymmetric and the tests below lean on both halves: HEAD
+// narrows to the nation files this PR changed, BASE is indexed whole so a
+// force that changed nation files (a rename, above) still finds itself.
+// ────────────────────────────────────────────────────────────────────
+
+test('reject: a new force claiming it already existed at turn start (free recruits)', () => {
+  // The dodge the cap alone cannot see. strength == anchor, so raiseCost
+  // is 0 and 15000 men land free; no createdAtTurn either, so nothing
+  // marks it as new — except its id, which base never saw, so the anchor
+  // it claims is funded by nothing at all.
+  const ghost = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Phantom Levy',
+    strength: 15000, turnStartStrength: 15000,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), ghost] }) },
+      }),
+    ),
+    /^spain inflated its army turn-start strength: its anchors total 55000 men in this submission but the same forces were anchored at 40000 men at the start of the turn — anchors may be split or dropped within a turn, never invented or raised$/,
+  );
+});
+
+test('reject: inflating an existing force\'s anchor to hide 20000 men of growth', () => {
+  // Same 40000 → 60000 reinforcement the cap catches above, but with the
+  // anchor dragged up alongside it so raiseCost sees no growth at all.
+  const cooked = force({
+    id: 'spain-1', nation: 'spain', strength: 60000, turnStartStrength: 60000,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [cooked] }) } })),
+    /^spain inflated its army turn-start strength: its anchors total 60000 men/,
+  );
+});
+
+test('pass: the same restamp passes when the submission advances the turn', () => {
+  // Byte-identical fixture to the test above; the only difference is that
+  // turnNumber moves. On a turn advance ADVANCE_TURN restamps every
+  // anchor to current strength, which is an inflation by construction, so
+  // the gate is skipped for that submission. turn.json is admin-only, so
+  // a player can never reach this branch.
+  const restamped = force({
+    id: 'spain-1', nation: 'spain', strength: 60000, turnStartStrength: 60000,
+  });
+  expectPass(
+    validateMove(
+      defaults({
+        head: {
+          turn: turnFile({ turnNumber: 1 }),
+          forces: forcesMap({ spain: [restamped] }),
+        },
+        prAuthor: 'master',
+        changedFiles: ['public/data/turn.json', 'public/data/forces/spain.json'],
+      }),
+    ),
+  );
+});
+
+// A colluding transfer — spain gifting france a 40000-man corps, anchor
+// and all — is the one move id-pairing cannot reject on its own, because
+// it is byte-identical to the rename above: an id that base holds, filed
+// under a different nation. It is closed by interaction with the checks
+// around it, and which one fires depends purely on whether the donor's
+// removal has merged yet. Both orderings get their own test, because
+// closing one and leaving the other open is not closing anything. (A
+// player cannot do it in a single PR: their file scope is one file, so
+// emptying spain.json and filling france.json cannot be the same PR.)
+
+test('reject: colluding transfer while the donor still holds the id (duplicate-id check)', () => {
+  // Ordering one — bob submits before spain's removal PR merges, so
+  // spain-1 is in two nation files at once. The uniqueness check fires
+  // long before conservation, which would have funded the anchor from
+  // spain's still-present copy.
+  const head = {
+    forces: {
+      spain: [force({ id: 'spain-1', nation: 'spain' })],
+      france: [
+        force({ id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+        force({ id: 'spain-1', nation: 'france', name: 'Defected Corps' }),
+      ],
+    },
+  };
+  expectReject(
+    validateMove(
+      defaults({
+        head,
+        prAuthor: 'bob',
+        changedFiles: ['public/data/forces/france.json'],
+      }),
+    ),
+    /^duplicate force id spain-1 across nation files$/,
+  );
+});
+
+test('reject: colluding transfer after the donor\'s removal has merged (conservation)', () => {
+  // Ordering two — spain's PR emptying spain.json landed first, so base no
+  // longer holds spain-1 anywhere and the id funds nothing. France is the
+  // nation named because only head nations are walked, and the walk is
+  // sorted.
+  const head = {
+    forces: {
+      spain: [],
+      france: [
+        force({ id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte' }),
+        force({ id: 'spain-1', nation: 'france', name: 'Defected Corps' }),
+      ],
+    },
+  };
+  expectReject(
+    validateMove(
+      defaults({
+        base: { forces: forcesMap({ spain: [] }) },
+        head,
+        prAuthor: 'bob',
+        changedFiles: ['public/data/forces/france.json'],
+      }),
+    ),
+    /^france inflated its army turn-start strength: its anchors total 80000 men in this submission but the same forces were anchored at 40000 men/,
+  );
+});
+
+test('pass: a stale copy of another nation\'s file is not read as inflation', () => {
+  // base is main RIGHT NOW (the workflow checks out base.ref); head is
+  // refs/pull/N/merge, which GitHub recomputes asynchronously and so can
+  // sit one merge behind. France disbanded a force in between, so base no
+  // longer holds france-1 while the stale merge result still does — an
+  // allowance of 0 against an anchor alice never touched. Nothing in this
+  // PR changes france.json, so narrowing HEAD to changedFiles is what
+  // keeps alice from being rejected in bob's name.
+  const stale = forcesMap({ france: [force({ id: 'france-1', nation: 'france' })] });
+  const emptied = forcesMap({ france: [] });
+  expectPass(
+    validateMove(
+      defaults({
+        base: { forces: emptied },
+        head: { forces: stale },
+        changedFiles: ['public/data/forces/spain.json'],
+      }),
+    ),
+  );
+});
+
+test('reject: scoping to changed files still catches inflation in a changed file', () => {
+  // The other side of the same narrowing: spain.json IS in the list, so
+  // the ghost levy is scored exactly as before. Staleness elsewhere must
+  // not become a way to smuggle anchors through the file you did change.
+  const ghost = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Phantom Levy',
+    strength: 15000, turnStartStrength: 15000,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        base: { forces: forcesMap({ france: [] }) },
+        head: {
+          forces: forcesMap({
+            spain: [force({ id: 'spain-1', nation: 'spain' }), ghost],
+            france: [force({ id: 'france-1', nation: 'france' })],
+          }),
+        },
+        changedFiles: ['public/data/forces/spain.json'],
+      }),
+    ),
+    /^spain inflated its army turn-start strength/,
+  );
+});
+
+test('reject: branch that is not one of the two real branches (worker parity)', () => {
+  // The worker rejects this on submit; this file used to wave it through,
+  // and anything it waves through lands on main, is read back into every
+  // client's snapshot, and bounces EVERY player's next submission off the
+  // worker's guard. One hand-crafted PR, game-wide denial of service.
+  const bogus = force({
+    id: 'spain-1', nation: 'spain', branch: 'cavalry', turnStartBranch: 'army',
+    strength: 100, turnStartStrength: 40000,
+  });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [bogus] }) } })),
+    /missing turn-tracking fields/,
+  );
+});
+
+test('reject: non-numeric lat slips the displacement check (worker parity)', () => {
+  // haversineKm(null, ...) is NaN and `NaN > budget` is false, so a force
+  // with no real position passed every movement test below. The worker
+  // demands numbers; so does this now.
+  const nowhere = force({ id: 'spain-1', nation: 'spain', lat: null });
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [nowhere] }) } })),
+    /missing turn-tracking fields/,
   );
 });

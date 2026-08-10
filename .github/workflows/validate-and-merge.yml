@@ -16,6 +16,22 @@ permissions:
   contents: write
   pull-requests: write
 
+# Per-PR. A global group looks tempting now that the recruitment cap is a
+# SUM over a nation's forces — unlike every per-force check it is not
+# invariant to what else is in flight, so two PRs validated against the
+# same main can each be inside the cap and still exceed it once both land.
+# But GitHub's concurrency queue is exactly one deep: with a run in
+# progress, a THIRD arrival cancels the PENDING one outright, and
+# cancel-in-progress: false only protects the run already going. A burst of
+# three submissions would silently drop the middle PR — never validated,
+# never merged, never commented on, and with no further event to retrigger
+# it, since the worker pushes a submission branch exactly once. Losing a
+# player's move outright is worse than the race, which needs two players
+# sharing one nation (perm.json allows it) submitting close enough
+# together that both merge refs predate the other's merge.
+# ponytail: if that race ever bites, the fix is a real queue — a merge
+# train triggered on push to main that picks up the next open PR — not a
+# wider concurrency group, which cannot express "queue" at all.
 concurrency:
   group: pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -30,10 +46,18 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
           path: base
 
-      - name: Checkout head (PR, untrusted — read only)
+      # The MERGE ref, not the PR head: what this PR would actually produce
+      # on main, which is what the nation-level sums have to be scored
+      # against. Scoring head.sha lets two concurrent PRs each pass their own
+      # cap check and still combine past it on merge. Still untrusted data —
+      # the validator itself runs from base/ and never executes anything here.
+      # GitHub computes this ref asynchronously and omits it entirely for an
+      # unmergeable PR, so a conflicted PR fails at this step instead of
+      # reaching the validator's own "merge conflict against main" message.
+      - name: Checkout merge result (PR + main, untrusted — read only)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
           path: head
 
       - uses: actions/setup-node@v4

@@ -78,6 +78,30 @@ export interface Force {
    * baked without this field are treated as primordial (always movable).
    */
   createdAtTurn?: number;
+  /**
+   * Strength this force had at the START of the current turn — the strength
+   * analogue of turnStartLon/turnStartLat. A force raised *during* this turn
+   * had no strength at turn start, so it is stamped 0 and consequently bills
+   * its whole strength; createdAtTurn is not consulted by the cost model at
+   * all. The server bills only growth over this number against the nation's
+   * per-turn recruitment cap, so reinforcing costs exactly the men added and
+   * losses cost nothing. Optional here for back-compat with snapshots already
+   * in flight (the reducer backfills it from `strength`); mandatory
+   * server-side.
+   */
+  turnStartStrength?: number;
+  /**
+   * Branch this force had at the START of the current turn — exact twin of
+   * turnStartStrength, wired in the same places. The anchor above is a bare
+   * number with no branch identity, so without this an 80000-man army edited
+   * to branch 'navy' with strength 80 would score max(0, 80 - 80000) = 0 and
+   * land 80 ships against a 1-ship cap. Comparing it to `branch` makes a
+   * re-brand bill in full against the pool it entered, and the anchor-
+   * conservation gate buckets turn-start sums by it. Same optionality
+   * bargain as turnStartStrength: optional for snapshots in flight (the
+   * reducer backfills it from `branch`), mandatory server-side.
+   */
+  turnStartBranch?: ForceBranch;
 }
 
 // ------------------------------------------------------------------

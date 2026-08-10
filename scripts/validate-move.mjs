@@ -89,8 +89,9 @@ const changedFiles = files.map((f) => f.filename);
 const perms = JSON.parse(fs.readFileSync(`${BASE}/public/data/perm.json`, 'utf-8'));
 const base = readStateAndForces(BASE);
 // Head may be missing files the PR didn't touch — but the actions/checkout
-// step always pulls the full PR branch, so files unchanged from main are
-// still present. Use whatever is there; fall back to base values if a
+// step pulls the whole tree of refs/pull/N/merge (the PR already merged
+// into main, not the raw branch), so files unchanged from main are still
+// present. Use whatever is there; fall back to base values if a
 // structural file is missing entirely.
 const headRaw = readStateAndForces(HEAD);
 const head = {

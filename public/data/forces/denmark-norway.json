@@ -10,6 +10,8 @@
     "lon": 12.6,
     "turnStartLat": 55.68,
     "turnStartLon": 12.6,
+    "turnStartStrength": 20,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }

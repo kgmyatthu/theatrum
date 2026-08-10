@@ -6,6 +6,8 @@
 
 import {
   budgetForBranch,
+  checkAnchorConservation,
+  checkRaiseBudgets,
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
 } from './movement.mjs';
@@ -158,28 +160,70 @@ export function validateMove(inputs) {
       reason: `turn.lastTurnDays is missing or invalid (${lastTurnDays}). Your client is stale; hard-refresh the page.`,
     };
   }
+  // turnNumber gets the same guard as lastTurnDays because it is load-
+  // bearing twice over: it arms the newly-raised movement lock below, and
+  // it decides whether the anchor-conservation gate runs at all. Read raw
+  // and left undefined it fails OPEN in both places — nothing equals
+  // undefined, so no force is ever "raised this turn" and every regiment
+  // levied this turn is free to march. Demand a real number up front and
+  // both call sites can stop re-testing the type.
   const currentTurnNumber = head.turn?.turnNumber;
+  if (typeof currentTurnNumber !== 'number') {
+    return {
+      valid: false,
+      reason: `turn.turnNumber is missing or invalid (${currentTurnNumber}). Your client is stale; hard-refresh the page.`,
+    };
+  }
   for (const [nation, forces] of Object.entries(head.forces)) {
     for (const f of forces) {
       // Reject pre-turn forces — every force must carry its turn-tracking
       // fields. Clients on older bundles get rejected here.
+      // strength/turnStartStrength are mandatory for the same reason the
+      // position anchors are: the raise-budget gate below subtracts them,
+      // and a missing or NaN operand would silently price recruitment at
+      // zero. Negative strength is rejected too — it would let a nation
+      // bank headroom by claiming a debt.
+      // turnStartBranch is mandatory for the same reason and must be one
+      // of the two real branches: it is the anchor's branch identity, and
+      // both gates below key off it — raiseCost compares it against the
+      // current branch to bill a re-brand in full, and the conservation
+      // sums bucket by it. A missing or bogus value lands the anchor in
+      // the army pool by fallback, which silently moves a navy anchor
+      // between pools.
+      // lat/lon and branch are here to close a worker-vs-validator gap
+      // rather than for arithmetic of our own: the worker rejects both,
+      // this file did not, and anything this file waves through lands on
+      // main — where it is read back into every client's snapshot and
+      // bounces EVERY player's next submission off the worker's guard.
+      // A single hand-crafted PR carrying branch:'cavalry' was enough to
+      // brick submissions game-wide. (A bad lat/lon also slips the
+      // displacement check below, since NaN > x is false.) The message is
+      // left as-is: it names the fields that motivated it, not every
+      // field tested, and it is asserted verbatim on both sides.
       if (
         typeof f.turnStartLon !== 'number' ||
         typeof f.turnStartLat !== 'number' ||
-        typeof f.kmMovedThisTurn !== 'number'
+        typeof f.kmMovedThisTurn !== 'number' ||
+        typeof f.lat !== 'number' ||
+        typeof f.lon !== 'number' ||
+        !Number.isFinite(f.strength) ||
+        f.strength < 0 ||
+        !Number.isFinite(f.turnStartStrength) ||
+        f.turnStartStrength < 0 ||
+        (f.turnStartBranch !== 'army' && f.turnStartBranch !== 'navy') ||
+        (f.branch !== 'army' && f.branch !== 'navy')
       ) {
         return {
           valid: false,
-          reason: `force ${f.id} in forces/${nation}.json is missing turn-tracking fields (turnStartLon, turnStartLat, kmMovedThisTurn). Hard-refresh the page.`,
+          reason: `force ${f.id} in forces/${nation}.json is missing turn-tracking fields (turnStartLon, turnStartLat, kmMovedThisTurn, strength, turnStartStrength, turnStartBranch). Hard-refresh the page.`,
         };
       }
       // Newly raised forces can't move at all during the turn they were
       // raised on. createdAtTurn is optional for back-compat with seed
-      // forces baked without it — those are treated as primordial.
-      const justRaised =
-        typeof f.createdAtTurn === 'number' &&
-        typeof currentTurnNumber === 'number' &&
-        f.createdAtTurn === currentTurnNumber;
+      // forces baked without it — those are treated as primordial, which
+      // the strict equality gives for free now that currentTurnNumber is
+      // guaranteed a number: undefined never equals it.
+      const justRaised = f.createdAtTurn === currentTurnNumber;
       if (justRaised && f.kmMovedThisTurn > MOVEMENT_TOLERANCE_KM) {
         return {
           valid: false,
@@ -200,6 +244,87 @@ export function validateMove(inputs) {
           reason: `force ${f.id} in forces/${nation}.json displacement (${Math.round(displacement)} km) exceeds reported movement (${Math.round(f.kmMovedThisTurn)} km) — refresh the page`,
         };
       }
+    }
+  }
+
+  // ── Per-nation raise budget (universal) ─────────────────────────────
+  // Sits outside the loop above because it is a per-nation sum, not a
+  // per-force test: head.forces is already the complete
+  // Record<nation, Force[]>, and the checker needs to see every force a
+  // nation owns or it under-counts what that nation spent. That whole-
+  // record recomputation is also what makes the cap cumulative across
+  // several PRs inside one turn without storing a counter anywhere.
+  // Runs after the missing-fields guard above has vetted strength and
+  // turnStartStrength on every force, since the checker assumes numbers.
+  const overCap = checkRaiseBudgets(head.forces, lastTurnDays);
+  if (overCap) {
+    // Already a finished sentence, and the violation belongs to a nation
+    // rather than any one force, so it gets no force/file prefix.
+    return { valid: false, reason: overCap };
+  }
+
+  // ── Anchor conservation (universal) ─────────────────────────────────
+  // The cap above is only as honest as the anchors it subtracts from, and
+  // those anchors are asserted by the client. This is what makes them
+  // safe: every head force is paired to its base self BY ID, and a
+  // nation's per-branch anchor total may not exceed what exactly those
+  // forces were anchored at in base. A force base never saw funds none of
+  // that total, so a fabricated anchor — invented on an injected force,
+  // edited upward to zero out that force's own growth, or freed up by a
+  // mauled force and then spent a second time on a new one — has nowhere
+  // to have come from.
+  //
+  // SCOPE is asymmetric on purpose: HEAD is narrowed to the nation files
+  // this PR changes, BASE is passed whole.
+  //
+  // HEAD narrows because base and head are not two views of one commit.
+  // base.forces is main RIGHT NOW (the workflow checks out base.ref);
+  // head.forces is refs/pull/N/merge — this PR already merged into main,
+  // NOT the raw PR branch. That normally leaves an untouched file
+  // identical on both sides, but GitHub computes the merge ref
+  // asynchronously and does not re-cut it in step with our checkout, so it
+  // can sit one merge behind, and the drift runs the wrong way the moment
+  // another nation disbands a force: base no longer holds that id, the
+  // stale merge result still does, its allowance is 0, and an innocent
+  // player is rejected in a third party's name. Narrowing costs nothing,
+  // because anything this submission forges shows up as a changed file by
+  // construction.
+  //
+  // BASE must NOT be narrowed by the same list — that is the one place
+  // id-pairing gets silently unbuilt. A renamed force's base entry lives
+  // under the OLD nation, and the old nation never survives into `touched`
+  // below: the `head.forces[n]` guard drops it precisely because its file
+  // is now empty or gone. Index base from that subset and RENAME_COUNTRY —
+  // which rewrites force.nation and so carries whole ids from
+  // forces/spain.json into forces/hispania.json — reads every one of those
+  // ids as freshly invented against an allowance of 0, and a shipped admin
+  // feature becomes unsubmittable mid-turn. Base is content main already
+  // accepted, so there is nothing to be gained by looking at less of it.
+  //
+  // EXCEPTION — the one hole in an otherwise total check: when the turn
+  // advances, every anchor is SUPPOSED to jump up to its force's current
+  // strength, so a submission that changes turnNumber skips the gate
+  // entirely. That is safe only because turn.json is admin-only: a player
+  // who edits it trips the file-scope check below, and a player who merely
+  // carries a stale copy (branched before an advance, so turn.json is not
+  // in changedFiles at all) trips the base/head turn compare at the very
+  // bottom. base.turn is trusted, so if it somehow has no turnNumber the
+  // repo is broken rather than under attack and the comparison skips.
+  if (currentTurnNumber === base.turn?.turnNumber) {
+    const touched = {};
+    for (const p of changedFiles) {
+      const n = nationFromForcePath(p);
+      if (n && head.forces[n]) touched[n] = head.forces[n];
+    }
+    // No force file in the list means either nothing to conserve or a CI
+    // that misreported changedFiles — the same worry the belt-and-
+    // suspenders compares at the bottom carry. Over-check rather than
+    // skip: PRs with no force edits are admin-only and rare.
+    const scope = Object.keys(touched).length > 0 ? touched : head.forces;
+    const inflated = checkAnchorConservation(base.forces, scope);
+    if (inflated) {
+      // Same shape as overCap: a finished, nation-level sentence.
+      return { valid: false, reason: inflated };
     }
   }
 

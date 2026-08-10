@@ -10,6 +10,8 @@
     "lon": 78.48,
     "turnStartLat": 17.38,
     "turnStartLon": 78.48,
+    "turnStartStrength": 30000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }

@@ -43,3 +43,49 @@ export function daysBetween(isoFrom: string, isoTo: string): number {
   if (Number.isNaN(a) || Number.isNaN(b)) return 0;
   return Math.round((b - a) / 86_400_000);
 }
+
+// ── Recruitment budgets ──────────────────────────────────────────────
+// Mirror of the same block in scripts/lib/movement.mjs — the reason
+// strings are part of the contract, so keep them character-identical.
+
+/** Men (army) and ships (navy) a nation may raise per whole month of
+ *  turn length. Flat rates: the calendar is the only brake. */
+export const MEN_PER_MONTH = 15000;
+export const SHIPS_PER_MONTH = 1;
+
+// Fixed-length month, not the Gregorian calendar — whole 30-day blocks
+// so the cap can't be gamed by picking a long month.
+const DAYS_PER_MONTH = 30;
+
+/** Whole months in the turn. Floored, so a 59-day turn buys one month's
+ *  recruits and a 29-day turn buys none. */
+function turnMonths(lastTurnDays: number): number {
+  return Math.floor(Math.max(0, lastTurnDays) / DAYS_PER_MONTH);
+}
+
+/** Per-nation, per-turn recruitment cap for a branch. */
+export function raiseBudget(branch: ForceBranch, lastTurnDays: number): number {
+  const perMonth = branch === 'navy' ? SHIPS_PER_MONTH : MEN_PER_MONTH;
+  return turnMonths(lastTurnDays) * perMonth;
+}
+
+/** What one force charges against its nation's cap this turn.
+ *  turnStartStrength is the strength held at the START of the turn, so a
+ *  force raised mid-turn carries an anchor of 0 and bills its full
+ *  strength — the anchor already encodes "did not exist yet", which is
+ *  why createdAtTurn is not consulted here (it is now purely the
+ *  movement lock). Reinforcement costs the men added, losses cost
+ *  nothing, a split nets zero across both halves, and the backfilled
+ *  legacy order of battle costs 0. A re-branded force pays in full: its
+ *  anchor was earned in the branch it left, so against the pool it moved
+ *  into it is brand new — without that clause a 40000-man army edited to
+ *  navy/40 scores max(0, 40 - 40000) = 0 and lands 40 ships. */
+export function raiseCost(force: Force): number {
+  if (force.branch !== force.turnStartBranch) return force.strength;
+  // Asserted, not defaulted: the anchors are optional in the type only
+  // for snapshots in flight, and both the worker and the CI validator
+  // reject a force missing them. A `?? 0` here would silently bill a
+  // legacy force its whole strength and diverge from movement.mjs, which
+  // does the bare subtraction.
+  return Math.max(0, force.strength - force.turnStartStrength!);
+}
