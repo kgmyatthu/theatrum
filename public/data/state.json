@@ -11,7 +11,7 @@
     ],
     [
       2,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       3,
@@ -2327,19 +2327,19 @@
     ],
     [
       581,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       582,
-      "portugal"
+      "portugal colonies"
     ],
     [
       583,
-      "portugal"
+      "portugal colonies"
     ],
     [
       584,
-      "portugal"
+      "portugal colonies"
     ],
     [
       585,
@@ -2351,7 +2351,7 @@
     ],
     [
       587,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       588,
@@ -7115,43 +7115,43 @@
     ],
     [
       1778,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1779,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1780,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1781,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1782,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1783,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1784,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1785,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1786,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1787,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1788,
@@ -7163,11 +7163,11 @@
     ],
     [
       1790,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1791,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1792,
@@ -7207,11 +7207,11 @@
     ],
     [
       1801,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1802,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1803,
@@ -7223,7 +7223,7 @@
     ],
     [
       1805,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1806,
@@ -7291,27 +7291,27 @@
     ],
     [
       1822,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1823,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1824,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1825,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1826,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1827,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1828,
@@ -7323,11 +7323,11 @@
     ],
     [
       1830,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1831,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       1832,
@@ -11619,11 +11619,11 @@
     ],
     [
       2904,
-      "unclaimed"
+      "dutch colonies"
     ],
     [
       2905,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       2906,
@@ -11831,35 +11831,35 @@
     ],
     [
       2957,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2958,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2959,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2960,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2961,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2962,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2963,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2964,
-      "portugal"
+      "portugal colonies"
     ],
     [
       2965,
@@ -11883,7 +11883,7 @@
     ],
     [
       2970,
-      "batavian republic"
+      "dutch colonies"
     ],
     [
       2971,
@@ -12403,7 +12403,7 @@
     ],
     [
       3100,
-      "unclaimed"
+      "dutch colonies"
     ],
     [
       3101,
@@ -13271,11 +13271,11 @@
     ],
     [
       3317,
-      "portugal"
+      "portugal colonies"
     ],
     [
       3318,
-      "portugal"
+      "portugal colonies"
     ],
     [
       3319,
@@ -18466,6 +18466,10 @@
     {
       "name": "durrani empire",
       "color": "#556B2F"
+    },
+    {
+      "name": "dutch colonies",
+      "color": "#ffac38"
     },
     {
       "name": "emirate of diriyah",
