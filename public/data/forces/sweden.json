@@ -8,11 +8,11 @@
     "commander": "",
     "lat": 58.83649009392136,
     "lon": 19.028320312500004,
-    "turnStartLat": 56.16,
-    "turnStartLon": 15.59,
+    "turnStartLat": 58.83649009392136,
+    "turnStartLon": 19.028320312500004,
     "turnStartStrength": 11,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 361.5273101334637,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
