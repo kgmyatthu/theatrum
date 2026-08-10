@@ -8,13 +8,18 @@ import {
   MOVEMENT_TOLERANCE_KM,
   MEN_PER_MONTH,
   SHIPS_PER_MONTH,
+  MAX_ARMY_POP_SHARE,
+  MIN_MEN_PER_MONTH,
+  REFERENCE_POP,
   budgetForBranch,
   checkAnchorConservation,
   checkRaiseBudgets,
   daysBetween,
   haversineKm,
+  menPerMonth,
   raiseBudget,
   raiseCost,
+  standingArmyCeiling,
   turnMonths,
 } from '../lib/movement.mjs';
 
@@ -127,6 +132,15 @@ test('turnMonths: negative days clamp to zero (no negative cap)', () => {
   assert.equal(turnMonths(-30), 0);
 });
 
+// Every raiseBudget block from here to the population section below
+// deliberately omits the third (population) argument, and that omission is
+// the assertion: it pins the FAIL-OPEN fallback. With no population
+// supplied menPerMonth answers the flat MEN_PER_MONTH, so these are
+// bit-for-bit the numbers this rule produced before populations existed —
+// which is also why the 193 tests that predate the feature needed no edit
+// to keep passing. Do not "modernise" these by threading a population
+// through: that would delete the only coverage of the path every
+// pre-population caller still takes.
 test('raiseBudget: a 30-day turn buys 15000 men or 1 ship', () => {
   assert.equal(raiseBudget('army', 30), MEN_PER_MONTH);
   assert.equal(raiseBudget('navy', 30), SHIPS_PER_MONTH);
@@ -305,6 +319,386 @@ test('checkRaiseBudgets: first offender is deterministic (nations sorted, army f
   ];
   const reason = checkRaiseBudgets({ spain: bust(), france: bust() }, 30);
   assert.match(reason, /^france exceeded its army recruitment cap/);
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Population-derived recruitment: the monthly FLOW and the standing STOCK
+//
+// Two different quantities, and keeping them apart is the whole design.
+// menPerMonth is a FLOW — men a nation may raise per whole month — and it
+// scales with sqrt(pop), so britain's 105.6M buys 39,792/mo instead of
+// out-typing the board 7:1 over sweden. standingArmyCeiling is a STOCK —
+// men under arms at once, whenever they were raised — and it is a flat 4%
+// share. A nation can sit inside its monthly flow every single turn and
+// still walk into the stock ceiling; and it can be OVER the stock ceiling
+// having raised nothing at all, because losing provinces moves the
+// ceiling and not the army.
+//
+// The two absences are not the same absence, and every gate in the game
+// leans on the difference:
+//   - no population argument at all → the table does not exist, so the
+//     rule is UNENFORCED: flat MEN_PER_MONTH, ceiling Infinity. Fail
+//     OPEN. This is what stops a turn.json written before the feature
+//     from bricking every submission in the game.
+//   - a nation merely MISSING from a table that does exist → a real (if
+//     unflattering) answer of 0 people, so the MIN_MEN_PER_MONTH floor
+//     for both rules. Fail CLOSED.
+//
+// The shipped figures are asserted as literals on purpose. They are what
+// public/data/turn.json actually contains today, so a re-bake that moves
+// a population fails loudly right here instead of quietly handing a
+// player a different army.
+// ────────────────────────────────────────────────────────────────────
+
+test('menPerMonth: the reference population raises exactly MEN_PER_MONTH', () => {
+  // The calibration point the whole curve hangs off: a nation of exactly
+  // REFERENCE_POP people is the one nation whose rate is unchanged by this
+  // feature, which is why MEN_PER_MONTH could keep its value and its name.
+  assert.equal(REFERENCE_POP, 15_000_000);
+  assert.equal(menPerMonth(REFERENCE_POP), MEN_PER_MONTH);
+  assert.equal(menPerMonth(15_000_000), 15000);
+  // Square root, not linear: 4× the people is 2× the men. Assert it at a
+  // round multiple so a future edit to linear scaling (which would give
+  // 60000 here) cannot slip through looking plausible.
+  assert.equal(menPerMonth(60_000_000), 30000);
+});
+
+test('menPerMonth: the real shipped populations — a re-bake must fail here, loudly', () => {
+  // These three are the spread the curve has to survive: britain is the
+  // largest population in the game, austria a great power, sweden the
+  // tightest-squeezed nation on the board. 32× britain's population over
+  // sweden's buys only 5.7× the men.
+  assert.equal(menPerMonth(105562162), 39792); // britain
+  assert.equal(menPerMonth(21222995), 17842); // austria
+  assert.equal(menPerMonth(3229802), 6960); // sweden
+});
+
+test('menPerMonth: the floor, and the exact crossover where both branches agree', () => {
+  // 600000 is where the curve meets the floor exactly — 15000·sqrt(0.04)
+  // is 3000 on the nose, so this is the one population at which the
+  // scaled branch and the clamped branch cannot disagree. Asserting the
+  // raw arithmetic alongside the result pins WHY it is the crossover, so
+  // moving MIN_MEN_PER_MONTH or REFERENCE_POP without moving this test
+  // becomes impossible.
+  assert.equal(MEN_PER_MONTH * Math.sqrt(600_000 / REFERENCE_POP), MIN_MEN_PER_MONTH);
+  assert.equal(menPerMonth(600_000), 3000);
+  // Below it the floor is doing the work, all the way down to nobody.
+  assert.equal(menPerMonth(500_000), 3000);
+  assert.equal(menPerMonth(0), 3000);
+  assert.equal(MIN_MEN_PER_MONTH, 3000);
+});
+
+test('menPerMonth: absence fails OPEN — no population means the flat rate, not no men', () => {
+  // The load-bearing case. `undefined` is "we were not told", and the
+  // answer to that is the rule this one replaced, bit for bit.
+  assert.equal(menPerMonth(undefined), MEN_PER_MONTH);
+  assert.equal(menPerMonth(), MEN_PER_MONTH);
+  // Garbage folds into the same branch deliberately. Math.max(3000, NaN)
+  // is NaN, which loses every comparison it appears in AND renders "cap
+  // is NaN men" into a player-facing rejection. A garbage number is not
+  // evidence about a nation, so it is treated as no evidence.
+  assert.equal(menPerMonth(NaN), MEN_PER_MONTH);
+  assert.equal(menPerMonth(Infinity), MEN_PER_MONTH);
+  // A negative population is nonsense but it is FINITE, so it does not
+  // take the branch above — it is clamped to 0 before the sqrt instead,
+  // because sqrt(negative) is the very NaN that guard exists to prevent.
+  assert.equal(menPerMonth(-5), MIN_MEN_PER_MONTH);
+});
+
+test('standingArmyCeiling: 4% of the shipped populations', () => {
+  assert.equal(MAX_ARMY_POP_SHARE, 0.04);
+  assert.equal(standingArmyCeiling(3229802), 129192); // sweden
+  assert.equal(standingArmyCeiling(21222995), 848919); // austria
+  assert.equal(standingArmyCeiling(105562162), 4222486); // britain
+});
+
+test('standingArmyCeiling: floors, never rounds — "may never exceed"', () => {
+  // 0.04 × 1000013 is 40000.52. Rounded that is 40001 and the nation gets
+  // a man its people do not support; floored it is 40000. The rule is a
+  // hard ceiling, so the fractional man is always lost.
+  assert.equal(Math.round(MAX_ARMY_POP_SHARE * 1000013), 40001);
+  assert.equal(standingArmyCeiling(1000013), 40000);
+});
+
+test('standingArmyCeiling: the same floor as the monthly rate, for the same reason', () => {
+  // A microstate must be able to KEEP a garrison, not merely to raise one
+  // — a 3000/month rate over a 40-man ceiling would be a nation that
+  // cannot play. Hence one shared floor.
+  assert.equal(standingArmyCeiling(0), MIN_MEN_PER_MONTH);
+  assert.equal(standingArmyCeiling(100), MIN_MEN_PER_MONTH);
+  assert.equal(standingArmyCeiling(74_999), MIN_MEN_PER_MONTH);
+  // 75000 × 0.04 is exactly 3000, so this is the ceiling's own crossover.
+  assert.equal(standingArmyCeiling(75_000), MIN_MEN_PER_MONTH);
+  assert.equal(standingArmyCeiling(75_025), 3001);
+  assert.equal(standingArmyCeiling(-5), MIN_MEN_PER_MONTH);
+});
+
+test('standingArmyCeiling: absence fails OPEN as Infinity — the one-expression "unenforced"', () => {
+  // Infinity rather than a null/flag/boolean because `standing > Infinity`
+  // is always false: the call site gets "rule off" for free and needs no
+  // second branch asking whether the rule is on at all.
+  assert.equal(standingArmyCeiling(undefined), Infinity);
+  assert.equal(standingArmyCeiling(), Infinity);
+  assert.equal(standingArmyCeiling(NaN), Infinity);
+  assert.ok(!(Number.MAX_SAFE_INTEGER > standingArmyCeiling(undefined)));
+});
+
+test('raiseBudget: population scales the army pool and never the navy', () => {
+  // sweden's 3.2M. The army rate is population-derived and multiplies by
+  // the month count like it always did; the navy is flat, because hulls
+  // are limited by yards and timber rather than by how many people a
+  // country has. The third argument reaching the navy branch at all would
+  // be the bug.
+  assert.equal(raiseBudget('army', 30, 3229802), 6960);
+  assert.equal(raiseBudget('army', 60, 3229802), 13920);
+  assert.equal(raiseBudget('navy', 30, 3229802), SHIPS_PER_MONTH);
+  assert.equal(raiseBudget('navy', 60, 3229802), 2);
+  // Unknown branches still fall back to the army rate — now the
+  // population-derived one, matching menPerMonth rather than the flat cap.
+  assert.equal(raiseBudget('cavalry', 30, 3229802), 6960);
+  // And a sub-month turn buys nothing however many people you have.
+  assert.equal(raiseBudget('army', 29, 105562162), 0);
+});
+
+test('checkRaiseBudgets: a population table replaces the flat cap in the same message', () => {
+  // The cap message is unchanged prose with a different number
+  // interpolated — no new string, no new shape for a player to learn.
+  const forces = { sweden: [unit({ strength: 7000, turnStartStrength: 0 })] };
+  assert.equal(
+    checkRaiseBudgets(forces, 30, { sweden: 3229802 }),
+    'sweden exceeded its army recruitment cap: 7000 men raised or reinforced this turn, cap is 6960 men for a 1-month turn',
+  );
+});
+
+test('checkRaiseBudgets: raising exactly the population-derived cap passes', () => {
+  const forces = { sweden: [unit({ strength: 6960, turnStartStrength: 0 })] };
+  assert.equal(checkRaiseBudgets(forces, 30, { sweden: 3229802 }), null);
+});
+
+test('checkRaiseBudgets: a nation missing from a supplied table is 0 people, not unknown', () => {
+  // FAIL CLOSED ON CONTENTS. The table exists, so its silence about spain
+  // is an answer: 0 people, which is the 3000 floor for both rules. The
+  // ceiling bites first here, and the message says "a population of 0" —
+  // which is exactly the tell an admin needs to spot a nation that fell
+  // out of the bake.
+  const table = { france: 15_000_000 };
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, table),
+    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 4% of the nation it is raised from',
+  );
+  // And the floor really is usable rather than merely present: 3000 men
+  // clears the ceiling (not >) and exactly fills the floored monthly cap.
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 3000, turnStartStrength: 0 })] }, 30, table),
+    null,
+  );
+  // An empty table is still a table — present, and silent about everyone.
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, {}),
+    'spain exceeded its standing army ceiling: 3001 men under arms, but a population of 0 supports at most 3000 — an army may never exceed 4% of the nation it is raised from',
+  );
+});
+
+test('checkRaiseBudgets: a garbage population fails OPEN for that nation, not "NaN men"', () => {
+  // ?? only catches null and undefined, so a NaN sitting in the table
+  // reaches menPerMonth/standingArmyCeiling as a real value. Both fold it
+  // into their absence branch, so this nation lands on exactly the
+  // no-table behaviour — the flat 15000 and no ceiling — rather than
+  // being told its cap is NaN, a message no player could act on. Note
+  // that fail OPEN means "the rule this replaced", not "no rule at all".
+  const forces = (raised) => ({
+    spain: [
+      unit({ strength: 900000, turnStartStrength: 900000 }),
+      unit({ strength: raised, turnStartStrength: 0 }),
+    ],
+  });
+  // 900,000 standing would break any real ceiling; NaN yields Infinity, so
+  // nothing catches it, and the flat monthly cap is what remains in force.
+  assert.equal(checkRaiseBudgets(forces(15000), 30, { spain: NaN }), null);
+  const overFlat = checkRaiseBudgets(forces(15001), 30, { spain: NaN });
+  assert.equal(
+    overFlat,
+    'spain exceeded its army recruitment cap: 15001 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+  );
+  // The whole point of folding non-finite into the absence branch: no
+  // arithmetic on NaN ever reaches a player's rejection comment.
+  assert.ok(!overFlat.includes('NaN'));
+  // null and undefined VALUES do get the ?? treatment and read as 0,
+  // because a key present with no number is the same evidence as no key.
+  assert.match(
+    checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, { spain: null }),
+    /a population of 0 supports at most 3000/,
+  );
+  assert.match(
+    checkRaiseBudgets({ spain: [unit({ strength: 3001, turnStartStrength: 0 })] }, 30, { spain: undefined }),
+    /a population of 0 supports at most 3000/,
+  );
+});
+
+test('checkRaiseBudgets: NO BRICK — a nation that loses land is over its ceiling and still playable', () => {
+  // The case this rule must not break, and the reason the ceiling test
+  // sits AFTER the `total <= 0` guard rather than before it. Sweden loses
+  // Finland: its population drops to 2,360,845, its ceiling drops with it
+  // to 94,433, and its 100,000 standing men are suddenly illegal having
+  // done nothing whatsoever. Hard-rejecting there would mean sweden can no
+  // longer move, split, disband, take losses, or advance the turn — a
+  // nation deleted from the game by an ownership edit it did not make.
+  //
+  // Every shape below spends 0 army budget and so never reaches the
+  // ceiling test at all. If this test starts failing, the ceiling has
+  // regressed to hard-reject semantics; do NOT relax the assertion.
+  const pop = { sweden: 2360845 };
+  // Standing still: the whole order of battle, anchored at its own strength.
+  assert.equal(
+    checkRaiseBudgets({ sweden: [unit({ strength: 100000, turnStartStrength: 100000 })] }, 30, pop),
+    null,
+  );
+  // Split: the anchor partitions across both halves, so neither shows growth.
+  assert.equal(
+    checkRaiseBudgets({
+      sweden: [
+        unit({ strength: 60000, turnStartStrength: 60000 }),
+        unit({ strength: 40000, turnStartStrength: 40000 }),
+      ],
+    }, 30, pop),
+    null,
+  );
+  // Disband: the force is simply gone from the array.
+  assert.equal(checkRaiseBudgets({ sweden: [] }, 30, pop), null);
+  // Losses: raiseCost clamps at 0, so a mauled army bills nothing — and
+  // note this one ends UNDER the ceiling anyway, which is the way out.
+  assert.equal(
+    checkRaiseBudgets({ sweden: [unit({ strength: 90000, turnStartStrength: 100000 })] }, 30, pop),
+    null,
+  );
+  // A turn advance restamps every anchor to current strength — still no
+  // growth, so still nothing spent, so still no ceiling test.
+  assert.equal(
+    checkRaiseBudgets({ sweden: [unit({ strength: 100000, turnStartStrength: 100000 })] }, 60, pop),
+    null,
+  );
+});
+
+test('checkRaiseBudgets: over the ceiling, raising even one man is refused', () => {
+  // The other half of the no-brick case: sweden may do everything except
+  // grow. One man is enough to reach the test, and the message names the
+  // stock, the population behind it, and the ceiling that stock broke.
+  const forces = {
+    sweden: [
+      unit({ strength: 100000, turnStartStrength: 100000 }),
+      unit({ strength: 1, turnStartStrength: 0 }),
+    ],
+  };
+  assert.equal(
+    checkRaiseBudgets(forces, 30, { sweden: 2360845 }),
+    'sweden exceeded its standing army ceiling: 100001 men under arms, but a population of 2360845 supports at most 94433 — an army may never exceed 4% of the nation it is raised from',
+  );
+});
+
+test('checkRaiseBudgets: the ceiling is strict > — you may recruit up TO it, never past it', () => {
+  // pop 1,000,000 puts the ceiling at exactly 40000, so all three cases
+  // below turn on the comparison operator alone.
+  const pop = { spain: 1_000_000 };
+  // Sitting exactly on the ceiling, spending nothing: legal.
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 40000, turnStartStrength: 40000 })] }, 30, pop),
+    null,
+  );
+  // Recruiting the last man the population supports, landing exactly on
+  // the ceiling: also legal. `>=` here would make the ceiling unreachable.
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 40000, turnStartStrength: 39999 })] }, 30, pop),
+    null,
+  );
+  // One man past it: refused.
+  assert.equal(
+    checkRaiseBudgets({ spain: [unit({ strength: 40001, turnStartStrength: 40000 })] }, 30, pop),
+    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from',
+  );
+});
+
+test('checkRaiseBudgets: the ceiling is army-only — the navy sails over it', () => {
+  // Two independent claims. First: a nation whose ARMY is over its ceiling
+  // may still lay down a hull, because the navy's spend is a separate pool
+  // and the army iteration `continue`s at zero spend before the ceiling
+  // test is ever reached.
+  assert.equal(
+    checkRaiseBudgets({
+      sweden: [
+        unit({ branch: 'army', strength: 100000, turnStartStrength: 100000 }),
+        unit({ branch: 'navy', strength: 1, turnStartStrength: 0 }),
+      ],
+    }, 30, { sweden: 2360845 }),
+    null,
+  );
+  // Second: ships are not men, so a fleet contributes NOTHING to the
+  // stock. 900,000 hulls beside a 1-man army is 1 man under arms against
+  // a 40000 ceiling — absurd as a fleet, but the right answer here, and
+  // the navy has no ceiling of its own to catch it.
+  assert.equal(
+    checkRaiseBudgets({
+      spain: [
+        unit({ branch: 'navy', strength: 900000, turnStartStrength: 900000 }),
+        unit({ branch: 'army', strength: 1, turnStartStrength: 0 }),
+      ],
+    }, 30, { spain: 1_000_000 }),
+    null,
+  );
+});
+
+test('checkRaiseBudgets: a force that bills the army pool is always also counted in the army stock', () => {
+  // Both sums key off the CURRENT branch, and this pins that they cannot
+  // drift apart. A fleet re-branded into the army bills its full strength
+  // (the anchor was earned in the navy) — and the very same men land in
+  // the stock, so the ceiling sees them. Bucketing `standing` by
+  // turnStartBranch instead would let 40001 men enter the army invisibly.
+  const forces = {
+    spain: [unit({ branch: 'army', turnStartBranch: 'navy', strength: 40001, turnStartStrength: 40 })],
+  };
+  assert.equal(
+    checkRaiseBudgets(forces, 30, { spain: 1_000_000 }),
+    'spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from',
+  );
+});
+
+test('checkRaiseBudgets: PRECEDENCE — busting both the ceiling and the cap reports the ceiling', () => {
+  // sweden's cap is 5951/month and its ceiling 94,433; this submission
+  // breaks both. The ceiling wins because trimming to the monthly cap
+  // would not fix it — the nation is over on STOCK, and reporting a flow
+  // number would send the player to shave 4049 men off a raise that is
+  // not the problem. The operative rule is "over the ceiling ⇒ no men at
+  // all", not "recruit up to the ceiling", and the message has to say so.
+  const forces = {
+    sweden: [
+      unit({ strength: 100000, turnStartStrength: 100000 }),
+      unit({ strength: 10000, turnStartStrength: 0 }),
+    ],
+  };
+  assert.equal(
+    checkRaiseBudgets(forces, 30, { sweden: 2360845 }),
+    'sweden exceeded its standing army ceiling: 110000 men under arms, but a population of 2360845 supports at most 94433 — an army may never exceed 4% of the nation it is raised from',
+  );
+});
+
+test('checkRaiseBudgets: omitting the population argument switches BOTH rules off', () => {
+  // FAIL OPEN ON ABSENCE, at the gate rather than at the helper. The same
+  // sweden that is 15,567 men over its ceiling two tests up is simply
+  // uncapped here, and the flat 15000 is back — which is precisely the
+  // behaviour every one of this file's pre-population tests relies on.
+  const overCeiling = (raised) => ({
+    sweden: [
+      unit({ strength: 100000, turnStartStrength: 100000 }),
+      unit({ strength: raised, turnStartStrength: 0 }),
+    ],
+  });
+  assert.equal(checkRaiseBudgets(overCeiling(15000), 30), null);
+  assert.equal(
+    checkRaiseBudgets(overCeiling(15001), 30),
+    'sweden exceeded its army recruitment cap: 15001 men raised or reinforced this turn, cap is 15000 men for a 1-month turn',
+  );
+  // Explicit undefined is the same absence as no argument — the value the
+  // callers actually pass when turn.json carries no table.
+  assert.equal(checkRaiseBudgets(overCeiling(15000), 30, undefined), null);
 });
 
 // ────────────────────────────────────────────────────────────────────

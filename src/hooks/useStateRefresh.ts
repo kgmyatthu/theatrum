@@ -104,6 +104,7 @@ export function useStateRefresh(): { conflict: boolean; stale: boolean } {
       currentDate: state.currentDate,
       lastTurnDays: state.lastTurnDays,
       turnNumber: state.turnNumber,
+      populationByNation: state.populationByNation,
     });
     baselineRef.current = JSON.stringify(snap);
   }, [
@@ -193,6 +194,7 @@ export function useStateRefresh(): { conflict: boolean; stale: boolean } {
         currentDate: cur.currentDate,
         lastTurnDays: cur.lastTurnDays,
         turnNumber: cur.turnNumber,
+        populationByNation: cur.populationByNation,
       });
       const hasLocalEdits =
         JSON.stringify(localSnap) !== baselineRef.current ||

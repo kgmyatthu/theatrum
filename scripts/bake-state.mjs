@@ -92,7 +92,7 @@ if (missing.length > 0) {
 }
 
 const state = {
-  appVersion: 'theatrum/v9',
+  appVersion: 'theatrum/v10',
   ownerships,
   countries,
 };
@@ -103,8 +103,17 @@ const state = {
 // lets players deploy + reposition forces on day one. Admins bump
 // these from the in-app "Advance Turn" control, which writes turn.json
 // without disturbing state.json.
+//
+// ponytail: no populationByNation here, even though turn.json carries one
+// from v10 onward. Ceiling: a freshly baked world recruits at the flat
+// MEN_PER_MONTH and has no standing-army ceiling, because an absent table
+// fails OPEN by contract (see menPerMonth / standingArmyCeiling). The first
+// admin turn advance writes the real table off live ownership and the rule
+// switches itself on. Upgrade path if a bake ever needs it armed from turn
+// zero: read population1800.json + the geojson here and sum by owner, the
+// same join the reducer's ADVANCE_TURN does.
 const turn = {
-  appVersion: 'theatrum/v9',
+  appVersion: 'theatrum/v10',
   currentDate: '1683-01-01',
   lastTurnDays: 30,
   turnNumber: 0,

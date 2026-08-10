@@ -47,11 +47,57 @@ export function daysBetween(isoFrom: string, isoTo: string): number {
 // ── Recruitment budgets ──────────────────────────────────────────────
 // Mirror of the same block in scripts/lib/movement.mjs — the reason
 // strings are part of the contract, so keep them character-identical.
+// checkRaiseBudgets is deliberately NOT mirrored: it is a gate, and a
+// gate belongs to the servers that can refuse a submission. The client
+// mirrors only what it needs to PREDICT a refusal — the per-branch cap,
+// so a panel can show it, and now the standing ceiling alongside it.
 
 /** Men (army) and ships (navy) a nation may raise per whole month of
- *  turn length. Flat rates: the calendar is the only brake. */
+ *  turn length. MEN_PER_MONTH is both the men-per-month AT
+ *  REFERENCE_POP and the fail-open fallback when no population is given.
+ *  SHIPS_PER_MONTH stays flat: hulls are limited by yards, not people. */
 export const MEN_PER_MONTH = 15000;
 export const SHIPS_PER_MONTH = 1;
+
+/** The population MEN_PER_MONTH is quoted at — a nation of exactly this
+ *  size raises exactly MEN_PER_MONTH per month, everyone else scales. */
+export const REFERENCE_POP = 15_000_000;
+
+/** Floor under both the monthly rate and the standing ceiling, so a
+ *  microstate can still field and keep a garrison rather than being a
+ *  nation that cannot play. */
+export const MIN_MEN_PER_MONTH = 3000;
+
+/** Hard share of a nation's people that may be under arms at once. */
+export const MAX_ARMY_POP_SHARE = 0.04;
+
+/** Men per whole month for a nation of `pop` people. Square root, not
+ *  linear: doubling the people multiplies the regiments by ~1.41, which
+ *  stops the largest populations out-typing everyone without starving
+ *  the small ones. `pop` undefined (or non-finite) means the population
+ *  table was not supplied — not that the nation has none — so it fails
+ *  OPEN to the flat MEN_PER_MONTH this rule replaced. The non-finite
+ *  half of that guard is load-bearing: Math.max(3000, NaN) is NaN, which
+ *  loses every comparison and would render a cap of "NaN men". */
+export function menPerMonth(pop?: number): number {
+  if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;
+  // Clamp before the sqrt — sqrt(negative) is the NaN we just guarded.
+  const scaled = MEN_PER_MONTH * Math.sqrt(Math.max(0, pop) / REFERENCE_POP);
+  return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));
+}
+
+/** The most men a nation may have STANDING at once — a stock ceiling on
+ *  everything currently branded army, distinct from the monthly flow: a
+ *  nation can be inside its monthly cap every turn and still hit this.
+ *  Floored, never rounded, because the rule is "may never exceed".
+ *  Fails OPEN on an absent population by returning Infinity, which is
+ *  the one-expression spelling of "unenforced" — `standing > Infinity`
+ *  is always false, so no call site needs a second branch to ask whether
+ *  the rule is switched on. The navy has no equivalent. */
+export function standingArmyCeiling(pop?: number): number {
+  if (pop === undefined || !Number.isFinite(pop)) return Infinity;
+  return Math.max(MIN_MEN_PER_MONTH, Math.floor(MAX_ARMY_POP_SHARE * Math.max(0, pop)));
+}
 
 // Fixed-length month, not the Gregorian calendar — whole 30-day blocks
 // so the cap can't be gamed by picking a long month.
@@ -63,9 +109,17 @@ function turnMonths(lastTurnDays: number): number {
   return Math.floor(Math.max(0, lastTurnDays) / DAYS_PER_MONTH);
 }
 
-/** Per-nation, per-turn recruitment cap for a branch. */
-export function raiseBudget(branch: ForceBranch, lastTurnDays: number): number {
-  const perMonth = branch === 'navy' ? SHIPS_PER_MONTH : MEN_PER_MONTH;
+/** Per-nation, per-turn recruitment cap for a branch. `pop` is OPTIONAL
+ *  and that is load-bearing: omitted, menPerMonth answers MEN_PER_MONTH
+ *  and the cap is bit-for-bit the flat one this parameter replaced, so
+ *  every call site that predates population is unchanged. The navy never
+ *  consults it. */
+export function raiseBudget(
+  branch: ForceBranch,
+  lastTurnDays: number,
+  pop?: number,
+): number {
+  const perMonth = branch === 'navy' ? SHIPS_PER_MONTH : menPerMonth(pop);
   return turnMonths(lastTurnDays) * perMonth;
 }
 

@@ -49,7 +49,7 @@ function force(overrides = {}) {
 
 function stateFile(overrides = {}) {
   return {
-    appVersion: 'theatrum/v9',
+    appVersion: 'theatrum/v10',
     ownerships: [
       [0, 'spain'],
       [1, 'france'],
@@ -65,7 +65,7 @@ function stateFile(overrides = {}) {
 
 function turnFile(overrides = {}) {
   return {
-    appVersion: 'theatrum/v9',
+    appVersion: 'theatrum/v10',
     currentDate: '1680-01-01',
     lastTurnDays: 30,
     turnNumber: 0,
@@ -1331,6 +1331,327 @@ test('pass: an honest re-brand inside the cap is billed, not blocked', () => {
         head: { forces: forcesMap({ spain: [nowACorps] }) },
       }),
     ),
+  );
+});
+
+// ────────────────────────────────────────────────────────────────────
+// Population-derived recruitment (turn.json → populationByNation)
+//
+// The arithmetic is unit-tested in movement.test.mjs; these pin the
+// WIRING — that the validator reads the table off head.turn, that absence
+// of the table is not an error, and that the standing-army ceiling binds
+// admins too.
+//
+// The default fixtures are unusually convenient here and the tests lean
+// on it: stateFile() hands spain fids 0 and 2, and force() is 40,000 men
+// anchored at 40,000 (so it spends nothing). A table putting spain at
+// exactly 1,000,000 people therefore sets its ceiling to exactly 40,000 —
+// the nation sits precisely ON its ceiling, and every case below is one
+// man either side of that line.
+//
+// Two traps worth naming, because the next person to write a fixture here
+// will hit both:
+//   1. The table must go on BOTH base.turn and head.turn. turn.json is
+//      admin-only, and a player submission whose base and head turn files
+//      differ by so much as one key trips "turn.json cannot be changed by
+//      players" at the very bottom of the validator, long before anything
+//      about recruitment is scored. In production they are identical for
+//      the same reason: the table is rewritten only on a turn advance,
+//      which is itself an admin PR.
+//   2. Nations are walked SORTED, so france is scored before spain — and
+//      a nation missing from a table that exists resolves to 0 people,
+//      i.e. a 3,000-man ceiling. The default france-1 is 40,000 men, so
+//      any fixture where france SPENDS must give france a population or
+//      it reports france's ceiling instead of whatever the test is about.
+//      That is not a bug; it is fail-closed-on-contents, and the last
+//      test in this section pins it deliberately.
+// ────────────────────────────────────────────────────────────────────
+
+/** defaults() with the same population table on both sides of turn.json.
+ *  See trap 1 above — supplying it to head alone rewrites the meaning of
+ *  every player-authored test into a file-scope rejection. */
+function withPopulation(populationByNation, overrides = {}) {
+  const { base = {}, head = {}, ...rest } = overrides;
+  return defaults({
+    base: { turn: turnFile({ populationByNation }), ...base },
+    head: { turn: turnFile({ populationByNation }), ...head },
+    ...rest,
+  });
+}
+
+// spain at exactly 1,000,000 people: ceiling exactly 40,000, which is
+// exactly what the default spain-1 already stands at.
+const POP_AT_CEILING = { spain: 1_000_000, france: 1_000_000 };
+// One person fewer: ceiling 39,999, and spain is over by a single man
+// without having done anything at all.
+const POP_ONE_SHORT = { spain: 999_999, france: 1_000_000 };
+
+test('pass: a nation standing exactly on its ceiling, spending nothing', () => {
+  // 40,000 men against a 40,000 ceiling. Nothing is raised, so the ceiling
+  // test is never even reached — but this is the baseline the next three
+  // tests move one man either side of.
+  expectPass(validateMove(withPopulation(POP_AT_CEILING)));
+});
+
+test('pass: recruiting the last man the population supports lands exactly on the ceiling', () => {
+  // 39,999 → 40,000 is a one-man raise that ends level with the ceiling.
+  // The comparison is a strict `>`, so level is legal; `>=` would make the
+  // ceiling unreachable and quietly cost every nation its last man.
+  const topped = force({
+    id: 'spain-1', nation: 'spain', strength: 40000, turnStartStrength: 39999,
+  });
+  expectPass(
+    validateMove(withPopulation(POP_AT_CEILING, { head: { forces: forcesMap({ spain: [topped] }) } })),
+  );
+});
+
+test('reject: one man past the ceiling, even though the monthly cap had room', () => {
+  // The raise is 1 man against a monthly cap of 3,873 — comfortably
+  // inside the flow rule, and rejected anyway on the stock rule. That
+  // asymmetry is the operative UX fact: over the ceiling means no men at
+  // all, not "recruit up to the ceiling", because trimming the raise
+  // cannot fix a stock violation.
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      withPopulation(POP_AT_CEILING, {
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
+      }),
+    ),
+    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 — an army may never exceed 4% of the nation it is raised from$/,
+  );
+});
+
+test('pass: NO BRICK — a nation already over its ceiling can still move, split and disband', () => {
+  // The case the whole design bends around, at the wiring level. spain's
+  // population slipped to 999,999 so its ceiling is 39,999 and its
+  // untouched 40,000-man army is over it, having done nothing. If the
+  // gate rejected on the stock alone, an ownership edit spain did not
+  // make would delete spain from the game — no moves, no reorganisation,
+  // no way to shrink back into compliance, and no turn advance either.
+  // Each shape below spends 0 army budget, so none of them reach the
+  // ceiling test at all.
+  const marched = force({
+    id: 'spain-1', nation: 'spain',
+    lat: MOVED_600KM_LAT, lon: MOVED_600KM_LON,
+    turnStartLat: 40.4, turnStartLon: -3.7, kmMovedThisTurn: 601,
+  });
+  expectPass(
+    validateMove(withPopulation(POP_ONE_SHORT, { head: { forces: forcesMap({ spain: [marched] }) } })),
+  );
+  // Split: the anchor partitions, so neither half shows growth — and the
+  // nation is no closer to compliance, which is fine. It is not blocked.
+  const parent = force({ id: 'spain-1', nation: 'spain', strength: 25000, turnStartStrength: 25000 });
+  const child = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: '1st Corps (detachment)',
+    strength: 15000, turnStartStrength: 15000,
+  });
+  expectPass(
+    validateMove(withPopulation(POP_ONE_SHORT, { head: { forces: forcesMap({ spain: [parent, child] }) } })),
+  );
+  // Disband: the way back under the ceiling has to stay open, or being
+  // over it is permanent.
+  expectPass(
+    validateMove(withPopulation(POP_ONE_SHORT, { head: { forces: forcesMap({ spain: [] }) } })),
+  );
+});
+
+test('reject: over the ceiling, raising one man is the thing that is actually refused', () => {
+  // The other half of the no-brick case. spain may do everything except
+  // grow, and the message reports the stock it broke rather than the flow
+  // it happened to spend.
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      withPopulation(POP_ONE_SHORT, {
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
+      }),
+    ),
+    /^spain exceeded its standing army ceiling: 40001 men under arms, but a population of 999999 supports at most 39999 —/,
+  );
+});
+
+test('pass: the navy pool ignores the army ceiling entirely', () => {
+  // spain is over its standing ceiling, and lays down a ship anyway. The
+  // army's spend is 0 so the army iteration `continue`s before the ceiling
+  // test; the navy has no ceiling of its own because hulls are limited by
+  // yards and timber rather than by people.
+  const ship = force({
+    id: 'alice-1700000000000-1', nation: 'spain', branch: 'navy', name: 'San Juan',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      withPopulation(POP_ONE_SHORT, {
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), ship] }) },
+      }),
+    ),
+  );
+});
+
+test('reject: the population-derived cap really replaces the flat 15000', () => {
+  // sweden's real population on spain, to use a figure the shipped table
+  // actually contains: 3,229,802 people buy 6,960 men a month, not 15,000.
+  // A 7,000-man levy was legal yesterday and is not today — and the stock
+  // is nowhere near the 129,192 ceiling, so this is the FLOW rule firing
+  // in its own unchanged sentence with a new number in it.
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 7000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      withPopulation({ spain: 3229802, france: 3229802 }, {
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
+      }),
+    ),
+    /^spain exceeded its army recruitment cap: 7000 men raised or reinforced this turn, cap is 6960 men for a 1-month turn$/,
+  );
+});
+
+test('pass: raising exactly the population-derived cap', () => {
+  const levy = force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 6960, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectPass(
+    validateMove(
+      withPopulation({ spain: 3229802, france: 3229802 }, {
+        head: { forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }) },
+      }),
+    ),
+  );
+});
+
+test('pass: a turn.json with no populationByNation behaves exactly as it did before', () => {
+  // FAIL OPEN ON ABSENCE, and this is the case that matters in
+  // production: every turn.json written before this feature has no such
+  // field, and rejecting on that would brick every submission in the game
+  // until the next turn advance rewrote the file. The A/B is the whole
+  // test — one identical fixture, scored twice, differing only in whether
+  // the table exists.
+  const levy = () => force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const forces = () => forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy()] });
+  // No table: the flat 15000 is intact, and the 55,000 men spain ends up
+  // standing — which would break any plausible ceiling — go unremarked,
+  // because an absent table means the rule is unenforced, not that spain
+  // has no people.
+  expectPass(validateMove(defaults({ head: { forces: forces() } })));
+  // The same submission with a table present is scored on it.
+  expectReject(
+    validateMove(withPopulation({ spain: 3229802, france: 3229802 }, { head: { forces: forces() } })),
+    /^spain exceeded its army recruitment cap: 15000 men raised or reinforced this turn, cap is 6960 men/,
+  );
+});
+
+test('pass: a populationByNation that is not a table at all is absence, not zeroes', () => {
+  // Worker parity, and the reason this guard exists on both sides. turn.json
+  // is parsed unvalidated on both servers, so a hand-edited file can put
+  // anything in this field, and the two gates have to answer identically or
+  // the worker opens a PR that CI then refuses.
+  //
+  // `null` is the sharp one: it used to reach checkRaiseBudgets, where
+  // `null[nation]` throws a TypeError — and validate-move.mjs calls
+  // validateMove() with no try/catch, so the CI step died with a stack
+  // trace instead of returning a verdict, while the worker's own shape
+  // guard sailed past it.
+  //
+  // A string or an array is the quiet one: both index to undefined for
+  // EVERY nation, which the `?? 0` inside checkRaiseBudgets turns into "0
+  // people" — so a single malformed field would have declared all 78
+  // nations over a 3,000-man ceiling at once. Neither is evidence about
+  // anyone's population, so both land where the worker lands: unenforced.
+  const levy = () => force({
+    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 15000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  const forces = () => forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy()] });
+  for (const notATable of [null, 'sweden', 42, [['spain', 1000000]], true]) {
+    expectPass(validateMove(withPopulation(notATable, { head: { forces: forces() } })));
+  }
+});
+
+test('reject: admins are not exempt from the standing army ceiling', () => {
+  // Same shape as the existing recruitment-cap exemption test. The admin
+  // bypass is a FILE-SCOPE bypass; every universal invariant, this one
+  // included, still runs. An admin who wants a bigger army has to move the
+  // population, which is a state.json edit anyone can audit.
+  const levy = force({
+    id: 'master-1700000000000-0', nation: 'france', name: 'Conscripts',
+    strength: 1, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      withPopulation(POP_AT_CEILING, {
+        prAuthor: 'master',
+        changedFiles: ['public/data/forces/france.json'],
+        head: { forces: forcesMap({ france: [force({ id: 'france-1', nation: 'france' }), levy] }) },
+      }),
+    ),
+    /^france exceeded its standing army ceiling: 40001 men under arms, but a population of 1000000 supports at most 40000 —/,
+  );
+});
+
+test('reject: the table is read from HEAD, so an admin is scored on the table they are writing', () => {
+  // head is refs/pull/N/merge — this PR already merged into main — so it
+  // is the frame that will actually land, and a submission has to be
+  // judged by the rules that will be in force once it does. Main still
+  // says 3,229,802 (cap 6,960, which would have allowed this 5,000-man
+  // levy); the submission rewrites the table to 1,500,000 (cap 4,743,
+  // ceiling 60,000, which the 45,000 standing clears) and is refused on
+  // its own new number. Same reasoning the file already applies to
+  // lastTurnDays and turnNumber, and it costs no extra file read — the
+  // CLI already parses turn.json whole.
+  const levy = force({
+    id: 'master-1700000000000-0', nation: 'spain', name: 'Levy',
+    strength: 5000, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        base: { turn: turnFile({ populationByNation: { spain: 3229802, france: 3229802 } }) },
+        head: {
+          turn: turnFile({ populationByNation: { spain: 1_500_000, france: 1_500_000 } }),
+          forces: forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy] }),
+        },
+        prAuthor: 'master',
+        changedFiles: ['public/data/turn.json', 'public/data/forces/spain.json'],
+      }),
+    ),
+    /^spain exceeded its army recruitment cap: 5000 men raised or reinforced this turn, cap is 4743 men for a 1-month turn$/,
+  );
+});
+
+test('reject: a nation missing from a table that exists is 0 people, not unknown', () => {
+  // FAIL CLOSED ON CONTENTS, and trap 2 from the section header made into
+  // an assertion. The table is real but forgot france, so france resolves
+  // to 0 — a 3,000-man ceiling under a 43,001-man army. This is the
+  // behaviour that catches a nation silently dropped from the bake, and
+  // it is also exactly what bites a fixture that gives spain a population
+  // and lets france spend. Note the sorted walk: france is reported even
+  // though spain is the nation the table names.
+  const levy = force({
+    id: 'master-1700000000000-0', nation: 'france', name: 'Conscripts',
+    strength: 3001, turnStartStrength: 0, createdAtTurn: 0,
+  });
+  expectReject(
+    validateMove(
+      withPopulation({ spain: 3229802 }, {
+        prAuthor: 'master',
+        changedFiles: ['public/data/forces/france.json'],
+        head: { forces: forcesMap({ france: [force({ id: 'france-1', nation: 'france' }), levy] }) },
+      }),
+    ),
+    /^france exceeded its standing army ceiling: 43001 men under arms, but a population of 0 supports at most 3000 —/,
   );
 });
 

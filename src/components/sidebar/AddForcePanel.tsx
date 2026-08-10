@@ -3,7 +3,7 @@ import { useAppState } from '@/state/AppContext';
 import { useForceDraft } from '@/state/ForceDraftContext';
 import { useAuth } from '@/auth/AuthContext';
 import { Panel } from '@/components/ui/Panel';
-import { raiseBudget, raiseCost } from '@/utils/movement';
+import { raiseBudget, raiseCost, standingArmyCeiling } from '@/utils/movement';
 import type { ForceBranch } from '@/types';
 import styles from './NewCountryPanel.module.css';
 
@@ -19,7 +19,7 @@ interface AddForcePanelProps {
  * assigned nation. Admins can pick any nation.
  */
 export function AddForcePanel({ onStatus }: AddForcePanelProps) {
-  const { mode, owners, forces, lastTurnDays } = useAppState();
+  const { mode, owners, forces, lastTurnDays, populationByNation } = useAppState();
   const { draftRef } = useForceDraft();
   const auth = useAuth();
   const lockedNation = auth.role === 'player' ? auth.nation : null;
@@ -77,13 +77,46 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
   // Read-only preview — the worker is the real gate, so we don't disable
   // anything here, we just tell the player what will bounce.
   const unit = branch === 'navy' ? 'ships' : 'men';
-  const cap = raiseBudget(branch, lastTurnDays);
+  // Population arrives as a SCALAR off the turn state — deliberately no
+  // province scan here. Everything below the early return above re-runs on
+  // every keystroke in the strength box, and a 4,596-feature sum per
+  // keystroke is a cost a text input can't carry. The table was summed
+  // once already, at the ADVANCE_TURN that anchored it.
+  //
+  // The two-step resolve mirrors checkRaiseBudgets line for line, because
+  // the whole job of this panel is to predict what that gate will answer:
+  // no table at all → undefined → the flat cap and no ceiling (fail open on
+  // absence); a table that simply doesn't list this nation → 0 → the 3,000
+  // floor on both figures (fail closed on contents). The tempting
+  // `populationByNation?.[nation]` collapses those two into one and would
+  // promise a stateless nation 15,000 men a month.
+  const pop =
+    populationByNation === undefined ? undefined : (populationByNation[nation] ?? 0);
+  const cap = raiseBudget(branch, lastTurnDays, pop);
   // Bucketed by CURRENT branch, matching checkRaiseBudgets: a force re-branded
   // this turn bills the pool it moved into, which is the pool shown here.
   const spent = forces
     .filter((f) => f.nation === nation && f.branch === branch)
     .reduce((sum, f) => sum + raiseCost(f), 0);
   const remaining = Math.max(0, cap - spent);
+  // The second limit: a stock, not a flow. Men already under arms, again
+  // bucketed by current branch — the same set the gate sums.
+  const ceiling = standingArmyCeiling(pop);
+  const standing = forces
+    .filter((f) => f.nation === nation && f.branch === 'army')
+    .reduce((sum, f) => sum + f.strength, 0);
+  // Two reasons not to render the ceiling, folded into one test: the navy
+  // has none at all, and an absent population makes it Infinity (the
+  // spelling of "unenforced"), which is not a number to show a player.
+  const showCeiling = branch === 'army' && Number.isFinite(ceiling);
+  // Over the ceiling, the gate refuses ANY army spend — it is tested
+  // before the monthly cap and takes precedence over it — so the headroom
+  // figure below would be a lie. Say the true rule instead: nothing can be
+  // raised until the standing army comes down. Losing provinces can put a
+  // nation here having done nothing, so this is a state to explain, not an
+  // error to scold about.
+  const overCeiling = showCeiling && standing > ceiling;
+  const n = (v: number): string => v.toLocaleString();
 
   return (
     <Panel title="New Force">
@@ -139,9 +172,21 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
             Turn is only {Math.max(0, lastTurnDays)} days — shorter than a month, so no {unit} can
             be raised or reinforced.
           </>
+        ) : overCeiling ? (
+          <>
+            Standing army {n(standing)} / {n(ceiling)} men — more than your population
+            supports, so <b>no {unit} can be raised</b> until it is cut back.
+          </>
         ) : (
           <>
-            Recruitment this turn: {spent} / {cap} {unit} — <b>{remaining} {unit}</b> left.
+            Recruitment: {n(spent)} / {n(cap)} {unit} this month
+            {showCeiling ? (
+              <>
+                {' '}
+                · {n(standing)} / {n(ceiling)} total
+              </>
+            ) : null}{' '}
+            — <b>{n(remaining)} {unit}</b> left.
           </>
         )}
       </div>

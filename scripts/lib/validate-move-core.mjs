@@ -12,9 +12,9 @@ import {
   MOVEMENT_TOLERANCE_KM,
 } from './movement.mjs';
 //
-// v9 data layout (file-per-nation, plus per-concern global files):
+// v10 data layout (file-per-nation, plus per-concern global files):
 //   public/data/state.json            — { appVersion, ownerships, countries }
-//   public/data/turn.json             — { appVersion, currentDate, lastTurnDays, turnNumber }
+//   public/data/turn.json             — { appVersion, currentDate, lastTurnDays, turnNumber, populationByNation }
 //   public/data/forces/<nation>.json  — Force[]  (only created when non-empty)
 //   public/data/perm.json             — admin-only
 //
@@ -31,7 +31,7 @@ import {
 // Bumped when the on-disk shape of state.json or forces/*.json changes
 // in a way an older client can't safely round-trip. Mirrors the constant
 // in src/utils/schema.ts and worker/src/index.ts.
-const SCHEMA_VERSION = 'theatrum/v9';
+const SCHEMA_VERSION = 'theatrum/v10';
 
 const PERM_FILE = 'public/data/perm.json';
 const STATE_FILE = 'public/data/state.json';
@@ -256,7 +256,52 @@ export function validateMove(inputs) {
   // several PRs inside one turn without storing a counter anywhere.
   // Runs after the missing-fields guard above has vetted strength and
   // turnStartStrength on every force, since the checker assumes numbers.
-  const overCap = checkRaiseBudgets(head.forces, lastTurnDays);
+  //
+  // Population is read from head.turn rather than base.turn for the same
+  // reason lastTurnDays and turnNumber are: head is refs/pull/N/merge —
+  // this PR already merged into main — so it is the frame that will
+  // actually land, and a submission has to be judged against the rules
+  // that will be in force once it does. It needs no new file read; the
+  // CLI already parses turn.json whole and hands it over. It is anchored
+  // at turn start by construction, since turn.json is written only on a
+  // turn advance and players are blocked from touching its fields; the
+  // ponytail note on that admin-asserted number (and the upgrade path to
+  // recomputing it from ownerships) lives on checkRaiseBudgets itself.
+  //
+  // Deliberately NOT guarded the way lastTurnDays (:156-162) and
+  // turnNumber (:170-176) are above, and the asymmetry is the point.
+  // Those two are arithmetic this file cannot proceed without — absent,
+  // they price every movement budget at NaN — so they are worth a stale-
+  // client rejection. populationByNation is instead a rule that may
+  // legitimately not exist yet: any turn.json written before this feature
+  // simply has no such field, and rejecting on that would brick every
+  // submission in the game until the next turn advance rewrote the file.
+  // So absence fails OPEN: undefined reaches checkRaiseBudgets, the
+  // monthly cap reverts to the flat MEN_PER_MONTH and the standing
+  // ceiling to Infinity, which is bit-for-bit today's behaviour. Open on
+  // ABSENCE only — a table that IS present fails CLOSED on its contents,
+  // a nation missing from it resolving to 0 (and so to the 3000 floor)
+  // inside checkRaiseBudgets rather than back to undefined.
+  //
+  // A value that is not a table AT ALL counts as absence, and this guard
+  // is the exact mirror of the one the worker applies to the same field
+  // (worker/src/index.ts, `effectivePopulation`) — the two gates have to
+  // refuse and accept identical inputs, and without it they do not. Two
+  // concrete divergences it closes, both on a turn.json that was
+  // hand-edited rather than written by the worker: `null` reaches
+  // checkRaiseBudgets, `null[nation]` throws a TypeError, and this file's
+  // CLI has no try/catch — so instead of a clean REJECT the whole CI step
+  // dies with a stack trace while the worker sails on. And a string or an
+  // array indexes to undefined for EVERY nation, resolving all of them to
+  // 0 people and a 3000-man ceiling, so CI would reject the entire game
+  // as over-mobilised on submissions the worker had already accepted.
+  // Both now land where the worker lands: unenforced.
+  const rawPopulation = head.turn?.populationByNation;
+  const populationByNation =
+    typeof rawPopulation === 'object' && rawPopulation !== null && !Array.isArray(rawPopulation)
+      ? rawPopulation
+      : undefined;
+  const overCap = checkRaiseBudgets(head.forces, lastTurnDays, populationByNation);
   if (overCap) {
     // Already a finished sentence, and the violation belongs to a nation
     // rather than any one force, so it gets no force/file prefix.

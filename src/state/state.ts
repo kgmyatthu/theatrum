@@ -28,6 +28,19 @@ export interface AppState {
   lastTurnDays: number;
   /** Display-only turn counter. Starts at 0; bumped on each ADVANCE_TURN. */
   turnNumber: number;
+  /**
+   * People each nation ruled when this turn began, summed off province
+   * ownership at ADVANCE_TURN and carried in turn.json. Drives both
+   * recruitment limits: the monthly cap scales with the square root of it,
+   * and the standing-army ceiling is a flat share of it.
+   *
+   * `undefined` is a real, load-bearing value — "no table available" — and
+   * is what the client boots with before turn.json lands. It fails OPEN:
+   * the flat MEN_PER_MONTH cap, no ceiling. Written non-optional so every
+   * reducer branch and every buildSnapshot call site has to say which of
+   * the two it means rather than forgetting the field exists.
+   */
+  populationByNation: Record<string, number> | undefined;
 
   selectedFids: ReadonlySet<number>;
 
@@ -82,6 +95,9 @@ export const initialState: AppState = {
   currentDate: '1683-01-01',
   lastTurnDays: 30,
   turnNumber: 0,
+  // No table until BOOTSTRAP_DATA brings one — recruitment is unenforced
+  // rather than enforced against zeroes.
+  populationByNation: undefined,
   selectedFids: new Set(),
   layerVisibility: {
     provinces: true,

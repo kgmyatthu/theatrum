@@ -12,15 +12,32 @@ interface Manifest {
 }
 
 async function fetchManifest(): Promise<Manifest> {
-  const [provinces, cities, snapshot] = await Promise.all([
+  const [provinces, cities, population1800, snapshot] = await Promise.all([
     // Static factory data — bundled into the deploy.
     fetch('/data/provinces.geojson').then((r) => r.json() as Promise<ProvinceCollection>),
     fetch('/data/cities.json').then((r) => r.json() as Promise<City[]>),
+    // Baked adm1_code -> 1800 population. Static factory data like the geojson,
+    // NOT live state: it never changes between moves, so it deliberately stays
+    // out of the SHA-pinned snapshot and out of the schema version contract.
+    // The catch is the whole graceful-degradation story — a missing file, a 404
+    // that comes back as SPA index.html, or malformed JSON must cost us the
+    // population row, not the map.
+    fetch('/data/population1800.json')
+      .then((r) => r.json() as Promise<Record<string, number>>)
+      .catch(() => ({}) as Record<string, number>),
     // Live game state — assembled from state.json (global) + per-nation
     // force files. All SHA-pinned to one main HEAD so the snapshot is
     // consistent across all the files.
     fetchLiveSnapshot(fetchLiveData, listForceNations),
   ]);
+  // Fold the figures onto the features right here, while we still hold both
+  // objects. One province object for the whole app to read beats a second
+  // lookup table threaded through state/context, and the reducer stays
+  // ignorant of a value that is pure decoration. Unmatched codes stay
+  // undefined on purpose — see ProvinceProps.population1800.
+  for (const f of provinces.features) {
+    f.properties.population1800 = population1800[f.properties.adm1_code];
+  }
   return { provinces, cities, snapshot };
 }
 

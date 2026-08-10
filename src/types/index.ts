@@ -13,10 +13,18 @@ import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson'
 export interface ProvinceProps {
   /** Stable, monotonically increasing numeric id assigned at load. */
   _fid: number;
+  /** Natural Earth admin-1 code, e.g. "GBR-2054". Unique across all 4,596
+   *  features, and the join key for anything baked per-province offline. */
+  adm1_code: string;
   province_name: string;
   modern_country: string;
   /** Current owner — name from `state.owners`. */
   owner: string;
+  /** Estimated 1800 population, folded in at load from the baked
+   *  `population1800.json`. Optional because the bake can legitimately have
+   *  no figure for a province (or the file can be absent entirely) — callers
+   *  must render the gap rather than assume 0. */
+  population1800?: number;
 }
 
 export type ProvinceGeometry = Polygon | MultiPolygon;
@@ -133,6 +141,21 @@ export interface AppSnapshot {
   lastTurnDays: number;
   /** Display-only turn counter. Starts at 0; bumped on each ADVANCE_TURN. */
   turnNumber: number;
+  /**
+   * People each nation ruled at the moment this turn began — nation →
+   * summed `population1800` of every province it owned at the advance.
+   * Anchored, not live: it rides in turn.json beside turnNumber so a
+   * conquest mid-turn can't change the cap the same turn's recruits are
+   * billed against, and so both the client's preview and the servers'
+   * gate read one agreed figure.
+   *
+   * OPTIONAL, and that optionality is the safety contract: absent means
+   * "no table was published", which fails OPEN — the flat MEN_PER_MONTH
+   * cap and no standing ceiling at all. A nation merely missing from a
+   * table that IS present is a different thing entirely and resolves to
+   * 0 (fail closed on contents). Never merge the two.
+   */
+  populationByNation?: Record<string, number>;
 }
 
 // ------------------------------------------------------------------

@@ -315,13 +315,18 @@ files are read from the raw CDN at runtime.
 | File | Role | Shape |
 | --- | --- | --- |
 | `state.json` | **Live** — ownership + country registry | `{ appVersion, ownerships: [fid, nation][], countries: {name,color}[] }` (4,596 ownership pairs) |
-| `turn.json` | **Live** — turn clock | `{ appVersion, currentDate, lastTurnDays, turnNumber }` |
+| `turn.json` | **Live** — turn clock + turn-start population anchor | `{ appVersion, currentDate, lastTurnDays, turnNumber, populationByNation: { nation: people } }` |
 | `perm.json` | **Live** — permissions (admin-editable) | `{ "<login>": {role:"admin"} \| {role:"player", nation:"..."} }` |
 | `forces/<nation>.json` | **Live** — per-nation forces | `Force[]` (one file per nation that has ≥1 force) |
-| `provinces.geojson` | Static — the map | `FeatureCollection` of 4,596 features (`province_name`, `modern_country`, `owner`) |
+| `provinces.geojson` | Static — the map | `FeatureCollection` of 4,596 features (`adm1_code`, `province_name`, `modern_country`, `owner`) |
+| `population1800.json` | Static — per-province people | `{ "<adm1_code>": people }`, one entry per feature (baked by `bake-population.mjs` from HYDE 3.2.1) |
 | `cities.json` | Static — labels | 7,342 `{ NAME, SCALERANK, lon, lat }` |
 | `owners.json`, `palette.json` | Bake inputs | Country name list + name→hex map |
 | `seed_forces.json` | Bake input | Starting forces (currently `[]`; forces accrue through play) |
+
+`population1800.json` is joined onto the features by `adm1_code` at load and summed by owner
+into `turn.json.populationByNation` at each turn advance; it is static factory data, so it
+sits outside the SHA-pinned snapshot and outside the schema-version contract.
 
 `state.json` / `turn.json` / `forces/` are split so an admin's turn advance and a player's
 force move never contend on the same file. `_fid` is **not** stored in the GeoJSON — it's the
@@ -329,7 +334,7 @@ runtime array index — and `state.json` is the source of truth for lowercase ow
 
 ### 9. Schema versioning
 
-`SCHEMA_VERSION` (currently `theatrum/v9`) is the on-disk contract for the data files. It is
+`SCHEMA_VERSION` (currently `theatrum/v10`) is the on-disk contract for the data files. It is
 **triple-sourced and must stay in sync**:
 
 - `src/utils/schema.ts` (client)
@@ -343,6 +348,8 @@ newer `appVersion` on `main` and prompt the user to refresh.
 Past migrations (one-shot, in `scripts/`): v6→v7 split the monolithic `forces` array into
 per-nation files; a force-ID migration moved to deterministic IDs; the 1680 migration reset
 the world's ownership baseline. Turn/movement tracking and the `turn.json` split brought v8→v9.
+v9→v10 added `turn.json.populationByNation` — the per-nation population anchored at the turn
+advance, which recruitment limits are computed from.
 
 ---
 

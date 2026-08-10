@@ -8,7 +8,7 @@ interface ProvinceInfoProps {
 
 export function ProvinceInfo({ feature }: ProvinceInfoProps) {
   const { palette } = useAppState();
-  const { province_name, modern_country, owner } = feature.properties;
+  const { province_name, modern_country, owner, population1800 } = feature.properties;
   const color = palette[owner] ?? '#888';
 
   return (
@@ -26,6 +26,18 @@ export function ProvinceInfo({ feature }: ProvinceInfoProps) {
         <span className={styles.value}>
           <span className={styles.swatch} style={{ background: color }} />
           {owner}
+        </span>
+      </div>
+      <div className={styles.row}>
+        {/* "Pop. 1800" not "Population" — it is a raster-derived estimate for a
+            single year, and the dated label keeps it from reading as a live
+            figure the game maintains. */}
+        <span className={styles.key}>Pop. 1800</span>
+        {/* Em dash when the bake has no figure for this adm1_code (or the file
+            failed to load): a blank is honest about "we don't know", whereas 0
+            would assert an empty province and NaN would just look broken. */}
+        <span className={styles.value}>
+          {typeof population1800 === 'number' ? population1800.toLocaleString('en-US') : '—'}
         </span>
       </div>
     </div>

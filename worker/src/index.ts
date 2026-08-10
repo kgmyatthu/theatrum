@@ -48,7 +48,7 @@ import {
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
 // Keep in sync with src/utils/schema.ts and scripts/lib/validate-move-core.mjs.
-const SCHEMA_VERSION = 'theatrum/v9';
+const SCHEMA_VERSION = 'theatrum/v10';
 
 // ────────────────────────────────────────────────────────────────────
 // Generic helpers
@@ -493,6 +493,16 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
         currentDate?: unknown;
         lastTurnDays?: unknown;
         turnNumber?: unknown;
+        // Deliberately NOT validated below the way the three fields above
+        // it are, and the asymmetry is the point: those three are
+        // arithmetic nothing here can proceed without, so they are worth
+        // a stale-client rejection. The population table is a rule that
+        // may legitimately not exist yet — a client cached before the
+        // feature sends no such field — and rejecting on that would bounce
+        // every stale browser for a rule that fails open on absence
+        // anyway. Left `unknown` because nothing proves its shape; the one
+        // reader below narrows it.
+        populationByNation?: unknown;
       };
   if (!snapshot || typeof snapshot !== 'object') {
     return errorJson(origin, 400, 'missing or invalid snapshot');
@@ -711,6 +721,14 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       currentDate: string;
       lastTurnDays: number;
       turnNumber: number;
+      // OPTIONAL, and that is the whole shape-tolerance story for the
+      // population rules: any turn.json written before this feature has no
+      // populationByNation at all. Typing it as required — or adding it to
+      // the missing-field rejections above — would brick every submission
+      // in the game until the next turn advance rewrote the file. Absent it
+      // stays undefined and the recruitment gate reverts to the flat
+      // pre-population cap, which is bit-for-bit today's behaviour.
+      populationByNation?: Record<string, number>;
     };
 
     // ── Turn-field permission / drift gate ─────────────────────────────
@@ -760,6 +778,48 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     const effectiveTurnNumber = isAdmin
       ? (snapshot.turnNumber as number)
       : mainTurn.turnNumber;
+    // Population basis: the same admin/main rule as the two fields above,
+    // and for the same reason. The population that bounds recruitment is
+    // anchored at turn start and lives in turn.json beside them, so an
+    // admin advancing the turn in this same submission is writing a new
+    // table below — and the recruitment gate has to score them against the
+    // frame that will actually land, not the one it replaces. (The CI
+    // validator reads head.turn for exactly this reason.) Non-admins take
+    // main's copy: the turn-field gate above proved snapshot == main for
+    // the other three, but nothing compares this one, so main's is the
+    // only trustworthy source — and the only one they could ever write,
+    // since the turn.json commit below is admin-only.
+    //
+    // The one clause the two fields above don't need: populationByNation is
+    // OPTIONAL on the snapshot, where lastTurnDays and turnNumber are
+    // validated mandatory. An admin on a client cached before this feature
+    // sends none, so the admin arm falls back to main's rather than to
+    // undefined — otherwise a stale admin client would silently switch the
+    // rules off for its own submission. It is also exactly what the
+    // turn.json write below does with this value, which keeps the table the
+    // gate scored and the table the PR lands identical.
+    //
+    // ponytail: the table is admin-asserted, same as turnNumber and
+    // lastTurnDays beside it — an admin who could forge it can already edit
+    // the force files directly. Upgrade path (recompute from ownerships and
+    // reject on mismatch, needing an effectiveOwnerships mirroring
+    // effectiveLastTurnDays above) is written up in full on
+    // checkRaiseBudgets in scripts/lib/movement.mjs.
+    const rawPopulation: unknown = isAdmin
+      ? (snapshot.populationByNation ?? mainTurn.populationByNation)
+      : mainTurn.populationByNation;
+    // Fail OPEN on absence, and a value that is not a table at all counts
+    // as absence: undefined reaches checkRaiseBudgets, the monthly cap
+    // reverts to the flat MEN_PER_MONTH and the standing ceiling to
+    // Infinity. Open on ABSENCE only — a table that IS present fails CLOSED
+    // on its contents, a nation missing from it resolving to 0 (and so to
+    // the 3000 floor) inside checkRaiseBudgets. The shape guard is not
+    // pedantry: turn.json is parsed unvalidated, and indexing a `null` here
+    // would throw out of this handler and 502 every submission in the game.
+    const effectivePopulation =
+      typeof rawPopulation === 'object' && rawPopulation !== null && !Array.isArray(rawPopulation)
+        ? (rawPopulation as Record<string, number>)
+        : undefined;
     for (const f of snapshot.forces!) {
       const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
       const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;
@@ -927,8 +987,17 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     // only adds its own growth on top. Only the nations we write are
     // scored — deliberately, so one nation sitting over cap on main can't
     // bounce every other nation's moves. Same reference frame as the
-    // movement budget (effectiveLastTurnDays).
-    const overBudget = checkRaiseBudgets(mergedByNation, effectiveLastTurnDays);
+    // movement budget (effectiveLastTurnDays), and now the same frame for
+    // population too: the third argument turns the flat monthly cap into a
+    // population-derived one and adds the standing-army ceiling. Passing
+    // undefined (no table on main, or an admin whose client sent none over
+    // a main that has none either) is not a special case at the call site —
+    // it is the pre-population behaviour, unchanged.
+    const overBudget = checkRaiseBudgets(
+      mergedByNation,
+      effectiveLastTurnDays,
+      effectivePopulation,
+    );
     if (overBudget) {
       // Already a finished sentence naming the nation and the branch —
       // no force id or file path to prefix, since the violation is a sum.
@@ -1040,6 +1109,19 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
             currentDate: snapshot.currentDate,
             lastTurnDays: snapshot.lastTurnDays,
             turnNumber: snapshot.turnNumber,
+            // Carried, not asserted — the only turn field this rewrite does
+            // not simply take from the snapshot. This block reconstructs
+            // turn.json from scratch, so omitting the population table would
+            // DELETE it: every admin submission that touches anything at all
+            // would strip the anchor both gates read, and the feature would
+            // die at the first ownership edit after a bake. effectivePopulation
+            // is main's copy unless the admin's client sent a fresher one,
+            // which is also precisely what the gate above scored — so what
+            // lands is what was judged. JSON.stringify drops an undefined
+            // value entirely, so a turn.json with no population table still
+            // round-trips byte-identical and the !== check below still
+            // short-circuits the commit.
+            populationByNation: effectivePopulation,
           },
           null,
           2,

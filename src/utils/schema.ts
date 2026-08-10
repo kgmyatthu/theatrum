@@ -13,4 +13,4 @@
  *   scripts/lib/validate-move-core.mjs  (server-side gate)
  *   scripts/bake-state.mjs              (initial bake output)
  */
-export const SCHEMA_VERSION = 'theatrum/v9';
+export const SCHEMA_VERSION = 'theatrum/v10';

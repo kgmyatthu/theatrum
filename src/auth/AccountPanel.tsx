@@ -38,6 +38,9 @@ export function AccountPanel({ onStatus }: AccountPanelProps) {
       currentDate: state.currentDate,
       lastTurnDays: state.lastTurnDays,
       turnNumber: state.turnNumber,
+      // Rides along with the other turn fields so an admin's turn advance
+      // carries its population anchor into turn.json in the same PR.
+      populationByNation: state.populationByNation,
     });
     const renames = auth.role === 'admin' ? state.pendingRenames : [];
     const userAdds = auth.role === 'admin' ? state.pendingUserAdds : [];

@@ -45,10 +45,79 @@ export const MOVEMENT_TOLERANCE_KM = 0.1;
 // no new build surface. Split it out if the raise rules outgrow this block.
 
 /** Men (army) and ships (navy) a nation may raise per whole month of
- *  turn length. Flat rates: no economy, no population, no upkeep — the
- *  calendar is the only brake. */
+ *  turn length. MEN_PER_MONTH now wears two hats: it is the men-per-month
+ *  AT the reference population (see menPerMonth), and it is the fail-open
+ *  fallback used when no population is supplied at all — so every caller
+ *  that passes no population still gets exactly today's flat 15000.
+ *  SHIPS_PER_MONTH stays genuinely flat: the navy is hull-limited by
+ *  yards and timber, not by how many men a country has. */
 export const MEN_PER_MONTH = 15000;
 export const SHIPS_PER_MONTH = 1;
+
+/** The population MEN_PER_MONTH is quoted at. A nation of exactly this
+ *  many people raises exactly MEN_PER_MONTH per month; everyone else
+ *  scales off it. Chosen so the historical mid-sized power sits near the
+ *  old flat rate and nothing in the existing order of battle lurches. */
+export const REFERENCE_POP = 15_000_000;
+
+/** Floor under the monthly rate AND under the standing-army ceiling. A
+ *  microstate must still be able to field and replace a garrison, or it
+ *  is a nation that cannot play. Deliberately the same number for both:
+ *  the floor exists to keep a small nation viable, and viability means
+ *  both raising men and being allowed to keep them. */
+export const MIN_MEN_PER_MONTH = 3000;
+
+/** Hard share of a nation's people that may be under arms at once. Not a
+ *  rate — a stock. 4% is already extraordinary by the period's standards
+ *  (levée-en-masse France peaked near it) so it binds only the nations
+ *  that have genuinely over-mobilised. */
+export const MAX_ARMY_POP_SHARE = 0.04;
+
+/** Men per whole month for a nation of `pop` people. Square root, not
+ *  linear: recruitment scales with the population a state can actually
+ *  reach and administer, so doubling the people does not double the
+ *  regiments — it multiplies them by ~1.41. That keeps the largest
+ *  populations from simply out-typing everyone (britain's 105.6M buys
+ *  39,792/mo, not 105,562) while a small nation is not reduced to a
+ *  trickle (sweden's 3.2M buys 6,960/mo).
+ *
+ *  FAILS OPEN ON ABSENCE: `undefined` means the population table was not
+ *  supplied — not that the nation has no people — and yields the flat
+ *  MEN_PER_MONTH this rule replaced. Non-finite is folded into the same
+ *  branch on purpose: Math.max(3000, NaN) is NaN, which loses every
+ *  comparison it appears in and would render a cap of "NaN men" into a
+ *  player-facing reason string. A garbage number is not evidence about a
+ *  nation, so it is treated as no evidence.
+ *
+ *  A nation merely MISSING from a table that WAS supplied is a different
+ *  case and is resolved to 0 by the caller, which lands on the floor. */
+export function menPerMonth(pop) {
+  if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;
+  // Clamp before the sqrt: a negative population is nonsense, and
+  // sqrt(negative) is NaN, which is the exact failure the guard above
+  // exists to prevent.
+  const scaled = MEN_PER_MONTH * Math.sqrt(Math.max(0, pop) / REFERENCE_POP);
+  return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));
+}
+
+/** The most men a nation may have STANDING at once — total strength of
+ *  everything currently branded army, whenever it was raised. This is a
+ *  stock ceiling and is a different quantity from the monthly flow above:
+ *  a nation can be inside its monthly cap every single turn and still
+ *  walk into this one.
+ *
+ *  Floored, never rounded: the rule is "may never exceed", so a ceiling
+ *  of 129,192.08 men is 129,192 men.
+ *
+ *  FAILS OPEN ON ABSENCE by returning Infinity, which is the
+ *  one-expression spelling of "unenforced" — `standing > Infinity` is
+ *  always false, so the call site needs no second branch and no flag to
+ *  ask whether the rule is on. Non-finite folds in here for the same
+ *  reason as menPerMonth. */
+export function standingArmyCeiling(pop) {
+  if (pop === undefined || !Number.isFinite(pop)) return Infinity;
+  return Math.max(MIN_MEN_PER_MONTH, Math.floor(MAX_ARMY_POP_SHARE * Math.max(0, pop)));
+}
 
 // Fixed-length month. Not the Gregorian calendar — a turn is scored on
 // whole 30-day blocks so the cap can't be gamed by picking a long month.
@@ -61,9 +130,19 @@ export function turnMonths(lastTurnDays) {
 }
 
 /** Per-nation, per-turn recruitment cap for a branch. Unknown branches
- *  fall back to the army rate, matching budgetForBranch. */
-export function raiseBudget(branch, lastTurnDays) {
-  const perMonth = branch === 'navy' ? SHIPS_PER_MONTH : MEN_PER_MONTH;
+ *  fall back to the army rate, matching budgetForBranch.
+ *
+ *  `pop` is OPTIONAL and that is load-bearing, not politeness: every
+ *  caller that predates the population rule passes nothing, menPerMonth
+ *  answers MEN_PER_MONTH, and the returned cap is bit-for-bit what it was
+ *  before this parameter existed. The whole existing test suite therefore
+ *  keeps passing untouched and becomes the regression suite for the
+ *  fail-open path for free.
+ *
+ *  The navy is untouched by population: SHIPS_PER_MONTH is flat, and
+ *  `pop` never reaches this branch at all. */
+export function raiseBudget(branch, lastTurnDays, pop) {
+  const perMonth = branch === 'navy' ? SHIPS_PER_MONTH : menPerMonth(pop);
   return turnMonths(lastTurnDays) * perMonth;
 }
 
@@ -121,24 +200,98 @@ export function raiseCost(force) {
  *  Recomputed from the forces array on every submission rather than
  *  tracked in a counter, so it is cumulative across however many PRs a
  *  nation lands inside one turn — the second PR sees the first PR's
- *  recruits already sitting in the sum. */
-export function checkRaiseBudgets(forcesByNation, lastTurnDays) {
+ *  recruits already sitting in the sum.
+ *
+ *  `popByNation` is OPTIONAL: Record<nation, number> | undefined. Omit it
+ *  and both population rules switch off — the monthly cap reverts to the
+ *  flat MEN_PER_MONTH and the standing ceiling to Infinity — which is
+ *  what every pre-population caller does and why they are unaffected.
+ *  Supply it and a nation MISSING from it resolves to 0 rather than to
+ *  undefined: absence of the whole table is "we don't know", absence of
+ *  one nation from a table we do have is a real answer, and it lands that
+ *  nation on the MIN_MEN_PER_MONTH floor for both rules.
+ *
+ *  ANCHORED AT TURN START, by construction. The caller reads population
+ *  from public/data/turn.json, which is written only on a turn advance
+ *  and whose fields players are already blocked from touching
+ *  (worker/src/index.ts:775-797) — so a nation cannot conquer a province
+ *  mid-turn and spend the new people in the same turn, and cannot lose
+ *  one and have its army retroactively become illegal. The number is
+ *  admin-asserted exactly like turnNumber and lastTurnDays sitting beside
+ *  it; an admin who could forge it can already edit the force files
+ *  directly, so it adds no authority anyone did not have.
+ *
+ *  ponytail: admin-asserted is the ceiling here. Upgrade path: have the
+ *  gates recompute population from state.json ownerships crossed with a
+ *  fid-indexed population array and reject on mismatch, which needs
+ *  `effectiveOwnerships = isAdmin ? snapshot.ownerships : mainState.ownerships`
+ *  mirroring effectiveLastTurnDays at worker/src/index.ts:745-747. Not
+ *  done because it costs a join from adm1_code to _fid that NO server
+ *  currently performs, a new worker-side file read, and a re-bake — for a
+ *  value the same admin could simply have written correctly. */
+export function checkRaiseBudgets(forcesByNation, lastTurnDays, popByNation) {
   const months = turnMonths(lastTurnDays);
   const days = Math.max(0, lastTurnDays);
   // Sorted so two consumers reporting the same violation name the same
   // nation first — deterministic messages are testable messages.
   for (const nation of Object.keys(forcesByNation).sort()) {
+    // Absence of the table and absence of a nation from it are different
+    // questions with different answers, and this one line is where that
+    // distinction is made: no table at all stays undefined and fails open
+    // through menPerMonth/standingArmyCeiling; a nation the table simply
+    // does not list is 0, a real (if unflattering) population.
+    const pop = popByNation === undefined ? undefined : (popByNation[nation] ?? 0);
     const spent = { army: 0, navy: 0 };
+    let standing = 0;
     for (const f of forcesByNation[nation] || []) {
       // Bucketed by CURRENT branch: a re-branded force bills the pool it
       // moved into, which is the pool its new hulls or men now sit in.
       // Unknown branches bucket as army, same fallback as raiseBudget.
       spent[f.branch === 'navy' ? 'navy' : 'army'] += raiseCost(f);
+      // STOCK, not growth — deliberately a different quantity from
+      // raiseCost: every man standing under the army brand right now,
+      // whenever and however he was raised. Keyed off the CURRENT branch
+      // like spent is, because a force branded navy is ships and ships
+      // are not men; and matching that fallback exactly means a force
+      // that bills the army pool is also counted in the army stock,
+      // never one without the other.
+      if (f.branch !== 'navy') standing += f.strength;
     }
     for (const branch of ['army', 'navy']) {
       const total = spent[branch];
       if (total <= 0) continue;
-      const cap = raiseBudget(branch, lastTurnDays);
+      // Army only, and the ceiling outranks the monthly cap: a nation
+      // over its ceiling hears about the ceiling, because trimming to the
+      // monthly cap would not fix it. The navy has no ceiling — hulls are
+      // limited by yards, not by people — so it never reaches this.
+      //
+      // Sitting AFTER the `total <= 0` guard is what makes the rule safe
+      // rather than merely lenient, and the reason is a theorem worth
+      // writing down. For any army force, strength <= turnStartStrength +
+      // raiseCost(f) (reinforcement bills the difference; a re-branded
+      // force has strength === raiseCost(f) exactly). Summing over the
+      // nation's army: standing <= sum(army anchors) + spent.army. And
+      // checkAnchorConservation independently bounds that anchor sum by
+      // what the SAME force ids were anchored at in base. So spent.army
+      // === 0 implies the army cannot have grown this turn, and skipping
+      // the ceiling test at zero spend cannot let any growth through —
+      // the ceiling borrows its soundness from conservation and opens no
+      // new attack surface.
+      //
+      // What that buys is the case this rule must not break: a nation
+      // that loses territory can fall UNDER its own ceiling having done
+      // nothing wrong (sweden without Finland: 100,000 standing against a
+      // 94,433 ceiling). It is over, it cannot recruit — and it can still
+      // move, split, disband, take losses and advance the turn, because
+      // none of those spend army budget and so none of them reach here.
+      // Shrinking back into compliance is possible; being bricked is not.
+      if (branch === 'army') {
+        const ceiling = standingArmyCeiling(pop);
+        if (standing > ceiling) {
+          return `${nation} exceeded its standing army ceiling: ${standing} men under arms, but a population of ${pop} supports at most ${ceiling} — an army may never exceed ${MAX_ARMY_POP_SHARE * 100}% of the nation it is raised from`;
+        }
+      }
+      const cap = raiseBudget(branch, lastTurnDays, pop);
       if (total <= cap) continue;
       const unit = branch === 'navy' ? 'ships' : 'men';
       if (months < 1) {

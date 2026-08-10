@@ -1,7 +1,7 @@
 import type { Action } from './actions';
 import type { AppState } from './state';
 import { initialState } from './state';
-import type { Country, Force } from '@/types';
+import type { Country, Force, ProvinceCollection } from '@/types';
 import { normalizeNation } from '@/utils/nation';
 import { haversineKm } from '@/utils/geometry';
 import { daysBetween } from '@/utils/movement';
@@ -19,6 +19,51 @@ function countriesToOwnersAndPalette(countries: Country[]): {
   }
   owners.sort();
   return { owners, palette };
+}
+
+/**
+ * Sum every province's 1800 population into a nation → people table.
+ * Same join NationsModal does for its population column, and it has to
+ * stay the same one: what a player is shown there is what their
+ * recruitment limits are computed from.
+ *
+ * Two deliberate differences from that read-only view. Owners are
+ * re-normalized on the way in even though `properties.owner` is already
+ * canonical at every write path — these keys are looked up by exact
+ * string equality by the server-side gate, and one stray "Sweden" would
+ * not merely mis-render a row, it would resolve that nation to 0 people
+ * and floor it at a 3,000-man army. And a missing `population1800` counts
+ * as 0 rather than being skipped, so a nation's figure is always the sum
+ * of the land it actually holds.
+ *
+ * Keys are sorted so turn.json's diff stays readable and stable across
+ * advances; the file is hand-reviewed in PRs like every other data file.
+ *
+ * Returns `undefined` when not one province in the world carried a figure,
+ * which is the same "we never actually read a table" answer ADVANCE_TURN
+ * already gives for provinces that never loaded — and it is a live case,
+ * not a theoretical one. population1800.json is fetched with a
+ * `.catch(() => ({}))` so a 404, an SPA index.html or a truncated body
+ * costs the map nothing (see useDataBootstrap); but the same empty object
+ * folds `undefined` onto all 4,596 features, and summing it would produce
+ * a complete, plausible-looking table of 78 nations that all have zero
+ * people. That table fails CLOSED on its contents by design, so writing it
+ * would floor EVERY nation in the game at a 3,000-man ceiling and a
+ * 3,000/month cap on the strength of one flaky fetch in one admin's
+ * browser. One partial figure is a bake gap and is summed honestly; zero
+ * figures across the entire map is not evidence about the world.
+ */
+function populationByOwner(provinces: ProvinceCollection): Record<string, number> | undefined {
+  const totals: Record<string, number> = {};
+  let measured = 0;
+  for (const f of provinces.features) {
+    const owner = normalizeNation(f.properties.owner);
+    const people = f.properties.population1800;
+    if (typeof people === 'number') measured++;
+    totals[owner] = (totals[owner] ?? 0) + (people ?? 0);
+  }
+  if (measured === 0) return undefined;
+  return Object.fromEntries(Object.entries(totals).sort(([a], [b]) => (a < b ? -1 : 1)));
 }
 
 function normalizeForce(f: Force): Force {
@@ -82,6 +127,12 @@ export function reducer(state: AppState, action: Action): AppState {
           typeof snapshot.lastTurnDays === 'number' ? snapshot.lastTurnDays : state.lastTurnDays,
         turnNumber:
           typeof snapshot.turnNumber === 'number' ? snapshot.turnNumber : state.turnNumber,
+        // Taken verbatim, never defaulted and never merged with what we
+        // already had: the anchored table belongs to the turn we just
+        // loaded, and an absent one means "unenforced", which is a value
+        // in its own right. `?? state.populationByNation` here would quietly
+        // keep enforcing last turn's borders.
+        populationByNation: snapshot.populationByNation,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],
@@ -141,11 +192,36 @@ export function reducer(state: AppState, action: Action): AppState {
         .filter((o) => o !== oldN)
         .concat(newN)
         .sort();
+      // Migrate the population anchor. Same move as the palette above, and
+      // it has to happen for the same reason every other nation-keyed
+      // structure here does: the table is looked up by EXACT nation string
+      // by both server-side gates, so a rename that leaves the key behind
+      // does not merely lose a row — the renamed nation resolves to 0
+      // people and is floored at a 3,000-man ceiling until the next turn
+      // advance rewrites the file. Any nation with a real army is then
+      // over that ceiling and cannot recruit for the rest of the turn,
+      // told it has "a population of 0". Re-keyed rather than recomputed
+      // because the anchor belongs to the turn that opened, not to the
+      // ownership map as it stands now: a rename moves the same people
+      // under a new name, it does not change how many there are.
+      // Re-sorted on the way out for the same reason populationByOwner
+      // sorts: turn.json is hand-reviewed, and a renamed key left sitting
+      // in the alphabetical slot of the name it replaced makes the diff
+      // read like a value changed rather than a key.
+      let population = state.populationByNation;
+      if (population !== undefined && population[oldN] !== undefined) {
+        population = Object.fromEntries(
+          Object.entries(population)
+            .map(([k, v]): [string, number] => [k === oldN ? newN : k, v])
+            .sort(([a], [b]) => (a < b ? -1 : 1)),
+        );
+      }
       return {
         ...state,
         owners,
         palette: newPalette,
         forces,
+        populationByNation: population,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [...state.pendingRenames, { from: oldN, to: newN }],
       };
@@ -281,6 +357,29 @@ export function reducer(state: AppState, action: Action): AppState {
         currentDate: newDate,
         lastTurnDays: elapsed,
         turnNumber: state.turnNumber + 1,
+        // The turn's population anchor, cut from ownership exactly as it
+        // stands at this instant — the same instant the force anchors below
+        // are reset, so recruitment limits and recruitment billing are
+        // measured against one consistent frame. Conquests made during the
+        // turn now being closed are already counted (the map has them);
+        // conquests made during the turn now opening are not, and must not
+        // be, or a nation could take land and spend its people in the same
+        // breath.
+        //
+        // Recomputed rather than carried forward because ownership is the
+        // only source: nothing else in the app tracks who gained what.
+        // With no provinces loaded there is nothing to recompute FROM, and
+        // an empty table would read as "every nation has zero people" —
+        // fail closed off a table we never actually read. Keep what we had
+        // instead. (Unreachable in practice: the advance modal is gated on
+        // loaded state.) The `?? ` arm is the same judgement for the
+        // reachable version of that case: provinces loaded but carrying no
+        // population figures at all, because the static file behind them
+        // failed to fetch — populationByOwner says `undefined` rather than
+        // handing back 78 zeroes, and last turn's anchor stands.
+        populationByNation:
+          (state.provinces ? populationByOwner(state.provinces) : undefined) ??
+          state.populationByNation,
         forces: state.forces.map((f) => ({
           ...f,
           turnStartLon: f.lon,
@@ -358,6 +457,8 @@ export function reducer(state: AppState, action: Action): AppState {
           typeof snapshot.lastTurnDays === 'number' ? snapshot.lastTurnDays : state.lastTurnDays,
         turnNumber:
           typeof snapshot.turnNumber === 'number' ? snapshot.turnNumber : state.turnNumber,
+        // Verbatim, for the same reason as BOOTSTRAP_DATA above.
+        populationByNation: snapshot.populationByNation,
         provincesVersion: state.provincesVersion + 1,
         pendingRenames: [],
         pendingUserAdds: [],

@@ -2,7 +2,7 @@ import type { AppSnapshot, Country, Force } from '@/types';
 
 // File-shape contracts. The on-disk layout is:
 //   public/data/state.json            → { appVersion, ownerships, countries }
-//   public/data/turn.json             → { appVersion, currentDate, lastTurnDays, turnNumber }
+//   public/data/turn.json             → { appVersion, currentDate, lastTurnDays, turnNumber, populationByNation }
 //   public/data/forces/<nation>.json  → Force[] (only created when non-empty)
 //
 // turn.json lives in its own file so an "advance turn" PR doesn't collide
@@ -19,6 +19,9 @@ interface TurnFile {
   currentDate: string;
   lastTurnDays: number;
   turnNumber: number;
+  /** Optional on the wire: a turn.json written before v10 has none, and
+   *  absence is a meaningful value downstream (recruitment fails open). */
+  populationByNation?: Record<string, number>;
 }
 
 type Fetcher = <T>(filename: string) => Promise<T>;
@@ -65,5 +68,11 @@ export async function fetchLiveSnapshot(fetcher: Fetcher, lister?: Lister): Prom
     currentDate: turn.currentDate,
     lastTurnDays: turn.lastTurnDays,
     turnNumber: turn.turnNumber,
+    // Passed through verbatim, undefined included: `populationByNation:
+    // undefined` and an absent key both stringify to the same JSON, so the
+    // baseline compares in useStateRefresh stay byte-identical for a
+    // pre-v10 turn.json. Keep it LAST here and in buildSnapshot so the two
+    // builders' key order keeps agreeing.
+    populationByNation: turn.populationByNation,
   };
 }

@@ -28,6 +28,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       currentDate: state.currentDate,
       lastTurnDays: state.lastTurnDays,
       turnNumber: state.turnNumber,
+      populationByNation: state.populationByNation,
     });
   };
 
