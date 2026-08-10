@@ -56,11 +56,11 @@
     "commander": "",
     "lat": 44.610023477890515,
     "lon": 8.783569335937502,
-    "turnStartLat": 45.07,
-    "turnStartLon": 7.69,
+    "turnStartLat": 44.610023477890515,
+    "turnStartLon": 8.783569335937502,
     "turnStartStrength": 37000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 100.25089182768299,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }
 ]
