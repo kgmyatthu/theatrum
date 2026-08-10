@@ -11,7 +11,7 @@
     ],
     [
       2,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       3,
@@ -2327,11 +2327,11 @@
     ],
     [
       581,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       582,
-      "portugal colonies"
+      "batavian east indies"
     ],
     [
       583,
@@ -2351,7 +2351,7 @@
     ],
     [
       587,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       588,
@@ -7115,43 +7115,43 @@
     ],
     [
       1778,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1779,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1780,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1781,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1782,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1783,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1784,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1785,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1786,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1787,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1788,
@@ -7163,11 +7163,11 @@
     ],
     [
       1790,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1791,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1792,
@@ -7207,23 +7207,23 @@
     ],
     [
       1801,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1802,
-      "dutch colonies"
+      "aceh"
     ],
     [
       1803,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1804,
-      "batavian republic"
+      "batavian east indies"
     ],
     [
       1805,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1806,
@@ -7291,27 +7291,27 @@
     ],
     [
       1822,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1823,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1824,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1825,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1826,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1827,
-      "dutch colonies"
+      "aceh"
     ],
     [
       1828,
@@ -7323,11 +7323,11 @@
     ],
     [
       1830,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       1831,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       1832,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "portugal colonies"
+      "batavian east indies"
     ],
     [
       2558,
@@ -11619,11 +11619,11 @@
     ],
     [
       2904,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       2905,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       2906,
@@ -11883,7 +11883,7 @@
     ],
     [
       2970,
-      "dutch colonies"
+      "minor indonesian states"
     ],
     [
       2971,
@@ -12403,7 +12403,7 @@
     ],
     [
       3100,
-      "dutch colonies"
+      "batavian east indies"
     ],
     [
       3101,
@@ -18400,6 +18400,10 @@
       "color": "#FCD840"
     },
     {
+      "name": "batavian east indies",
+      "color": "#FF8C42"
+    },
+    {
       "name": "batavian republic",
       "color": "#FF8C42"
     },
@@ -18466,10 +18470,6 @@
     {
       "name": "durrani empire",
       "color": "#556B2F"
-    },
-    {
-      "name": "dutch colonies",
-      "color": "#ffac38"
     },
     {
       "name": "emirate of diriyah",
@@ -18582,6 +18582,10 @@
     {
       "name": "minor indian states",
       "color": "#C39BD3"
+    },
+    {
+      "name": "minor indonesian states",
+      "color": "#4a4a4a"
     },
     {
       "name": "moldavia",
