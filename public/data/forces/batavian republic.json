@@ -20,8 +20,8 @@
     "nation": "batavian republic",
     "branch": "army",
     "name": "Batavian Army",
-    "strength": 15000,
-    "commander": "Daendels",
+    "strength": 25000,
+    "commander": "Adolf Hitler",
     "lat": 52.08,
     "lon": 4.31,
     "turnStartLat": 52.08,
@@ -30,5 +30,21 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "yellowwithblue-1786328719076-0",
+    "nation": "batavian republic",
+    "branch": "army",
+    "name": "Chassé Expeditionary Force",
+    "strength": 4000,
+    "commander": "",
+    "lat": -7.3025362053673275,
+    "lon": 112.69775390625,
+    "turnStartLat": -7.3025362053673275,
+    "turnStartLon": 112.69775390625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 4,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
