@@ -11,7 +11,7 @@
     ],
     [
       2,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       3,
@@ -2351,7 +2351,7 @@
     ],
     [
       587,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       588,
@@ -7123,7 +7123,7 @@
     ],
     [
       1780,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1781,
@@ -7147,11 +7147,11 @@
     ],
     [
       1786,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1787,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1788,
@@ -7163,7 +7163,7 @@
     ],
     [
       1790,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1791,
@@ -7207,11 +7207,11 @@
     ],
     [
       1801,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1802,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1803,
@@ -7223,7 +7223,7 @@
     ],
     [
       1805,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1806,
@@ -7291,11 +7291,11 @@
     ],
     [
       1822,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1823,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1824,
@@ -7303,15 +7303,15 @@
     ],
     [
       1825,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1826,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1827,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1828,
@@ -7327,7 +7327,7 @@
     ],
     [
       1831,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       1832,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "unclaimed"
+      "minor indonesian states"
     ],
     [
       2558,
@@ -11623,7 +11623,7 @@
     ],
     [
       2905,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       2906,
@@ -11883,7 +11883,7 @@
     ],
     [
       2970,
-      "batavian republic"
+      "minor indonesian states"
     ],
     [
       2971,
@@ -18400,6 +18400,10 @@
       "color": "#FCD840"
     },
     {
+      "name": "batavian east indies",
+      "color": "#FF8C42"
+    },
+    {
       "name": "batavian republic",
       "color": "#FF8C42"
     },
@@ -18570,6 +18574,10 @@
     {
       "name": "minor indian states",
       "color": "#C39BD3"
+    },
+    {
+      "name": "minor indonesian states",
+      "color": "#787878"
     },
     {
       "name": "moldavia",
