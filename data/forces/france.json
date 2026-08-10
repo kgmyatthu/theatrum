@@ -10,6 +10,8 @@
     "lon": 7.75,
     "turnStartLat": 48.57,
     "turnStartLon": 7.75,
+    "turnStartStrength": 60000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -24,6 +26,8 @@
     "lon": 8.93,
     "turnStartLat": 44.41,
     "turnStartLon": 8.93,
+    "turnStartStrength": 35000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -38,6 +42,8 @@
     "lon": 4.9,
     "turnStartLat": 52.37,
     "turnStartLon": 4.9,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -52,6 +58,8 @@
     "lon": -1.55,
     "turnStartLat": 47.22,
     "turnStartLon": -1.55,
+    "turnStartStrength": 30000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -66,6 +74,8 @@
     "lon": 31.23,
     "turnStartLat": 30.05,
     "turnStartLon": 31.23,
+    "turnStartStrength": 28000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -80,6 +90,8 @@
     "lon": 14.51,
     "turnStartLat": 35.9,
     "turnStartLon": 14.51,
+    "turnStartStrength": 3000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -94,6 +106,8 @@
     "lon": -4.5,
     "turnStartLat": 48.38,
     "turnStartLon": -4.5,
+    "turnStartStrength": 25,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -108,7 +122,25 @@
     "lon": 5.93,
     "turnStartLat": 43.1,
     "turnStartLon": 5.93,
+    "turnStartStrength": 8,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "AceApache-1786303435992-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Army of the Reserve",
+    "strength": 40000,
+    "commander": "Napoleon I",
+    "lat": 47.3183449418758,
+    "lon": 5.050964355468751,
+    "turnStartLat": 47.3183449418758,
+    "turnStartLon": 5.050964355468751,
+    "turnStartStrength": 40000,
+    "turnStartBranch": "army",
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 2
   }
 ]

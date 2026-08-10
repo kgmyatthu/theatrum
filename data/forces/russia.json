@@ -10,6 +10,8 @@
     "lon": 15,
     "turnStartLat": 49.5,
     "turnStartLon": 15,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -18,12 +20,14 @@
     "nation": "russia",
     "branch": "army",
     "name": "Army of the West",
-    "strength": 60000,
+    "strength": 30000,
     "commander": "",
     "lat": 52.1,
     "lon": 23.7,
     "turnStartLat": 52.1,
     "turnStartLon": 23.7,
+    "turnStartStrength": 30000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -38,6 +42,8 @@
     "lon": 29.7,
     "turnStartLat": 60,
     "turnStartLon": 29.7,
+    "turnStartStrength": 25,
+    "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
@@ -52,6 +58,24 @@
     "lon": 19.92,
     "turnStartLat": 39.62,
     "turnStartLon": 19.92,
+    "turnStartStrength": 12,
+    "turnStartBranch": "navy",
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 0
+  },
+  {
+    "id": "kgmyatthu-1786295296044-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Army of the West (detachment)",
+    "strength": 30000,
+    "commander": "",
+    "lat": 51.22064743038333,
+    "lon": 24.19189453125,
+    "turnStartLat": 51.22064743038333,
+    "turnStartLon": 24.19189453125,
+    "turnStartStrength": 30000,
+    "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }
