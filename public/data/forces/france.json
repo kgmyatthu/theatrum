@@ -118,13 +118,13 @@
     "name": "Toulon Squadron",
     "strength": 8,
     "commander": "",
-    "lat": 43.1,
-    "lon": 5.93,
+    "lat": 43.54841405518581,
+    "lon": 9.394437409937384,
     "turnStartLat": 43.1,
     "turnStartLon": 5.93,
     "turnStartStrength": 8,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 284.62542240730625,
     "createdAtTurn": 0
   },
   {
