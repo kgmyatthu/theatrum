@@ -6,13 +6,13 @@
     "name": "Armée du Rhin",
     "strength": 28800,
     "commander": "Moreau",
-    "lat": 48.6401687181191,
-    "lon": 6.322631835937501,
+    "lat": 48.55573433889221,
+    "lon": 7.789136351412511,
     "turnStartLat": 48.57,
     "turnStartLon": 7.75,
     "turnStartStrength": 60000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 105.23834964424108,
+    "kmMovedThisTurn": 213.4876487812725,
     "createdAtTurn": 0
   },
   {
@@ -38,13 +38,13 @@
     "name": "Armée de Batavie",
     "strength": 20000,
     "commander": "Brune",
-    "lat": 48.94415123418794,
-    "lon": 2.2961425781250004,
+    "lat": 48.63301389175955,
+    "lon": 6.371598349888648,
     "turnStartLat": 52.37,
     "turnStartLon": 4.9,
     "turnStartStrength": 20000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 422.7845944212621,
+    "kmMovedThisTurn": 723.3114651852904,
     "createdAtTurn": 0
   },
   {
@@ -134,13 +134,13 @@
     "name": "Army of the Reserve",
     "strength": 53000,
     "commander": "Napoleon I",
-    "lat": 48.608397925562606,
-    "lon": 6.247100830078126,
+    "lat": 48.51299851625566,
+    "lon": 7.772650003011413,
     "turnStartLat": 47.3183449418758,
     "turnStartLon": 5.050964355468751,
     "turnStartStrength": 40000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 169.21087835020373,
+    "kmMovedThisTurn": 281.97679509789737,
     "createdAtTurn": 2
   }
 ]
