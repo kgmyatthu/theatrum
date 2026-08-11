@@ -6,13 +6,13 @@
     "name": "Armée du Rhin",
     "strength": 28800,
     "commander": "Moreau",
-    "lat": 48.55573433889221,
-    "lon": 7.789136351412511,
+    "lat": 48.93950910487823,
+    "lon": 8.618678108178273,
     "turnStartLat": 48.57,
     "turnStartLon": 7.75,
     "turnStartStrength": 60000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 213.4876487812725,
+    "kmMovedThisTurn": 287.78571594924415,
     "createdAtTurn": 0
   },
   {
