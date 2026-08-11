@@ -7055,11 +7055,11 @@
     ],
     [
       1763,
-      "british colonies"
+      "new south wales"
     ],
     [
       1764,
-      "british colonies"
+      "new south wales"
     ],
     [
       1765,
@@ -7067,7 +7067,7 @@
     ],
     [
       1766,
-      "british colonies"
+      "new south wales"
     ],
     [
       1767,
@@ -18610,6 +18610,10 @@
     {
       "name": "nepal",
       "color": "#DC143C"
+    },
+    {
+      "name": "new south wales",
+      "color": "#f96684"
     },
     {
       "name": "oman",
