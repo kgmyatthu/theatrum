@@ -6,13 +6,13 @@
     "name": "Army of Germany",
     "strength": 80000,
     "commander": "Kray",
-    "lat": 48,
-    "lon": 8.5,
+    "lat": 48.544796334285266,
+    "lon": 7.889556884765626,
     "turnStartLat": 48,
     "turnStartLon": 8.5,
     "turnStartStrength": 80000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 79.68781654768753,
     "createdAtTurn": 0
   },
   {
