@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cucumberplane2771-1786440969077-0",
+    "nation": "saxony",
+    "branch": "army",
+    "name": "Saxon 1st Army",
+    "strength": 5000,
+    "commander": "idk",
+    "lat": 51.0430356036494,
+    "lon": 13.741149902343752,
+    "turnStartLat": 51.0430356036494,
+    "turnStartLon": 13.741149902343752,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]

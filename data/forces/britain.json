@@ -20,13 +20,13 @@
     "nation": "britain",
     "branch": "navy",
     "name": "Mediterranean Fleet",
-    "strength": 15,
+    "strength": 5,
     "commander": "Vice-Admiral George Keith, Lord Keith",
     "lat": 35.8,
     "lon": 14.2,
     "turnStartLat": 35.8,
     "turnStartLon": 14.2,
-    "turnStartStrength": 15,
+    "turnStartStrength": 5,
     "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
@@ -144,22 +144,6 @@
     "createdAtTurn": 0
   },
   {
-    "id": "Vancouver1903-1786301661719-0",
-    "nation": "britain",
-    "branch": "army",
-    "name": "New South Wales Corp",
-    "strength": 700,
-    "commander": "",
-    "lat": -33.88865750124074,
-    "lon": 151.13891601562503,
-    "turnStartLat": -33.88865750124074,
-    "turnStartLon": 151.13891601562503,
-    "turnStartStrength": 700,
-    "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 1
-  },
-  {
     "id": "Vancouver1903-1786309038601-0",
     "nation": "britain",
     "branch": "navy",
@@ -230,13 +214,13 @@
     "name": "East India Station",
     "strength": 8,
     "commander": "Rear-Admiral Peter Rainier",
-    "lat": 6.850077654785543,
-    "lon": 79.81567382812501,
+    "lat": -8.407168163601076,
+    "lon": 101.95312500000001,
     "turnStartLat": 6.850077654785543,
     "turnStartLon": 79.81567382812501,
     "turnStartStrength": 8,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2983.364369935865,
     "createdAtTurn": 2
   },
   {
@@ -270,5 +254,21 @@
     "turnStartBranch": "navy",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "Vancouver1903-1786398457362-0",
+    "nation": "britain",
+    "branch": "navy",
+    "name": "Mediterranean Fleet (detachment)",
+    "strength": 10,
+    "commander": "",
+    "lat": 43.73935207915473,
+    "lon": 9.206542968750002,
+    "turnStartLat": 35.8,
+    "turnStartLon": 14.2,
+    "turnStartStrength": 10,
+    "turnStartBranch": "navy",
+    "kmMovedThisTurn": 980.0792282756977,
+    "createdAtTurn": 0
   }
 ]

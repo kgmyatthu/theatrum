@@ -1,0 +1,18 @@
+[
+  {
+    "id": "AceApache-1786414572355-0",
+    "nation": "helvetic republic",
+    "branch": "army",
+    "name": "Legion Suisse",
+    "strength": 4800,
+    "commander": "",
+    "lat": 46.882723010671945,
+    "lon": 7.470703125000001,
+    "turnStartLat": 46.882723010671945,
+    "turnStartLon": 7.470703125000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]

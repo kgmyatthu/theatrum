@@ -1,0 +1,18 @@
+[
+  {
+    "id": "yellowwithblue-1786399221684-1",
+    "nation": "batavian east indies",
+    "branch": "army",
+    "name": "BIL Command: Java",
+    "strength": 8408,
+    "commander": "Herman Willem Daendels",
+    "lat": -6.178784935825187,
+    "lon": 106.83105468750001,
+    "turnStartLat": -6.178784935825187,
+    "turnStartLon": 106.83105468750001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
