@@ -30,5 +30,21 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "kgmyatthu-1786442724446-0",
+    "nation": "united states",
+    "branch": "army",
+    "name": "National Guard",
+    "strength": 5000,
+    "commander": "",
+    "lat": 39.00851330385611,
+    "lon": -76.90979003906251,
+    "turnStartLat": 39.00851330385611,
+    "turnStartLon": -76.90979003906251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
