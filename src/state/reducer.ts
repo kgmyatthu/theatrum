@@ -4,7 +4,7 @@ import { initialState } from './state';
 import type { Country, Force, ProvinceCollection } from '@/types';
 import { normalizeNation } from '@/utils/nation';
 import { haversineKm } from '@/utils/geometry';
-import { daysBetween } from '@/utils/movement';
+import { daysBetween, isNewlyRaised } from '@/utils/movement';
 
 function countriesToOwnersAndPalette(countries: Country[]): {
   owners: string[];
@@ -306,6 +306,14 @@ export function reducer(state: AppState, action: Action): AppState {
         strength: detached,
         commander: '',
         turnStartStrength: detachedAnchor,
+        // Lineage, for the server's move lock: a brand-new id is a force
+        // main has never seen, and an unvouched force is not allowed to
+        // arrive with a march already on its odometer — which this one
+        // inherits from its parent. Naming the parent is what proves where
+        // that march came from, and pins the detachment wherever the parent
+        // already stood. The parent's OWN fromIds ride along so a split of a
+        // split still reaches an id that exists on main.
+        fromIds: [parent.id, ...(parent.fromIds ?? [])],
       };
       const parentTurnStart = parentAnchor - detachedAnchor;
       return {
@@ -335,14 +343,107 @@ export function reducer(state: AppState, action: Action): AppState {
         ...state,
         forces: state.forces.map((f) => {
           if (f.id !== id) return f;
-          const stepKm = haversineKm(f.lat, f.lon, lat, lon);
           return {
             ...f,
             lat,
             lon,
-            kmMovedThisTurn: f.kmMovedThisTurn + stepKm,
+            // SET from the turn-start anchor, not accumulated from the last
+            // position. A force marches once per turn, so its odometer is
+            // the straight line it walked — there is no second leg to add,
+            // and reading it as a total would double-count a march that was
+            // recalled and re-plotted before submission.
+            kmMovedThisTurn: haversineKm(f.turnStartLat, f.turnStartLon, lat, lon),
           };
         }),
+      };
+    }
+
+    case 'MERGE_FORCE': {
+      const { sourceId, targetId } = action.payload;
+      const source = state.forces.find((f) => f.id === sourceId);
+      const target = state.forces.find((f) => f.id === targetId);
+      if (!source || !target || sourceId === targetId) return state;
+      // Same nation and same branch only. Ships do not join an army, and a
+      // force cannot be handed to a foreign power by dropping it on them.
+      if (source.nation !== target.nation || source.branch !== target.branch) return state;
+      // Neither side may be mid-re-brand. The survivor carries ONE
+      // turnStartBranch, so folding a re-branded force into a settled one
+      // would launder the full-price charge that re-brand owes. The server
+      // refuses it anyway — the anchor of a force that started the turn in
+      // the other pool funds nothing in this one, so conservation rejects
+      // the merged anchor as inflated — this is just the honest UI answer:
+      // settle the re-brand at the turn advance, then merge.
+      if (
+        source.branch !== (source.turnStartBranch ?? source.branch) ||
+        target.branch !== (target.turnStartBranch ?? target.branch)
+      ) {
+        return state;
+      }
+      // Nor may a force raised this turn, on either side. It cannot march,
+      // and the survivor takes the newer createdAtTurn — so folding it into
+      // a corps that HAS marched produces a force that is simultaneously
+      // still mustering and 500 km from where it started, which the servers
+      // refuse outright. Barring it here is the same rule those forces
+      // already live under, one turn long, instead of a rejection the
+      // player cannot read.
+      if (
+        isNewlyRaised(source, state.turnNumber) ||
+        isNewlyRaised(target, state.turnNumber)
+      ) {
+        return state;
+      }
+      // The source marches to the target to join it, so its odometer is the
+      // longer of what it has already walked and the straight line it walks
+      // now. (Already-walked wins only when the source has marched this
+      // turn — in which case the whole merge is refused server-side, which
+      // is the intended answer rather than a case to be clever about.)
+      const sourceKm = Math.max(
+        source.kmMovedThisTurn,
+        haversineKm(source.turnStartLat, source.turnStartLon, target.lat, target.lon),
+      );
+      // WORST CASE ON EVERY TURN-TRACKING FIELD — the whole anti-abuse
+      // content of merging. Odometer takes the max, so joining a fresh
+      // force to a spent one yields a spent one; the turn-start anchor
+      // comes from whichever side that max belongs to, so the survivor's
+      // displacement still measures from the march that actually happened;
+      // and createdAtTurn takes the newest, so a just-raised force cannot
+      // launder its no-marching-this-turn lock by merging into a veteran.
+      const created = [source.createdAtTurn, target.createdAtTurn].filter(
+        (n): n is number => typeof n === 'number',
+      );
+      const worst = sourceKm >= target.kmMovedThisTurn ? source : target;
+      const merged: Force = {
+        ...target,
+        strength: source.strength + target.strength,
+        // Anchors ADD: no men were raised, so the survivor must bill 0. The
+        // server credits the consumed id's anchor via fromIds below, which
+        // is what keeps this sum inside conservation.
+        turnStartStrength:
+          (source.turnStartStrength ?? source.strength) +
+          (target.turnStartStrength ?? target.strength),
+        turnStartLat: worst.turnStartLat,
+        turnStartLon: worst.turnStartLon,
+        kmMovedThisTurn: Math.max(sourceKm, target.kmMovedThisTurn),
+        createdAtTurn: created.length > 0 ? Math.max(...created) : undefined,
+        fromIds: [...(target.fromIds ?? []), source.id, ...(source.fromIds ?? [])],
+      };
+      return {
+        ...state,
+        forces: state.forces
+          .filter((f) => f.id !== sourceId)
+          .map((f) => (f.id === targetId ? merged : f)),
+      };
+    }
+
+    case 'RECALL_FORCE': {
+      const { id } = action.payload;
+      return {
+        ...state,
+        forces: state.forces.map((f) =>
+          f.id === id
+            ? { ...f, lat: f.turnStartLat, lon: f.turnStartLon, kmMovedThisTurn: 0 }
+            : f,
+        ),
       };
     }
 
@@ -391,6 +492,14 @@ export function reducer(state: AppState, action: Action): AppState {
           // settled, not charged again.
           turnStartStrength: f.strength,
           turnStartBranch: f.branch,
+          // Lineage expires with the turn that created it. The move lock
+          // scores a force against the most-travelled id it can name, so a
+          // detachment still pointing at its parent would be pinned by
+          // whatever the parent marches NEXT turn — rejected for having
+          // once been split. Stale lineage only ever over-constrains, never
+          // grants, so a client that fails to clear it costs its own user a
+          // rejection rather than opening anything.
+          fromIds: undefined,
         })),
       };
     }

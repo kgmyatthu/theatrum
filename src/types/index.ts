@@ -73,9 +73,15 @@ export interface Force {
   turnStartLon: number;
   turnStartLat: number;
   /**
-   * Cumulative great-circle path length walked this turn. Incremented on
-   * every MOVE_FORCE; reset to 0 on ADVANCE_TURN. Enforced ≤
-   * branch-km/day × state.lastTurnDays both client- and server-side.
+   * Great-circle distance marched this turn — straight-line from
+   * turnStartLat/Lon, since a force moves ONCE per turn. Set (not
+   * accumulated) by MOVE_FORCE, reset to 0 on ADVANCE_TURN, and enforced ≤
+   * branch-km/day × state.lastTurnDays on both servers.
+   *
+   * Doubles as the has-moved flag the one-move-per-turn lock is built on:
+   * non-zero means this force is done marching until the turn advances.
+   * That is why no separate `movedThisTurn` boolean exists — it would be
+   * this field, spelled twice.
    */
   kmMovedThisTurn: number;
   /**
@@ -110,6 +116,24 @@ export interface Force {
    * reducer backfills it from `branch`), mandatory server-side.
    */
   turnStartBranch?: ForceBranch;
+  /**
+   * Ids this force came out of: the parent for a detachment, everything
+   * consumed for a merge. Absent on a force that is nobody's descendant.
+   *
+   * Read by two server gates, which is the only reason it exists. The move
+   * lock scores a force against the most-travelled id it can name, so a
+   * detachment inherits its parent's march and a merge inherits the worse
+   * of the two — neither is a way to buy a second move. Anchor conservation
+   * credits these ids' turn-start strengths (same nation only, spend-once),
+   * without which a merged force's summed anchor reads as inflation and
+   * every merge is rejected.
+   *
+   * Optional and unversioned on purpose: a client that never writes it
+   * fails STRICT on both gates rather than loose — an unvouched march is
+   * refused and an uncredited anchor bills full price — so an old bundle
+   * costs its own user a rejection and costs the game nothing.
+   */
+  fromIds?: string[];
 }
 
 // ------------------------------------------------------------------

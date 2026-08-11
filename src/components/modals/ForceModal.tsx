@@ -3,6 +3,8 @@ import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { useAuth } from '@/auth/AuthContext';
 import { Button } from '@/components/ui/Button';
 import { mintForceId } from '@/utils/forceId';
+import { hasMovedThisTurn } from '@/utils/movement';
+import { getStateRefreshBaseline } from '@/hooks/useStateRefresh';
 import type { Force, ForceBranch } from '@/types';
 import styles from './ForceModal.module.css';
 
@@ -51,6 +53,23 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
 
   const handleConfirmDelete = (): void => {
     dispatch({ type: 'DELETE_FORCE', payload: { id: force.id } });
+    onDismiss();
+  };
+
+  // A force marches once per turn, so a confirmed march is normally final —
+  // but only from the moment it lands on main, which is where the server
+  // pins the force back. Until then it is a local edit like any other and
+  // may be taken back. The refresh baseline IS main as this client last saw
+  // it, so ask that rather than guessing: unsubmitted march → offer the
+  // recall; already merged → the button is gone and the drag stays locked.
+  const canRecall =
+    hasMovedThisTurn(force) &&
+    !(getStateRefreshBaseline()?.forces ?? []).some(
+      (f) => f.id === force.id && hasMovedThisTurn(f),
+    );
+
+  const handleRecall = (): void => {
+    dispatch({ type: 'RECALL_FORCE', payload: { id: force.id } });
     onDismiss();
   };
 
@@ -155,7 +174,7 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
             <div className={styles.buttons}>
               <span className={styles.confirmText}>
                 {splitValid
-                  ? `${force.name} keeps ${force.strength - parsedSplit} ${splitUnit}. The detachment shares this turn's already-used movement.`
+                  ? `${force.name} keeps ${force.strength - parsedSplit} ${splitUnit}. The detachment inherits this turn's march, so it can only move if ${force.name} has not.`
                   : `Enter 1–${force.strength - 1}.`}
               </span>
               <div className={styles.right}>
@@ -187,6 +206,7 @@ export function ForceModal({ force, onDismiss }: ForceModalProps) {
               {force.strength > 1 && (
                 <Button onClick={() => setSplitting(true)}>Split…</Button>
               )}
+              {canRecall && <Button onClick={handleRecall}>Recall march</Button>}
             </div>
             <div className={styles.right}>
               <Button onClick={onDismiss}>Cancel</Button>

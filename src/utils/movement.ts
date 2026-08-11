@@ -23,6 +23,21 @@ export function isNewlyRaised(force: Force, currentTurnNumber: number): boolean 
   );
 }
 
+/** True once this force has marched this turn. A force moves ONCE per
+ *  turn, so this is also "is locked": the client stops offering the drag,
+ *  and checkMoveLock refuses one that arrives anyway.
+ *
+ *  Reads the odometer rather than comparing position to the turn-start
+ *  anchor because the two say the same thing (the servers pin
+ *  displacement ≤ kmMovedThisTurn) and this needs no geometry. It is local
+ *  state, so a march made in this session and not yet submitted locks the
+ *  force too — RECALL_FORCE is the way back out, and it stops working
+ *  once the march is on main, which is exactly when the server would
+ *  refuse to unwind it. */
+export function hasMovedThisTurn(force: Force): boolean {
+  return force.kmMovedThisTurn > MOVEMENT_TOLERANCE_KM;
+}
+
 /** What this specific force is allowed to move this turn. Returns 0 when
  *  the force was raised this same turn; otherwise the standard branch
  *  budget. Used by the UI to size the range circle and by the server-side

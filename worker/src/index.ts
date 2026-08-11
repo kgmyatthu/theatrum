@@ -40,6 +40,7 @@ import { rebaseForceFile } from '../../scripts/lib/rebase-forces.mjs';
 import {
   budgetForBranch,
   checkAnchorConservation,
+  checkMoveLock,
   checkRaiseBudgets,
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
@@ -1034,6 +1035,16 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       const inflated = checkAnchorConservation(mainByNation, mergedByNation);
       if (inflated) {
         return errorJson(origin, 422, inflated);
+      }
+      // One move per force per turn, scored over the same merged-vs-main
+      // pair and sharing this branch's turn-advance exception: an advance
+      // legitimately resets every odometer to 0, which the gate would read
+      // as a march being laundered away. It has to live down here rather
+      // than in the per-force loop above — that loop only sees the incoming
+      // snapshot, and this rule is a comparison against main.
+      const relocked = checkMoveLock(mainByNation, mergedByNation);
+      if (relocked) {
+        return errorJson(origin, 422, relocked);
       }
     }
 

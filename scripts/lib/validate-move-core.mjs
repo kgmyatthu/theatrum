@@ -7,6 +7,7 @@
 import {
   budgetForBranch,
   checkAnchorConservation,
+  checkMoveLock,
   checkRaiseBudgets,
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
@@ -370,6 +371,15 @@ export function validateMove(inputs) {
     if (inflated) {
       // Same shape as overCap: a finished, nation-level sentence.
       return { valid: false, reason: inflated };
+    }
+    // One move per force per turn. Shares this block's scope AND its
+    // exception for the same two reasons: it pairs head forces to base by
+    // id (so base must stay whole for a rename), and a turn advance resets
+    // every odometer to 0, which the gate would otherwise read as a march
+    // being laundered away.
+    const relocked = checkMoveLock(base.forces, scope);
+    if (relocked) {
+      return { valid: false, reason: relocked };
     }
   }
 

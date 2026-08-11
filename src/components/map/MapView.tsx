@@ -143,14 +143,24 @@ export function MapView() {
 
   const handleMobilizationConfirm = useCallback((): void => {
     if (!pendingMove) return;
-    dispatch({
-      type: 'MOVE_FORCE',
-      payload: {
-        id: pendingMove.force.id,
-        lat: pendingMove.target.lat,
-        lon: pendingMove.target.lon,
-      },
-    });
+    // A merge is a march that ends inside another counter, so the reducer
+    // is handed the pair and works out the distance itself — the target's
+    // position is where the source lands by definition.
+    if (pendingMove.mergeTarget) {
+      dispatch({
+        type: 'MERGE_FORCE',
+        payload: { sourceId: pendingMove.force.id, targetId: pendingMove.mergeTarget.id },
+      });
+    } else {
+      dispatch({
+        type: 'MOVE_FORCE',
+        payload: {
+          id: pendingMove.force.id,
+          lat: pendingMove.target.lat,
+          lon: pendingMove.target.lon,
+        },
+      });
+    }
     setPendingMove(null);
   }, [dispatch, pendingMove]);
 

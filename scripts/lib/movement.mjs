@@ -373,6 +373,17 @@ export function checkRaiseBudgets(forcesByNation, lastTurnDays, popByNation) {
   return null;
 }
 
+/** Ids this force was split from, or absorbed by merging. Written by the
+ *  client (SPLIT_FORCE stamps the parent, MERGE_FORCE stamps everything it
+ *  consumed) and read by both gates below, so it is FILTERED rather than
+ *  trusted: a missing field, a non-array, or an array with junk in it all
+ *  degrade to "no sources", which is the STRICT end of both rules — an
+ *  unvouched force may not have marched, and an uncredited anchor bills its
+ *  whole strength. Garbage therefore costs the submitter, never the game. */
+function fromIdsOf(f) {
+  return Array.isArray(f.fromIds) ? f.fromIds.filter((s) => typeof s === 'string') : [];
+}
+
 /** One force's turn-start anchor as a { strength, branch } pair.
  *  Bucketed by turnStartBranch, not branch: the anchor was earned in the
  *  branch the force started the turn in, so a re-brand moves the force
@@ -434,8 +445,8 @@ export function checkAnchorConservation(baseForcesByNation, headForcesByNation) 
   // thing that wants to be two files at once, is exactly what that
   // uniqueness check rejects first.
   const baseById = new Map();
-  for (const forces of Object.values(baseForcesByNation)) {
-    for (const f of forces || []) baseById.set(f.id, anchorOf(f));
+  for (const [nation, forces] of Object.entries(baseForcesByNation)) {
+    for (const f of forces || []) baseById.set(f.id, { ...anchorOf(f), nation });
   }
   // Same sorted-nation, army-before-navy walk as checkRaiseBudgets so
   // both gates name the same first offender.
@@ -460,11 +471,153 @@ export function checkAnchorConservation(baseForcesByNation, headForcesByNation) 
         // once per copy and both clones bill 0.
         baseById.delete(f.id);
       }
+      // A MERGE folds several forces into one id, so the survivor's anchor
+      // is the SUM of theirs — its own base allowance is short by exactly
+      // what it absorbed, and every merge would read as inflation. fromIds
+      // funds the difference on the same spend-once terms as the pairing
+      // above: each base anchor funds ONE head force and is then gone, so
+      // naming an id twice — or naming one that is still standing in its
+      // own right — starves whichever force is scored second.
+      //
+      // SAME NATION ONLY, and unlike the identity pairing that is not
+      // paranoia but a denial-of-service fix. Ids are indexed flat across
+      // every nation file (deliberately, so RENAME_COUNTRY still pairs), so
+      // without this a player could name FRANCE's force id inside their own
+      // file, spend france's allowance, and bounce france's next submission
+      // for inflation it never committed. A player can only write their own
+      // file, so same-nation credit is the entire legitimate use.
+      //
+      // ponytail: a merge landing in the same PR as an admin RENAME_COUNTRY
+      // loses its credit — base still files those ids under the old name —
+      // and is rejected. Upgrade path: match against the ids the rename is
+      // carrying. Not built: the two are separate PRs in practice, and the
+      // failure is a rejection rather than a silent free anchor.
+      for (const src of fromIdsOf(f)) {
+        const from = baseById.get(src);
+        if (from && from.branch === anchor.branch && from.nation === nation) {
+          allowance[anchor.branch] += from.strength;
+          baseById.delete(src);
+        }
+      }
     }
     for (const branch of ['army', 'navy']) {
       if (total[branch] <= allowance[branch]) continue;
       const unit = branch === 'navy' ? 'ships' : 'men';
       return `${nation} inflated its ${branch} turn-start strength: its anchors total ${total[branch]} ${unit} in this submission but the same forces were anchored at ${allowance[branch]} ${unit} at the start of the turn — anchors may be split or dropped within a turn, never invented or raised`;
+    }
+  }
+  return null;
+}
+
+/** ONE MOVE PER FORCE PER TURN. The distance of that one move is still the
+ *  branch budget — this gate says nothing about how far, only how often.
+ *
+ *  kmMovedThisTurn IS the flag; no field was added for this. It is 0 at
+ *  turn start (ADVANCE_TURN resets it) and non-zero the instant a force
+ *  marches, and it cannot be under-reported because the per-force
+ *  displacement check that runs alongside this one pins it from below.
+ *  Over-reporting is possible and simply locks the reporter harder.
+ *
+ *  Every head force is scored against the most-travelled force it can
+ *  point at — itself as BASE knew it, plus anything it was split from or
+ *  merged with (fromIds). Three rules, in the order they are cheapest to
+ *  fail:
+ *
+ *    1. Nothing vouches for it → it may not have marched at all. This is
+ *       what stops a fabricated id (or a split that hides its parent) from
+ *       arriving with a march already on the clock.
+ *    2. It may not report LESS travel than its sources account for —
+ *       either their own odometers, or the ground between their turn-start
+ *       anchors and where this force now stands. A split hands the parent's
+ *       odometer to the detachment, and a merge bills the distance the
+ *       consumed force walked to the rendezvous, so neither is a way to
+ *       launder a march or to teleport men into a stationary stack.
+ *    3. If that worst source had already marched, the force stays exactly
+ *       where that source stood. This is the lock proper.
+ *
+ *  Rule 2 is also the whole of the merge rule: the survivor inherits the
+ *  WORST case, so combining a fresh force with a spent one yields a spent
+ *  one. There is no merge-specific code anywhere in this file.
+ *
+ *  UNIVERSAL — admins are not exempt, by explicit design call. An admin
+ *  fixing a misdrop waits for the turn to advance, same as everyone.
+ *
+ *  Callers own the turn-advance exception, exactly as they do for
+ *  checkAnchorConservation: an advance legitimately resets every odometer
+ *  to 0, which is rule 2's definition of laundering. Call both gates from
+ *  inside the same "turn number unchanged" branch.
+ *
+ *  ponytail: sources are named by the submitter, so a hand-crafted PR can
+ *  point fromIds at some other unmoved force it never split from and shake
+ *  off rule 3. It is not free — the real parent's anchor then funds nothing,
+ *  so the detachment bills its FULL strength against the nation's monthly
+ *  recruitment cap — which prices the trick at roughly a turn of recruitment
+ *  for one extra leg by a token unit. Upgrade path: require every source to
+ *  sit at the claiming force's turn-start anchor, which makes a forged
+ *  parent geometrically impossible rather than merely expensive. */
+export function checkMoveLock(baseForcesByNation, headForcesByNation) {
+  // Flat id index for the same reason checkAnchorConservation uses one: a
+  // RENAME_COUNTRY carries whole ids into a differently-named file, and
+  // pairing by nation+id would read every one of them as brand new.
+  const baseById = new Map();
+  for (const forces of Object.values(baseForcesByNation)) {
+    for (const f of forces || []) baseById.set(f.id, f);
+  }
+  // Same sorted walk as the two gates above so all three name the same
+  // first offender.
+  for (const nation of Object.keys(headForcesByNation).sort()) {
+    for (const f of headForcesByNation[nation] || []) {
+      // Two separate quantities, and keeping them apart is the whole
+      // correctness of this loop. `need` is the march this force must own
+      // up to; `pin` is a spot it may not have left. A source that walks
+      // INTO a merge contributes to the first and must not contribute to
+      // the second, or every legitimate merge would be rejected for not
+      // standing where the force it absorbed used to be.
+      let vouched = false;
+      let need = 0;
+      let pin = null;
+      for (const id of [f.id, ...fromIdsOf(f)]) {
+        const src = baseById.get(id);
+        if (!src) continue;
+        vouched = true;
+        // Base is content main already accepted, but it predates this gate,
+        // so a legacy force with no odometer reads as unmarched rather than
+        // as NaN — which would lose every comparison below and switch the
+        // lock off for exactly the forces least able to defend themselves.
+        const srcKm = typeof src.kmMovedThisTurn === 'number' ? src.kmMovedThisTurn : 0;
+        // The geometric half is what makes a merge cost what it should. The
+        // consumed force is gone from head, so the only evidence of its
+        // journey is the gap between the anchor BASE has for it and where
+        // the survivor now stands — which is exactly the ground it had to
+        // cover to get there. Without this, naming a distant force in
+        // fromIds folds its men into a stationary one for free: a
+        // teleport wearing a disband's clothes, and anchor conservation
+        // waves it through precisely because the lineage credit is real.
+        // Reading the anchor from BASE rather than from f also pins the
+        // anchor itself, so forging turnStart on the survivor buys nothing.
+        need = Math.max(
+          need,
+          srcKm,
+          haversineKm(src.turnStartLat, src.turnStartLon, f.lat, f.lon),
+        );
+        // Only a source that had ALREADY marched before this submission
+        // pins anything, and the furthest-travelled one wins.
+        if (srcKm > MOVEMENT_TOLERANCE_KM && (pin === null || srcKm > pin.km)) {
+          pin = { km: srcKm, lat: src.lat, lon: src.lon };
+        }
+      }
+      if (!vouched) {
+        if (f.kmMovedThisTurn > MOVEMENT_TOLERANCE_KM) {
+          return `force ${f.id} (${nation}) reports ${Math.round(f.kmMovedThisTurn)} km marched this turn, but neither it nor anything it was split from or merged with is on main — refresh the page and resubmit`;
+        }
+        continue;
+      }
+      if (f.kmMovedThisTurn < need - MOVEMENT_TOLERANCE_KM) {
+        return `force ${f.id} (${nation}) reports ${Math.round(f.kmMovedThisTurn)} km marched this turn, but ${Math.round(need)} km is already accounted for on main — splitting or merging cannot discard a march`;
+      }
+      if (pin !== null && haversineKm(pin.lat, pin.lon, f.lat, f.lon) > MOVEMENT_TOLERANCE_KM) {
+        return `force ${f.id} (${nation}) has already marched this turn — a force moves once per turn, and cannot move again until the turn advances`;
+      }
     }
   }
   return null;

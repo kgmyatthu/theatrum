@@ -332,7 +332,21 @@ test('pass: player legitimately moves their own force', () => {
     state: stateFile(),
     forces: {
       ...forcesMap(),
-      spain: [force({ id: 'spain-1', nation: 'spain', lat: 41, lon: -4 })],
+      // An honest march: the anchor stays where main has it and the
+      // odometer reports the ~71 km walked. Moving the anchor along with
+      // the force would be a reset of this turn's march, and the move lock
+      // measures from BASE's anchor precisely so that it cannot be.
+      spain: [
+        force({
+          id: 'spain-1',
+          nation: 'spain',
+          lat: 41,
+          lon: -4,
+          turnStartLat: 40.4,
+          turnStartLon: -3.7,
+          kmMovedThisTurn: 80,
+        }),
+      ],
     },
   };
   expectPass(validateMove(defaults({ head })));
@@ -407,7 +421,10 @@ test('pass: admin moves an enemy force', () => {
     forces: {
       ...forcesMap(),
       france: [
-        force({ id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte', lat: 0, lon: 0 }),
+        force({
+          id: 'france-1', nation: 'france', name: 'Grande Armée', commander: 'Bonaparte',
+          lat: 41, lon: -4, turnStartLat: 40.4, turnStartLon: -3.7, kmMovedThisTurn: 80,
+        }),
       ],
     },
   };
@@ -548,7 +565,9 @@ test('pass: bot PR with marker for a player moving their own force', () => {
     state: stateFile(),
     forces: {
       ...forcesMap(),
-      spain: [force({ id: 'spain-1', nation: 'spain', lat: 41 })],
+      spain: [
+        force({ id: 'spain-1', nation: 'spain', lat: 41, turnStartLat: 40.4, kmMovedThisTurn: 80 }),
+      ],
     },
   };
   expectPass(
@@ -968,6 +987,9 @@ test('pass: mid-turn split — detachment inherits turn-tracking fields', () => 
     name: '1st Corps (detachment)',
     strength: 15000,
     commander: '',
+    // Lineage: a brand-new id main has never seen may not arrive with a
+    // march on its odometer unless it can name where that march came from.
+    fromIds: ['spain-1'],
     ...marched,
   });
   expectPass(
@@ -979,7 +1001,7 @@ test('pass: mid-turn split — detachment inherits turn-tracking fields', () => 
   );
 });
 
-test('pass: detachment keeps marching after the split within remaining budget', () => {
+test('pass: detachment marches on after a split made in the same submission', () => {
   const parent = force({
     id: 'spain-1',
     nation: 'spain',
@@ -992,7 +1014,10 @@ test('pass: detachment keeps marching after the split within remaining budget', 
   });
   // Child carried the parent's 200 km, then walked ~167 km more on its
   // own: displacement (turnStart → here) ≈ 289 km ≤ 367 km reported,
-  // and 367 ≤ 750 budget.
+  // and 367 ≤ 750 budget. Legal because the parent's march is NOT on main
+  // yet — both halves are still spending one move out of the anchor they
+  // share, and neither ends up further from it than a single march allows.
+  // The moment that split lands, the next test is what happens.
   const child = force({
     id: 'alice-1700000000000-0',
     nation: 'spain',
@@ -1003,6 +1028,7 @@ test('pass: detachment keeps marching after the split within remaining budget', 
     turnStartLat: 40.4,
     turnStartLon: -3.7,
     kmMovedThisTurn: 367,
+    fromIds: ['spain-1'],
   });
   expectPass(
     validateMove(
@@ -1010,6 +1036,125 @@ test('pass: detachment keeps marching after the split within remaining budget', 
         head: { state: stateFile(), forces: forcesMap({ spain: [parent, child] }) },
       }),
     ),
+  );
+});
+
+// ────────────────────────────────────────────────────────────────────
+// One march per force per turn (checkMoveLock)
+//
+// The unit-level cases live in movement.test.mjs; these pin the wiring —
+// that the validator actually calls the gate, with base whole and head
+// scoped, and that a rejection reaches the player as a PR comment.
+// ────────────────────────────────────────────────────────────────────
+
+test('reject: a force whose march is already on main cannot march again', () => {
+  const onMain = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: 41.5,
+    turnStartLat: 40.4,
+    kmMovedThisTurn: 200,
+  });
+  const again = { ...onMain, lat: 43.0, kmMovedThisTurn: 367 };
+  expectReject(
+    validateMove(
+      defaults({
+        base: { forces: forcesMap({ spain: [onMain] }) },
+        head: { forces: forcesMap({ spain: [again] }) },
+      }),
+    ),
+    /force spain-1 \(spain\) has already marched this turn/,
+  );
+});
+
+test('reject: splitting a force whose march is on main does not free the detachment', () => {
+  // The split loophole. The detachment is a new id, so nothing but its
+  // lineage ties it to the march the parent already made — and its lineage
+  // is what pins it to where the parent stands.
+  const onMain = force({
+    id: 'spain-1',
+    nation: 'spain',
+    lat: 41.5,
+    turnStartLat: 40.4,
+    kmMovedThisTurn: 200,
+  });
+  const child = force({
+    id: 'alice-1700000000000-0',
+    nation: 'spain',
+    name: '1st Corps (detachment)',
+    strength: 15000,
+    lat: 43.0,
+    turnStartLat: 40.4,
+    kmMovedThisTurn: 367,
+    fromIds: ['spain-1'],
+  });
+  expectReject(
+    validateMove(
+      defaults({
+        base: { forces: forcesMap({ spain: [onMain] }) },
+        head: {
+          // Anchors partition across the split, or conservation rejects
+          // this before the move lock is ever reached.
+          forces: forcesMap({
+            spain: [{ ...onMain, strength: 25000, turnStartStrength: 25000 }, child],
+          }),
+        },
+      }),
+    ),
+    /has already marched this turn/,
+  );
+});
+
+test('pass: merge — the survivor absorbs the other force and its march', () => {
+  const held = force({ id: 'spain-1', nation: 'spain', strength: 40000 });
+  const distant = force({
+    id: 'spain-2',
+    nation: 'spain',
+    name: '2nd Corps',
+    strength: 10000,
+    lat: 43.0,
+    turnStartLat: 43.0,
+  });
+  // spain-2 marches the ~289 km down to spain-1 and is consumed. The
+  // survivor keeps spain-1's id and position, sums both strengths AND both
+  // anchors (no men were raised), and owns the march that was walked.
+  const merged = {
+    ...held,
+    strength: 50000,
+    turnStartStrength: 50000,
+    kmMovedThisTurn: 300,
+    fromIds: ['spain-2'],
+  };
+  const fixture = (survivor) =>
+    defaults({
+      base: { forces: forcesMap({ spain: [held, distant] }) },
+      head: { forces: forcesMap({ spain: [survivor] }) },
+    });
+  expectPass(validateMove(fixture(merged)));
+  // The same merge with a clean odometer: 10,000 men cross Spain for free
+  // and the survivor is still fresh. This is the one the geometric half of
+  // the gate exists for — anchor conservation waves it through, because
+  // the lineage credit funding it is entirely genuine.
+  expectReject(
+    validateMove(fixture({ ...merged, kmMovedThisTurn: 0 })),
+    /cannot discard a march/,
+  );
+});
+
+test('reject: merging a force that is not yours does not fund the survivor', () => {
+  // Lineage credit is same-nation only. Without that, naming france's id
+  // spends france's allowance and bounces france's next submission for
+  // inflation it never committed.
+  const held = force({ id: 'spain-1', nation: 'spain', strength: 40000 });
+  const stolen = {
+    ...held,
+    strength: 80000,
+    turnStartStrength: 80000,
+    fromIds: ['france-1'],
+  };
+  expectReject(
+    validateMove(defaults({ head: { forces: forcesMap({ spain: [stolen] }) } })),
+    /^spain inflated its army turn-start strength/,
   );
 });
 

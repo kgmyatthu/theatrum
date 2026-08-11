@@ -4,12 +4,15 @@ import type { Force } from '@/types';
 import { useAppState } from '@/state/AppContext';
 import { useAuth } from '@/auth/AuthContext';
 import { haversineKm, formatDistance } from '@/utils/geometry';
-import { effectiveBudget } from '@/utils/movement';
+import { effectiveBudget, hasMovedThisTurn, isNewlyRaised } from '@/utils/movement';
 
 export interface PendingMove {
   force: Force;
   origin: { lat: number; lon: number };
   target: { lat: number; lon: number };
+  /** Force the drop landed on: the move is a merge, and `target` has been
+   *  snapped to this force's exact position. Undefined for a plain march. */
+  mergeTarget?: Force;
   /** Called by parent on confirm or cancel — controls the marker. */
   marker: L.Marker;
 }
@@ -79,6 +82,12 @@ interface DragArtifacts {
 const RANGE_OK_COLOR = '#4caf50';
 const RANGE_OVER_COLOR = '#e53935';
 
+/** Drop within this many SCREEN pixels of another counter and the march
+ *  becomes a merge. Pixels rather than km on purpose: a fixed ground
+ *  radius is unhittable at world zoom and covers half of Europe at street
+ *  zoom, while 24 px is the same gesture everywhere. */
+const MERGE_SNAP_PX = 24;
+
 export function useForcesLayer({
   mapRef,
   onForceContextMenu,
@@ -122,21 +131,25 @@ export function useForcesLayer({
     for (const force of forces) {
       const color = palette[force.nation] ?? '#888';
       const editable = canEdit(force);
+      // A force marches ONCE per turn. Once it has, the drag handle is gone
+      // rather than merely doomed at the confirm step — the server would
+      // pin it back anyway. The tooltip is the only explanation offered
+      // here; ForceModal carries the Recall button that undoes it while the
+      // march is still unsubmitted.
+      const locked = hasMovedThisTurn(force);
       const marker = L.marker([force.lat, force.lon], {
         icon: makeForceIcon(force, color, initialScale),
-        draggable: editable,
-        title: `${force.name} (${force.nation})`,
+        draggable: editable && !locked,
+        title: locked
+          ? `${force.name} (${force.nation}) — already marched this turn`
+          : `${force.name} (${force.nation})`,
       });
 
-      // Range circle radius is "how far this force can still move this
-       // turn" — the same budget the worker and validator enforce. A drop
-       // inside the circle is acceptable; outside is over budget. Newly
-       // raised forces have effectiveBudget = 0 → radius collapses to 0
-       // (invisible circle, any drop position shows red feedback).
-      const remainingKm = Math.max(
-        0,
-        effectiveBudget(force, lastTurnDays, turnNumber) - force.kmMovedThisTurn,
-      );
+      // Range circle radius is this force's whole budget for the turn: it
+      // is only draggable while its odometer reads 0, so there is nothing
+      // spent to subtract. Newly raised forces have effectiveBudget = 0 →
+      // radius collapses to 0 (invisible circle, any drop shows red).
+      const remainingKm = effectiveBudget(force, lastTurnDays, turnNumber);
 
       marker.on('dragstart', () => {
         const origin = L.latLng(force.lat, force.lon);
@@ -202,10 +215,38 @@ export function useForcesLayer({
         group.removeLayer(art.distanceLabel);
         group.removeLayer(art.rangeCircle);
         artifacts.delete(force.id);
+        // Dropped on top of a friendly counter of the same branch → merge.
+        // Both sides must be mergeable, and a drop on one that isn't simply
+        // degrades to an ordinary march rather than dead-ending in a modal
+        // that confirms nothing. Excluded: a force mid-re-brand, whose
+        // full-price charge a single surviving turnStartBranch would
+        // launder; and a force raised this turn, which cannot march at all
+        // and would hand the survivor its muster lock on top of a march
+        // already walked.
+        const mergeable = (f: Force): boolean =>
+          f.branch === (f.turnStartBranch ?? f.branch) && !isNewlyRaised(f, turnNumber);
+        const dropPoint = map.latLngToContainerPoint(cur);
+        const mergeTarget = mergeable(force)
+          ? forces.find(
+              (other) =>
+                other.id !== force.id &&
+                other.nation === force.nation &&
+                other.branch === force.branch &&
+                mergeable(other) &&
+                map.latLngToContainerPoint([other.lat, other.lon]).distanceTo(dropPoint) <=
+                  MERGE_SNAP_PX,
+            )
+          : undefined;
         onForceDragEnd({
           force,
           origin: { lat: art.origin.lat, lon: art.origin.lng },
-          target: { lat: cur.lat, lon: cur.lng },
+          // Snapped to the target's exact position: the two forces end up
+          // in one place, and the distance the confirm dialog bills is the
+          // distance actually walked to get there.
+          target: mergeTarget
+            ? { lat: mergeTarget.lat, lon: mergeTarget.lon }
+            : { lat: cur.lat, lon: cur.lng },
+          mergeTarget,
           marker,
         });
       });

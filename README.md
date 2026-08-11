@@ -110,8 +110,9 @@ React.StrictMode
   the reducer's `switch` is exhaustiveness-checked with a `never` default, so adding an
   action without handling it is a compile error. Key actions: `BOOTSTRAP_DATA`,
   `APPLY_SNAPSHOT` (poll/import sync), `SET_OWNER`, `RENAME_COUNTRY`, `ADD_FORCE` /
-  `MOVE_FORCE` (increments `kmMovedThisTurn`) / `UPDATE_FORCE` / `DELETE_FORCE`,
-  `ADVANCE_TURN` (resets per-force turn tracking), and the perm-editing actions.
+  `MOVE_FORCE` (sets `kmMovedThisTurn` from the turn-start anchor) / `MERGE_FORCE` /
+  `RECALL_FORCE` / `UPDATE_FORCE` / `DELETE_FORCE`, `ADVANCE_TURN` (resets per-force turn
+  tracking), and the perm-editing actions.
 
 Province ownership on the 4,596-feature GeoJSON is **mutated in place** for performance
 (the collection reference stays stable); a `provincesVersion` counter is bumped so derived
@@ -125,7 +126,7 @@ Leaflet objects in refs, and re-syncs inside `useEffect`s:
 | --- | --- |
 | `useLeafletMap` | The single `L.Map` + Esri World Imagery satellite tiles |
 | `useProvincesLayer` | Province polygons; restyles on owner/palette/opacity/selection/zoom |
-| `useForcesLayer` | Force counter markers; drag-to-move with a live range circle sized to remaining budget |
+| `useForcesLayer` | Force counter markers; drag-to-move with a live range circle, drop-on-counter to merge |
 | `useCitiesLayer` | Zoom-tiered city labels (all 7,342 visible at high zoom) |
 | `useCountryLabelsLayer` | One label per connected landmass (union-find over shared vertices) |
 | `useRulerTool` | Click-to-measure great-circle distances |
@@ -287,8 +288,9 @@ Types live in `src/types/index.ts`.
 | `strength` | Troop count (army) or ship count (navy) |
 | `lon`, `lat` | Current position |
 | `turnStartLon/Lat` | Position at the last turn advance (server checks displacement ≤ distance moved) |
-| `kmMovedThisTurn` | Cumulative path length this turn; reset to 0 on `ADVANCE_TURN` |
+| `kmMovedThisTurn` | Distance marched this turn, straight-line from the anchor; reset to 0 on `ADVANCE_TURN`. Non-zero **is** the has-marched lock |
 | `createdAtTurn?` | Turn the force was raised; movement-locked while it equals the current turn |
+| `fromIds?` | Ids this force was split from or absorbed by merging; cleared on `ADVANCE_TURN` |
 
 **Turns & movement budgets.** `turn.json` holds `currentDate`, `lastTurnDays`, `turnNumber`.
 Advancing a turn (admin only) sets `lastTurnDays` to the number of in-game days elapsed and
@@ -302,6 +304,24 @@ With the current `lastTurnDays = 30`: **armies 750 km/turn, navies 6,000 km/turn
 raised this turn can't move until next turn. These constants live once in
 `scripts/lib/movement.mjs`, are re-exported to the client (`src/utils/movement.ts`), and are
 enforced on **both** sides plus the CI validator.
+
+**One march per turn.** That budget buys a single march, not a distance allowance to spend
+in pieces: once a force has moved, it stays put until the turn advances. `checkMoveLock`
+(same file, same call sites as `checkAnchorConservation`) scores every submitted force
+against the most-travelled force it can name — itself as `main` has it, plus its `fromIds` —
+and refuses one that moved again, that reports less travel than its lineage accounts for, or
+that arrives mid-march with nothing on `main` vouching for it. **Admins are not exempt.**
+The client half is `hasMovedThisTurn`: a marched force loses its drag handle, and
+**Recall march** in the force modal takes back a march that hasn't been submitted yet (once
+it is on `main`, the server pins the force and refuses the unwind).
+
+**Merging.** Drag a counter onto a friendly one of the same branch and the two combine at
+the target's position — the drag is that force's one march for the turn. The survivor takes
+the **worst case** of both: the longer odometer, that side's turn-start anchor, the newer
+`createdAtTurn`, and the sum of both anchors (no men were raised, so it bills nothing). What
+stops merging from being a teleport is the geometric half of `checkMoveLock`: the survivor
+must own the distance from the consumed force's anchor to where it now stands, so folding a
+distant force into a stationary one costs exactly the march it walked.
 
 **Ownership** is a flat `[fid, nation]` map, where `fid` is a province's array index in the
 GeoJSON. All nation names inside app state are canonical lowercase (`normalizeNation`);

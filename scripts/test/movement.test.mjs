@@ -14,6 +14,7 @@ import {
   REFERENCE_POP,
   budgetForBranch,
   checkAnchorConservation,
+  checkMoveLock,
   checkRaiseBudgets,
   daysBetween,
   haversineKm,
@@ -1305,4 +1306,210 @@ test('checkAnchorConservation: first offender is deterministic (nations sorted, 
   ];
   const reason = checkAnchorConservation({}, { spain: cheat(), france: cheat() });
   assert.match(reason, /^france inflated its army turn-start strength/);
+});
+
+// ── checkMoveLock — one march per force per turn ─────────────────────
+// A force with a position and an odometer. Turn-start anchor at (0,0)
+// unless overridden; lon 5 is ~556 km east of it, comfortably inside an
+// army's 750 km turn and comfortably outside the 0.1 km tolerance.
+function stack(overrides = {}) {
+  return {
+    id: `stack-${nextUnitId++}`,
+    branch: 'army',
+    strength: 1000,
+    turnStartStrength: 1000,
+    turnStartBranch: 'army',
+    lat: 0,
+    lon: 0,
+    turnStartLat: 0,
+    turnStartLon: 0,
+    kmMovedThisTurn: 0,
+    ...overrides,
+  };
+}
+
+const MARCHED_KM = haversineKm(0, 0, 0, 5);
+// One degree further east. Measured rather than approximated: the gate
+// compares reported km against the ground actually covered, so an odometer
+// hand-rounded a few hundred metres short reads as a march being hidden.
+const MARCHED_FURTHER_KM = haversineKm(0, 0, 0, 6);
+
+test('checkMoveLock: an unmarched force may march', () => {
+  const base = { spain: [stack({ id: 'sp-1' })] };
+  const head = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  assert.equal(checkMoveLock(base, head), null);
+});
+
+test('checkMoveLock: a force that already marched cannot march again', () => {
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  const head = { spain: [stack({ id: 'sp-1', lon: 6, kmMovedThisTurn: MARCHED_FURTHER_KM })] };
+  assert.match(checkMoveLock(base, head), /^force sp-1 \(spain\) has already marched this turn/);
+});
+
+test('checkMoveLock: a marched force may still be edited where it stands', () => {
+  // Reinforcing, renaming or disbanding a force that has already marched
+  // is untouched by this gate — only its position is pinned.
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  const head = {
+    spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM, strength: 4000 })],
+  };
+  assert.equal(checkMoveLock(base, head), null);
+});
+
+test('checkMoveLock: a march already on main cannot be discarded', () => {
+  // The odometer is what locks the force, so winding it back would hand
+  // out a second march. A genuine recall never reaches the server — it is
+  // only offered while the march is still unsubmitted.
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  const head = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: 0 })] };
+  assert.match(checkMoveLock(base, head), /cannot discard a march/);
+});
+
+test('checkMoveLock: a force main has never seen cannot arrive mid-march', () => {
+  const head = { spain: [stack({ id: 'sp-new', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  assert.match(checkMoveLock({}, head), /neither it nor anything it was split from/);
+});
+
+test('checkMoveLock: a detachment of an unmarched parent may march', () => {
+  const base = { spain: [stack({ id: 'sp-1' })] };
+  const head = {
+    spain: [
+      stack({ id: 'sp-1' }),
+      stack({ id: 'sp-2', fromIds: ['sp-1'], lon: 5, kmMovedThisTurn: MARCHED_KM }),
+    ],
+  };
+  assert.equal(checkMoveLock(base, head), null);
+});
+
+test('checkMoveLock: a detachment of a marched parent is pinned to it', () => {
+  // The split loophole: a new id has no history of its own, so without
+  // lineage it would read as a fresh force standing wherever the parent
+  // happened to finish, free to march again.
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  const parked = stack({ id: 'sp-2', fromIds: ['sp-1'], lon: 5, kmMovedThisTurn: MARCHED_KM });
+  assert.equal(checkMoveLock(base, { spain: [parked] }), null);
+  const marched = { ...parked, lon: 6, kmMovedThisTurn: MARCHED_FURTHER_KM };
+  assert.match(checkMoveLock(base, { spain: [marched] }), /has already marched this turn/);
+});
+
+test('checkMoveLock: a detachment cannot shed the march it inherited', () => {
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  const head = {
+    spain: [stack({ id: 'sp-2', fromIds: ['sp-1'], lon: 5, kmMovedThisTurn: 0 })],
+  };
+  assert.match(checkMoveLock(base, head), /cannot discard a march/);
+});
+
+test('checkMoveLock: a merge bills the march its source walked to get there', () => {
+  // sp-2 starts the turn 556 km east, marches onto sp-1 and is consumed.
+  // The survivor keeps sp-1's id and position and owns sp-2's march.
+  const base = {
+    spain: [stack({ id: 'sp-1' }), stack({ id: 'sp-2', lon: 5, turnStartLon: 5 })],
+  };
+  const merged = stack({
+    id: 'sp-1',
+    kmMovedThisTurn: MARCHED_KM,
+    fromIds: ['sp-2'],
+    strength: 2000,
+  });
+  assert.equal(checkMoveLock(base, { spain: [merged] }), null);
+  // The same merge claiming a clean odometer. This is the teleport: sp-2's
+  // men arrive without walking, and the survivor is still free to march.
+  const teleported = { ...merged, kmMovedThisTurn: 0 };
+  assert.match(checkMoveLock(base, { spain: [teleported] }), /cannot discard a march/);
+});
+
+test('checkMoveLock: merging into a spent force cannot un-spend it', () => {
+  const base = {
+    spain: [
+      stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM }),
+      stack({ id: 'sp-2', lon: 5, turnStartLon: 5 }),
+    ],
+  };
+  // Survivor sits where the spent force stands, carrying its odometer.
+  const ok = stack({
+    id: 'sp-2',
+    lon: 5,
+    turnStartLon: 5,
+    kmMovedThisTurn: MARCHED_KM,
+    fromIds: ['sp-1'],
+    strength: 2000,
+  });
+  assert.equal(checkMoveLock(base, { spain: [ok] }), null);
+  // Same merge, then walking the combined force on.
+  const walked = { ...ok, lon: 6, kmMovedThisTurn: MARCHED_FURTHER_KM };
+  assert.match(checkMoveLock(base, { spain: [walked] }), /has already marched this turn/);
+});
+
+test('checkMoveLock: a base force with no odometer reads as unmarched, not as NaN', () => {
+  const legacy = stack({ id: 'sp-1' });
+  delete legacy.kmMovedThisTurn;
+  const head = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  assert.equal(checkMoveLock({ spain: [legacy] }, head), null);
+});
+
+test('checkMoveLock: junk lineage degrades to "no lineage", never to a free pass', () => {
+  const base = { spain: [stack({ id: 'sp-1', lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+  for (const fromIds of ['sp-1', { 0: 'sp-1' }, [null, 42]]) {
+    const head = { spain: [stack({ id: 'sp-2', fromIds, lon: 5, kmMovedThisTurn: MARCHED_KM })] };
+    assert.match(checkMoveLock(base, head), /neither it nor anything it was split from/);
+  }
+});
+
+test('checkMoveLock: empty and undefined nation arrays are tolerated on both sides', () => {
+  assert.equal(checkMoveLock({}, {}), null);
+  assert.equal(checkMoveLock({ spain: undefined }, { spain: undefined }), null);
+  assert.equal(checkMoveLock({ spain: [] }, { spain: [] }), null);
+});
+
+// ── checkAnchorConservation × lineage ────────────────────────────────
+
+test('checkAnchorConservation: a merged force is funded by the ids it absorbed', () => {
+  // Anchors add on a merge — no men were raised — so the survivor's anchor
+  // exceeds its own base allowance by exactly what it consumed.
+  const base = {
+    spain: [
+      unit({ id: 'sp-1', strength: 10000, turnStartStrength: 10000 }),
+      unit({ id: 'sp-2', strength: 5000, turnStartStrength: 5000 }),
+    ],
+  };
+  const head = {
+    spain: [unit({ id: 'sp-1', strength: 15000, turnStartStrength: 15000, fromIds: ['sp-2'] })],
+  };
+  assert.equal(checkAnchorConservation(base, head), null);
+  // Without the lineage it is indistinguishable from inventing 5000 men.
+  const bare = { spain: [unit({ id: 'sp-1', strength: 15000, turnStartStrength: 15000 })] };
+  assert.match(checkAnchorConservation(base, bare), /^spain inflated its army turn-start strength/);
+});
+
+test('checkAnchorConservation: lineage credit is same-nation only', () => {
+  // Otherwise a player names another nation's force id inside their own
+  // file, spends that nation's allowance, and bounces its next submission
+  // for inflation it never committed.
+  const base = {
+    france: [unit({ id: 'fr-1', strength: 40000, turnStartStrength: 40000 })],
+    spain: [unit({ id: 'sp-1', strength: 1000, turnStartStrength: 1000 })],
+  };
+  const head = {
+    spain: [unit({ id: 'sp-1', strength: 41000, turnStartStrength: 41000, fromIds: ['fr-1'] })],
+  };
+  assert.match(checkAnchorConservation(base, head), /^spain inflated its army turn-start strength/);
+});
+
+test('checkAnchorConservation: one base anchor funds one heir, not two', () => {
+  const base = {
+    spain: [
+      unit({ id: 'sp-1', strength: 10000, turnStartStrength: 10000 }),
+      unit({ id: 'sp-2', strength: 10000, turnStartStrength: 10000 }),
+    ],
+  };
+  // Both survivors claim sp-2's anchor; whichever is scored second is
+  // funded by nothing.
+  const head = {
+    spain: [
+      unit({ id: 'sp-1', strength: 20000, turnStartStrength: 20000, fromIds: ['sp-2'] }),
+      unit({ id: 'sp-3', strength: 10000, turnStartStrength: 10000, fromIds: ['sp-2'] }),
+    ],
+  };
+  assert.match(checkAnchorConservation(base, head), /^spain inflated its army turn-start strength/);
 });

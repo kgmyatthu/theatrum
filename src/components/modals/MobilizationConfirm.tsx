@@ -13,20 +13,18 @@ interface MobilizationConfirmProps {
 }
 
 export function MobilizationConfirm({ pending, onConfirm, onCancel }: MobilizationConfirmProps) {
-  const { force, origin, target } = pending;
+  const { force, origin, target, mergeTarget } = pending;
   const { lastTurnDays, turnNumber } = useAppState();
   const km = haversineKm(origin.lat, origin.lon, target.lat, target.lon);
 
-  // Budget math — uses the force's current kmMovedThisTurn (already-spent
-  // budget) plus this drag's straight-line distance. Matches the worker's
-  // server-side check, so an in-UI green light means the submission won't
-  // be rejected for movement. effectiveBudget returns 0 for forces raised
-  // this turn — they can't move at all until next turn.
+  // Budget math — the whole turn's budget against this one march, because
+  // a force marches once per turn and only an unmarched force is draggable
+  // at all. Matches both servers, so a green light here means the
+  // submission won't be rejected for movement. effectiveBudget returns 0
+  // for forces raised this turn — they can't move until next turn.
   const justRaised = isNewlyRaised(force, turnNumber);
   const budget = effectiveBudget(force, lastTurnDays, turnNumber);
-  const spent = force.kmMovedThisTurn;
-  const projected = spent + km;
-  const overBudget = projected > budget;
+  const overBudget = km > budget;
 
   // Esc cancels, Enter confirms (only when not over budget).
   useEffect(() => {
@@ -41,7 +39,11 @@ export function MobilizationConfirm({ pending, onConfirm, onCancel }: Mobilizati
   return (
     <div className={styles.backdrop} onClick={(e) => e.target === e.currentTarget && onCancel()}>
       <div className={styles.panel}>
-        <h3 className={styles.title}>Confirm {force.branch === 'navy' ? 'Naval' : 'Army'} Mobilization</h3>
+        <h3 className={styles.title}>
+          {mergeTarget
+            ? `Confirm ${force.branch === 'navy' ? 'Fleet' : 'Army'} Merge`
+            : `Confirm ${force.branch === 'navy' ? 'Naval' : 'Army'} Mobilization`}
+        </h3>
 
         <div className={styles.row}>
           <span className={styles.key}>Unit</span>
@@ -60,9 +62,20 @@ export function MobilizationConfirm({ pending, onConfirm, onCancel }: Mobilizati
         <div className={styles.row}>
           <span className={styles.key}>To</span>
           <span className={styles.value}>
-            {target.lat.toFixed(2)}, {target.lon.toFixed(2)}
+            {mergeTarget
+              ? mergeTarget.name
+              : `${target.lat.toFixed(2)}, ${target.lon.toFixed(2)}`}
           </span>
         </div>
+        {mergeTarget && (
+          <div className={styles.row}>
+            <span className={styles.key}>Merged</span>
+            <span className={styles.value}>
+              {force.strength + mergeTarget.strength}{' '}
+              {force.branch === 'navy' ? 'ships' : 'men'}
+            </span>
+          </div>
+        )}
 
         <div className={styles.distance}>March: {formatDistance(km)}</div>
 
@@ -82,9 +95,11 @@ export function MobilizationConfirm({ pending, onConfirm, onCancel }: Mobilizati
             </>
           ) : (
             <>
-              Budget this turn: {Math.round(spent)} / {budget} km
+              This turn&rsquo;s march: {Math.round(km)} / {budget} km
               <br />
-              After this move: {Math.round(projected)} / {budget} km
+              {mergeTarget
+                ? 'The merged force keeps the longer of the two marches — and marches no further this turn.'
+                : 'A force marches once per turn.'}
               {overBudget && (
                 <>
                   <br />
