@@ -70,13 +70,13 @@
     "name": "Army of the West (detachment)",
     "strength": 30000,
     "commander": "",
-    "lat": 51.22064743038333,
-    "lon": 24.19189453125,
+    "lat": 49.97948776108648,
+    "lon": 14.809570312500002,
     "turnStartLat": 51.22064743038333,
     "turnStartLon": 24.19189453125,
     "turnStartStrength": 30000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 675.9193035826174,
     "createdAtTurn": 0
   },
   {
