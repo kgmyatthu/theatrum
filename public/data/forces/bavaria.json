@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Nindze2009-1786440618947-0",
+    "nation": "bavaria",
+    "branch": "army",
+    "name": "I Bavarian Electoral Army",
+    "strength": 5953,
+    "commander": "",
+    "lat": 48.04960220031268,
+    "lon": 11.764430325660598,
+    "turnStartLat": 48.04960220031268,
+    "turnStartLon": 11.764430325660598,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
