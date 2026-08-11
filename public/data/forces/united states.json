@@ -46,5 +46,21 @@
     "createdAtTurn": 7,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "kgmyatthu-1786443846276-0",
+    "nation": "united states",
+    "branch": "navy",
+    "name": "USN",
+    "strength": 1,
+    "commander": "",
+    "lat": 34.161818161230386,
+    "lon": -74.26757812500001,
+    "turnStartLat": 34.161818161230386,
+    "turnStartLon": -74.26757812500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 7,
+    "turnStartStrength": 0,
+    "turnStartBranch": "navy"
   }
 ]
