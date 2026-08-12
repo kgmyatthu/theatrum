@@ -76,21 +76,6 @@ function errorJson(origin: string, status: number, message: string): Response {
   return jsonResponse(JSON.stringify({ error: message }), status, origin);
 }
 
-function utf8ToBase64(s: string): string {
-  const bytes = new TextEncoder().encode(s);
-  let bin = '';
-  for (const b of bytes) bin += String.fromCharCode(b);
-  return btoa(bin);
-}
-
-function base64ToUtf8(b64: string): string {
-  const clean = b64.replace(/\s+/g, '');
-  const bin = atob(clean);
-  const bytes = new Uint8Array(bin.length);
-  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-  return new TextDecoder().decode(bytes);
-}
-
 function base64UrlEncode(s: string): string {
   return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
@@ -378,71 +363,127 @@ function groupForcesByNation(forces: ForceLike[]): Map<string, ForceLike[]> {
   return m;
 }
 
-/** Per-segment URL-encode a repo path so file names with spaces survive. */
-function encodeRepoPath(path: string): string {
-  return path.split('/').map(encodeURIComponent).join('/');
+// Subrequest budget, not elegance, is why these two exist. A Worker
+// invocation gets 50 outbound fetches; the per-file Contents API path this
+// replaced spent two per nation (GET ?ref=main, then PUT) and blew the cap
+// outright on an admin turn advance, which rewrites every force file in the
+// game — "Too many subrequests by single Worker invocation", with the PR
+// half-written. One GraphQL query reads the whole data directory and one
+// tree+commit+ref writes it, so the cost is now flat in the nation count.
+
+interface RepoSnapshot {
+  /** commit main points at — the parent of what we're about to write */
+  baseSha: string;
+  /** its tree, the base_tree every write layers onto */
+  baseTreeSha: string;
+  perm: string | null;
+  state: string | null;
+  turn: string | null;
+  /** nation → forces/<nation>.json text, for every file that exists */
+  forces: Map<string, string>;
 }
 
-type MainFile =
-  | { exists: true; sha: string; content: string }
-  | { exists: false };
+interface GraphQLBlob {
+  text?: string | null;
+  isTruncated?: boolean;
+}
 
-async function readFileOnMain(
-  repo: string,
-  path: string,
-  token: string,
-): Promise<MainFile> {
-  try {
-    const f = await gh<{ sha: string; content: string }>(
-      `/repos/${repo}/contents/${encodeRepoPath(path)}?ref=main`,
-      { method: 'GET' },
-      token,
-    );
-    return { exists: true, sha: f.sha, content: base64ToUtf8(f.content) };
-  } catch (e) {
-    if (e instanceof HttpError && e.status === 404) return { exists: false };
-    throw e;
+async function readRepo(repo: string, token: string): Promise<RepoSnapshot> {
+  const [owner, name] = repo.split('/');
+  const query = `query($owner:String!,$name:String!){
+    repository(owner:$owner,name:$name){
+      ref(qualifiedName:"refs/heads/main"){ target{ ...on Commit{ oid tree{ oid } } } }
+      perm:  object(expression:"main:public/data/perm.json"){  ...on Blob{ text isTruncated } }
+      state: object(expression:"main:public/data/state.json"){ ...on Blob{ text isTruncated } }
+      turn:  object(expression:"main:public/data/turn.json"){  ...on Blob{ text isTruncated } }
+      forces:object(expression:"main:public/data/forces"){
+        ...on Tree{ entries{ name object{ ...on Blob{ text isTruncated } } } }
+      }
+    }
+  }`;
+  // GraphQL answers 200 with an `errors` array, so gh()'s status check
+  // can't see a failure here — check it before trusting `data`.
+  const r = await gh<{
+    errors?: Array<{ message: string }>;
+    data?: {
+      repository: {
+        ref: { target: { oid: string; tree: { oid: string } } } | null;
+        perm: GraphQLBlob | null;
+        state: GraphQLBlob | null;
+        turn: GraphQLBlob | null;
+        forces: { entries?: Array<{ name: string; object: GraphQLBlob | null }> } | null;
+      } | null;
+    };
+  }>('/graphql', { method: 'POST', body: { query, variables: { owner, name } } }, token);
+  if (r.errors?.length) throw new HttpError(502, `graphql: ${r.errors[0].message}`);
+  const repository = r.data?.repository;
+  if (!repository?.ref) throw new HttpError(502, 'graphql: no refs/heads/main');
+
+  /** A blob we can't read whole is not an empty blob. Returning null for a
+   *  truncated file would hand the callers below an empty force list and
+   *  commit the deletion of every army in it. */
+  const textOf = (blob: GraphQLBlob | null | undefined, path: string): string | null => {
+    if (!blob) return null;
+    if (blob.isTruncated) throw new HttpError(502, `${path} is too large to read via GraphQL`);
+    return blob.text ?? null;
+  };
+
+  const forces = new Map<string, string>();
+  for (const e of repository.forces?.entries ?? []) {
+    if (!e.name.endsWith('.json')) continue;
+    const text = textOf(e.object, `forces/${e.name}`);
+    if (text !== null) forces.set(e.name.slice(0, -'.json'.length), text);
   }
+  return {
+    baseSha: repository.ref.target.oid,
+    baseTreeSha: repository.ref.target.tree.oid,
+    perm: textOf(repository.perm, 'perm.json'),
+    state: textOf(repository.state, 'state.json'),
+    turn: textOf(repository.turn, 'turn.json'),
+    forces,
+  };
 }
 
-async function commitFile(
+/** `content: null` deletes the path. */
+interface FileWrite {
+  path: string;
+  content: string | null;
+}
+
+/** Every file in one commit, so a rejected submission can't leave a branch
+ *  carrying half a move — the ref only appears once all of it is written. */
+async function commitAll(
   repo: string,
-  path: string,
+  snap: RepoSnapshot,
   branch: string,
-  content: string,
   message: string,
+  writes: FileWrite[],
   token: string,
-  existingSha: string | undefined,
 ): Promise<void> {
-  await gh<unknown>(
-    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
+  const tree = await gh<{ sha: string }>(
+    `/repos/${repo}/git/trees`,
     {
-      method: 'PUT',
+      method: 'POST',
       body: {
-        message,
-        content: utf8ToBase64(content),
-        branch,
-        ...(existingSha ? { sha: existingSha } : {}),
+        base_tree: snap.baseTreeSha,
+        tree: writes.map((w) => ({
+          path: w.path,
+          mode: '100644',
+          type: 'blob',
+          ...(w.content === null ? { sha: null } : { content: w.content }),
+        })),
       },
     },
     token,
   );
-}
-
-async function deleteFile(
-  repo: string,
-  path: string,
-  branch: string,
-  sha: string,
-  message: string,
-  token: string,
-): Promise<void> {
+  const commit = await gh<{ sha: string }>(
+    `/repos/${repo}/git/commits`,
+    { method: 'POST', body: { message, tree: tree.sha, parents: [snap.baseSha] } },
+    token,
+  );
   await gh<unknown>(
-    `/repos/${repo}/contents/${encodeRepoPath(path)}`,
-    {
-      method: 'DELETE',
-      body: { message, sha, branch },
-    },
+    `/repos/${repo}/git/refs`,
+    { method: 'POST', body: { ref: `refs/heads/${branch}`, sha: commit.sha } },
     token,
   );
 }
@@ -565,19 +606,19 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     return errorJson(origin, 502, (e as Error).message);
   }
 
-  // Read perm.json with the install token to determine the submitter's role.
-  // The validator does the same thing in CI, but we mirror it here so we can
-  // fail fast and so non-admins can never bundle perm.json edits.
+  // One read for the whole data directory: main's head, perm.json,
+  // state.json, turn.json and every per-nation force file. perm.json is read
+  // here to determine the submitter's role — the validator does the same in
+  // CI, but we mirror it so we can fail fast and so non-admins can never
+  // bundle perm.json edits.
+  let repo: RepoSnapshot;
   let perms: PermFile;
   try {
-    const f = await gh<{ content: string }>(
-      `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
-      { method: 'GET' },
-      installToken,
-    );
-    perms = JSON.parse(base64ToUtf8(f.content)) as PermFile;
+    repo = await readRepo(env.GITHUB_REPO, installToken);
+    if (repo.perm === null) throw new Error('perm.json missing on main');
+    perms = JSON.parse(repo.perm) as PermFile;
   } catch (e) {
-    return errorJson(origin, 502, `couldn't read perm.json: ${(e as Error).message}`);
+    return errorJson(origin, 502, `couldn't read repo: ${(e as Error).message}`);
   }
   const entry = perms[login];
   if (!entry) {
@@ -594,26 +635,7 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
   const ts = new Date().toISOString().replace(/[:.]/g, '-');
   const branchName = `move/${login}-${ts}`;
 
-  // 1. Get main HEAD SHA, create branch.
-  let baseSha: string;
-  try {
-    const ref = await gh<{ object: { sha: string } }>(
-      `/repos/${env.GITHUB_REPO}/git/ref/heads/main`,
-      { method: 'GET' },
-      installToken,
-    );
-    baseSha = ref.object.sha;
-    await gh<unknown>(
-      `/repos/${env.GITHUB_REPO}/git/refs`,
-      { method: 'POST', body: { ref: `refs/heads/${branchName}`, sha: baseSha } },
-      installToken,
-    );
-  } catch (e) {
-    const msg = (e as Error).message;
-    return errorJson(origin, e instanceof HttpError ? e.status : 502, msg);
-  }
-
-  // 2. Commit per-file content. The on-disk layout is:
+  // 1. Work out the file content to commit. The on-disk layout is:
   //      public/data/state.json            — { appVersion, ownerships, countries }
   //      public/data/forces/<nation>.json  — Force[]
   //    Non-admin players only touch their own nation's force file; the
@@ -641,19 +663,20 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
    *  matter now. */
   interface NationPlan {
     path: string;
-    onMain: MainFile;
-    /** forces/<nation>.json as it stands on main: the base side of the
-     *  anchor-conservation comparison. */
+    /** forces/<nation>.json as it stands on main, or null if absent. */
+    mainJson: string | null;
+    /** the same file parsed: the base side of the anchor-conservation
+     *  comparison. */
     mainForces: ForceLike[];
     /** post-rebase result: what the gates score and what we commit. */
     merged: ForceLike[];
   }
 
-  async function planNation(nation: string): Promise<NationPlan> {
+  function planNation(nation: string): NationPlan {
     const incoming = incomingByNation.get(nation) ?? [];
     const path = `public/data/forces/${nation}.json`;
-    const onMain = await readFileOnMain(env.GITHUB_REPO, path, installToken);
-    const mainForces = onMain.exists ? (JSON.parse(onMain.content) as ForceLike[]) : [];
+    const mainJson = repo.forces.get(nation) ?? null;
+    const mainForces = mainJson !== null ? (JSON.parse(mainJson) as ForceLike[]) : [];
     // Legacy / no-baseline clients keep v7's blind-commit semantics: with
     // nothing to diff against, their snapshot IS the merge result.
     const merged = baselineByNation
@@ -663,61 +686,33 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           mainForces,
         ) as ForceLike[])
       : incoming;
-    return { path, onMain, mainForces, merged };
+    return { path, mainJson, mainForces, merged };
   }
 
-  /** Write a plan out. Deliberately does not re-read main — the sha here
-   *  is the one the gates scored, so anything that landed in the meantime
-   *  fails the PUT instead of slipping in unscored. */
-  async function commitPlan(nation: string, plan: NationPlan): Promise<void> {
+  /** A plan as a file write, or null when the rebase made it a no-op. An
+   *  emptied nation deletes its file rather than committing `[]`. */
+  function planWrite(plan: NationPlan): FileWrite | null {
     const newJson = plan.merged.length > 0 ? JSON.stringify(plan.merged, null, 2) + '\n' : '';
-    const mainJson = plan.onMain.exists ? plan.onMain.content : '';
-    if (newJson === mainJson) return; // no-op after rebase
-    if (plan.merged.length === 0) {
-      if (plan.onMain.exists) {
-        await deleteFile(
-          env.GITHUB_REPO,
-          plan.path,
-          branchName,
-          plan.onMain.sha,
-          `forces: @${login} clear ${nation} ${ts}`,
-          installToken,
-        );
-      }
-      return;
-    }
-    await commitFile(
-      env.GITHUB_REPO,
-      plan.path,
-      branchName,
-      newJson,
-      `move: @${login} ${nation} ${ts}`,
-      installToken,
-      plan.onMain.exists ? plan.onMain.sha : undefined,
-    );
+    if (newJson === (plan.mainJson ?? '')) return null; // no-op after rebase
+    return { path: plan.path, content: plan.merged.length > 0 ? newJson : null };
   }
 
   try {
-    // Read mainState AND mainTurn in parallel — state.json carries
-    // appVersion/ownerships/countries; turn.json carries the time fields.
-    // Splitting them by file means an admin advancing the turn doesn't
-    // create merge contention with concurrent state-only edits.
-    const [stateOnMain, turnOnMain] = await Promise.all([
-      readFileOnMain(env.GITHUB_REPO, 'public/data/state.json', installToken),
-      readFileOnMain(env.GITHUB_REPO, 'public/data/turn.json', installToken),
-    ]);
-    if (!stateOnMain.exists) {
+    // state.json carries appVersion/ownerships/countries; turn.json carries
+    // the time fields. Splitting them by file means an admin advancing the
+    // turn doesn't create merge contention with concurrent state-only edits.
+    if (repo.state === null) {
       return errorJson(origin, 502, 'state.json missing on main — repo is broken');
     }
-    if (!turnOnMain.exists) {
+    if (repo.turn === null) {
       return errorJson(origin, 502, 'turn.json missing on main — repo is broken');
     }
-    const mainState = JSON.parse(stateOnMain.content) as {
+    const mainState = JSON.parse(repo.state) as {
       appVersion: string;
       ownerships: Array<[number, string]>;
       countries: Array<{ name: string; color: string }>;
     };
-    const mainTurn = JSON.parse(turnOnMain.content) as {
+    const mainTurn = JSON.parse(repo.turn) as {
       appVersion: string;
       currentDate: string;
       lastTurnDays: number;
@@ -944,29 +939,15 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       }
       targetNations = [normalizeNation(entry.nation)];
     } else {
-      // Discover existing nation files via one Contents API listing —
-      // saves us probing every country in the world with a 404.
-      let existingNations: string[] = [];
-      try {
-        const dir = await gh<Array<{ name: string; type: string }>>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/forces?ref=main`,
-          { method: 'GET' },
-          installToken,
-        );
-        existingNations = dir
-          .filter((e) => e.type === 'file' && e.name.endsWith('.json'))
-          .map((e) => e.name.slice(0, -'.json'.length));
-      } catch (e) {
-        if (!(e instanceof HttpError && e.status === 404)) throw e;
-        // 404 means forces/ directory doesn't exist yet — first ever bake.
-      }
-      targetNations = [...new Set([...existingNations, ...incomingByNation.keys()])];
+      // Existing nation files come free with the repo read — an absent
+      // forces/ directory (first ever bake) is simply an empty map.
+      targetNations = [...new Set([...repo.forces.keys(), ...incomingByNation.keys()])];
     }
     const plans = new Map<string, NationPlan>();
     const mergedByNation: Record<string, ForceLike[]> = {};
     const mainByNation: Record<string, ForceLike[]> = {};
     for (const nation of targetNations) {
-      const plan = await planNation(nation);
+      const plan = planNation(nation);
       plans.set(nation, plan);
       mergedByNation[nation] = plan.merged;
       mainByNation[nation] = plan.mainForces;
@@ -1048,42 +1029,24 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
       }
     }
 
-    // ── Everything below this line writes ──────────────────────────────
-    // Nothing above it has committed, so any rejection leaves the branch
-    // exactly as the ref-create left it: no commits, no PR.
-    //
-    // perm.json (admin only, when there's an effective change) is the
-    // reason this block moved down here from step 1½ — it used to be
-    // committed before a single rule had been checked, so an admin whose
-    // moves then failed a gate left a stranded branch carrying a perm
-    // commit and no PR.
+    // ── Everything below this line is the write set ────────────────────
+    // Collected, not committed: the branch is created from a single commit
+    // at the very end, so a rejection anywhere above leaves no ref at all
+    // — no stranded branch, and no half-written move if a later write
+    // fails. (The old per-file path could do both.)
+    const writes: FileWrite[] = [];
+    const changed: string[] = [];
+
+    // perm.json — admin only, and only when the rewrite is an effective
+    // change. `perms` is main's copy, from the same read the role check used.
     if (renames.length > 0 || userAdds.length > 0 || userRemoves.length > 0) {
-      try {
-        const permFile = await gh<{ sha: string; content: string }>(
-          `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json?ref=main`,
-          { method: 'GET' },
-          installToken,
-        );
-        const permBefore = JSON.parse(base64ToUtf8(permFile.content)) as PermFile;
-        const permAfter = rewritePerm(permBefore, renames, userAdds, userRemoves);
-        if (JSON.stringify(permBefore) !== JSON.stringify(permAfter)) {
-          const json = JSON.stringify(permAfter, null, 2) + '\n';
-          await gh<unknown>(
-            `/repos/${env.GITHUB_REPO}/contents/public/data/perm.json`,
-            {
-              method: 'PUT',
-              body: {
-                message: `perm: ${summaryParts(renames, userAdds, userRemoves)}`,
-                content: utf8ToBase64(json),
-                sha: permFile.sha,
-                branch: branchName,
-              },
-            },
-            installToken,
-          );
-        }
-      } catch (e) {
-        return errorJson(origin, 502, `perm.json commit: ${(e as Error).message}`);
+      const permAfter = rewritePerm(perms, renames, userAdds, userRemoves);
+      if (JSON.stringify(perms) !== JSON.stringify(permAfter)) {
+        writes.push({
+          path: 'public/data/perm.json',
+          content: JSON.stringify(permAfter, null, 2) + '\n',
+        });
+        changed.push(`perm (${summaryParts(renames, userAdds, userRemoves)})`);
       }
     }
 
@@ -1098,21 +1061,14 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
           null,
           2,
         ) + '\n';
-      if (newStateJson !== stateOnMain.content) {
-        await commitFile(
-          env.GITHUB_REPO,
-          'public/data/state.json',
-          branchName,
-          newStateJson,
-          `state: @${login} ${ts}`,
-          installToken,
-          stateOnMain.sha,
-        );
+      if (newStateJson !== repo.state) {
+        writes.push({ path: 'public/data/state.json', content: newStateJson });
+        changed.push('state');
       }
 
-      // turn.json is its own commit so a turn-advance PR doesn't churn
-      // the (much larger) state.json blob; merge contention drops as a
-      // result. Skipped when nothing changed.
+      // turn.json stays its own file so a turn-advance doesn't churn the
+      // (much larger) state.json blob; merge contention drops as a result.
+      // Skipped when nothing changed.
       const newTurnJson =
         JSON.stringify(
           {
@@ -1131,31 +1087,43 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
             // lands is what was judged. JSON.stringify drops an undefined
             // value entirely, so a turn.json with no population table still
             // round-trips byte-identical and the !== check below still
-            // short-circuits the commit.
+            // short-circuits the write.
             populationByNation: effectivePopulation,
           },
           null,
           2,
         ) + '\n';
-      if (newTurnJson !== turnOnMain.content) {
-        await commitFile(
-          env.GITHUB_REPO,
-          'public/data/turn.json',
-          branchName,
-          newTurnJson,
-          `turn: @${login} → ${String(snapshot.currentDate)} (${String(snapshot.lastTurnDays)} days)`,
-          installToken,
-          turnOnMain.sha,
-        );
+      if (newTurnJson !== repo.turn) {
+        writes.push({ path: 'public/data/turn.json', content: newTurnJson });
+        changed.push(`turn → ${String(snapshot.currentDate)} (${String(snapshot.lastTurnDays)} days)`);
       }
     }
 
-    // Force files last, straight from the plans the gates scored — one
-    // nation for a player, every nation the listing turned up for an
-    // admin. Unchanged files short-circuit inside commitPlan.
+    // Force files, straight from the plans the gates scored — one nation
+    // for a player, every nation on main for an admin. Unchanged files
+    // short-circuit inside planWrite.
     for (const [nation, plan] of plans) {
-      await commitPlan(nation, plan);
+      const write = planWrite(plan);
+      if (!write) continue;
+      writes.push(write);
+      changed.push(write.content === null ? `clear ${nation}` : nation);
     }
+
+    if (writes.length === 0) {
+      // An empty tree would still commit (and GitHub would refuse the PR
+      // for having no diff) — say what actually happened instead.
+      return errorJson(origin, 409, 'nothing to submit: your changes are already on main');
+    }
+
+    const summary = changed.length > 4 ? `${changed.slice(0, 3).join(', ')} +${changed.length - 3} more` : changed.join(', ');
+    await commitAll(
+      env.GITHUB_REPO,
+      repo,
+      branchName,
+      `move: @${login} ${summary} ${ts}`,
+      writes,
+      installToken,
+    );
   } catch (e) {
     const msg = (e as Error).message;
     return errorJson(origin, e instanceof HttpError ? e.status : 502, `commit: ${msg}`);
