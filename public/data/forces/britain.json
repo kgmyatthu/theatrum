@@ -216,11 +216,11 @@
     "commander": "Rear-Admiral Peter Rainier",
     "lat": -8.407168163601076,
     "lon": 101.95312500000001,
-    "turnStartLat": 6.850077654785543,
-    "turnStartLon": 79.81567382812501,
+    "turnStartLat": -8.407168163601076,
+    "turnStartLon": 101.95312500000001,
     "turnStartStrength": 8,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 2983.364369935865,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   },
   {
@@ -264,11 +264,11 @@
     "commander": "",
     "lat": 43.73935207915473,
     "lon": 9.206542968750002,
-    "turnStartLat": 35.8,
-    "turnStartLon": 14.2,
+    "turnStartLat": 43.73935207915473,
+    "turnStartLon": 9.206542968750002,
     "turnStartStrength": 10,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 980.0792282756977,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   }
 ]
