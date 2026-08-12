@@ -8,11 +8,11 @@
     "commander": "Kray",
     "lat": 48.544796334285266,
     "lon": 7.889556884765626,
-    "turnStartLat": 48,
-    "turnStartLon": 8.5,
-    "turnStartStrength": 80000,
+    "turnStartLat": 48.544796334285266,
+    "turnStartLon": 7.889556884765626,
+    "turnStartStrength": 44800,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 79.68781654768753,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -24,11 +24,11 @@
     "commander": "Melas",
     "lat": 44.99588261816546,
     "lon": 6.65771484375,
-    "turnStartLat": 45.07,
-    "turnStartLon": 7.69,
-    "turnStartStrength": 37000,
+    "turnStartLat": 44.99588261816546,
+    "turnStartLon": 6.65771484375,
+    "turnStartStrength": 47000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 81.53549855222523,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -58,7 +58,7 @@
     "lon": 8.783569335937502,
     "turnStartLat": 44.610023477890515,
     "turnStartLon": 8.783569335937502,
-    "turnStartStrength": 37000,
+    "turnStartStrength": 27000,
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
