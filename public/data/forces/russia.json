@@ -8,11 +8,11 @@
     "commander": "Suvorov",
     "lat": 48.980216985374994,
     "lon": 8.668212890625002,
-    "turnStartLat": 49.5,
-    "turnStartLon": 15,
+    "turnStartLat": 48.980216985374994,
+    "turnStartLon": 8.668212890625002,
     "turnStartStrength": 20000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 463.154026961285,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -24,11 +24,11 @@
     "commander": "",
     "lat": 51.51899806141268,
     "lon": 24.315490722656254,
-    "turnStartLat": 52.1,
-    "turnStartLon": 23.7,
+    "turnStartLat": 51.51899806141268,
+    "turnStartLon": 24.315490722656254,
     "turnStartStrength": 30000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 77.22799478482081,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -72,11 +72,11 @@
     "commander": "",
     "lat": 49.97948776108648,
     "lon": 14.809570312500002,
-    "turnStartLat": 51.22064743038333,
-    "turnStartLon": 24.19189453125,
+    "turnStartLat": 49.97948776108648,
+    "turnStartLon": 14.809570312500002,
     "turnStartStrength": 30000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 675.9193035826174,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -92,7 +92,7 @@
     "turnStartLon": 27.817382812500004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
-    "turnStartStrength": 0,
+    "turnStartStrength": 13000,
     "turnStartBranch": "army"
   },
   {
@@ -108,7 +108,7 @@
     "turnStartLon": 30.454101562500004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
-    "turnStartStrength": 0,
+    "turnStartStrength": 300,
     "turnStartBranch": "army"
   }
 ]
