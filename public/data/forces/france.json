@@ -8,11 +8,11 @@
     "commander": "Moreau",
     "lat": 48.93950910487823,
     "lon": 8.618678108178273,
-    "turnStartLat": 48.57,
-    "turnStartLon": 7.75,
-    "turnStartStrength": 60000,
+    "turnStartLat": 48.93950910487823,
+    "turnStartLon": 8.618678108178273,
+    "turnStartStrength": 28800,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 287.78571594924415,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -40,11 +40,11 @@
     "commander": "Brune",
     "lat": 48.63301389175955,
     "lon": 6.371598349888648,
-    "turnStartLat": 52.37,
-    "turnStartLon": 4.9,
+    "turnStartLat": 48.63301389175955,
+    "turnStartLon": 6.371598349888648,
     "turnStartStrength": 20000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 723.3114651852904,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -56,11 +56,11 @@
     "commander": "d'Hédouville",
     "lat": 44.95702412512118,
     "lon": 6.064453125000001,
-    "turnStartLat": 47.22,
-    "turnStartLon": -1.55,
+    "turnStartLat": 44.95702412512118,
+    "turnStartLon": 6.064453125000001,
     "turnStartStrength": 30000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 638.5057264805266,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -120,11 +120,11 @@
     "commander": "",
     "lat": 43.54841405518581,
     "lon": 9.394437409937384,
-    "turnStartLat": 43.1,
-    "turnStartLon": 5.93,
+    "turnStartLat": 43.54841405518581,
+    "turnStartLon": 9.394437409937384,
     "turnStartStrength": 8,
     "turnStartBranch": "navy",
-    "kmMovedThisTurn": 284.62542240730625,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -136,11 +136,11 @@
     "commander": "Napoleon I",
     "lat": 48.51299851625566,
     "lon": 7.772650003011413,
-    "turnStartLat": 47.3183449418758,
-    "turnStartLon": 5.050964355468751,
-    "turnStartStrength": 40000,
+    "turnStartLat": 48.51299851625566,
+    "turnStartLon": 7.772650003011413,
+    "turnStartStrength": 53000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 281.97679509789737,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 2
   }
 ]
