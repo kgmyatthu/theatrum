@@ -4695,7 +4695,7 @@
     ],
     [
       1173,
-      "asante"
+      "batavian gold coast"
     ],
     [
       1174,
@@ -7935,11 +7935,11 @@
     ],
     [
       1983,
-      "asante"
+      "batavian gold coast"
     ],
     [
       1984,
-      "asante"
+      "batavian gold coast"
     ],
     [
       1985,
@@ -18401,6 +18401,10 @@
     },
     {
       "name": "batavian east indies",
+      "color": "#FF8C42"
+    },
+    {
+      "name": "batavian gold coast",
       "color": "#FF8C42"
     },
     {
