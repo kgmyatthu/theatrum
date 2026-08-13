@@ -14,5 +14,21 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 406.90590860043824,
     "createdAtTurn": 0
+  },
+  {
+    "id": "shanesgames5-byte-1786639803860-0",
+    "nation": "prussia",
+    "branch": "army",
+    "name": "1st army of the vistula",
+    "strength": 9000,
+    "commander": "janus anders",
+    "lat": 51.984880139916626,
+    "lon": 20.874023437500004,
+    "turnStartLat": 51.984880139916626,
+    "turnStartLon": 20.874023437500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
