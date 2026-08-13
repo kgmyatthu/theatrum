@@ -22,13 +22,13 @@
     "name": "Army of the West",
     "strength": 31000,
     "commander": "",
-    "lat": 51.51899806141268,
-    "lon": 24.315490722656254,
+    "lat": 49.06666839558117,
+    "lon": 15.556640625000002,
     "turnStartLat": 51.51899806141268,
     "turnStartLon": 24.315490722656254,
     "turnStartStrength": 30000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 678.7834765891992,
     "createdAtTurn": 0
   },
   {
