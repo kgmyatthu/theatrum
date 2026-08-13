@@ -142,5 +142,21 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 2
+  },
+  {
+    "id": "AceApache-1786628022853-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Army of Paris",
+    "strength": 13000,
+    "commander": "",
+    "lat": 48.89431173443978,
+    "lon": 2.3291015625000004,
+    "turnStartLat": 48.89431173443978,
+    "turnStartLon": 2.3291015625000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 8,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
