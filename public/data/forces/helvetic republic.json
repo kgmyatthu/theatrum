@@ -8,9 +8,9 @@
     "commander": "",
     "lat": 45.07356163502037,
     "lon": 6.735358089208604,
-    "turnStartLat": 46.882723010671945,
-    "turnStartLon": 7.470703125000001,
-    "kmMovedThisTurn": 209.0378358346584,
+    "turnStartLat": 45.07356163502037,
+    "turnStartLon": 6.735358089208604,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
     "turnStartStrength": 4800,
     "turnStartBranch": "army"
