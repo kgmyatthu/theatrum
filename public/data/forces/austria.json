@@ -46,5 +46,37 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
+  },
+  {
+    "id": "Ohgizmo-1786734898597-2",
+    "nation": "austria",
+    "branch": "army",
+    "name": "Army of Italy Part 2",
+    "strength": 30000,
+    "commander": "",
+    "lat": 45.47939202177826,
+    "lon": 11.052246093750002,
+    "turnStartLat": 45.47939202177826,
+    "turnStartLon": 11.052246093750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1786734917647-3",
+    "nation": "austria",
+    "branch": "army",
+    "name": "The BETTER army of the Danube",
+    "strength": 37000,
+    "commander": "",
+    "lat": 48.22467264956519,
+    "lon": 14.414062500000002,
+    "turnStartLat": 48.22467264956519,
+    "turnStartLon": 14.414062500000002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
