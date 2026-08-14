@@ -22,13 +22,13 @@
     "name": "Army of Italy",
     "strength": 40000,
     "commander": "Melas",
-    "lat": 44.99588261816546,
-    "lon": 6.65771484375,
+    "lat": 45.47554027158593,
+    "lon": 5.460205078125001,
     "turnStartLat": 44.99588261816546,
     "turnStartLon": 6.65771484375,
     "turnStartStrength": 47000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 107.87380648030629,
     "createdAtTurn": 0
   },
   {
