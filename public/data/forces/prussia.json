@@ -8,11 +8,11 @@
     "commander": "Brunswick",
     "lat": 51.46085244645549,
     "lon": 7.701416015625001,
-    "turnStartLat": 52.5,
-    "turnStartLon": 13.4,
+    "turnStartLat": 51.46085244645549,
+    "turnStartLon": 7.701416015625001,
     "turnStartStrength": 70000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 406.90590860043824,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 0
   },
   {
@@ -28,7 +28,7 @@
     "turnStartLon": 20.874023437500004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8,
-    "turnStartStrength": 0,
+    "turnStartStrength": 9000,
     "turnStartBranch": "army"
   }
 ]
