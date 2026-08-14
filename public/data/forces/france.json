@@ -38,13 +38,13 @@
     "name": "Armée de Batavie",
     "strength": 20000,
     "commander": "Brune",
-    "lat": 48.63301389175955,
-    "lon": 6.371598349888648,
+    "lat": 51.22064743038333,
+    "lon": 5.6689453125,
     "turnStartLat": 48.63301389175955,
     "turnStartLon": 6.371598349888648,
     "turnStartStrength": 20000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 292.0910700289275,
     "createdAtTurn": 0
   },
   {
@@ -141,6 +141,38 @@
     "kmMovedThisTurn": 406.60747976169455,
     "createdAtTurn": 8,
     "turnStartStrength": 13000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1786734590039-2",
+    "nation": "france",
+    "branch": "army",
+    "name": "Army of Occitania",
+    "strength": 10000,
+    "commander": "",
+    "lat": 43.229195113965005,
+    "lon": 5.537109375000001,
+    "turnStartLat": 43.229195113965005,
+    "turnStartLon": 5.537109375000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1786734604115-3",
+    "nation": "france",
+    "branch": "army",
+    "name": "Army of Belgium",
+    "strength": 55000,
+    "commander": "",
+    "lat": 50.8232885012118,
+    "lon": 4.416503906250001,
+    "turnStartLat": 50.8232885012118,
+    "turnStartLon": 4.416503906250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
