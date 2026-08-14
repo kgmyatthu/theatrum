@@ -110,5 +110,21 @@
     "createdAtTurn": 7,
     "turnStartStrength": 1300,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "kgmyatthu-1786731045558-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Recruits of St Peter",
+    "strength": 80000,
+    "commander": "",
+    "lat": 55.677584411089526,
+    "lon": 36.93603515625001,
+    "turnStartLat": 55.677584411089526,
+    "turnStartLon": 36.93603515625001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
