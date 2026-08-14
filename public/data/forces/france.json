@@ -4,13 +4,13 @@
     "nation": "france",
     "branch": "army",
     "name": "Armée du Rhin",
-    "strength": 28800,
+    "strength": 25800,
     "commander": "Moreau",
     "lat": 48.93950910487823,
     "lon": 8.618678108178273,
     "turnStartLat": 48.93950910487823,
     "turnStartLon": 8.618678108178273,
-    "turnStartStrength": 28800,
+    "turnStartStrength": 25800,
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
@@ -54,13 +54,13 @@
     "name": "Armée d'Orient (Egypt)",
     "strength": 28000,
     "commander": "Kléber",
-    "lat": 30.05,
-    "lon": 31.23,
+    "lat": 44.653024159812,
+    "lon": 16.743164062500004,
     "turnStartLat": 30.05,
     "turnStartLon": 31.23,
     "turnStartStrength": 28000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 2061.2335227841745,
     "createdAtTurn": 0
   },
   {
@@ -174,5 +174,24 @@
     "createdAtTurn": 9,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1786735820206-0",
+    "nation": "france",
+    "branch": "army",
+    "name": "Armée du Rhin (detachment)",
+    "strength": 3000,
+    "commander": "",
+    "lat": 51.50190410761814,
+    "lon": 7.2344970703125,
+    "turnStartLat": 48.93950910487823,
+    "turnStartLon": 8.618678108178273,
+    "turnStartStrength": 3000,
+    "turnStartBranch": "army",
+    "kmMovedThisTurn": 301.4492835812276,
+    "createdAtTurn": 0,
+    "fromIds": [
+      "napoleonic1799-0"
+    ]
   }
 ]
