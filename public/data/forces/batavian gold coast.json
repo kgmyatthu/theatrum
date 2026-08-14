@@ -1,0 +1,18 @@
+[
+  {
+    "id": "yellowwithblue-1786735412134-4",
+    "nation": "batavian gold coast",
+    "branch": "army",
+    "name": "Gold Coast Garrison",
+    "strength": 3000,
+    "commander": "",
+    "lat": 5.386335689520536,
+    "lon": -0.9667968750000001,
+    "turnStartLat": 5.386335689520536,
+    "turnStartLon": -0.9667968750000001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 9,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]

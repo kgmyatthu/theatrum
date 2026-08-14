@@ -20,15 +20,15 @@
     "nation": "batavian republic",
     "branch": "army",
     "name": "Batavian Army",
-    "strength": 15000,
+    "strength": 45000,
     "commander": "Daendels",
-    "lat": 52.08,
-    "lon": 4.31,
+    "lat": 52.0862573323384,
+    "lon": 5.427246093750001,
     "turnStartLat": 52.08,
     "turnStartLon": 4.31,
     "turnStartStrength": 15000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 76.34521897973273,
     "createdAtTurn": 0
   }
 ]
