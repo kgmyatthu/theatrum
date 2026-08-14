@@ -46,21 +46,5 @@
     "turnStartBranch": "army",
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0
-  },
-  {
-    "id": "RadetzkyNTW-1786398247471-0",
-    "nation": "austria",
-    "branch": "army",
-    "name": "Army of Italy (detachment)",
-    "strength": 27000,
-    "commander": "",
-    "lat": 44.610023477890515,
-    "lon": 8.783569335937502,
-    "turnStartLat": 44.610023477890515,
-    "turnStartLon": 8.783569335937502,
-    "turnStartStrength": 27000,
-    "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 0
   }
 ]
