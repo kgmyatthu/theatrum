@@ -6,13 +6,13 @@
     "name": "Royal Prussian Army",
     "strength": 70000,
     "commander": "Brunswick",
-    "lat": 51.46085244645549,
-    "lon": 7.701416015625001,
+    "lat": 52.05924589011585,
+    "lon": 6.04248046875,
     "turnStartLat": 51.46085244645549,
     "turnStartLon": 7.701416015625001,
     "turnStartStrength": 70000,
     "turnStartBranch": "army",
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 132.14472547139698,
     "createdAtTurn": 0
   },
   {
