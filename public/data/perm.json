@@ -8,56 +8,28 @@
   "yellowwithblue": {
     "role": "admin"
   },
-  "RadetzkyNTW": {
-    "role": "player",
-    "nation": "austria"
-  },
-  "shanesgames5-byte": {
-    "role": "player",
-    "nation": "prussia"
-  },
   "ohgizmo": {
     "role": "player",
     "nation": "austria"
   },
-  "SXc-eng": {
-    "role": "player",
-    "nation": "new south wales"
-  },
-  "Fouzi-707": {
-    "role": "player",
-    "nation": "ottoman empire"
-  },
   "Vancouver1903": {
     "role": "player",
-    "nation": "britain"
-  },
-  "cucumberplane2771": {
-    "role": "player",
-    "nation": "saxony"
+    "nation": "north sea empire"
   },
   "Walrusbear0831": {
     "role": "player",
     "nation": "portugal"
   },
-  "Ninedze2009": {
-    "role": "player",
-    "nation": "batavian republic"
-  },
-  "Nindze2009": {
-    "role": "player",
-    "nation": "bavaria"
-  },
   "juliusquick0616-pixel": {
     "role": "player",
-    "nation": "austria"
+    "nation": "hungary"
   },
   "Tripletoffical67": {
     "role": "player",
-    "nation": "united states"
+    "nation": "netherlands"
   },
   "Ohgizmo": {
     "role": "player",
-    "nation": "austria"
+    "nation": "poland-lithuania"
   }
 }
