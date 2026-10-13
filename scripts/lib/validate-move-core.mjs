@@ -12,6 +12,7 @@ import {
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
 } from './movement.mjs';
+import { resolvePopulation } from './population.mjs';
 //
 // v10 data layout (file-per-nation, plus per-concern global files):
 //   public/data/state.json            — { appVersion, ownerships, countries }
@@ -258,50 +259,18 @@ export function validateMove(inputs) {
   // Runs after the missing-fields guard above has vetted strength and
   // turnStartStrength on every force, since the checker assumes numbers.
   //
-  // Population is read from head.turn rather than base.turn for the same
-  // reason lastTurnDays and turnNumber are: head is refs/pull/N/merge —
-  // this PR already merged into main — so it is the frame that will
-  // actually land, and a submission has to be judged against the rules
-  // that will be in force once it does. It needs no new file read; the
-  // CLI already parses turn.json whole and hands it over. It is anchored
-  // at turn start by construction, since turn.json is written only on a
-  // turn advance and players are blocked from touching its fields; the
-  // ponytail note on that admin-asserted number (and the upgrade path to
-  // recomputing it from ownerships) lives on checkRaiseBudgets itself.
-  //
-  // Deliberately NOT guarded the way lastTurnDays (:156-162) and
-  // turnNumber (:170-176) are above, and the asymmetry is the point.
-  // Those two are arithmetic this file cannot proceed without — absent,
-  // they price every movement budget at NaN — so they are worth a stale-
-  // client rejection. populationByNation is instead a rule that may
-  // legitimately not exist yet: any turn.json written before this feature
-  // simply has no such field, and rejecting on that would brick every
-  // submission in the game until the next turn advance rewrote the file.
-  // So absence fails OPEN: undefined reaches checkRaiseBudgets, the
-  // monthly cap reverts to the flat MEN_PER_MONTH and the standing
-  // ceiling to Infinity, which is bit-for-bit today's behaviour. Open on
-  // ABSENCE only — a table that IS present fails CLOSED on its contents,
-  // a nation missing from it resolving to 0 (and so to the 3000 floor)
-  // inside checkRaiseBudgets rather than back to undefined.
-  //
-  // A value that is not a table AT ALL counts as absence, and this guard
-  // is the exact mirror of the one the worker applies to the same field
-  // (worker/src/index.ts, `effectivePopulation`) — the two gates have to
-  // refuse and accept identical inputs, and without it they do not. Two
-  // concrete divergences it closes, both on a turn.json that was
-  // hand-edited rather than written by the worker: `null` reaches
-  // checkRaiseBudgets, `null[nation]` throws a TypeError, and this file's
-  // CLI has no try/catch — so instead of a clean REJECT the whole CI step
-  // dies with a stack trace while the worker sails on. And a string or an
-  // array indexes to undefined for EVERY nation, resolving all of them to
-  // 0 people and a 3000-man ceiling, so CI would reject the entire game
-  // as over-mobilised on submissions the worker had already accepted.
-  // Both now land where the worker lands: unenforced.
-  const rawPopulation = head.turn?.populationByNation;
-  const populationByNation =
-    typeof rawPopulation === 'object' && rawPopulation !== null && !Array.isArray(rawPopulation)
-      ? rawPopulation
-      : undefined;
+  // Unlike a worker request, head here is the complete file that will land.
+  // The worker may fill an omitted field from main on ownership-neutral
+  // requests, but CI must not approve physically deleting that field.
+  if (base.turn?.populationByNation !== undefined && head.turn?.populationByNation === undefined) {
+    return { valid: false, reason: 'turn.json population anchor: cannot remove the published populationByNation table' };
+  }
+  // Validate the same anchor that the worker scored. Mid-turn ownership
+  // changes may legitimately differ from this frozen table.
+  const { populationByNation, error: populationError } = resolvePopulation(base, head);
+  if (populationError) {
+    return { valid: false, reason: `turn.json population anchor: ${populationError}` };
+  }
   const overCap = checkRaiseBudgets(head.forces, lastTurnDays, populationByNation);
   if (overCap) {
     // Already a finished sentence, and the violation belongs to a nation

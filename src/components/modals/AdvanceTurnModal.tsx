@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Button } from '@/components/ui/Button';
 import { daysBetween, ARMY_KM_PER_DAY, NAVY_KM_PER_DAY } from '@/utils/movement';
+import { populationByOwner } from '../../../scripts/lib/population.mjs';
 import styles from './MobilizationConfirm.module.css';
 
 interface AdvanceTurnModalProps {
@@ -21,14 +22,24 @@ function addDays(iso: string, days: number): string {
  *  flow; this dialog only updates the local buffer. */
 export function AdvanceTurnModal({ onClose }: AdvanceTurnModalProps) {
   const dispatch = useAppDispatch();
-  const { currentDate, turnNumber } = useAppState();
+  const { currentDate, turnNumber, provinces, provincesVersion } = useAppState();
+  const populationError = useMemo(() => {
+    if (!provinces) return 'Province data is not loaded.';
+    try {
+      populationByOwner(provinces);
+      return null;
+    } catch (error) {
+      return (error as Error).message;
+    }
+  }, [provinces, provincesVersion]);
 
   // Default to +30 days — matches the seeded starter turn length, so the
   // most common case ("step forward a month") is one click.
   const [newDate, setNewDate] = useState<string>(() => addDays(currentDate, 30));
 
   const elapsed = daysBetween(currentDate, newDate);
-  const valid = elapsed > 0;
+  const validDate = elapsed > 0;
+  const valid = validDate && populationError === null;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -79,7 +90,7 @@ export function AdvanceTurnModal({ onClose }: AdvanceTurnModalProps) {
         <div className={styles.row}>
           <span className={styles.key}>Elapsed</span>
           <span className={styles.value}>
-            {valid ? `+ ${elapsed} day${elapsed === 1 ? '' : 's'}` : 'pick a later date'}
+            {validDate ? `+ ${elapsed} day${elapsed === 1 ? '' : 's'}` : 'pick a later date'}
           </span>
         </div>
 
@@ -92,6 +103,12 @@ export function AdvanceTurnModal({ onClose }: AdvanceTurnModalProps) {
           Confirming resets every force's per-turn movement budget to the new total. The change is
           local until you Submit Move.
         </p>
+        {populationError && (
+          <p role="alert">
+            Cannot advance turn: {populationError} Reload complete population data before advancing.
+            The date and force anchors have not changed.
+          </p>
+        )}
 
         <div className={styles.buttons}>
           <Button onClick={onClose}>Cancel</Button>

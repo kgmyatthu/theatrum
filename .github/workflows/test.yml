@@ -8,11 +8,25 @@ on:
   push:
     paths:
       - 'scripts/**'
+      - 'src/**'
+      - 'worker/**'
+      - 'public/data/state.json'
+      - 'public/data/turn.json'
+      - 'public/data/provinces.geojson'
+      - 'public/data/population1800.json'
+      - 'package-lock.json'
       - 'package.json'
       - '.github/workflows/test.yml'
   pull_request:
     paths:
       - 'scripts/**'
+      - 'src/**'
+      - 'worker/**'
+      - 'public/data/state.json'
+      - 'public/data/turn.json'
+      - 'public/data/provinces.geojson'
+      - 'public/data/population1800.json'
+      - 'package-lock.json'
       - 'package.json'
       - '.github/workflows/test.yml'
 
@@ -24,4 +38,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - run: npm ci
       - run: npm test

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAppDispatch, useAppState } from '@/state/AppContext';
 import { Panel } from '@/components/ui/Panel';
 import { Button } from '@/components/ui/Button';
@@ -6,6 +6,8 @@ import { buildSnapshot } from '@/utils/snapshot';
 import { exportToSvg, importSnapshotFromSvg } from '@/utils/svgExport';
 import { computeBBox, buildCoordSet } from '@/utils/geometry';
 import { computeLandmassLabelsForOwner } from '@/utils/connectedComponents';
+import { prepareImportSnapshot } from '@/utils/population';
+import styles from '@/components/modals/MobilizationConfirm.module.css';
 import type { AppSnapshot, ProvinceFeature } from '@/types';
 
 interface PersistencePanelProps {
@@ -17,6 +19,58 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
   const state = useAppState();
   const jsonInputRef = useRef<HTMLInputElement>(null);
   const svgInputRef = useRef<HTMLInputElement>(null);
+  const [pendingImport, setPendingImport] = useState<{
+    snapshot: AppSnapshot;
+    source: 'JSON' | 'SVG';
+  } | null>(null);
+  const importErrors = useMemo(() => {
+    if (!pendingImport) return null;
+    let preserve: string | null = null;
+    let rebuild: string | null = null;
+    try {
+      prepareImportSnapshot(pendingImport.snapshot, state.provinces, false);
+    } catch (error) {
+      preserve = (error as Error).message;
+    }
+    try {
+      prepareImportSnapshot(pendingImport.snapshot, state.provinces, true);
+    } catch (error) {
+      rebuild = (error as Error).message;
+    }
+    return { preserve, rebuild };
+  }, [pendingImport, state.provinces, state.provincesVersion]);
+
+  useEffect(() => {
+    if (!pendingImport) return;
+    const onKey = (event: KeyboardEvent): void => {
+      if (event.key === 'Escape') {
+        setPendingImport(null);
+        onStatus('Import cancelled.');
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [pendingImport, onStatus]);
+
+  const confirmImport = (rebuildPopulation: boolean): void => {
+    if (!pendingImport) return;
+    try {
+      // Revalidate against the current loaded data immediately before dispatch.
+      prepareImportSnapshot(pendingImport.snapshot, state.provinces, rebuildPopulation);
+      dispatch({
+        type: 'IMPORT_SNAPSHOT',
+        payload: { snapshot: pendingImport.snapshot, rebuildPopulation },
+      });
+      onStatus(
+        `Imported ${pendingImport.source}; recruitment population ${
+          rebuildPopulation ? 'rebuilt from imported territory' : 'preserved'
+        }.`,
+      );
+      setPendingImport(null);
+    } catch (error) {
+      onStatus(`Import failed: ${(error as Error).message}`);
+    }
+  };
 
   const buildCurrentSnapshot = (): AppSnapshot | null => {
     if (!state.provinces) return null;
@@ -109,8 +163,7 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
       try {
         const text = ev.target?.result as string;
         const snap = JSON.parse(text) as AppSnapshot;
-        dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: snap } });
-        onStatus('Imported JSON.');
+        setPendingImport({ snapshot: snap, source: 'JSON' });
       } catch (err) {
         onStatus(`Import failed: ${(err as Error).message}`);
       }
@@ -124,14 +177,17 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (ev) => {
-      const text = ev.target?.result as string;
-      const snap = importSnapshotFromSvg(text);
-      if (!snap) {
-        onStatus('No embedded snapshot found in this SVG.');
-        return;
+      try {
+        const text = ev.target?.result as string;
+        const snap = importSnapshotFromSvg(text);
+        if (!snap) {
+          onStatus('No embedded snapshot found in this SVG.');
+          return;
+        }
+        setPendingImport({ snapshot: snap, source: 'SVG' });
+      } catch (err) {
+        onStatus(`Import failed: ${(err as Error).message}`);
       }
-      dispatch({ type: 'APPLY_SNAPSHOT', payload: { snapshot: snap } });
-      onStatus('Imported snapshot from SVG.');
     };
     reader.readAsText(file);
     e.target.value = '';
@@ -157,6 +213,62 @@ export function PersistencePanel({ onStatus }: PersistencePanelProps) {
         onChange={handleSvgFile}
         style={{ display: 'none' }}
       />
+      {pendingImport && importErrors && (
+        <div
+          className={styles.backdrop}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setPendingImport(null);
+              onStatus('Import cancelled.');
+            }
+          }}
+        >
+          <div
+            className={styles.panel}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="import-population-title"
+          >
+            <h3 id="import-population-title" className={styles.title}>
+              Import {pendingImport.source} snapshot
+            </h3>
+            <p>
+              Preserve the imported turn-start recruitment population, or rebuild recruitment
+              population from imported territory without advancing date. The snapshot's date and
+              force turn anchors are kept either way.
+            </p>
+            <p>
+              A difference from current territory can be a valid mid-turn anchor. Rebuild only if
+              you want imported territory to define recruitment instead.
+            </p>
+            {importErrors.preserve && (
+              <p role="alert">
+                Cannot preserve: {importErrors.preserve} Explicitly choose Rebuild to import with a
+                new population anchor.
+              </p>
+            )}
+            {importErrors.rebuild && (
+              <p role="alert">Cannot rebuild: {importErrors.rebuild}</p>
+            )}
+            <div className={styles.buttons}>
+              <Button
+                onClick={() => {
+                  setPendingImport(null);
+                  onStatus('Import cancelled.');
+                }}
+              >
+                Cancel
+              </Button>
+              <Button disabled={importErrors.preserve !== null} onClick={() => confirmImport(false)}>
+                Preserve
+              </Button>
+              <Button disabled={importErrors.rebuild !== null} onClick={() => confirmImport(true)}>
+                Rebuild
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </Panel>
   );
 }

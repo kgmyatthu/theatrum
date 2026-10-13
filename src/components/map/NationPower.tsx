@@ -145,8 +145,9 @@ export function NationPower({ nation }: NationPowerProps) {
   // menPerMonth/standingArmyCeiling; a nation the table simply does not
   // list is 0, a real (if unflattering) population. The tempting
   // `populationByNation?.[nation]` collapses the two.
-  const pop =
-    populationByNation === undefined ? undefined : (populationByNation[nation] ?? 0);
+  const pop = populationByNation === undefined
+    ? undefined
+    : Object.hasOwn(populationByNation, nation) ? (populationByNation[nation] ?? 0) : 0;
 
   // Cheap (~30 forces) but keyed anyway, because the alternative is
   // re-summing on every unrelated re-render of the hover card.
@@ -418,7 +419,7 @@ export function NationPower({ nation }: NationPowerProps) {
       <div className={styles.caption}>
         <span className={styles.dotSwatch} />
         <span>
-          {nation}, all provinces: {n(pop)} people
+          {nation}: {n(pop)} people at turn start
         </span>
       </div>
       <div className={styles.caption}>
@@ -427,6 +428,7 @@ export function NationPower({ nation }: NationPowerProps) {
           {n(REFERENCE_POP / 1e6)}M people = {n(MEN_PER_MONTH)}/month
         </span>
       </div>
+      <div className={styles.note}>Territory changes affect recruitment next turn.</div>
 
       <div className={card.row}>
         <span className={card.key}>Standing army</span>

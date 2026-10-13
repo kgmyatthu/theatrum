@@ -1716,30 +1716,12 @@ test('pass: a turn.json with no populationByNation behaves exactly as it did bef
   );
 });
 
-test('pass: a populationByNation that is not a table at all is absence, not zeroes', () => {
-  // Worker parity, and the reason this guard exists on both sides. turn.json
-  // is parsed unvalidated on both servers, so a hand-edited file can put
-  // anything in this field, and the two gates have to answer identically or
-  // the worker opens a PR that CI then refuses.
-  //
-  // `null` is the sharp one: it used to reach checkRaiseBudgets, where
-  // `null[nation]` throws a TypeError — and validate-move.mjs calls
-  // validateMove() with no try/catch, so the CI step died with a stack
-  // trace instead of returning a verdict, while the worker's own shape
-  // guard sailed past it.
-  //
-  // A string or an array is the quiet one: both index to undefined for
-  // EVERY nation, which the `?? 0` inside checkRaiseBudgets turns into "0
-  // people" — so a single malformed field would have declared all 78
-  // nations over a 3,000-man ceiling at once. Neither is evidence about
-  // anyone's population, so both land where the worker lands: unenforced.
-  const levy = () => force({
-    id: 'alice-1700000000000-0', nation: 'spain', name: 'Levy',
-    strength: 10000, turnStartStrength: 0, createdAtTurn: 0,
-  });
-  const forces = () => forcesMap({ spain: [force({ id: 'spain-1', nation: 'spain' }), levy()] });
+test('reject: malformed population tables cannot silently disable recruitment limits', () => {
   for (const notATable of [null, 'sweden', 42, [['spain', 1000000]], true]) {
-    expectPass(validateMove(withPopulation(notATable, { head: { forces: forces() } })));
+    expectReject(
+      validateMove(withPopulation(notATable)),
+      /population/i,
+    );
   }
 });
 
@@ -2021,4 +2003,46 @@ test('reject: non-numeric lat slips the displacement check (worker parity)', () 
     validateMove(defaults({ head: { forces: forcesMap({ spain: [nowhere] }) } })),
     /missing turn-tracking fields/,
   );
+});
+
+test('reject: changing the world without its population anchor cannot inherit the previous world', () => {
+  for (const change of [
+    (head) => { head.state.ownerships[0][1] = 'france'; },
+    (head) => { head.state.countries.push({ name: 'new country', color: '#abcdef' }); },
+    (head) => { head.turn.turnNumber++; },
+    (head) => { head.turn.currentDate = '1680-02-01'; },
+    (head) => { head.turn.lastTurnDays = 60; },
+  ]) {
+    const inputs = withPopulation(POP_AT_CEILING, {
+      prAuthor: 'master',
+      changedFiles: ['public/data/state.json', 'public/data/turn.json'],
+    });
+    delete inputs.head.turn.populationByNation;
+    change(inputs.head);
+    expectReject(validateMove(inputs), /population/i);
+  }
+});
+
+test('pass: an ownership transfer preserves the current turn population until advancement', () => {
+  const inputs = withPopulation(POP_AT_CEILING, {
+    prAuthor: 'master', changedFiles: ['public/data/state.json'],
+  });
+  inputs.head.state.ownerships[0][1] = 'france';
+  expectPass(validateMove(inputs));
+});
+
+test('reject: removing the published population table cannot disable future enforcement', () => {
+  const inputs = withPopulation(POP_AT_CEILING, {
+    prAuthor: 'master', changedFiles: ['public/data/turn.json'],
+  });
+  delete inputs.head.turn.populationByNation;
+  expectReject(validateMove(inputs), /population/i);
+});
+
+test('reject: a restored registry cannot carry the old country population keys', () => {
+  const inputs = withPopulation(POP_AT_CEILING, {
+    prAuthor: 'master', changedFiles: ['public/data/turn.json'],
+  });
+  inputs.head.turn.populationByNation['former country'] = 1000000;
+  expectReject(validateMove(inputs), /population/i);
 });

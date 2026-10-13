@@ -348,6 +348,33 @@ files are read from the raw CDN at runtime.
 into `turn.json.populationByNation` at each turn advance; it is static factory data, so it
 sits outside the SHA-pinned snapshot and outside the schema-version contract.
 
+Recruitment uses the **turn-start** population, not the live territory total shown in the
+nation overview. Province transfers and newly created countries affect recruitment on the
+next turn; a country rename moves the existing anchor to its new name without changing
+the number. Advancing the turn requires a valid population figure for every province.
+If that data is unavailable or incomplete, the date and force anchors stay unchanged.
+
+JSON and SVG imports offer **Preserve**, **Rebuild**, or **Cancel** before changing state:
+- **Preserve** keeps the imported snapshot's valid turn-start population, including
+  legitimate mid-turn differences from current territory.
+- **Rebuild** explicitly establishes a new recruitment baseline from the imported
+  ownership and the loaded per-province figures. It does not advance the imported date
+  or reset its force anchors. Use this for legacy snapshots without a population table
+  or a deliberate world restoration.
+- Invalid ownership/registry data blocks import. Missing population figures block
+  rebuilding; they never mean zero people or permission to reuse another world's table.
+
+The Worker and CI share population-table validation in `scripts/lib/population.mjs`.
+An admin request that changes ownership, country identities, or the turn clock must not
+omit an existing population anchor. Ownership-neutral legacy requests may inherit main's
+table; the Worker writes that resolved table, and CI rejects removal of a published table.
+Malformed tables and keys naming removed countries are rejected. Games where neither
+snapshot has ever supplied a table retain the legacy flat recruitment rules.
+
+`npm test` covers transfer/rename/advance/import behavior and checks published population
+keys and total population against the registry and per-province data. It deliberately
+does not require per-country live totals to equal frozen anchors during a turn.
+
 `state.json` / `turn.json` / `forces/` are split so an admin's turn advance and a player's
 force move never contend on the same file. `_fid` is **not** stored in the GeoJSON — it's the
 runtime array index — and `state.json` is the source of truth for lowercase ownership.

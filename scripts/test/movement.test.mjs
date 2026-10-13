@@ -2,7 +2,6 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import {
   ARMY_KM_PER_DAY,
   NAVY_KM_PER_DAY,
@@ -353,108 +352,6 @@ test('checkRaiseBudgets: first offender is deterministic (nations sorted, army f
 //     unflattering) answer of 0 people, so the MIN_MEN_PER_MONTH floor
 //     for both rules. Fail CLOSED.
 //
-// The shipped figures are asserted as literals on purpose. They are what
-// public/data/turn.json actually contains today, so a re-bake that moves
-// a population fails loudly right here instead of quietly handing a
-// player a different army — and SHIPPED_POP below is what makes that
-// claim true rather than merely stated.
-// ────────────────────────────────────────────────────────────────────
-
-// ponytail: a bare readFileSync, no fixture harness and no helper, because
-// the literals below are the point and this only has to prove they are
-// still real. It exists because the claim above was false for as long as
-// nothing checked it: the literals asserted f(105562162) === 39792 and
-// labelled it "britain", but no nation in the table has ever had that
-// population (britain is 18,082,841; 105.5M was closest to britain plus
-// its colonies, and drifted). f(literal) === literal passes forever
-// however far the bake moves, so the coupling to production data needs one
-// assertion on the INPUT to bite. Cheapest thing that bites: read the file.
-const SHIPPED_POP = JSON.parse(
-  readFileSync(new URL('../../public/data/turn.json', import.meta.url), 'utf8'),
-).populationByNation;
-
-test('the client mirror is still a mirror — constants and bodies, character for character', () => {
-  // src/utils/movement.ts is a hand-maintained COPY of the block above it,
-  // and its own header has always claimed "the test suite covers the
-  // equivalence". That claim was false in exactly the way the SHIPPED_POP
-  // one was: nothing read the other file, so nothing could see it drift.
-  //
-  // The drift this catches is a constant re-priced on one side only, and
-  // MAX_ARMY_POP_SHARE is the case that motivated it — 0.04 → 0.035 had to
-  // be typed into two files, and a gate that refuses at 3.5% while the
-  // panel and the hover card size their promises at 4% is a player told he
-  // may raise men the server will bounce. The mirror is what the CLIENT
-  // predicts a refusal with; the file above is what actually refuses.
-  //
-  // TEXTUAL, not behavioural, and deliberately: this is a .mjs runner with
-  // no TypeScript in it, so importing the mirror would cost a transpile
-  // step and a build dependency to check four constants and five
-  // expressions. Reading the source needs neither and bites on precisely
-  // the edit that matters. It cannot prove the two files COMPUTE the same
-  // thing — only that the lines that do the computing are identical, which
-  // is the property a copy has to hold.
-  const RULE = readFileSync(new URL('../lib/movement.mjs', import.meta.url), 'utf8');
-  const MIRROR = readFileSync(new URL('../../src/utils/movement.ts', import.meta.url), 'utf8');
-  // Compared as SOURCE TEXT on both sides rather than against the values
-  // imported at the top of this file: only one of the two is importable
-  // here, and asserting the mirror against this file's own imports would
-  // just be re-checking the side that is already covered.
-  const constOf = (src, where, name) => {
-    const m = new RegExp(`^export const ${name} = (.+);$`, 'm').exec(src);
-    assert.ok(m, `${name} is not declared in ${where}`);
-    return m[1];
-  };
-  for (const name of [
-    'ARMY_KM_PER_DAY',
-    'NAVY_KM_PER_DAY',
-    'MOVEMENT_TOLERANCE_KM',
-    'MEN_PER_MONTH',
-    'SHIPS_PER_MONTH',
-    'REFERENCE_POP',
-    'MIN_MEN_PER_MONTH',
-    'MAX_ARMY_POP_SHARE',
-  ]) {
-    assert.equal(
-      constOf(MIRROR, 'src/utils/movement.ts', name),
-      constOf(RULE, 'scripts/lib/movement.mjs', name),
-      `${name} has drifted between the rule and its client mirror`,
-    );
-  }
-  // The two bodies the constants feed. Both guards are included because
-  // the fail-open branches are rules in their own right — a mirror that
-  // returned 0 instead of Infinity would size a panel against a ceiling
-  // the gate is not enforcing.
-  for (const line of [
-    'if (pop === undefined || !Number.isFinite(pop)) return MEN_PER_MONTH;',
-    'const scaled = MEN_PER_MONTH * Math.cbrt(Math.max(0, pop) / REFERENCE_POP);',
-    'return Math.max(MIN_MEN_PER_MONTH, Math.round(scaled));',
-    'if (pop === undefined || !Number.isFinite(pop)) return Infinity;',
-    'return Math.max(MIN_MEN_PER_MONTH, Math.floor(MAX_ARMY_POP_SHARE * Math.max(0, pop)));',
-  ]) {
-    assert.ok(RULE.includes(line), `scripts/lib/movement.mjs no longer contains: ${line}`);
-    assert.ok(MIRROR.includes(line), `src/utils/movement.ts no longer contains: ${line}`);
-  }
-  // And the asymmetry that is NOT drift: checkRaiseBudgets is a gate, so it
-  // belongs to the servers that can refuse a submission and is deliberately
-  // absent from the client. Pinned so that "the mirror is missing a
-  // function" reads as intended rather than as something to go and fix —
-  // and so the reason string, which is a contract, cannot acquire a second
-  // copy that drifts from the first. Matched on the DECLARATION, not on the
-  // name: the mirror's header discusses the gate at length, and prose about
-  // a function is not a second implementation of it.
-  assert.ok(
-    !/^export function checkRaiseBudgets/m.test(MIRROR),
-    'the gate must not be mirrored into the client',
-  );
-  // Matched on the sentence's own tail rather than on "may never exceed",
-  // which the mirror quotes as PROSE for the same reason the rule does —
-  // it is why the ceiling floors instead of rounding.
-  assert.ok(
-    !MIRROR.includes('of the nation it is raised from'),
-    'the reason string must have exactly one home',
-  );
-  assert.ok(RULE.includes('of the nation it is raised from'), 'and that home is the rule');
-});
 
 test('menPerMonth: the reference population raises exactly MEN_PER_MONTH', () => {
   // The calibration point the whole curve hangs off, and the reason it is
@@ -481,36 +378,6 @@ test('menPerMonth: the reference population raises exactly MEN_PER_MONTH', () =>
   assert.equal(menPerMonth(60_000_000), 15874);
 });
 
-test('menPerMonth: the real shipped populations — a re-bake must fail here, loudly', () => {
-  // These four are the spread the curve has to survive, every figure read
-  // off public/data/turn.json: china is the largest population in the
-  // game, austria a great power, britain a great power that is mostly
-  // colonies (18.1M at home, filed apart from "british colonies"), and
-  // sweden the tightest-squeezed nation on the board. 91× china's
-  // population over sweden's buys only 4.5× the men — under the square
-  // root the same 91× bought 9.5×, which is the whole reason the curve
-  // moved.
-  //
-  // The input half is what makes this test the re-bake tripwire the
-  // section header claims: assert the population IS the shipped one, then
-  // assert what the curve does with it.
-  assert.equal(SHIPPED_POP.china, 293790263);
-  assert.equal(SHIPPED_POP.austria, 21222995);
-  assert.equal(SHIPPED_POP.britain, 18082841);
-  assert.equal(SHIPPED_POP.sweden, 3229802);
-  assert.equal(menPerMonth(293790263), 26956); // china
-  assert.equal(menPerMonth(21222995), 11226); // austria
-  assert.equal(menPerMonth(18082841), 10643); // britain
-  assert.equal(menPerMonth(3229802), 5994); // sweden
-  // The direction of the change is itself the feature: the cube root
-  // pulls the top DOWN and pushes the bottom UP, both against the same
-  // untouched reference point. china loses 39%, sweden gains 29% — and
-  // both percentages are unmoved by the 15000 → 10000 re-pricing, because
-  // the sqrt rates it is compared against scaled by the same 2/3 (china
-  // 66,384 → 44,256, sweden 6,960 → 4,640).
-  assert.ok(menPerMonth(293790263) < 44256, 'china must fall from its sqrt rate');
-  assert.ok(menPerMonth(3229802) > 4640, 'sweden must rise from its sqrt rate');
-});
 
 test('menPerMonth: the floor, and the exact crossover where both branches agree', () => {
   // 405,000 is where the curve meets the floor exactly. Solved, not

@@ -268,24 +268,19 @@ export function raiseCost(force) {
  *  one nation from a table we do have is a real answer, and it lands that
  *  nation on the MIN_MEN_PER_MONTH floor for both rules.
  *
- *  ANCHORED AT TURN START, by construction. The caller reads population
- *  from public/data/turn.json, which is written only on a turn advance
- *  and whose fields players are already blocked from touching
- *  (worker/src/index.ts:775-797) — so a nation cannot conquer a province
- *  mid-turn and spend the new people in the same turn, and cannot lose
- *  one and have its army retroactively become illegal. The number is
- *  admin-asserted exactly like turnNumber and lastTurnDays sitting beside
- *  it; an admin who could forge it can already edit the force files
- *  directly, so it adds no authority anyone did not have.
+ *  ANCHORED AT TURN START. Province transfers do not change this table
+ *  until the next advance; renames re-key the existing amount. An explicit
+ *  snapshot rebuild can establish a replacement world's baseline without
+ *  advancing its date. Players cannot write any of these turn fields.
  *
- *  ponytail: admin-asserted is the ceiling here. Upgrade path: have the
- *  gates recompute population from state.json ownerships crossed with a
- *  fid-indexed population array and reject on mismatch, which needs
- *  `effectiveOwnerships = isAdmin ? snapshot.ownerships : mainState.ownerships`
- *  mirroring effectiveLastTurnDays at worker/src/index.ts:745-747. Not
- *  done because it costs a join from adm1_code to _fid that NO server
- *  currently performs, a new worker-side file read, and a re-bake — for a
- *  value the same admin could simply have written correctly. */
+ *  The shared population resolver validates the table and rejects missing
+ *  anchors across a world/registry/clock change.
+ *
+ *  ponytail: values remain admin-asserted, like turnNumber and lastTurnDays.
+ *  Server-side recomputation would need a fid-indexed population array
+ *  joined from adm1_code. It must run only when establishing a new baseline:
+ *  comparing every mid-turn submission to live ownership would reject
+ *  legitimate territory transfers. */
 export function checkRaiseBudgets(forcesByNation, lastTurnDays, popByNation) {
   const months = turnMonths(lastTurnDays);
   const days = Math.max(0, lastTurnDays);
@@ -297,7 +292,14 @@ export function checkRaiseBudgets(forcesByNation, lastTurnDays, popByNation) {
     // distinction is made: no table at all stays undefined and fails open
     // through menPerMonth/standingArmyCeiling; a nation the table simply
     // does not list is 0, a real (if unflattering) population.
-    const pop = popByNation === undefined ? undefined : (popByNation[nation] ?? 0);
+    // Own-key lookup: `popByNation[nation] ?? 0` would hand a nation named
+    // "constructor" or "toString" an inherited function from Object.prototype.
+    const pop =
+      popByNation === undefined
+        ? undefined
+        : Object.hasOwn(popByNation, nation)
+          ? (popByNation[nation] ?? 0)
+          : 0;
     const spent = { army: 0, navy: 0 };
     let standing = 0;
     for (const f of forcesByNation[nation] || []) {

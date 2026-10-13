@@ -90,8 +90,9 @@ export function AddForcePanel({ onStatus }: AddForcePanelProps) {
   // floor on both figures (fail closed on contents). The tempting
   // `populationByNation?.[nation]` collapses those two into one and would
   // promise a stateless nation the flat 10,000 men a month.
-  const pop =
-    populationByNation === undefined ? undefined : (populationByNation[nation] ?? 0);
+  const pop = populationByNation === undefined
+    ? undefined
+    : Object.hasOwn(populationByNation, nation) ? (populationByNation[nation] ?? 0) : 0;
   const cap = raiseBudget(branch, lastTurnDays, pop);
   // Bucketed by CURRENT branch, matching checkRaiseBudgets: a force re-branded
   // this turn bills the pool it moved into, which is the pool shown here.

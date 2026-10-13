@@ -45,6 +45,7 @@ import {
   haversineKm,
   MOVEMENT_TOLERANCE_KM,
 } from '../../scripts/lib/movement.mjs';
+import { resolvePopulation } from '../../scripts/lib/population.mjs';
 
 const UA = 'theatrum-oauth-worker';
 const SUBMITTER_MARKER_PREFIX = '<!-- theatrum-submitter:';
@@ -535,15 +536,9 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
         currentDate?: unknown;
         lastTurnDays?: unknown;
         turnNumber?: unknown;
-        // Deliberately NOT validated below the way the three fields above
-        // it are, and the asymmetry is the point: those three are
-        // arithmetic nothing here can proceed without, so they are worth
-        // a stale-client rejection. The population table is a rule that
-        // may legitimately not exist yet — a client cached before the
-        // feature sends no such field — and rejecting on that would bounce
-        // every stale browser for a rule that fails open on absence
-        // anyway. Left `unknown` because nothing proves its shape; the one
-        // reader below narrows it.
+        // Legacy clients may omit this. resolvePopulation below allows
+        // inheritance only while ownership, country identities and the
+        // clock are unchanged; world replacements must carry their anchor.
         populationByNation?: unknown;
       };
   if (!snapshot || typeof snapshot !== 'object') {
@@ -774,48 +769,53 @@ async function handleSubmit(request: Request, env: Env, origin: string): Promise
     const effectiveTurnNumber = isAdmin
       ? (snapshot.turnNumber as number)
       : mainTurn.turnNumber;
-    // Population basis: the same admin/main rule as the two fields above,
-    // and for the same reason. The population that bounds recruitment is
-    // anchored at turn start and lives in turn.json beside them, so an
-    // admin advancing the turn in this same submission is writing a new
-    // table below — and the recruitment gate has to score them against the
-    // frame that will actually land, not the one it replaces. (The CI
-    // validator reads head.turn for exactly this reason.) Non-admins take
-    // main's copy: the turn-field gate above proved snapshot == main for
-    // the other three, but nothing compares this one, so main's is the
-    // only trustworthy source — and the only one they could ever write,
-    // since the turn.json commit below is admin-only.
-    //
-    // The one clause the two fields above don't need: populationByNation is
-    // OPTIONAL on the snapshot, where lastTurnDays and turnNumber are
-    // validated mandatory. An admin on a client cached before this feature
-    // sends none, so the admin arm falls back to main's rather than to
-    // undefined — otherwise a stale admin client would silently switch the
-    // rules off for its own submission. It is also exactly what the
-    // turn.json write below does with this value, which keeps the table the
-    // gate scored and the table the PR lands identical.
+    // Population basis: resolved by the SAME resolvePopulation() CI runs,
+    // so the two gates refuse and accept identical inputs. The table is a
+    // turn-start anchor in turn.json, and the frame is picked the same way
+    // as the two fields above:
+    //   - Non-admin: main's state + turn against itself. Players cannot
+    //     write turn.json, so nothing they send can influence the anchor;
+    //     this only validates what main already holds (and keeps an absent
+    //     legacy table undefined).
+    //   - Admin: main as base, their snapshot's world and clock (plus any
+    //     table they sent) as head. An admin advancing the turn is writing a
+    //     new table, so the gate scores the frame that will land. A table
+    //     omitted across an ownership / registry / clock change over a main
+    //     that has one is rejected rather than silently inherited — that is
+    //     how a stale import used to carry an old world's anchor.
+    // The value the cap is scored against is exactly what the turn.json
+    // write below commits, so what lands is what was judged.
     //
     // ponytail: the table is admin-asserted, same as turnNumber and
     // lastTurnDays beside it — an admin who could forge it can already edit
     // the force files directly. Upgrade path (recompute from ownerships and
-    // reject on mismatch, needing an effectiveOwnerships mirroring
-    // effectiveLastTurnDays above) is written up in full on
-    // checkRaiseBudgets in scripts/lib/movement.mjs.
-    const rawPopulation: unknown = isAdmin
-      ? (snapshot.populationByNation ?? mainTurn.populationByNation)
-      : mainTurn.populationByNation;
-    // Fail OPEN on absence, and a value that is not a table at all counts
-    // as absence: undefined reaches checkRaiseBudgets, the monthly cap
-    // reverts to the flat MEN_PER_MONTH and the standing ceiling to
-    // Infinity. Open on ABSENCE only — a table that IS present fails CLOSED
-    // on its contents, a nation missing from it resolving to 0 (and so to
-    // the 3000 floor) inside checkRaiseBudgets. The shape guard is not
-    // pedantry: turn.json is parsed unvalidated, and indexing a `null` here
-    // would throw out of this handler and 502 every submission in the game.
-    const effectivePopulation =
-      typeof rawPopulation === 'object' && rawPopulation !== null && !Array.isArray(rawPopulation)
-        ? (rawPopulation as Record<string, number>)
-        : undefined;
+    // reject on mismatch) is written up on checkRaiseBudgets in
+    // scripts/lib/movement.mjs.
+    const mainWorld = { state: mainState, turn: mainTurn };
+    const resolvedPopulation = resolvePopulation(
+      mainWorld,
+      isAdmin
+        ? {
+            state: { ownerships: snapshot.ownerships!, countries: snapshot.countries! },
+            turn: {
+              currentDate: snapshot.currentDate as string,
+              lastTurnDays: snapshot.lastTurnDays as number,
+              turnNumber: snapshot.turnNumber as number,
+              populationByNation: snapshot.populationByNation,
+            },
+          }
+        : mainWorld,
+    );
+    if (resolvedPopulation.error) {
+      return errorJson(
+        origin,
+        isAdmin ? 422 : 502,
+        isAdmin
+          ? `population anchor rejected: ${resolvedPopulation.error}`
+          : `population anchor on main is unusable: ${resolvedPopulation.error}`,
+      );
+    }
+    const effectivePopulation = resolvedPopulation.populationByNation;
     for (const f of snapshot.forces!) {
       const turnStartLon = (f as { turnStartLon?: unknown }).turnStartLon;
       const turnStartLat = (f as { turnStartLat?: unknown }).turnStartLat;

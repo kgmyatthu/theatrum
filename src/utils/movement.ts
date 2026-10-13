@@ -1,7 +1,5 @@
-// Movement rules — mirror of scripts/lib/movement.mjs so both client
-// and worker can compute budgets without cross-tree imports. If you
-// change a value here, change it there too. (Both files are tiny and
-// the test suite covers the equivalence.)
+// Client movement rules mirror scripts/lib/movement.mjs.
+// Keep rule changes in sync with the server implementation.
 
 import type { Force, ForceBranch } from '@/types';
 

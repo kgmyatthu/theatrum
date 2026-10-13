@@ -42,7 +42,7 @@ const emptyRow = (nation: string): NationRow => ({
  * it tracks ownership repaints.
  */
 export function NationsModal({ onDismiss }: NationsModalProps) {
-  const { owners, forces, palette, provinces, provincesVersion } = useAppState();
+  const { owners, forces, palette, provinces, provincesVersion, populationByNation } = useAppState();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -147,10 +147,8 @@ export function NationsModal({ onDismiss }: NationsModalProps) {
                 <th>⚔ Troops</th>
                 <th>Navies</th>
                 <th>⚓ Ships</th>
-                {/* Last on purpose: this is a force overview, so population
-                    reads as context for the military figures, not as the
-                    headline. */}
-                <th>Population</th>
+                <th>Current territory population</th>
+                <th>Turn-start recruitment population</th>
               </tr>
             </thead>
             <tbody>
@@ -185,6 +183,11 @@ export function NationsModal({ onDismiss }: NationsModalProps) {
                   <td className={r.provinceCount === 0 ? styles.zero : ''}>
                     {num(r.population, r.provinceCount === 0)}
                   </td>
+                  <td className={populationByNation === undefined ? styles.zero : ''}>
+                    {populationByNation === undefined
+                      ? '—'
+                      : (Object.hasOwn(populationByNation, r.nation) ? (populationByNation[r.nation] ?? 0) : 0).toLocaleString()}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -196,13 +199,19 @@ export function NationsModal({ onDismiss }: NationsModalProps) {
                 <td>{totals.navies.toLocaleString()}</td>
                 <td>{totals.ships.toLocaleString()}</td>
                 <td>{totals.population.toLocaleString()}</td>
+                <td>
+                  {populationByNation === undefined
+                    ? '—'
+                    : Object.values(populationByNation).reduce((sum, people) => sum + people, 0).toLocaleString()}
+                </td>
               </tr>
             </tfoot>
           </table>
         </div>
 
         <div className={styles.hint}>
-          Sorted by army strength. Press Esc or click outside to close.
+          Territory changes affect recruitment next turn. Sorted by army strength.
+          Press Esc or click outside to close.
         </div>
       </div>
     </div>

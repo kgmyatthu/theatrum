@@ -49,6 +49,10 @@ export type Action =
   | { type: 'SELECT_PROVINCES'; payload: { fids: number[]; mode: 'set' | 'add' | 'toggle' | 'clear' } }
   | { type: 'APPLY_SNAPSHOT'; payload: { snapshot: AppSnapshot } }
   | {
+      type: 'IMPORT_SNAPSHOT';
+      payload: { snapshot: AppSnapshot; rebuildPopulation: boolean };
+    }
+  | {
       type: 'ADD_PENDING_USER';
       payload:
         | { login: string; role: 'player'; nation: string }
