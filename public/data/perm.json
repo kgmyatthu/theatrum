@@ -13,8 +13,7 @@
     "nation": "austria"
   },
   "Vancouver1903": {
-    "role": "player",
-    "nation": "north sea empire"
+    "role": "admin"
   },
   "Walrusbear0831": {
     "role": "player",
@@ -31,5 +30,8 @@
   "Ohgizmo": {
     "role": "player",
     "nation": "poland-lithuania"
+  },
+  "KingREN1-Suitman": {
+    "role": "admin"
   }
 }
