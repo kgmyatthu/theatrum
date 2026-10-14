@@ -20,7 +20,7 @@
     "nation": "hungary",
     "branch": "army",
     "name": "Army of Hungary",
-    "strength": 60000,
+    "strength": 35000,
     "commander": "",
     "lat": 47.54687159892238,
     "lon": 20.313720703125004,
@@ -28,7 +28,7 @@
     "turnStartLon": 20.313720703125004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 72,
-    "turnStartStrength": 60000,
+    "turnStartStrength": 35000,
     "turnStartBranch": "army"
   }
 ]
