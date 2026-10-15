@@ -12,7 +12,7 @@
     "turnStartLon": 8.047485351562502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 74,
-    "turnStartStrength": 0,
+    "turnStartStrength": 1000,
     "turnStartBranch": "army"
   },
   {
@@ -22,13 +22,13 @@
     "name": "Leopold Philip de Heister",
     "strength": 2000,
     "commander": "",
-    "lat": 59.89720326334451,
-    "lon": 10.733642578125002,
+    "lat": 59.90133567536662,
+    "lon": 10.758361816406252,
     "turnStartLat": 59.89720326334451,
     "turnStartLon": 10.733642578125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 1.4530768590740615,
     "createdAtTurn": 74,
-    "turnStartStrength": 0,
+    "turnStartStrength": 2000,
     "turnStartBranch": "army"
   }
 ]
