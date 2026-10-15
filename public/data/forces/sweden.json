@@ -4,7 +4,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Indelningsverket",
-    "strength": 65000,
+    "strength": 45000,
     "commander": "Charles XII",
     "lat": 60.053873851484944,
     "lon": 15.062255859375002,
@@ -12,7 +12,7 @@
     "turnStartLon": 15.062255859375002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47,
-    "turnStartStrength": 65000,
+    "turnStartStrength": 45000,
     "turnStartBranch": "army"
   },
   {
@@ -46,5 +46,59 @@
     "createdAtTurn": 67,
     "turnStartStrength": 30,
     "turnStartBranch": "navy"
+  },
+  {
+    "id": "yellowwithblue-1792035799520-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Samuel Gustaf Stierneld",
+    "strength": 10000,
+    "commander": "",
+    "lat": 60.070322397877064,
+    "lon": 10.239257812500002,
+    "turnStartLat": 60.053873851484944,
+    "turnStartLon": 15.062255859375002,
+    "kmMovedThisTurn": 267.58982455380533,
+    "createdAtTurn": 47,
+    "turnStartStrength": 10000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1783829620969-2"
+    ]
+  },
+  {
+    "id": "yellowwithblue-1792035538869-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Gustaf David Hamilton",
+    "strength": 10000,
+    "commander": "",
+    "lat": 56.03522578369872,
+    "lon": 13.106689453125002,
+    "turnStartLat": 60.053873851484944,
+    "turnStartLon": 15.062255859375002,
+    "kmMovedThisTurn": 461.3833994225292,
+    "createdAtTurn": 47,
+    "turnStartStrength": 10000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1783829620969-2"
+    ]
+  },
+  {
+    "id": "yellowwithblue-1792035750438-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Garrison of Bergen",
+    "strength": 2500,
+    "commander": "",
+    "lat": 60.39757538658667,
+    "lon": 5.614013671875001,
+    "turnStartLat": 60.39757538658667,
+    "turnStartLon": 5.614013671875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 74,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]

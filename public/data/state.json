@@ -14939,7 +14939,7 @@
     ],
     [
       3734,
-      "hre minor states"
+      "hesse-kassel"
     ],
     [
       3735,
@@ -18498,6 +18498,10 @@
     {
       "name": "hausa city-states",
       "color": "#01796F"
+    },
+    {
+      "name": "hesse-kassel",
+      "color": "#ff5577"
     },
     {
       "name": "holstein-gottorp",

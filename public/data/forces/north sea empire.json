@@ -288,22 +288,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "yourlocalgeobukseon-1785704272299-0",
-    "nation": "north sea empire",
-    "branch": "army",
-    "name": "Helsingborg Garrison",
-    "strength": 500,
-    "commander": "John Helsing",
-    "lat": 56.01422997718124,
-    "lon": 12.735142353152442,
-    "turnStartLat": 56.01422997718124,
-    "turnStartLon": 12.735142353152442,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 72,
-    "turnStartStrength": 500,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "yourlocalgeobukseon-1785739713326-0",
     "nation": "north sea empire",
     "branch": "army",
