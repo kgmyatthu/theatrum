@@ -1,8 +1,8 @@
 {
   "appVersion": "theatrum/v10",
-  "currentDate": "1767-05-31",
-  "lastTurnDays": 30,
-  "turnNumber": 74,
+  "currentDate": "1769-01-01",
+  "lastTurnDays": 581,
+  "turnNumber": 75,
   "populationByNation": {
     "aceh": 834897,
     "asante": 2477087,
@@ -26,7 +26,8 @@
     "hanover": 2319097,
     "haudenosaunee confederacy": 362182,
     "hausa city-states": 5415396,
-    "hre minor states": 7631237,
+    "hesse-kassel": 1507555,
+    "hre minor states": 6123682,
     "hungary": 8484465,
     "japan": 27549702,
     "kalmyk khanate (russia)": 253987,
