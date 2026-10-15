@@ -64,22 +64,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "KingREN1-Suitman-1785292310334-0",
-    "nation": "bavaria",
-    "branch": "navy",
-    "name": "Bavarian Navy (MOTHBALLED)",
-    "strength": 30,
-    "commander": "",
-    "lat": 45.560217957150535,
-    "lon": 13.485717773437502,
-    "turnStartLat": 45.560217957150535,
-    "turnStartLon": 13.485717773437502,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69,
-    "turnStartStrength": 30,
-    "turnStartBranch": "navy"
-  },
-  {
     "id": "KingREN1-Suitman-1785292636475-1",
     "nation": "bavaria",
     "branch": "army",

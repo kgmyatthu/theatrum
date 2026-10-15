@@ -1,0 +1,34 @@
+[
+  {
+    "id": "yellowwithblue-1792035924840-3",
+    "nation": "hesse-kassel",
+    "branch": "army",
+    "name": "Johann Rall",
+    "strength": 1000,
+    "commander": "",
+    "lat": 58.23148833880538,
+    "lon": 8.047485351562502,
+    "turnStartLat": 58.23148833880538,
+    "turnStartLon": 8.047485351562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 74,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792036113891-4",
+    "nation": "hesse-kassel",
+    "branch": "army",
+    "name": "Leopold Philip de Heister",
+    "strength": 2000,
+    "commander": "",
+    "lat": 59.89720326334451,
+    "lon": 10.733642578125002,
+    "turnStartLat": 59.89720326334451,
+    "turnStartLon": 10.733642578125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 74,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
