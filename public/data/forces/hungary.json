@@ -46,5 +46,21 @@
     "createdAtTurn": 76,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "juliusquick0616-pixel-1792140541222-1",
+    "nation": "hungary",
+    "branch": "navy",
+    "name": "The Croatian fleet",
+    "strength": 10,
+    "commander": "",
+    "lat": 45.32505629719886,
+    "lon": 14.439382553100588,
+    "turnStartLat": 45.32505629719886,
+    "turnStartLon": 14.439382553100588,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 76,
+    "turnStartStrength": 0,
+    "turnStartBranch": "navy"
   }
 ]
