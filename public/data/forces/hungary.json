@@ -20,7 +20,7 @@
     "nation": "hungary",
     "branch": "army",
     "name": "Army of Hungary",
-    "strength": 35000,
+    "strength": 60000,
     "commander": "",
     "lat": 47.54687159892238,
     "lon": 20.313720703125004,
@@ -29,6 +29,22 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 72,
     "turnStartStrength": 35000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "juliusquick0616-pixel-1792140231830-0",
+    "nation": "hungary",
+    "branch": "army",
+    "name": "Army of Crotia",
+    "strength": 20000,
+    "commander": "",
+    "lat": 45.79338211440401,
+    "lon": 16.016006469726566,
+    "turnStartLat": 45.79338211440401,
+    "turnStartLon": 16.016006469726566,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 76,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
