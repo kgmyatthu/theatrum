@@ -33,5 +33,9 @@
   },
   "KingREN1-Suitman": {
     "role": "admin"
+  },
+  "shanesgames5-byte": {
+    "role": "player",
+    "nation": "china"
   }
 }
