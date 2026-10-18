@@ -11,7 +11,7 @@
     ],
     [
       2,
-      "brunei"
+      "minor indonesian states"
     ],
     [
       3,
@@ -2331,7 +2331,7 @@
     ],
     [
       582,
-      "portugal"
+      "latin empire"
     ],
     [
       583,
@@ -2351,7 +2351,7 @@
     ],
     [
       587,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       588,
@@ -4915,7 +4915,7 @@
     ],
     [
       1228,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1229,
@@ -7151,7 +7151,7 @@
     ],
     [
       1787,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1788,
@@ -7163,7 +7163,7 @@
     ],
     [
       1790,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1791,
@@ -7207,11 +7207,11 @@
     ],
     [
       1801,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1802,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1803,
@@ -7223,7 +7223,7 @@
     ],
     [
       1805,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1806,
@@ -7291,11 +7291,11 @@
     ],
     [
       1822,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1823,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1824,
@@ -7303,11 +7303,11 @@
     ],
     [
       1825,
-      "netherlands"
+      "north sea empire"
     ],
     [
       1826,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1827,
@@ -7323,11 +7323,11 @@
     ],
     [
       1830,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1831,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       1832,
@@ -7443,27 +7443,27 @@
     ],
     [
       1860,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1861,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1862,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1863,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1864,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1865,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1866,
@@ -7471,15 +7471,15 @@
     ],
     [
       1867,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1868,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1869,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1870,
@@ -7487,11 +7487,11 @@
     ],
     [
       1871,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1872,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       1873,
@@ -8067,7 +8067,7 @@
     ],
     [
       2016,
-      "china"
+      "dutch east india company"
     ],
     [
       2017,
@@ -10231,7 +10231,7 @@
     ],
     [
       2557,
-      "swedish east india company"
+      "minor indonesian states"
     ],
     [
       2558,
@@ -11623,7 +11623,7 @@
     ],
     [
       2905,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       2906,
@@ -11883,7 +11883,7 @@
     ],
     [
       2970,
-      "netherlands"
+      "minor indonesian states"
     ],
     [
       2971,
@@ -16451,7 +16451,7 @@
     ],
     [
       4112,
-      "netherlands"
+      "dutch east india company"
     ],
     [
       4113,
@@ -18472,6 +18472,10 @@
       "color": "#5eff1a"
     },
     {
+      "name": "dutch east india company",
+      "color": "#FF8C42"
+    },
+    {
       "name": "ethiopia",
       "color": "#722F37"
     },
@@ -18589,6 +18593,10 @@
     },
     {
       "name": "minor indian states",
+      "color": "#789db0"
+    },
+    {
+      "name": "minor indonesian states",
       "color": "#789db0"
     },
     {
