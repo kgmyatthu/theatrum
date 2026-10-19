@@ -65,21 +65,5 @@
     "createdAtTurn": 76,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
-  },
-  {
-    "id": "yellowwithblue-1792360714908-0",
-    "nation": "swedish east india company",
-    "branch": "army",
-    "name": "Kinas armé",
-    "strength": 5000,
-    "commander": "",
-    "lat": 22.130171175202875,
-    "lon": 113.56018066406251,
-    "turnStartLat": 22.130171175202875,
-    "turnStartLon": 113.56018066406251,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 76,
-    "turnStartStrength": 0,
-    "turnStartBranch": "army"
   }
 ]
