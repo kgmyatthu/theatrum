@@ -62,5 +62,53 @@
     "createdAtTurn": 76,
     "turnStartStrength": 10000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792529169947-0",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "Johan August Meijerfeldt the Younger",
+    "strength": 50000,
+    "commander": "",
+    "lat": 17.848061398396357,
+    "lon": 79.89807128906251,
+    "turnStartLat": 17.848061398396357,
+    "turnStartLon": 79.89807128906251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 77,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792529198605-1",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "Nizam Ali Khan",
+    "strength": 80000,
+    "commander": "",
+    "lat": 17.45547257997284,
+    "lon": 80.59020996093751,
+    "turnStartLat": 17.45547257997284,
+    "turnStartLon": 80.59020996093751,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 77,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792529314246-2",
+    "nation": "swedish east india company",
+    "branch": "army",
+    "name": "Carnatic Irregulars",
+    "strength": 25000,
+    "commander": "",
+    "lat": 17.31917640744285,
+    "lon": 81.70532226562501,
+    "turnStartLat": 17.31917640744285,
+    "turnStartLon": 81.70532226562501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 77,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
