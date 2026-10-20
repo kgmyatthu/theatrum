@@ -1,0 +1,34 @@
+[
+  {
+    "id": "yellowwithblue-1792521910242-0",
+    "nation": "japan",
+    "branch": "army",
+    "name": "Army of the Daimyos",
+    "strength": 45000,
+    "commander": "",
+    "lat": 33.51391942394942,
+    "lon": 130.38574218750003,
+    "turnStartLat": 33.51391942394942,
+    "turnStartLon": 130.38574218750003,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 77,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792521930845-1",
+    "nation": "japan",
+    "branch": "army",
+    "name": "Army of the Tokugawa",
+    "strength": 50000,
+    "commander": "",
+    "lat": 34.161818161230386,
+    "lon": 131.12182617187503,
+    "turnStartLat": 34.161818161230386,
+    "turnStartLon": 131.12182617187503,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 77,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
