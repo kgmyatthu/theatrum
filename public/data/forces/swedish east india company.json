@@ -8,15 +8,12 @@
     "commander": "",
     "lat": 13.07412756381517,
     "lon": 80.22766113281251,
-    "turnStartLat": 15.178180945596363,
-    "turnStartLon": 79.10705566406251,
-    "kmMovedThisTurn": 263.31932908707665,
+    "turnStartLat": 13.07412756381517,
+    "turnStartLon": 80.22766113281251,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
-    "turnStartStrength": 26000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "yellowwithblue-1785822930859-1"
-    ]
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army"
   },
   {
     "id": "yellowwithblue-1792353808181-0",
@@ -31,7 +28,7 @@
     "turnStartLon": 78.782958984375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -47,7 +44,7 @@
     "turnStartLon": 78.26660156250001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -63,7 +60,7 @@
     "turnStartLon": 78.88183593750001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   }
 ]

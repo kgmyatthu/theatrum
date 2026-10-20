@@ -40,9 +40,9 @@
     "commander": "Arthur Herbert",
     "lat": 55.693841941307134,
     "lon": 12.646636962890627,
-    "turnStartLat": 51.50532341149335,
-    "turnStartLon": 0.6427001953125001,
-    "kmMovedThisTurn": 917.0681682981344,
+    "turnStartLat": 55.693841941307134,
+    "turnStartLon": 12.646636962890627,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8,
     "turnStartStrength": 7,
     "turnStartBranch": "navy"
@@ -168,9 +168,9 @@
     "commander": "Frederik Hoppe",
     "lat": 57.604221411628735,
     "lon": 11.585083007812502,
-    "turnStartLat": 54.265224078605655,
-    "turnStartLon": 7.844238281250001,
-    "kmMovedThisTurn": 438.185293643449,
+    "turnStartLat": 57.604221411628735,
+    "turnStartLon": 11.585083007812502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47,
     "turnStartStrength": 7,
     "turnStartBranch": "navy"
@@ -200,16 +200,12 @@
     "commander": "Edward Hawke",
     "lat": 55.26972780710658,
     "lon": 14.381103515625002,
-    "turnStartLat": 55.688423515539995,
-    "turnStartLon": 12.5518798828125,
-    "kmMovedThisTurn": 124.31072522869874,
+    "turnStartLat": 55.26972780710658,
+    "turnStartLon": 14.381103515625002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69,
     "turnStartStrength": 34,
-    "turnStartBranch": "navy",
-    "fromIds": [
-      "Vancouver1903-1792108609385-0",
-      "Vancouver1903-1785447932572-0"
-    ]
+    "turnStartBranch": "navy"
   },
   {
     "id": "Vancouver1903-1785449591082-0",
@@ -252,11 +248,11 @@
     "commander": "Erling Haaland",
     "lat": 54.314120019314885,
     "lon": 10.123901367187502,
-    "turnStartLat": 54.13025957879545,
-    "turnStartLon": 9.755859375000002,
-    "kmMovedThisTurn": 31.47108437286501,
+    "turnStartLat": 54.314120019314885,
+    "turnStartLon": 10.123901367187502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 71,
-    "turnStartStrength": 20000,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -304,7 +300,7 @@
     "turnStartLon": 12.108306884765627,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 30000,
     "turnStartBranch": "army"
   },
   {
@@ -320,7 +316,7 @@
     "turnStartLon": 0.7484436035156251,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 25000,
     "turnStartBranch": "army"
   },
   {
@@ -336,7 +332,7 @@
     "turnStartLon": 79.86923217773439,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -352,7 +348,7 @@
     "turnStartLon": 80.27709960937501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 11,
     "turnStartBranch": "navy"
   },
   {
@@ -368,7 +364,7 @@
     "turnStartLon": 79.83764648437501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 0,
+    "turnStartStrength": 2000,
     "turnStartBranch": "army"
   }
 ]
