@@ -30,5 +30,21 @@
     "createdAtTurn": 73,
     "turnStartStrength": 40000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1792596105516-1",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Army of Silesia",
+    "strength": 80000,
+    "commander": "",
+    "lat": 51.24904040479997,
+    "lon": 16.259765625000004,
+    "turnStartLat": 51.24904040479997,
+    "turnStartLon": 16.259765625000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 78,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
