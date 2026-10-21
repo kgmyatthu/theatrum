@@ -366,5 +366,21 @@
     "createdAtTurn": 76,
     "turnStartStrength": 2000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1792564738665-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Magnus Exercitus Imperialis Groenlandiae",
+    "strength": 144804,
+    "commander": "",
+    "lat": 63.704722429433225,
+    "lon": -42.5390625,
+    "turnStartLat": 63.704722429433225,
+    "turnStartLon": -42.5390625,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 78,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
