@@ -24,15 +24,12 @@
     "commander": "Arthur Herbert",
     "lat": 51.51899806141268,
     "lon": 1.0656738281250002,
-    "turnStartLat": 57.604221411628735,
-    "turnStartLon": 11.585083007812502,
-    "kmMovedThisTurn": 956.0283927666839,
+    "turnStartLat": 51.51899806141268,
+    "turnStartLon": 1.0656738281250002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47,
     "turnStartStrength": 14,
-    "turnStartBranch": "navy",
-    "fromIds": [
-      "yellowwithblue-1783829484287-0"
-    ]
+    "turnStartBranch": "navy"
   },
   {
     "id": "Vancouver1903-1783730696759-0",
@@ -47,7 +44,7 @@
     "turnStartLon": 12.524414062500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43,
-    "turnStartStrength": 500,
+    "turnStartStrength": 5000,
     "turnStartBranch": "army"
   },
   {
@@ -155,11 +152,11 @@
     "commander": "Edward Hawke",
     "lat": 55.506860802459855,
     "lon": 12.485961914062502,
-    "turnStartLat": 55.26972780710658,
-    "turnStartLon": 14.381103515625002,
-    "kmMovedThisTurn": 122.56288902029638,
+    "turnStartLat": 55.506860802459855,
+    "turnStartLon": 12.485961914062502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69,
-    "turnStartStrength": 34,
+    "turnStartStrength": 20,
     "turnStartBranch": "navy"
   },
   {
@@ -191,7 +188,7 @@
     "turnStartLon": 80.27709960937501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 11,
+    "turnStartStrength": 12,
     "turnStartBranch": "navy"
   },
   {
