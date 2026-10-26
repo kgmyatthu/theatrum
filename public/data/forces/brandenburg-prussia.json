@@ -8,9 +8,9 @@
     "commander": "FDG",
     "lat": 50.499452103967734,
     "lon": 17.534179687500004,
-    "turnStartLat": 50.57635512680218,
-    "turnStartLon": 17.982740923762325,
-    "kmMovedThisTurn": 32.83370557646944,
+    "turnStartLat": 50.499452103967734,
+    "turnStartLon": 17.534179687500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
     "turnStartStrength": 40000,
     "turnStartBranch": "army"
@@ -24,9 +24,9 @@
     "commander": "FDG",
     "lat": 51.12421275782688,
     "lon": 15.413818359375002,
-    "turnStartLat": 53.76326094528343,
-    "turnStartLon": 16.309665441513065,
-    "kmMovedThisTurn": 299.6579923303307,
+    "turnStartLat": 51.12421275782688,
+    "turnStartLon": 15.413818359375002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
     "turnStartStrength": 40000,
     "turnStartBranch": "army"
@@ -44,7 +44,7 @@
     "turnStartLon": 16.259765625000004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 78,
-    "turnStartStrength": 0,
+    "turnStartStrength": 80000,
     "turnStartBranch": "army"
   }
 ]
