@@ -1,0 +1,18 @@
+[
+  {
+    "id": "yellowwithblue-1792980931044-0",
+    "nation": "hesse-kassel",
+    "branch": "army",
+    "name": "Johann Rall",
+    "strength": 20000,
+    "commander": "",
+    "lat": 51.49506473014368,
+    "lon": 10.316162109375002,
+    "turnStartLat": 51.49506473014368,
+    "turnStartLon": 10.316162109375002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 78,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
