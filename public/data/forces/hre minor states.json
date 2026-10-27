@@ -1,0 +1,18 @@
+[
+  {
+    "id": "AceApache-1793126046588-0",
+    "nation": "hre minor states",
+    "branch": "army",
+    "name": "Royal Munsterian Army",
+    "strength": 10000,
+    "commander": "",
+    "lat": 51.958155671335966,
+    "lon": 7.668457031250001,
+    "turnStartLat": 51.958155671335966,
+    "turnStartLon": 7.668457031250001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
