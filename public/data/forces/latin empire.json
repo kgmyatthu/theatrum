@@ -28,7 +28,7 @@
     "turnStartLon": 5.925750732421876,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
-    "turnStartStrength": 40,
+    "turnStartStrength": 17,
     "turnStartBranch": "navy"
   },
   {
@@ -44,7 +44,7 @@
     "turnStartLon": -4.500274658203126,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
-    "turnStartStrength": 40,
+    "turnStartStrength": 20,
     "turnStartBranch": "navy"
   },
   {
@@ -60,7 +60,7 @@
     "turnStartLon": 2.352104187011719,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
-    "turnStartStrength": 4,
+    "turnStartStrength": 2,
     "turnStartBranch": "navy"
   },
   {
@@ -188,7 +188,7 @@
     "turnStartLon": -6.267700195312501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8,
-    "turnStartStrength": 30,
+    "turnStartStrength": 9,
     "turnStartBranch": "navy"
   },
   {
@@ -200,11 +200,11 @@
     "commander": "",
     "lat": 29.23609299033489,
     "lon": 50.33798217773438,
-    "turnStartLat": 42.237285371349984,
-    "turnStartLon": -8.746490478515627,
-    "kmMovedThisTurn": 5413.202514034187,
+    "turnStartLat": 29.23609299033489,
+    "turnStartLon": 50.33798217773438,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 8,
-    "turnStartStrength": 20,
+    "turnStartStrength": 3,
     "turnStartBranch": "navy"
   },
   {
@@ -252,7 +252,7 @@
     "turnStartLon": -58.16162109375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 46,
-    "turnStartStrength": 4,
+    "turnStartStrength": 1,
     "turnStartBranch": "navy"
   },
   {
@@ -268,7 +268,7 @@
     "turnStartLon": -77.23564691841602,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 46,
-    "turnStartStrength": 5,
+    "turnStartStrength": 3,
     "turnStartBranch": "navy"
   },
   {
@@ -284,7 +284,7 @@
     "turnStartLon": -100.0747359758502,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 46,
-    "turnStartStrength": 5,
+    "turnStartStrength": 1,
     "turnStartBranch": "navy"
   },
   {
@@ -316,7 +316,7 @@
     "turnStartLon": 54.082260131835945,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
-    "turnStartStrength": 0,
+    "turnStartStrength": 1,
     "turnStartBranch": "navy"
   }
 ]

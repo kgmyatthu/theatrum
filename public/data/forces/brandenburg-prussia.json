@@ -36,7 +36,7 @@
     "nation": "brandenburg-prussia",
     "branch": "army",
     "name": "Army of Prussia",
-    "strength": 12000,
+    "strength": 10000,
     "commander": "FDG",
     "lat": 52.51120638909939,
     "lon": 13.326416015625002,
@@ -44,7 +44,23 @@
     "turnStartLon": 13.326416015625002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
-    "turnStartStrength": 0,
+    "turnStartStrength": 10000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793132163954-0",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Army of Prussia (detachment)",
+    "strength": 2000,
+    "commander": "",
+    "lat": 52.51120638909939,
+    "lon": 13.326416015625002,
+    "turnStartLat": 52.51120638909939,
+    "turnStartLon": 13.326416015625002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 2000,
     "turnStartBranch": "army"
   }
 ]
