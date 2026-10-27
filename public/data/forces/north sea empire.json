@@ -168,9 +168,9 @@
     "commander": "EIC Command",
     "lat": 12.396341424364277,
     "lon": 79.06311035156251,
-    "turnStartLat": 12.113180059816095,
-    "turnStartLon": 79.86923217773439,
-    "kmMovedThisTurn": 93.08107430019909,
+    "turnStartLat": 12.396341424364277,
+    "turnStartLon": 79.06311035156251,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
     "turnStartStrength": 15000,
     "turnStartBranch": "army"
@@ -220,7 +220,7 @@
     "turnStartLon": 78.56323242187501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
-    "turnStartStrength": 0,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -236,7 +236,7 @@
     "turnStartLon": 78.20617675781251,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
-    "turnStartStrength": 0,
+    "turnStartStrength": 30000,
     "turnStartBranch": "army"
   }
 ]
