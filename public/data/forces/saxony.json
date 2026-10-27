@@ -1,18 +1,18 @@
 [
   {
-    "id": "KingREN1-Suitman-1783985755718-1",
+    "id": "AceApache-1793068276434-0",
     "nation": "saxony",
     "branch": "army",
     "name": "Army of Saxony",
     "strength": 20000,
     "commander": "",
-    "lat": 52.74294319885717,
-    "lon": 13.996582031250002,
-    "turnStartLat": 50.98609893339354,
-    "turnStartLon": 13.645019531250002,
-    "kmMovedThisTurn": 196.83736883466554,
-    "createdAtTurn": 50,
-    "turnStartStrength": 20000,
+    "lat": 52.46939684276205,
+    "lon": 13.408813476562502,
+    "turnStartLat": 52.46939684276205,
+    "turnStartLon": 13.408813476562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
