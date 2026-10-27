@@ -38,11 +38,11 @@
     "name": "Kungliga flottan",
     "strength": 40,
     "commander": "",
-    "lat": 56.185310993254575,
-    "lon": 15.573120117187502,
+    "lat": 54.88292702421386,
+    "lon": 13.985595703125002,
     "turnStartLat": 56.185310993254575,
     "turnStartLon": 15.573120117187502,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 175.92160090950847,
     "createdAtTurn": 67,
     "turnStartStrength": 40,
     "turnStartBranch": "navy"
@@ -61,6 +61,22 @@
     "kmMovedThisTurn": 81.88524431776956,
     "createdAtTurn": 78,
     "turnStartStrength": 45000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793118372932-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Axel von Fersen",
+    "strength": 10000,
+    "commander": "",
+    "lat": 54.374158445055734,
+    "lon": 13.337402343750002,
+    "turnStartLat": 54.374158445055734,
+    "turnStartLon": 13.337402343750002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
