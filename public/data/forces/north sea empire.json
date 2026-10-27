@@ -166,11 +166,11 @@
     "name": "East India Company",
     "strength": 15000,
     "commander": "EIC Command",
-    "lat": 12.113180059816095,
-    "lon": 79.86923217773439,
+    "lat": 12.396341424364277,
+    "lon": 79.06311035156251,
     "turnStartLat": 12.113180059816095,
     "turnStartLon": 79.86923217773439,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 93.08107430019909,
     "createdAtTurn": 76,
     "turnStartStrength": 15000,
     "turnStartBranch": "army"
@@ -205,6 +205,38 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
     "turnStartStrength": 2000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1793059858177-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "1st EIC Irregular Army",
+    "strength": 15000,
+    "commander": "John EIC",
+    "lat": 17.355881513027605,
+    "lon": 78.56323242187501,
+    "turnStartLat": 17.355881513027605,
+    "turnStartLon": 78.56323242187501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1793059888299-1",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Indian Loyalist Armies",
+    "strength": 30000,
+    "commander": "John EIC",
+    "lat": 9.844391701148567,
+    "lon": 78.20617675781251,
+    "turnStartLat": 9.844391701148567,
+    "turnStartLon": 78.20617675781251,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 81,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
