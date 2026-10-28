@@ -56,9 +56,9 @@
     "commander": "",
     "lat": 53.501117042943186,
     "lon": 14.534912109375002,
-    "turnStartLat": 53.914045676705264,
-    "turnStartLon": 14.076232910156252,
-    "kmMovedThisTurn": 54.950701069714974,
+    "turnStartLat": 53.501117042943186,
+    "turnStartLon": 14.534912109375002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 78,
     "turnStartStrength": 30225,
     "turnStartBranch": "army"
@@ -72,11 +72,27 @@
     "commander": "",
     "lat": 54.30370443989811,
     "lon": 13.091583251953127,
-    "turnStartLat": 54.374158445055734,
-    "turnStartLon": 13.337402343750002,
-    "kmMovedThisTurn": 17.75691225664,
+    "turnStartLat": 54.30370443989811,
+    "turnStartLon": 13.091583251953127,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
     "turnStartStrength": 10000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793223579620-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Johan August Meijerfeldt",
+    "strength": 15000,
+    "commander": "",
+    "lat": 53.91081008725409,
+    "lon": 14.089965820312502,
+    "turnStartLat": 53.91081008725409,
+    "turnStartLon": 14.089965820312502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 88,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
