@@ -22,13 +22,29 @@
     "name": "Romanov Guard Army",
     "strength": 50000,
     "commander": "",
-    "lat": 55.52863052257191,
-    "lon": 37.63916015625001,
+    "lat": 54.80701713846256,
+    "lon": 32.33276367187501,
     "turnStartLat": 55.52863052257191,
     "turnStartLon": 37.63916015625001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 346.34418080705217,
     "createdAtTurn": 73,
     "turnStartStrength": 50000,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "kgmyatthu-1793155736845-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Moscow Guard",
+    "strength": 11000,
+    "commander": "",
+    "lat": 55.71473455012692,
+    "lon": 37.35351562500001,
+    "turnStartLat": 55.71473455012692,
+    "turnStartLon": 37.35351562500001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 87,
+    "turnStartStrength": 0,
     "turnStartBranch": "army"
   }
 ]
