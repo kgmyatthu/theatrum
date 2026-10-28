@@ -48,22 +48,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "AceApache-1793132307627-2",
-    "nation": "brandenburg-prussia",
-    "branch": "army",
-    "name": "Army of Prussia",
-    "strength": 2000,
-    "commander": "",
-    "lat": 52.530084825526366,
-    "lon": 13.3154296875,
-    "turnStartLat": 52.530084825526366,
-    "turnStartLon": 13.3154296875,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 82,
-    "turnStartStrength": 2000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "AceApache-1793163188530-0",
     "nation": "brandenburg-prussia",
     "branch": "army",
