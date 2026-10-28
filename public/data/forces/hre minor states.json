@@ -14,5 +14,21 @@
     "createdAtTurn": 81,
     "turnStartStrength": 10000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "KingREN1-Suitman-1793151880266-0",
+    "nation": "hre minor states",
+    "branch": "army",
+    "name": "Reichsarmee",
+    "strength": 30000,
+    "commander": "",
+    "lat": 49.855130258174,
+    "lon": 11.730369736061876,
+    "turnStartLat": 49.855130258174,
+    "turnStartLon": 11.730369736061876,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 86,
+    "turnStartStrength": 30000,
+    "turnStartBranch": "army"
   }
 ]
