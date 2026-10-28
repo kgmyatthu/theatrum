@@ -40,9 +40,9 @@
     "commander": "FDG",
     "lat": 53.337433437129675,
     "lon": 14.512939453125002,
-    "turnStartLat": 53.87842689641432,
-    "turnStartLon": 13.793334960937502,
-    "kmMovedThisTurn": 76.63154246506198,
+    "turnStartLat": 53.337433437129675,
+    "turnStartLon": 14.512939453125002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
     "turnStartStrength": 10000,
     "turnStartBranch": "army"
@@ -60,7 +60,7 @@
     "turnStartLon": 20.668072700500492,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 87,
-    "turnStartStrength": 0,
+    "turnStartStrength": 7000,
     "turnStartBranch": "army"
   },
   {
@@ -72,14 +72,11 @@
     "commander": "",
     "lat": 51.055186935571406,
     "lon": 13.612060546875002,
-    "turnStartLat": 50.93878079911573,
-    "turnStartLon": 15.151825547218325,
-    "kmMovedThisTurn": 108.5280837198822,
+    "turnStartLat": 51.055186935571406,
+    "turnStartLon": 13.612060546875002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "AceApache-1792596105516-1"
-    ]
+    "turnStartBranch": "army"
   }
 ]
