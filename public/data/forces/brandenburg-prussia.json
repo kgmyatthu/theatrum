@@ -20,7 +20,7 @@
     "nation": "brandenburg-prussia",
     "branch": "army",
     "name": "Army of Silesia",
-    "strength": 80000,
+    "strength": 60000,
     "commander": "",
     "lat": 50.93878079911573,
     "lon": 15.151825547218325,
@@ -28,7 +28,7 @@
     "turnStartLon": 15.151825547218325,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 78,
-    "turnStartStrength": 80000,
+    "turnStartStrength": 60000,
     "turnStartBranch": "army"
   },
   {
@@ -62,5 +62,24 @@
     "createdAtTurn": 87,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793220353254-1",
+    "nation": "brandenburg-prussia",
+    "branch": "army",
+    "name": "Army of Silesia (detachment)",
+    "strength": 20000,
+    "commander": "",
+    "lat": 51.055186935571406,
+    "lon": 13.612060546875002,
+    "turnStartLat": 50.93878079911573,
+    "turnStartLon": 15.151825547218325,
+    "kmMovedThisTurn": 108.5280837198822,
+    "createdAtTurn": 78,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "AceApache-1792596105516-1"
+    ]
   }
 ]
