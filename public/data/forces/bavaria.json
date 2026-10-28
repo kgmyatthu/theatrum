@@ -4,7 +4,7 @@
     "nation": "bavaria",
     "branch": "army",
     "name": "Army of Bavaria",
-    "strength": 50000,
+    "strength": 80000,
     "commander": "",
     "lat": 50.61456521994652,
     "lon": 14.952208555759137,
@@ -12,7 +12,7 @@
     "turnStartLon": 14.952208555759137,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 0,
-    "turnStartStrength": 50000,
+    "turnStartStrength": 80000,
     "turnStartBranch": "army"
   },
   {
