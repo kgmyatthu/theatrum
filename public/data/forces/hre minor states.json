@@ -30,5 +30,21 @@
     "createdAtTurn": 86,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1793329588133-0",
+    "nation": "hre minor states",
+    "branch": "army",
+    "name": "Muensterian Free Legion",
+    "strength": 10000,
+    "commander": "John Moneywaster",
+    "lat": 51.126367518319235,
+    "lon": 9.26902770996094,
+    "turnStartLat": 51.126367518319235,
+    "turnStartLon": 9.26902770996094,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 88,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
