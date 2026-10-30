@@ -20,31 +20,37 @@
     "nation": "russia",
     "branch": "army",
     "name": "Romanov Guard Army",
-    "strength": 50000,
+    "strength": 36000,
     "commander": "",
-    "lat": 54.80701713846256,
-    "lon": 32.33276367187501,
-    "turnStartLat": 54.80701713846256,
-    "turnStartLon": 32.33276367187501,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 73,
-    "turnStartStrength": 50000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "kgmyatthu-1793155736845-0",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Moscow Guard",
-    "strength": 11000,
-    "commander": "",
-    "lat": 55.71473455012692,
-    "lon": 37.35351562500001,
+    "lat": 60.76989094827325,
+    "lon": 28.212890625000004,
     "turnStartLat": 55.71473455012692,
     "turnStartLon": 37.35351562500001,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 774.6384858104993,
     "createdAtTurn": 87,
-    "turnStartStrength": 11000,
-    "turnStartBranch": "army"
+    "turnStartStrength": 36000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "kgmyatthu-1793155736845-0"
+    ]
+  },
+  {
+    "id": "AceApache-1793394939576-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Romanov Guard Army (detachment)",
+    "strength": 25000,
+    "commander": "",
+    "lat": 59.34439461630004,
+    "lon": 24.949951171875,
+    "turnStartLat": 54.80701713846256,
+    "turnStartLon": 32.33276367187501,
+    "kmMovedThisTurn": 672.7606097150997,
+    "createdAtTurn": 73,
+    "turnStartStrength": 25000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "kgmyatthu-1785763002657-0"
+    ]
   }
 ]
