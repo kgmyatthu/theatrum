@@ -49,5 +49,21 @@
     "fromIds": [
       "Ohgizmo-1793066919181-0"
     ]
+  },
+  {
+    "id": "Ohgizmo-1793395935392-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "The Fuck Sweden Legion",
+    "strength": 30000,
+    "commander": "",
+    "lat": 56.389583525613055,
+    "lon": 26.499023437500004,
+    "turnStartLat": 56.389583525613055,
+    "turnStartLon": 26.499023437500004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 91,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
