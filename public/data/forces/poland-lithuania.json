@@ -1,21 +1,5 @@
 [
   {
-    "id": "AceApache-1782570109100-0",
-    "nation": "poland-lithuania",
-    "branch": "navy",
-    "name": "Polish Grand Fleet",
-    "strength": 11,
-    "commander": "",
-    "lat": 56.22445764637919,
-    "lon": 20.9177314931197,
-    "turnStartLat": 56.22445764637919,
-    "turnStartLon": 20.9177314931197,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 23,
-    "turnStartStrength": 11,
-    "turnStartBranch": "navy"
-  },
-  {
     "id": "Ohgizmo-1793056136007-0",
     "nation": "poland-lithuania",
     "branch": "army",
