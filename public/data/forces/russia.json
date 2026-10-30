@@ -24,15 +24,12 @@
     "commander": "",
     "lat": 60.76989094827325,
     "lon": 28.212890625000004,
-    "turnStartLat": 55.71473455012692,
-    "turnStartLon": 37.35351562500001,
-    "kmMovedThisTurn": 774.6384858104993,
+    "turnStartLat": 60.76989094827325,
+    "turnStartLon": 28.212890625000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 87,
     "turnStartStrength": 36000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "kgmyatthu-1793155736845-0"
-    ]
+    "turnStartBranch": "army"
   },
   {
     "id": "AceApache-1793394939576-0",
@@ -43,14 +40,11 @@
     "commander": "",
     "lat": 59.34439461630004,
     "lon": 24.949951171875,
-    "turnStartLat": 54.80701713846256,
-    "turnStartLon": 32.33276367187501,
-    "kmMovedThisTurn": 672.7606097150997,
+    "turnStartLat": 59.34439461630004,
+    "turnStartLon": 24.949951171875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
     "turnStartStrength": 25000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "kgmyatthu-1785763002657-0"
-    ]
+    "turnStartBranch": "army"
   }
 ]

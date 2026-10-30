@@ -12,7 +12,7 @@
     "turnStartLon": 17.462768554687504,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
-    "turnStartStrength": 40000,
+    "turnStartStrength": 29000,
     "turnStartBranch": "army"
   },
   {
@@ -88,11 +88,11 @@
     "commander": "Frederick the Great",
     "lat": 53.87844040332883,
     "lon": 13.892211914062502,
-    "turnStartLat": 52.522905940278065,
-    "turnStartLon": 13.408813476562502,
-    "kmMovedThisTurn": 154.12815939723174,
+    "turnStartLat": 53.87844040332883,
+    "turnStartLon": 13.892211914062502,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 88,
-    "turnStartStrength": 30000,
+    "turnStartStrength": 24000,
     "turnStartBranch": "army"
   }
 ]
