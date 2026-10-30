@@ -4,15 +4,15 @@
     "nation": "saxony",
     "branch": "army",
     "name": "Army of Saxony",
-    "strength": 12000,
+    "strength": 10000,
     "commander": "",
-    "lat": 51.14522850854317,
-    "lon": 9.250488281250002,
+    "lat": 51.04139389812637,
+    "lon": 13.524169921875002,
     "turnStartLat": 51.14522850854317,
     "turnStartLon": 9.250488281250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 298.6397163558229,
     "createdAtTurn": 81,
-    "turnStartStrength": 12000,
+    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   },
   {
@@ -30,5 +30,24 @@
     "createdAtTurn": 81,
     "turnStartStrength": 10000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793330935833-0",
+    "nation": "saxony",
+    "branch": "army",
+    "name": "Army of Saxony (detachment)",
+    "strength": 2000,
+    "commander": "",
+    "lat": 51.13272347613288,
+    "lon": 9.273147583007814,
+    "turnStartLat": 51.14522850854317,
+    "turnStartLon": 9.250488281250002,
+    "kmMovedThisTurn": 2.10538939215003,
+    "createdAtTurn": 81,
+    "turnStartStrength": 2000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "AceApache-1793068276434-0"
+    ]
   }
 ]
