@@ -20,15 +20,34 @@
     "nation": "poland-lithuania",
     "branch": "army",
     "name": "Army Attempt 2",
-    "strength": 50000,
+    "strength": 25000,
     "commander": "",
-    "lat": 54.149567212540525,
-    "lon": 28.32275390625,
+    "lat": 54.52108149544362,
+    "lon": 29.531250000000004,
     "turnStartLat": 54.149567212540525,
     "turnStartLon": 28.32275390625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 88.57029692859693,
     "createdAtTurn": 81,
-    "turnStartStrength": 50000,
+    "turnStartStrength": 25000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793395241387-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army Attempt 2 (detachment)",
+    "strength": 25000,
+    "commander": "",
+    "lat": 58.55106062287748,
+    "lon": 25.004882812500004,
+    "turnStartLat": 54.149567212540525,
+    "turnStartLon": 28.32275390625,
+    "kmMovedThisTurn": 530.2443947752752,
+    "createdAtTurn": 81,
+    "turnStartStrength": 25000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "Ohgizmo-1793066919181-0"
+    ]
   }
 ]
