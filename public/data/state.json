@@ -1239,7 +1239,7 @@
     ],
     [
       309,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       310,
@@ -1299,7 +1299,7 @@
     ],
     [
       324,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       325,
@@ -1307,7 +1307,7 @@
     ],
     [
       326,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       327,
@@ -1623,7 +1623,7 @@
     ],
     [
       405,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       406,
@@ -3379,11 +3379,11 @@
     ],
     [
       844,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       845,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       846,
@@ -3655,7 +3655,7 @@
     ],
     [
       913,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       914,
@@ -14947,11 +14947,11 @@
     ],
     [
       3736,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       3737,
-      "brandenburg-prussia"
+      "kingdom of prussia"
     ],
     [
       3738,
@@ -18424,10 +18424,6 @@
       "color": "#CD7F32"
     },
     {
-      "name": "brandenburg-prussia",
-      "color": "#3C3C3C"
-    },
-    {
       "name": "britain",
       "color": "#D7837F"
     },
@@ -18550,6 +18546,10 @@
     {
       "name": "khanate of khiva (russia)",
       "color": "#437a4a"
+    },
+    {
+      "name": "kingdom of prussia",
+      "color": "#3C3C3C"
     },
     {
       "name": "knights of malta",
