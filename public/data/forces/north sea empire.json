@@ -238,5 +238,21 @@
     "createdAtTurn": 81,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793330581176-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Anti-Swedish Volunteers",
+    "strength": 10000,
+    "commander": "",
+    "lat": 53.4291738804146,
+    "lon": 10.733642578125002,
+    "turnStartLat": 53.4291738804146,
+    "turnStartLon": 10.733642578125002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 88,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]

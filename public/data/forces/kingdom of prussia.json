@@ -78,5 +78,21 @@
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793330873908-2",
+    "nation": "kingdom of prussia",
+    "branch": "army",
+    "name": "Army of Brandenburg",
+    "strength": 30000,
+    "commander": "Frederick the Great",
+    "lat": 52.522905940278065,
+    "lon": 13.408813476562502,
+    "turnStartLat": 52.522905940278065,
+    "turnStartLon": 13.408813476562502,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 88,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
