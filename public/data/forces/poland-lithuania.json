@@ -65,5 +65,21 @@
     "createdAtTurn": 91,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793482762604-0",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Ars and Vancover are Idiots Army",
+    "strength": 30000,
+    "commander": "",
+    "lat": 56.9449741808516,
+    "lon": 22.379150390625004,
+    "turnStartLat": 56.9449741808516,
+    "turnStartLon": 22.379150390625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 91,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
