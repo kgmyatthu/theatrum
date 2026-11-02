@@ -1,21 +1,5 @@
 [
   {
-    "id": "AceApache-1793148711286-0",
-    "nation": "saxony",
-    "branch": "army",
-    "name": "Army of Saxony (Sieging",
-    "strength": 10000,
-    "commander": "",
-    "lat": 54.27324378487167,
-    "lon": 13.033905029296877,
-    "turnStartLat": 54.27324378487167,
-    "turnStartLon": 13.033905029296877,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 81,
-    "turnStartStrength": 10000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "AceApache-1793371095800-0",
     "nation": "saxony",
     "branch": "army",
@@ -36,15 +20,18 @@
     "nation": "saxony",
     "branch": "army",
     "name": "Army of Saxony",
-    "strength": 2000,
+    "strength": 12000,
     "commander": "",
     "lat": 51.13099991299968,
     "lon": 9.27726745605469,
-    "turnStartLat": 51.13099991299968,
-    "turnStartLon": 9.27726745605469,
-    "kmMovedThisTurn": 0,
+    "turnStartLat": 54.27324378487167,
+    "turnStartLon": 13.033905029296877,
+    "kmMovedThisTurn": 431.3210773170703,
     "createdAtTurn": 88,
-    "turnStartStrength": 2000,
-    "turnStartBranch": "army"
+    "turnStartStrength": 12000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "AceApache-1793148711286-0"
+    ]
   }
 ]
