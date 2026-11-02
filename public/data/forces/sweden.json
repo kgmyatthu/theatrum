@@ -94,5 +94,21 @@
     "createdAtTurn": 91,
     "turnStartStrength": 10000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793652552348-1",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Johan Christopher Toll",
+    "strength": 15000,
+    "commander": "",
+    "lat": 58.07787626787517,
+    "lon": 16.611328125000004,
+    "turnStartLat": 58.07787626787517,
+    "turnStartLon": 16.611328125000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 92,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
