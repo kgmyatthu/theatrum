@@ -32,22 +32,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "Ohgizmo-1793395241387-0",
-    "nation": "poland-lithuania",
-    "branch": "army",
-    "name": "Army Attempt 2 (detachment)",
-    "strength": 25000,
-    "commander": "",
-    "lat": 58.55106062287748,
-    "lon": 25.004882812500004,
-    "turnStartLat": 58.55106062287748,
-    "turnStartLon": 25.004882812500004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 81,
-    "turnStartStrength": 25000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "Ohgizmo-1793395935392-1",
     "nation": "poland-lithuania",
     "branch": "army",
