@@ -38,11 +38,11 @@
     "name": "Kungliga flottan",
     "strength": 25,
     "commander": "",
-    "lat": 54.88292702421386,
-    "lon": 13.985595703125002,
+    "lat": 55.125508306917574,
+    "lon": 13.0133056640625,
     "turnStartLat": 54.88292702421386,
     "turnStartLon": 13.985595703125002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 67.61729730379714,
     "createdAtTurn": 67,
     "turnStartStrength": 25,
     "turnStartBranch": "navy"
@@ -70,11 +70,11 @@
     "name": "Gustav Armfeldt",
     "strength": 18000,
     "commander": "",
-    "lat": 60.71619779357716,
-    "lon": 26.960449218750004,
+    "lat": 60.73231517201878,
+    "lon": 28.696289062500004,
     "turnStartLat": 60.71619779357716,
     "turnStartLon": 26.960449218750004,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 94.4019232510822,
     "createdAtTurn": 81,
     "turnStartStrength": 18000,
     "turnStartBranch": "army"
@@ -100,7 +100,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Johan Christopher Toll",
-    "strength": 15000,
+    "strength": 10000,
     "commander": "",
     "lat": 56.45034902929678,
     "lon": 13.666992187500002,
@@ -108,7 +108,7 @@
     "turnStartLon": 13.666992187500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 92,
-    "turnStartStrength": 15000,
+    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   },
   {
@@ -174,5 +174,24 @@
     "createdAtTurn": 94,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793675174266-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Johan Christopher Toll (detachment)",
+    "strength": 5000,
+    "commander": "",
+    "lat": 55.11922604262157,
+    "lon": 13.271484375000002,
+    "turnStartLat": 56.45034902929678,
+    "turnStartLon": 13.666992187500002,
+    "kmMovedThisTurn": 150.0650099458931,
+    "createdAtTurn": 92,
+    "turnStartStrength": 5000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1793652552348-1"
+    ]
   }
 ]
