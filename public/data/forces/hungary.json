@@ -38,11 +38,11 @@
     "name": "The Croatian fleet",
     "strength": 10,
     "commander": "",
-    "lat": 45.32505629719886,
-    "lon": 14.439382553100588,
+    "lat": 44.39184363624518,
+    "lon": 14.463844299316408,
     "turnStartLat": 45.32505629719886,
     "turnStartLon": 14.439382553100588,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 103.78642291052073,
     "createdAtTurn": 76,
     "turnStartStrength": 10,
     "turnStartBranch": "navy"
@@ -52,7 +52,7 @@
     "nation": "hungary",
     "branch": "army",
     "name": "Army of Croatia",
-    "strength": 20000,
+    "strength": 15000,
     "commander": "",
     "lat": 44.107028737207294,
     "lon": 15.339803695678699,
@@ -60,7 +60,26 @@
     "turnStartLon": 15.339803695678699,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 76,
-    "turnStartStrength": 20000,
+    "turnStartStrength": 12500,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "juliusquick0616-pixel-1793670801483-0",
+    "nation": "hungary",
+    "branch": "army",
+    "name": "Army of Italy",
+    "strength": 7500,
+    "commander": "",
+    "lat": 43.64456136923663,
+    "lon": 13.921152156605627,
+    "turnStartLat": 44.107028737207294,
+    "turnStartLon": 15.339803695678699,
+    "kmMovedThisTurn": 124.79587342011638,
+    "createdAtTurn": 76,
+    "turnStartStrength": 7500,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "juliusquick0616-pixel-1792306939056-1"
+    ]
   }
 ]
