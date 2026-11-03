@@ -126,5 +126,53 @@
     "createdAtTurn": 94,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793673317905-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Nationalbeväringen",
+    "strength": 10000,
+    "commander": "",
+    "lat": 59.34439461630004,
+    "lon": 17.600097656250004,
+    "turnStartLat": 59.34439461630004,
+    "turnStartLon": 17.600097656250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 94,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793673375664-2",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Hans Henric von Essen",
+    "strength": 10000,
+    "commander": "",
+    "lat": 57.25528054528889,
+    "lon": 13.381347656250002,
+    "turnStartLat": 57.25528054528889,
+    "turnStartLon": 13.381347656250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 94,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793673399803-3",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Legdhæren",
+    "strength": 4603,
+    "commander": "",
+    "lat": 60.11961885993203,
+    "lon": 10.656738281250002,
+    "turnStartLat": 60.11961885993203,
+    "turnStartLon": 10.656738281250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 94,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
