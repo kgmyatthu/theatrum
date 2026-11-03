@@ -1,21 +1,5 @@
 [
   {
-    "id": "AceApache-1793126046588-0",
-    "nation": "hre minor states",
-    "branch": "army",
-    "name": "Royal Munsterian Army",
-    "strength": 10000,
-    "commander": "",
-    "lat": 51.227527905265006,
-    "lon": 9.946746826171877,
-    "turnStartLat": 51.14514465950512,
-    "turnStartLon": 9.305419921875002,
-    "kmMovedThisTurn": 45.62670494382839,
-    "createdAtTurn": 81,
-    "turnStartStrength": 10000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "KingREN1-Suitman-1793151880266-0",
     "nation": "hre minor states",
     "branch": "army",
@@ -29,22 +13,6 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 86,
     "turnStartStrength": 30000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "Vancouver1903-1793329588133-0",
-    "nation": "hre minor states",
-    "branch": "army",
-    "name": "Muensterian Free Legion",
-    "strength": 10000,
-    "commander": "John Moneywaster",
-    "lat": 50.77120783188783,
-    "lon": 8.734130859375002,
-    "turnStartLat": 51.126367518319235,
-    "turnStartLon": 9.26902770996094,
-    "kmMovedThisTurn": 54.44012197758578,
-    "createdAtTurn": 88,
-    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   }
 ]
