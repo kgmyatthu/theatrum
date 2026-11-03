@@ -52,7 +52,7 @@
     "nation": "hungary",
     "branch": "army",
     "name": "Army of Croatia",
-    "strength": 15000,
+    "strength": 12500,
     "commander": "",
     "lat": 44.107028737207294,
     "lon": 15.339803695678699,
@@ -64,22 +64,19 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "juliusquick0616-pixel-1793670801483-0",
+    "id": "juliusquick0616-pixel-1793671284935-0",
     "nation": "hungary",
     "branch": "army",
     "name": "Army of Italy",
     "strength": 7500,
     "commander": "",
-    "lat": 43.64456136923663,
-    "lon": 13.921152156605627,
-    "turnStartLat": 44.107028737207294,
-    "turnStartLon": 15.339803695678699,
-    "kmMovedThisTurn": 124.79587342011638,
-    "createdAtTurn": 76,
-    "turnStartStrength": 7500,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "juliusquick0616-pixel-1792306939056-1"
-    ]
+    "lat": 45.17014332924974,
+    "lon": 12.289483421874504,
+    "turnStartLat": 45.17014332924974,
+    "turnStartLon": 12.289483421874504,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 93,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
