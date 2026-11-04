@@ -40,9 +40,9 @@
     "commander": "",
     "lat": 55.125508306917574,
     "lon": 13.0133056640625,
-    "turnStartLat": 54.88292702421386,
-    "turnStartLon": 13.985595703125002,
-    "kmMovedThisTurn": 67.61729730379714,
+    "turnStartLat": 55.125508306917574,
+    "turnStartLon": 13.0133056640625,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 67,
     "turnStartStrength": 25,
     "turnStartBranch": "navy"
@@ -72,9 +72,9 @@
     "commander": "",
     "lat": 60.73231517201878,
     "lon": 28.696289062500004,
-    "turnStartLat": 60.71619779357716,
-    "turnStartLon": 26.960449218750004,
-    "kmMovedThisTurn": 94.4019232510822,
+    "turnStartLat": 60.73231517201878,
+    "turnStartLon": 28.696289062500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
     "turnStartStrength": 18000,
     "turnStartBranch": "army"
@@ -124,7 +124,7 @@
     "turnStartLon": 15.996093750000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
-    "turnStartStrength": 0,
+    "turnStartStrength": 12000,
     "turnStartBranch": "army"
   },
   {
@@ -140,7 +140,7 @@
     "turnStartLon": 17.600097656250004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
-    "turnStartStrength": 0,
+    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   },
   {
@@ -150,13 +150,13 @@
     "name": "Barclay de Tolly",
     "strength": 10000,
     "commander": "",
-    "lat": 57.25528054528889,
-    "lon": 13.381347656250002,
+    "lat": 57.71295101113572,
+    "lon": 12.106933593750002,
     "turnStartLat": 57.25528054528889,
     "turnStartLon": 13.381347656250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 91.606505262472,
     "createdAtTurn": 94,
-    "turnStartStrength": 0,
+    "turnStartStrength": 10000,
     "turnStartBranch": "army"
   },
   {
@@ -172,7 +172,7 @@
     "turnStartLon": 10.656738281250002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
-    "turnStartStrength": 0,
+    "turnStartStrength": 4603,
     "turnStartBranch": "army"
   },
   {
@@ -184,14 +184,11 @@
     "commander": "",
     "lat": 55.11922604262157,
     "lon": 13.271484375000002,
-    "turnStartLat": 56.45034902929678,
-    "turnStartLon": 13.666992187500002,
-    "kmMovedThisTurn": 150.0650099458931,
+    "turnStartLat": 55.11922604262157,
+    "turnStartLon": 13.271484375000002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 92,
     "turnStartStrength": 5000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "yellowwithblue-1793652552348-1"
-    ]
+    "turnStartBranch": "army"
   }
 ]
