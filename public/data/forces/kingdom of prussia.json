@@ -6,11 +6,11 @@
     "name": "Army of Prussia",
     "strength": 29000,
     "commander": "FDG",
-    "lat": 49.88755653624285,
-    "lon": 17.462768554687504,
+    "lat": 50.3173337413853,
+    "lon": 18.072509765625004,
     "turnStartLat": 49.88755653624285,
     "turnStartLon": 17.462768554687504,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 64.61388705153456,
     "createdAtTurn": 73,
     "turnStartStrength": 29000,
     "turnStartBranch": "army"
@@ -77,22 +77,6 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "AceApache-1793330873908-2",
-    "nation": "kingdom of prussia",
-    "branch": "army",
-    "name": "Army of Brandenburg",
-    "strength": 24000,
-    "commander": "Frederick the Great",
-    "lat": 50.67406273593558,
-    "lon": 12.392578125,
-    "turnStartLat": 50.67406273593558,
-    "turnStartLon": 12.392578125,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 88,
-    "turnStartStrength": 24000,
     "turnStartBranch": "army"
   }
 ]
