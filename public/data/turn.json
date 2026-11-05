@@ -1,8 +1,8 @@
 {
   "appVersion": "theatrum/v10",
-  "currentDate": "1787-02-09",
+  "currentDate": "1787-03-11",
   "lastTurnDays": 30,
-  "turnNumber": 97,
+  "turnNumber": 98,
   "populationByNation": {
     "aceh": 834897,
     "asante": 2477087,
@@ -15,7 +15,7 @@
     "cambodia": 2024246,
     "caucasian states": 1849640,
     "china": 292537592,
-    "contested territories": 1474393,
+    "contested territories": 1506205,
     "crimean khanate (russia)": 3387642,
     "dahomey": 1891693,
     "denmark": 0,
@@ -66,7 +66,7 @@
     "saxony": 2031378,
     "siam": 3019718,
     "spain": 143887,
-    "sweden": 4470179,
+    "sweden": 4438367,
     "swedish east india company": 388047,
     "switzerland": 1742908,
     "unclaimed": 33087342,
