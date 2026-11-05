@@ -28,7 +28,8 @@
     "nation": "netherlands"
   },
   "Ohgizmo": {
-    "role": "admin"
+    "role": "player",
+    "nation": "poland-lithuania"
   },
   "KingREN1-Suitman": {
     "role": "admin"
