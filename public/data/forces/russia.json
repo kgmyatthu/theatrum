@@ -46,5 +46,37 @@
     "createdAtTurn": 73,
     "turnStartStrength": 25000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793914216560-0",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Alexander Suvorov",
+    "strength": 90000,
+    "commander": "",
+    "lat": 58.25172718316509,
+    "lon": 25.510253906250004,
+    "turnStartLat": 58.25172718316509,
+    "turnStartLon": 25.510253906250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 99,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "yellowwithblue-1793914288818-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Mikhail Kutuzov",
+    "strength": 14751,
+    "commander": "",
+    "lat": 56.64414704199469,
+    "lon": 24.697265625000004,
+    "turnStartLat": 56.64414704199469,
+    "turnStartLon": 24.697265625000004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 99,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
