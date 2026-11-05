@@ -78,5 +78,21 @@
     "createdAtTurn": 99,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793916919794-1",
+    "nation": "poland-lithuania",
+    "branch": "army",
+    "name": "Army of Liviv",
+    "strength": 32000,
+    "commander": "",
+    "lat": 49.95828842806968,
+    "lon": 24.224853515625004,
+    "turnStartLat": 49.95828842806968,
+    "turnStartLon": 24.224853515625004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 99,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
