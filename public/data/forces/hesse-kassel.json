@@ -14,5 +14,21 @@
     "createdAtTurn": 94,
     "turnStartStrength": 3000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1793914369611-0",
+    "nation": "hesse-kassel",
+    "branch": "army",
+    "name": "Army of Hesse",
+    "strength": 4000,
+    "commander": "",
+    "lat": 50.8622961736726,
+    "lon": 9.338378906250002,
+    "turnStartLat": 50.8622961736726,
+    "turnStartLon": 9.338378906250002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 99,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
