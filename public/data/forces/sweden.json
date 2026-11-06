@@ -52,16 +52,19 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Curt von Stedingk",
-    "strength": 48000,
+    "strength": 52603,
     "commander": "",
     "lat": 58.571116846928156,
     "lon": 26.499023437500004,
-    "turnStartLat": 58.571116846928156,
-    "turnStartLon": 26.499023437500004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 78,
-    "turnStartStrength": 48000,
-    "turnStartBranch": "army"
+    "turnStartLat": 60.11961885993203,
+    "turnStartLon": 10.656738281250002,
+    "kmMovedThisTurn": 912.1812568767939,
+    "createdAtTurn": 94,
+    "turnStartStrength": 52603,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1793673399803-3"
+    ]
   },
   {
     "id": "yellowwithblue-1793118372932-0",
@@ -157,22 +160,6 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
     "turnStartStrength": 10000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "yellowwithblue-1793673399803-3",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Legdhæren",
-    "strength": 4603,
-    "commander": "",
-    "lat": 60.11961885993203,
-    "lon": 10.656738281250002,
-    "turnStartLat": 60.11961885993203,
-    "turnStartLon": 10.656738281250002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 94,
-    "turnStartStrength": 4603,
     "turnStartBranch": "army"
   }
 ]
