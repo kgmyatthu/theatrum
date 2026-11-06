@@ -110,5 +110,21 @@
     "createdAtTurn": 100,
     "turnStartStrength": 0,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793999123531-3",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Russian Reserves",
+    "strength": 38000,
+    "commander": "",
+    "lat": 59.16466752496466,
+    "lon": 31.486816406250004,
+    "turnStartLat": 59.16466752496466,
+    "turnStartLon": 31.486816406250004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 100,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
