@@ -56,15 +56,12 @@
     "commander": "",
     "lat": 58.571116846928156,
     "lon": 26.499023437500004,
-    "turnStartLat": 60.11961885993203,
-    "turnStartLon": 10.656738281250002,
-    "kmMovedThisTurn": 912.1812568767939,
+    "turnStartLat": 58.571116846928156,
+    "turnStartLon": 26.499023437500004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
     "turnStartStrength": 52603,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "yellowwithblue-1793673399803-3"
-    ]
+    "turnStartBranch": "army"
   },
   {
     "id": "yellowwithblue-1793118372932-0",
@@ -107,9 +104,9 @@
     "commander": "",
     "lat": 58.950008233357046,
     "lon": 24.862060546875004,
-    "turnStartLat": 58.332567131957916,
-    "turnStartLon": 22.291259765625004,
-    "kmMovedThisTurn": 163.82479085493182,
+    "turnStartLat": 58.950008233357046,
+    "turnStartLon": 24.862060546875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 92,
     "turnStartStrength": 15000,
     "turnStartBranch": "army"
@@ -123,9 +120,9 @@
     "commander": "Gebhard Leberecht von Blücher",
     "lat": 58.87058467868077,
     "lon": 24.609375000000004,
-    "turnStartLat": 58.50517468678928,
-    "turnStartLon": 22.796630859375,
-    "kmMovedThisTurn": 112.35437946377056,
+    "turnStartLat": 58.87058467868077,
+    "turnStartLon": 24.609375000000004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 94,
     "turnStartStrength": 12000,
     "turnStartBranch": "army"
