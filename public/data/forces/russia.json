@@ -78,5 +78,37 @@
     "createdAtTurn": 99,
     "turnStartStrength": 14751,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793999038640-1",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Russian Relief Army South",
+    "strength": 50000,
+    "commander": "",
+    "lat": 50.74340774029213,
+    "lon": 21.895751953125,
+    "turnStartLat": 50.74340774029213,
+    "turnStartLon": 21.895751953125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 100,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Ohgizmo-1793999049006-2",
+    "nation": "russia",
+    "branch": "army",
+    "name": "Russian Relief Army North",
+    "strength": 40000,
+    "commander": "",
+    "lat": 53.40298249424817,
+    "lon": 21.829833984375004,
+    "turnStartLat": 53.40298249424817,
+    "turnStartLon": 21.829833984375004,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 100,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
