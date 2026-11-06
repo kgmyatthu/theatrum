@@ -80,38 +80,6 @@
     "turnStartBranch": "navy"
   },
   {
-    "id": "Fouzi-707-1783025319440-12",
-    "nation": "ottoman empire",
-    "branch": "navy",
-    "name": "Mısır Donanması (Mothballed)",
-    "strength": 25,
-    "commander": "Hassan Pasha",
-    "lat": 33.651928443199665,
-    "lon": 21.774902343750004,
-    "turnStartLat": 33.651928443199665,
-    "turnStartLon": 21.774902343750004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 31,
-    "turnStartStrength": 25,
-    "turnStartBranch": "navy"
-  },
-  {
-    "id": "Fouzi-707-1783025372813-14",
-    "nation": "ottoman empire",
-    "branch": "navy",
-    "name": "Basra Donanması (Mothballed)",
-    "strength": 30,
-    "commander": "Ali ihsan Pasha",
-    "lat": 29.031555983851987,
-    "lon": 48.85045466603488,
-    "turnStartLat": 29.031555983851987,
-    "turnStartLon": 48.85045466603488,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 31,
-    "turnStartStrength": 30,
-    "turnStartBranch": "navy"
-  },
-  {
     "id": "Fouzi-707-1784645387667-0",
     "nation": "ottoman empire",
     "branch": "army",
@@ -206,22 +174,6 @@
     "createdAtTurn": 61,
     "turnStartStrength": 2000,
     "turnStartBranch": "army"
-  },
-  {
-    "id": "Fouzi-707-1784651175393-0",
-    "nation": "ottoman empire",
-    "branch": "navy",
-    "name": "İhtiyat Donanması (Mothballed)",
-    "strength": 50,
-    "commander": "ihtiyat",
-    "lat": 40.60978237983301,
-    "lon": 25.175170898437504,
-    "turnStartLat": 40.60978237983301,
-    "turnStartLon": 25.175170898437504,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 61,
-    "turnStartStrength": 50,
-    "turnStartBranch": "navy"
   },
   {
     "id": "juliusquick0616-pixel-1785041090540-0",
