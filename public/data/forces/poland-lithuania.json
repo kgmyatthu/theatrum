@@ -8,9 +8,9 @@
     "commander": "",
     "lat": 52.17056279155013,
     "lon": 21.4288330078125,
-    "turnStartLat": 52.429222277955134,
-    "turnStartLon": 23.70849609375,
-    "kmMovedThisTurn": 157.65309913709626,
+    "turnStartLat": 52.17056279155013,
+    "turnStartLon": 21.4288330078125,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
@@ -24,9 +24,9 @@
     "commander": "",
     "lat": 52.44261787120725,
     "lon": 21.483764648437504,
-    "turnStartLat": 53.38332836757156,
-    "turnStartLon": 22.851562500000004,
-    "kmMovedThisTurn": 139.11136211728123,
+    "turnStartLat": 52.44261787120725,
+    "turnStartLon": 21.483764648437504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 81,
     "turnStartStrength": 25000,
     "turnStartBranch": "army"
@@ -40,9 +40,9 @@
     "commander": "",
     "lat": 52.44596613327885,
     "lon": 20.978393554687504,
-    "turnStartLat": 53.80065082633023,
-    "turnStartLon": 24.455566406250004,
-    "kmMovedThisTurn": 276.58429879102636,
+    "turnStartLat": 52.44596613327885,
+    "turnStartLon": 20.978393554687504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 91,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
@@ -56,9 +56,9 @@
     "commander": "",
     "lat": 52.68304276227743,
     "lon": 21.148681640625,
-    "turnStartLat": 55.1286490684888,
-    "turnStartLon": 23.532714843750004,
-    "kmMovedThisTurn": 313.54884022854515,
+    "turnStartLat": 52.68304276227743,
+    "turnStartLon": 21.148681640625,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 91,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
@@ -76,7 +76,7 @@
     "turnStartLon": 21.566162109375,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 99,
-    "turnStartStrength": 0,
+    "turnStartStrength": 50000,
     "turnStartBranch": "army"
   },
   {
@@ -92,7 +92,7 @@
     "turnStartLon": 24.224853515625004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 99,
-    "turnStartStrength": 0,
+    "turnStartStrength": 32000,
     "turnStartBranch": "army"
   }
 ]
