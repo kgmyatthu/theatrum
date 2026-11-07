@@ -36,7 +36,7 @@
     "nation": "sweden",
     "branch": "navy",
     "name": "Kungliga flottan",
-    "strength": 25,
+    "strength": 20,
     "commander": "",
     "lat": 56.022948079627454,
     "lon": 15.732421875000002,
@@ -44,7 +44,7 @@
     "turnStartLon": 15.732421875000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 67,
-    "turnStartStrength": 25,
+    "turnStartStrength": 20,
     "turnStartBranch": "navy"
   },
   {
@@ -96,67 +96,43 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "yellowwithblue-1793652552348-1",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Johan Christopher Toll",
-    "strength": 15000,
-    "commander": "",
-    "lat": 58.950008233357046,
-    "lon": 24.862060546875004,
-    "turnStartLat": 58.950008233357046,
-    "turnStartLon": 24.862060546875004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 92,
-    "turnStartStrength": 15000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "yellowwithblue-1793672657300-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Gebhard Leberecht von Blücher",
-    "strength": 12000,
-    "commander": "Gebhard Leberecht von Blücher",
-    "lat": 58.87058467868077,
-    "lon": 24.609375000000004,
-    "turnStartLat": 58.87058467868077,
-    "turnStartLon": 24.609375000000004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 94,
-    "turnStartStrength": 12000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "yellowwithblue-1793673317905-0",
-    "nation": "sweden",
-    "branch": "army",
-    "name": "Nationalbeväringen",
-    "strength": 10000,
-    "commander": "",
-    "lat": 59.34439461630004,
-    "lon": 17.600097656250004,
-    "turnStartLat": 59.34439461630004,
-    "turnStartLon": 17.600097656250004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 94,
-    "turnStartStrength": 10000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "yellowwithblue-1793673375664-2",
     "nation": "sweden",
     "branch": "army",
     "name": "Barclay de Tolly",
-    "strength": 10000,
+    "strength": 47000,
     "commander": "",
     "lat": 58.37291790620775,
     "lon": 24.488525390625,
-    "turnStartLat": 58.37291790620775,
-    "turnStartLon": 24.488525390625,
-    "kmMovedThisTurn": 0,
+    "turnStartLat": 59.34439461630004,
+    "turnStartLon": 17.600097656250004,
+    "kmMovedThisTurn": 410.3704588972119,
     "createdAtTurn": 94,
-    "turnStartStrength": 10000,
-    "turnStartBranch": "army"
+    "turnStartStrength": 47000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1793672657300-0",
+      "yellowwithblue-1793652552348-1",
+      "yellowwithblue-1793673317905-0"
+    ]
+  },
+  {
+    "id": "yellowwithblue-1794092883144-0",
+    "nation": "sweden",
+    "branch": "navy",
+    "name": "Kungliga flottan (detachment)",
+    "strength": 5,
+    "commander": "",
+    "lat": 60.02095215374802,
+    "lon": 29.761962890625004,
+    "turnStartLat": 56.022948079627454,
+    "turnStartLon": 15.732421875000002,
+    "kmMovedThisTurn": 935.5948216456084,
+    "createdAtTurn": 67,
+    "turnStartStrength": 5,
+    "turnStartBranch": "navy",
+    "fromIds": [
+      "yellowwithblue-1785116202887-0"
+    ]
   }
 ]
