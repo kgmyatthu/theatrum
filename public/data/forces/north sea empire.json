@@ -150,11 +150,11 @@
     "name": "Danish Royal Navy",
     "strength": 33,
     "commander": "Edward Hawke",
-    "lat": 52.63639665997182,
-    "lon": 12.744140625000002,
-    "turnStartLat": 55.506860802459855,
-    "turnStartLon": 12.485961914062502,
-    "kmMovedThisTurn": 319.6246298314068,
+    "lat": 55.584554519645074,
+    "lon": 12.54638671875,
+    "turnStartLat": 52.63639665997182,
+    "turnStartLon": 12.744140625000002,
+    "kmMovedThisTurn": 328.07316674420605,
     "createdAtTurn": 69,
     "turnStartStrength": 33,
     "turnStartBranch": "navy"
@@ -248,14 +248,11 @@
     "commander": "",
     "lat": 53.54357161755108,
     "lon": 10.049743652343752,
-    "turnStartLat": 55.68223010941079,
-    "turnStartLon": 12.524414062500002,
-    "kmMovedThisTurn": 286.2205310983959,
+    "turnStartLat": 53.54357161755108,
+    "turnStartLon": 10.049743652343752,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 43,
     "turnStartStrength": 20000,
-    "turnStartBranch": "army",
-    "fromIds": [
-      "Vancouver1903-1783730696759-0"
-    ]
+    "turnStartBranch": "army"
   }
 ]
