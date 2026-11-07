@@ -1,8 +1,8 @@
 {
   "appVersion": "theatrum/v10",
-  "currentDate": "1789-01-24",
+  "currentDate": "1789-03-25",
   "lastTurnDays": 30,
-  "turnNumber": 102,
+  "turnNumber": 104,
   "populationByNation": {
     "aceh": 834897,
     "asante": 2477087,
