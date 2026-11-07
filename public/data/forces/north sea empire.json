@@ -36,7 +36,7 @@
     "nation": "north sea empire",
     "branch": "army",
     "name": "Royal Danish Army",
-    "strength": 35000,
+    "strength": 15000,
     "commander": "Marshal Charles von Kirke",
     "lat": 55.68223010941079,
     "lon": 12.524414062500002,
@@ -44,7 +44,7 @@
     "turnStartLon": 12.524414062500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43,
-    "turnStartStrength": 35000,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   },
   {
@@ -238,5 +238,24 @@
     "createdAtTurn": 81,
     "turnStartStrength": 30000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1794020018068-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Royal Danish Army (Detachment)",
+    "strength": 20000,
+    "commander": "",
+    "lat": 53.54357161755108,
+    "lon": 10.049743652343752,
+    "turnStartLat": 55.68223010941079,
+    "turnStartLon": 12.524414062500002,
+    "kmMovedThisTurn": 286.2205310983959,
+    "createdAtTurn": 43,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "Vancouver1903-1783730696759-0"
+    ]
   }
 ]
