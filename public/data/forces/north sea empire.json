@@ -152,9 +152,9 @@
     "commander": "Edward Hawke",
     "lat": 55.584554519645074,
     "lon": 12.54638671875,
-    "turnStartLat": 52.63639665997182,
-    "turnStartLon": 12.744140625000002,
-    "kmMovedThisTurn": 328.07316674420605,
+    "turnStartLat": 55.584554519645074,
+    "turnStartLon": 12.54638671875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 69,
     "turnStartStrength": 33,
     "turnStartBranch": "navy"
