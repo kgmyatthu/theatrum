@@ -4,7 +4,7 @@
     "nation": "kingdom of prussia",
     "branch": "army",
     "name": "Army of Prussia",
-    "strength": 29000,
+    "strength": 9000,
     "commander": "FDG",
     "lat": 50.198001033269506,
     "lon": 18.709716796875004,
@@ -78,5 +78,21 @@
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1794247785605-0",
+    "nation": "kingdom of prussia",
+    "branch": "navy",
+    "name": "Fleet of Harmonious Victory",
+    "strength": 4,
+    "commander": "",
+    "lat": 59.60319009396661,
+    "lon": -9.975585937500002,
+    "turnStartLat": 59.60319009396661,
+    "turnStartLon": -9.975585937500002,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 105,
+    "turnStartStrength": 0,
+    "turnStartBranch": "navy"
   }
 ]
