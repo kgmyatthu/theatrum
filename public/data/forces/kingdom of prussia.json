@@ -8,9 +8,9 @@
     "commander": "FDG",
     "lat": 50.198001033269506,
     "lon": 18.709716796875004,
-    "turnStartLat": 50.02542380711174,
-    "turnStartLon": 20.044555664062504,
-    "kmMovedThisTurn": 97.09902720660007,
+    "turnStartLat": 50.198001033269506,
+    "turnStartLon": 18.709716796875004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
     "turnStartStrength": 29000,
     "turnStartBranch": "army"
