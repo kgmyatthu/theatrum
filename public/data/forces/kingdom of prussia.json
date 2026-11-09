@@ -78,5 +78,21 @@
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "AceApache-1794251145410-0",
+    "nation": "kingdom of prussia",
+    "branch": "army",
+    "name": "Army of the King",
+    "strength": 20000,
+    "commander": "",
+    "lat": 62.44881462304568,
+    "lon": -64.57763671875001,
+    "turnStartLat": 62.44881462304568,
+    "turnStartLon": -64.57763671875001,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 105,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
