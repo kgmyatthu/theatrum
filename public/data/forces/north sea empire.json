@@ -254,5 +254,21 @@
     "createdAtTurn": 43,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1794282140321-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Regular Army of Virginia",
+    "strength": 2000,
+    "commander": "",
+    "lat": 37.57941251343841,
+    "lon": -77.26684570312501,
+    "turnStartLat": 37.57941251343841,
+    "turnStartLon": -77.26684570312501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 105,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
