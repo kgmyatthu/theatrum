@@ -318,5 +318,21 @@
     "createdAtTurn": 81,
     "turnStartStrength": 1,
     "turnStartBranch": "navy"
+  },
+  {
+    "id": "iiv213-1794356634433-0",
+    "nation": "latin empire",
+    "branch": "army",
+    "name": "Army of Morocco",
+    "strength": 6000,
+    "commander": "",
+    "lat": 35.89412629251547,
+    "lon": -5.332489013671876,
+    "turnStartLat": 35.89412629251547,
+    "turnStartLon": -5.332489013671876,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 105,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]
