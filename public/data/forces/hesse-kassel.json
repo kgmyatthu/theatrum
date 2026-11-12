@@ -4,31 +4,18 @@
     "nation": "hesse-kassel",
     "branch": "army",
     "name": "Johan Rall",
-    "strength": 3000,
+    "strength": 7000,
     "commander": "",
     "lat": 51.083362815420266,
     "lon": 13.897705078125002,
-    "turnStartLat": 51.083362815420266,
-    "turnStartLon": 13.897705078125002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 94,
-    "turnStartStrength": 3000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "AceApache-1793914369611-0",
-    "nation": "hesse-kassel",
-    "branch": "army",
-    "name": "Army of Hesse",
-    "strength": 4000,
-    "commander": "",
-    "lat": 50.8622961736726,
-    "lon": 9.338378906250002,
     "turnStartLat": 50.8622961736726,
     "turnStartLon": 9.338378906250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 320.129050194151,
     "createdAtTurn": 99,
-    "turnStartStrength": 4000,
-    "turnStartBranch": "army"
+    "turnStartStrength": 7000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "AceApache-1793914369611-0"
+    ]
   }
 ]
