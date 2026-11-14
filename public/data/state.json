@@ -2779,7 +2779,7 @@
     ],
     [
       694,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       695,
@@ -6435,23 +6435,23 @@
     ],
     [
       1608,
-      "durrani empire"
+      "bharata empire"
     ],
     [
       1609,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1610,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1611,
-      "durrani empire"
+      "bharata empire"
     ],
     [
       1612,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1613,
@@ -6503,7 +6503,7 @@
     ],
     [
       1625,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1626,
@@ -6555,7 +6555,7 @@
     ],
     [
       1638,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1639,
@@ -6567,7 +6567,7 @@
     ],
     [
       1641,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1642,
@@ -6579,7 +6579,7 @@
     ],
     [
       1644,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       1645,
@@ -8715,7 +8715,7 @@
     ],
     [
       2178,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       2179,
@@ -8951,7 +8951,7 @@
     ],
     [
       2237,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       2238,
@@ -8963,7 +8963,7 @@
     ],
     [
       2240,
-      "minor indian states"
+      "north sea empire"
     ],
     [
       2241,
@@ -13087,11 +13087,11 @@
     ],
     [
       3271,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       3272,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       3273,
@@ -13099,7 +13099,7 @@
     ],
     [
       3274,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       3275,
@@ -17143,15 +17143,15 @@
     ],
     [
       4285,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       4286,
-      "maratha confederacy"
+      "bharata empire"
     ],
     [
       4287,
-      "north sea empire"
+      "bharata empire"
     ],
     [
       4288,
@@ -18412,6 +18412,10 @@
       "color": "#57beff"
     },
     {
+      "name": "bharata empire",
+      "color": "#ab4f0d"
+    },
+    {
       "name": "bhutan",
       "color": "#FFB300"
     },
@@ -18586,10 +18590,6 @@
     {
       "name": "maldives",
       "color": "#0CC0DF"
-    },
-    {
-      "name": "maratha confederacy",
-      "color": "#e1660e"
     },
     {
       "name": "minor indian states",
