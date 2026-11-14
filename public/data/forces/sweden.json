@@ -4,7 +4,7 @@
     "nation": "sweden",
     "branch": "army",
     "name": "Indelningsverket",
-    "strength": 65000,
+    "strength": 45000,
     "commander": "",
     "lat": 60.053873851484944,
     "lon": 15.062255859375002,
@@ -12,7 +12,7 @@
     "turnStartLon": 15.062255859375002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 47,
-    "turnStartStrength": 65000,
+    "turnStartStrength": 45000,
     "turnStartBranch": "army"
   },
   {
@@ -46,5 +46,24 @@
     "createdAtTurn": 67,
     "turnStartStrength": 25,
     "turnStartBranch": "navy"
+  },
+  {
+    "id": "yellowwithblue-1794688535754-0",
+    "nation": "sweden",
+    "branch": "army",
+    "name": "Adolph Hiedler",
+    "strength": 20000,
+    "commander": "",
+    "lat": 55.85064987433714,
+    "lon": 13.172607421875002,
+    "turnStartLat": 60.053873851484944,
+    "turnStartLon": 15.062255859375002,
+    "kmMovedThisTurn": 480.44086119181156,
+    "createdAtTurn": 47,
+    "turnStartStrength": 20000,
+    "turnStartBranch": "army",
+    "fromIds": [
+      "yellowwithblue-1783829620969-2"
+    ]
   }
 ]

@@ -4,7 +4,7 @@
     "nation": "hanover",
     "branch": "army",
     "name": "Hanoverian Army",
-    "strength": 30000,
+    "strength": 5000,
     "commander": "George II",
     "lat": 52.889020448995225,
     "lon": 9.481201171875002,

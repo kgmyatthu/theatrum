@@ -12,7 +12,7 @@
     "turnStartLon": 18.709716796875004,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 73,
-    "turnStartStrength": 29000,
+    "turnStartStrength": 40000,
     "turnStartBranch": "army"
   },
   {
@@ -70,11 +70,11 @@
     "name": "Army of Silesia (detachment)",
     "strength": 20000,
     "commander": "",
-    "lat": 53.53358639696501,
-    "lon": 11.392822265625,
+    "lat": 53.014783245859235,
+    "lon": 10.689697265625002,
     "turnStartLat": 53.53358639696501,
     "turnStartLon": 11.392822265625,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 74.25402515309054,
     "createdAtTurn": 78,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
@@ -86,13 +86,13 @@
     "name": "Army of Mecklenburg",
     "strength": 40000,
     "commander": "",
-    "lat": 53.4621496131625,
-    "lon": 13.205566406250002,
+    "lat": 53.592504809039376,
+    "lon": 10.898437500000002,
     "turnStartLat": 53.4621496131625,
     "turnStartLon": 13.205566406250002,
-    "kmMovedThisTurn": 0,
+    "kmMovedThisTurn": 153.17854320465943,
     "createdAtTurn": 106,
-    "turnStartStrength": 0,
+    "turnStartStrength": 40000,
     "turnStartBranch": "army"
   },
   {
@@ -108,7 +108,7 @@
     "turnStartLon": 8.261718750000002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 106,
-    "turnStartStrength": 0,
+    "turnStartStrength": 40000,
     "turnStartBranch": "army"
   }
 ]
