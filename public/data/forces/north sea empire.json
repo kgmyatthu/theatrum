@@ -20,7 +20,7 @@
     "nation": "north sea empire",
     "branch": "navy",
     "name": "Blue Squadron",
-    "strength": 14,
+    "strength": 18,
     "commander": "Arthur Herbert",
     "lat": 51.51899806141268,
     "lon": 1.0656738281250002,
@@ -270,5 +270,21 @@
     "createdAtTurn": 108,
     "turnStartStrength": 0,
     "turnStartBranch": "navy"
+  },
+  {
+    "id": "Vancouver1903-1794719833804-2",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Army of Egypt",
+    "strength": 40000,
+    "commander": "Sir Ralph Abercromby",
+    "lat": 51.39235087498254,
+    "lon": 0.5026245117187501,
+    "turnStartLat": 51.39235087498254,
+    "turnStartLon": 0.5026245117187501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 108,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
   }
 ]

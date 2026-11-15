@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Vancouver1903-1794719669644-0",
+    "nation": "bulgaria",
+    "branch": "army",
+    "name": "Osman Pazvantoğlu's Rebels",
+    "strength": 1500,
+    "commander": "Osman Pazvantoğlu",
+    "lat": 42.91017176199848,
+    "lon": 23.590393066406254,
+    "turnStartLat": 42.91017176199848,
+    "turnStartLon": 23.590393066406254,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 108,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1794719695539-1",
+    "nation": "bulgaria",
+    "branch": "army",
+    "name": "Moesian Rebels",
+    "strength": 1500,
+    "commander": "Bulgarian Officer",
+    "lat": 43.18915769654922,
+    "lon": 27.880554199218754,
+    "turnStartLat": 43.18915769654922,
+    "turnStartLon": 27.880554199218754,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 108,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  }
+]
