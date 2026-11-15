@@ -238,5 +238,37 @@
     "createdAtTurn": 105,
     "turnStartStrength": 2000,
     "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1794701927210-0",
+    "nation": "north sea empire",
+    "branch": "army",
+    "name": "Highlander Army of the Ionians",
+    "strength": 1500,
+    "commander": "Arthur Wellesley",
+    "lat": 39.61097823625262,
+    "lon": 19.892120361328125,
+    "turnStartLat": 39.61097823625262,
+    "turnStartLon": 19.892120361328125,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 108,
+    "turnStartStrength": 0,
+    "turnStartBranch": "army"
+  },
+  {
+    "id": "Vancouver1903-1794702059056-1",
+    "nation": "north sea empire",
+    "branch": "navy",
+    "name": "Ionian Fleet",
+    "strength": 4,
+    "commander": "Horatio Nelson",
+    "lat": 39.56176509976178,
+    "lon": 19.949111938476566,
+    "turnStartLat": 39.56176509976178,
+    "turnStartLon": 19.949111938476566,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 108,
+    "turnStartStrength": 0,
+    "turnStartBranch": "navy"
   }
 ]
