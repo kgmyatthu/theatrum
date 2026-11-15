@@ -144,22 +144,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "Fouzi-707-1784645485233-4",
-    "nation": "ottoman empire",
-    "branch": "army",
-    "name": "Tuna Ordusu",
-    "strength": 1000,
-    "commander": "Hayder Pasha",
-    "lat": 45.09065146400725,
-    "lon": 28.810272216796875,
-    "turnStartLat": 45.09065146400725,
-    "turnStartLon": 28.810272216796875,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 61,
-    "turnStartStrength": 1000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "Fouzi-707-1784645502404-5",
     "nation": "ottoman empire",
     "branch": "army",
