@@ -2699,11 +2699,11 @@
     ],
     [
       674,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       675,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       676,
@@ -3403,7 +3403,7 @@
     ],
     [
       850,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       851,
@@ -3411,7 +3411,7 @@
     ],
     [
       852,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       853,
@@ -3423,15 +3423,15 @@
     ],
     [
       855,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       856,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       857,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       858,
@@ -3439,11 +3439,11 @@
     ],
     [
       859,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       860,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       861,
@@ -9099,7 +9099,7 @@
     ],
     [
       2274,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       2275,
@@ -17383,19 +17383,19 @@
     ],
     [
       4345,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4346,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4347,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4348,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4349,
@@ -17403,11 +17403,11 @@
     ],
     [
       4350,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4351,
-      "ottoman empire"
+      "bulgaria"
     ],
     [
       4352,
@@ -18434,6 +18434,10 @@
     {
       "name": "brunei",
       "color": "#B8860B"
+    },
+    {
+      "name": "bulgaria",
+      "color": "#6d8e2e"
     },
     {
       "name": "burma",
