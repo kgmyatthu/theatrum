@@ -136,9 +136,9 @@
     "commander": "Ahmed Pasha",
     "lat": 44.59046718130883,
     "lon": 26.828613281250004,
-    "turnStartLat": 46.52048507021618,
-    "turnStartLon": 30.699234008789066,
-    "kmMovedThisTurn": 369.9015802856067,
+    "turnStartLat": 44.59046718130883,
+    "turnStartLon": 26.828613281250004,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 61,
     "turnStartStrength": 20000,
     "turnStartBranch": "army"
