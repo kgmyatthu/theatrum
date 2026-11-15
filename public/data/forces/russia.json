@@ -32,38 +32,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "Ohgizmo-1793999049006-2",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Russian Army North - Alexander Suvorov",
-    "strength": 20000,
-    "commander": "",
-    "lat": 57.468589192089354,
-    "lon": 28.212890625000004,
-    "turnStartLat": 57.468589192089354,
-    "turnStartLon": 28.212890625000004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 100,
-    "turnStartStrength": 20000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "Ohgizmo-1793999123531-3",
-    "nation": "russia",
-    "branch": "army",
-    "name": "Russian Reserves",
-    "strength": 38000,
-    "commander": "",
-    "lat": 55.62799595426723,
-    "lon": 37.68310546875,
-    "turnStartLat": 55.62799595426723,
-    "turnStartLon": 37.68310546875,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 100,
-    "turnStartStrength": 38000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "Walrusbear0831-1794774440044-0",
     "nation": "russia",
     "branch": "army",
