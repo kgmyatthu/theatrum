@@ -8975,7 +8975,7 @@
     ],
     [
       2243,
-      "unclaimed"
+      "japan"
     ],
     [
       2244,
@@ -11663,7 +11663,7 @@
     ],
     [
       2915,
-      "japan"
+      "okinawa"
     ],
     [
       2916,
@@ -18565,7 +18565,7 @@
     },
     {
       "name": "korea",
-      "color": "#e64f0f"
+      "color": "#BC002D"
     },
     {
       "name": "laos",
@@ -18626,6 +18626,10 @@
     {
       "name": "north sea empire",
       "color": "#00035c"
+    },
+    {
+      "name": "okinawa",
+      "color": "#4d232b"
     },
     {
       "name": "oman",
