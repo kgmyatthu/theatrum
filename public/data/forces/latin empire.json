@@ -12,7 +12,7 @@
     "turnStartLon": 2.2885546088218693,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
-    "turnStartStrength": 20000,
+    "turnStartStrength": 40000,
     "turnStartBranch": "army"
   },
   {
@@ -20,7 +20,7 @@
     "nation": "latin empire",
     "branch": "navy",
     "name": "Toulon Naval Station (SOTL)",
-    "strength": 36,
+    "strength": 37,
     "commander": "",
     "lat": 43.11625297358565,
     "lon": 5.925750732421876,
@@ -28,7 +28,7 @@
     "turnStartLon": 5.925750732421876,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
-    "turnStartStrength": 17,
+    "turnStartStrength": 36,
     "turnStartBranch": "navy"
   },
   {
@@ -108,7 +108,7 @@
     "turnStartLon": 6.072118878364563,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 8,
-    "turnStartStrength": 20000,
+    "turnStartStrength": 30000,
     "turnStartBranch": "army"
   },
   {
@@ -120,11 +120,11 @@
     "commander": "",
     "lat": 41.42406576882097,
     "lon": 2.1286010742187504,
-    "turnStartLat": 38.36545199665852,
-    "turnStartLon": -6.135779097676278,
-    "kmMovedThisTurn": 782.3290309549851,
+    "turnStartLat": 41.42406576882097,
+    "turnStartLon": 2.1286010742187504,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
-    "turnStartStrength": 10000,
+    "turnStartStrength": 45000,
     "turnStartBranch": "army"
   },
   {
@@ -348,7 +348,7 @@
     "turnStartLon": -102.19482421875,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 107,
-    "turnStartStrength": 0,
+    "turnStartStrength": 20000,
     "turnStartBranch": "army"
   }
 ]
