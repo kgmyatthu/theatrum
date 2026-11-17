@@ -32,22 +32,6 @@
     "turnStartBranch": "army"
   },
   {
-    "id": "KingREN1-Suitman-1783840639874-0",
-    "nation": "bavaria",
-    "branch": "army",
-    "name": "Munich Garrison",
-    "strength": 5000,
-    "commander": "",
-    "lat": 48.06339653776214,
-    "lon": 11.661987304687502,
-    "turnStartLat": 48.06339653776214,
-    "turnStartLon": 11.661987304687502,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 49,
-    "turnStartStrength": 5000,
-    "turnStartBranch": "army"
-  },
-  {
     "id": "KingREN1-Suitman-1784763582675-0",
     "nation": "bavaria",
     "branch": "army",
@@ -61,38 +45,6 @@
     "kmMovedThisTurn": 0,
     "createdAtTurn": 62,
     "turnStartStrength": 20000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "KingREN1-Suitman-1785292636475-1",
-    "nation": "bavaria",
-    "branch": "army",
-    "name": "Vienna Garrison",
-    "strength": 5000,
-    "commander": "",
-    "lat": 48.22467264956519,
-    "lon": 16.380615234375004,
-    "turnStartLat": 48.22467264956519,
-    "turnStartLon": 16.380615234375004,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69,
-    "turnStartStrength": 5000,
-    "turnStartBranch": "army"
-  },
-  {
-    "id": "KingREN1-Suitman-1785292643352-2",
-    "nation": "bavaria",
-    "branch": "army",
-    "name": "Prague Garrisson",
-    "strength": 5000,
-    "commander": "",
-    "lat": 50.07124366044474,
-    "lon": 14.501953125000002,
-    "turnStartLat": 50.07124366044474,
-    "turnStartLon": 14.501953125000002,
-    "kmMovedThisTurn": 0,
-    "createdAtTurn": 69,
-    "turnStartStrength": 5000,
     "turnStartBranch": "army"
   },
   {
