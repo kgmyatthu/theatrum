@@ -22,11 +22,11 @@
     "name": "Blue Squadron",
     "strength": 18,
     "commander": "Arthur Herbert",
-    "lat": 35.003003395276714,
-    "lon": 32.28881835937501,
-    "turnStartLat": 37.82280243352759,
-    "turnStartLon": 20.390625000000004,
-    "kmMovedThisTurn": 1109.0012885374688,
+    "lat": 34.05265942137599,
+    "lon": 21.972656250000004,
+    "turnStartLat": 35.003003395276714,
+    "turnStartLon": 32.28881835937501,
+    "kmMovedThisTurn": 950.4987471162123,
     "createdAtTurn": 47,
     "turnStartStrength": 18,
     "turnStartBranch": "navy"
@@ -44,7 +44,7 @@
     "turnStartLon": 12.524414062500002,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 43,
-    "turnStartStrength": 15000,
+    "turnStartStrength": 5000,
     "turnStartBranch": "army"
   },
   {
@@ -156,7 +156,7 @@
     "turnStartLon": 12.54638671875,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 69,
-    "turnStartStrength": 33,
+    "turnStartStrength": 20,
     "turnStartBranch": "navy"
   },
   {
@@ -262,11 +262,11 @@
     "name": "Army of Egypt",
     "strength": 40000,
     "commander": "Sir Ralph Abercromby",
-    "lat": 34.76164050055091,
-    "lon": 32.424430847167976,
-    "turnStartLat": 38.36534867623904,
-    "turnStartLon": 20.580139160156254,
-    "kmMovedThisTurn": 1130.1249462983542,
+    "lat": 34.34343606848294,
+    "lon": 24.565429687500004,
+    "turnStartLat": 34.76164050055091,
+    "turnStartLon": 32.424430847167976,
+    "kmMovedThisTurn": 721.0495868014366,
     "createdAtTurn": 108,
     "turnStartStrength": 40000,
     "turnStartBranch": "army"

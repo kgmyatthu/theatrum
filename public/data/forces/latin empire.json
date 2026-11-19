@@ -120,9 +120,9 @@
     "commander": "Gilbert du Motier, Marquis de Lafayette",
     "lat": 35.88934328437513,
     "lon": 14.458007812500002,
-    "turnStartLat": 41.42406576882097,
-    "turnStartLon": 2.1286010742187504,
-    "kmMovedThisTurn": 1233.122713539829,
+    "turnStartLat": 35.88934328437513,
+    "turnStartLon": 14.458007812500002,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
     "turnStartStrength": 45000,
     "turnStartBranch": "army"
@@ -156,7 +156,7 @@
     "turnStartLon": -7.862001210451127,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 7,
-    "turnStartStrength": 10000,
+    "turnStartStrength": 35000,
     "turnStartBranch": "army"
   },
   {
@@ -360,15 +360,12 @@
     "commander": "",
     "lat": 35.923708101706616,
     "lon": 14.54315185546875,
-    "turnStartLat": 43.11625297358565,
-    "turnStartLon": 5.925750732421876,
-    "kmMovedThisTurn": 1087.844095837296,
+    "turnStartLat": 35.923708101706616,
+    "turnStartLon": 14.54315185546875,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 4,
     "turnStartStrength": 17,
-    "turnStartBranch": "navy",
-    "fromIds": [
-      "iiv213-1780432141876-1"
-    ]
+    "turnStartBranch": "navy"
   },
   {
     "id": "iiv213-1794779026332-1",
@@ -383,7 +380,7 @@
     "turnStartLon": 4.960327148437501,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 113,
-    "turnStartStrength": 0,
+    "turnStartStrength": 5000,
     "turnStartBranch": "army"
   }
 ]
