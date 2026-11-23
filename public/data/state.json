@@ -2023,7 +2023,7 @@
     ],
     [
       505,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       506,
@@ -5599,7 +5599,7 @@
     ],
     [
       1399,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       1400,
@@ -5655,7 +5655,7 @@
     ],
     [
       1413,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       1414,
@@ -13811,15 +13811,15 @@
     ],
     [
       3452,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       3453,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       3454,
-      "unclaimed"
+      "emirate of diriyah"
     ],
     [
       3455,
@@ -18478,6 +18478,10 @@
     {
       "name": "dutch east india company",
       "color": "#FF8C42"
+    },
+    {
+      "name": "emirate of diriyah",
+      "color": "#994d5c"
     },
     {
       "name": "ethiopia",
