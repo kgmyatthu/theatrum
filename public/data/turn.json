@@ -1,8 +1,8 @@
 {
   "appVersion": "theatrum/v10",
-  "currentDate": "1797-12-31",
+  "currentDate": "1798-01-30",
   "lastTurnDays": 30,
-  "turnNumber": 114,
+  "turnNumber": 115,
   "populationByNation": {
     "aceh": 834897,
     "asante": 2477087,
@@ -17,7 +17,7 @@
     "cambodia": 2024246,
     "caucasian states": 2459746,
     "china": 189327726,
-    "contested territories": 1296624,
+    "contested territories": 1280370,
     "crimean khanate (russia)": 2250645,
     "dahomey": 1891693,
     "denmark": 0,
@@ -56,7 +56,7 @@
     "north sea empire": 57154754,
     "okinawa": 290366,
     "oman": 2080008,
-    "ottoman empire": 33665210,
+    "ottoman empire": 33681464,
     "oyo": 4314803,
     "papal states": 3368011,
     "peasant revolts": 102721531,
