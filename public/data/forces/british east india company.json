@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Vancouver1903-1792108977694-5",
+    "nation": "british east india company",
+    "branch": "navy",
+    "name": "East India Company",
+    "strength": 12,
+    "commander": "EIC Command",
+    "lat": 11.829718032470085,
+    "lon": 80.27709960937501,
+    "turnStartLat": 11.829718032470085,
+    "turnStartLon": 80.27709960937501,
+    "kmMovedThisTurn": 0,
+    "createdAtTurn": 76,
+    "turnStartStrength": 12,
+    "turnStartBranch": "navy"
+  }
+]

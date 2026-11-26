@@ -7067,7 +7067,7 @@
     ],
     [
       1766,
-      "unclaimed"
+      "british east india company"
     ],
     [
       1767,
@@ -7303,7 +7303,7 @@
     ],
     [
       1825,
-      "north sea empire"
+      "british east india company"
     ],
     [
       1826,
@@ -7651,7 +7651,7 @@
     ],
     [
       1912,
-      "north sea empire"
+      "british east india company"
     ],
     [
       1913,
@@ -8963,7 +8963,7 @@
     ],
     [
       2240,
-      "north sea empire"
+      "british east india company"
     ],
     [
       2241,
@@ -8971,7 +8971,7 @@
     ],
     [
       2242,
-      "north sea empire"
+      "british east india company"
     ],
     [
       2243,
@@ -18430,6 +18430,10 @@
     {
       "name": "britain",
       "color": "#D7837F"
+    },
+    {
+      "name": "british east india company",
+      "color": "#d41138"
     },
     {
       "name": "brunei",
