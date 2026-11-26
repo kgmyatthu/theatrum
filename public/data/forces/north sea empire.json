@@ -24,9 +24,9 @@
     "commander": "Arthur Herbert",
     "lat": 10.509416700845861,
     "lon": 75.14648437500001,
-    "turnStartLat": 34.05265942137599,
-    "turnStartLon": 21.972656250000004,
-    "kmMovedThisTurn": 5983.820106213883,
+    "turnStartLat": 10.509416700845861,
+    "turnStartLon": 75.14648437500001,
+    "kmMovedThisTurn": 0,
     "createdAtTurn": 47,
     "turnStartStrength": 18,
     "turnStartBranch": "navy"
@@ -260,7 +260,7 @@
     "nation": "north sea empire",
     "branch": "army",
     "name": "Army of Egypt",
-    "strength": 15000,
+    "strength": 25000,
     "commander": "Sir Ralph Abercromby",
     "lat": 9.741542398118103,
     "lon": 78.35449218750001,
@@ -268,7 +268,7 @@
     "turnStartLon": 78.35449218750001,
     "kmMovedThisTurn": 0,
     "createdAtTurn": 115,
-    "turnStartStrength": 0,
+    "turnStartStrength": 15000,
     "turnStartBranch": "army"
   }
 ]

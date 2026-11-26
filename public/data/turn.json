@@ -1,8 +1,8 @@
 {
   "appVersion": "theatrum/v10",
-  "currentDate": "1798-01-30",
+  "currentDate": "1798-03-31",
   "lastTurnDays": 30,
-  "turnNumber": 115,
+  "turnNumber": 117,
   "populationByNation": {
     "aceh": 834897,
     "asante": 2477087,
@@ -23,6 +23,7 @@
     "denmark": 0,
     "durrani empire": 5846343,
     "dutch east india company": 45454643,
+    "emirate of diriyah": 997538,
     "ethiopia": 3063385,
     "genoa": 515883,
     "hanover": 2319097,
@@ -73,7 +74,7 @@
     "sweden": 4682142,
     "swedish east india company": 388047,
     "switzerland": 1742908,
-    "unclaimed": 32999024,
+    "unclaimed": 32001486,
     "venice": 2453284,
     "vietnam": 5983656,
     "wallachia": 2080685,
