@@ -2151,7 +2151,7 @@
     ],
     [
       537,
-      "dutch east india company"
+      "contested territories"
     ],
     [
       538,
@@ -6435,7 +6435,7 @@
     ],
     [
       1608,
-      "bharata empire"
+      "contested territories"
     ],
     [
       1609,
@@ -6443,15 +6443,15 @@
     ],
     [
       1610,
-      "bharata empire"
+      "indian rebels"
     ],
     [
       1611,
-      "bharata empire"
+      "contested territories"
     ],
     [
       1612,
-      "bharata empire"
+      "indian rebels"
     ],
     [
       1613,
@@ -8951,7 +8951,7 @@
     ],
     [
       2237,
-      "bharata empire"
+      "contested territories"
     ],
     [
       2238,
@@ -17151,7 +17151,7 @@
     ],
     [
       4287,
-      "bharata empire"
+      "indian rebels"
     ],
     [
       4288,
@@ -18538,6 +18538,10 @@
     {
       "name": "hyderabad",
       "color": "#d9db43"
+    },
+    {
+      "name": "indian rebels",
+      "color": "#567099"
     },
     {
       "name": "japan",
