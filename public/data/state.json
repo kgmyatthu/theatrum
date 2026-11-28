@@ -1659,39 +1659,39 @@
     ],
     [
       414,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       415,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       416,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       417,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       418,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       419,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       420,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       421,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       422,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       423,
@@ -3099,11 +3099,11 @@
     ],
     [
       774,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       775,
-      "hre minor states"
+      "principality of liechtenstein"
     ],
     [
       776,
@@ -18678,6 +18678,10 @@
     {
       "name": "portugal",
       "color": "#046A38"
+    },
+    {
+      "name": "principality of liechtenstein",
+      "color": "#4ebcca"
     },
     {
       "name": "ragusa",
